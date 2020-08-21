@@ -1,7 +1,8 @@
 <template>
     <div>
-        <p>Navbar</p>
-        <p></p>
-        <p></p>
+        <div class="navbar">
+            
+        </div>
+        <!-- /.navbar -->
     </div>
 </template>
