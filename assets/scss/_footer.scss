@@ -1,15 +1,97 @@
 //////////////////////////FOOTER///////////////////////
-.footer{
+.footer {
     background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
-    padding-top: 150px;
-    &-logo{
-       display: block;
-        &-link{
-            display: flex;
+    padding-top: 40px;
+    padding-bottom: 35px;
+
+    &__item {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    &__logo {
+        display: block;
+
+        &-link {
+            display: inline-flex;
             align-items: center;
-            &:hover{
-                text-decoration: none;
+
+            img {
+                margin-right: 10px;
+                object-fit: contain;
+                width: 45px;
+                height: 50px;
+            }
+
+            &:hover {
+                color: white;
             }
         }
+    }
+
+    .legaltech {
+        font-size: 24px;
+        line-height: 30px;
+        color: white;
+    }
+    h3.legaltech{
+        font-size: 20px;
+    }
+
+    &__motto {
+        margin-top: 5px;
+        font-size: 15px;
+        line-height: 23px;
+        color: #C1C1C1;
+    }
+}
+
+.other__item{
+    text-align: center;
+}
+.footer__menu {
+    margin: 20px 0;
+    text-align: center;
+    &-list {
+        margin-top: 5px;
+    }
+
+    &-item {
+        margin-bottom: 5px;
+    }
+
+    &-link {
+        font-size: 15px;
+        line-height: 20px;
+        color: #C4C4C4;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: #B08E44;
+        }
+    }
+}
+
+.social__footer-list {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social__footer-item:nth-child(2) {
+    margin-right: 32px;
+    margin-left: 32px;
+}
+
+.social__footer-link {
+    display: inline-block;
+    font-size: 33px;
+    line-height: 33px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: #00aced;
+        // box-shadow: 0 0 15px #00aced;
     }
 }

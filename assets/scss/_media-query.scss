@@ -1,0 +1,58 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+//footer media 
+.footer{
+    padding-top: 100px !important;
+    padding-bottom: 82px !important;
+}
+.footer__motto{
+    font-size: 18px !important;
+    margin-top: 29px !important;
+}
+.footer__menu{
+    text-align: left !important;
+    margin: 25px 0 !important;
+    &-list{
+        margin-top: 18px !important;
+    }
+    &-link{
+        font-size: 16px !important;
+    }
+}
+.footer__item{
+    margin-right: 80px !important;
+    text-align: left !important;
+}
+.other__item{
+    text-align: left !important;
+}
+.social__footer-list{
+    justify-content: flex-start !important;
+}
+h3.legaltech{
+    font-size: 24px !important;
+}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+//footer media
+
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+//footer media
+.footer__menu{
+    margin: 0 !important;
+}
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}

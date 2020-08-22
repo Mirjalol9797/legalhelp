@@ -1,0 +1,60 @@
+////////////////////////NAVBAR////////////////////
+.navbar__logo{
+    display: flex;
+    align-items: center;
+}
+.navbar__dark{
+ background-color: rgba(0,0,0,0.7);
+}
+.navbar-brand{
+    color:white !important;
+}
+.nav-link{
+    color:white !important;
+    font-family: $Poppins;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.header__btn{
+    font-family: $Nunito;
+background: #B08E44;
+border-radius: 8px;
+transition: all 0.3s ease;
+&:hover{
+    background-color: #00aced;
+}
+}
+.navbar__search{
+    font-family: $Nunito;
+    background-image: url("../images/search.svg");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-color: transparent;
+    padding: 7px 31px 7px 7px;
+    color:white !important;
+    width: 150px;
+    &:focus{
+        background-color: transparent;
+        border:1px solid #00aced;
+    }
+}
+.dropdown-menu{
+    border:1px solid #00aced;
+    font-family: $Poppins;
+    width: 50px !important;
+    max-width: 50px !important;
+    text-align: center;
+    box-shadow: 0 0 2px #00aced;
+}
+.dropdown-menu-right{
+    right: 25px !important;
+}
+.dropdown-item{
+    padding:5px 10px !important;
+}
+.search__part{
+
+    margin-left: 10px;
+    background-color:transparent;
+}
+

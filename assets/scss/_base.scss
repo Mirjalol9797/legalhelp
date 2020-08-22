@@ -1,0 +1,19 @@
+/////////////////BASE/////////////////
+body{
+    font-family: $Cantata;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a{
+    color:#fff;
+    &:hover{
+        text-decoration: none !important;
+    }
+}
+input:focus,input:active,button:active,button:focus{
+    box-shadow: none !important;
+}

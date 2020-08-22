@@ -1,7 +1,6 @@
-@import 'base';
 @import 'global';
+@import 'base';
+@import 'fonts';
 @import 'media-query';
 @import 'footer';
-body{
-    color::red;
-}
+@import 'navbar';
