@@ -42,7 +42,7 @@ transition: all 0.3s ease;
     border:1px solid #00aced;
     font-family: $Poppins;
     width: 50px !important;
-    max-width: 50px !important;
+    min-width: 50px !important;
     text-align: center;
     box-shadow: 0 0 2px #00aced;
 }

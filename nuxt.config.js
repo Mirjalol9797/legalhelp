@@ -36,7 +36,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '~/plugins/vue-star.js', ssr: false },
+    { src: '~/plugins/rate.js', ssr: false},
   ],
   /*
   ** Auto import components

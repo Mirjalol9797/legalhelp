@@ -1,0 +1,118 @@
+.questions__page-wrapper {
+    background-color: black;
+    font-family: $Nunito;
+}
+
+.questions__page-header {
+    font-family: $Cantata;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 61px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.question__item {
+    display: flex;
+    max-width: 1080px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding-left: 33px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-right: 35px;
+    margin-bottom: 20px;
+    &-title{
+font-weight: bold;
+font-size: 16px;
+line-height: 22px;
+    }
+    &-text{
+        font-size: 16px;
+line-height: 22px;
+margin-bottom: 0;
+    }
+}
+
+.question__meta {
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+
+    &-inner {
+        text-align: center;
+        max-width: 100px;
+        width: 100%;
+
+    }
+
+    &-time {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    &-calendar {
+        display: block;
+        margin-bottom: 15px;
+    }
+}
+.question__item-info{
+    margin-left: 33px;
+    margin-right: 45px;
+}
+.question__further{
+max-width: 116px;
+width: 100%;
+text-align: center;
+    &-info{
+        font-size: 12px;
+        line-height: 16px;
+        color: #626262;
+    }
+    .price__btn{
+        margin-bottom: 14px;
+    }
+    .question__user{
+        background-image: url("../images/user.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        margin-bottom: 9px;
+    }
+    .question__place{
+        background-repeat: no-repeat;
+        background-image: url("../images/location.svg");
+        background-size: contain;
+        display: block;
+        padding-left: 10px;
+    }
+
+}
+.vue__star{
+    font-size: 20px;
+    label:hover{
+        cursor: pointer;
+    }
+}
+
+.pagination__menu{
+    display: flex;
+    justify-content: center;
+    .page-item{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .page-link{
+        background: #FFC805;
+        border-radius: 5px;
+        border: none;   
+        color: #0028AA;
+    }
+    .page-item.active .page-link{
+        background-color: #00aced !important;
+        box-shadow: 0 0 5px rgb(0, 172, 237) ;
+    }
+}

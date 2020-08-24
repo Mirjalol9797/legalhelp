@@ -17,3 +17,22 @@ a{
 input:focus,input:active,button:active,button:focus{
     box-shadow: none !important;
 }
+.question__btn{
+    background: #0028AA;
+    border-radius: 4px;
+    border: none;
+    white-space: nowrap;
+    padding: 3px 19px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+font-size: 14px;
+line-height: 19px;
+    &{
+        &:active,
+        &:focus,
+        &:hover {
+            background-color: #00aced !important;
+            box-shadow: 0 0 5px rgb(0, 172, 237) ;
+        }
+    }
+}

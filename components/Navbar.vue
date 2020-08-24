@@ -1,7 +1,8 @@
 <template>
     <div>
-        <div class="navbar__wrapper">
-            <b-navbar toggleable="lg" class="navbar__dark">
+        <div class="navbar__wrapper navbar__dark" >
+                  <div class="container">
+            <b-navbar toggleable="lg">
     <b-navbar-brand href="#">
         <div class="navbar__logo">
             <img src="../assets/images/Ресурс 15.png" alt="">
@@ -33,7 +34,9 @@
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
+      </div>
+           <!-- /.navbarwrapper --> 
         </div>
-        <!-- /.navbarwrapper -->
+        
     </div>
 </template>
