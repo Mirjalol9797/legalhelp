@@ -35,24 +35,103 @@
 h3.legaltech{
     font-size: 24px !important;
 }
+
+//lawyer
+.lawyer__inner{
+padding-left: 40px !important;
+padding-right: 40px !important;
 }
+.lawyer__middle-news-image{
+    img{
+        max-width: 180px !important;
+    }
+}
+//lawyer__outer
+
+
+}
+
+
+
+
+
+
+
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
 //footer media
-
+//questions
+.questions__page-header{
+    font-size: 36px !important;
+    padding-top: 53px !important;
+    margin-bottom: 53px !important;
+}
+//lawyer page
+.lawyer__wrapper{
+    &>.container{
+        padding-bottom: 60px !important;
+    }
+}
+.lawyer__heading{
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+    font-size: 36px !important;
+}
+.highlighted__text-inner{
+    font-size: 18px !important;
+   
+}
+.lawyer__text{
+    font-size: 18px !important;
+}
+.lawyer__middle-news-image{
+    img{
+        max-width: 250px !important;
+    }
+}
+//lawyer--outer
+.lawyer__outer-heading {
+    font-size: 36px !important;
+    padding: 30px 0;
+}
 
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) { 
-//footer media
+//footer medi
 .footer__menu{
     margin: 0 !important;
+}
+//questions
+.questions__page-header{
+    font-size: 48px !important;
+    padding-top: 53px !important;
+    margin-bottom: 53px !important;
 }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-
+//laweyer page
+.lawyer__inner{
+padding-left: 136px !important;
+padding-right: 136px !important;
+padding-top: 59px !important;
+padding-bottom: 109px !important;
+}
+.lawyer__middle-news-image{
+    img{
+        max-width: 396px !important;
+        width: 100% !important;
+        max-height: 288px !important;
+        height: auto !important;
+    }
+}
+//lawyer--outer
+.lawyer__outer-heading {
+    font-size: 48px !important;
+    padding: 70px 0 !important;
+}
 }
