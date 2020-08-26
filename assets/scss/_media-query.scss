@@ -3,6 +3,11 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
+//index
+.info__wrapper{
+  flex-direction: row !important;
+  align-items: flex-start !important;
+}
 
   //footer media 
   .footer {
@@ -124,6 +129,38 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+//index
+.main__form{
+  font-size: 18px !important;
+  input{
+    padding-top: 12px !important;
+    padding-bottom: 10px !important;
+  }
+}
+.textarea{
+  height: 230px !important;
+}
+.email{
+  margin-top: 0 !important;
+}
+.submit__btn{
+  margin-top: 20px !important;
+    padding: 14px 45px;
+
+}
+.form__heading{
+  font-size: 32px !important;
+}
+.form__motto{
+  font-size: 15px !important;
+}
+.info__content-heading{
+  font-size: 18px !important;
+}
+.info__content-tel{
+  font-size: 22px !important;
+}
+
 
   //footer medi
   .footer__menu {

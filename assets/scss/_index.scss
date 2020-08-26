@@ -1,0 +1,161 @@
+.main__page{
+	background-color: #000;
+}
+.header{
+	background:url("../images/index/main__bg.png") no-repeat,center,linear-gradient(15.11deg, #1C1B1E 18.87%, rgba(28, 27, 30, 0.66) 51.73%, rgba(28, 27, 30, 0.81) 90.79%);
+	height: 1000px;
+}
+.form__wrapper{
+	background: url("../images/questions/19608 1.png"),linear-gradient(315deg, #2d3436 0%, #000000 74%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: 1111;
+	&::before{
+		content:"";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.7);
+	}
+}
+
+.form__header{
+position: relative;
+font-family: $Cantata;
+margin-bottom: 50px;
+padding-left: 40px;
+&::before{
+	content: "";
+	position: absolute;
+	width: 3px;
+	left: 10px;
+	height: 71px;
+	background-color: rgba(176, 142, 68, 0.7);
+}
+&::after{
+	content: "";
+	position: absolute;
+	width: 3px;
+	left: 15px;
+	top: 0;
+	height: 71px;
+	background-color: rgba(176, 142, 68, 0.7);
+}
+}
+.form__heading{
+font-style: normal;
+font-weight: normal;
+font-size: 22px;
+line-height: 41px;
+color: #FFFFFF;
+}
+.form__motto{
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 19px;
+color: #C4C4C4;
+margin-bottom: 0;
+}
+.main__form{
+font-family: $Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 27px;
+color: #C1C1C1;
+	input{
+		width: 100%;
+		padding-top: 6px;
+		padding-bottom: 5px;
+		padding-left: 30px;
+		display: block;
+		margin-bottom: 14px;
+		background: rgba(241, 240, 240, 0.3);
+border-radius: 8px;
+color:#fff;
+border: 1px solid transparent;
+transition: all 0.3s ease;
+&:focus,&:active,.textarea{
+	outline: none;
+	border: 1px solid rgba(240, 46, 170,0.7);
+	}
+}
+.email{
+margin-top: 15px;
+}
+}
+.info__wrapper{
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	padding-left: 20px;
+	padding-top: 25px;
+	padding-right: 19px;
+	padding-bottom: 40px;
+	background: rgba(241, 240, 240, 0.3);
+border-radius: 8px;
+font-family: $Poppins;
+}
+.img__part{
+	img{
+		object-fit: contain;
+		max-width: 200px;
+		max-height: 220px;
+		width: 100%;
+		height: 100%;
+	}
+}
+.info__content{
+	margin-left: 30px;
+	&-heading{
+font-size: 16px;
+line-height: 27px;
+color: #FFFFFF;
+margin-bottom: 8px;
+	}
+	&-small{
+		font-size: 12px;
+		line-height: 18px;
+		color: #C1C1C1;
+		display: block;
+		margin-bottom: 17px;
+		width: 185px;
+	}
+	&-tel{
+font-weight: bold;
+font-size: 16px;
+line-height: 33px;
+	}
+	.phone{
+		color:rgb(240, 46, 170);
+	}
+}
+.textarea{
+	position: relative;
+	z-index: 11111111111;
+	width: 100%;
+	background: rgba(241, 240, 240, 0.3);
+border-radius: 8px;
+padding: 30px;
+border: 1px solid transparent;
+display: block;
+height: 160px;
+resize: none;
+color: #fff;
+&:focus,&:active{
+	outline: none;
+	border: 1px solid rgba(240, 46, 170,0.7);
+	}
+
+}
+.submit__btn{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	position: relative;
+	z-index: 11111;
+
+	    padding: 10px 35px;
+}
