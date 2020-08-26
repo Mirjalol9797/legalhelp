@@ -2,53 +2,70 @@
 // No media query for `xs` since this is the default in Bootstrap
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { 
-//footer media 
-.footer{
+@media (min-width: 576px) {
+
+  //footer media 
+  .footer {
     padding-top: 100px !important;
     padding-bottom: 82px !important;
-}
-.footer__motto{
+  }
+
+  .footer__motto {
     font-size: 18px !important;
     margin-top: 29px !important;
-}
-.footer__menu{
+  }
+
+  .footer__menu {
     text-align: left !important;
     margin: 25px 0 !important;
-    &-list{
-        margin-top: 18px !important;
+
+    &-list {
+      margin-top: 18px !important;
     }
-    &-link{
-        font-size: 16px !important;
+
+    &-link {
+      font-size: 16px !important;
     }
-}
-.footer__item{
+  }
+
+  .footer__item {
     margin-right: 80px !important;
     text-align: left !important;
-}
-.other__item{
+  }
+
+  .other__item {
     text-align: left !important;
-}
-.social__footer-list{
+  }
+
+  .social__footer-list {
     justify-content: flex-start !important;
-}
-h3.legaltech{
+  }
+
+  h3.legaltech {
     font-size: 24px !important;
-}
+  }
 
-//lawyer
-.lawyer__inner{
-padding-left: 40px !important;
-padding-right: 40px !important;
-}
-.lawyer__middle-news-image{
-    img{
-        max-width: 180px !important;
+  //lawyer
+  .lawyer__inner {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .lawyer__middle-news-image {
+    img {
+      max-width: 180px !important;
     }
-}
-//lawyer__outer
+  }
+
+  //lawyer__outer
 
 
+  //news
+  .news__heading {
+    font-size: 32px !important;
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+  }
 }
 
 
@@ -59,79 +76,109 @@ padding-right: 40px !important;
 
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { 
-//footer media
-//questions
-.questions__page-header{
+@media (min-width: 768px) {
+
+  //footer media
+  //questions
+  .questions__page-header {
     font-size: 36px !important;
     padding-top: 53px !important;
     margin-bottom: 53px !important;
-}
-//lawyer page
-.lawyer__wrapper{
-    &>.container{
-        padding-bottom: 60px !important;
+  }
+
+  //lawyer page
+  .lawyer__wrapper {
+    &>.container {
+      padding-bottom: 60px !important;
     }
-}
-.lawyer__heading{
+  }
+
+  .lawyer__heading {
     padding-top: 28px !important;
     padding-bottom: 28px !important;
     font-size: 36px !important;
-}
-.highlighted__text-inner{
+  }
+
+  .highlighted__text-inner {
     font-size: 18px !important;
-   
-}
-.lawyer__text{
+
+  }
+
+  .lawyer__text {
     font-size: 18px !important;
-}
-.lawyer__middle-news-image{
-    img{
-        max-width: 250px !important;
+  }
+
+  .lawyer__middle-news-image {
+    img {
+      max-width: 250px !important;
     }
-}
-//lawyer--outer
-.lawyer__outer-heading {
+  }
+
+  //lawyer--outer
+  .lawyer__outer-heading {
     font-size: 36px !important;
     padding: 30px 0;
-}
+  }
 
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) { 
-//footer medi
-.footer__menu{
+@media (min-width: 992px) {
+
+  //footer medi
+  .footer__menu {
     margin: 0 !important;
-}
-//questions
-.questions__page-header{
+  }
+
+  //questions
+  .questions__page-header {
     font-size: 48px !important;
     padding-top: 53px !important;
     margin-bottom: 53px !important;
-}
+  }
+
+  //news
+  .news__heading {
+    font-size: 48px !important;
+    padding-bottom: 60px !important;
+    padding-top: 60px !important;
+  }
+    .news__content{
+        padding-right: 15px !important;
+    }
+  .main__news-link {
+    img {
+      max-width: 702px !important;
+    }
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-//laweyer page
-.lawyer__inner{
-padding-left: 136px !important;
-padding-right: 136px !important;
-padding-top: 59px !important;
-padding-bottom: 109px !important;
-}
-.lawyer__middle-news-image{
-    img{
-        max-width: 396px !important;
-        width: 100% !important;
-        max-height: 288px !important;
-        height: auto !important;
+
+  //laweyer page
+  .lawyer__inner {
+    padding-left: 136px !important;
+    padding-right: 136px !important;
+    padding-top: 59px !important;
+    padding-bottom: 109px !important;
+  }
+
+  .lawyer__middle-news-image {
+    img {
+      max-width: 396px !important;
+      width: 100% !important;
+      max-height: 288px !important;
+      height: auto !important;
     }
-}
-//lawyer--outer
-.lawyer__outer-heading {
+  }
+
+  //lawyer--outer
+  .lawyer__outer-heading {
     font-size: 48px !important;
     padding: 70px 0 !important;
-}
+  }
+
+  //news
+
 }

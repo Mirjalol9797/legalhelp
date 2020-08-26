@@ -1,16 +1,207 @@
-.questions__innner-wrapper{
-background-color: #1c1b1e;
+.questions__inner-wrapper {
+  background-color: #c2c2c2;
 }
-.left-arrow-link{
-    display: inline-block;
-    img{
-        padding-left: 15px;
+
+.left-arrow-link {
+  display: inline-block;
+  margin-top: 84px;
+  margin-bottom: 42px;
+
+  img {
+    padding-left: 15px;
+  }
+}
+
+.questions__inner {
+  max-width: 1080px;
+  width: 100%;
+  background-color: #fff;
+  padding-left: 30px;
+  padding-right: 24px;
+}
+
+.questions__overview-wrapper {
+  max-width: 1080px;
+  width: 100%;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.questions__overview {
+  display: flex;
+  font-family: $Nunito;
+  padding-top: 45px;
+  padding-right: 20px;
+  padding-left: 30px;
+
+  &-meta {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+
+    &-time {
+      margin-bottom: 10px;
+      background-image: url("../images/time.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      padding-left: 25px;
+      display: block;
     }
+
+    &-calendar {
+      background-image: url("../images/calendar.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      padding-left: 25px;
+    }
+  }
+
+  &-rate {
+    max-width: 114px;
+    width: 100%;
+  }
+
+  .price__btn {
+    background: #B08E44;
+    margin-bottom: 10px;
+  }
+
+  .question__user {
+    margin-bottom: 5px;
+    display: block;
+    background-image: url("../images/yellowuser.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 20px;
+  }
+
+  .question__place {
+    background-image: url("../images/yellow location.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 20px;
+  }
+
 }
-.questions__inner{
-    max-width: 1080px;
-    width:100%;
-    background-color: #fff;
-    padding-left: 30px;
-    padding-right: 24px;
+.answer__margin{
+	padding-bottom: 70px;
+}
+.questions__overview-content {
+  font-family: $Nunito;
+  font-size: 16px;
+  line-height: 22px;
+  margin-right: 50px;
+  margin-left: 20px;
+
+  &-heading {
+    font-weight: bold;
+  }
+}
+.questions__category {
+  font-family: $Nunito;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  border-top: 1px solid #B08E44;
+  padding-top: 15px;
+
+  .category__type {
+    display: inline-block;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    background-image: url("../images/ion_bookmarks-outline.svg");
+  }
+
+  span {
+    font-weight: normal;
+  }
+}
+.questions__answer{
+font-family:$Nunito;
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 49px;
+color: #fff;
+margin-top: 40px;
+margin-bottom: 40px;
+}
+
+.answer__wrapper{
+	max-width: 1080px;
+	width: 100%;
+	display: flex;
+	background: #FFFFFF;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+	padding-bottom: 70px;
+}
+.lawyer__section{
+	max-width: 150px;
+	width: 100%;
+	padding-top: 40px;
+	margin-left: 40px;
+	font-family: $Nunito;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 22px;
+	color: #000000;
+	text-align: center;
+	img{
+		margin-bottom: 15px;
+		display: inline-block;
+	}
+	.user__name{
+    display: block;
+    background-image: url("../images/yellowuser.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 20px;
+	}
+  .user__location {
+    background-image: url("../images/yellow location.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+	padding-left: 25px;
+    display: block;
+  }
+  &-meta{
+font-family: $Nunito;
+font-size: 16px;
+line-height: 22px;
+color: #000000;
+margin-top: 40px;
+  	&-time{
+  		display: inline-block;
+  		background-image: url("../images/time.svg");
+  		background-repeat: no-repeat;
+  		background-size: contain;
+  		padding-left: 25px;
+  		margin-bottom: 4px;
+  	}
+  	&-calendar{
+  		display: inline-block;
+  		background-image: url("../images/calendar.svg");
+  		background-repeat: no-repeat;
+  		background-size: contain;
+  		padding-left: 25px;
+  	}
+  }
+}
+
+.answer__text{
+font-family: $Nunito;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 22px;
+padding: 40px;
+max-width: 803px;
+width: 100%;
 }
