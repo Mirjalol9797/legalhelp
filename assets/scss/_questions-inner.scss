@@ -1,14 +1,15 @@
 .questions__inner-wrapper {
-  background-color: #c2c2c2;
+  background: #E5E5E5;
 }
 
 .left-arrow-link {
   display: inline-block;
-  margin-top: 84px;
-  margin-bottom: 42px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   img {
     padding-left: 15px;
+    background-size: 100%;
   }
 }
 
@@ -29,7 +30,7 @@
 }
 
 .questions__overview {
-  display: flex;
+  display: block;
   font-family: $Nunito;
   padding-top: 45px;
   padding-right: 20px;
@@ -39,7 +40,7 @@
     font-family: Nunito;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 22px;
 
     &-time {
@@ -91,10 +92,10 @@
 }
 .questions__overview-content {
   font-family: $Nunito;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
-  margin-right: 50px;
-  margin-left: 20px;
+margin-left: 5px;
+margin-right: 5px;
 
   &-heading {
     font-weight: bold;
@@ -125,11 +126,11 @@
 font-family:$Nunito;
 font-style: normal;
 font-weight: 600;
-font-size: 36px;
+font-size: 30px;
 line-height: 49px;
 color: #fff;
-margin-top: 40px;
-margin-bottom: 40px;
+margin-top: 20px;
+margin-bottom: 20px;
 }
 
 .answer__wrapper{
@@ -145,35 +146,37 @@ margin-bottom: 40px;
 	max-width: 150px;
 	width: 100%;
 	padding-top: 40px;
-	margin-left: 40px;
+	margin-left: 5px;
 	font-family: $Nunito;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 15px;
+	font-size: 13px;
 	line-height: 22px;
 	color: #000000;
 	text-align: center;
 	img{
 		margin-bottom: 15px;
 		display: inline-block;
+    width: 80px;
+    height: 80px;
 	}
 	.user__name{
     display: block;
     background-image: url("../images/yellowuser.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    padding-left: 20px;
+    padding-left: 0;
 	}
   .user__location {
     background-image: url("../images/yellow location.svg");
     background-repeat: no-repeat;
     background-size: contain;
-	padding-left: 25px;
+	padding-left: 0;
     display: block;
   }
   &-meta{
 font-family: $Nunito;
-font-size: 16px;
+font-size: 12px;
 line-height: 22px;
 color: #000000;
 margin-top: 40px;
@@ -199,9 +202,16 @@ margin-top: 40px;
 font-family: $Nunito;
 font-style: normal;
 font-weight: normal;
-font-size: 16px;
+font-size: 14px;
 line-height: 22px;
-padding: 40px;
+padding: 10px;
 max-width: 803px;
 width: 100%;
+}
+
+.mobile__question-overview{
+  margin-bottom: 20px;
+  .questions__overview-meta{
+    margin-right: 40px;
+  }
 }

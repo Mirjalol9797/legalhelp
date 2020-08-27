@@ -138,22 +138,47 @@
       <!-- news__main-page -->
 
       <!-- questions part -->
-      <div class="questions__wrapper">
+      <div class="questions__index-wrapper">
         <b-container>
           <span class="questions__part-line"></span>
           <h2 class="questions__part-heading">Savollar</h2>
           <div class="questions__block">
             <!-- switch -->
-            <div class="questions__block-item">
+            <div class="questions__block-item" v-for="i of 4" :key="i">
              <div class="questions__block-time">
                <span>9:16</span>
                <span>23.07.2020</span>
              </div>
+             <div class="questions__block-btn">
              <b-button class="question__btn">2ta javob</b-button>
+               
+             </div>
              <div class="questions__block-content">
                <h6 class="questions__block-content-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h6>
                <p class="questions__block-content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur </p>
              </div>
+             <div class="questions__block-ranking">
+               <div class="questions__block-ranking-star">
+                            <vue-stars
+                  class="vue__star"
+                  name="rate"
+                  active-color="#FFC805"
+                  inactive-color="#282932"
+                  shadow-color="#FFC805"
+                  hover-color="#00aced"
+                  :max="5"
+                  :value="1"
+                  :readonly="false"
+                  char="★"
+                />
+               </div>
+               <b-button class="question__btn">20000 so’m</b-button>
+             </div>
+            </div>
+            <div class="questions__block-more">
+              <b-button class="questions__block-more-btn">
+                Barcha savollar
+              </b-button>
             </div>
           </div>
         </b-container>

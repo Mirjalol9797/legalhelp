@@ -515,6 +515,7 @@ color: #C1C1C1;
   }
 }
 .swiper__wrapper{
+  padding-bottom: 75px;
   padding-top: 75px;
 
 }
@@ -558,5 +559,114 @@ margin-left: 75px;
     width: 2px;
     left: 25px;
     background-color:rgba(176, 142, 68, 0.7);
+  }
+}
+//questions
+.questions__index-wrapper{
+  background-image: url("../../assets/images/index/questionpart.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 75px;
+}
+.questions__block-item{
+  background: #1C1B1E;
+border: 0.2px solid #FFFFFF;
+border-radius: 10px;
+display: flex;
+color: #fff;
+max-width: 1080px;
+width: 100%;
+font-family: $Poppins;
+padding-top: 31px;
+padding-left: 40px;
+padding-right: 40px;
+padding-bottom: 35px;
+margin-bottom: 15px;
+}
+.questions__block-more{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  &-btn{
+font-family: $Cantata;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 30px;
+color: #FFFFFF;
+border-radius: 8px;
+display: block;
+padding-top: 9px;
+padding-bottom: 11px;
+width: 600px;
+background-color: #33b5e5 !important;
+transition: all 0.3s ease;
+&:hover{
+  box-shadow: 0 0 5px #33b5e5;
+  background-color: #33b5e5;
+  }
+}
+}
+.questions__block-btn{
+  margin-left: 20px;
+  margin-right: 40px;
+  margin-top: 25px;
+}
+.questions__block-time{
+font-size: 16px;
+line-height: 24px;
+color: #FFFFFF;
+max-width:83px;
+padding-top: 15px;
+}
+.questions__block-content{
+  max-width: 640px;
+  &-heading{
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 22px;
+color: #FFFFFF;
+  }
+  &-text{
+font-size: 12px;
+line-height: 18px;
+color: #CDCDCD;
+  }
+}
+.questions__part-heading{
+font-family: $Cantata;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 61px;
+color: #FFFFFF;
+text-align: center;
+padding-top: 40px;
+}
+.questions__part-line{
+  position: relative;
+  height: 103px;
+  width: 2px;
+  background-color: rgba(176, 142, 68, 0.7);
+  display: block;
+  left:50%;
+  &::before{
+    content: "";
+    position: absolute;
+      height: 103px;
+  width: 2px;
+  left: -25px;
+  background-color: rgba(176, 142, 68, 0.7);
+
+  }
+   &::after{
+    content: "";
+    position: absolute;
+      height: 103px;
+  width: 2px;
+  left: 25px;
+  background-color: rgba(176, 142, 68, 0.7);
+
   }
 }
