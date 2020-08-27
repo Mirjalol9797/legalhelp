@@ -3,8 +3,48 @@
 }
 
 .header {
-  background: url("../images/index/main__bg.png") no-repeat, center, linear-gradient(15.11deg, #1C1B1E 18.87%, rgba(28, 27, 30, 0.66) 51.73%, rgba(28, 27, 30, 0.81) 90.79%);
-  height: 1000px;
+  // linear-gradient(to bottom, rgba(0,0,0,0.9)),
+  background:url("../images/index/main__bg.png") no-repeat center center;
+}
+
+.header__heading{
+font-family: $Cantata;
+font-style: normal;
+font-weight: normal;
+font-size: 54px;
+line-height: 69px;
+color: #FFFFFF;
+width: 741px;
+margin-bottom: 47px;
+}
+.header__motto{
+font-family: $Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 15px;
+line-height: 22px;
+color: #FFFFFF;
+width: 662px;
+margin-bottom: 56px;
+}
+@keyframes example {
+  from {transform:translateX(0px);}
+  to {transform:translateX(15px);}
+}
+.online__service-link{
+font-family: $Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 18px;
+color: #FFFFFF;
+transition: all 0.3s ease;
+img{
+  margin-left: 10px;
+   animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
 }
 
 .form__wrapper {
@@ -322,6 +362,7 @@ font-weight: normal;
 color: #FFFFFF;
 display: flex;
 align-items: center;
+margin-bottom: 60px;
 	&-heading{
 font-size: 40px;
 line-height: 51px;
@@ -347,7 +388,5 @@ color: #C1C1C1;
 	}
 
 }
-.swiper-wrapper{
-	display: flex;
-	// justify-content: center;
-}
+
+

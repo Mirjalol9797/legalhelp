@@ -2,6 +2,11 @@
   <div>
     <div class="main__page">
       <header class="header">
+        <b-container>
+          <h1 class="header__heading">Ishonchli, Sifatli, Onlayn Yuridik xizmatlar</h1>
+          <p class="header__motto">Professional yuristlar xizmatidan onlayn foydalaning. O`z savolingizni yozing va bir necha soat ichida javob oling. </p>
+          <nuxt-link to="" class="online__service-link">ONLINE XIZMAT <img src="../assets/images/index/Arrow.svg" alt="arrow"></nuxt-link>
+        </b-container>
       </header>
       <div class="solve__with-us">
       	<b-container>
