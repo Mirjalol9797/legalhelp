@@ -3,6 +3,218 @@
     <div class="main__page">
       <header class="header">
       </header>
+      <div class="solve__with-us">
+      	<b-container>
+      		<div class="solve__with-us-header">
+      			<span class="line"></span>
+      			<div class="solve__with-us-heading">Muammolaringiz Yechimi Biz Bilan</div>
+      		<span class="solve__with-us-motto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+      		</div>
+      		
+      		<b-row>
+      			<b-col lg="3" md="6" sm="6">
+      				<div class="problem__item">
+      					<div class="problem__item-number">
+      						35 ta
+      					</div>
+      					<span class="problem__item-lawyer">Malakali yuristlar</span>
+      				</div>
+      			</b-col>
+      			<b-col lg="3" md="6" sm="6">
+      				<div class="problem__item">
+      					<div class="problem__item-number">
+      						487 ta
+      					</div>
+      					<span class="problem__item-lawyer">Muvaffaqqiyatli ishlar</span>
+      				</div>
+      			</b-col>
+      			<b-col lg="3" md="6" sm="6">
+      				<div class="problem__item">
+      					<div class="problem__item-number">
+      						367 ta
+      					</div>
+      					<span class="problem__item-lawyer">Xursand mijozlar</span>
+      				</div>
+      			</b-col>
+      			<b-col lg="3" md="6" sm="6">
+      				<div class="problem__item">
+      					<div class="problem__item-number">
+      						542 ta
+      					</div>
+      					<span class="problem__item-lawyer">Umumiy ishlar</span>
+      				</div>
+      			</b-col>
+      		</b-row>
+      	</b-container>
+      </div>
+
+
+      <div class="news__main-page">
+      	<b-container>
+      		<div class="news__main-page-header">
+      			<span class="news__main-page-header-heading">Yangiliklar</span>
+      			<span class="news__main-page-header-motto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+      		</div>
+      		<b-row>
+      			<b-col lg="4" md="6" sm="6" v-for="item of 3" :key="item" class="align-items-stretch">
+      			<div class="news__item">
+      				<nuxt-link to="" class="news__item-link">
+      				<img src="../assets/images/news/news1.jpg" alt=""
+      				>
+      				<div class="news__item-content">
+      					<h6 class="news__item-content-title">Lorem ipsum dolor si amet , consectetur adipiscing elit</h6>
+      					<p class="news__item-content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.</p>
+      					<div class="news__item-content-meta">
+      						<span class="news__item-content-meta-calendar">14.07.2020</span>
+      						<span class="news__item-content-meta-view">156</span>
+      					</div>
+      					<div class="more__btn">
+      						<b-button type="button" class="question__btn">Batafsil</b-button>
+      					</div>
+      				</div>
+      			</nuxt-link>
+      			</div>
+      		</b-col>
+      		<div class="all__news">
+      		<b-button class="question__btn all__news-btn">Barcha yangiliklar</b-button>
+      		</div>
+      		</b-row>
+      	</b-container>
+      </div><!-- news__main-page -->
+
+
+
+
+       <swiper ref="mySwiper" :options="swiperOptions">
+    <swiper-slide>
+    	<nuxt-link to="" class="swiper__link">
+    		<div class="lawyer__card">
+                            <div class="lawyer__card-img">
+                                <img src="../assets/images/lawyer-card/member1.jpg" alt="">
+                            </div>
+                            <div class="lawyer__card-info text-center">
+                                <div class="lawyer__card-name">John Smith</div>
+                                <span class="lawyer__card-place">Toshkent shahri</span>
+                                <p class="lawyer__card-category">Kategoriya : <span>Korporativ yurist</span></p>
+                                <span class="lawyer__card-rating">Reyting: <span>4.0</span>
+                                <vue-stars
+                  class="vue__star"
+                  name="rate"
+                  active-color="#0028AA"
+                  inactive-color="#282932"
+                  shadow-color="##0028AA"
+                  hover-color="#00aced"
+                  :max="1"
+                  :value="1"
+                  :readonly="false"
+                  char="★"
+                />
+                                </span>
+                                <div class="lawyer__card-success">Muvaffaqiyatli ishlar soni  <span class="lawyer__card-success-count">16</span></div>
+                            </div>
+                        </div>
+    	</nuxt-link>
+    </swiper-slide>
+    <div class="swiper-button-prev" slot="button-prev"></div>
+    <div class="swiper-button-next" slot="button-next"></div>
+  </swiper>
+
+  	<div class="our__service">
+  		<b-container>
+  			<div class="our__service-header">
+  					<h1 class="our__service-heading">Bizning Xizmatlarimiz</h1>
+  			<span class="our__service-motto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+  			</div>
+  		
+  			<b-row>
+  				<b-col lg="3" md="4" sm="6">
+  					<div class="our__service-item">
+  						<nuxt-link to="" class="our__service-item-link">
+  							<img src="../assets/images/our-service/service1.png" alt="">
+  							<div class="our__service-item-type">
+  								Oilaviy munosabatlar
+  							</div>
+  						</nuxt-link>
+  					</div>
+  				</b-col>
+  				<b-col lg="3" md="4" sm="6">
+  					<div class="our__service-item">
+  						<nuxt-link to="" class="our__service-item-link">
+  							<img src="../assets/images/our-service/service2.png" alt="">
+  							<div class="our__service-item-type">
+  								Mehnat munosabatlari
+  							</div>
+  						</nuxt-link>
+  					</div>
+  				</b-col>
+  				<b-col lg="3" md="4" sm="6">
+  					<div class="our__service-item">
+  						<nuxt-link to="" class="our__service-item-link">
+  							<img src="../assets/images/our-service/service3.png" alt="">
+  							<div class="our__service-item-type">
+  								Jinoyat huquqi
+  							</div>
+  						</nuxt-link>
+  					</div>
+  				</b-col>
+  				<b-col lg="3" md="4" sm="6">
+  					<div class="our__service-item">
+  						<nuxt-link to="" class="our__service-item-link">
+  							<img src="../assets/images/our-service/service4.png" alt="">
+  							<div class="our__service-item-type">
+  								Tadbirkorlik
+  							</div>
+  						</nuxt-link>
+  					</div>
+  				</b-col>
+  				<b-col lg="3" md="4" sm="6">
+  					<div class="our__service-item">
+  						<nuxt-link to="" class="our__service-item-link">
+  							<img src="../assets/images/our-service/service5.png" alt="">
+  							<div class="our__service-item-type">
+  								Fuqarolik huquqi
+  							</div>
+  						</nuxt-link>
+  					</div>
+  				</b-col>
+  				<b-col lg="3" md="4" sm="6">
+  					<div class="our__service-item">
+  						<nuxt-link to="" class="our__service-item-link">
+  							<img src="../assets/images/our-service/service6.png" alt="">
+  							<div class="our__service-item-type">
+  								Migratsiya
+  							</div>
+  						</nuxt-link>
+  					</div>
+  				</b-col>
+  				<b-col lg="3" md="4" sm="6">
+  					<div class="our__service-item">
+  						<nuxt-link to="" class="our__service-item-link">
+  							<img src="../assets/images/our-service/service7.png" alt="">
+  							<div class="our__service-item-type">
+  								Mol-mulk huquqi
+  							</div>
+  						</nuxt-link>
+  					</div>
+  				</b-col>
+  				<b-col lg="3" md="4" sm="6">
+  					<div class="our__service-item">
+  						<nuxt-link to="" class="our__service-item-link">
+  							<img src="../assets/images/our-service/service8.png" alt="">
+  							<div class="our__service-item-type">
+  								Boshqalar
+  							</div>
+  						</nuxt-link>
+  					</div>
+  				</b-col>
+  			</b-row>
+  		</b-container>
+  	</div>
+
+
+
+
+
       <div class="form__wrapper">
         <b-container>
           <div class="form__header">
@@ -48,6 +260,7 @@
       <!-- /.form__wrapper -->
     </div>
     <!-- /.main__page -->
+
   </div>
 </template>
 <script>
@@ -59,4 +272,55 @@ export default {
   }
 }
 
+</script>
+<script>
+  export default {
+    name: 'carrousel',
+    data() {
+      return {
+        swiperOptions: {
+       	slidesPerView: 3,
+          spaceBetween: 30,
+          loop: true,
+          autoplay:true,
+   navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          },
+          // Some Swiper option/callback...
+            breakpoints: {
+          320: {
+            slidesPerView: 1,
+          },
+          530: {
+            slidesPerView: 1,
+          },
+          620: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1100: {
+            slidesPerView: 3,
+          },
+          1250: {
+            slidesPerView: 3,
+ 
+            
+          },
+        },
+        }
+      }
+    },
+    computed: {
+      swiper() {
+        return this.$refs.mySwiper.$swiper
+      }
+    },
+    mounted() {
+      console.log('Current Swiper instance object', this.swiper)
+      this.swiper.slideTo(3, 1000, false)
+    }
+  }
 </script>

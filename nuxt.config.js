@@ -37,6 +37,7 @@ export default {
   */
   plugins: [
     { src: '~/plugins/rate.js', ssr: false},
+    { src: '~/plugins/swiper.js', mode: 'client' },
   ],
   /*
   ** Auto import components

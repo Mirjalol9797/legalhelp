@@ -130,6 +130,55 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
 //index
+.solve__with-us-header{
+  margin-bottom: 100px !important;
+}
+.solve__with-us-heading{
+   font-size: 40px !important;
+    line-height: 51px !important;
+     margin-bottom: 39px !important;
+}
+.solve__with-us-motto{
+   font-size: 18px !important;
+}
+.problem__item{
+    padding-top: 22px !important;
+  padding-bottom: 26px !important;
+  margin-bottom: 0 !important;
+    width: 220px !important;
+  &-number{
+    font-size: 36px !important;
+  }
+  &-lawyer{
+    font-size: 14px !important;
+  }
+}
+.our__service{
+  margin-bottom: 150px !important;
+  &-header{
+margin-bottom: 80px !important;
+  }
+  &-heading{
+    font-size: 48px !important; 
+line-height: 61px !important;
+margin-bottom: 45px !important;
+  }
+  &-motto{
+    font-size: 18px !important;
+  }
+}
+.our__service-item{
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+  &-type{
+    font-size: 16px !important;
+    padding-top: 23px !important;
+    padding-bottom: 23px !important;
+  }
+}
+
+
+
 .main__form{
   font-size: 18px !important;
   input{
