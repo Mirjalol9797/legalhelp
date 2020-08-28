@@ -83,7 +83,112 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-
+//index//
+.header__content{
+   padding-top: 150px !important;
+  padding-bottom: 300px !important;
+  position: relative;
+  z-index: 11;
+   &::after{
+    content: "";
+    position: absolute;
+    left: -53px;
+    top: 70px;
+    z-index: -1;
+    width: 319px !important;
+    height: 461px !important;
+    border: 10px solid rgba(176, 142, 68, 0.7);
+  }
+  .header__heading{
+    font-size: 32px !important;
+  }
+}
+.header__motto{
+  font-size: 15px !important;
+}
+.about__service-heading{
+  font-size: 32px !important;
+}
+.about__service-text{
+  font-size: 16px !important;
+}
+.line{
+  height: 103px !important;
+  width: 2px !important;
+  left:50%; 
+  &::before{
+    width: 2px !important;
+    height: 107px !important;
+    left:25px !important;
+  }
+  &::after{
+    width: 2px !important;
+    height: 107px !important;
+    left:-25px !important;
+  }
+}
+.news__main-page-line{
+  height: 103px !important;
+  width: 2px !important;
+  &::before{
+    width: 2px !important;
+    height: 103px !important;
+    left: 25px !important;
+  }
+  &::after{
+    width: 2px !important;
+    height: 103px !important;
+    left: 50px !important;
+  }
+}
+.questions__part-line{
+  height: 103px !important;
+  width: 2px !important;
+  left:50% !important;
+  &::before{
+    height: 103px !important;
+  width: 2px !important;
+  left: -25px !important;
+  }
+   &::after{
+      height: 103px !important;
+  width: 2px !important;
+  left: 25px !important;
+    }
+}
+.questions__block-time{
+font-size: 16px !important;
+}
+.questions__part-heading{
+  font-size: 48px !important;
+  line-height: 61px !important;
+  padding-top: 40px !important;
+  margin-bottom: 0 !important;
+}
+.questions__block-item{
+  padding-top: 31px !important;
+padding-left: 40px !important;
+padding-right: 40px !important;
+padding-bottom: 35px !important;
+display: flex !important;
+}
+.news__main-page-header{
+  margin-top: 50px !important;
+  display: flex !important;
+  margin-bottom: 60px !important;
+  &-heading{
+    font-size: 40px !important;
+  }
+  &-motto{
+    font-size: 18px !important;
+  }
+}
+.news__main-page{
+  margin-top: 100px !important;
+}
+.how__we-work-heading{
+  font-size: 32px !important;
+}
   //footer media
   //questions
   .questions__page-header {
@@ -237,12 +342,58 @@
   .highlighted__text {
     padding: 20px !important;
   }
+  .questions__block-more{
+    font-size: 24px !important;
+    &-btn{
+
+    }
+  }
+  .swiper__header{
+    display: flex !important;
+    .swper__heading{
+      margin-right: 80px !important;
+      margin-left: 75px !important;
+      font-size: 36px !important;
+    }
+    .swiper__motto{
+      font-size: 18px !important;
+    }
+  }
+  
+  .about__service-img{
+  max-width: 320px !important;
+}
+.lawyer__user{
+  margin-bottom: 0 !important;
+}
+.about__service-text{
+  margin-bottom: 50px !important;
+}
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-
+  .img-box{
+    width: 170px !important;
+    height: 170px !important;
+  }
+.swiper__heading{
+  font-size: 48px !important;
+}
   //index
+  .about__service-heading{
+  font-size: 40px !important;
+  line-height: 51px !important;
+  margin-bottom: 40px !important;
+}
+.about__service-text{
+  font-size: 18px !important;
+}
+  .header__content{
+    .header__heading{
+      font-size: 54px !important;
+    }
+  }
   .solve__with-us-header {
     margin-bottom: 100px !important;
   }
@@ -371,6 +522,12 @@
       max-width: 702px !important;
     }
   }
+  .how__we-work-heading{
+  font-size: 48px !important;
+}
+.how__we-work-text{
+  font-size: 18px !important;
+}
 }
 
 // Extra large devices (large desktops, 1200px and up)

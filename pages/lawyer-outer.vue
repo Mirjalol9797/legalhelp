@@ -1,7 +1,8 @@
 <template>
     <div>
         <div class="lawyer__outer">
-            <b-container>
+          <div class="lawyer__outer-inner">
+             <b-container>
                 <h1 class="lawyer__outer-heading">Yuristlar</h1>
                     <div class="lawyer__outer-list">
                         <b-row>
@@ -37,6 +38,8 @@
                     </div>
             </b-container>
               
+          </div>
+           
         </div>
         <!-- /.lawyer__outer -->
     </div>

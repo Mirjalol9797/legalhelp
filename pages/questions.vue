@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="questions__page-wrapper">
-      <div class="container">
+      <div class="questions__page-wrapper-inner">
+        <div class="container">
         <h1 class="questions__page-header">Savollar</h1>
         <div class="questions__wrapper">
           <div class="question__item" v-for="i of 9" :key="i">
@@ -89,6 +90,8 @@
           last-text="Oxiri"
         ></b-pagination>
       </div>
+      </div>
+      
     </div>
     <!-- /.questions__wrapper -->
   </div>

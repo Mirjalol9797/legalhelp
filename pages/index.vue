@@ -145,17 +145,14 @@
           <div class="questions__block">
             <!-- switch -->
             <div class="questions__block-item" v-for="i of 4" :key="i">
-             <div class="questions__block-time">
+              <div class="questions__block-item-mobile d-block d-md-none">
+                <div class="questions__block-item-mobile-inner">
+                  <div class="questions__block-time ">
                <span>9:16</span>
                <span>23.07.2020</span>
              </div>
              <div class="questions__block-btn">
-             <b-button class="question__btn">2ta javob</b-button>
-               
-             </div>
-             <div class="questions__block-content">
-               <h6 class="questions__block-content-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h6>
-               <p class="questions__block-content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur </p>
+             <b-button class="question__btn">2ta javob</b-button> 
              </div>
              <div class="questions__block-ranking">
                <div class="questions__block-ranking-star">
@@ -174,6 +171,41 @@
                </div>
                <b-button class="question__btn">20000 so’m</b-button>
              </div>
+                </div>
+                   <div class="questions__block-content">
+               <h6 class="questions__block-content-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h6>
+               <p class="questions__block-content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur </p>
+             </div>
+
+              </div>
+             <div class="questions__block-time d-none d-md-block">
+               <span>9:16</span>
+               <span>23.07.2020</span>
+             </div>
+             <div class="questions__block-btn d-none d-md-block">
+             <b-button class="question__btn">2ta javob</b-button> 
+             </div>
+             <div class="questions__block-content d-none d-md-block">
+               <h6 class="questions__block-content-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h6>
+               <p class="questions__block-content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur </p>
+             </div>
+             <div class="questions__block-ranking d-none d-md-block">
+               <div class="questions__block-ranking-star">
+                            <vue-stars
+                  class="vue__star"
+                  name="rate"
+                  active-color="#FFC805"
+                  inactive-color="#282932"
+                  shadow-color="#FFC805"
+                  hover-color="#00aced"
+                  :max="5"
+                  :value="1"
+                  :readonly="false"
+                  char="★"
+                />
+               </div>
+               <b-button class="question__btn d-none d-md-block">20000 so’m</b-button>
+             </div>
             </div>
             <div class="questions__block-more">
               <b-button class="questions__block-more-btn">
@@ -184,12 +216,45 @@
         </b-container>
       </div>
       <!-- end of question part -->
+      <div class="how__we-work">
+        <b-container>
+        <span class="line-dashed d-none d-lg-block"></span>
+          <h3 class="how__we-work-heading">Biz qanday ishlaymiz</h3>
+          <p class="how__we-work-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <b-row>
+            <b-col lg="4">
+              <div class="how__we-work-item message">
+                <div class="img-box">
+                <img src="../assets/images/index/eva_message-circle-outline.svg" alt="">
+              </div>
+              <span>Savol bering</span>
+              </div>
+            </b-col>
+             <b-col lg="4">
+              <div class="how__we-work-item archieve">
+                <div class="img-box">
+                <img src="../assets/images/index/ri_inbox-archive-line.svg" alt="">
+              </div>
+              <span>Savol bering</span>
+              </div>
+            </b-col>
+             <b-col lg="4">
+              <div class="how__we-work-item subway">
+                <div class="img-box">
+                <img src="../assets/images/index/subway_like.svg" alt="">
+              </div>
+              <span>Savol bering</span>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
+      </div>
 <div class="swiper__wrapper">
   <b-container>
     <div class="swiper__header">
       <span class="swiper__motto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
       <h4 class="swiper__heading">Yuristlar</h4>
-      <span class="line__swiper"></span>
+      <span class="line__swiper d-none d-md-block"></span>
     </div>
     <b-row>
       <b-col xl="12">
@@ -418,7 +483,7 @@ export default {
     return {
       swiperOptions: {
         spaceBetween: 30,
-        // loop: true,
+        loop: true,
         autoplay: true,
         navigation: {
           nextEl: ".swiper-button-next",
