@@ -33,8 +33,73 @@
           				</ul>
           			</div>
           		</b-col>
+          		<b-col lg="4">
+          			<div class="registration__three-big-item">
+          				<span class="registration__three-big-item-header">
+          					V.I.P 25000 so’m
+          				</span>
+          				<ul class="registration__three-item-list">
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor sit amet
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor sit amet
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor sit amet
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor sit amet
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor sit amet
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor sit amet
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor sit amet
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor sit amet
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor sit amet
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor sit amet
+          					</li>
+
+          				</ul>
+          			</div>
+          		</b-col>
+          		<b-col lg="4">
+          			<div class="registration__three-item">
+          				<span class="registration__three-item-header">V.I.P 15000 so’m</span>
+          				<ul class="registration__three-item-list">
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor
+          					</li>
+          					<li class="registration__three-item-item">
+          						Lorem ipsum dolor
+          					</li>
+          				</ul>
+          			</div>
+          		</b-col>
           	</b-row>
           </div>
+          <div class="registration__three-btn-wrap">
+          	<b-button class="registration__three-btn">Davom etish</b-button>
+          </div>	
         </div>
       </b-container>
     </div>

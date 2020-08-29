@@ -3,12 +3,17 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	padding-top: 100px;
+	padding-bottom: 100px;
 	.registration__three{
 		max-width:950px;
 		width:100%;
 		margin: 0 auto;
 		background: rgba(241, 240, 240, 0.3);
 		border-radius: 8px;
+	}
+	.registration__three-card-wrapper{
+		padding-top: 20px;
 	}
 	.registration__three-item{
 		max-width: 250px;
@@ -54,8 +59,47 @@
 				background-size: contain;
 				z-index: 11111111;
 			}
-
 			}
 		}
+	}
+}
+.registration__three-big-item{
+	background: #3D3D3D;
+	border-radius: 6px;
+	max-width: 300px;
+	width:100%;
+	margin: 20px auto;
+	padding-left: 19px;
+	padding-right: 19px;
+	padding-top: 20px;
+	height: 455px;
+	top: 0;
+	&-header{
+		text-align: center;
+		font-family: $Cantata;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 25px;
+		color: #FFFFFF;
+		display: block;
+		padding-bottom: 11px;
+		border-bottom: 0.5px solid #A2A2A2;
+	}
+		ul li{
+			font-family: $Nunito;
+			font-size: 14px !important;
+			line-height: 19px;
+			color: #FFFFFF;
+		}
+}
+.registration__three-btn-wrap{
+	text-align: center;
+	margin-top: 20px;
+	padding-bottom: 20px;
+	.registration__three-btn{
+		background: #B08E44;
+		border-radius: 4px;
+		padding: 8px 18px;
 	}
 }
