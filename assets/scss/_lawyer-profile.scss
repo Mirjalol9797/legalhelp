@@ -1,0 +1,53 @@
+.lawyer-profile-wrapper {
+  background-image: url("../images/index/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 100px;
+  padding-top: 50px;
+
+  .lawyer-profile {
+    background: #F1F0F0;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-left: 40px;
+    padding-bottom: 50px;
+    padding-right: 40px;
+  }
+
+  .profile-info {
+    margin-top: 60px;
+    margin-left: 0;
+  }
+
+  .lawyer-image-wrapper {
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+
+    img {
+      display: inline-block;
+      margin-bottom: 10px;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 3px solid #B08E44;
+    }
+  }
+
+  .lawyer-profile-text {
+    font-family: $Nunito;
+    font-size: 14px;
+    line-height: 25px;
+    color: #000000;
+    margin-top: 15px;
+  }
+}
+
+.lawyer-profile__star {
+  font-size: 20px;
+}
