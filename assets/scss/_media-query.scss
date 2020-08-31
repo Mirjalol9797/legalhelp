@@ -781,6 +781,12 @@
     padding-bottom: 120px !important;
     }
 
+    &-item-second{
+      &::before{
+        visibility: visible !important;
+      }
+    }
+
 }
 
 // Extra large devices (large desktops, 1200px and up)

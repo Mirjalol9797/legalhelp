@@ -34,7 +34,9 @@
                 <b-dropdown-item href="#">EN</b-dropdown-item>
               </b-nav-item-dropdown>
               <nuxt-link to="">
-                <font-awesome-icon :icon="['fab', 'user']" />
+                 <nuxt-link to="" class="user__link">
+                <img src="../assets/images/index/user.png" alt="">
+              </nuxt-link>
               </nuxt-link>
             </b-navbar-nav>
           </b-collapse>

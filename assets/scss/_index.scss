@@ -164,6 +164,7 @@ img{
   background: url("../images/index/bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 100px;
 }
 
 .form__header {
@@ -877,6 +878,7 @@ color: #C1C1C1;
       height: 245px;
       left: -247px;
       top: -54px;
+      visibility: hidden;
       z-index: -1;
       background-image: url("../images/index/search.svg");
       background-repeat: no-repeat;
@@ -901,6 +903,7 @@ color: #C1C1C1;
       border: 10px solid rgba(176, 142, 68, 0.1);
       width: 355px;
       height: 245px;
+      visibility: hidden;
       right: -262px;
       top: -36px;
       z-index: -1;
