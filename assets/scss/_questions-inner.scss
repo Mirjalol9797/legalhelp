@@ -136,7 +136,7 @@ margin-bottom: 20px;
 .answer__wrapper{
 	max-width: 1080px;
 	width: 100%;
-	display: flex;
+	display: block;
 	background: #FFFFFF;
 	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
 	border-radius: 8px;
@@ -181,15 +181,14 @@ line-height: 22px;
 color: #000000;
 margin-top: 40px;
   	&-time{
-  		display: inline-block;
+  		display: block;
   		background-image: url("../images/time.svg");
   		background-repeat: no-repeat;
   		background-size: contain;
-  		padding-left: 25px;
   		margin-bottom: 4px;
   	}
   	&-calendar{
-  		display: inline-block;
+  		display: block;
   		background-image: url("../images/calendar.svg");
   		background-repeat: no-repeat;
   		background-size: contain;

@@ -14,11 +14,11 @@
 }
 
 .news__header {
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   overflow: hidden;
 
   .container {
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
     background: #FFFFFF;
   }
 }
@@ -79,6 +79,8 @@
 
 .main__news-link {
   display: block;
+  max-height: 380px;
+  height: 100%;
 
   img {
     max-width: 100%;
@@ -90,6 +92,10 @@
 
 .news__list {
   margin-top: 50px;
+  background-image: url("../images/index/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
 }
 .news__item{
 	display: flex;

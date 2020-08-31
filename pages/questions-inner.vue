@@ -1,17 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div>
-        <div class="questions__inner-wrapper">
-            <b-container>
-                  <nuxt-link to="" class="left-arrow-link">
-                <img src="../assets/images/left-arrow.svg" alt="">
-            </nuxt-link>
-            <div class="questions__inner">
-                
-            </div>
-            </b-container>
-          
-=======
   <div>
     <div class="questions__inner-wrapper">
       <b-container>
@@ -60,7 +47,6 @@
           <div class="questions__category">
             <p class="category__type">Savol kategoriyasi : <span>Fuqarolik huquqi (umumiy masalalar)</span></p>
           </div>
->>>>>>> 74828aea46524fb5763ef8bcb994ae15cc048245
         </div>
         <!-- /.questions__overview-wrapper -->
         <h2 class="questions__answer">Javob</h2>

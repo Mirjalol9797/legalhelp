@@ -18,7 +18,8 @@
               <h2 class="about__service-heading">Ishonchli, Sifatli, Onlayn Yuridik xizmatlar</h2>
               <p class="about__service-text">Issue outcomes innovation, justice, emerging to philanthropy. Improve the world, global empower communities replicable incubator innovate. Uplift, cocreation blended value empower communities, we must stand up empathetic circular boots on the ground. Segmentation, targeted cocreate academic blended value transparent innovation compelling support.</p>
               <div class="lawyer__user">
-                Aziza Abdurakhmonova
+                <img src="../assets/images/lawyer.jpg" alt="">
+               <span class="lawyer__user-name">Aziza Abdurakhmonova</span>  
               </div>
             </b-col>
             <b-col lg="6">
@@ -397,6 +398,34 @@
           </b-row>
         </b-container>
       </div>
+    <div class="our__other-services">
+      <b-container>
+        <div class="our__other-services-header">
+          <h2 class="our__other-services-title">Boshqa xizmatlar</h2>
+          <p class="our__other-services-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
+        <div class="our__other-services-list">
+          <div class="our__other-services-item">
+            <h4 class="our__other-services-item-title">Telefon konsultatsiya</h4>
+            <p class="our__other-services-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+              <div class="our__other-services-item-btn-wrap">
+                <b-button class="our__other-services-price">50 ming sum </b-button>
+                <b-button class="our__other-services-use">Foydalanish</b-button>
+              </div>
+          </div>
+           <div class="our__other-services-item-second ml-auto">
+            <h4 class="our__other-services-item-title">Hujjat buyurtma qilish</h4>
+            <p class="our__other-services-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+              <div class="our__other-services-item-btn-wrap">
+                <b-button class="our__other-services-price">50 ming sum </b-button>
+                <b-button class="our__other-services-use">Foydalanish</b-button>
+              </div>
+          </div>
+        </div>
+      </b-container>
+    </div>
+    <!-- /.our__other-services -->
+
 
       <div class="form__wrapper">
         <b-container>

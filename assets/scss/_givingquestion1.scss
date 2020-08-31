@@ -2,6 +2,7 @@
   background-color: #1c1b1e;
   background-image: url("../images/index/bg2.jpg");
   background-repeat: no-repeat;
+  background-size: 100%;
   background-position: center top;
 }
 .registration__header{
@@ -58,13 +59,14 @@ padding-right: 30px;
       background: #FFFFFF;
       border-radius: 4px;
       margin-bottom: 30px;
-      border: 1px solid transparent;
+      border: 2px solid transparent;
       outline: none;
       transition: all 0.3s ease;
 
       &:active,
       &:focus {
-        border: 1px solid red;
+        border: 2px solid rgb(176, 142, 68);
+        outline: none;
       }
     }
 
@@ -102,8 +104,8 @@ padding-right: 30px;
       display: block;
       text-align: center;
       font-size: 20px;
-      padding-top: 3px;
-      height: 38px;
+      padding-top: 5px;
+      height: 40px;
       padding-left: 10px;
       padding-right: 10px;
       background: #B08E44;
@@ -122,6 +124,7 @@ padding-right: 30px;
        -moz-appearance:none; /* Firefox */
     -webkit-appearance:none; /* Safari and Chrome */
     appearance:none;
+    height: 40px;
     background-image: url("../images/registration/down-arrow.svg");
     background-repeat: no-repeat;
     background-size: 14px;

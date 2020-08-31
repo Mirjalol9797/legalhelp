@@ -1,9 +1,12 @@
+
 .main__page {
-  background-color: #1c1b1e;
+  background-color: #1C1B1E;
 }
 
 .header {
   background:url("../images/index/main__bg.jpg") no-repeat center center;
+  background-size: 100%;
+  background-position-y: -200px;
 }
 .header__content{
   padding-top: 150px;
@@ -105,11 +108,23 @@ margin-bottom: 20px;
   }
 }
 .lawyer__user{
-font-size: 20px;
-line-height: 25px;
-color: #B08E44;
+display: flex;
+align-items: center;
 margin-bottom: 100px;
-
+img{
+  max-width: 77px;
+  width:100%;
+  max-height: 77px;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  margin-right: 20px;
+}
+&-name{
+  font-size: 20px;
+  line-height: 25px;
+  color: #B08E44;
+}
 }
 .about__service-img-wrap{
   position: relative;
@@ -149,16 +164,6 @@ margin-bottom: 100px;
   background: url("../images/index/bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  z-index: 1111;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
 }
 
 .form__header {
@@ -212,6 +217,23 @@ margin-bottom: 100px;
   line-height: 27px;
   color: #C1C1C1;
 
+  
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #C1C1C1;
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #C1C1C1;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #C1C1C1;
+}
   input {
     width: 100%;
     padding-top: 6px;
@@ -224,7 +246,7 @@ margin-bottom: 100px;
     color: #fff;
     border: 1px solid transparent;
     transition: all 0.3s ease;
-
+    
     &:focus,
     &:active,
     .textarea {
@@ -524,6 +546,10 @@ color: #C1C1C1;
 .swiper__wrapper{
   padding-bottom: 75px;
   padding-top: 75px;
+  background-image: url("../images/index/bg3.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom -20px;
 
 }
 .swiper__header{
@@ -571,6 +597,7 @@ margin-left: 75px;
 //questions
 .questions__index-wrapper{
   background-image: url("../../assets/images/index/questionpart.jpg");
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   padding-bottom: 75px;
@@ -785,3 +812,122 @@ display: inline-block;
   margin: 0 auto;
    top: 268px;
 }
+
+
+//our other services
+.our__other-services{
+  .container{
+    background-image: url("../images/index/law.svg");
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+  &-header{
+    max-width: 700px;
+    width:100%;
+    font-family: $Cantata;
+    color: #FFFFFF;
+  }
+  &-title{   
+font-size: 48px;
+line-height: 61px;
+  }
+  &-text{
+font-size: 18px;
+line-height: 23px;
+color: #C1C1C1;
+  }
+  &-price{
+    border:none;
+    border: 3px solid #B08E44;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: #B08E44;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: transparent;
+  }
+  &-use{
+    background: #B08E44;
+    padding-top: 11px;
+    padding-bottom: 10px;
+    border:none;
+  }
+  &-list{
+
+  }
+  .active{
+  
+  }
+  &-item-second{
+    padding-top: 17px;
+    padding-left: 30px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    max-width:517px;
+    width:100%;
+    background: #FFFFFF;
+    border-radius: 10px;
+    position: relative;
+    z-index: 11;
+    &::before{
+      content:"";
+      position: absolute;
+      border: 10px solid rgba(176, 142, 68, 0.1);
+      width: 355px;
+      height: 245px;
+      left: -247px;
+      top: -54px;
+      z-index: -1;
+      background-image: url("../images/index/search.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  &-item{
+    margin-bottom: 70px;
+    padding-top: 17px;
+    padding-left: 30px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    max-width:517px;
+    width:100%;
+    background: #FFFFFF;
+    border-radius: 10px;
+    position: relative;
+    z-index: 11;
+    &::after{
+      content:"";
+      position: absolute;
+      border: 10px solid rgba(176, 142, 68, 0.1);
+      width: 355px;
+      height: 245px;
+      right: -262px;
+      top: -36px;
+      z-index: -1;
+      background-image: url("../images/index/phone-call.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &-btn-wrap{
+font-family: $Cantata;
+font-size: 20px;
+line-height: 25px;
+text-align: right;
+    }
+    &-title{
+      font-family: $Cantata;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+color: #1C1B1E;
+    }
+    &-text{
+font-family: $Poppins;
+font-size: 15px;
+line-height: 22px;
+color: #3D3D3D;
+    }
+  }
+}
+

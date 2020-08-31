@@ -12,7 +12,7 @@
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
           <b-collapse id="nav-collapse" is-nav>
-            <b-navbar-nav class="ml-auto align-items-center">
+            <b-navbar-nav class="align-items-center">
               <b-nav-item href="#" class="nav__link">Yangiliklar</b-nav-item>
               <b-nav-item href="#" class="nav__link">Savollar</b-nav-item>
               <b-nav-item href="#" class="nav__link">Yuristlar</b-nav-item>
@@ -33,6 +33,9 @@
                 <b-dropdown-item href="#">RU</b-dropdown-item>
                 <b-dropdown-item href="#">EN</b-dropdown-item>
               </b-nav-item-dropdown>
+              <nuxt-link to="">
+                <font-awesome-icon :icon="['fab', 'user']" />
+              </nuxt-link>
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
