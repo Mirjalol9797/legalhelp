@@ -1,16 +1,217 @@
-.questions__innner-wrapper{
-background-color: #1c1b1e;
+.questions__inner-wrapper {
+  background: #E5E5E5;
 }
-.left-arrow-link{
-    display: inline-block;
-    img{
-        padding-left: 15px;
+
+.left-arrow-link {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  img {
+    padding-left: 15px;
+    background-size: 100%;
+  }
+}
+
+.questions__inner {
+  max-width: 1080px;
+  width: 100%;
+  background-color: #fff;
+  padding-left: 30px;
+  padding-right: 24px;
+}
+
+.questions__overview-wrapper {
+  max-width: 1080px;
+  width: 100%;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.questions__overview {
+  display: block;
+  font-family: $Nunito;
+  padding-top: 45px;
+  padding-right: 20px;
+  padding-left: 30px;
+
+  &-meta {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 22px;
+
+    &-time {
+      margin-bottom: 10px;
+      background-image: url("../images/time.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      padding-left: 25px;
+      display: block;
     }
+
+    &-calendar {
+      background-image: url("../images/calendar.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      padding-left: 25px;
+    }
+  }
+
+  &-rate {
+    max-width: 114px;
+    width: 100%;
+  }
+
+  .price__btn {
+    background: #B08E44;
+    margin-bottom: 10px;
+  }
+
+  .question__user {
+    margin-bottom: 5px;
+    display: block;
+    background-image: url("../images/yellowuser.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 20px;
+  }
+
+  .question__place {
+    background-image: url("../images/yellow location.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 20px;
+  }
+
 }
-.questions__inner{
-    max-width: 1080px;
-    width:100%;
-    background-color: #fff;
-    padding-left: 30px;
-    padding-right: 24px;
+.answer__margin{
+	padding-bottom: 70px;
+}
+.questions__overview-content {
+  font-family: $Nunito;
+  font-size: 14px;
+  line-height: 22px;
+margin-left: 5px;
+margin-right: 5px;
+
+  &-heading {
+    font-weight: bold;
+  }
+}
+.questions__category {
+  font-family: $Nunito;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  border-top: 1px solid #B08E44;
+  padding-top: 15px;
+
+  .category__type {
+    display: inline-block;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    background-image: url("../images/ion_bookmarks-outline.svg");
+  }
+
+  span {
+    font-weight: normal;
+  }
+}
+.questions__answer{
+font-family:$Nunito;
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 49px;
+color: #fff;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.answer__wrapper{
+	max-width: 1080px;
+	width: 100%;
+	display: flex;
+	background: #FFFFFF;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+	padding-bottom: 70px;
+}
+.lawyer__section{
+	max-width: 150px;
+	width: 100%;
+	padding-top: 40px;
+	margin-left: 5px;
+	font-family: $Nunito;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 22px;
+	color: #000000;
+	text-align: center;
+	img{
+		margin-bottom: 15px;
+		display: inline-block;
+    width: 80px;
+    height: 80px;
+	}
+	.user__name{
+    display: block;
+    background-image: url("../images/yellowuser.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 0;
+	}
+  .user__location {
+    background-image: url("../images/yellow location.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+	padding-left: 0;
+    display: block;
+  }
+  &-meta{
+font-family: $Nunito;
+font-size: 12px;
+line-height: 22px;
+color: #000000;
+margin-top: 40px;
+  	&-time{
+  		display: inline-block;
+  		background-image: url("../images/time.svg");
+  		background-repeat: no-repeat;
+  		background-size: contain;
+  		padding-left: 25px;
+  		margin-bottom: 4px;
+  	}
+  	&-calendar{
+  		display: inline-block;
+  		background-image: url("../images/calendar.svg");
+  		background-repeat: no-repeat;
+  		background-size: contain;
+  		padding-left: 25px;
+  	}
+  }
+}
+
+.answer__text{
+font-family: $Nunito;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 22px;
+padding: 10px;
+max-width: 803px;
+width: 100%;
+}
+
+.mobile__question-overview{
+  margin-bottom: 20px;
+  .questions__overview-meta{
+    margin-right: 40px;
+  }
 }

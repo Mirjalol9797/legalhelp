@@ -1,12 +1,13 @@
 <template>
     <div>
         <div class="lawyer__outer">
-            <b-container>
+          <div class="lawyer__outer-inner">
+             <b-container>
                 <h1 class="lawyer__outer-heading">Yuristlar</h1>
                     <div class="lawyer__outer-list">
                         <b-row>
                             <b-col md="6" lg="4" xl="3" v-for="i of 12" :key="i" >
-                                <div class="lawyer__card">
+                                <a href="#" class="lawyer__card">
                             <div class="lawyer__card-img">
                                 <img src="../assets/images/lawyer-card/member1.jpg" alt="">
                             </div>
@@ -30,13 +31,15 @@
                                 </span>
                                 <div class="lawyer__card-success">Muvaffaqiyatli ishlar soni  <span class="lawyer__card-success-count">16</span></div>
                             </div>
-                        </div>
+                        </a>
                             </b-col>
                         </b-row>
                          
                     </div>
             </b-container>
               
+          </div>
+           
         </div>
         <!-- /.lawyer__outer -->
     </div>

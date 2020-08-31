@@ -13,10 +13,10 @@
 
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav class="ml-auto align-items-center">
-              <b-nav-item href="#">Yangiliklar</b-nav-item>
-              <b-nav-item href="#">Savollar</b-nav-item>
-              <b-nav-item href="#">Yuristlar</b-nav-item>
-              <b-nav-item href="#">Xizmatlar</b-nav-item>
+              <b-nav-item href="#" class="nav__link">Yangiliklar</b-nav-item>
+              <b-nav-item href="#" class="nav__link">Savollar</b-nav-item>
+              <b-nav-item href="#" class="nav__link">Yuristlar</b-nav-item>
+              <b-nav-item href="#" class="nav__link">Xizmatlar</b-nav-item>
               <b-nav-item href="#">
                 <b-button class="header__btn">Savol bering</b-button>
               </b-nav-item>
