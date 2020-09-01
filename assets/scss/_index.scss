@@ -165,6 +165,7 @@ img{
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .form__header {
@@ -252,7 +253,7 @@ img{
     &:active,
     .textarea {
       outline: none;
-      border: 1px solid rgba(240, 46, 170, 0.7);
+      border: 1px solid #00aced;
     }
   }
 
@@ -310,7 +311,7 @@ img{
   }
 
   .phone {
-    color: rgb(240, 46, 170);
+    color: #00aced;
   }
 }
 
@@ -330,7 +331,7 @@ img{
   &:focus,
   &:active {
     outline: none;
-    border: 1px solid rgba(240, 46, 170, 0.7);
+    border: 1px solid #00aced;
   }
 
 }
@@ -536,10 +537,22 @@ color: #C1C1C1;
 	}
 
 }
+
+.swiper-button-prev:after, .swiper-button-next:after{
+  font-size: 22px !important;
+}
 .swiper-button-prev, .swiper-button-next {
-  top: 43% !important;
+  top: 42% !important;
+  left: -7px;
+  border:1px solid #17206A;
+  border-radius:50%;
+  width: 32px !important;
+  height: 32px !important;
+  box-shadow: 1px -3px 5px 0 rgba(0, 0, 0, 0.24);
+  background-color: #ffffff;
 }
 .swiper-slide{
+  text-align: center;
   .lawyer__card{
     margin-bottom: 0;
   }
@@ -684,6 +697,34 @@ line-height: 18px;
 color: #CDCDCD;
   }
 }
+.questions__switch-wrapper{
+  max-width: 1080px;
+  width:100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.questions__switch{
+  max-width: 200px;
+  width:100%;
+  display: flex;
+  background: #F1F0F0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  &-link{
+    display: block;
+    font-family: $Nunito;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+    padding: 9px 28px;
+  }
+  &-link-active{
+    border-radius: 8px;
+    background-color: #B08E44;
+  }
+}
 .questions__part-heading{
 font-family: $Cantata;
 font-style: normal;
@@ -692,6 +733,7 @@ font-size: 28px;
 color: #FFFFFF;
 text-align: center;
 padding-top: 20px;
+padding-bottom: 20px;
 margin-bottom: 15px;
 }
 .questions__part-line{
@@ -829,11 +871,11 @@ display: inline-block;
     color: #FFFFFF;
   }
   &-title{   
-font-size: 48px;
+font-size: 32px;
 line-height: 61px;
   }
   &-text{
-font-size: 18px;
+font-size: 16px;
 line-height: 23px;
 color: #C1C1C1;
   }
@@ -843,21 +885,41 @@ color: #C1C1C1;
     box-sizing: border-box;
     border-radius: 8px;
     color: #B08E44;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     background-color: transparent;
   }
   &-use{
     background: #B08E44;
-    padding-top: 11px;
-    padding-bottom: 10px;
+    padding-top: 6px;
+    padding-bottom: 5px;
     border:none;
   }
-  &-list{
-
+  &-phone{
+    position: absolute;
+    border: 10px solid rgba(176, 142, 68, 0.1);
+    width: 300px;
+    height: 245px;
+    right: -262px;
+    top: -36px;
+      z-index: -1;
+    background-image: url("../images/index/phone-call.svg");
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
   }
-  .active{
-  
+  &-search{
+    position: absolute;
+    border: 10px solid rgba(176, 142, 68, 0.1);
+    width: 300px;
+    height: 245px;
+    left: -247px;
+    top: -54px;
+    z-index: -1;
+    background-image: url("../images/index/search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px;
   }
   &-item-second{
     padding-top: 17px;
@@ -870,20 +932,6 @@ color: #C1C1C1;
     border-radius: 10px;
     position: relative;
     z-index: 11;
-    &::before{
-      content:"";
-      position: absolute;
-      border: 10px solid rgba(176, 142, 68, 0.1);
-      width: 355px;
-      height: 245px;
-      left: -247px;
-      top: -54px;
-      visibility: hidden;
-      z-index: -1;
-      background-image: url("../images/index/search.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-    }
   }
   &-item{
     margin-bottom: 70px;
@@ -897,37 +945,25 @@ color: #C1C1C1;
     border-radius: 10px;
     position: relative;
     z-index: 11;
-    &::after{
-      content:"";
-      position: absolute;
-      border: 10px solid rgba(176, 142, 68, 0.1);
-      width: 355px;
-      height: 245px;
-      visibility: hidden;
-      right: -262px;
-      top: -36px;
-      z-index: -1;
-      background-image: url("../images/index/phone-call.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-    }
     &-btn-wrap{
-font-family: $Cantata;
-font-size: 20px;
-line-height: 25px;
 text-align: right;
+button{
+  font-family: $Cantata;
+  font-size: 16px;
+  line-height: 25px;
+}
     }
     &-title{
       font-family: $Cantata;
 font-style: normal;
 font-weight: normal;
-font-size: 30px;
+font-size: 22px;
 line-height: 38px;
 color: #1C1B1E;
     }
     &-text{
 font-family: $Poppins;
-font-size: 15px;
+font-size: 12px;
 line-height: 22px;
 color: #3D3D3D;
     }

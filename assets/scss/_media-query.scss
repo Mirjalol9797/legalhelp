@@ -11,7 +11,8 @@
   }
 
   //footer media 
-  .footer {
+  
+  .footer,.index-footer {
     padding-top: 100px !important;
     padding-bottom: 82px !important;
   }
@@ -103,6 +104,11 @@
       line-height: 61px !important;
     }
   }
+  .lawyer__middle-news-image{
+    img{
+        max-width: 140px !important;
+    }
+}
 
   
 }
@@ -486,18 +492,12 @@
   .lawyer-profile-wrapper {
     padding-bottom: 230px !important;
     padding-top: 95px !important;
-
-    .profile-info {
-      margin-top: 100px !important;
-      margin-left: 30px !important;
-    }
   }
 
   .lawyer-image-wrapper {
-    width: 258px !important;
-    height: 258px !important;
-
     img {
+      max-width: 258px !important;
+      max-height: 258px !important;
       border: 6px solid #B08E44 !important;
     }
   }
@@ -549,7 +549,34 @@
     padding-top: 60px !important;
     padding-bottom: 80px !important;
     }
-
+    .payment__bill{
+      font-size: 24px !important;
+    }
+    .our__other-services-title{
+      font-size: 48px !important;
+    }
+    .our__other-services-text{
+      font-size: 18px !important;
+    }
+    .our__other-services-item-title{
+      font-size: 30px !important;
+    }
+    .our__other-services-item-text{
+      font-size: 15px !important;
+    }
+    .our__other-services-item-btn-wrap{
+      button{
+        font-size: 20px !important;
+      }
+      .our__other-services-price{
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+      }
+      .our__other-services-use{
+        padding-top: 11px !important;
+        padding-bottom: 10px !important;
+      }
+    }
 }
 
 
@@ -780,11 +807,9 @@
     padding-top: 90px !important;
     padding-bottom: 120px !important;
     }
-
-    &-item-second{
-      &::before{
-        visibility: visible !important;
-      }
+    .index-footer-item{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     }
 
 }

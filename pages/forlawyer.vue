@@ -28,7 +28,7 @@
                 </select>
                         </b-col>
                         <b-col lg="3">
-                            <input type="file" class="file__for-lawyers">
+                            <input type="file" class="file__for-lawyers" title="">
                         </b-col>
                          <b-col lg="4" class="text-center">
                             <textarea name="textearea__for-lawyers" class="textearea__for-lawyers" id="" placeholder="Write your bio here:  "></textarea>
