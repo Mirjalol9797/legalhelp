@@ -38,7 +38,7 @@
       				>
       				<div class="news__item-content">
       					<h6 class="news__item-content-title">Lorem ipsum dolor si amet , consectetur adipiscing elit</h6>
-      					<p class="news__item-content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.</p>
+      					<p class="news__item-content-text"> penatibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.</p>
       					<div class="news__item-content-meta">
       						<span class="news__item-content-meta-calendar">14.07.2020</span>
       						<span class="news__item-content-meta-view">156</span>

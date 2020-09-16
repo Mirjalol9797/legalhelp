@@ -8,7 +8,7 @@
               <div class="footer__logo">
                 <nuxt-link to class="footer__logo-link">
                   <img src="../assets/images/Ресурс 15.png" alt="logo web page" />
-                  <span class="legaltech">LegalTech</span>
+                  <span class="legaltech">LegalHelp</span>
                 </nuxt-link>
               </div>
               <div
@@ -19,25 +19,25 @@
           </b-col>
           <b-col lg="4">
             <div class="footer__menu">
-              <h3 class="legaltech">LegalTech</h3>
+              <h3 class="legaltech">LegalHelp</h3>
               <ul class="footer__menu-list">
                 <li class="footer__menu-item">
                   <nuxt-link to class="footer__menu-link">Loyiha haqida</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to class="footer__menu-link">Yangiliklar</nuxt-link>
+                  <nuxt-link to="/news" class="footer__menu-link">Yangiliklar</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to class="footer__menu-link">Savollar</nuxt-link>
+                  <nuxt-link to="/questions" class="footer__menu-link">Savollar</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to class="footer__menu-link">Biz qanday ishlaymiz?</nuxt-link>
+                  <nuxt-link to="/" class="footer__menu-link">Biz qanday ishlaymiz?</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to class="footer__menu-link">Yuristlar</nuxt-link>
+                  <nuxt-link to="/lawyers" class="footer__menu-link">Yuristlar</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to class="footer__menu-link">Bizning xizmatlarimiz</nuxt-link>
+                  <nuxt-link to="/our-services" class="footer__menu-link">Bizning xizmatlarimiz</nuxt-link>
                 </li>
               </ul>
             </div>

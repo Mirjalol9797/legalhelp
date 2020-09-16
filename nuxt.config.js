@@ -54,6 +54,8 @@ export default {
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
+    '@nuxtjs/axios',
+    '@nuxtjs/auth',
     'bootstrap-vue/nuxt',
     [
       'nuxt-fontawesome', {

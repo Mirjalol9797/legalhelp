@@ -36,17 +36,32 @@
                   <option value="o'zbek">O’zbek</option>
                   <option value="Rus">Rus</option>
                   <option value="Ingliz">Ingliz</option>
-                  <option value="o'zbek">O’zbek</option>
                 </select>
               </div>
               <div class="category">
                 <label for="language">Kategoriya</label>
                  <select name="" id="language">
-                  <option value="o'zbek">O’zbek</option>
-                  <option value="Rus">Rus</option>
-                  <option value="Ingliz">Ingliz</option>
-                  <option value="o'zbek">O’zbek</option>
-                </select>
+                  <option value="0" disabled selected>Savol turini tanlang</option>
+                    <option value="1">Fuqarolik huquqi (umumiy masalalar)</option>
+                    <option value="2">Mehnat munosabatlari</option>
+                    <option value="3">Fuqarolik / Migratsiya</option>
+                    <option value="4">Ta’lim</option>
+                    <option value="5">Tadbirkorlik (biznes huquqi)</option>
+                    <option value="6">Davlat xizmatlari</option>
+                    <option value="7">Oilaviy munosabatlar</option>
+                    <option value="8">Sog‘liqni saqlash</option>
+                    <option value="9">Jinoyat huquqi</option>
+                    <option value="10">Sud-huquq masalalari</option>
+                    <option value="11">Soliqlar</option>
+                    <option value="12">Transport (Avtomobil huquqi)</option>
+                    <option value="13">Qishloq xo‘jaligi</option>
+                    <option value="14">Uy-joy va kommunal masalalari</option>
+                    <option value="15">Ijtimoiy himoya</option>
+                    <option value="16">Yer masalalari</option>
+                    <option value="17">Bank sohasi</option>
+                    <option value="18">Iste’molchi huquqi</option>
+                    <option value="19">Meros</option>
+                 </select>
               </div>
               <div class="question__title">
                 <label for="question__title">Savol sarlavhasi</label>

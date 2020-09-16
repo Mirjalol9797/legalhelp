@@ -4,8 +4,8 @@
       <header class="header">
         <b-container>
           <div class="header__content">
-            <h1 class="header__heading">Ishonchli, Sifatli, Onlayn Yuridik xizmatlar</h1>
-          <p class="header__motto">Professional yuristlar xizmatidan onlayn foydalaning. O`z savolingizni yozing va bir necha soat ichida javob oling. </p>
+            <h1 class="header__heading">Ishonchli va sifatli online yuridik xizmatlar</h1>
+          <p class="header__motto">Malakali yuristlar xizmatidan foydalanib, muammoli savollarga asosli va sifatli javob oling. Ko’rsatilgan xizmat sizni qanoatlantirmasa, pulingiz 100% qaytarib beriladi. </p>
           <nuxt-link to="" class="online__service-link">ONLINE XIZMAT <img src="../assets/images/index/Arrow.svg" alt="arrow"></nuxt-link>
           </div>
         </b-container>
@@ -15,8 +15,10 @@
         <span class="about__service-line"></span>
           <b-row>
             <b-col lg="6">
-              <h2 class="about__service-heading">Ishonchli, Sifatli, Onlayn Yuridik xizmatlar</h2>
-              <p class="about__service-text">Issue outcomes innovation, justice, emerging to philanthropy. Improve the world, global empower communities replicable incubator innovate. Uplift, cocreation blended value empower communities, we must stand up empathetic circular boots on the ground. Segmentation, targeted cocreate academic blended value transparent innovation compelling support.</p>
+              <h2 class="about__service-heading">Tajribali yuristlar sizga yordam berishga tayyor.</h2>
+              <p class="about__service-text">"Dunyodagi eng buyuk ikki zolim: imkoniyat va vaqt"
+							<i>Ioxann Xerder</i> 
+</p>
               <div class="lawyer__user">
                 <img src="../assets/images/lawyer.jpg" alt="">
                <span class="lawyer__user-name">Aziza Abdurakhmonova</span>  
@@ -463,8 +465,8 @@
                     class="phone__number"
                     placeholder="Telefon raqamingiz"
                   />
-                  <input type="text" class="zip" placeholder="Postcode" />
-                  <input type="text" class="topic" placeholder="Topic" />
+                  
+                  <input type="text" class="topic" placeholder="Mavzu" />
                 </b-col>
                 <b-col lg="7" class=" order-1 order-lg-2">
                   <div class="info__wrapper">
@@ -505,75 +507,11 @@
       <!-- /.form__wrapper -->
     </div>
     <!-- /.main__page -->
-    <footer class="index__footer">
-      <b-container>
-        <b-row>
-          <b-col lg="4">
-            <div class="footer__item">
-              <div class="footer__logo">
-                <nuxt-link to class="footer__logo-link">
-                  <img src="../assets/images/Ресурс 15.png" alt="logo web page" />
-                  <span class="legaltech">LegalTech</span>
-                </nuxt-link>
-              </div>
-              <div
-                class="footer__motto"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              <!-- /.footer__motto -->
-            </div>
-             <ul class="social__footer-list">
-                    <li class="social__footer-item">
-                      <nuxt-link to class="social__footer-link social__footer-link-facebook">
-                        <font-awesome-icon :icon="['fab', 'facebook']" />
-                      </nuxt-link>
-                    </li>
-                    <li class="social__footer-item">
-                      <nuxt-link to class="social__footer-link social__footer-link-instagram">
-                        <font-awesome-icon :icon="['fab', 'instagram']" />
-                      </nuxt-link>
-                    </li>
-                    <li class="social__footer-item">
-                      <nuxt-link to class="social__footer-link social__footer-link-telegram">
-                        <font-awesome-icon :icon="['fab', 'telegram']" />
-                      </nuxt-link>
-                    </li>
-                     <li class="social__footer-item">
-                      <nuxt-link to class="social__footer-link social__footer-link-youtube">
-                        <font-awesome-icon :icon="['fab', 'youtube']" />
-                      </nuxt-link>
-                    </li>
-                  </ul>
-          </b-col>
-          <b-col lg="4">
-            <div class="index-footer-item">
-              <h4 class="index-footer-item-heading">Office Opening Hours</h4>
-              <ul class="working-hours">
-                <li class="working-hours-item">Monday...............08.00AM-05.00PM</li>
-                <li class="working-hours-item">Tuesday..............08.00AM-05.00PM</li>
-                <li class="working-hours-item">Wednesday......08.00AM-05.00PM </li>
-                <li class="working-hours-item">Thursday.............08.00AM-05.00PM</li>
-                <li class="working-hours-item">Friday....................08.00AM-05.00PM</li>
-                <li class="working-hours-item"> Saturday.............08.00AM-05.00PM</li>
-                <li class="working-hours-item">Sunday................Closed</li>
-                   
-              </ul>
-            </div>
-          </b-col>
-          <b-col lg="4">
-            <div class="index-address">
-              <h4 class="index-address-heading">Address</h4>
-              <span class="index-address-text">Lorem ipsum dolor 
-                sit amet, consectetur elit, </span>
-              <nuxt-link to="tel:+99893123-34-345" class="index-address-phone">+998 00 000 00 00</nuxt-link>
-            </div>
-          </b-col>
-        </b-row>
-      </b-container>
-      </footer>  
   </div>
 </template>
 <script>
 export default {
+  layout:'Footer-main',
   data() {
     return {};
   }
@@ -589,8 +527,8 @@ export default {
         spaceBetween: 30,
         centeredSlidesBounds:true,
         centerInsufficientSlides:true,
-        // loop: true,
-        // autoplay: true,
+        loop: true,
+        autoplay: true,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"

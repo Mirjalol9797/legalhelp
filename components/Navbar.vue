@@ -1,24 +1,25 @@
 <template>
   <div>
-    <div class="navbar__wrapper navbar__dark">
+    <div class="navbar__wrapper navbar__dark mx-auto ">
       <div class="container">
-        <b-navbar toggleable="xl">
-          <b-navbar-brand href="#">
+        <b-navbar toggleable="xl" >
+          <b-navbar-brand to="/">
             <div class="navbar__logo">
               <img src="../assets/images/Ресурс 15.png" alt />
-              <span class="legaltech">LegalTech</span>
+              <span class="legaltech">LegalHelp</span>
             </div>
           </b-navbar-brand>
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav class="align-items-center">
-              <b-nav-item href="#" class="nav__link">Yangiliklar</b-nav-item>
-              <b-nav-item href="#" class="nav__link">Savollar</b-nav-item>
-              <b-nav-item href="#" class="nav__link">Yuristlar</b-nav-item>
-              <b-nav-item href="#" class="nav__link">Xizmatlar</b-nav-item>
+              <b-nav-item to="/news" class="nav__link">Yangiliklar</b-nav-item>
+              <b-nav-item to="/questions" class="nav__link">Savollar</b-nav-item>
+              <b-nav-item to="/lawyers" class="nav__link">Yuristlar</b-nav-item>
+              <b-nav-item to="/our-services" class="nav__link">Xizmatlar</b-nav-item>
+              <b-nav-item to="/for-lawyers" class="nav__link">Yuristlar uchun</b-nav-item>
               <b-nav-item href="#">
-                <b-button class="header__btn">Savol bering</b-button>
+                <b-button class="header__btn" to="/askquestion">Savol bering</b-button>
               </b-nav-item>
             </b-navbar-nav>
 
@@ -46,3 +47,15 @@
     </div>
   </div>
 </template>
+// <script>
+// export default {
+//       window.onscroll = function() {
+//     var navstic = document.getElementsByClassName('navbar__wrapper');
+//     if ( window.pageYOffset > 100 ) {
+//         navstic.classList.add("navbar1");
+//     } else {
+//         navstic.classList.remove("navbar1");
+//     }
+// }
+// }
+// </script>

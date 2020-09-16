@@ -22,10 +22,10 @@
 
   .lawyer-image-wrapper {
     text-align: center;
- 
     margin: 0 auto;
 
     img {
+      box-shadow:0 0  20px rgba(0, 0, 0, 0.4);
       max-width: 120px;
       max-height: 120px;
       width: 100%;
@@ -48,4 +48,45 @@
 
 .lawyer-profile__star {
   font-size: 20px;
+}
+.degree-wrapper{
+  max-width: 400px;
+  .degree{
+    font-size: 20px;
+    font-family: $Nunito;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  .graduated{
+    font-family: $Nunito;
+    font-size: 16px;
+  }
+}
+.activity-wrapper{
+  .activity-header{
+    font-size: 20px;
+    font-family: $Nunito;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  .activity{
+    max-width: 400px;
+    font-family: $Nunito;
+    font-size: 16px;
+  }
+}
+.btn-circle {
+  border-radius: 30px;
+}
+.cost__lawyer-work{
+  font-family: $Nunito;
+  margin-bottom: 30px;
+}
+.filed-work{
+  &-header{
+    font-size: 20px;
+    font-family: $Nunito;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
 }

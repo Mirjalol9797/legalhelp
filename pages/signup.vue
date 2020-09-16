@@ -25,12 +25,12 @@
                 <input type="tel" id="phone">
                 </div>
               </div>
-              <div class="registration__email">
-              	<label for="registration_email">E-mail adress</label>
-              	<input type="email" id="registration_email">
-              </div>
               <div class="password">
                 <label for="password">Parol</label>
+                <input type="password" id="password">
+              </div>
+              <div class="password">
+                <label for="password">Parolni tasdiqlash</label>
                 <input type="password" id="password">
               </div>
             

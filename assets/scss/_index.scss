@@ -21,7 +21,7 @@
     z-index: -1;
     width: 255px;
     height: 314px;
-    border: 10px solid rgba(176, 142, 68, 0.7);
+    border: 6px solid rgba(176, 142, 68, 0.7);
   }
 }
 .header__heading{
@@ -58,12 +58,21 @@ font-size: 12px;
 line-height: 18px;
 color: #FFFFFF;
 transition: all 0.3s ease;
+animation: neon6 1.5s ease-in-out infinite alternate;
 img{
   margin-left: 10px;
    animation-name: example;
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
+}
+@keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
 }
 .about__service-line{
   position: relative;
@@ -138,7 +147,7 @@ img{
     top: -40px;
     left: 90px;
     z-index: -1;
-    border: 10px solid rgba(176, 142, 68, 0.7);
+    border: 6px solid rgba(176, 142, 68, 0.7);
   }
    &::after{
    content: "";
@@ -544,7 +553,7 @@ color: #C1C1C1;
 .swiper-button-prev, .swiper-button-next {
   top: 42% !important;
   left: -7px;
-  border:1px solid #17206A;
+  border:1px solid #00aced;
   border-radius:50%;
   width: 32px !important;
   height: 32px !important;
@@ -763,6 +772,7 @@ margin-bottom: 15px;
 }
 //how we work part
 .how__we-work{
+  padding-top: 30px;
   margin-bottom: 235px;
   &-heading{
     text-align: center;
@@ -881,7 +891,7 @@ color: #C1C1C1;
   }
   &-price{
     border:none;
-    border: 3px solid #B08E44;
+    border: 3px solid #ff8800;
     box-sizing: border-box;
     border-radius: 8px;
     color: #B08E44;
@@ -890,7 +900,7 @@ color: #C1C1C1;
     background-color: transparent;
   }
   &-use{
-    background: #B08E44;
+    background: #ff8800;
     padding-top: 6px;
     padding-bottom: 5px;
     border:none;

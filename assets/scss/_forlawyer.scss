@@ -127,6 +127,9 @@
 
     &::-webkit-file-upload-button {
         visibility: hidden;
+        -webkit-appearance: none;
+        -webkit-user-select: none;
+        overflow: hidden;
     }
     &::before {
         content: 'Upload your photo';
@@ -143,11 +146,13 @@
         width: 100%;
         max-height: 292px;
         height: 100%;
-        padding-left: 42px;
-        padding-right: 42px;
+        padding-left: 10px;
+        padding-right: 10px;
         padding-top: 60px;
         background: #C4C4C4;
         -webkit-user-select: none;
+        -webkit-appearance: none;
+        overflow: hidden;
         cursor: pointer;
         background-image: url("../images/for-lawyers/camera.svg");
         background-repeat: no-repeat;

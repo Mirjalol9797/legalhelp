@@ -84,4 +84,46 @@ margin-left: 15px;
     }
 }
 
-
+.lawyer__list-search{
+font-family: $Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 30px;
+color: #FFFFFF;
+margin-top: 30px;
+margin-bottom: 30px;
+max-width: 1080px;
+select{
+    margin-bottom: 15px;
+    border:1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    height: 40px;
+    background-image: url("../images/registration/down-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 14px;
+    background-position: right 13px center;
+    padding: 5px 35px;
+    &:focus,&:active{
+        border:1px solid #0028AA;
+        outline: none;
+        cursor: pointer;
+      }
+}
+#rating,#region-select,#type{
+    max-width: 453px;
+    width: 100%;
+}
+input[type=submit]{
+height: 40px;
+background: #00aced;
+border-radius: 8px;
+border:none;
+color:white;
+outline: none;
+}
+}

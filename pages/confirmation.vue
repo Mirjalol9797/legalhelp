@@ -10,20 +10,15 @@
               </nuxt-link>
             </div>
             <form action="" method="POST" class="registration__form">
-              <div class="registration__email">
-                <label for="registration_email">E-mail adress</label>
-                <input type="email" id="registration_email">
-              </div>
-              <div class="phone__number">
+                <div class="phone__number">
                 <label for="phone">Tel raqam</label>
                 <div class="input__tel-wrapper">
                   <span class="tel__code">+998</span>
-                  <input type="tel" id="phone">
+                  <input type="tel" id="phone" disabled>
                 </div>
               </div>
-              
-              <div class="password">
-                <label for="password">Parol</label>
+                <div class="password">
+                <label for="password">SMS kodni kiriting</label>
                 <input type="password" id="password">
               </div>
               <div class="registration-submit-wrap">
