@@ -132,7 +132,7 @@
         overflow: hidden;
     }
     &::before {
-        content:'rasmingizni yuklang';
+        content:"rasmingizni \A yuklang";
         display: inline-block;
         outline: none;
         font-family: $Poppins;
