@@ -57,6 +57,25 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     'bootstrap-vue/nuxt',
+      [
+      "nuxt-i18n",
+      {
+        lazy: true,
+        locales: [
+          { code: "uz", iso: "uz-Latn-UZ", name: "O'zbekcha", file: "uz.js" },
+          { code: "ru", iso: "ru-RU", name: "Ruskiy", file: "ru.js" }
+        ],
+        defaultLocale: "uz",
+        rootRedirect: "uz",
+        strategy: "prefix",
+        langDir: "lang/",
+        parsePages: false,
+        detectBrowserLanguage: {
+          useCookie: true,
+          fallbackLocale: "uz"
+        }
+      }
+    ],
     [
       'nuxt-fontawesome', {
         imports: [

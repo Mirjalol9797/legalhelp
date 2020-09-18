@@ -13,7 +13,7 @@
 
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav class="align-items-center">
-              <b-nav-item to="/news" class="nav__link">Yangiliklar</b-nav-item>
+              <b-nav-item :to="localePath('/news')" class="nav__link">{{ $t('navbar.news') }}</b-nav-item>
               <b-nav-item to="/questions" class="nav__link">Savollar</b-nav-item>
               <b-nav-item to="/lawyers" class="nav__link">Yuristlar</b-nav-item>
               <b-nav-item to="/our-services" class="nav__link">Xizmatlar</b-nav-item>
@@ -30,9 +30,9 @@
               </b-nav-form>
 
               <b-nav-item-dropdown text="Lang" right class="language__list">
-                <b-dropdown-item href="#">UZ</b-dropdown-item>
-                <b-dropdown-item href="#">RU</b-dropdown-item>
-                <b-dropdown-item href="#">EN</b-dropdown-item>
+                <b-dropdown-item @click="changeLanguage('uz')">UZ</b-dropdown-item>
+                <b-dropdown-item @click="changeLanguage('ru')">RU</b-dropdown-item>
+                <!-- <b-dropdown-item href="#">EN</b-dropdown-item> -->
               </b-nav-item-dropdown>
               <nuxt-link to="">
                  <nuxt-link to="" class="user__link">
@@ -47,7 +47,7 @@
     </div>
   </div>
 </template>
-// <script>
+ <script>
 // export default {
 //       window.onscroll = function() {
 //     var navstic = document.getElementsByClassName('navbar__wrapper');
@@ -58,4 +58,20 @@
 //     }
 // }
 // }
-// </script>
+export default {
+
+methods: {
+        changeLanguage(lang){
+            this.$router.push(this.switchLocalePath(lang));
+            // if(lang == 'uz') {
+            //     this.$store.commit('setVarLang','');
+            //     this.$store.commit('setLang','');
+            // }
+            // else{
+            //     this.$store.commit('setVarLang','kl/');
+            //     this.$store.commit('setLang','_kl');
+            // }
+        }
+  }
+}
+ </script>

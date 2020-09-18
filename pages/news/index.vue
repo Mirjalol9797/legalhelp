@@ -7,7 +7,7 @@
           <b-row>
             <b-col lg="6" class="px-0">
               <nuxt-link to="" class="main__news-link">
-                <img src="../assets/images/news/mainnews.jpg" alt="">
+                <img src="../../assets/images/news/mainnews.jpg" height="380" width="702" alt="">
               </nuxt-link>
             </b-col>
             <b-col lg="6">
@@ -34,7 +34,7 @@
       		<b-col lg="4" md="6" sm="6" v-for="item of 9" :key="item" class="align-items-stretch">
       			<div class="news__item">
       				<nuxt-link to="" class="news__item-link">
-      				<img src="../assets/images/news/news1.jpg" alt=""
+      				<img src="../../assets/images/news/news1.jpg" height="185" width="362" alt=""
       				>
       				<div class="news__item-content">
       					<h6 class="news__item-content-title">Lorem ipsum dolor si amet , consectetur adipiscing elit</h6>
