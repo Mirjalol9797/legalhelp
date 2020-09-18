@@ -2,12 +2,12 @@
     <div>
         <div class="our-services">
             <b-container>
-                <h1 class="our-services-heading">Bizning Xizmatlarimiz</h1>
+                <h1 class="our-services-heading">{{$t('service.title')}}</h1>
                 <b-row>
             <b-col lg="3" md="4" sm="6">
               <div class="our__service-item">
                 <nuxt-link to="" class="our__service-item-link">
-                  <img src="../assets/images/our-service/service1.png" alt="" />
+                  <img src="../../assets/images/our-service/service1.png" alt="" />
                   <div class="our__service-item-type">
                     Oilaviy munosabatlar
                   </div>
@@ -17,7 +17,7 @@
             <b-col lg="3" md="4" sm="6">
               <div class="our__service-item">
                 <nuxt-link to="" class="our__service-item-link">
-                  <img src="../assets/images/our-service/service2.png" alt="" />
+                  <img src="../../assets/images/our-service/service2.png" alt="" />
                   <div class="our__service-item-type">
                     Mehnat munosabatlari
                   </div>
@@ -27,7 +27,7 @@
             <b-col lg="3" md="4" sm="6">
               <div class="our__service-item">
                 <nuxt-link to="" class="our__service-item-link">
-                  <img src="../assets/images/our-service/service3.png" alt="" />
+                  <img src="../../assets/images/our-service/service3.png" alt="" />
                   <div class="our__service-item-type">
                     Jinoyat huquqi
                   </div>
@@ -37,7 +37,7 @@
             <b-col lg="3" md="4" sm="6">
               <div class="our__service-item">
                 <nuxt-link to="" class="our__service-item-link">
-                  <img src="../assets/images/our-service/service4.png" alt="" />
+                  <img src="../../assets/images/our-service/service4.png" alt="" />
                   <div class="our__service-item-type">
                     Tadbirkorlik
                   </div>
@@ -47,7 +47,7 @@
             <b-col lg="3" md="4" sm="6">
               <div class="our__service-item">
                 <nuxt-link to="" class="our__service-item-link">
-                  <img src="../assets/images/our-service/service5.png" alt="" />
+                  <img src="../../assets/images/our-service/service5.png" alt="" />
                   <div class="our__service-item-type">
                     Fuqarolik huquqi
                   </div>
@@ -57,7 +57,7 @@
             <b-col lg="3" md="4" sm="6">
               <div class="our__service-item">
                 <nuxt-link to="" class="our__service-item-link">
-                  <img src="../assets/images/our-service/service6.png" alt="" />
+                  <img src="../../assets/images/our-service/service6.png" alt="" />
                   <div class="our__service-item-type">
                     Migratsiya
                   </div>
@@ -67,7 +67,7 @@
             <b-col lg="3" md="4" sm="6">
               <div class="our__service-item">
                 <nuxt-link to="" class="our__service-item-link">
-                  <img src="../assets/images/our-service/service7.png" alt="" />
+                  <img src="../../assets/images/our-service/service7.png" alt="" />
                   <div class="our__service-item-type">
                     Mol-mulk huquqi
                   </div>
@@ -77,7 +77,7 @@
             <b-col lg="3" md="4" sm="6">
               <div class="our__service-item">
                 <nuxt-link to="" class="our__service-item-link">
-                  <img src="../assets/images/our-service/service8.png" alt="" />
+                  <img src="../../assets/images/our-service/service8.png" alt="" />
                   <div class="our__service-item-type">
                     Boshqalar
                   </div>

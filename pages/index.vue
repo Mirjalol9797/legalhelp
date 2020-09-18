@@ -6,7 +6,7 @@
           <div class="header__content">
             <h1 class="header__heading">Ishonchli va sifatli online yuridik xizmatlar</h1>
           <p class="header__motto">Malakali yuristlar xizmatidan foydalanib, muammoli savollarga asosli va sifatli javob oling. Ko’rsatilgan xizmat sizni qanoatlantirmasa, pulingiz 100% qaytarib beriladi. </p>
-          <nuxt-link to="" class="online__service-link">ONLINE XIZMAT <img src="../assets/images/index/Arrow.svg" alt="arrow"></nuxt-link>
+          <nuxt-link to="" class="online__service-link">{{$t('header.online')}} <img src="../assets/images/index/Arrow.svg" alt="arrow"></nuxt-link>
           </div>
         </b-container>
       </header>
@@ -182,7 +182,7 @@
              </div>
                 </div>
                    <div class="questions__block-content">
-               <h6 class="questions__block-content-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h6>
+               <nuxt-link class="questions__block-content-heading" to="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </nuxt-link>
                <p class="questions__block-content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur </p>
              </div>
 
@@ -195,7 +195,7 @@
              <b-button class="question__btn">2ta javob</b-button> 
              </div>
              <div class="questions__block-content d-none d-md-block">
-               <h6 class="questions__block-content-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h6>
+               <nuxt-link class="questions__block-content-heading" to="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </nuxt-link>
                <p class="questions__block-content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur </p>
              </div>
              <div class="questions__block-ranking d-none d-md-block">
@@ -225,7 +225,7 @@
         </b-container>
       </div>
       <!-- end of question part -->
-      <div class="how__we-work">
+      <div class="how__we-work" id="howwework">
         <b-container>
         <span class="line-dashed d-none d-lg-block"></span>
           <h3 class="how__we-work-heading">Biz qanday ishlaymiz</h3>

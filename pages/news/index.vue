@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="news__wrapper">
-      <h1 class="news__heading">Yangiliklar</h1>
+      <h1 class="news__heading">{{$t('news.title')}}</h1>
       <div class="news__header">
         <b-container>
           <b-row>
@@ -44,7 +44,7 @@
       						<span class="news__item-content-meta-view">156</span>
       					</div>
       					<div class="more__btn">
-      						<b-button type="button" class="question__btn">Batafsil</b-button>
+      						<b-button type="button" class="question__btn">{{$t('news.more')}}</b-button>
       					</div>
       				</div>
       			</nuxt-link>
@@ -60,8 +60,8 @@
           v-model="currentPage"
           :total-rows="rows"
           :per-page="perPage"
-          first-text="Boshi"
-          last-text="Oxiri"
+          :first-text=" $t('pagination.first')"
+          :last-text=" $t('pagination.last')"
         ></b-pagination>
       </div>
     </div>

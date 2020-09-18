@@ -50,24 +50,30 @@ padding-bottom: 50px;
 		padding-top: 15px;
 		padding-bottom: 8px;
 	}
-	.payment__item:nth-child(1){
-		margin-bottom: 20px;
+	.payment__item{
+		padding-left: 25px;
+		&::nth-child(1){
+        margin-bottom: 20px;
+		}
+		label{
+			margin-left: 5px;
+		}
 	}
-	.payment__link{
-		display: inline-block;
-		position: relative;
-		padding-left: 45px;
-		&::before{
-			content:"";
-			position: absolute;
-			width: 14px;
-			height: 14px;
-			left: 20px;
-			top:5px;
-			border-radius:50%;
-			border: 2px solid #B08E44;
-					}
-	}
+	// .payment__link{
+	// 	display: inline-block;
+	// 	position: relative;
+	// 	padding-left: 45px;
+	// 	&::before{
+	// 		content:"";
+	// 		position: absolute;
+	// 		width: 14px;
+	// 		height: 14px;
+	// 		left: 20px;
+	// 		top:5px;
+	// 		border-radius:50%;
+	// 		border: 2px solid #B08E44;
+	// 				}
+	// }
 	.payment__bill{	
 		margin-top: 20px;
 font-family: $Cantata;
@@ -88,7 +94,7 @@ text-align: center;
 color: #FFFFFF;
 padding-top: 40px;
 padding-bottom: 40px;
-button{
+a{
 	padding: 8px 18px;
 	background: #B08E44;
 border-radius: 4px;

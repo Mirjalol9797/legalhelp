@@ -4,7 +4,7 @@
       <b-container>
         <div class="registration__three">
           <div class="registration__header">
-            <nuxt-link to="" class="registration__arrow-link">
+            <nuxt-link :to="localePath('/askquestion2')" class="registration__arrow-link">
               <img src="../assets/images/registration/left-arrow.svg">
             </nuxt-link>
             <span class="step__page-number">3/4</span>
@@ -98,7 +98,7 @@
           	</b-row>
           </div>
           <div class="registration__three-btn-wrap">
-          	<b-button class="registration__three-btn">Davom etish</b-button>
+          	<b-button class="registration__three-btn" :to="localePath('/askquestion4')">Davom etish</b-button>
           </div>	
         </div>
       </b-container>

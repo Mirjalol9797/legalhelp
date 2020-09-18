@@ -22,22 +22,22 @@
               <h3 class="legaltech">LegalHelp</h3>
               <ul class="footer__menu-list">
                 <li class="footer__menu-item">
-                  <nuxt-link to class="footer__menu-link">Loyiha haqida</nuxt-link>
+                  <nuxt-link :to="localePath('/forlawyers')" class="footer__menu-link">{{ $t('navbar.forlawyers') }}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to="/news" class="footer__menu-link">Yangiliklar</nuxt-link>
+                  <nuxt-link :to="localePath('/news')" class="footer__menu-link">{{ $t('navbar.news') }}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to="/questions" class="footer__menu-link">Savollar</nuxt-link>
+                  <nuxt-link :to="localePath('/questions')"  class="footer__menu-link">{{ $t('navbar.questions') }}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to="/" class="footer__menu-link">Biz qanday ishlaymiz?</nuxt-link>
+                  <nuxt-link :to="localePath('#howwework')" class="footer__menu-link">{{ $t('footer__menu.howwework') }}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to="/lawyers" class="footer__menu-link">Yuristlar</nuxt-link>
+                  <nuxt-link :to="localePath('/lawyers')" class="footer__menu-link">{{ $t('navbar.lawyers') }}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to="/our-services" class="footer__menu-link">Bizning xizmatlarimiz</nuxt-link>
+                  <nuxt-link :to="localePath('/our-service')" class="footer__menu-link">{{ $t('footer__menu.service') }}</nuxt-link>
                 </li>
               </ul>
             </div>
@@ -45,16 +45,16 @@
           </b-col>
           <b-col lg="4">
             <div class="other__item">
-              <h3 class="legaltech">Boshqalar</h3>
+              <h3 class="legaltech">{{$t('footer__menu.others')}}</h3>
               <ul class="footer__menu-list">
                 <li class="footer__menu-item">
-                  <nuxt-link to class="footer__menu-link">Jamoa</nuxt-link>
+                  <nuxt-link to class="footer__menu-link">{{$t('footer__menu.team')}}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to class="footer__menu-link">Loyiha yuristi bo’lish</nuxt-link>
+                  <nuxt-link to class="footer__menu-link">{{$t('footer__menu.projectmanager')}}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link to class="footer__menu-link">Ko’p so’raladigan savollar</nuxt-link>
+                  <nuxt-link to class="footer__menu-link">{{$t('footer__menu.popularquestions')}}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
                   <ul class="social__footer-list">

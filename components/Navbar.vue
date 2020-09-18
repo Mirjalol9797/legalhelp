@@ -14,19 +14,19 @@
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav class="align-items-center">
               <b-nav-item :to="localePath('/news')" class="nav__link">{{ $t('navbar.news') }}</b-nav-item>
-              <b-nav-item to="/questions" class="nav__link">Savollar</b-nav-item>
-              <b-nav-item to="/lawyers" class="nav__link">Yuristlar</b-nav-item>
-              <b-nav-item to="/our-services" class="nav__link">Xizmatlar</b-nav-item>
-              <b-nav-item to="/for-lawyers" class="nav__link">Yuristlar uchun</b-nav-item>
+              <b-nav-item :to="localePath('/questions')" class="nav__link">{{ $t('navbar.questions') }}</b-nav-item>
+              <b-nav-item :to="localePath('/lawyers')" class="nav__link">{{ $t('navbar.lawyers') }}</b-nav-item>
+              <b-nav-item :to="localePath('/our-service')" class="nav__link">{{ $t('navbar.services') }}</b-nav-item>
+              <b-nav-item :to="localePath('/forlawyers')" class="nav__link">{{ $t('navbar.forlawyers') }}</b-nav-item>
               <b-nav-item href="#">
-                <b-button class="header__btn" to="/askquestion">Savol bering</b-button>
+                <b-button class="header__btn" :to="localePath('/askquestions')" >{{ $t('navbar.askquestions') }}</b-button>
               </b-nav-item>
             </b-navbar-nav>
 
             <!-- Right aligned nav items -->
             <b-navbar-nav class="search__part">
               <b-nav-form class="header__form">
-                <b-form-input size="sm" class="mr-sm-2 navbar__search" placeholder="Qidirish"></b-form-input>
+                <b-form-input size="sm" class="mr-sm-2 navbar__search" :placeholder="$t('navbar.search')"></b-form-input>
               </b-nav-form>
 
               <b-nav-item-dropdown text="Lang" right class="language__list">
@@ -34,8 +34,8 @@
                 <b-dropdown-item @click="changeLanguage('ru')">RU</b-dropdown-item>
                 <!-- <b-dropdown-item href="#">EN</b-dropdown-item> -->
               </b-nav-item-dropdown>
-              <nuxt-link to="">
-                 <nuxt-link to="" class="user__link">
+              <nuxt-link :to="localePath('/profile')" class="d-block">
+                 <nuxt-link :to="localePath('/profile')" class="user__link">
                 <img src="../assets/images/index/user.png" alt="">
               </nuxt-link>
               </nuxt-link>

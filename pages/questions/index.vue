@@ -3,10 +3,10 @@
     <div class="questions__page-wrapper">
       <div class="questions__page-wrapper-inner">
         <div class="container">
-        <h1 class="questions__page-header">Savollar</h1>
+        <h1 class="questions__page-header">{{$t('question.title')}}</h1>
         <form action="" method="POST" class="questions__search">
-          <input type="search" placeholder="Savol izlash">
-          <input type="submit" value="Izlash">
+          <input type="search" :placeholder="$t('question.placeholder')">
+          <input type="submit" :value="$t('question.btn')">
         </form>
         <div class="questions__wrapper">
           <div class="question__item" v-for="i of 9" :key="i">
@@ -14,7 +14,7 @@
               <div class="question__meta-inner">
                 <span class="question__meta-time">9:16</span>
                 <span class="question__meta-calendar">23.07.2020</span>
-                <b-button class="question__meta-btn question__btn">2ta javob</b-button>
+                <b-button class="question__meta-btn question__btn">2 ta javob</b-button>
               </div>
             </div>
             <!--question__meta-->
@@ -52,7 +52,7 @@
                
             </div>
             <div class="question__item-info">
-              <nuxt-link to="" class="question__item-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</nuxt-link>
+              <nuxt-link :to="localePath('/question-inner')" class="question__item-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</nuxt-link>
               <p
                 class="question__item-text"
               >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
