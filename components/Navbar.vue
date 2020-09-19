@@ -34,7 +34,7 @@
                 <b-dropdown-item @click="changeLanguage('ru')">RU</b-dropdown-item>
                 <!-- <b-dropdown-item href="#">EN</b-dropdown-item> -->
               </b-nav-item-dropdown>
-              <nuxt-link :to="localePath('/profile')" class="d-block">
+              <nuxt-link :to="('/profile')" class="d-block">
                  <nuxt-link :to="localePath('/profile')" class="user__link">
                 <img src="../assets/images/index/user.png" alt="">
               </nuxt-link>

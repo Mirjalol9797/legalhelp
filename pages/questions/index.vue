@@ -52,7 +52,7 @@
                
             </div>
             <div class="question__item-info">
-              <nuxt-link :to="localePath('/question-inner')" class="question__item-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</nuxt-link>
+              <nuxt-link :to="localePath(`/questions/${i}`)" class="question__item-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</nuxt-link>
               <p
                 class="question__item-text"
               >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
