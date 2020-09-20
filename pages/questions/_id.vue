@@ -2,7 +2,7 @@
   <div>
     <div class="questions__inner-wrapper">
       <b-container>
-        <nuxt-link to="" class="left-arrow-link">
+        <nuxt-link :to="localePath('/questions')" class="left-arrow-link">
           <img src="../../assets/images/left-arrow.svg" alt="" class="img-fluid">
         </nuxt-link>
         <div class="questions__overview-wrapper">

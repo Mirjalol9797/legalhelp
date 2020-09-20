@@ -3,16 +3,16 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-
   //index
   .info__wrapper {
     flex-direction: row !important;
     align-items: flex-start !important;
   }
 
-  //footer media 
-  
-  .footer,.index-footer {
+  //footer media
+
+  .footer,
+  .index-footer {
     padding-top: 100px !important;
     padding-bottom: 82px !important;
   }
@@ -66,7 +66,6 @@
 
   //lawyer__outer
 
-
   //news
   .news__heading {
     font-size: 32px !important;
@@ -97,35 +96,25 @@
     padding-bottom: 100px !important;
     padding-right: 70px !important;
   }
-  .for__lawyers-header{
+  .for__lawyers-header {
     padding-top: 70px !important;
-    &-heading{
+    &-heading {
       font-size: 48px !important;
       line-height: 61px !important;
     }
   }
-  .lawyer__middle-news-image{
-    img{
-        max-width: 140px !important;
+  .lawyer__middle-news-image {
+    img {
+      max-width: 140px !important;
     }
+  }
+  .order-documets-heading {
+    font-size: 28px !important;
+  }
 }
-.order-documets-heading{
-  font-size: 28px !important;
-}
-
-  
-}
-
-
-
-
-
-
-
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-
   //index//
   .header__content {
     padding-top: 150px !important;
@@ -351,7 +340,7 @@
 
   //lawyer page
   .lawyer__wrapper {
-    &>.container {
+    & > .container {
       padding-bottom: 60px !important;
     }
   }
@@ -364,7 +353,6 @@
 
   .highlighted__text-inner {
     font-size: 18px !important;
-
   }
 
   .lawyer__text {
@@ -403,7 +391,6 @@
       display: block;
       z-index: 1111;
       background-color: #fff;
-
     }
   }
 
@@ -413,8 +400,6 @@
 
   .questions__block-more {
     font-size: 24px !important;
-
-    &-btn {}
   }
 
   .swiper__header {
@@ -483,7 +468,7 @@
       height: 250px !important;
 
       img {
-        border: 6px solid #B08E44;
+        border: 6px solid #b08e44;
       }
     }
 
@@ -501,7 +486,7 @@
     img {
       max-width: 258px !important;
       max-height: 258px !important;
-      border: 6px solid #B08E44 !important;
+      border: 6px solid #b08e44 !important;
     }
   }
 
@@ -520,106 +505,100 @@
   .lawyer-profile-text {
     font-size: 18px !important;
   }
-  .for__lawyers-header{
+  .for__lawyers-header {
     padding-top: 70px !important;
-    &-heading{
+    &-heading {
       font-size: 36px !important;
       line-height: 41px !important;
     }
   }
-  .form__for-lawyers{
+  .form__for-lawyers {
     font-size: 18px !important;
   }
-  .textearea__for-lawyers{
+  .textearea__for-lawyers {
     font-size: 18px !important;
   }
-  .for__lawyers-btn-wrap{
+  .for__lawyers-btn-wrap {
     margin-top: 50px !important;
     font-size: 20px !important;
-    .for__lawyers-btn{
+    .for__lawyers-btn {
       padding-top: 14px 44px !important;
     }
   }
-  .profile-inner{
+  .profile-inner {
     padding-left: 30px !important;
   }
-  .answer__wrapper{
+  .answer__wrapper {
     display: flex !important;
   }
-  .registration__final-header{
+  .registration__final-header {
     font-size: 36px !important;
     line-height: 61px !important;
     padding-top: 60px !important;
     padding-bottom: 80px !important;
-    }
-    .payment__bill{
-      font-size: 24px !important;
-    }
-    .our__other-services-title{
-      font-size: 48px !important;
-    }
-    .our__other-services-text{
-      font-size: 18px !important;
-    }
-    .our__other-services-item-title{
-      font-size: 30px !important;
-    }
-    .our__other-services-item-text{
-      font-size: 15px !important;
-    }
-    .our__other-services-item-btn-wrap{
-      button{
-        font-size: 20px !important;
-      }
-      .our__other-services-price{
-        padding-top: 8px !important;
-        padding-bottom: 8px !important;
-      }
-      .our__other-services-use{
-        padding-top: 11px !important;
-        padding-bottom: 10px !important;
-      }
-    }
-    .lawyer__list-search{
+  }
+  .payment__bill {
+    font-size: 24px !important;
+  }
+  .our__other-services-title {
+    font-size: 48px !important;
+  }
+  .our__other-services-text {
+    font-size: 18px !important;
+  }
+  .our__other-services-item-title {
+    font-size: 30px !important;
+  }
+  .our__other-services-item-text {
+    font-size: 15px !important;
+  }
+  .our__other-services-item-btn-wrap {
+    button {
       font-size: 20px !important;
     }
-    .our-services-heading{
-      font-size: 32px !important;
+    .our__other-services-price {
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
     }
-    .our-services{
-      padding-top: 90px !important;
-      padding-bottom: 90px !important;
+    .our__other-services-use {
+      padding-top: 11px !important;
+      padding-bottom: 10px !important;
     }
-    .how__we-work{
-      padding-top: 100px !important;
-    }
-    .order-documets-heading{
-      font-size: 36px !important;
-      padding-top: 60px !important;
-      padding-bottom: 60px !important;
-    }
-    .order-documents-motto{
-      font-size: 18px !important;
-    }
-    .type-of-documents-header{
-      h6{
-          font-size: 16px !important;
-      }
   }
-  .order-documents-inner{
+  .lawyer__list-search {
+    font-size: 20px !important;
+  }
+  .our-services-heading {
+    font-size: 32px !important;
+  }
+  .our-services {
+    padding-top: 90px !important;
+    padding-bottom: 90px !important;
+  }
+  .how__we-work {
+    padding-top: 100px !important;
+  }
+  .order-documets-heading {
+    font-size: 36px !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  .order-documents-motto {
+    font-size: 18px !important;
+  }
+  .type-of-documents-header {
+    h6 {
+      font-size: 16px !important;
+    }
+  }
+  .order-documents-inner {
     padding: 30px !important;
+  }
 }
-}
-
-
-
-
-
-
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .order-documets-heading{
+  .order-documets-heading {
     font-size: 48px !important;
     padding-top: 90px !important;
     padding-bottom: 90px !important;
@@ -703,12 +682,10 @@
 
     &-type {
       font-size: 16px !important;
-      padding-top: 23px !important;
-      padding-bottom: 23px !important;
+      padding-top: 12px !important;
+      padding-bottom: 15px !important;
     }
   }
-
-
 
   .main__form {
     font-size: 18px !important;
@@ -730,7 +707,6 @@
   .submit__btn {
     margin-top: 20px !important;
     padding: 14px 45px;
-
   }
 
   .form__heading {
@@ -748,7 +724,6 @@
   .info__content-tel {
     font-size: 22px !important;
   }
-
 
   //footer medi
   .footer__menu {
@@ -811,52 +786,51 @@
       margin-left: 30px !important;
     }
   }
-  .registration__three-big-item{
-    top:-100px !important;
+  .registration__three-big-item {
+    top: -100px !important;
     position: relative !important;
   }
   .registration__three-card-wrapper {
     padding-top: 150px !important;
   }
-  .registration__three-btn-wrap{
+  .registration__three-btn-wrap {
     margin-top: 60px !important;
-  padding-bottom: 40px !important;
+    padding-bottom: 40px !important;
   }
-  .registration__three-wrapper{
+  .registration__three-wrapper {
     padding-top: 100px !important;
-  padding-bottom: 100px !important;
+    padding-bottom: 100px !important;
   }
-  .for__lawyers-header{
+  .for__lawyers-header {
     padding-top: 70px !important;
     justify-content: flex-start !important;
-    &-heading{
+    &-heading {
       font-size: 48px !important;
       line-height: 61px !important;
     }
   }
-  .for__lawyers-btn-wrap{
+  .for__lawyers-btn-wrap {
     text-align: left !important;
     margin-left: 20px;
   }
-  .registration__final-header{
+  .registration__final-header {
     font-size: 48px !important;
     line-height: 61px !important;
     padding-top: 90px !important;
     padding-bottom: 120px !important;
-    }
-    .index-footer-item{
+  }
+  .index-footer-item {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-    }
+  }
 
-    .our-services-heading{
-      font-size: 48px !important;
-    }
+  .our-services-heading {
+    font-size: 48px !important;
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-
   //laweyer page
   .lawyer__inner {
     padding-left: 136px !important;
@@ -879,5 +853,4 @@
     font-size: 48px !important;
     padding: 70px 0 !important;
   }
-
 }

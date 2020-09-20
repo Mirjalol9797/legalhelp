@@ -83,10 +83,18 @@
   margin-bottom: 30px;
 }
 .filed-work{
+  font-family: $Nunito;
   &-header{
     font-size: 20px;
-    font-family: $Nunito;
     margin-bottom: 15px;
     font-weight: bold;
+    display: block;
+  }
+  svg{
+    margin-right: 10px;
+  }
+  span.btn{
+    background-color: rgb(222, 237, 255);
+    font-size: 12px;
   }
 }

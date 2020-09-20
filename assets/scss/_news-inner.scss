@@ -1,85 +1,82 @@
-.lawyer__wrapper{
-    &>.container{
-        padding-bottom: 40px;
-    }
-    background-color: #2c2c2c;
-    .lawyer__heading{
-font-family:$Cantata;
-font-size: 22px;
-line-height: 61px;
-color: #FFFFFF;
-text-align: center;
-padding-top: 0px;
-padding-bottom: 0px;
-
-    }
-    .lawyer__inner{
-background: rgba(239, 231, 231, 0.65);
-box-shadow: 10px 10px 50px rgba(255, 255, 255, 0.25);
-border-radius: 8px;
-padding-left: 20px;
-padding-right: 20px;
+.lawyer__wrapper {
+  & > .container {
+    padding-bottom: 40px;
+  }
+  background-color: #2c2c2c;
+  .lawyer__heading {
+    font-family: $Cantata;
+    font-size: 22px;
+    line-height: 61px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .lawyer__inner {
+    background: rgba(239, 231, 231, 0.65);
+    box-shadow: 10px 10px 50px rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-top: 17px;
     padding-bottom: 10px;
-.lawyer__section-img{
-    border-radius: 6px;
-    max-width: 850px;
-    width:100%;
-    height: auto;
-    object-fit: contain;
-}
-    .lawyer__text{
-        font-size: 14px;
-line-height: 25px;
-color: #1C1B1E;
-font-family: $Nunito;
-margin-top: 40px;
-margin-bottom: 30px;
+    .lawyer__section-img {
+      border-radius: 6px;
+      max-width: 850px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
-    .highlighted__text{
-        padding: 10px;
-        background: #B08E44; 
+    .lawyer__text {
+      font-size: 14px;
+      line-height: 25px;
+      color: #1c1b1e;
+      font-family: $Nunito;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+    .highlighted__text {
+      padding: 10px;
+      background: #b08e44;
+    }
+    .highlighted__text-inner {
+      font-weight: bold;
+      font-family: $Nunito;
+      font-size: 14px;
+      line-height: 25px;
+      color: #ffffff;
+      padding-left: 20px;
+      font-style: normal;
+      margin: 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      position: relative;
+      &::before {
+        content: "";
+        top: 0;
+        left: 0px;
+        position: absolute;
+        height: 100%;
+        width: 4px;
+        border-radius: 16px;
+        display: block;
+        z-index: 1111;
+        background-color: #fff;
+      }
+    }
   }
-    .highlighted__text-inner{
-font-weight: bold;
-font-family: $Nunito;
-font-size: 14px;
-line-height: 25px;
-color: #FFFFFF;
-padding-left: 20px;
-font-style: normal;
-margin: 0;
-padding-top: 20px;
-padding-bottom: 20px;
-position: relative;
-&::before{
-    content: "";
-    top: 0;
-    left: 0px;
-    position: absolute;
-    height: 100%;
-    width: 4px;
-    border-radius: 16px;
-    display: block;
-    z-index: 1111;
-    background-color: #fff;
 
-} 
+  .lawyer__middle-news-image {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      max-width: 120px;
+      width: 100%;
+      max-height: 200px;
+      height: auto;
+      object-fit: contain;
     }
-    
-    }
-
-    .lawyer__middle-news-image{
-        margin-top: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        img{
-            max-width: 120px;
-            width: 100%;
-            max-height: 200px;
-            height: auto;
-            object-fit: contain;
-        }
-    }
+  }
 }

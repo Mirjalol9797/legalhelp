@@ -23,6 +23,7 @@
     "nuxt-i18n": "^6.15.1",
     "swiper": "^5.4.5",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-backtotop": "^1.6.1",
     "vue-stars": "^1.2.2",
     "vuelidate": "^0.7.5"
   },

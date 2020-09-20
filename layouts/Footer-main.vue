@@ -1,5 +1,7 @@
 <template>
     <div>
+     <Navbar />
+      <Nuxt />
         <footer class="index__footer">
       <b-container>
         <b-row>

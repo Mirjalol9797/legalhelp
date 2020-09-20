@@ -1,5 +1,5 @@
 .questions__inner-wrapper {
-  background: #E5E5E5;
+  background: #e5e5e5;
 }
 
 .left-arrow-link {
@@ -66,7 +66,7 @@
   }
 
   .price__btn {
-    background: #B08E44;
+    background: #b08e44;
     margin-bottom: 10px;
   }
 
@@ -85,17 +85,16 @@
     background-size: contain;
     padding-left: 20px;
   }
-
 }
-.answer__margin{
-	padding-bottom: 70px;
+.answer__margin {
+  padding-bottom: 70px;
 }
 .questions__overview-content {
   font-family: $Nunito;
   font-size: 14px;
   line-height: 22px;
-margin-left: 5px;
-margin-right: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 
   &-heading {
     font-weight: bold;
@@ -108,7 +107,7 @@ margin-right: 5px;
   font-size: 16px;
   line-height: 22px;
   color: #000000;
-  border-top: 1px solid #B08E44;
+  border-top: 1px solid #b08e44;
   padding-top: 15px;
 
   .category__type {
@@ -122,95 +121,95 @@ margin-right: 5px;
     font-weight: normal;
   }
 }
-.questions__answer{
-font-family:$Nunito;
-font-style: normal;
-font-weight: 600;
-font-size: 30px;
-line-height: 49px;
-color: #fff;
-margin-top: 20px;
-margin-bottom: 20px;
+.questions__answer {
+  font-family: $Nunito;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 49px;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.answer__wrapper{
-	max-width: 1080px;
-	width: 100%;
-	display: block;
-	background: #FFFFFF;
-	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
-	border-radius: 8px;
-	padding-bottom: 70px;
+.answer__wrapper {
+  max-width: 1080px;
+  width: 100%;
+  display: block;
+  background: #ffffff;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding-bottom: 70px;
 }
-.lawyer__section{
-	max-width: 150px;
-	width: 100%;
-	padding-top: 40px;
-	margin-left: 5px;
-	font-family: $Nunito;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 13px;
-	line-height: 22px;
-	color: #000000;
-	text-align: center;
-	img{
-		margin-bottom: 15px;
-		display: inline-block;
+.lawyer__section {
+  max-width: 150px;
+  width: 100%;
+  padding-top: 40px;
+  margin-left: 5px;
+  font-family: $Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 22px;
+  color: #000000;
+  text-align: center;
+  img {
+    margin-bottom: 15px;
+    display: inline-block;
     width: 80px;
     height: 80px;
-	}
-	.user__name{
+  }
+  .user__name {
     display: block;
     background-image: url("../images/yellowuser.svg");
     background-repeat: no-repeat;
     background-size: contain;
     padding-left: 0;
-	}
+  }
   .user__location {
     background-image: url("../images/yellow location.svg");
     background-repeat: no-repeat;
     background-size: contain;
-	padding-left: 0;
+    padding-left: 0;
     display: block;
   }
-  &-meta{
-font-family: $Nunito;
-font-size: 12px;
-line-height: 22px;
-color: #000000;
-margin-top: 40px;
-  	&-time{
-  		display: block;
-  		background-image: url("../images/time.svg");
-  		background-repeat: no-repeat;
-  		background-size: contain;
-  		margin-bottom: 4px;
-  	}
-  	&-calendar{
-  		display: block;
-  		background-image: url("../images/calendar.svg");
-  		background-repeat: no-repeat;
-  		background-size: contain;
-  		padding-left: 25px;
-  	}
+  &-meta {
+    font-family: $Nunito;
+    font-size: 12px;
+    line-height: 22px;
+    color: #000000;
+    margin-top: 40px;
+    &-time {
+      display: block;
+      background-image: url("../images/time.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-bottom: 4px;
+    }
+    &-calendar {
+      display: block;
+      background-image: url("../images/calendar.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      padding-left: 25px;
+    }
   }
 }
 
-.answer__text{
-font-family: $Nunito;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 22px;
-padding: 10px;
-max-width: 803px;
-width: 100%;
+.answer__text {
+  font-family: $Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 10px;
+  max-width: 803px;
+  width: 100%;
 }
 
-.mobile__question-overview{
+.mobile__question-overview {
   margin-bottom: 20px;
-  .questions__overview-meta{
+  .questions__overview-meta {
     margin-right: 40px;
   }
 }

@@ -4,29 +4,45 @@
       <header class="header">
         <b-container>
           <div class="header__content">
-            <h1 class="header__heading">Ishonchli va sifatli online yuridik xizmatlar</h1>
-          <p class="header__motto">Malakali yuristlar xizmatidan foydalanib, muammoli savollarga asosli va sifatli javob oling. Ko’rsatilgan xizmat sizni qanoatlantirmasa, pulingiz 100% qaytarib beriladi. </p>
-          <nuxt-link to="" class="online__service-link">{{$t('header.online')}} <img src="../assets/images/index/Arrow.svg" alt="arrow"></nuxt-link>
+            <h1 class="header__heading">
+              Ishonchli va sifatli online yuridik xizmatlar
+            </h1>
+            <p class="header__motto">
+              Malakali yuristlar xizmatidan foydalanib, muammoli savollarga
+              asosli va sifatli javob oling. Ko’rsatilgan xizmat sizni
+              qanoatlantirmasa, pulingiz 100% qaytarib beriladi.
+            </p>
+            <nuxt-link to="" class="online__service-link"
+              >{{ $t("header.online") }}
+              <img src="../assets/images/index/Arrow.svg" alt="arrow"
+            /></nuxt-link>
           </div>
         </b-container>
       </header>
       <section class="about__service">
         <b-container>
-        <span class="about__service-line"></span>
+          <span class="about__service-line"></span>
           <b-row>
             <b-col lg="6">
-              <h2 class="about__service-heading">Tajribali yuristlar sizga yordam berishga tayyor.</h2>
-              <p class="about__service-text">"Dunyodagi eng buyuk ikki zolim: imkoniyat va vaqt"
-							<i>Ioxann Xerder</i> 
-</p>
+              <h2 class="about__service-heading">
+                Tajribali yuristlar sizga yordam berishga tayyor.
+              </h2>
+              <p class="about__service-text">
+                "Dunyodagi eng buyuk ikki zolim: imkoniyat va vaqt"
+                <i>Ioxann Xerder</i>
+              </p>
               <div class="lawyer__user">
-                <img src="../assets/images/lawyer.jpg" alt="">
-               <span class="lawyer__user-name">Aziza Abdurakhmonova</span>  
+                <img src="../assets/images/lawyer.jpg" alt="" />
+                <span class="lawyer__user-name">Aziza Abdurakhmonova</span>
               </div>
             </b-col>
             <b-col lg="6">
               <div class="about__service-img-wrap">
-              <img src="../assets//images/index/2642882 1.png" alt="" class="about__service-img">
+                <img
+                  src="../assets//images/index/2642882 1.png"
+                  alt=""
+                  class="about__service-img"
+                />
               </div>
             </b-col>
           </b-row>
@@ -84,7 +100,7 @@
 
       <div class="news__main-page">
         <b-container>
-        <span class="news__main-page-line"></span>
+          <span class="news__main-page-line"></span>
           <div class="news__main-page-header">
             <span class="news__main-page-header-heading">Yangiliklar</span>
             <span class="news__main-page-header-motto"
@@ -102,7 +118,10 @@
               class="align-items-stretch"
             >
               <div class="news__item">
-                <nuxt-link to="" class="news__item-link">
+                <nuxt-link
+                  :to="localePath(`/news/${item}`)"
+                  class="news__item-link"
+                >
                   <img src="../assets/images/news/news1.jpg" alt="" />
                   <div class="news__item-content">
                     <h6 class="news__item-content-title">
@@ -131,7 +150,9 @@
               </div>
             </b-col>
             <div class="all__news">
-              <b-button class="question__btn all__news-btn"
+              <b-button
+                class="question__btn all__news-btn"
+                :to="localePath(`/news`)"
                 >Barcha yangiliklar</b-button
               >
             </div>
@@ -145,173 +166,293 @@
         <b-container>
           <span class="questions__part-line"></span>
           <h2 class="questions__part-heading">Savollar</h2>
-          <div class="questions__block">
-            <div class="questions__switch-wrapper">
-              <div class="questions__switch">
-                  <nuxt-link to="" class="questions__switch-link ">Pullik</nuxt-link>
-              <nuxt-link to="" class="questions__switch-link questions__switch-link-active">Bepul</nuxt-link>
-              </div>
-            
-            </div>
-            <div class="questions__block-item" v-for="i of 4" :key="i">
-              <div class="questions__block-item-mobile d-block d-md-none">
-                <div class="questions__block-item-mobile-inner">
-                  <div class="questions__block-time ">
-               <span>9:16</span>
-               <span>23.07.2020</span>
-             </div>
-             <div class="questions__block-btn">
-             <b-button class="question__btn">2ta javob</b-button> 
-             </div>
-             <div class="questions__block-ranking">
-               <div class="questions__block-ranking-star">
-                            <vue-stars
-                  class="vue__star"
-                  name="rate"
-                  active-color="#FFC805"
-                  inactive-color="#282932"
-                  shadow-color="#FFC805"
-                  hover-color="#00aced"
-                  :max="5"
-                  :value="1"
-                  :readonly="false"
-                  char="★"
-                />
-               </div>
-               <b-button class="question__btn">20000 so’m</b-button>
-             </div>
+          <b-tabs content-class="mt-3" class="tabs__wrapper">
+            <b-tab title="Tekin" active class="questions__switch-link ">
+              <div class="questions__block-item" v-for="i of 4" :key="i">
+                <div class="questions__block-item-mobile d-block d-md-none">
+                  <div class="questions__block-item-mobile-inner">
+                    <div class="questions__block-time ">
+                      <span>9:16</span>
+                      <span>23.07.2020</span>
+                    </div>
+                    <div class="questions__block-btn">
+                      <b-button class="question__btn">2ta javob</b-button>
+                    </div>
+                    <div class="questions__block-ranking">
+                      <div class="questions__block-ranking-star">
+                        <vue-stars
+                          class="vue__star"
+                          name="rate"
+                          active-color="#FFC805"
+                          inactive-color="#282932"
+                          shadow-color="#FFC805"
+                          hover-color="#00aced"
+                          :max="5"
+                          :value="1"
+                          :readonly="false"
+                          char="★"
+                        />
+                      </div>
+                      <b-button class="question__btn">20000 so’m</b-button>
+                    </div>
+                  </div>
+                  <div class="questions__block-content">
+                    <nuxt-link
+                      class="questions__block-content-heading"
+                      :to="localePath(`/questions/${i}`)"
+                      >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </nuxt-link>
+                    <p class="questions__block-content-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sem massa lectus tortor feugiat sagittis auctor porta
+                      penatibus.Lorem ipsum dolor sit amet, consectetur
+                    </p>
+                  </div>
                 </div>
-                   <div class="questions__block-content">
-               <nuxt-link class="questions__block-content-heading" to="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </nuxt-link>
-               <p class="questions__block-content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur </p>
-             </div>
-
+                <div class="questions__block-time d-none d-md-block">
+                  <span>9:16</span>
+                  <span>23.07.2020</span>
+                </div>
+                <div class="questions__block-btn d-none d-md-block">
+                  <b-button class="question__btn">2ta javob</b-button>
+                </div>
+                <div class="questions__block-content d-none d-md-block">
+                  <nuxt-link
+                    class="questions__block-content-heading"
+                    :to="localePath(`/questions/${i}`)"
+                    >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </nuxt-link>
+                  <p class="questions__block-content-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem
+                    massa lectus tortor feugiat sagittis auctor porta
+                    penatibus.Lorem ipsum dolor sit amet, consectetur
+                  </p>
+                </div>
+                <div class="questions__block-ranking d-none d-md-block">
+                  <div class="questions__block-ranking-star">
+                    <vue-stars
+                      class="vue__star"
+                      name="rate"
+                      active-color="#FFC805"
+                      inactive-color="#282932"
+                      shadow-color="#FFC805"
+                      hover-color="#00aced"
+                      :max="5"
+                      :value="1"
+                      :readonly="false"
+                      char="★"
+                    />
+                  </div>
+                  <b-button class="question__btn d-none d-md-block"
+                    >20000 so’m</b-button
+                  >
+                </div>
               </div>
-             <div class="questions__block-time d-none d-md-block">
-               <span>9:16</span>
-               <span>23.07.2020</span>
-             </div>
-             <div class="questions__block-btn d-none d-md-block">
-             <b-button class="question__btn">2ta javob</b-button> 
-             </div>
-             <div class="questions__block-content d-none d-md-block">
-               <nuxt-link class="questions__block-content-heading" to="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </nuxt-link>
-               <p class="questions__block-content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem massa lectus tortor feugiat sagittis auctor porta penatibus.Lorem ipsum dolor sit amet, consectetur </p>
-             </div>
-             <div class="questions__block-ranking d-none d-md-block">
-               <div class="questions__block-ranking-star">
-                            <vue-stars
-                  class="vue__star"
-                  name="rate"
-                  active-color="#FFC805"
-                  inactive-color="#282932"
-                  shadow-color="#FFC805"
-                  hover-color="#00aced"
-                  :max="5"
-                  :value="1"
-                  :readonly="false"
-                  char="★"
-                />
-               </div>
-               <b-button class="question__btn d-none d-md-block">20000 so’m</b-button>
-             </div>
-            </div>
-            <div class="questions__block-more">
-              <b-button class="questions__block-more-btn">
-                Barcha savollar
-              </b-button>
-            </div>
-          </div>
+              <div class="questions__block-more">
+                <b-button
+                  class="questions__block-more-btn"
+                  :to="localePath(`/questions`)"
+                >
+                  Barcha savollar
+                </b-button>
+              </div>
+            </b-tab>
+            <b-tab title="Pullik"><div class="questions__block-item" v-for="i of 4" :key="i">
+                <div class="questions__block-item-mobile d-block d-md-none">
+                  <div class="questions__block-item-mobile-inner">
+                    <div class="questions__block-time ">
+                      <span>9:16</span>
+                      <span>23.07.2020</span>
+                    </div>
+                    <div class="questions__block-btn">
+                      <b-button class="question__btn">2ta javob</b-button>
+                    </div>
+                    <div class="questions__block-ranking">
+                      <div class="questions__block-ranking-star">
+                        <vue-stars
+                          class="vue__star"
+                          name="rate"
+                          active-color="#FFC805"
+                          inactive-color="#282932"
+                          shadow-color="#FFC805"
+                          hover-color="#00aced"
+                          :max="5"
+                          :value="1"
+                          :readonly="false"
+                          char="★"
+                        />
+                      </div>
+                      <b-button class="question__btn">20000 so’m</b-button>
+                    </div>
+                  </div>
+                  <div class="questions__block-content">
+                    <nuxt-link
+                      class="questions__block-content-heading"
+                      :to="localePath(`/questions/${i}`)"
+                      >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </nuxt-link>
+                    <p class="questions__block-content-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sem massa lectus tortor feugiat sagittis auctor porta
+                      penatibus.Lorem ipsum dolor sit amet, consectetur
+                    </p>
+                  </div>
+                </div>
+                <div class="questions__block-time d-none d-md-block">
+                  <span>9:16</span>
+                  <span>23.07.2020</span>
+                </div>
+                <div class="questions__block-btn d-none d-md-block">
+                  <b-button class="question__btn">2ta javob</b-button>
+                </div>
+                <div class="questions__block-content d-none d-md-block">
+                  <nuxt-link
+                    class="questions__block-content-heading"
+                    :to="localePath(`/questions/${i}`)"
+                    >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </nuxt-link>
+                  <p class="questions__block-content-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem
+                    massa lectus tortor feugiat sagittis auctor porta
+                    penatibus.Lorem ipsum dolor sit amet, consectetur
+                  </p>
+                </div>
+                <div class="questions__block-ranking d-none d-md-block">
+                  <div class="questions__block-ranking-star">
+                    <vue-stars
+                      class="vue__star"
+                      name="rate"
+                      active-color="#FFC805"
+                      inactive-color="#282932"
+                      shadow-color="#FFC805"
+                      hover-color="#00aced"
+                      :max="5"
+                      :value="1"
+                      :readonly="false"
+                      char="★"
+                    />
+                  </div>
+                  <b-button class="question__btn d-none d-md-block"
+                    >20000 so’m</b-button
+                  >
+                </div>
+              </div>
+              <div class="questions__block-more">
+                <b-button
+                  class="questions__block-more-btn"
+                  :to="localePath(`/questions`)"
+                >
+                  Barcha savollar
+                </b-button>
+              </div></b-tab>
+          </b-tabs>
         </b-container>
       </div>
       <!-- end of question part -->
       <div class="how__we-work" id="howwework">
         <b-container>
-        <span class="line-dashed d-none d-lg-block"></span>
+          <span class="line-dashed d-none d-lg-block"></span>
           <h3 class="how__we-work-heading">Biz qanday ishlaymiz</h3>
-          <p class="how__we-work-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="how__we-work-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
           <b-row>
             <b-col lg="4">
               <div class="how__we-work-item message">
                 <div class="img-box">
-                <img src="../assets/images/index/eva_message-circle-outline.svg" alt="">
-              </div>
-              <span>Savol bering</span>
+                  <img
+                    src="../assets/images/index/eva_message-circle-outline.svg"
+                    alt=""
+                  />
+                </div>
+                <span>Savol bering</span>
               </div>
             </b-col>
-             <b-col lg="4">
+            <b-col lg="4">
               <div class="how__we-work-item archieve">
                 <div class="img-box">
-                <img src="../assets/images/index/ri_inbox-archive-line.svg" alt="">
-              </div>
-              <span>Savol bering</span>
+                  <img
+                    src="../assets/images/index/ri_inbox-archive-line.svg"
+                    alt=""
+                  />
+                </div>
+                <span>Savol bering</span>
               </div>
             </b-col>
-             <b-col lg="4">
+            <b-col lg="4">
               <div class="how__we-work-item subway">
                 <div class="img-box">
-                <img src="../assets/images/index/subway_like.svg" alt="">
-              </div>
-              <span>Savol bering</span>
+                  <img src="../assets/images/index/subway_like.svg" alt="" />
+                </div>
+                <span>Savol bering</span>
               </div>
             </b-col>
           </b-row>
         </b-container>
       </div>
-<div class="swiper__wrapper">
-  <b-container>
-    <div class="swiper__header">
-      <span class="swiper__motto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
-      <h4 class="swiper__heading">Yuristlar</h4>
-      <span class="line__swiper d-none d-md-block"></span>
-    </div>
-    <b-row>
-      <b-col xl="12">
-        <swiper ref="mySwiper" :options="swiperOptions">
-          <swiper-slide v-for="i of 6" :key="i">
-            <nuxt-link to="" class="swiper__link">
-              <div class="lawyer__card">
-                <div class="lawyer__card-img">
-                  <img src="../assets/images/lawyer-card/member1.jpg" alt="" />
-                </div>
-                <div class="lawyer__card-info text-center">
-                  <div class="lawyer__card-name">John Smith</div>
-                  <span class="lawyer__card-place">Toshkent shahri</span>
-                  <p class="lawyer__card-category">
-                  Kategoriya : <span>Korporativ yurist</span>
-                  </p>
-                  <span class="lawyer__card-rating"
-                  >Reyting: <span>4.0</span>
-                  <vue-stars
-                    class="vue__star"
-                    name="rate"
-                    active-color="#FFC805"
-                    inactive-color="#282932"
-                    shadow-color="#FFC805"
-                    hover-color="#00aced"
-                    :max="1"
-                    :value="1"
-                    :readonly="false"
-                    char="★"
-                  />
-                  </span>
-                  <div class="lawyer__card-success">
-                  Muvaffaqiyatli ishlar soni
-                  <span class="lawyer__card-success-count">16</span>
-                  </div>
-                </div>
-              </div>
-            </nuxt-link>
-          </swiper-slide>     
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
-      </swiper>
-      </b-col>
-    </b-row>
-  </b-container>
+      <div class="swiper__wrapper">
+        <b-container>
+          <div class="swiper__header">
+            <span class="swiper__motto"
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </span>
+            <h4 class="swiper__heading">Yuristlar</h4>
+            <span class="line__swiper d-none d-md-block"></span>
+          </div>
+          <b-row>
+            <b-col xl="12">
+              <swiper ref="mySwiper" :options="swiperOptions">
+                <swiper-slide v-for="i of 6" :key="i">
+                  <nuxt-link
+                    :to="localePath(`/lawyers/${i}`)"
+                    class="swiper__link"
+                  >
+                    <div class="lawyer__card">
+                      <div class="lawyer__card-img">
+                        <img
+                          src="../assets/images/lawyer-card/member1.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="lawyer__card-info text-center">
+                        <div class="lawyer__card-name">John Smith</div>
+                        <span class="lawyer__card-place">Toshkent shahri</span>
+                        <p class="lawyer__card-category">
+                          Kategoriya : <span>Korporativ yurist</span>
+                        </p>
+                        <span class="lawyer__card-rating"
+                          >Reyting: <span>4.0</span>
+                          <vue-stars
+                            class="vue__star"
+                            name="rate"
+                            active-color="#FFC805"
+                            inactive-color="#282932"
+                            shadow-color="#FFC805"
+                            hover-color="#00aced"
+                            :max="1"
+                            :value="1"
+                            :readonly="false"
+                            char="★"
+                          />
+                        </span>
+                        <div class="lawyer__card-success">
+                          Muvaffaqiyatli ishlar soni
+                          <span class="lawyer__card-success-count">16</span>
+                        </div>
+                      </div>
+                    </div>
+                  </nuxt-link>
+                </swiper-slide>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button-next" slot="button-next"></div>
+              </swiper>
+            </b-col>
+          </b-row>
+        </b-container>
+      </div>
 
-</div>
-	
       <div class="our__service">
         <b-container>
           <div class="our__service-header">
@@ -325,7 +466,10 @@
           <b-row>
             <b-col lg="3" md="4" sm="6">
               <div class="our__service-item">
-                <nuxt-link to="" class="our__service-item-link">
+                <nuxt-link
+                  :to="localePath('/our-service')"
+                  class="our__service-item-link"
+                >
                   <img src="../assets/images/our-service/service1.png" alt="" />
                   <div class="our__service-item-type">
                     Oilaviy munosabatlar
@@ -406,37 +550,53 @@
           </b-row>
         </b-container>
       </div>
-    <div class="our__other-services">
-      <b-container>
-        <div class="our__other-services-header">
-          <h2 class="our__other-services-title">Boshqa xizmatlar</h2>
-          <p class="our__other-services-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        </div>
-        <div class="our__other-services-list">
-          <div class="our__other-services-item">
-            <h4 class="our__other-services-item-title">Telefon konsultatsiya</h4>
-            <p class="our__other-services-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      <div class="our__other-services">
+        <b-container>
+          <div class="our__other-services-header">
+            <h2 class="our__other-services-title">Boshqa xizmatlar</h2>
+            <p class="our__other-services-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="our__other-services-list">
+            <div class="our__other-services-item">
+              <h4 class="our__other-services-item-title">
+                Telefon konsultatsiya
+              </h4>
+              <p class="our__other-services-item-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
               <div class="our__other-services-item-btn-wrap">
-                <b-button class="our__other-services-price">50 ming sum </b-button>
+                <b-button class="our__other-services-price"
+                  >50 ming sum
+                </b-button>
                 <b-button class="our__other-services-use">Foydalanish</b-button>
               </div>
-                <span class="our__other-services-phone d-none d-lg-block"></span>
-          </div>
-          
-           <div class="our__other-services-item-second ml-auto">
-            <h4 class="our__other-services-item-title">Hujjat buyurtma qilish</h4>
-            <p class="our__other-services-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+              <span class="our__other-services-phone d-none d-lg-block"></span>
+            </div>
+
+            <div class="our__other-services-item-second ml-auto">
+              <h4 class="our__other-services-item-title">
+                Hujjat buyurtma qilish
+              </h4>
+              <p class="our__other-services-item-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
               <div class="our__other-services-item-btn-wrap">
-                <b-button class="our__other-services-price">50 ming sum </b-button>
+                <b-button class="our__other-services-price"
+                  >50 ming sum
+                </b-button>
                 <b-button class="our__other-services-use">Foydalanish</b-button>
               </div>
               <span class="our__other-services-search d-none d-lg-block"></span>
+            </div>
           </div>
-        </div>
-      </b-container>
-    </div>
-    <!-- /.our__other-services -->
-
+        </b-container>
+      </div>
+      <!-- /.our__other-services -->
 
       <div class="form__wrapper">
         <b-container>
@@ -465,7 +625,7 @@
                     class="phone__number"
                     placeholder="Telefon raqamingiz"
                   />
-                  
+
                   <input type="text" class="topic" placeholder="Mavzu" />
                 </b-col>
                 <b-col lg="7" class=" order-1 order-lg-2">
@@ -506,27 +666,25 @@
       </div>
       <!-- /.form__wrapper -->
     </div>
+    <div>
+      <p v-for="(i, index) of temp" :key="index">
+        {{ i.title }}
+      </p>
+    </div>
     <!-- /.main__page -->
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 export default {
-  layout:'Footer-main',
-  data() {
-    return {};
-  }
-};
-</script>
-<script>
-export default {
-//   name: "carrousel",
+  layout: "Footer-main",
   data() {
     return {
       swiperOptions: {
-        centeredSlides:true,
+        centeredSlides: true,
         spaceBetween: 30,
-        centeredSlidesBounds:true,
-        centerInsufficientSlides:true,
+        centeredSlidesBounds: true,
+        centerInsufficientSlides: true,
         loop: true,
         autoplay: true,
         navigation: {
@@ -536,41 +694,51 @@ export default {
         // Some Swiper option/callback...
         breakpoints: {
           320: {
-            slidesPerView: 1,
+            slidesPerView: 1
           },
           530: {
-            slidesPerView: 1,
+            slidesPerView: 1
           },
           620: {
-            slidesPerView: 1,
+            slidesPerView: 1
           },
           768: {
             slidesPerView: 2,
-             spaceBetween: 0,
+            spaceBetween: 0
           },
-          992:{
+          992: {
             slidesPerView: 3,
-             spaceBetween: 30,
+            spaceBetween: 30
           },
           1100: {
-            slidesPerView: 3,
-             
+            slidesPerView: 3
           },
           1250: {
             slidesPerView: 4,
-             spaceBetween: 30,
+            spaceBetween: 30
           }
         }
       }
     };
   },
   computed: {
-    // swiper() {
-    //   return this.$refs.mySwiper.$swiper;
+    ...mapGetters(["temp"])
+  },
+  methods: {
+    // dummyFunc() {
+    //   this.$axios.get('https://jsonplaceholder.typicode.com/posts')
+    //   .then(res => {
+    //     this.temp = res.data;
+    //     console.log(this.temp);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   })
     // }
   },
   mounted() {
-    console.log("Current Swiper instance object", this.swiper);
+    // this.dummyFunc();
+    this.$store.dispatch("dummyFunc");
     // this.swiper.slideTo(3, 1000, false);
   }
 };

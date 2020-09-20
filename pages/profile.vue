@@ -17,7 +17,6 @@
 					<b-button class="balance__btn">Hisobni to’ldirish</b-button>
 				</div>
 				</div>
-
 			</b-container>
 		</div>
 	</div>

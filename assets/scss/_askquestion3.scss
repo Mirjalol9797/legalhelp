@@ -1,105 +1,105 @@
-.registration__three-wrapper{
-	background-image: url("../../assets/images/index/bg2.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	.registration__three{
-		max-width:950px;
-		width:100%;
-		margin: 0 auto;
-		background: rgba(241, 240, 240, 0.3);
-		border-radius: 8px;
-	}
-	.registration__three-card-wrapper{
-		padding-top: 20px;
-	}
-	.registration__three-item{
-		max-width: 250px;
-		width:100%;
-		height:302px;
-		margin:0 auto;
-		padding-left: 24px;
-		padding-right: 24px;
-		padding-top: 20px;
-		background: #3D3D3D;
-		border-radius: 6px;
-		&-header{
-			font-family: $Cantata;
-			font-size: 18px;
-			line-height: 23px;
-			color: #FFFFFF;
-			padding-bottom: 6px;
-			display: block;
-			text-align: center;
-			border-bottom: 0.5px solid #A2A2A2;
-		}
-		&-list{
-			margin-top: 20px;
-			li{
-			font-family: $Nunito;
-			font-size: 12px;
-			line-height: 16px;
-			color: #FFFFFF;
-			position: relative;
-			padding-left: 22px;
-			z-index: 11111;
-			margin-bottom: 7px;
-			&::before{
-				content:"";
-				left: 0;
-				top: 1px;
-				position: absolute;
-				display: block;
-				width: 14px;
-				height: 14px;
-				background-image: url("../../assets/images/check-circle.svg");
-				background-repeat: no-repeat;
-				background-size: contain;
-				z-index: 11111111;
-			}
-			}
-		}
-	}
+.registration__three-wrapper {
+  background-image: url("../../assets/images/index/bg2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .registration__three {
+    max-width: 950px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(241, 240, 240, 0.3);
+    border-radius: 8px;
+  }
+  .registration__three-card-wrapper {
+    padding-top: 20px;
+  }
+  .registration__three-item {
+    max-width: 250px;
+    width: 100%;
+    height: 302px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 20px;
+    background: #3d3d3d;
+    border-radius: 6px;
+    &-header {
+      font-family: $Cantata;
+      font-size: 18px;
+      line-height: 23px;
+      color: #ffffff;
+      padding-bottom: 6px;
+      display: block;
+      text-align: center;
+      border-bottom: 0.5px solid #a2a2a2;
+    }
+    &-list {
+      margin-top: 20px;
+      li {
+        font-family: $Nunito;
+        font-size: 12px;
+        line-height: 16px;
+        color: #ffffff;
+        position: relative;
+        padding-left: 22px;
+        z-index: 11111;
+        margin-bottom: 7px;
+        &::before {
+          content: "";
+          left: 0;
+          top: 1px;
+          position: absolute;
+          display: block;
+          width: 14px;
+          height: 14px;
+          background-image: url("../../assets/images/check-circle.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          z-index: 11111111;
+        }
+      }
+    }
+  }
 }
-.registration__three-big-item{
-	background: #3D3D3D;
-	border-radius: 6px;
-	max-width: 300px;
-	width:100%;
-	margin: 20px auto;
-	padding-left: 19px;
-	padding-right: 19px;
-	padding-top: 20px;
-	height: 455px;
-	top: 0;
-	&-header{
-		text-align: center;
-		font-family: $Cantata;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 20px;
-		line-height: 25px;
-		color: #FFFFFF;
-		display: block;
-		padding-bottom: 11px;
-		border-bottom: 0.5px solid #A2A2A2;
-	}
-		ul li{
-			font-family: $Nunito;
-			font-size: 14px !important;
-			line-height: 19px;
-			color: #FFFFFF;
-		}
+.registration__three-big-item {
+  background: #3d3d3d;
+  border-radius: 6px;
+  max-width: 300px;
+  width: 100%;
+  margin: 20px auto;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-top: 20px;
+  height: 455px;
+  top: 0;
+  &-header {
+    text-align: center;
+    font-family: $Cantata;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+    color: #ffffff;
+    display: block;
+    padding-bottom: 11px;
+    border-bottom: 0.5px solid #a2a2a2;
+  }
+  ul li {
+    font-family: $Nunito;
+    font-size: 14px !important;
+    line-height: 19px;
+    color: #ffffff;
+  }
 }
-.registration__three-btn-wrap{
-	text-align: center;
-	margin-top: 20px;
-	padding-bottom: 20px;
-	.registration__three-btn{
-		background: #B08E44;
-		border-radius: 4px;
-		padding: 8px 18px;
-	}
+.registration__three-btn-wrap {
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  .registration__three-btn {
+    background: #b08e44;
+    border-radius: 4px;
+    padding: 8px 18px;
+  }
 }

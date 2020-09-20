@@ -33,7 +33,7 @@
       	<b-row>
       		<b-col lg="4" md="6" sm="6" v-for="item of 9" :key="item" class="align-items-stretch">
       			<div class="news__item">
-      				<nuxt-link to="" class="news__item-link">
+      				<nuxt-link :to="localePath(`/news/${i}`)" class="news__item-link">
       				<img src="../../assets/images/news/news1.jpg" height="185" width="362" alt=""
       				>
       				<div class="news__item-content">

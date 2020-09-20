@@ -7,7 +7,7 @@
   font-family: $Cantata;
   font-size: 22px;
   line-height: 61px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding-bottom: 0px;
   padding-top: 22px;
   margin: 0;
@@ -19,7 +19,7 @@
 
   .container {
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
-    background: #FFFFFF;
+    background: #ffffff;
   }
 }
 
@@ -77,9 +77,9 @@
     }
   }
 }
-  .content-link:hover .news__title {
-    color:#2945AB;
-  }
+.content-link:hover .news__title {
+  color: #2945ab;
+}
 .main__news-link {
   display: block;
   max-height: 380px;
@@ -101,25 +101,25 @@
   background-size: contain;
   background-position: center bottom;
 }
-.news__item{
-	display: flex;
-	align-items: stretch;
+.news__item {
+  display: flex;
+  align-items: stretch;
 }
-.news__item-link:hover  .news__item-content-title{
-color:#2945AB;
+.news__item-link:hover .news__item-content-title {
+  color: #2945ab;
 }
 .news__item-link {
   max-width: 362px;
   margin-left: auto;
   margin-right: auto;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   display: block;
   margin-bottom: 50px;
   min-height: 422px;
-    height: 100%;
-    transition: all 0.3s ease;
+  height: 100%;
+  transition: all 0.3s ease;
   img {
     max-width: 362px;
     width: 100%;
@@ -173,7 +173,7 @@ color:#2945AB;
 
     .more__btn {
       text-align: center;
-      button{
+      button {
         width: 100%;
         background-color: #fff;
         background-color: #00aced !important;

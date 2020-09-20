@@ -85,16 +85,17 @@ margin-left: 15px;
 }
 
 .lawyer__list-search{
-font-family: $Poppins;
 font-style: normal;
-font-weight: 500;
-font-size: 14px;
+font-weight: normal;
+font-size: 12px;
 line-height: 30px;
 color: #FFFFFF;
 margin-top: 30px;
 margin-bottom: 30px;
 max-width: 1080px;
+
 select{
+    width:100%;
     margin-bottom: 15px;
     border:1px solid transparent;
     border-radius: 4px;
@@ -103,6 +104,7 @@ select{
     -webkit-appearance:none; /* Safari and Chrome */
     appearance:none;
     height: 40px;
+    font-size: 16px;
     background-image: url("../images/registration/down-arrow.svg");
     background-repeat: no-repeat;
     background-size: 14px;
