@@ -598,6 +598,13 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  .vue-back-to-top{
+    right: 50px !important;
+  }
+  .btn-to-top {
+  width: 50px !important;
+  height: 50px !important;
+}
   .order-documets-heading {
     font-size: 48px !important;
     padding-top: 90px !important;

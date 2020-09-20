@@ -14,19 +14,19 @@ const store = () => new Vuex.Store({
     },
     getters: {
         temp(state) {
-            return state.temp; 
+            return state.temp;
         }
     },
     actions: {
-        async dummyFunc({commit}) {
-             await this.$axios.get('https://jsonplaceholder.typicode.com/posts')
+        async dummyFunc({ commit }) {
+            await this.$axios.get('https://jsonplaceholder.typicode.com/posts')
                 .then(res => {
-                    commit('setTemp',res.data);
+                    commit('setTemp', res.data);
                 })
                 .catch(err => {
                     console.log(err);
                 })
-        } 
+        }
     },
 })
 

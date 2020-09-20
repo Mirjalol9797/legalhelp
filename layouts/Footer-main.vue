@@ -2,6 +2,7 @@
     <div>
      <Navbar />
       <Nuxt />
+      <BacktoTop />
         <footer class="index__footer">
       <b-container>
         <b-row>

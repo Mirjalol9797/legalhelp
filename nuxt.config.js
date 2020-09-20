@@ -38,6 +38,7 @@ export default {
   plugins: [
     { src: '~/plugins/rate.js', ssr: false},
     { src: '~/plugins/swiper.js', mode: 'client' },
+    { src: '~/plugins/backtotop.js', ssr: false },
   ],
   /*
   ** Auto import components
@@ -54,7 +55,10 @@ export default {
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
-    '@nuxtjs/axios',
+    [
+      "@nuxtjs/axios",
+      { baseURL: "http://legaltech-uz.herokuapp.com/api/" },
+    ],
     '@nuxtjs/auth',
     'bootstrap-vue/nuxt',
       [
@@ -91,10 +95,22 @@ export default {
       }
     ],
   ],
-  /*
-  ** Build configuration
-  ** See https://nuxtjs.org/api/configuration-build/
-  */
+
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'token/', method: 'post', propertyName: 'access' },
+          user: { url: 'user/lawyer-create/', method: 'get', propertyName: false },
+          logout: false
+        }
+      }
+    },
+  },
+
+
+
   build: {
 
   }

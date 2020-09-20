@@ -93,3 +93,34 @@
     // box-shadow: 0 0 15px #00aced;
   }
 }
+
+.btn-to-top {
+  width: 35px;
+  height: 35px;
+  padding: 10px 16px;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 22px;
+  background-color: #4cc9f0;
+  background-image: url("../images/top-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: MoveUpDown 1s linear infinite;
+  position: relative;
+  &:hover {
+    background-color: #4cc9f0;
+    box-shadow: 0 0 10px 6px rgba(76, 201, 240, 0.4);
+  }
+  
+}
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 10px;
+  }
+}
+.vue-back-to-top{
+  right: 20px;
+}
