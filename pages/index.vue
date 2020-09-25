@@ -570,9 +570,9 @@
               </p>
               <div class="our__other-services-item-btn-wrap">
                 <b-button class="our__other-services-price"
-                  >50 ming sum
+                  >Tekin
                 </b-button>
-                <b-button class="our__other-services-use">Foydalanish</b-button>
+                <b-button class="our__other-services-use" href="tel:998946863999">Foydalanish</b-button>
               </div>
               <span class="our__other-services-phone d-none d-lg-block"></span>
             </div>
@@ -589,7 +589,7 @@
                 <b-button class="our__other-services-price"
                   >50 ming sum
                 </b-button>
-                <b-button class="our__other-services-use">Foydalanish</b-button>
+                <b-button class="our__other-services-use" :to="localePath('order-documents')">Foydalanish</b-button>
               </div>
               <span class="our__other-services-search d-none d-lg-block"></span>
             </div>
@@ -677,7 +677,6 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
-  layout: "Footer-main",
   data() {
     return {
       swiperOptions: {

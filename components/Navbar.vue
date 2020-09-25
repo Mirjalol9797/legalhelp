@@ -57,7 +57,7 @@
                 <!-- <b-dropdown-item href="#">EN</b-dropdown-item> -->
               </b-nav-item-dropdown>
               <li>
-                <nuxt-link :to="localePath('/profile')" class="user__link">
+                <nuxt-link :to="localePath('/registration')" class="user__link">
                   <img src="../assets/images/index/user.png" alt="" />
                 </nuxt-link>
               </li>

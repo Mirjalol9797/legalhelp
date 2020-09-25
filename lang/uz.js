@@ -99,7 +99,7 @@ export default {
         name:'Ismingiz',
         surname:'Familyangiz',
         phonenumber:'Telefon raqamingiz',
-        email:'Email adresingiz',
+        email:'Email manzilingiz',
         type:'Yo\'nalishingiz',
         region:'Hududni tanlang',
         next:'Davom etish',
