@@ -1,5 +1,5 @@
 {
-  "name": "legaltech",
+  "name": "legalhelp",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,15 +10,30 @@
     "test": "jest"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "^0.1.10",
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.12.2",
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.15.0",
-    "nuxt": "^2.14.0"
+    "nuxt": "^2.14.0",
+    "nuxt-fontawesome": "^0.4.0",
+    "nuxt-i18n": "^6.15.1",
+    "swiper": "^5.4.5",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-backtotop": "^1.6.1",
+    "vue-stars": "^1.2.2",
+    "vuelidate": "^0.7.5"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^26.1.0",
     "jest": "^26.1.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3",
     "vue-jest": "^3.0.4"
   }
 }

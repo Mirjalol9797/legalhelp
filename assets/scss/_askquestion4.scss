@@ -1,0 +1,103 @@
+.registration__final {
+  background-image: url("../images/index/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 145px;
+}
+.payment-system-wrapper {
+  background: rgba(241, 240, 240, 0.3);
+  border-radius: 8px;
+  max-width: 950px;
+  width: 100%;
+  margin: 0 auto;
+  .registration__header {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+  }
+}
+.registration__final-header {
+  font-family: $Cantata;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 31px;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+.payment__system {
+  max-width: 580px;
+  width: 100%;
+  margin: 0 auto;
+  background: #3d3d3d;
+  border-radius: 8px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  .type__payment {
+    text-align: center;
+    font-family: $Cantata;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+  }
+  .payment__list {
+    max-width: 164px;
+    width: 100%;
+    margin: 0 auto;
+    background: #717172;
+    border-radius: 8px;
+    padding-top: 15px;
+    padding-bottom: 8px;
+  }
+  .payment__item {
+    padding-left: 25px;
+    &::nth-child(1) {
+      margin-bottom: 20px;
+    }
+    label {
+      margin-left: 5px;
+    }
+  }
+  // .payment__link{
+  // 	display: inline-block;
+  // 	position: relative;
+  // 	padding-left: 45px;
+  // 	&::before{
+  // 		content:"";
+  // 		position: absolute;
+  // 		width: 14px;
+  // 		height: 14px;
+  // 		left: 20px;
+  // 		top:5px;
+  // 		border-radius:50%;
+  // 		border: 2px solid #B08E44;
+  // 				}
+  // }
+  .payment__bill {
+    margin-top: 20px;
+    font-family: $Cantata;
+    font-size: 16px;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: center;
+    &-amount {
+      padding-left: 10px;
+    }
+  }
+}
+.payment__bill-btn {
+  font-family: $Cantata;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  a {
+    padding: 8px 18px;
+    background: #b08e44;
+    border-radius: 4px;
+    border: none;
+  }
+}

@@ -1,0 +1,100 @@
+.lawyer-profile-wrapper {
+  background-image: url("../images/index/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 100px;
+  padding-top: 50px;
+
+  .lawyer-profile {
+    background: #F1F0F0;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-left: 40px;
+    padding-bottom: 50px;
+    padding-right: 40px;
+  }
+
+
+
+  .lawyer-image-wrapper {
+    text-align: center;
+    margin: 0 auto;
+
+    img {
+      box-shadow:0 0  20px rgba(0, 0, 0, 0.4);
+      max-width: 120px;
+      max-height: 120px;
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      border: 3px solid #B08E44;
+    }
+  }
+
+  .lawyer-profile-text {
+    font-family: $Nunito;
+    font-size: 14px;
+    line-height: 25px;
+    color: #000000;
+    margin-top: 15px;
+  }
+}
+
+.lawyer-profile__star {
+  font-size: 20px;
+}
+.degree-wrapper{
+  max-width: 400px;
+  .degree{
+    font-size: 20px;
+    font-family: $Nunito;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  .graduated{
+    font-family: $Nunito;
+    font-size: 16px;
+  }
+}
+.activity-wrapper{
+  .activity-header{
+    font-size: 20px;
+    font-family: $Nunito;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  .activity{
+    max-width: 400px;
+    font-family: $Nunito;
+    font-size: 16px;
+  }
+}
+.btn-circle {
+  border-radius: 30px;
+}
+.cost__lawyer-work{
+  font-family: $Nunito;
+  margin-bottom: 30px;
+}
+.filed-work{
+  font-family: $Nunito;
+  &-header{
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    display: block;
+  }
+  svg{
+    margin-right: 10px;
+  }
+  span.btn{
+    background-color: rgb(222, 237, 255);
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,866 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  //index
+  .info__wrapper {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+  }
+
+  //footer media
+
+  .footer,
+  .index-footer {
+    padding-top: 100px !important;
+    padding-bottom: 82px !important;
+  }
+
+  .footer__motto {
+    font-size: 18px !important;
+    margin-top: 29px !important;
+  }
+
+  .footer__menu {
+    text-align: left !important;
+    margin: 25px 0 !important;
+
+    &-list {
+      margin-top: 18px !important;
+    }
+
+    &-link {
+      font-size: 16px !important;
+    }
+  }
+
+  .footer__item {
+    margin-right: 80px !important;
+    text-align: left !important;
+  }
+
+  .other__item {
+    text-align: left !important;
+  }
+
+  .social__footer-list {
+    justify-content: flex-start !important;
+  }
+
+  h3.legaltech {
+    font-size: 24px !important;
+  }
+
+  //lawyer
+  .lawyer__inner {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .lawyer__middle-news-image {
+    img {
+      max-width: 180px !important;
+    }
+  }
+
+  //lawyer__outer
+
+  //news
+  .news__heading {
+    font-size: 32px !important;
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+  }
+
+  //registration
+  .name,
+  .surname,
+  .city,
+  .phone__number,
+  .language,
+  .category,
+  .question__title,
+  .question__text,
+  .registration__email,
+  .password,
+  .file {
+    display: flex !important;
+    justify-content: space-between !important;
+    flex-direction: row !important;
+  }
+
+  .lawyer-profile {
+    padding-top: 55px !important;
+    padding-left: 70px !important;
+    padding-bottom: 100px !important;
+    padding-right: 70px !important;
+  }
+  .for__lawyers-header {
+    padding-top: 70px !important;
+    &-heading {
+      font-size: 48px !important;
+      line-height: 61px !important;
+    }
+  }
+  .lawyer__middle-news-image {
+    img {
+      max-width: 140px !important;
+    }
+  }
+  .order-documets-heading {
+    font-size: 28px !important;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  //index//
+  .header__content {
+    padding-top: 150px !important;
+    padding-bottom: 300px !important;
+    position: relative;
+    z-index: 11;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -53px;
+      top: 70px;
+      z-index: -1;
+      width: 319px !important;
+      height: 461px !important;
+      border: 10px solid rgba(176, 142, 68, 0.7);
+    }
+
+    .header__heading {
+      font-size: 32px !important;
+    }
+  }
+
+  .header__motto {
+    font-size: 15px !important;
+  }
+
+  .about__service-heading {
+    font-size: 32px !important;
+  }
+
+  .about__service-text {
+    font-size: 16px !important;
+  }
+
+  .line {
+    height: 103px !important;
+    width: 2px !important;
+    left: 50%;
+
+    &::before {
+      width: 2px !important;
+      height: 107px !important;
+      left: 25px !important;
+    }
+
+    &::after {
+      width: 2px !important;
+      height: 107px !important;
+      left: -25px !important;
+    }
+  }
+
+  .news__main-page-line {
+    height: 103px !important;
+    width: 2px !important;
+
+    &::before {
+      width: 2px !important;
+      height: 103px !important;
+      left: 25px !important;
+    }
+
+    &::after {
+      width: 2px !important;
+      height: 103px !important;
+      left: 50px !important;
+    }
+  }
+
+  .questions__part-line {
+    height: 103px !important;
+    width: 2px !important;
+    left: 50% !important;
+
+    &::before {
+      height: 103px !important;
+      width: 2px !important;
+      left: -25px !important;
+    }
+
+    &::after {
+      height: 103px !important;
+      width: 2px !important;
+      left: 25px !important;
+    }
+  }
+
+  .questions__block-time {
+    font-size: 16px !important;
+  }
+
+  .questions__part-heading {
+    font-size: 48px !important;
+    line-height: 61px !important;
+    padding-top: 40px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .questions__block-item {
+    padding-top: 31px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    padding-bottom: 35px !important;
+    display: flex !important;
+  }
+
+  .news__main-page-header {
+    margin-top: 50px !important;
+    display: flex !important;
+    margin-bottom: 60px !important;
+
+    &-heading {
+      font-size: 40px !important;
+    }
+
+    &-motto {
+      font-size: 18px !important;
+    }
+  }
+
+  .news__main-page {
+    margin-top: 100px !important;
+  }
+
+  .how__we-work-heading {
+    font-size: 32px !important;
+  }
+
+  //footer media
+  //questions
+  .questions__page-header {
+    font-size: 36px !important;
+    padding-top: 53px !important;
+    margin-bottom: 53px !important;
+  }
+
+  .question__item {
+    display: flex !important;
+    padding-left: 33px !important;
+    padding-bottom: 40px !important;
+    padding-top: 40px !important;
+    padding-right: 35px !important;
+
+    &-info {
+      margin-left: 33px !important;
+      margin-right: 45px !important;
+
+      &-text {
+        font-size: 16px !important;
+      }
+
+      &-title {
+        font-size: 16px !important;
+      }
+    }
+  }
+
+  .question__meta {
+    font-size: 16px !important;
+
+    &-calendar {
+      margin-bottom: 15px !important;
+    }
+
+    &-time {
+      margin-bottom: 8px !important;
+    }
+  }
+
+  //question-inner
+  .left-arrow-link {
+    margin-top: 84px !important;
+    margin-bottom: 42px !important;
+  }
+
+  .questions__overview {
+    display: flex !important;
+
+    &-meta {
+      font-size: 16px !important;
+    }
+
+    &-content {
+      font-size: 16px !important;
+      margin-right: 50px !important;
+      margin-left: 20px !important;
+    }
+  }
+
+  .questions__answer {
+    font-size: 36px !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .lawyer__section {
+    font-size: 15px !important;
+    margin-left: 40px !important;
+
+    img {
+      width: 120px !important;
+      height: 120px !important;
+    }
+
+    .user__name {
+      padding-left: 20px !important;
+    }
+
+    .user__location {
+      padding-left: 25px !important;
+    }
+
+    &-meta {
+      font-size: 16px !important;
+    }
+  }
+
+  .answer__text {
+    font-size: 16px !important;
+    padding: 40px !important;
+  }
+
+  //lawyer page
+  .lawyer__wrapper {
+    & > .container {
+      padding-bottom: 60px !important;
+    }
+  }
+
+  .lawyer__heading {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+    font-size: 36px !important;
+  }
+
+  .highlighted__text-inner {
+    font-size: 18px !important;
+  }
+
+  .lawyer__text {
+    font-size: 18px !important;
+  }
+
+  .lawyer__middle-news-image {
+    img {
+      max-width: 250px !important;
+    }
+  }
+
+  //lawyer--outer
+  .lawyer__outer-heading {
+    font-size: 36px !important;
+    padding: 30px 0;
+  }
+
+  .lawyer__card {
+    margin-bottom: 70px !important;
+  }
+
+  .highlighted__text-inner {
+    padding-left: 40px !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+
+    &::before {
+      content: "";
+      top: 0;
+      left: 10px !important;
+      position: absolute;
+      height: 100%;
+      width: 8px !important;
+      border-radius: 16px;
+      display: block;
+      z-index: 1111;
+      background-color: #fff;
+    }
+  }
+
+  .highlighted__text {
+    padding: 20px !important;
+  }
+
+  .questions__block-more {
+    font-size: 24px !important;
+  }
+
+  .swiper__header {
+    display: flex !important;
+
+    .swper__heading {
+      margin-right: 80px !important;
+      margin-left: 75px !important;
+      font-size: 36px !important;
+    }
+
+    .swiper__motto {
+      font-size: 18px !important;
+    }
+  }
+
+  .about__service-img {
+    max-width: 320px !important;
+  }
+
+  .lawyer__user {
+    margin-bottom: 0 !important;
+  }
+
+  .about__service-text {
+    margin-bottom: 50px !important;
+  }
+
+  //registration
+  .registration__form {
+    font-size: 20px !important;
+    margin-left: 12% !important;
+    margin-right: 12% !important;
+
+    label {
+      max-width: 186px !important;
+    }
+  }
+
+  .step__two-registration-inner {
+    padding-top: 60px !important;
+    padding-bottom: 120px !important;
+  }
+
+  .step__two-heading {
+    font-size: 30px !important;
+    margin-bottom: 60px !important;
+  }
+
+  .profile-outer {
+    padding-top: 70px !important;
+    padding-bottom: 200px !important;
+
+    .profile-inner {
+      align-items: flex-start !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      padding-top: 40px !important;
+      padding-left: 80px !important;
+      padding-right: 100px !important;
+      padding-bottom: 40px !important;
+    }
+
+    .owner-pic {
+      width: 250px !important;
+      height: 250px !important;
+
+      img {
+        border: 6px solid #b08e44;
+      }
+    }
+
+    .balance-wrapper {
+      text-align: left !important;
+    }
+  }
+
+  .lawyer-profile-wrapper {
+    padding-bottom: 230px !important;
+    padding-top: 95px !important;
+  }
+
+  .lawyer-image-wrapper {
+    img {
+      max-width: 258px !important;
+      max-height: 258px !important;
+      border: 6px solid #b08e44 !important;
+    }
+  }
+
+  .lawyer-profile__star {
+    font-size: 32px !important;
+  }
+
+  .profile-info span {
+    font-size: 16px !important;
+  }
+
+  .balance-info {
+    font-size: 18px !important;
+  }
+
+  .lawyer-profile-text {
+    font-size: 16px !important;
+  }
+  .for__lawyers-header {
+    padding-top: 70px !important;
+    &-heading {
+      font-size: 36px !important;
+      line-height: 41px !important;
+    }
+  }
+  .form__for-lawyers {
+    font-size: 18px !important;
+  }
+  .textearea__for-lawyers {
+    font-size: 18px !important;
+  }
+  .for__lawyers-btn-wrap {
+    margin-top: 50px !important;
+    font-size: 20px !important;
+    .for__lawyers-btn {
+      padding-top: 14px 44px !important;
+    }
+  }
+  .profile-inner {
+    padding-left: 30px !important;
+  }
+  .answer__wrapper {
+    display: flex !important;
+  }
+  .registration__final-header {
+    font-size: 36px !important;
+    line-height: 61px !important;
+    padding-top: 60px !important;
+    padding-bottom: 80px !important;
+  }
+  .payment__bill {
+    font-size: 24px !important;
+  }
+  .our__other-services-title {
+    font-size: 48px !important;
+  }
+  .our__other-services-text {
+    font-size: 18px !important;
+  }
+  .our__other-services-item-title {
+    font-size: 30px !important;
+  }
+  .our__other-services-item-text {
+    font-size: 15px !important;
+  }
+  .our__other-services-item-btn-wrap {
+    .our__other-services-price {
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+    }
+    .our__other-services-use {
+      padding-top: 11px !important;
+      padding-bottom: 10px !important;
+    }
+  }
+  .lawyer__list-search {
+    font-size: 20px !important;
+  }
+  .our-services-heading {
+    font-size: 32px !important;
+  }
+  .our-services {
+    padding-top: 90px !important;
+    padding-bottom: 90px !important;
+  }
+  .how__we-work {
+    padding-top: 100px !important;
+  }
+  .order-documets-heading {
+    font-size: 36px !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  .order-documents-motto {
+    font-size: 18px !important;
+  }
+  .type-of-documents-header {
+    h6 {
+      font-size: 16px !important;
+    }
+  }
+  .order-documents-inner {
+    padding: 30px !important;
+  }
+  .lawyer__section{
+      margin:0 0 0 5px !important;
+      &-meta{
+        margin-top: 40px !important;
+      }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .vue-back-to-top{
+    right: 50px !important;
+  }
+  .btn-to-top {
+  width: 50px !important;
+  height: 50px !important;
+}
+  .order-documets-heading {
+    font-size: 48px !important;
+    padding-top: 90px !important;
+    padding-bottom: 90px !important;
+  }
+  .img-box {
+    width: 170px !important;
+    height: 170px !important;
+  }
+
+  .swiper__heading {
+    font-size: 48px !important;
+  }
+
+  //index
+  .about__service-heading {
+    font-size: 40px !important;
+    line-height: 51px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .about__service-text {
+    font-size: 18px !important;
+  }
+
+  .header__content {
+    .header__heading {
+      font-size: 54px !important;
+    }
+  }
+
+  .solve__with-us-header {
+    margin-bottom: 100px !important;
+  }
+
+  .solve__with-us-heading {
+    font-size: 40px !important;
+    line-height: 51px !important;
+    margin-bottom: 39px !important;
+  }
+
+  .solve__with-us-motto {
+    font-size: 18px !important;
+  }
+
+  .problem__item {
+    padding-top: 22px !important;
+    padding-bottom: 26px !important;
+    margin-bottom: 0 !important;
+    width: 220px !important;
+
+    &-number {
+      font-size: 36px !important;
+    }
+
+    &-lawyer {
+      font-size: 14px !important;
+    }
+  }
+
+  .our__service {
+    margin-bottom: 150px !important;
+
+    &-header {
+      margin-bottom: 80px !important;
+    }
+
+    &-heading {
+      font-size: 48px !important;
+      line-height: 61px !important;
+      margin-bottom: 45px !important;
+    }
+
+    &-motto {
+      font-size: 18px !important;
+    }
+  }
+
+  .our__service-item {
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+
+    &-type {
+      font-size: 16px !important;
+      padding-top: 12px !important;
+      padding-bottom: 15px !important;
+    }
+  }
+
+  .main__form {
+    font-size: 18px !important;
+
+    input {
+      padding-top: 12px !important;
+      padding-bottom: 10px !important;
+    }
+  }
+
+  .textarea {
+    height: 230px !important;
+  }
+
+  .email {
+    margin-top: 0 !important;
+  }
+
+  .submit__btn {
+    margin-top: 20px !important;
+    padding: 14px 45px;
+  }
+
+  .form__heading {
+    font-size: 32px !important;
+  }
+
+  .form__motto {
+    font-size: 15px !important;
+  }
+
+  .info__content-heading {
+    font-size: 18px !important;
+  }
+
+  .info__content-tel {
+    font-size: 22px !important;
+  }
+
+  //footer medi
+  .footer__menu {
+    margin: 0 !important;
+  }
+
+  //questions
+  .questions__page-header {
+    font-size: 48px !important;
+    padding-top: 53px !important;
+    margin-bottom: 53px !important;
+  }
+
+  //news
+  .news__heading {
+    font-size: 48px !important;
+    padding-bottom: 60px !important;
+    padding-top: 60px !important;
+  }
+
+  .news__content {
+    padding-right: 15px !important;
+  }
+
+  .main__news-link {
+    img {
+      max-width: 702px !important;
+    }
+  }
+
+  .how__we-work-heading {
+    font-size: 48px !important;
+  }
+
+  .how__we-work-text {
+    font-size: 18px !important;
+  }
+
+  //registration
+  .registration__form {
+    label {
+      text-align: right !important;
+      white-space: nowrap !important;
+    }
+  }
+
+  .step__two-registration-inner {
+    padding-top: 80px !important;
+    padding-bottom: 200px !important;
+  }
+
+  .step__two-heading {
+    font-size: 48px !important;
+    margin-bottom: 80px !important;
+  }
+
+  .lawyer-profile-wrapper {
+    .profile-info {
+      margin-top: 20px !important;
+      margin-left: 30px !important;
+    }
+  }
+  .registration__three-big-item {
+    top: -100px !important;
+    position: relative !important;
+  }
+  .registration__three-card-wrapper {
+    padding-top: 150px !important;
+  }
+  .registration__three-btn-wrap {
+    margin-top: 60px !important;
+    padding-bottom: 40px !important;
+  }
+  .registration__three-wrapper {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+  }
+  .for__lawyers-header {
+    padding-top: 70px !important;
+    justify-content: flex-start !important;
+    &-heading {
+      font-size: 48px !important;
+      line-height: 61px !important;
+    }
+  }
+  .for__lawyers-btn-wrap {
+    text-align: left !important;
+    margin-left: 20px;
+  }
+  .registration__final-header {
+    font-size: 48px !important;
+    line-height: 61px !important;
+    padding-top: 90px !important;
+    padding-bottom: 120px !important;
+  }
+  .index-footer-item {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .our-services-heading {
+    font-size: 48px !important;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  //laweyer page
+  .lawyer__inner {
+    padding-left: 136px !important;
+    padding-right: 136px !important;
+    padding-top: 59px !important;
+    padding-bottom: 109px !important;
+  }
+
+  .lawyer__middle-news-image {
+    img {
+      max-width: 396px !important;
+      width: 100% !important;
+      max-height: 288px !important;
+      height: auto !important;
+    }
+  }
+
+  //lawyer--outer
+  .lawyer__outer-heading {
+    font-size: 48px !important;
+    padding: 70px 0 !important;
+  }
+}
