@@ -31,7 +31,7 @@
                   <nuxt-link :to="localePath('/questions')"  class="footer__menu-link">{{ $t('navbar.questions') }}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link :to="localePath('#howwework')" class="footer__menu-link">{{ $t('footer__menu.howwework') }}</nuxt-link>
+                  <nuxt-link :to="localePath('/')" class="footer__menu-link">{{ $t('footer__menu.howwework') }}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
                   <nuxt-link :to="localePath('/lawyers')" class="footer__menu-link">{{ $t('navbar.lawyers') }}</nuxt-link>
@@ -49,9 +49,6 @@
               <ul class="footer__menu-list">
                 <li class="footer__menu-item">
                   <nuxt-link to class="footer__menu-link">{{$t('footer__menu.team')}}</nuxt-link>
-                </li>
-                <li class="footer__menu-item">
-                  <nuxt-link to class="footer__menu-link">{{$t('footer__menu.projectmanager')}}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
                   <nuxt-link to class="footer__menu-link">{{$t('footer__menu.popularquestions')}}</nuxt-link>

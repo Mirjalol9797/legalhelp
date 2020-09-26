@@ -495,7 +495,7 @@
   }
 
   .profile-info span {
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
 
   .balance-info {
@@ -503,7 +503,7 @@
   }
 
   .lawyer-profile-text {
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
   .for__lawyers-header {
     padding-top: 70px !important;
@@ -553,9 +553,6 @@
     font-size: 15px !important;
   }
   .our__other-services-item-btn-wrap {
-    button {
-      font-size: 20px !important;
-    }
     .our__other-services-price {
       padding-top: 8px !important;
       padding-bottom: 8px !important;
@@ -593,6 +590,12 @@
   }
   .order-documents-inner {
     padding: 30px !important;
+  }
+  .lawyer__section{
+      margin:0 0 0 5px !important;
+      &-meta{
+        margin-top: 40px !important;
+      }
   }
 }
 

@@ -81,39 +81,31 @@
 // }
 // }
 export default {
-  data() {
-    stikyNavbar: false;
-  },
+  // data() {
+  //   stikyNavbar: false;
+  // },
 
   methods: {
     changeLanguage(lang) {
       this.$router.push(this.switchLocalePath(lang));
-      // if(lang == 'uz') {
-      //     this.$store.commit('setVarLang','');
-      //     this.$store.commit('setLang','');
-      // }
-      // else{
-      //     this.$store.commit('setVarLang','kl/');
-      //     this.$store.commit('setLang','_kl');
-      // }
     },
-    toggleNavClass() {
-      if (this.stikyNavbar == false) {
-        return "navbar__wrapper";
-      } else {
-        return "sticky-nav";
-      }
-    }
+    // toggleNavClass() {
+    //   if (this.stikyNavbar == false) {
+    //     return "navbar__wrapper";
+    //   } else {
+    //     return "sticky-nav";
+    //   }
+    // }
   },
    mounted(){
-  window.document.onscroll = () => {
-      let navBar = document.getElementById('nav');
-      if(window.scrollY > navBar.offsetTop){
-        this.stikyNavbar = true;
-        } else {
-        this.stikyNavbar = false;
-      }
-    }
+  // window.document.onscroll = () => {
+  //     let navBar = document.getElementById('nav');
+  //     if(window.scrollY > navBar.offsetTop){
+  //       this.stikyNavbar = true;
+  //       } else {
+  //       this.stikyNavbar = false;
+  //     }
+  //   }
   }
 };
 </script>

@@ -13,79 +13,88 @@
           <b-row>
             <b-col lg="4" md="6">
               <div class="type-of-documents">
-                <div class="type-of-documents-item">
-                  <div class="type-of-documents-header">
-                    <label for="type-of-doc1">
-                      <input type="radio" id="type-of-doc1" name="name" />
-                      <span class="checkmark"></span>
-                      <h6>Biznesni ro'yxatga olish</h6>
-                    </label>
+                <label class="type-of-documents-item" id="type-of-doc1">
+                  <div for="type-of-doc1">
+                    <div class="type-of-documents-header">
+                      <label>
+                        <input type="radio" name="name" />
+                        <span class="checkmark"></span>
+                        <h6>Biznesni ro'yxatga olish</h6>
+                      </label>
+                    </div>
+                    <p class="card__text">
+                      Tadbirkorlikni ro'yxatga olish MCHJ, YATT, XK va
+                      boshqalarga mos hujjatlar to'plamini tayyorlash
+                    </p>
                   </div>
-                  <p class="card__text">
-                    Tadbirkorlikni ro'yxatga olish MCHJ, YATT, XK va boshqalarga
-                    mos hujjatlar to'plamini tayyorlash
-                  </p>
-                </div>
+                </label>
               </div>
             </b-col>
             <b-col lg="4" md="6">
               <div class="type-of-documents">
-                <div class="type-of-documents-item">
-                  <div class="type-of-documents-header">
-                    <label for="type-of-doc2">
-                      <input type="radio" id="type-of-doc2" name="name" />
-                      <span class="checkmark"></span>
-                      <h6>Shartnoma va bitimlar</h6>
-                    </label>
+                <label class="type-of-documents-item" id="type-of-doc2">
+                  <div for="type-of-doc2">
+                    <div class="type-of-documents-header">
+                      <label>
+                        <input type="radio" name="name" />
+                        <span class="checkmark"></span>
+                        <h6>Shartnoma va bitimlar</h6>
+                      </label>
+                    </div>
+                    <p class="card__text">
+                      Ijara shartnomasi, lizing, oldi-sotdi, qarz, vositachilik
+                      va boshqa turdagi shartnomalar
+                    </p>
                   </div>
-                  <p class="card__text">
-                    Ijara shartnomasi, lizing, oldi-sotdi, qarz, vositachilik va
-                    boshqa turdagi shartnomalar
-                  </p>
-                </div>
+                </label>
               </div>
             </b-col>
 
             <b-col lg="4" md="6">
               <div class="type-of-documents">
-                <div class="type-of-documents-item">
-                  <div class="type-of-documents-header">
-                    <label for="type-of-doc3">
-                      <input type="radio" id="type-of-doc3" name="name" />
-                      <span class="checkmark"></span>
-                      <h6>Sud hujjatlari</h6>
-                    </label>
+                <label class="type-of-documents-item" id="type-of-doc3">
+                  <div for="type-of-doc3">
+                    <div class="type-of-documents-header">
+                      <label>
+                        <input type="radio" name="name" />
+                        <span class="checkmark"></span>
+                        <h6>Sud hujjatlari</h6>
+                      </label>
+                    </div>
+                    <p class="card__text">
+                      Da'vo arizasi, da'vo arizasiga qo'shimcha kiritish,
+                      iltimosnoma, sud qaroridan ustidan shikoyat va h.k.
+                    </p>
                   </div>
-                  <p class="card__text">
-                    Da'vo arizasi, da'vo arizasiga qo'shimcha kiritish,
-                    iltimosnoma, sud qaroridan ustidan shikoyat va h.k.
-                  </p>
-                </div>
+                </label>
               </div>
             </b-col>
             <b-col lg="4" md="6">
               <div class="type-of-documents">
-                <div class="type-of-documents-item">
-                  <div class="type-of-documents-header">
-                    <label for="type-of-doc4">
-                      <input type="radio" id="type-of-doc4" name="name" />
-                      <span class="checkmark"></span>
-                      <h6>Iste'molchi shikoyatlari</h6>
-                    </label>
+                <label class="type-of-documents-item" id="type-of-doc4">
+                  <div for="type-of-doc4">
+                    <div class="type-of-documents-header">
+                      <label>
+                        <input type="radio" name="name" />
+                        <span class="checkmark"></span>
+                        <h6>Iste'molchi shikoyatlari</h6>
+                      </label>
+                    </div>
+                    <p class="card__text">
+                      Tovarlarni uchun to'langan pulni qaytarish, sug'urta,
+                      bank, uy-joy kommunal xizmatlari va boshqalar.
+                    </p>
                   </div>
-                  <p class="card__text">
-                    Tovarlarni uchun to'langan pulni qaytarish, sug'urta, bank,
-                    uy-joy kommunal xizmatlari va boshqalar.
-                  </p>
-                </div>
+                </label>
               </div>
             </b-col>
             <b-col lg="4" md="6">
               <div class="type-of-documents">
-                <div class="type-of-documents-item">
+                <label class="type-of-documents-item" id="type-of-doc5">
+                  <div for="type-of-doc5">
                   <div class="type-of-documents-header">
-                    <label for="type-of-doc5">
-                      <input type="radio" id="type-of-doc5" name="name" />
+                    <label >
+                      <input type="radio"  name="name" />
                       <span class="checkmark"></span>
                       <h6>Mansabdor shaxs ustidan shikoyat</h6>
                     </label>
@@ -94,15 +103,18 @@
                     Sud xodimi, IIV/DAN va boshqa davlat xizmatchisining harakat
                     yuzasidan shikoyat
                   </p>
-                </div>
+
+                  </div>
+                </label>
               </div>
             </b-col>
             <b-col lg="4" md="6">
               <div class="type-of-documents">
-                <div class="type-of-documents-item">
+                <label class="type-of-documents-item" id="type-of-doc6">
+                  <div for="type-of-doc6">
                   <div class="type-of-documents-header">
-                    <label for="type-of-doc6">
-                      <input type="radio" id="type-of-doc6" name="name" />
+                    <label >
+                      <input type="radio"  name="name" />
                       <span class="checkmark"></span>
 
                       <h6>Boshqa turdagi hujjatlar</h6>
@@ -113,7 +125,9 @@
                     tafsilotini, turini va qanday boshqa talablarni
                     belgilashingiz mumkin
                   </p>
-                </div>
+
+                  </div>
+                </label>
               </div>
             </b-col>
           </b-row>

@@ -17,23 +17,17 @@
               <b-col lg="4">
                 <div class="registration__three-item">
                   <span class="registration__three-item-header"
-                    >V.I.P 15000 so’m</span
+                    >Standart savol 15 000 so`m</span
                   >
                   <ul class="registration__three-item-list">
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor
+                      Savolni darhol e'lon qilish.
                     </li>
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor
+                      Sms orqali javob haqida xabarnoma.
                     </li>
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor
-                    </li>
-                    <li class="registration__three-item-item">
-                      Lorem ipsum dolor
-                    </li>
-                    <li class="registration__three-item-item">
-                      Lorem ipsum dolor
+                      Yuristning umumiy javobi kafolati.
                     </li>
                   </ul>
                 </div>
@@ -41,32 +35,34 @@
               <b-col lg="4">
                 <div class="registration__three-big-item">
                   <span class="registration__three-big-item-header">
-                    V.I.P 25000 so’m
+                    V.I.P savol 25000 so’m
                   </span>
                   <ul class="registration__three-item-list">
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor sit amet
+                      Savolni darhol e'lon qilish.
                     </li>
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor sit amet
+                      Sms orqali javob haqida xabarnoma.
                     </li>
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor sit amet
+                      Yuristning umumiy javobi kafolati.
                     </li>
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor sit amet
+                      Vaziyatni to'liq va batafsil tahlili kafolati.
                     </li>
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor sit amet
+                      Vaziyat bo'yicha bir nechta yuristlar fikrlari.
                     </li>
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor sit amet
+                      Birinchi javob 15 daqiqa ichida.
                     </li>
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor sit amet
+                      Cheklanmagan miqdorda qo'shimcha savol va
+                      aniqlashtirishlar.
                     </li>
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor sit amet
+                      Savolni boshqa foydalanuvchilar va qidiruv tizimlaridan
+                      yashirish.
                     </li>
                     <li class="registration__three-item-item">
                       Lorem ipsum dolor sit amet
@@ -80,23 +76,14 @@
               <b-col lg="4">
                 <div class="registration__three-item">
                   <span class="registration__three-item-header"
-                    >V.I.P 15000 so’m</span
+                    >Bepul savol 0 so`m</span
                   >
                   <ul class="registration__three-item-list">
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor
+                      Savol navbati bilan e'lon qilinadi.
                     </li>
                     <li class="registration__three-item-item">
-                      Lorem ipsum dolor
-                    </li>
-                    <li class="registration__three-item-item">
-                      Lorem ipsum dolor
-                    </li>
-                    <li class="registration__three-item-item">
-                      Lorem ipsum dolor
-                    </li>
-                    <li class="registration__three-item-item">
-                      Lorem ipsum dolor
+                      Javob kafolatlanmagan.
                     </li>
                   </ul>
                 </div>

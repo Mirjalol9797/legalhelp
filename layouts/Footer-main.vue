@@ -67,6 +67,6 @@
           </b-col>
         </b-row>
       </b-container>
-      </footer>  
+      </footer>
     </div>
 </template>

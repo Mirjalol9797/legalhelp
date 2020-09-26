@@ -349,7 +349,7 @@
         </b-container>
       </div>
       <!-- end of question part -->
-      <div class="how__we-work" id="howwework">
+      <div class="how__we-work">
         <b-container>
           <span class="line-dashed d-none d-lg-block"></span>
           <h3 class="how__we-work-heading">Biz qanday ishlaymiz</h3>
@@ -377,7 +377,7 @@
                     alt=""
                   />
                 </div>
-                <span>Savol bering</span>
+                <span>Javob oling</span>
               </div>
             </b-col>
             <b-col lg="4">
@@ -385,7 +385,7 @@
                 <div class="img-box">
                   <img src="../assets/images/index/subway_like.svg" alt="" />
                 </div>
-                <span>Savol bering</span>
+                <span>Muammo hal!</span>
               </div>
             </b-col>
           </b-row>
@@ -666,17 +666,18 @@
       </div>
       <!-- /.form__wrapper -->
     </div>
-    <div>
+    <!-- <div>
       <p v-for="(i, index) of temp" :key="index">
         {{ i.title }}
       </p>
-    </div>
+    </div> -->
     <!-- /.main__page -->
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex";
+// import { mapGetters } from "vuex";
 export default {
+  layout:"Footer-main",
   data() {
     return {
       swiperOptions: {
@@ -721,7 +722,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["temp"])
+    // ...mapGetters(["temp"])
   },
   methods: {
     // dummyFunc() {
@@ -737,7 +738,7 @@ export default {
   },
   mounted() {
     // this.dummyFunc();
-    this.$store.dispatch("dummyFunc");
+    // this.$store.dispatch("dummyFunc");
     // this.swiper.slideTo(3, 1000, false);
   }
 };

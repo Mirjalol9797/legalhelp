@@ -565,7 +565,7 @@
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
-  font-size: 22px !important;
+  font-size: 18px !important;
 }
 .swiper-button-prev,
 .swiper-button-next {
@@ -573,10 +573,13 @@
   left: -7px;
   border: 1px solid #00aced;
   border-radius: 50%;
-  width: 32px !important;
-  height: 32px !important;
+  width: 40px !important;
+  height: 40px !important;
   box-shadow: 1px -3px 5px 0 rgba(0, 0, 0, 0.24);
   background-color: #ffffff;
+  &:hover{
+    box-shadow:0 0 10px rgba(0, 172, 237, 0.5);
+  }
 }
 .swiper-slide {
   text-align: center;
@@ -847,7 +850,7 @@ border-radius: 8px;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 250px;
-  border: 10px solid rgba(176, 142, 68, 0.1);
+  border: 5px solid rgba(176, 142, 68, 0.1);
   z-index: -1;
   display: block;
 }
@@ -859,7 +862,7 @@ border-radius: 8px;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 250px;
-  border: 10px solid rgba(176, 142, 68, 0.1);
+  border: 5px solid rgba(176, 142, 68, 0.1);
   z-index: -1;
   display: block;
 }
@@ -871,7 +874,7 @@ border-radius: 8px;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 250px;
-  border: 10px solid rgba(176, 142, 68, 0.1);
+  border: 5px solid rgba(176, 142, 68, 0.1);
   z-index: -1;
   display: block;
 }
@@ -938,7 +941,7 @@ border-radius: 8px;
   }
   &-phone {
     position: absolute;
-    border: 10px solid rgba(176, 142, 68, 0.1);
+    border: 5px solid rgba(176, 142, 68, 0.1);
     width: 300px;
     height: 245px;
     right: -262px;
@@ -951,7 +954,7 @@ border-radius: 8px;
   }
   &-search {
     position: absolute;
-    border: 10px solid rgba(176, 142, 68, 0.1);
+    border: 5px solid rgba(176, 142, 68, 0.1);
     width: 300px;
     height: 245px;
     left: -247px;

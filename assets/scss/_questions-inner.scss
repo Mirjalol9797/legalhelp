@@ -145,7 +145,7 @@
   max-width: 150px;
   width: 100%;
   padding-top: 40px;
-  margin-left: 5px;
+  margin:0 auto;
   font-family: $Nunito;
   font-style: normal;
   font-weight: normal;
@@ -178,7 +178,7 @@
     font-size: 12px;
     line-height: 22px;
     color: #000000;
-    margin-top: 40px;
+    margin-top: 5px;
     &-time {
       display: block;
       background-image: url("../images/time.svg");
