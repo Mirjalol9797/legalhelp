@@ -121,7 +121,6 @@
     padding-bottom: 300px !important;
     position: relative;
     z-index: 11;
-
     &::after {
       content: "";
       position: absolute;
@@ -456,7 +455,6 @@
     .profile-inner {
       align-items: flex-start !important;
       flex-direction: row !important;
-      justify-content: space-between !important;
       padding-top: 40px !important;
       padding-left: 80px !important;
       padding-right: 100px !important;

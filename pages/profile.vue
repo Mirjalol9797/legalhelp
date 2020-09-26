@@ -92,6 +92,31 @@
                         />
                       </label>
                     </b-col>
+                    <b-col lg="12">
+                      <form action="" method="POST">
+                        <b-col lg="6">
+                          <label for="user__profile-name">Ism</label>
+                          <input type="text" id="user__profile-name">
+                        </b-col>
+                        <b-col lg="6">
+                          <label for="user__profile-surname">Familya</label>
+                          <input type="text" id="user__profile-surname">
+                        </b-col>
+                        <b-col lg="6">
+                          <label for="user__profile-lang">Foydalasnish tili</label>
+                          <input type="text">
+                        </b-col>
+                        <b-col lg="6">
+
+                        </b-col>
+                        <b-col lg="6">
+
+                        </b-col>
+                        <b-col lg="6">
+                          <label for="user__profile-email">Email</label>
+                        </b-col>
+                      </form>
+                    </b-col>
                   </div> </b-card-text
               ></b-tab>
             </b-tabs>
