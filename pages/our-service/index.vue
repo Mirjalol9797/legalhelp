@@ -3,6 +3,32 @@
         <div class="our-services">
             <b-container>
                 <h1 class="our-services-heading">{{$t('service.title')}}</h1>
+              <b-row>
+                <b-col lg="6">
+                  <div class="service__list">
+                     <font-awesome-icon :icon="['fas','phone']"  class="service__list-icon"/>
+                     <div class="service__list-content">
+                       <span class="service__list-top">Tekin</span>
+                    <div class="service__list-title">Telefon konsultatsiya</div>
+                    <div class="service__list-text">Telefon raqamizgizni qoldiring va mutaxasis siz bilan tez orada bog'lanadi.</div>
+                    <b-button class="service__list-btn">Qo'ng'roq qilish</b-button>
+                     </div>
+                  </div>
+                 
+                </b-col>
+                <b-col lg="6">
+                   <div class="service__list service__list--spacing">
+                     <font-awesome-icon :icon="['fas','file']"  class="service__list-icon"/>
+                     <div class="service__list-content">
+                       <span class="service__list-top">500 000 so'm</span>
+                    <div class="service__list-title">Hujjat buyurtma qilish</div>
+                    <div class="service__list-text">Yuridik hujjat uchun buyurtma bering va qisqa vaqtda natijaga erishing.</div>
+                    <b-button class="service__list-btn" to="order-documents">Buyurtma qilish</b-button>
+                     </div>
+                  </div>
+                </b-col>
+              </b-row>
+           
                 <b-row>
             <b-col lg="3" md="4" sm="6">
               <div class="our__service-item">

@@ -601,6 +601,9 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  .service__list--spacing{
+    margin-top: 0 !important;
+  }
   .vue-back-to-top{
     right: 50px !important;
   }

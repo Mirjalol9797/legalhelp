@@ -12,28 +12,40 @@
             </nuxt-link>
             <span class="step__page-number">3/4</span>
           </div>
-          <div class="registration__three-card-wrapper">
+          <form method="POST" action="" class="registration__three-card-wrapper">
             <b-row>
               <b-col lg="4">
-                <div class="registration__three-item">
-                  <span class="registration__three-item-header"
-                    >Standart savol 15 000 so`m</span
-                  >
-                  <ul class="registration__three-item-list">
-                    <li class="registration__three-item-item">
-                      Savolni darhol e'lon qilish.
-                    </li>
-                    <li class="registration__three-item-item">
-                      Sms orqali javob haqida xabarnoma.
-                    </li>
-                    <li class="registration__three-item-item">
-                      Yuristning umumiy javobi kafolati.
-                    </li>
-                  </ul>
-                </div>
+                
+                  
+                  <div class="registration__three-item">
+                    <label for="price__card" class="price__card-label">
+                      <input type="radio" name="price__card" id="price__card">
+                  <span class="price__card-tick"></span>
+                    
+                    <span class="registration__three-item-header"
+                      >Standart savol 15 000 so`m</span
+                    >
+                    <ul class="registration__three-item-list">
+                      <li class="registration__three-item-item">
+                        Savolni darhol e'lon qilish.
+                      </li>
+                      <li class="registration__three-item-item">
+                        Sms orqali javob haqida xabarnoma.
+                      </li>
+                      <li class="registration__three-item-item">
+                        Yuristning umumiy javobi kafolati.
+                      </li>
+                    </ul>
+                    </label>
+                  </div>
+              
               </b-col>
               <b-col lg="4">
+               
                 <div class="registration__three-big-item">
+                   <label for="price__card2" class="price__card-label">
+                  <input type="radio" name="price__card" id="price__card2">
+                  <span class="price__card-tick"></span>
                   <span class="registration__three-big-item-header">
                     V.I.P savol 25000 so’m
                   </span>
@@ -64,17 +76,15 @@
                       Savolni boshqa foydalanuvchilar va qidiruv tizimlaridan
                       yashirish.
                     </li>
-                    <li class="registration__three-item-item">
-                      Lorem ipsum dolor sit amet
-                    </li>
-                    <li class="registration__three-item-item">
-                      Lorem ipsum dolor sit amet
-                    </li>
                   </ul>
+                </label>
                 </div>
               </b-col>
               <b-col lg="4">
                 <div class="registration__three-item">
+                <label for="price__card3" class="price__card-label">
+                  <input type="radio" name="price__card" id="price__card3">
+                  <span class="price__card-tick"></span>
                   <span class="registration__three-item-header"
                     >Bepul savol 0 so`m</span
                   >
@@ -86,10 +96,11 @@
                       Javob kafolatlanmagan.
                     </li>
                   </ul>
+                </label>
                 </div>
               </b-col>
             </b-row>
-          </div>
+          </form>
           <div class="registration__three-btn-wrap">
             <b-button
               class="registration__three-btn"

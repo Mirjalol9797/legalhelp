@@ -15,3 +15,51 @@
   color: #ffffff;
   margin-bottom: 30px;
 }
+
+.service__list{
+  max-width:540px;
+  width:100%;
+  background-color: #fff;
+  padding: 40px 24px;
+  border-radius:5px;
+  display: flex;
+  position: relative;
+  transition: all 0.3s ease;
+  &:hover{
+    transform: translate(0,-5px);
+  }
+  &-icon{
+    font-size: 48px;
+    margin-top: 6px;
+    color:#ee8208;
+  }
+  &-title{
+    font-size: 24px;
+  }
+  &-text{
+    color:#6c7686;
+  }
+  &-content{
+    margin-left: 15px;
+  }
+  &-btn{
+    background-color: #ee8208;
+    border:none;
+    margin-top: 5px;
+    &:focus,&:hover{
+      background-color:lightcoral;
+    }
+  }
+  &-top{
+    font-size: 16px;
+    background-color: #ee8208;
+    padding: 5px 40px;
+    color:white;
+    position: absolute;
+    top:0;
+    right:0;
+  }
+}
+.service__list--spacing{
+  margin-top: 30px;
+}
