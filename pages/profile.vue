@@ -103,8 +103,11 @@
                           <input type="text" id="user__profile-surname">
                         </b-col>
                         <b-col lg="6">
-                          <label for="user__profile-lang">Foydalasnish tili</label>
-                          <input type="text">
+                          <label for="user__profile-lang">Foydalanish tili</label>
+                          <select name="" id="select__user-lang">
+                            <option value="1">O'zbek</option>
+                            <option value="2">Rus</option>
+                          </select>
                         </b-col>
                         <b-col lg="6">
 
