@@ -78,5 +78,19 @@ export default {
       currentPage: 1,
     };
   },
+  methods: {
+    async getNews() {
+      await this.$axios.get('posts/')
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    }
+  },
+  created() {
+    this.getNews();
+  }
 };
 </script>

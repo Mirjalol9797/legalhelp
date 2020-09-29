@@ -11,7 +11,7 @@
                        <span class="service__list-top">Tekin</span>
                     <div class="service__list-title">Telefon konsultatsiya</div>
                     <div class="service__list-text">Telefon raqamizgizni qoldiring va mutaxasis siz bilan tez orada bog'lanadi.</div>
-                    <b-button class="service__list-btn">Qo'ng'roq qilish</b-button>
+                    <b-button class="service__list-btn" href="tel:+998946863999">Qo'ng'roq qilish</b-button>
                      </div>
                   </div>
                  
