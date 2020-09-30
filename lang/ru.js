@@ -45,8 +45,11 @@ export default {
         consumer: 'Права потребителей',
         heritage: 'наследстве'
     },
-    lawyers:{
-    lawyers:'Юристы'
+    lawyers: {
+        lawyers: 'Юристы',
+        success: 'Количество успешных работа',
+        rating: 'рейтинг',
+        category: 'Категория',
     },
     region: {
         select: 'Выберите регион',
@@ -70,7 +73,7 @@ export default {
         rate: 'Выберите рейтинг'
     },
     search: {
-        search:'Поиск'
+        search: 'Поиск'
     },
 
     news: {
@@ -92,19 +95,19 @@ export default {
         placeholder: 'Поиск вопроса',
         btn: 'Поиск'
     },
-    service:{
-        title:' Наши сервисы',
+    service: {
+        title: ' Наши сервисы',
     },
-    forlawyers:{
-        title:'Юристам',
-        name:'Ваше имя',
-        surname:' Ваше фамилия',
-        phonenumber:'номер телефона',
-        email:'Ваш электронный адрес',
-        type:'Ваше направление',
-        region:'Выберите область',
-        next:'Продолжать',
-        bio:'Напишите здесь свою биографию',
+    forlawyers: {
+        title: 'Юристам',
+        name: 'Ваше имя',
+        surname: ' Ваше фамилия',
+        phonenumber: 'номер телефона',
+        email: 'Ваш электронный адрес',
+        type: 'Ваше направление',
+        region: 'Выберите область',
+        next: 'Продолжать',
+        bio: 'Напишите здесь свою биографию',
     },
     footer__menu: {
         about: 'о проекте',
@@ -115,4 +118,21 @@ export default {
         projectmanager: 'Стать юристом проекта',
         popularquestions: 'Часто задаваемые вопросы'
     },
+    profile: {
+        myquestion: "Мои вопросы",
+        phoneconsultate: 'Телефонная консультация',
+        phone: 'Телефонная консультация',
+        mydocuments: 'Мои заказы на документы',
+        notification: 'Мои уведомления',
+        setting: 'Настройки',
+        img: 'Картина',
+        name: 'имя',
+        surname: 'Фамилия',
+        lang: 'Язык использования',
+        city: 'город',
+        phone: "Телефонный номер",
+        save: 'Сохранить',
+        cancel: 'Отмена',
+        password: 'пароль',
+    }
 }

@@ -44,9 +44,12 @@ export default {
         consumer: 'Iste’molchi huquqi',
         heritage: 'Meros'
     },
-    lawyers:{
-        lawyers:'Yuristlar'
-            },
+    lawyers: {
+        lawyers: 'Yuristlar',
+        success: 'Muvaffaqiyatli ishlar  soni',
+        rating: 'reyting',
+        category: 'Kategoriya',
+    },
     region: {
         select: 'Hududni Tanlang',
         noregion: 'Region yo\'q',
@@ -91,19 +94,19 @@ export default {
         placeholder: 'Savol izlash',
         btn: 'Izlash',
     },
-    service:{
-        title:'Bizning Xizmatlarimiz',
+    service: {
+        title: 'Bizning Xizmatlarimiz',
     },
-    forlawyers:{
-        title:'Yuristlar uchun',
-        name:'Ismingiz',
-        surname:'Familyangiz',
-        phonenumber:'Telefon raqamingiz',
-        email:'Email manzilingiz',
-        type:'Yo\'nalishingiz',
-        region:'Hududni tanlang',
-        next:'Davom etish',
-        bio:'Biografiyangizni bu erga yozing',
+    forlawyers: {
+        title: 'Yuristlar uchun',
+        name: 'Ismingiz',
+        surname: 'Familyangiz',
+        phonenumber: 'Telefon raqamingiz',
+        email: 'Email manzilingiz',
+        type: 'Yo\'nalishingiz',
+        region: 'Hududni tanlang',
+        next: 'Davom etish',
+        bio: 'Biografiyangizni bu erga yozing',
     },
     footer__menu: {
         about: 'Loyiha haqida',
@@ -114,4 +117,20 @@ export default {
         projectmanager: 'Loyiha yuristi bo\'lish',
         popularquestions: 'Ko\'p so\'raladigan savollar'
     },
+    profile: {
+        myquestion: "Savollarim",
+        phoneconsultate: 'Telefon konsultatsiya',
+        mydocuments: 'Hujjat buyurtmalarim',
+        notification: 'Bilidirishnomalarim',
+        setting: 'Sozlash',
+        img: 'Rasm',
+        name: 'Ism',
+        surname: 'Familyangiz',
+        lang: 'Foydalanish tili',
+        city: 'Shahar',
+        phone: "Telefon raqam",
+        save: 'Saqlash',
+        cancel: 'Bekor qilish',
+        password:'Parol',
+    }
 }

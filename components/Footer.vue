@@ -6,7 +6,7 @@
           <b-col lg="4">
             <div class="footer__item">
               <div class="footer__logo">
-                <nuxt-link to="/" class="footer__logo-link">
+                <nuxt-link :to="localePath('/')" class="footer__logo-link">
                   <img src="../assets/images/Ресурс 15.png" alt="logo web page" />
                   <span class="legaltech">LegalHelp</span>
                 </nuxt-link>

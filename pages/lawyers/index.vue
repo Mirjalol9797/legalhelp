@@ -73,9 +73,9 @@
                             </div>
                             <div class="lawyer__card-info text-center">
                                 <div class="lawyer__card-name">John Smith</div>
-                                <span class="lawyer__card-place">Toshkent shahri</span>
-                                <p class="lawyer__card-category">Kategoriya : <span>Korporativ yurist</span></p>
-                                <span class="lawyer__card-rating">Reyting: <span>4.0</span>
+                                <span class="lawyer__card-place">{{$t('region.toshkent')}}</span>
+                                <p class="lawyer__card-category">{{$t('lawyers.category')}} : <span>Korporativ yurist</span></p>
+                                <span class="lawyer__card-rating">{{$t('lawyers.rating')}}: <span>4.0</span>
                                 <vue-stars
                   class="vue__star"
                   name="rate"
@@ -89,7 +89,7 @@
                   char="★"
                 />
                                 </span>
-                                <div class="lawyer__card-success">Muvaffaqiyatli ishlar soni  <span class="lawyer__card-success-count">16</span></div>
+                                <div class="lawyer__card-success">{{$t('lawyers.success')}} <span class="lawyer__card-success-count">16</span></div>
                             </div>
                         </nuxt-link>
                             </b-col>
