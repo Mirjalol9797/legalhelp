@@ -27,7 +27,7 @@
                   <span class="user__profile-card-icon">
                     <font-awesome-icon :icon="['fas', 'comment']" />
                   </span>
-                  <span class="user__profile-card-text">Savollarim</span>
+                  <span class="user__profile-card-text">{{$t('profile.myquestion')}}</span>
                   <font-awesome-icon :icon="['fas', 'angle-right']" />
                 </template>
                 <b-card-text>
@@ -41,12 +41,22 @@
                       corporis recusandae perferendis assumenda tempora
                       blanditiis a quidem nostrum voluptas quo minus suscipit!
                     </p>
-                      <div class="user__profile-question-info">
-                        <div class="answer"><font-awesome-icon :icon="['fas', 'comment']" /> Javoblar <span class="counter">11</span></div>
-                        <span class="user"><font-awesome-icon :icon="['fas', 'user']" /> Halimov Navruz</span>
-                        <span class="calendar">26.09.2020, 09:54</span>
-                        <span class="location"><font-awesome-icon :icon="['fas', 'map-marker']" />Buxoro</span>
-                                              </div>
+                    <div class="user__profile-question-info">
+                      <div class="answer">
+                        <font-awesome-icon :icon="['fas', 'comment']" />
+                        Javoblar <span class="counter">11</span>
+                      </div>
+                      <span class="user"
+                        ><font-awesome-icon :icon="['fas', 'user']" /> Halimov
+                        Navruz</span
+                      >
+                      <span class="calendar">26.09.2020, 09:54</span>
+                      <span class="location"
+                        ><font-awesome-icon
+                          :icon="['fas', 'map-marker']"
+                        />Buxoro</span
+                      >
+                    </div>
                   </div>
                 </b-card-text>
               </b-tab>
@@ -57,7 +67,7 @@
                     <font-awesome-icon :icon="['fas', 'phone']" />
                   </span>
                   <span class="user__profile-card-text"
-                    >Telefon konsultatsiya</span
+                    >{{$t('profile.phoneconsultate')}}</span
                   >
                   <font-awesome-icon :icon="['fas', 'angle-right']" />
                 </template>
@@ -75,7 +85,7 @@
                     <font-awesome-icon :icon="['fas', 'file']" />
                   </span>
                   <span class="user__profile-card-text"
-                    >Hujjat buyurtmalarim</span
+                    >{{$t('profile.mydocuments')}}</span
                   >
                   <font-awesome-icon :icon="['fas', 'angle-right']" />
                 </template>
@@ -144,7 +154,7 @@
                   <span class="user__profile-card-icon">
                     <font-awesome-icon :icon="['fas', 'bell']" />
                   </span>
-                  <span class="user__profile-card-text">Bildirishnomalar</span>
+                  <span class="user__profile-card-text">{{$t('profile.notification')}}</span>
                   <font-awesome-icon :icon="['fas', 'angle-right']" />
                 </template>
                 <b-card-text>Tab contents 1</b-card-text>
@@ -154,7 +164,7 @@
                   <span class="user__profile-card-icon">
                     <font-awesome-icon :icon="['fas', 'cogs']" />
                   </span>
-                  <span class="user__profile-card-text">Sozlash</span>
+                  <span class="user__profile-card-text">{{$t('profile.setting')}}</span>
                   <font-awesome-icon :icon="['fas', 'angle-right']" />
                 </template>
                 <b-card-text>
@@ -164,7 +174,7 @@
                         <form action method="POST" class="user__profile-form">
                           <b-row>
                             <b-col md="12">
-                              <p>Rasm</p>
+                              <p>{{$t('profile.img')}}</p>
                               <label for="image">
                                 <img
                                   src="../assets/images/avatar.png"
@@ -180,16 +190,16 @@
                               </label>
                             </b-col>
                             <b-col lg="6">
-                              <label for="user__profile-name">Ism</label>
+                              <label for="user__profile-name">{{$t('profile.name')}}</label>
                               <input type="text" id="user__profile-name" />
                             </b-col>
                             <b-col lg="6">
-                              <label for="user__profile-surname">Familya</label>
+                              <label for="user__profile-surname">{{$t('profile.surname')}}</label>
                               <input type="text" id="user__profile-surname" />
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-lang"
-                                >Foydalanish tili</label
+                                >{{$t('profile.lang')}}</label
                               >
                               <select name id="select__user-lang">
                                 <option value="1">O'zbek</option>
@@ -201,7 +211,7 @@
                               <input type="email" id="user__profile-email" />
                             </b-col>
                             <b-col lg="6">
-                              <label for="user__profile-city">Shahar</label>
+                              <label for="user__profile-city">{{$t('profile.city')}}</label>
                               <select name id="user__profile-city">
                                 <option value="0" selected disabled>{{
                                   $t("region.noregion")
@@ -252,7 +262,7 @@
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-number"
-                                >Telefon raqam</label
+                                >{{$t('profile.phone')}}</label
                               >
                               <input type="text" id="user__profile-number" />
                             </b-col>
@@ -261,13 +271,13 @@
                                 ><font-awesome-icon
                                   :icon="['fas', 'save']"
                                   class="user__profile-submit-icon"
-                                />Saqlash</b-button
+                                />{{$t('profile.save')}}</b-button
                               >
                               <b-button type="submit"
                                 ><font-awesome-icon
                                   :icon="['fas', 'times']"
                                   class="user__profile-submit-icon"
-                                />Bekor qilish</b-button
+                                />{{$t('profile.cancel')}}</b-button
                               >
                             </b-col>
                           </b-row>

@@ -98,3 +98,27 @@
     font-size: 12px;
   }
 }
+.lawyers__tabs{
+  .nav{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .nav-link{
+    position: relative;
+  }
+  .lawyer__profile-card-icon{
+    color:#B08E44;
+  }
+  .lawyer__profile-card-text{
+    color:#000;
+  }
+  .fa-angle-right{
+    color:#B08E44;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+  }
+  .nav-item{
+width: 250px;
+  }
+}

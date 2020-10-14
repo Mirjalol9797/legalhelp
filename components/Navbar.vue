@@ -3,7 +3,7 @@
     <div class="navbar__wrapper navbar__dark mx-auto" id="nav">
       <div class="container">
         <b-navbar toggleable="xl" class=" sticky-nav">
-          <b-navbar-brand to="/">
+          <b-navbar-brand :to="localePath('/')">
             <div class="navbar__logo">
               <img src="../assets/images/Ресурс 15.png" alt />
               <span class="legaltech">LegalHelp</span>

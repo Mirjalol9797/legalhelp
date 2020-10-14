@@ -5,7 +5,7 @@
         <div class="registration">
           <div class="registration__inner">
           	<div class="registration__header">
-          		<nuxt-link to="/" class="registration__arrow-link">
+          		<nuxt-link :to="localePath('/')" class="registration__arrow-link">
           			<img src="../../assets/images/registration/left-arrow.svg">
           		</nuxt-link>
           		<span class="step__page-number">1/4</span>
