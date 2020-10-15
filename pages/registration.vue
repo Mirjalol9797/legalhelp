@@ -89,28 +89,28 @@ export default {
         .catch(err => {
           console.log(err);
         });
-      // try {
-      //     await this.$auth.loginWith("local", {
-      //         data: {
-      //             email: this.form2.email,
-      //             password: this.form2.password
-      //         }
-      //     });
-      //      this.$toast.success({
-      //         title: `${this.$t('toast.success')}`,
-      //         message: `${this.$t('toast.loginSuccessMessage')}`
-      //     })
-      //     this.$store.dispatch('getToggleSignupModal',false);
-      //     this.disable = false;
-      // }
-      // catch(error) {
-      //     this.disable = false;
-      //      this.$toast.error({
-      //         title: `${this.$t('toast.loginError')}`,
-      //         message: `${this.$t('toast.signupErrorMessage')}`
-      //     });
-      //     console.log(error);
-      // }
+        try {
+            await this.$auth.loginWith("local", {
+                data: {
+                    email: this.form.email,
+                    password: this.form.password
+                }
+            });
+            // this.$toast.success({
+            //     title: `${this.$t('toast.success')}`,
+            //     message: `${this.$t('toast.loginSuccessMessage')}`
+            // })
+            // this.$store.dispatch('getToggleSignupModal',false);
+            // this.disable = false;
+        }
+        catch(error) {
+            // this.disable = false;
+            // this.$toast.error({
+            //     title: `${this.$t('toast.loginError')}`,
+            //     message: `${this.$t('toast.signupErrorMessage')}`
+            // });
+            console.log(error);
+        }
     }
   }
 };

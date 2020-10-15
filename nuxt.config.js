@@ -39,6 +39,7 @@ export default {
     { src: '~/plugins/rate.js', ssr: false},
     { src: '~/plugins/swiper.js', mode: 'client' },
     { src: '~/plugins/backtotop.js', ssr: false },
+    { src: '~/plugins/vue-moment.js', ssr: false },
   ],
   /*
   ** Auto import components
@@ -57,7 +58,7 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     [
       "@nuxtjs/axios",
-      { baseURL: "http://legaltech-uz.herokuapp.com/api/" },
+      { baseURL: "http://legaltechuz.herokuapp.com/api/" },
     ],
     '@nuxtjs/auth',
     'bootstrap-vue/nuxt',

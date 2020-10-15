@@ -675,7 +675,7 @@
   </div>
 </template>
 <script>
-// import { mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 export default {
   layout:"Footer-main",
   data() {
@@ -722,7 +722,7 @@ export default {
     };
   },
   computed: {
-    // ...mapGetters(["temp"])
+    ...mapGetters(["temp"])
   },
   methods: {
     // dummyFunc() {
@@ -738,7 +738,7 @@ export default {
   },
   mounted() {
     // this.dummyFunc();
-    // this.$store.dispatch("dummyFunc");
+    // this.$store.dispatch("getTemp");
     // this.swiper.slideTo(3, 1000, false);
   }
 };
