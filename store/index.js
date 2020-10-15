@@ -6,7 +6,7 @@ const store = () => new Vuex.Store({
     state: {
         news: [],
         service:[],
-        baseURL: 'http://legaltechuz.herokuapp.com/api'
+        baseURL: 'http://188.225.79.96/api'
     },
     mutations: {
         setNews(state,payload) {
