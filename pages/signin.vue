@@ -9,21 +9,26 @@
                 <img src="../assets/images/registration/left-arrow.svg" />
               </nuxt-link>
             </div>
-            <form action="" method="POST" class="registration__form">
+            <form
+              class="registration__form"
+              @submit.prevent="login()"
+            >
               <div class="phone__number">
-                <label for="phone">{{$t('profile.phone')}}</label>
+                <label for="phone">{{ $t("profile.phone") }}</label>
                 <div class="input__tel-wrapper">
                   <span class="tel__code">+998</span>
-                  <input type="tel" id="phone" />
+                  <input type="tel" id="phone" v-model="form.phone_number" />
                 </div>
               </div>
 
               <div class="password">
-                <label for="password">{{$t('profile.password')}}</label>
-                <input type="password" id="password" />
+                <label for="password">{{ $t("profile.password") }}</label>
+                <input type="password" id="password" v-model="form.password" />
               </div>
               <div class="registration-submit-wrap">
-                <b-button class="registration-submit">{{$t('givequestion.btn')}}</b-button>
+                <b-button class="registration-submit" type="submit">{{
+                  $t("givequestion.btn")
+                }}</b-button>
               </div>
             </form>
           </div>
@@ -32,3 +37,40 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      disable: false,
+      form: {
+        phone_number: "",
+        password: ""
+      }
+    };
+  },
+  computed: {},
+
+  methods: {
+    async login() {
+        try {
+        let res = await this.$auth.loginWith("local", {data: this.form});
+        console.log(res)
+
+        this.$toast.success({
+          title: `${this.$t("toast.success")}`,
+          message: `${this.$t("toast.loginSuccessMessage")}`
+        });
+        console.log(this.$auth.user);
+        // this.disable = false;
+      }
+       catch (err) {
+          console.log(err)
+          this.$toast.error({
+            title: `${this.$t("toast.loginError")}`,
+            message: `${this.$t("toast.loginErrorMessage")}`
+          });
+      }
+    }
+  }
+};
+</script>

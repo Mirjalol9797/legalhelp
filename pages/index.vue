@@ -108,42 +108,41 @@
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </span>
           </div>
-          <b-row>
+          <b-row v-if="singlePost">
             <b-col
               lg="4"
               md="6"
               sm="6"
-              v-for="item of 3"
-              :key="item"
+              v-for="item of news.slice(0,3)"
+              :key="item.id"
               class="align-items-stretch"
             >
-              <div class="news__item">
+             <div class="news__item">
                 <nuxt-link
-                  :to="localePath(`/news/${item}`)"
+                  :to="localePath(`/news/${item.id}`)"
                   class="news__item-link"
                 >
-                  <img src="../assets/images/news/news1.jpg" alt="" />
+                  <img
+                    :src="$store.state.mediaURL + item.thubmnail"
+                    height="185"
+                    width="362"
+                    alt=""
+                  />
                   <div class="news__item-content">
-                    <h6 class="news__item-content-title">
-                      Lorem ipsum dolor si amet , consectetur adipiscing elit
-                    </h6>
-                    <p class="news__item-content-text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sem massa lectus tortor feugiat sagittis auctor porta
-                      penatibus.Lorem ipsum dolor sit amet, consectetur
-                      adipiscing elit. Sem massa lectus tortor feugiat sagittis
-                      auctor porta penatibus.
-                    </p>
+                    <h6 class="news__item-content-title">{{ item.title }}</h6>
+                    <p class="news__item-content-text" v-html="item.intro"></p>
                     <div class="news__item-content-meta">
-                      <span class="news__item-content-meta-calendar"
-                        >14.07.2020</span
-                      >
-                      <span class="news__item-content-meta-view">156</span>
+                      <span class="news__item-content-meta-calendar">{{
+                       singlePost.created_at | moment("L")
+                      }}</span>
+                      <span class="news__item-content-meta-view">{{
+                        item.view_count
+                      }}</span>
                     </div>
                     <div class="more__btn">
-                      <b-button type="button" class="question__btn"
-                        >Batafsil</b-button
-                      >
+                      <b-button type="button" class="question__btn">{{
+                        $t("news.more")
+                      }}</b-button>
                     </div>
                   </div>
                 </nuxt-link>
@@ -722,24 +721,21 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["temp"])
+    ...mapGetters(["news"]),
+     singlePost() {
+      return this.news;
+    }
   },
   methods: {
-    // dummyFunc() {
-    //   this.$axios.get('https://jsonplaceholder.typicode.com/posts')
-    //   .then(res => {
-    //     this.temp = res.data;
-    //     console.log(this.temp);
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   })
-    // }
+  
   },
   mounted() {
-    // this.dummyFunc();
-    // this.$store.dispatch("getTemp");
-    // this.swiper.slideTo(3, 1000, false);
+
+  },
+  created() {
+    this.$store.dispatch("getNews").then(() => {
+      console.log(this.news);
+    });
   }
 };
 </script>

@@ -46,3 +46,11 @@ button:focus {
 .vue-stars label:hover {
   cursor: pointer;
 }
+@mixin textWrapper($property) {
+  display: -webkit-box !important;
+  -webkit-line-clamp: $property !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  // word-break: break-all !important;
+}
