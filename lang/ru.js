@@ -134,5 +134,15 @@ export default {
         save: 'Сохранить',
         cancel: 'Отмена',
         password: 'пароль',
-    }
+    },
+    toast: {
+        success: 'Успешно',
+        sMessage: 'Информация успешно обновлено.',
+        error: 'Ошибка',
+        eMessage: 'Произошла ошибка при загрузке изображения',
+        loginError: 'Ошибка',
+        loginErrorMessage: 'Телефонный номер или пароль введены неверно.',
+        loginSuccessMessage: 'Вы успешно вошли в свой профиль.',
+        signupErrorMessage: 'Произошла ошибка при создании профиля.',
+    },
 }

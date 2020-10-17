@@ -28,13 +28,6 @@
                   id="registration_email"
                 />
               </div>
-              <div class="phone__number">
-                <label for="phone">Tel raqam</label>
-                <div class="input__tel-wrapper">
-                  <span class="tel__code">+998</span>
-                  <input v-model="form.phone_number" type="tel" id="phone" required />
-                </div>
-              </div>
               <div class="password">
                 <label for="password__id">
                   Parol
@@ -73,45 +66,74 @@ export default {
       form: {
         firstname: "",
         lastname: "",
-        phone_number: "",
         email: "",
-        password: ""
+        password: "",
       }
     };
   },
   methods: {
+
     async onSubmit() {
-      await this.$axios
-        .post("user/client/create/", this.form)
-        .then(res => {
-          console.log(res);
-        })
-        .catch(err => {
-          console.log(err);
-        });
-        try {
-            await this.$auth.loginWith("local", {
-                data: {
-                    email: this.form.email,
-                    password: this.form.password
-                }
-            });
-            // this.$toast.success({
-            //     title: `${this.$t('toast.success')}`,
-            //     message: `${this.$t('toast.loginSuccessMessage')}`
-            // })
-            // this.$store.dispatch('getToggleSignupModal',false);
-            // this.disable = false;
-        }
-        catch(error) {
-            // this.disable = false;
-            // this.$toast.error({
-            //     title: `${this.$t('toast.loginError')}`,
-            //     message: `${this.$t('toast.signupErrorMessage')}`
-            // });
-            console.log(error);
-        }
+        // this.$store.dispatch('sendForm', this.form)
+          await this.$axios.post('customer/create/', {
+              first_name: this.form.firstname,
+              last_name: this.form.lastname,
+              phone_number: this.$store.state.phone_number,
+              password: this.form.password,
+              email: this.form.email,
+              token: this.$store.state.token
+          })
+          .then(async() => {
+              try {
+                  await this.$auth.loginWith("local", { data: { 
+                      phone_number: this.$store.state.phone_number,
+                      password: this.form.password,
+                    }
+                  });
+                  console.log(this.$auth.user);
+                  this.$toast.success({
+                      title: `${this.$t("toast.success")}`,
+                      message: `${this.$t("toast.loginSuccessMessage")}`
+                  });
+                  // this.disable = false;
+              }
+              catch (err) {
+                  console.log(err)
+                  this.$toast.error({
+                      title: `${this.$t("toast.loginError")}`,
+                      message: `${this.$t("toast.loginErrorMessage")}`
+                  });
+              }
+          })
+          .catch(err => {
+              console.log(err)
+          })
     }
+     
+        //  async login(){
+        //     try{
+        //         this.disable = true;
+        //         await this.$auth.loginWith("local", {
+        //             data: {
+        //                 email: this.form.email,
+        //                 password: this.form.password
+        //             }
+        //         });
+        //         this.$toast.success({
+        //             title: `${this.$t('toast.success')}`,
+        //             message: `${this.$t('toast.loginSuccessMessage')}`
+        //         })
+        //         this.disable = false;
+        //     }
+        //     catch(err){
+        //         this.$toast.error({
+        //             title: `${this.$t('toast.loginError')}`,
+        //             message: `${this.$t('toast.loginErrorMessage')}`
+        //         });
+        //         this.disable = false;
+        //     }
+        // },
+      
   }
 };
 </script>

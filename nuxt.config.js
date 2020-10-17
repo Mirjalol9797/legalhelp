@@ -40,6 +40,7 @@ export default {
     { src: '~/plugins/swiper.js', mode: 'client' },
     { src: '~/plugins/backtotop.js', ssr: false },
     { src: '~/plugins/vue-moment.js', ssr: false },
+    { src: "~/plugins/toast.js", ssr: false },
   ],
   /*
   ** Auto import components
@@ -58,7 +59,7 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     [
       "@nuxtjs/axios",
-      { baseURL: "http://legaltechuz.herokuapp.com/api/" },
+      { baseURL: "http://188.225.79.96/api/" },
     ],
     '@nuxtjs/auth',
     'bootstrap-vue/nuxt',
@@ -99,11 +100,17 @@ export default {
 
 
   auth: {
+    // redirect: {
+    //   login: '/',
+    //   logout: '/',
+    //   callback: '/login',
+    //   home: '/'
+    // },
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'token/', method: 'post', propertyName: 'access' },
-          user: { url: 'user/lawyer-create/', method: 'get', propertyName: false },
+          login: { url: 'customer/login/', method: 'post', propertyName: 'access' },
+          user: { url: 'customer/profile/', method: 'get', propertyName: false },
           logout: false
         }
       }

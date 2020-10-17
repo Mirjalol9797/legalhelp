@@ -31,7 +31,12 @@
               <b-nav-item href="#">
                 <b-button
                   class="header__btn"
-                  :to="localePath('/askquestions')"
+                  :to="localePath('/askquestions')" v-if="loggedIn"
+                  >{{ $t("navbar.askquestions") }}</b-button
+                >
+                 <b-button
+                  class="header__btn"
+                  :to="localePath('/reg')" v-if="!loggedIn"
                   >{{ $t("navbar.askquestions") }}</b-button
                 >
               </b-nav-item>
@@ -54,13 +59,44 @@
                 <b-dropdown-item @click="changeLanguage('ru')"
                   >RU</b-dropdown-item
                 >
-                <!-- <b-dropdown-item href="#">EN</b-dropdown-item> -->
               </b-nav-item-dropdown>
-              <li>
-                <nuxt-link :to="localePath('/registration')" class="user__link">
-                  <img src="../assets/images/index/user.png" alt="" />
-                </nuxt-link>
-              </li>
+                <b-nav-item-dropdown class="user__login">
+                   <template v-slot:button-content>
+                        <div class="round">
+                            <!-- <img :src="$store.state.user.photo" :alt="$store.state.user.name+' '+$store.state.user.last_name"> -->
+                            <nuxt-link :to="localePath('/reg')" v-if="!loggedIn" class="user__link">
+                            <img src="../assets/images/index/user.png" alt="">
+                            </nuxt-link>
+                               <nuxt-link :to="localePath('/')" v-if="loggedIn" class="user__link">
+                            <img src="../assets/images/index/user.png" alt="">
+                            </nuxt-link>
+                        </div>
+                    </template>
+                <b-dropdown-item  :to="localePath('/reg')" v-if="!loggedIn"
+                  >Ro'yxatdan o'tish</b-dropdown-item
+                >
+                <b-dropdown-item :to="localePath('/signin')" v-if="!loggedIn"
+                  >Kirish</b-dropdown-item
+                >
+                <b-dropdown-item :to="localePath('/profile')" v-if="loggedIn"
+                  >   <font-awesome-icon :icon="['fas', 'address-card']" /> Mening Sahifam</b-dropdown-item
+                >
+                <b-dropdown-item :to="localePath('/signin')" v-if="loggedIn"
+                  >   <font-awesome-icon :icon="['fas', 'star']" /> Tanlagan yuristlar</b-dropdown-item
+                >
+                <b-dropdown-item :to="localePath('/signin')" v-if="loggedIn"
+                  >  <font-awesome-icon :icon="['fas', 'bell']" /> Bildirishnomalar</b-dropdown-item
+                >
+                <b-dropdown-item :to="localePath('/signin')" v-if="loggedIn"
+                  >   <font-awesome-icon :icon="['fas', 'phone']" /> Telefon kansultatsiya</b-dropdown-item
+                > 
+                <b-dropdown-item :to="localePath('/signin')" v-if="loggedIn"
+                  >   <font-awesome-icon :icon="['fas', 'file']" /> Hujjat buyurtmalarim</b-dropdown-item
+                >
+                <b-dropdown-item :to="localePath('')" @click="logout()" v-if="loggedIn"
+                  >   <font-awesome-icon :icon="['fas', 'sign-out-alt']" /> Chiqish</b-dropdown-item
+                >
+              </b-nav-item-dropdown>
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
@@ -80,22 +116,24 @@
 //     }
 // }
 // }
+ import { mapState } from 'vuex';
 export default {
-  // data() {
-  //   stikyNavbar: false;
-  // },
-
+  computed: {
+        ...mapState('auth',['loggedIn','user']),
+    },
   methods: {
     changeLanguage(lang) {
       this.$router.push(this.switchLocalePath(lang));
     },
-    // toggleNavClass() {
-    //   if (this.stikyNavbar == false) {
-    //     return "navbar__wrapper";
-    //   } else {
-    //     return "sticky-nav";
-    //   }
-    // }
+      async logout(){
+            await this.$auth.logout();
+            this.$router.push(this.localePath('/'));
+            this.$toast.success({
+                title: 'Log out',
+                message:'You have successfully logged out.',
+                color: '#17b978',
+            });
+        }
   },
    mounted(){
   // window.document.onscroll = () => {

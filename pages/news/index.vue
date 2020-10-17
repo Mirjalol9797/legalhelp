@@ -11,7 +11,7 @@
                 class="main__news-link"
               >
                 <img
-                  :src="$store.state.baseURL + singlePost.thubmnail"
+                  :src="$store.state.mediaURL + singlePost.thubmnail"
                   height="380"
                   width="702"
                   alt=""
@@ -25,8 +25,7 @@
               >
                 <div class="news__content">
                   <h6 class="news__title">{{ singlePost.title }}</h6>
-                  <div class="news__text" v-html="singlePost.intro">
-                  </div>
+                  <div class="news__text" v-html="singlePost.intro"></div>
                   <div class="news__meta">
                     <span class="news__meta-calendar">{{
                       singlePost.created_at | moment("L")
@@ -58,19 +57,17 @@
                   class="news__item-link"
                 >
                   <img
-                    :src="$store.state.baseURL + item.thubmnail"
+                    :src="$store.state.mediaURL + item.thubmnail"
                     height="185"
                     width="362"
                     alt=""
                   />
                   <div class="news__item-content">
                     <h6 class="news__item-content-title">{{ item.title }}</h6>
-                    <p class="news__item-content-text" v-html="item.intro">
-                      
-                    </p>
+                    <p class="news__item-content-text" v-html="item.intro"></p>
                     <div class="news__item-content-meta">
                       <span class="news__item-content-meta-calendar">{{
-                        item.created_at
+                       singlePost.created_at | moment("L")
                       }}</span>
                       <span class="news__item-content-meta-view">{{
                         item.view_count
@@ -90,12 +87,13 @@
       </div>
 
       <div class="pagination__menu">
-        <b-pagination
+        <b-pagination pills
           v-model="currentPage"
           :total-rows="rows"
           :per-page="perPage"
           :first-text="$t('pagination.first')"
           :last-text="$t('pagination.last')"
+          hide-goto-end-buttons
         ></b-pagination>
       </div>
     </div>
@@ -120,15 +118,7 @@ export default {
     }
   },
   methods: {
-    // async getNews() {
-    //   await this.$axios.get('posts/')
-    //   .then(res => {
-    //     console.log(res);
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   })
-    // }
+
   },
   created() {
     this.$store.dispatch("getNews").then(() => {

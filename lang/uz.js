@@ -132,5 +132,15 @@ export default {
         save: 'Saqlash',
         cancel: 'Bekor qilish',
         password:'Parol',
-    }
+    },
+    toast: {
+        success: 'Muvaffaqiyatli',
+        sMessage: 'Ma\'lumot muvaffaqiyatli  o\'zgartirildi.',
+        error: 'Xatolik',
+        eMessage: 'Rasm yuklashda xatolish yuz berdi',
+        loginError: 'Xatolik',
+        loginErrorMessage: 'Telefon raqam yoki parol xato kiritildi.',
+        loginSuccessMessage: 'Siz profilizga muvaffaqiyatli kirdingiz',
+        signupErrorMessage: 'Profil yaratilishida xatolik yuz berdi.',
+    },
 }
