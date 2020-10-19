@@ -7,6 +7,7 @@ const store = () => new Vuex.Store({
         news: [],
         service: [],
         questions:[],
+        user:[],
         baseURL: 'http://188.225.79.96/api',
         mediaURL: 'http://188.225.79.96/',
         phone_number: "",
@@ -44,7 +45,10 @@ const store = () => new Vuex.Store({
         },
         setQuestions(state,payload){
             state.questions=payload;
-        }
+        },
+        setUserData(state, payload) {
+            state.user = payload;
+        },
     },
     actions: {
         async getCode({ commit }, data) {
@@ -81,6 +85,15 @@ const store = () => new Vuex.Store({
                     commit('setService', res.data.results);
                 })
         },
+        async getUserData({ commit }) {
+            await this.$axios.get('customer/profile')
+                .then(res => {
+                    commit('setUserData', res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        },
         async sendQuestion({commit}){
             await this.$axios.post('/v1/question/'+{customer_id})
             .then(res => {
@@ -89,7 +102,8 @@ const store = () => new Vuex.Store({
             .catch(err => {
                 console.log(err)
             })
-        }
+        },
+      
 
     },
 })

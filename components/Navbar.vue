@@ -64,12 +64,12 @@
                    <template v-slot:button-content>
                         <div class="round">
                             <!-- <img :src="$store.state.user.photo" :alt="$store.state.user.name+' '+$store.state.user.last_name"> -->
-                            <nuxt-link :to="localePath('/reg')" v-if="!loggedIn" class="user__link">
+                            <div  v-if="!loggedIn" class="user__link">
                             <img src="../assets/images/index/user.png" alt="">
-                            </nuxt-link>
-                               <nuxt-link :to="localePath('/')" v-if="loggedIn" class="user__link">
+                            </div>
+                               <div  v-if="loggedIn" class="user__link">
                             <img src="../assets/images/index/user.png" alt="">
-                            </nuxt-link>
+                            </div>
                         </div>
                     </template>
                 <b-dropdown-item  :to="localePath('/reg')" v-if="!loggedIn"
