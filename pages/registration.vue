@@ -28,6 +28,26 @@
                   id="registration_email"
                 />
               </div>
+              <div class="select">
+                <label for="">Region tanlash</label>
+                  <select name="" id="category">
+                  <option value="0" disabled se lected>{{$t('category.typequestion')}}</option>
+                    <option value="1">{{$t('region.toshkent')}}</option>
+                    <option value="2">{{$t('region.toshkentv')}}</option>
+                    <option value="3"> {{$t('region.andijon')}}</option>
+                    <option value="4">{{$t('region.buxoro')}}</option>
+                    <option value="5"> {{$t('region.jizzax')}}</option>
+                    <option value="6"> {{$t('region.qoraqalpogistion')}}</option>
+                    <option value="7"> {{$t('region.qashqadaryo')}}</option>
+                    <option value="8">{{$t('region.navoi')}}</option>
+                    <option value="9">{{$t('region.namangan')}}</option>
+                    <option value="10">{{$t('region.samarqand')}}</option>
+                    <option value="11">{{$t('region.surxondaryo')}}</option>
+                    <option value="12">{{$t('region.sirdaryo')}}</option>
+                    <option value="13"> {{$t('region.fargona')}}</option>
+                    <option value="14"> {{$t('region.xorazm')}}</option>
+                 </select>  
+              </div>
               <div class="password">
                 <label for="password__id">
                   Parol
@@ -81,6 +101,7 @@ export default {
               phone_number: this.$store.state.phone_number,
               password: this.form.password,
               email: this.form.email,
+              region:1,
               token: this.$store.state.token
           })
           .then(async() => {
@@ -91,6 +112,7 @@ export default {
                     }
                   });
                   console.log(this.$auth.user);
+
                   this.$toast.success({
                       title: `${this.$t("toast.success")}`,
                       message: `${this.$t("toast.loginSuccessMessage")}`

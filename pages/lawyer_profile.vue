@@ -5,18 +5,17 @@
         <div class="profile-inner">
           <div class="owner-pic">
             <img
-              :src="$store.state.mediaURL +image"
+              :src="`require({{this.$auth.user.image}})`"
               height="170"
               width="264"
               alt
             />
-            
           </div>
           <div class="profile-info">
-            <span class="profile-info-name">{{$auth.user.first_name}}  {{$auth.user.last_name}}</span>
-            <span class="profile-info-location">{{$auth.user.region}}</span>
-            <span class="profile-info-number">+998 {{$auth.user.user}}</span>
-            <span class="profile-info-email">{{$auth.user.email}}</span>
+            <!-- <span class="profile-info-name">{{$auth.user.first_name}}  {{$auth.user.last_name}}</span> -->
+            <!-- <span class="profile-info-location">{{this.$auth.user.region}}</span> -->
+            <!-- <span class="profile-info-number">{{$store.state.phone_number}}</span> -->
+            <!-- <span class="profile-info-email">{{$auth.user.email}}</span> -->
           </div>
         </div>
         <div class="user__profile-card">
@@ -130,7 +129,7 @@
                   </div>
                   <div class="user__profile-documents-info">
                     <div class="title">
-                      DAN xodimi harakati yuzasidan  shikoyat
+                      DAN xodimi harakati yuzasidan shikoyat
                     </div>
                     <span class="calendar">12:54, 26.09.2020</span>
                     <div class="text">
@@ -191,28 +190,28 @@
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-name">{{$t('profile.name')}}</label>
-                              <input type="text" id="user__profile-name"   :value="$auth.user.first_name" />
+                              <input type="text" id="user__profile-name"  v-model="form.name" />
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-surname">{{$t('profile.surname')}}</label>
-                              <input type="text" id="user__profile-surname"  :value="$auth.user.last_name"/>
+                              <input type="text" id="user__profile-surname" v-model="form.last_name"/>
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-lang"
                                 >{{$t('profile.lang')}}</label
                               >
-                              <select name id="select__user-lang"  >
+                              <select name id="select__user-lang" v-model="form.lang">
                                 <option value="1">O'zbek</option>
                                 <option value="2">Rus</option>
                               </select>
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-email">Email</label>
-                              <input type="email" id="user__profile-email"  :value="$auth.user.email"/>
+                              <input type="email" id="user__profile-email" v-model="form.email" />
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-city">{{$t('profile.city')}}</label>
-                              <select name id="user__profile-city"  :value="$auth.user.region">
+                              <select name id="user__profile-city" v-model="form.city">
                                 <option value="0" selected disabled>{{
                                   $t("region.noregion")
                                 }}</option>
@@ -264,7 +263,7 @@
                               <label for="user__profile-number"
                                 >{{$t('profile.phone')}}</label
                               >
-                              <input type="text" id="user__profile-number"  :value="$auth.user.user"/>
+                              <input type="text" id="user__profile-number" />
                             </b-col>
                             <b-col lg="12">
                               <b-button type="submit"
