@@ -53,7 +53,7 @@
                 ></b-form-input>
               </b-nav-form>
 
-              <b-nav-item-dropdown text="Lang" right class="language__list">
+<b-nav-item-dropdown text="Lang" right class="language__list">
                 <b-dropdown-item @click="changeLanguage('uz')"
                   >UZ</b-dropdown-item
                 >
@@ -124,7 +124,8 @@
                 <b-dropdown-item :to="localePath('/')" v-if="loggedIn"
                   >   <font-awesome-icon :icon="['fas', 'star']" /> Tanlagan yuristlar</b-dropdown-item
                 >
-                <b-dropdown-item :to="localePath('/')" v-if="loggedIn"
+
+<b-dropdown-item :to="localePath('/')" v-if="loggedIn"
                   >  <font-awesome-icon :icon="['fas', 'bell']" /> Bildirishnomalar</b-dropdown-item
                 >
                 <b-dropdown-item href='tel:+998946863999' v-if="loggedIn"
