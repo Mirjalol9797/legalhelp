@@ -102,7 +102,7 @@
               <div class="registration__button-wrap">
                 <b-button
                   class="registration__btn"
-                  :to="localePath('')"
+                  type="submit"
                   >{{ $t("givequestion.btn") }}</b-button
                 >
               </div>
@@ -118,33 +118,15 @@ export default {
   data() {
     return {
       form: {
-        // name: "",
-        // surname: "",
-        // city: "",
-        // phone_number: "",
         lang: "",
         category: "",
         title: "",
         text: "",
-        file: ""
+        file: "",
       }
     };
   },
   methods: {
-    onSubmit() {
-      if (
-        this.form.name != "" &&
-        this.form.surname != "" &&
-        this.form.city != "" &&
-        this.form.phone_number != "" &&
-        this.form.lang &&
-        this.form.category != "" &&
-        this.form.title != "" &&
-        this.form.text
-      ) {
-        this.$store.dispatch("sendQuestion", this.form);
-      }
-    },
     fileUpload(event) {
       let e = event.target.files[0];
       if (e.type == "image/jpeg") {
@@ -152,7 +134,11 @@ export default {
       } else {
         console.log("wrong type");
       }
-    }
-  }
+    },
+    onSubmit() {
+        this.$store.dispatch("sendQuestion", this.form);
+    },
+  },
+     
 };
 </script>

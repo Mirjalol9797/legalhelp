@@ -7,7 +7,7 @@ const store = () => new Vuex.Store({
         news: [],
         service: [],
         questions:[],
-        user:[],
+        user:{},
         baseURL: 'http://188.225.79.96/api',
         mediaURL: 'http://188.225.79.96/',
         phone_number: "",
@@ -40,15 +40,10 @@ const store = () => new Vuex.Store({
         setNews(state, payload) {
             state.news = payload;
         },
-        setService(state, payload) {
-            state.service = payload;
-        },
         setQuestions(state,payload){
             state.questions=payload;
         },
-        setUserData(state, payload) {
-            state.user = payload;
-        },
+        
     },
     actions: {
         async getCode({ commit }, data) {
@@ -79,30 +74,30 @@ const store = () => new Vuex.Store({
                     console.log(err);
                 })
         },
-        async getService({ commit }) {
-            await this.$axios.get('')
-                .then(res => {
-                    commit('setService', res.data.results);
-                })
-        },
-        async getUserData({ commit }) {
-            await this.$axios.get('customer/profile')
-                .then(res => {
-                    commit('setUserData', res.data);
-                })
-                .catch(err => {
-                    console.log(err);
-                })
-        },
-        async sendQuestion({commit}){
-            await this.$axios.post('/v1/question/'+{customer_id})
-            .then(res => {
-                console.log(res)
+        async getQuestions({commit}){
+            await this.$axios.get('services/')
+            .then(res=>{
+                commit('setQuestions',res.data.results);
             })
-            .catch(err => {
-                console.log(err)
+            .catch(err=> {
+                console.log(err);
             })
         },
+        // async getService({ commit }) {
+        //     await this.$axios.get('')
+        //         .then(res => {
+        //             commit('setService', res.data.results);
+        //         })
+        // },
+        // async sendQuestion({commit, data}){
+        //     await this.$axios.post('/v1/question/customer/$`{this.$auth.user.id}`')
+        //     .then(res => {
+        //         console.log(res)
+        //     })
+        //     .catch(err => {
+        //         console.log(err)
+        //     })
+        // },
       
 
     },
