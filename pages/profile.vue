@@ -14,7 +14,7 @@
           </div>
           <div class="profile-info">
             <span class="profile-info-name">{{$auth.user.first_name}}  {{$auth.user.last_name}}</span>
-            <span class="profile-info-location">{{$auth.user.region}}</span>
+            <span class="profile-info-location">{{$auth.user.region.title_uz}}</span>
             <span class="profile-info-number">+998 {{$auth.user.user}}</span>
             <span class="profile-info-email">{{$auth.user.email}}</span>
           </div>
@@ -212,7 +212,7 @@
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-city">{{$t('profile.city')}}</label>
-                              <select name id="user__profile-city"  v-model="user.region">
+                              <select name id="user__profile-city"  v-model="user.region.title_uz">
                                 <option value="0" selected disabled>{{
                                   $t("region.noregion")
                                 }}</option>

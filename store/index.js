@@ -74,32 +74,16 @@ const store = () => new Vuex.Store({
                     console.log(err);
                 })
         },
-        async getQuestions({commit}){
-            await this.$axios.get('services/')
+        async getQuestions({commit},payload){
+            await this.$axios.get(`services/?limit=10&offset=${}`)
             .then(res=>{
+                console.log(res)
                 commit('setQuestions',res.data.results);
             })
             .catch(err=> {
                 console.log(err);
             })
         },
-        // async getService({ commit }) {
-        //     await this.$axios.get('')
-        //         .then(res => {
-        //             commit('setService', res.data.results);
-        //         })
-        // },
-        // async sendQuestion({commit, data}){
-        //     await this.$axios.post('/v1/question/customer/$`{this.$auth.user.id}`')
-        //     .then(res => {
-        //         console.log(res)
-        //     })
-        //     .catch(err => {
-        //         console.log(err)
-        //     })
-        // },
-      
-
     },
 })
 

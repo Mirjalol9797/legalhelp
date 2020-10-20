@@ -100,6 +100,7 @@ export default {
 
 
   auth: {
+    // plugins: ['~/plugins/auth.js'],
     // redirect: {
     //   login: '/',
     //   logout: '/',

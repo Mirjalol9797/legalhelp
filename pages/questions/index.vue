@@ -9,13 +9,13 @@
             <input type="submit" :value="$t('question.btn')" />
           </form>
           <div class="questions__wrapper">
-            <div class="question__item" v-for="(question,index) of questions" :key="index">
+            <div class="question__item" v-for="(question,index) of questions.slice(0,10)" :key="index">
               <div class="question__meta d-none d-md-block">
                 <div class="question__meta-inner">
-                  <span class="question__meta-time">{{question.answered_date | moment("h:mm:ss")}}</span>
+                  <span class="question__meta-time">{{question.answered_date | moment("h:mm")}}</span>
                   <span class="question__meta-calendar">{{question.answered_date | moment("L")}}</span>
                   <b-button class="question__meta-btn question__btn"
-                    > {{question.answered_by}} ta javob</b-button
+                    > 1 ta javob</b-button
                   >
                 </div>
               </div>
@@ -60,7 +60,7 @@
               </div>
               <div class="question__item-info">
                 <nuxt-link
-                  :to="localePath(`/questions/${i}`)"
+                  :to="localePath(`/questions/${question.id}`)"
                   class="question__item-title"
                   >Lorem ipsum dolor sit amet, consectetur adipiscing
                   elit.</nuxt-link
@@ -109,7 +109,6 @@
             :per-page="perPage"
             pills
             hide-goto-end-buttons
-
           ></b-pagination>
         </div>
       </div>
@@ -126,7 +125,7 @@ export default {
       rows: 100,
       perPage: 1,
       currentPage: 1
-    };
+    }
   },
   computed: {
     ...mapGetters(["questions"])
@@ -134,7 +133,7 @@ export default {
   methods: {},
   created() {
     this.$store.dispatch("getQuestions").then(() => {
-      console.log(this.questions);
+      // console.log(this.questions);
     });
   }
 };

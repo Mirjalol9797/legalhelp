@@ -136,7 +136,7 @@ export default {
       }
     },
     onSubmit() {
-        this.$store.dispatch("sendQuestion", this.form);
+        this.$store.dispatch("sendQuestions", this.form);
     },
   },
      
