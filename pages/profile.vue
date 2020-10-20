@@ -10,6 +10,7 @@
               width="264"
               alt
             />
+            
           </div>
           <div class="profile-info">
             <span class="profile-info-name">{{$auth.user.first_name}}  {{$auth.user.last_name}}</span>
@@ -129,7 +130,7 @@
                   </div>
                   <div class="user__profile-documents-info">
                     <div class="title">
-                      DAN xodimi harakati yuzasidan shikoyat
+                      DAN xodimi harakati yuzasidan  shikoyat
                     </div>
                     <span class="calendar">12:54, 26.09.2020</span>
                     <div class="text">

@@ -469,7 +469,7 @@
   &:hover {
     .our__service-item-type {
       background-position: right center !important;
-      color: red;
+      // color: red;
     }
   }
   &-link {
@@ -498,6 +498,7 @@
       #8e54e9 51%,
       #4776e6 100%
     );
+    background: #f2b50f;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.3);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -591,7 +592,7 @@
   }
 }
 .swiper__wrapper {
-  padding-bottom: 75px;
+  padding-bottom: 50px;
   padding-top: 75px;
   background-image: url("../images/index/bg3.png");
   background-size: 100%;
@@ -722,6 +723,10 @@
     font-size: 15px;
     line-height: 22px;
     color: #ffffff;
+
+    &:hover {
+      color: #14bced;
+    }
   }
   &-text {
     font-size: 12px;
@@ -764,8 +769,9 @@
         border:none !important;
         margin: 0;
         &.active{
-border-radius: 8px;
-    background-color: #b08e44;
+          border-radius: 8px;
+          background-color: #f2b50f;
+          color: #fff !important;
         }
       }
     }
@@ -810,7 +816,7 @@ border-radius: 8px;
 //how we work part
 .how__we-work {
   padding-top: 30px;
-  margin-bottom: 235px;
+  margin-bottom: 100px;
   &-heading {
     text-align: center;
     font-family: $Cantata;
@@ -928,7 +934,7 @@ border-radius: 8px;
   }
   &-price {
     border: none;
-    border: 3px solid #ff8800;
+    border: 2px solid #ff8800;
     box-sizing: border-box;
     border-radius: 8px;
     color: #b08e44;
