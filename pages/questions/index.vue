@@ -9,7 +9,7 @@
             <input type="submit" :value="$t('question.btn')" />
           </form>
           <div class="questions__wrapper">
-            <div class="question__item" v-for="(question,index) of questions.slice(0,10)" :key="index">
+            <div class="question__item" v-for="(question,index) of questions" :key="index">
               <div class="question__meta d-none d-md-block">
                 <div class="question__meta-inner">
                   <span class="question__meta-time">{{question.answered_date | moment("h:mm")}}</span>
@@ -106,7 +106,6 @@
           <b-pagination
             v-model="currentPage"
             :total-rows="rows"
-            :per-page="perPage"
             pills
             hide-goto-end-buttons
           ></b-pagination>
@@ -122,19 +121,33 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
+      questions: [],
       rows: 100,
-      perPage: 1,
-      currentPage: 1
+      // perPage: 1,
+      currentPage: 0,
+    }
+  },
+  watch: {
+    currentPage: async function(newVal) {
+      console.log(newVal);
+      await this.$axios.get(`services/?limit=10&offset=${newVal*10}`)
+      .then(res=>{
+          this.questions = res.data.results;
+          // commit('setQuestions',res.data.results);
+      })
+      .catch(err=> {
+          console.log(err);
+      })
     }
   },
   computed: {
-    ...mapGetters(["questions"])
+    // ...mapGetters(["questions"])
   },
   methods: {},
-  created() {
-    this.$store.dispatch("getQuestions").then(() => {
-      // console.log(this.questions);
-    });
-  }
-};
+  // created() {
+  //   this.$store.dispatch("getQuestions",this.currentPage).then(() => {
+  //     // console.log(this.questions);
+  //   });
+  // }
+}
 </script>
