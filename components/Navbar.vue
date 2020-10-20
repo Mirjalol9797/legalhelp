@@ -35,8 +35,9 @@
                   >{{ $t("navbar.askquestions") }}</b-button
                 >
                  <b-button
+                  v-else
                   class="header__btn"
-                  :to="localePath('/reg')" v-if="!loggedIn"
+                  :to="localePath('/reg')"
                   >{{ $t("navbar.askquestions") }}</b-button
                 >
               </b-nav-item>
@@ -60,37 +61,76 @@
                   >RU</b-dropdown-item
                 >
               </b-nav-item-dropdown>
-                <b-nav-item-dropdown class="user__login">
+                <b-nav-item-dropdown v-if="$auth.user.is_customer" class="user__login">
                    <template v-slot:button-content>
                         <div class="round">
                             <!-- <img :src="$store.state.user.photo" :alt="$store.state.user.name+' '+$store.state.user.last_name"> -->
                             <div  v-if="!loggedIn" class="user__link">
-                            <img src="../assets/images/index/user.png" alt="">
+                            <img src="../assets/images/avatar.png" alt="">
                             </div>
                                <div  v-if="loggedIn" class="user__link">
-                            <img src="../assets/images/index/user.png" alt="">
+                            <img :src="$store.state.mediaURL + $auth.user.image" alt="">
                             </div>
                         </div>
                     </template>
                 <b-dropdown-item  :to="localePath('/reg')" v-if="!loggedIn"
                   >Ro'yxatdan o'tish</b-dropdown-item
                 >
+                
                 <b-dropdown-item :to="localePath('/signin')" v-if="!loggedIn"
                   >Kirish</b-dropdown-item
                 >
                 <b-dropdown-item :to="localePath('/profile')" v-if="loggedIn"
                   >   <font-awesome-icon :icon="['fas', 'address-card']" /> Mening Sahifam</b-dropdown-item
                 >
-                <b-dropdown-item :to="localePath('/signin')" v-if="loggedIn"
+                <b-dropdown-item :to="localePath('/')" v-if="loggedIn"
                   >   <font-awesome-icon :icon="['fas', 'star']" /> Tanlagan yuristlar</b-dropdown-item
                 >
-                <b-dropdown-item :to="localePath('/signin')" v-if="loggedIn"
+                <b-dropdown-item :to="localePath('/')" v-if="loggedIn"
                   >  <font-awesome-icon :icon="['fas', 'bell']" /> Bildirishnomalar</b-dropdown-item
                 >
-                <b-dropdown-item :to="localePath('/signin')" v-if="loggedIn"
+                <b-dropdown-item href='tel:+998946863999' v-if="loggedIn"
                   >   <font-awesome-icon :icon="['fas', 'phone']" /> Telefon kansultatsiya</b-dropdown-item
                 > 
                 <b-dropdown-item :to="localePath('/signin')" v-if="loggedIn"
+                  >   <font-awesome-icon :icon="['fas', 'file']" /> Hujjat buyurtmalarim</b-dropdown-item
+                >
+                <b-dropdown-item :to="localePath('')" @click="logout()" v-if="loggedIn"
+                  >   <font-awesome-icon :icon="['fas', 'sign-out-alt']" /> Chiqish</b-dropdown-item
+                >
+              </b-nav-item-dropdown>
+              <b-nav-item-dropdown v-else class="user__login">
+                   <template v-slot:button-content>
+                        <div class="round">
+                            <!-- <img :src="$store.state.user.photo" :alt="$store.state.user.name+' '+$store.state.user.last_name"> -->
+                            <div  v-if="!loggedIn" class="user__link">
+                            <img src="../assets/images/avatar.png" alt="">
+                            </div>
+                               <div  v-if="loggedIn" class="user__link">
+                            <img :src="$store.state.mediaURL + $auth.user.image" alt="">
+                            </div>
+                        </div>
+                    </template>
+                <b-dropdown-item  :to="localePath('/reg')" v-if="!loggedIn"
+                  >Ro'yxatdan o'tish</b-dropdown-item
+                >
+                
+                <b-dropdown-item :to="localePath('/signin')" v-if="!loggedIn"
+                  >Kirish</b-dropdown-item
+                >
+                <b-dropdown-item :to="localePath('/profile')" v-if="loggedIn"
+                  >   <font-awesome-icon :icon="['fas', 'address-card']" /> Mening Sahifam</b-dropdown-item
+                >
+                <b-dropdown-item :to="localePath('/')" v-if="loggedIn"
+                  >   <font-awesome-icon :icon="['fas', 'star']" /> Tanlagan yuristlar</b-dropdown-item
+                >
+                <b-dropdown-item :to="localePath('/')" v-if="loggedIn"
+                  >  <font-awesome-icon :icon="['fas', 'bell']" /> Bildirishnomalar</b-dropdown-item
+                >
+                <b-dropdown-item href='tel:+998946863999' v-if="loggedIn"
+                  >   <font-awesome-icon :icon="['fas', 'phone']" /> Telefon kansultatsiya</b-dropdown-item
+                > 
+                <b-dropdown-item :to="localePath('/')" v-if="loggedIn"
                   >   <font-awesome-icon :icon="['fas', 'file']" /> Hujjat buyurtmalarim</b-dropdown-item
                 >
                 <b-dropdown-item :to="localePath('')" @click="logout()" v-if="loggedIn"

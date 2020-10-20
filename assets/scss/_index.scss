@@ -62,6 +62,9 @@
   color: #ffffff;
   transition: all 0.3s ease;
   animation: neon6 1.5s ease-in-out infinite alternate;
+  &:hover{
+    color:white;
+  }
   img {
     margin-left: 10px;
     animation-name: example;

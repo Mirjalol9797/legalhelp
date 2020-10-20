@@ -57,7 +57,7 @@
                   class="news__item-link"
                 >
                   <img
-                    :src="$store.state.mediaURL + item.thubmnail"
+                    src=""
                     height="185"
                     width="362"
                     alt=""
