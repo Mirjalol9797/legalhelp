@@ -6,7 +6,7 @@
   padding-top: 50px;
 
   .lawyer-profile {
-    background: #F1F0F0;
+    background: #f1f0f0;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     max-width: 1080px;
@@ -18,14 +18,12 @@
     padding-right: 40px;
   }
 
-
-
   .lawyer-image-wrapper {
     text-align: center;
     margin: 0 auto;
 
     img {
-      box-shadow:0 0  20px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       max-width: 120px;
       max-height: 120px;
       width: 100%;
@@ -33,7 +31,7 @@
       display: inline-block;
       margin-bottom: 10px;
       border-radius: 50%;
-      border: 3px solid #B08E44;
+      border: 3px solid #b08e44;
     }
   }
 
@@ -49,27 +47,27 @@
 .lawyer-profile__star {
   font-size: 20px;
 }
-.degree-wrapper{
+.degree-wrapper {
   max-width: 400px;
-  .degree{
+  .degree {
     font-size: 20px;
     font-family: $Nunito;
     margin-bottom: 15px;
     font-weight: bold;
   }
-  .graduated{
+  .graduated {
     font-family: $Nunito;
     font-size: 16px;
   }
 }
-.activity-wrapper{
-  .activity-header{
+.activity-wrapper {
+  .activity-header {
     font-size: 20px;
     font-family: $Nunito;
     margin-bottom: 15px;
     font-weight: bold;
   }
-  .activity{
+  .activity {
     max-width: 400px;
     font-family: $Nunito;
     font-size: 16px;
@@ -78,47 +76,73 @@
 .btn-circle {
   border-radius: 30px;
 }
-.cost__lawyer-work{
+.cost__lawyer-work {
   font-family: $Nunito;
   margin-bottom: 30px;
 }
-.filed-work{
+.filed-work {
   font-family: $Nunito;
-  &-header{
+  &-header {
     font-size: 20px;
     margin-bottom: 15px;
     font-weight: bold;
     display: block;
   }
-  svg{
+  svg {
     margin-right: 10px;
   }
-  span.btn{
+  span.btn {
     background-color: rgb(222, 237, 255);
     font-size: 12px;
   }
 }
-.lawyers__tabs{
-  .nav{
+.lawyers__tabs {
+  .nav {
     padding-left: 0;
     padding-right: 0;
   }
-  .nav-link{
+  .nav-link {
     position: relative;
   }
-  .lawyer__profile-card-icon{
-    color:#B08E44;
+  .lawyer__profile-card-icon {
+    color: #b08e44;
   }
-  .lawyer__profile-card-text{
-    color:#000;
+  .lawyer__profile-card-text {
+    color: #000;
   }
-  .fa-angle-right{
-    color:#B08E44;
+  .fa-angle-right {
+    color: #b08e44;
     display: inline-block;
     position: absolute;
     right: 10px;
   }
-  .nav-item{
-width: 250px;
+  .nav-item {
+    width: 250px;
+  }
+}
+.lawyer__tabs {
+  .nav {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .nav-item {
+    width: 200px;
+  }
+  .nav-item .nav-link {
+    position: relative;
+     .lawyer__tabs-right {
+      position: absolute;
+      right: 5px;
+      top: 10px;
+    }
+  }
+  .nav-link.active {
+    .user__profile-card-text {
+      color: black !important;
+    }
+    .user__profile-card-text {
+      color: white !important;
+    }
+   
   }
 }

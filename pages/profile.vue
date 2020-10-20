@@ -5,7 +5,7 @@
         <div class="profile-inner">
           <div class="owner-pic">
             <img
-              :src="$store.state.mediaURL +image"
+              :src="$store.state.mediaURL + $auth.user.image"
               height="170"
               width="264"
               alt
@@ -207,11 +207,11 @@
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-email">Email</label>
-                              <input type="email" id="user__profile-email"  :value="$auth.user.email"/>
+                              <input type="email" id="user__profile-email" v-model="user.email" />
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-city">{{$t('profile.city')}}</label>
-                              <select name id="user__profile-city"  :value="$auth.user.region">
+                              <select name id="user__profile-city"  v-model="user.region">
                                 <option value="0" selected disabled>{{
                                   $t("region.noregion")
                                 }}</option>
@@ -263,7 +263,7 @@
                               <label for="user__profile-number"
                                 >{{$t('profile.phone')}}</label
                               >
-                              <input type="text" id="user__profile-number"  :value="$auth.user.user"/>
+                              <input type="text" id="user__profile-number" v-model="user.user" />
                             </b-col>
                             <b-col lg="12">
                               <b-button type="submit"
@@ -297,11 +297,17 @@
 export default {
   data(){
     return {
-      form:{},
+      form:{
+
+      },
+      user: this.$auth.user,
     }
   },
   methods:{
 
+  },
+  mounted() {
+    console.log(this.$auth.user);
   }
 }
 </script>

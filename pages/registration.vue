@@ -28,7 +28,7 @@
                   id="registration_email"
                 />
               </div>
-              <div class="select">
+              <!-- <div class="select">
                 <label for="">Region tanlash</label>
                   <select name="" id="category">
                   <option value="0" disabled se lected>{{$t('category.typequestion')}}</option>
@@ -47,7 +47,7 @@
                     <option value="13"> {{$t('region.fargona')}}</option>
                     <option value="14"> {{$t('region.xorazm')}}</option>
                  </select>  
-              </div>
+              </div> -->
               <div class="password">
                 <label for="password__id">
                   Parol
@@ -101,7 +101,7 @@ export default {
               phone_number: this.$store.state.phone_number,
               password: this.form.password,
               email: this.form.email,
-              region:1,
+              region:4,
               token: this.$store.state.token
           })
           .then(async() => {

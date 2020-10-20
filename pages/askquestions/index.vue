@@ -8,28 +8,28 @@
               <nuxt-link :to="localePath('/')" class="registration__arrow-link">
                 <img src="../../assets/images/registration/left-arrow.svg" />
               </nuxt-link>
-              <span class="step__page-number">1/4</span>
+              <!-- <span class="step__page-number">1/4</span> -->
             </div>
             <form class="registration__form" @submit.prevent="onSubmit">
-              <div class="name">
+              <!-- <div class="name">
                 <label for="name">{{ $t("askquestion.name") }}</label>
                 <input type="text" id="name" v-model="form.name" />
-              </div>
-              <div class="surname">
+              </div> -->
+              <!-- <div class="surname">
                 <label for="surname">{{ $t("askquestion.surname") }}</label>
                 <input type="text" id="surname" v-model="form.surname" />
-              </div>
-              <div class="city">
+              </div> -->
+              <!-- <div class="city">
                 <label for="city">{{ $t("askquestion.city") }}</label>
                 <input type="text" id="city" v-model="form.city" />
-              </div>
-              <div class="phone__number">
+              </div> -->
+              <!-- <div class="phone__number">
                 <label for="phone">{{ $t("askquestion.number") }}</label>
                 <div class="input__tel-wrapper">
                   <span class="tel__code">+998</span>
                   <input type="tel" id="phone" v-model="form.phone_number" />
                 </div>
-              </div>
+              </div> -->
               <div class="language">
                 <label for="language">{{ $t("askquestion.language") }}</label>
                 <select name="" id="language" v-model="form.lang">
@@ -118,10 +118,10 @@ export default {
   data() {
     return {
       form: {
-        name: "",
-        surname: "",
-        city: "",
-        phone_number: "",
+        // name: "",
+        // surname: "",
+        // city: "",
+        // phone_number: "",
         lang: "",
         category: "",
         title: "",

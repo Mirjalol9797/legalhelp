@@ -107,13 +107,21 @@ export default {
     //   home: '/'
     // },
     strategies: {
-      local: {
-        endpoints: {
-          login: { url: 'customer/login/', method: 'post', propertyName: 'access' },
-          user: { url: 'customer/profile/', method: 'get', propertyName: false },
-          logout: false
+  
+        // _scheme: 'local',
+        local: {
+          endpoints: {
+            login: { url: 'customer/login/', method: 'post', propertyName: 'access' },
+            user: { url: 'customer/profile/', method: 'get', propertyName: false },
+            logout: false
+          }
         }
-      }
+      // lawyer: {
+      // _scheme: 'local',
+      //   login: { url: '/lawyer/login/', method: 'post', propertyName: 'token' },
+      //   user: { url: '/lawyer/profile/', method: 'get', propertyName: 'user' }
+      // },
+     
     },
   },
 
