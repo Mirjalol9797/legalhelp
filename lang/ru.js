@@ -10,8 +10,81 @@ export default {
     },
 
     header: {
+        title: 'Надежные и качественные онлайн-услуги юриста',
+        subtitle: `На основании проблемных вопросов с использованием услуг квалифицированных юристов
+                    и получите качественный ответ. Если вы не удовлетворены предоставленной услугой,
+                    Ваши деньги будут возвращены на 100%.`,
         online: 'ОНЛАЙН-СЕРВИС',
     },
+    about_service: {
+        title: 'Опытные юристы готовы вам помочь.',
+        subtitle: '«Два величайших тирана в мире: возможность и время»',
+        author_name: 'Иоганна Гердера.',
+        user_name: 'Азиза Абдурахмонова'
+    }, 
+    solve: {
+        title: 'Решайте свои проблемы с нами',
+        subtitle: `Сталкиваетесь ли вы с различными проблемами в 
+                    повседневной жизни и на работе? Тогда немедленно свяжитесь с нами,
+                    и мы проконсультируем вас.`,
+
+    },  
+    new: {
+        title: 'Новости',
+        subtitle: `Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua.`,
+        btn_name: 'Все новости'
+    }, 
+    questions__part: {
+        title: 'Вопросы',
+        btn_name1: 'Бесплатно',
+        btn_name2: 'Платный',
+        btn_all: 'Все вопросы'
+    },
+    we_work: {
+        title: 'Как мы работаем',
+        subtitle: `Проблема решается всего за 3 шага`,
+        mini_title1: 'Задайте вопрос',
+        mini_title2: 'Получите ответ',
+        mini_title3: 'Проблема решена!'
+    },
+    swiper_wrapper: {
+        title: 'Юристы',
+        subtitle: `Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua.`,
+    },  
+    our_service: {
+        title: 'Наши услуги',
+        subtitle: `Задавать вопросы можно на сайте, в том числе по телефону
+                    Вы также можете получить консультацию
+                    вы можете заказать документы`,
+    },    
+    other_service: {
+        title: 'Другие услуги',
+        subtitle: `Задавать вопросы можно на сайте, в том числе по телефону
+                    Вы также можете получить консультацию
+                    вы можете заказать документы`,
+        consult_title: 'Телефонная консультация',
+        consult_text: `Оставьте свой номер телефона, и в ближайшее время с вами свяжется специалист.`,
+        consult_btn1: 'Бесплатно' ,
+        consult_btn2: 'Использовать'                                           
+    },  
+    form_wrap: {
+        title: 'Получите ответ на свой вопрос в рамках закона!',
+        subtitle: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+        info: 'Напишите вопрос в поле ниже, чтобы проконсультироваться с нашей командой экспертов.',
+        time_info: 'Среднее время ответа - 60 мин.',
+        mobil_info: 'Или позвоните нам:',
+        input_email: 'Ваш электронный адрес',
+        input_name: 'Ваше имя',
+        input_tel: 'Ваш номер телефона',
+        input_theme: 'Тема',
+        input_ques: 'Ваш вопрос',
+        btn: 'Спросите у юриста'
+    },    
     askquestion: {
         name: 'Имя',
         surname: 'Фамилия',
@@ -125,7 +198,7 @@ export default {
         mydocuments: 'Мои заказы на документы',
         notification: 'Мои уведомления',
         setting: 'Настройки',
-        img: 'Картина',
+        img: 'Картина', 
         name: 'имя',
         surname: 'Фамилия',
         lang: 'Язык использования',
