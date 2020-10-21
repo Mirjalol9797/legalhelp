@@ -133,7 +133,7 @@
                     <p class="news__item-content-text" v-html="item.intro"></p>
                     <div class="news__item-content-meta">
                       <span class="news__item-content-meta-calendar">{{
-                       singlePost.created_at | moment("L")
+                       item.created_at | moment("L")
                       }}</span>
                       <span class="news__item-content-meta-view">{{
                         item.view_count
@@ -734,7 +734,6 @@ export default {
   },
   created() {
     this.$store.dispatch("getNews").then(() => {
-      console.log(this.news);
     });
   }
 };

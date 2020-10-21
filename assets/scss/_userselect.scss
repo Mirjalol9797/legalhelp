@@ -1,0 +1,39 @@
+.user__select {
+  background-image: url("../images/bg2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+  &-select {
+       height: 450px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding-bottom: 50px;
+  }
+   &-text{
+          text-align: center;
+          margin-top: 20px;
+      }
+      &-btn-wrapper{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+      }
+      &-btn{
+          background-color: #f2b50f;
+          border:none;
+          display: block;
+          max-width:250px;
+          width:100%;
+          margin-top: 15px;
+          transition: all 0.3s ease;
+          &:hover, &:active{
+            background-color: #00aced;
+            box-shadow: 0 0 10px #00aced;
+          }
+      }
+}

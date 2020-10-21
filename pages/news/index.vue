@@ -57,7 +57,7 @@
                   class="news__item-link"
                 >
                   <img
-                    src=""
+                    :src="$store.state.mediaURL + item.thubmnail"
                     height="185"
                     width="362"
                     alt=""
@@ -122,7 +122,6 @@ export default {
   },
   created() {
     this.$store.dispatch("getNews").then(() => {
-      console.log(this.news);
     });
   }
 };

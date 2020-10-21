@@ -108,6 +108,7 @@ export default {
         region: 'Выберите область',
         next: 'Продолжать',
         bio: 'Напишите здесь свою биографию',
+        password: 'пароль'
     },
     footer__menu: {
         about: 'о проекте',

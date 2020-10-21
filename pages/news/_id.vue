@@ -45,7 +45,6 @@ export default {
       await this.$axios.get(`posts/${this.$route.params.id}/`)
       .then(res => {
         this.post = res.data;
-        console.log(res);
       })
       .catch(err => {
         console.log(err);

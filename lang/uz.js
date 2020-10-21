@@ -107,6 +107,7 @@ export default {
         region: 'Hududni tanlang',
         next: 'Davom etish',
         bio: 'Biografiyangizni bu erga yozing',
+        password:'Parolingiz'
     },
     footer__menu: {
         about: 'Loyiha haqida',

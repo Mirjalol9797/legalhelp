@@ -60,6 +60,7 @@ export default {
           title: `${this.$t("toast.success")}`,
           message: `${this.$t("toast.loginSuccessMessage")}`
         });
+        console.log(this.$auth.user);
         // this.disable = false;
       }
        catch (err) {

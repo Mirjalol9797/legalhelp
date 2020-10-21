@@ -9,13 +9,21 @@
             <input type="submit" :value="$t('question.btn')" />
           </form>
           <div class="questions__wrapper">
-            <div class="question__item" v-for="(question,index) of questions" :key="index">
+            <div
+              class="question__item"
+              v-for="(question, index) of questions"
+              :key="index"
+            >
               <div class="question__meta d-none d-md-block">
                 <div class="question__meta-inner">
-                  <span class="question__meta-time">{{question.answered_date | moment("h:mm")}}</span>
-                  <span class="question__meta-calendar">{{question.answered_date | moment("L")}}</span>
-                  <b-button class="question__meta-btn question__btn"
-                    > 1 ta javob</b-button
+                  <span class="question__meta-time">{{
+                    question.answered_date | moment("h:mm")
+                  }}</span>
+                  <span class="question__meta-calendar">{{
+                    question.answered_date | moment("L")
+                  }}</span>
+                  <b-button class="question__meta-btn question__btn">
+                    1 ta javob</b-button
                   >
                 </div>
               </div>
@@ -104,10 +112,11 @@
         </div>
         <div class="pagination__menu">
           <b-pagination
-            v-model="currentPage"
-            :total-rows="rows"
             pills
             hide-goto-end-buttons
+            :per-page="8"
+            v-model="page"
+            :total-rows="allProduct"
           ></b-pagination>
         </div>
       </div>
@@ -122,32 +131,61 @@ export default {
   data() {
     return {
       questions: [],
-      rows: 100,
-      // perPage: 1,
-      currentPage: 0,
-    }
+      allProduct: 0,
+      page: 1,
+      currentPage: 0
+    };
   },
   watch: {
-    currentPage: async function(newVal) {
-      console.log(newVal);
-      await this.$axios.get(`services/?limit=10&offset=${newVal*10}`)
-      .then(res=>{
-          this.questions = res.data.results;
-          // commit('setQuestions',res.data.results);
-      })
-      .catch(err=> {
-          console.log(err);
-      })
+    page: {
+      handler: function() {
+        this.getQuestions();
+      }
     }
   },
-  computed: {
-    // ...mapGetters(["questions"])
-  },
-  methods: {},
+
+  computed: {},
+  methods: {
+      async getCard() {
+        await this.$axios.get('services/?limit=10&offset=10')
+        .then(res => {
+          if(res.data.length > 0){
+            this.allProduct = res.headers['x-pagination-total-count'];
+            this.questions = res.data;
+          }else{
+            this.questions = [];
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        })
+      }
+    },
+  // methods: {
+  //   async getQuestions() {
+  //     await this.$axios
+  //       .get(``)
+  //       .then(res => {
+  //         if (res.data.length > 0) {
+  //           this.questions = res.headers["x-pagination-total-count"];
+  //           this.questions = res.data;
+  //         } else {
+  //           this.questions = [];
+  //         }
+  //         // commit('setQuestions',res.data.results);
+  //       })
+  //       .catch(err => {
+  //         console.log(err);
+  //       });
+  //   }
+  // }
   // created() {
   //   this.$store.dispatch("getQuestions",this.currentPage).then(() => {
   //     // console.log(this.questions);
   //   });
   // }
-}
+    mounted() {
+      this.getQuestions();
+    }
+};
 </script>

@@ -77,7 +77,6 @@ const store = () => new Vuex.Store({
         async getQuestions({commit},payload){
             await this.$axios.get(`services/?limit=10&offset=${payload*10}`)
             .then(res=>{
-                console.log(res)
                 commit('setQuestions',res.data.results);
             })
             .catch(err=> {
