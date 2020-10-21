@@ -5,12 +5,10 @@
         <b-container>
           <div class="header__content">
             <h1 class="header__heading">
-              Ishonchli va sifatli online yuridik xizmatlar
+              {{$t('header.title')}}
             </h1>
             <p class="header__motto">
-              Malakali yuristlar xizmatidan foydalanib, muammoli savollarga
-              asosli va sifatli javob oling. Ko’rsatilgan xizmat sizni
-              qanoatlantirmasa, pulingiz 100% qaytarib beriladi.
+              {{$t('header.subtitle')}}
             </p>
             <nuxt-link to="" class="online__service-link"
               >{{ $t("header.online") }}
@@ -25,15 +23,15 @@
           <b-row>
             <b-col lg="6">
               <h2 class="about__service-heading">
-                Tajribali yuristlar sizga yordam berishga tayyor.
+                {{$t('about_service.title')}}
               </h2>
               <p class="about__service-text">
-                "Dunyodagi eng buyuk ikki zolim: imkoniyat va vaqt"
-                <i>Ioxann Xerder</i>
+                {{$t('about_service.subtitle')}} 
+                <i>{{$t('about_service.author_name')}}</i>
               </p>
               <div class="lawyer__user">
                 <img src="../assets/images/lawyer.jpg" alt="" />
-                <span class="lawyer__user-name">Aziza Abdurakhmonova</span>
+                <span class="lawyer__user-name">{{$t('about_service.user_name')}}</span>
               </div>
             </b-col>
             <b-col lg="6">
@@ -53,11 +51,11 @@
           <div class="solve__with-us-header">
             <span class="line"></span>
             <div class="solve__with-us-heading">
-              Muammolaringiz Yechimi Biz Bilan
+              {{$t('solve.title')}} 
             </div>
             <span class="solve__with-us-motto text-center"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              >
+              {{$t('solve.subtitle')}}
             </span>
           </div>
 
@@ -102,10 +100,9 @@
         <b-container>
           <span class="news__main-page-line"></span>
           <div class="news__main-page-header">
-            <span class="news__main-page-header-heading">Yangiliklar</span>
-            <span class="news__main-page-header-motto"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <span class="news__main-page-header-heading">{{$t('new.title')}}</span>
+            <span class="news__main-page-header-motto">
+              {{$t('new.subtitle')}}
             </span>
           </div>
           <b-row v-if="singlePost">
@@ -152,7 +149,7 @@
               <b-button
                 class="question__btn all__news-btn"
                 :to="localePath(`/news`)"
-                >Barcha yangiliklar</b-button
+                >{{$t('new.btn_name')}}</b-button
               >
             </div>
           </b-row>
@@ -164,7 +161,7 @@
       <div class="questions__index-wrapper">
         <b-container>
           <span class="questions__part-line"></span>
-          <h2 class="questions__part-heading">Savollar</h2>
+          <h2 class="questions__part-heading">{{$t('questions__part.title')}}</h2>
           <b-tabs content-class="mt-3" class="tabs__wrapper">
             <b-tab title="Tekin" active class="questions__switch-link ">
               <div class="questions__block-item" v-for="i of 4" :key="i">
@@ -251,8 +248,7 @@
                 <b-button
                   class="questions__block-more-btn"
                   :to="localePath(`/questions`)"
-                >
-                  Barcha savollar
+                >{{$t('questions__part.btn_all')}}
                 </b-button>
               </div>
             </b-tab>
@@ -341,7 +337,7 @@
                   class="questions__block-more-btn"
                   :to="localePath(`/questions`)"
                 >
-                  Barcha savollar
+                {{$t('questions__part.btn_all')}}
                 </b-button>
               </div></b-tab>
           </b-tabs>
@@ -351,10 +347,9 @@
       <div class="how__we-work">
         <b-container>
           <span class="line-dashed d-none d-lg-block"></span>
-          <h3 class="how__we-work-heading">Biz qanday ishlaymiz</h3>
+          <h3 class="how__we-work-heading">{{$t('we_work.title')}}</h3>
           <p class="how__we-work-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            {{$t('we_work.subtitle')}} 
           </p>
           <b-row>
             <b-col lg="4">
@@ -365,7 +360,7 @@
                     alt=""
                   />
                 </div>
-                <span>Savol bering</span>
+                <span>{{$t('we_work.mini_title1')}}</span>
               </div>
             </b-col>
             <b-col lg="4">
@@ -376,7 +371,7 @@
                     alt=""
                   />
                 </div>
-                <span>Javob oling</span>
+                <span>{{$t('we_work.mini_title2')}}</span>
               </div>
             </b-col>
             <b-col lg="4">
@@ -384,7 +379,7 @@
                 <div class="img-box">
                   <img src="../assets/images/index/subway_like.svg" alt="" />
                 </div>
-                <span>Muammo hal!</span>
+                <span>{{$t('we_work.mini_title3')}} </span>
               </div>
             </b-col>
           </b-row>
@@ -393,11 +388,10 @@
       <div class="swiper__wrapper">
         <b-container>
           <div class="swiper__header">
-            <span class="swiper__motto"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <span class="swiper__motto">
+              {{$t('swiper_wrapper.subtitle')}}
             </span>
-            <h4 class="swiper__heading">Yuristlar</h4>
+            <h4 class="swiper__heading">{{$t('swiper_wrapper.title')}}</h4>
             <span class="line__swiper d-none d-md-block"></span>
           </div>
           <b-row>
@@ -455,10 +449,10 @@
       <div class="our__service">
         <b-container>
           <div class="our__service-header">
-            <h1 class="our__service-heading">Bizning Xizmatlarimiz</h1>
+            <h1 class="our__service-heading">{{$t('our_service.title')}}</h1>
             <span class="our__service-motto"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              >
+              {{$t('our_service.subtitle')}}
             </span>
           </div>
 
@@ -552,26 +546,24 @@
       <div class="our__other-services">
         <b-container>
           <div class="our__other-services-header">
-            <h2 class="our__other-services-title">Boshqa xizmatlar</h2>
+            <h2 class="our__other-services-title">{{$t('other_service.title')}}</h2>
             <p class="our__other-services-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {{$t('other_service.subtitle')}}
             </p>
           </div>
           <div class="our__other-services-list">
             <div class="our__other-services-item">
               <h4 class="our__other-services-item-title">
-                Telefon konsultatsiya
+                {{$t('other_service.consult_title')}} 
               </h4>
               <p class="our__other-services-item-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {{$t('other_service.consult_text')}} 
               </p>
               <div class="our__other-services-item-btn-wrap">
                 <b-button class="our__other-services-price"
-                  >Tekin
+                  >{{$t('other_service.consult_btn1')}} 
                 </b-button>
-                <b-button class="our__other-services-use" href="tel:998946863999">Foydalanish</b-button>
+                <b-button class="our__other-services-use" href="tel:998946863999">{{$t('other_service.consult_btn2')}} </b-button>
               </div>
               <span class="our__other-services-phone d-none d-lg-block"></span>
             </div>
@@ -601,12 +593,11 @@
         <b-container>
           <div class="form__header">
             <h4 class="form__heading">
-              Savolingizniga qonun doirasida javob oling!
+              {{$t('form_wrap.title')}} 
             </h4>
             <!-- /.form__heading -->
             <p class="form__motto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {{$t('form_wrap.subtitle')}} 
             </p>
           </div>
           <form action="" method="POST" class="main__form">
@@ -616,16 +607,16 @@
                   <input
                     type="email"
                     class="email"
-                    placeholder="Email adresingiz"
+                    :placeholder="$t('form_wrap.input_email')" 
                   />
-                  <input type="text" class="name" placeholder="Ismimgiz" />
+                  <input type="text" class="name" :placeholder="$t('form_wrap.input_name')" />
                   <input
                     type="tel"
                     class="phone__number"
-                    placeholder="Telefon raqamingiz"
+                    :placeholder="$t('form_wrap.input_tel')"
                   />
 
-                  <input type="text" class="topic" placeholder="Mavzu" />
+                  <input type="text" class="topic" :placeholder="$t('form_wrap.input_theme')" />
                 </b-col>
                 <b-col lg="7" class=" order-1 order-lg-2">
                   <div class="info__wrapper">
@@ -634,15 +625,13 @@
                     </div>
                     <div class="info__content">
                       <p class="info__content-heading">
-                        Type a question in the box below for a consultation with
-                        our specialist team.
+                        {{$t('form_wrap.info')}}
                       </p>
                       <span class="info__content-small"
-                        >Average reponce time 60 mins (during normal office
-                        hours)</span
+                        >{{$t('form_wrap.time_info')}}</span
                       >
                       <p class="info__content-tel">
-                        Or call us on
+                        {{$t('form_wrap.mobil_info')}} 
                         <nuxt-link to="tel:+99899999999" class="phone"
                           >+998 00 000 00 00</nuxt-link
                         >
@@ -656,10 +645,10 @@
                 name="textarea"
                 id=""
                 class="textarea"
-                placeholder="Your Question"
+                :placeholder="$t('form_wrap.input_ques')"
               ></textarea>
             </b-container>
-            <b-button class="question__btn submit__btn">Ask a lawyer</b-button>
+            <b-button class="question__btn submit__btn">{{$t('form_wrap.btn')}}</b-button>
           </form>
         </b-container>
       </div>

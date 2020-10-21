@@ -9,7 +9,80 @@ export default {
         search: 'Izlash'
     },
     header: {
+        title: 'Ishonchli va sifatli online yuridik xizmatlar',
+        subtitle: `Malakali yuristlar xizmatidan foydalanib, muammoli savollarga asosli 
+                    va sifatli javob oling. Ko’rsatilgan xizmat sizni qanoatlantirmasa, 
+                    pulingiz 100% qaytarib beriladi.`,
         online: 'ONLINE XIZMAT',
+    },
+    about_service: {
+        title: 'Tajribali yuristlar sizga yordam berishga tayyor.',
+        subtitle: '"Dunyodagi eng buyuk ikki zolim: imkoniyat va vaqt"',
+        author_name: 'Ioxann Xerder',
+        user_name: 'Aziza Abdurakhmonova'
+    },
+    solve: {
+        title: 'Muammolaringiz Yechimi Biz Bilan',
+        subtitle: `Kundalik hayotingizda va ish faoliyatingizda 
+                    turli muammolarga duch kelyapsizmi? Unda tezda 
+                    bizga bog‘laning, biz sizga maslahat beramiz.`,
+        
+    }, 
+    new: {
+        title: 'Yangiliklar',
+        subtitle: `Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua.`,
+        btn_name: 'Barcha yangiliklar'
+    },
+    questions__part: {
+        title: 'Savollar',
+        btn_name1: 'Tekin',
+        btn_name2: 'Pullik',
+        btn_all: 'Barcha savollar'
+    },
+    we_work: {
+        title: 'Biz qanday ishlaymiz',
+        subtitle: `Muammo atigi 3 bosqichda hal qilinadi`,
+        mini_title1: 'Savol bering',
+        mini_title2: 'Javob oling',
+        mini_title3: 'Muammo hal!'
+    },
+    swiper_wrapper: {
+        title: 'Yuristlar',
+        subtitle: `Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua.`,
+    },
+    our_service: {
+        title: 'Bizning Xizmatlarimiz',
+        subtitle: `Saytda savol berishingiz mumkin, bundan tashqari telefon orqali
+                    konsultatsiya olishingiz hamda kerakli 
+                    hujjatlarni buyurtma qilishingiz mumkin`,
+    },
+    other_service: {
+        title: 'Другие услуги',
+        subtitle: `Saytda savol berishingiz mumkin, bundan tashqari telefon orqali 
+                    konsultatsiya olishingiz hamda kerakli 
+                    hujjatlarni buyurtma qilishingiz mumkin`,
+        consult_title: 'Telefon konsultatsiya',
+        consult_text: `Telefon raqamizgizni qoldiring va mutaxasis siz bilan tez orada bog'lanadi.`,
+        consult_btn1: 'Tekin' ,
+        consult_btn2: 'Foydalanish'     
+    },
+    form_wrap: {
+        title: 'Savolingizniga qonun doirasida javob oling!',
+        subtitle: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+        info: 'Bizning mutaxassislar guruhi bilan maslahatlashish uchun quyidagi katakchaga savol yozing.',
+        time_info: 'O\'rtacha javob qaytarish vaqti 60 min.',
+        mobil_info: 'Yoki bizni chaqiring:',
+        input_email: 'Email adresingiz',
+        input_name: 'Ismimgiz',
+        input_tel: 'Telefon raqamingiz',
+        input_theme: 'Mavzu',
+        input_ques: 'Sizning savolingiz',
+        btn: 'Advokatdan so\'rang'
     },
     askquestion: {
         name: 'Ism',
@@ -144,4 +217,4 @@ export default {
         loginSuccessMessage: 'Siz profilizga muvaffaqiyatli kirdingiz',
         signupErrorMessage: 'Profil yaratilishida xatolik yuz berdi.',
     },
-}
+} 
