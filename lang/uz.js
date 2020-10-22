@@ -169,6 +169,10 @@ export default {
     },
     service: {
         title: 'Bizning Xizmatlarimiz',
+        phone_title: "Telefon konsultatsiya",
+        phone_subtitle: "Telefon raqamizgizni qoldiring va mutaxasis siz bilan tez orada bog'lanadi.",
+        phone_btn: "",
+        phone_toptext: ""
     },
     forlawyers: {
         title: 'Yuristlar uchun',
@@ -191,6 +195,16 @@ export default {
         projectmanager: 'Loyiha yuristi bo\'lish',
         popularquestions: 'Ko\'p so\'raladigan savollar'
     },
+    footer_time: {
+        title: 'Ofisning ishlash soatlari',
+        monday: `Dushanba ............... 08.00-17.00`,
+        tues: `Seshanba ............... 08.00-17.00`,
+        wend: 'Chorshanba ........... 08.00-17.00',
+        thur: 'Payshanba ............. 08.00-17.00',
+        frid: 'Juma ........................ 08.00-17.00',
+        satur: 'Shanba .................... 08.00-17.00',
+        sund: 'Yakshanba ............... Yopiq'
+    },    
     profile: {
         myquestion: "Savollarim",
         phoneconsultate: 'Telefon konsultatsiya',

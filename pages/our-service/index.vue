@@ -6,7 +6,7 @@
               <b-row>
                 <b-col lg="6">
                   <div class="service__list">
-                     <font-awesome-icon :icon="['fas','phone']"  class="service__list-icon"/>
+                     <font-awesome-icon :icon="['fas','phone']"  class="service__list-icon"/> 
                      <div class="service__list-content">
                        <span class="service__list-top">Tekin</span>
                     <div class="service__list-title">Telefon konsultatsiya</div>
