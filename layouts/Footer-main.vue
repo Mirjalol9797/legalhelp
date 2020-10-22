@@ -59,7 +59,7 @@
           </b-col>
           <b-col lg="4">
             <div class="index-address">
-              <h4 class="index-address-heading">Address</h4>
+              <h4 class="index-address-heading">{{$t('footer_time.address')}}</h4>
               <span class="index-address-text">Lorem ipsum dolor 
                 sit amet, consectetur elit, </span>
               <nuxt-link to="tel:+99893123-34-345" class="index-address-phone">+998 00 000 00 00</nuxt-link>

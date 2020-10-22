@@ -8,10 +8,10 @@
                   <div class="service__list">
                      <font-awesome-icon :icon="['fas','phone']"  class="service__list-icon"/> 
                      <div class="service__list-content">
-                       <span class="service__list-top">Tekin</span>
-                    <div class="service__list-title">Telefon konsultatsiya</div>
-                    <div class="service__list-text">Telefon raqamizgizni qoldiring va mutaxasis siz bilan tez orada bog'lanadi.</div>
-                    <b-button class="service__list-btn" href="tel:+998946863999">Qo'ng'roq qilish</b-button>
+                       <span class="service__list-top">{{$t('service.phone_toptext')}}</span>
+                    <div class="service__list-title">{{$t('service.phone_title')}}</div>
+                    <div class="service__list-text">{{$t('service.phone_subtitle')}}</div>
+                    <b-button class="service__list-btn" href="tel:+998946863999">{{$t('service.phone_btn')}}</b-button>
                      </div>
                   </div>
                  

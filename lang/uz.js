@@ -171,8 +171,8 @@ export default {
         title: 'Bizning Xizmatlarimiz',
         phone_title: "Telefon konsultatsiya",
         phone_subtitle: "Telefon raqamizgizni qoldiring va mutaxasis siz bilan tez orada bog'lanadi.",
-        phone_btn: "",
-        phone_toptext: ""
+        phone_btn: "Qo'ng'roq qilish",
+        phone_toptext: "Tekin"
     },
     forlawyers: {
         title: 'Yuristlar uchun',
@@ -203,7 +203,8 @@ export default {
         thur: 'Payshanba ............. 08.00-17.00',
         frid: 'Juma ........................ 08.00-17.00',
         satur: 'Shanba .................... 08.00-17.00',
-        sund: 'Yakshanba ............... Yopiq'
+        sund: 'Yakshanba ............... Yopiq',
+        address: 'Manzil',
     },    
     profile: {
         myquestion: "Savollarim",
@@ -230,5 +231,15 @@ export default {
         loginErrorMessage: 'Telefon raqam yoki parol xato kiritildi.',
         loginSuccessMessage: 'Siz profilizga muvaffaqiyatli kirdingiz',
         signupErrorMessage: 'Profil yaratilishida xatolik yuz berdi.',
+    },
+    user: {
+        signup: 'Ro\'yxatdan o\'tish',
+        entrance: 'Kirish',
+        mypage: 'Mening sahifam',
+        select: 'Tanlagan yuristlar',
+        notifications: 'Bildirishnomalar',
+        phone: 'Telefon kansultatsiya',
+        document: 'Hujjat buyurtmalarim',
+        exit: 'Chiqish'
     },
 } 
