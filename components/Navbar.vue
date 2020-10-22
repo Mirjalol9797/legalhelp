@@ -70,7 +70,7 @@
                     
                   </div>
                 </template>
-                <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn"
+                <b-dropdown-item :to="localePath('/selectuser')" v-if="!loggedIn"
                   >Ro'yxatdan o'tish</b-dropdown-item
                 >
 

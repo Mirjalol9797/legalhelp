@@ -67,7 +67,7 @@
                     <p class="news__item-content-text" v-html="item.intro"></p>
                     <div class="news__item-content-meta">
                       <span class="news__item-content-meta-calendar">{{
-                       singlePost.created_at | moment("L")
+                        singlePost.created_at | moment("L")
                       }}</span>
                       <span class="news__item-content-meta-view">{{
                         item.view_count
@@ -87,13 +87,12 @@
       </div>
 
       <div class="pagination__menu">
-        <b-pagination pills
-          v-model="currentPage"
-          :total-rows="rows"
-          :per-page="perPage"
-          :first-text="$t('pagination.first')"
-          :last-text="$t('pagination.last')"
-          hide-goto-end-buttons
+        <b-pagination
+               pills
+            hide-goto-end-buttons
+            :per-page="10"
+            v-model="page"
+            :total-rows="allProduct"
         ></b-pagination>
       </div>
     </div>
@@ -106,10 +105,18 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      rows: 100,
-      perPage: 1,
+      news: [],
+      allProduct: 0,
+      page: 1,
       currentPage: 1
     };
+  },
+  watch: {
+    page: {
+      handler: function() {
+        this.getNews();
+      }
+    }
   },
   computed: {
     ...mapGetters(["news"]),
@@ -118,11 +125,30 @@ export default {
     }
   },
   methods: {
-
+    async getNews() {
+      console.log(this.page);
+      await this.$axios
+        .get(`posts/?limit=10&offset=${(this.page - 1) * 10}`)
+        .then(res => {
+          console.log(res);
+          if (res.data.results.length > 0) {
+            this.allProduct = res.data.count;
+            this.news = res.data.results;
+          } else {
+            this.news = [];
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   },
-  created() {
-    this.$store.dispatch("getNews").then(() => {
-    });
+  // created() {
+  //   this.$store.dispatch("getNews").then(() => {
+  //   });
+  // },
+  mounted() {
+    this.getNews();
   }
 };
 </script>

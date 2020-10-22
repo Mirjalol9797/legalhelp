@@ -4,7 +4,7 @@
       <div class="questions__page-wrapper-inner">
         <div class="container">
           <h1 class="questions__page-header">{{ $t("question.title") }}</h1>
-          <form action="" method="POST" class="questions__search">
+          <form class="questions__search">
             <input type="search" :placeholder="$t('question.placeholder')" />
             <input type="submit" :value="$t('question.btn')" />
           </form>
@@ -114,7 +114,7 @@
           <b-pagination
             pills
             hide-goto-end-buttons
-            :per-page="8"
+            :per-page="10"
             v-model="page"
             :total-rows="allProduct"
           ></b-pagination>
@@ -126,14 +126,13 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 export default {
   data() {
     return {
       questions: [],
       allProduct: 0,
       page: 1,
-      currentPage: 0
+      currentPage: 1
     };
   },
   watch: {
@@ -146,21 +145,24 @@ export default {
 
   computed: {},
   methods: {
-      async getCard() {
-        await this.$axios.get('services/?limit=10&offset=10')
+    async getQuestions() {
+      console.log(this.page);
+      await this.$axios
+        .get(`services/?limit=10&offset=${(this.page - 1) * 10}`)
         .then(res => {
-          if(res.data.length > 0){
-            this.allProduct = res.headers['x-pagination-total-count'];
-            this.questions = res.data;
-          }else{
+          console.log(res);
+          if (res.data.results.length > 0) {
+            this.allProduct = res.data.count;
+            this.questions = res.data.results;
+          } else {
             this.questions = [];
           }
         })
         .catch(err => {
           console.log(err);
-        })
-      }
-    },
+        });
+    }
+  },
   // methods: {
   //   async getQuestions() {
   //     await this.$axios
@@ -184,8 +186,8 @@ export default {
   //     // console.log(this.questions);
   //   });
   // }
-    mounted() {
-      this.getQuestions();
-    }
+  mounted() {
+    this.getQuestions();
+  }
 };
 </script>
