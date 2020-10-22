@@ -61,7 +61,7 @@ export default {
                     hujjatlarni buyurtma qilishingiz mumkin`,
     },
     other_service: {
-        title: 'Другие услуги',
+        title: 'Boshqa xizmatlar',
         subtitle: `Saytda savol berishingiz mumkin, bundan tashqari telefon orqali 
                     konsultatsiya olishingiz hamda kerakli 
                     hujjatlarni buyurtma qilishingiz mumkin`,
@@ -169,6 +169,10 @@ export default {
     },
     service: {
         title: 'Bizning Xizmatlarimiz',
+        phone_title: "Telefon konsultatsiya",
+        phone_subtitle: "Telefon raqamizgizni qoldiring va mutaxasis siz bilan tez orada bog'lanadi.",
+        phone_btn: "Qo'ng'roq qilish",
+        phone_toptext: "Tekin"
     },
     forlawyers: {
         title: 'Yuristlar uchun',
@@ -191,6 +195,17 @@ export default {
         projectmanager: 'Loyiha yuristi bo\'lish',
         popularquestions: 'Ko\'p so\'raladigan savollar'
     },
+    footer_time: {
+        title: 'Ofisning ishlash soatlari',
+        monday: `Dushanba ............... 08.00-17.00`,
+        tues: `Seshanba ............... 08.00-17.00`,
+        wend: 'Chorshanba ........... 08.00-17.00',
+        thur: 'Payshanba ............. 08.00-17.00',
+        frid: 'Juma ........................ 08.00-17.00',
+        satur: 'Shanba .................... 08.00-17.00',
+        sund: 'Yakshanba ............... Yopiq',
+        address: 'Manzil',
+    },    
     profile: {
         myquestion: "Savollarim",
         phoneconsultate: 'Telefon konsultatsiya',
@@ -216,5 +231,15 @@ export default {
         loginErrorMessage: 'Telefon raqam yoki parol xato kiritildi.',
         loginSuccessMessage: 'Siz profilizga muvaffaqiyatli kirdingiz',
         signupErrorMessage: 'Profil yaratilishida xatolik yuz berdi.',
+    },
+    user: {
+        signup: 'Ro\'yxatdan o\'tish',
+        entrance: 'Kirish',
+        mypage: 'Mening sahifam',
+        select: 'Tanlagan yuristlar',
+        notifications: 'Bildirishnomalar',
+        phone: 'Telefon kansultatsiya',
+        document: 'Hujjat buyurtmalarim',
+        exit: 'Chiqish'
     },
 } 

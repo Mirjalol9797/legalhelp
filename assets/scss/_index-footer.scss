@@ -60,3 +60,13 @@ display: block;
 padding-top: 15px;
     }
 }
+
+@media (max-width: 575px) {
+    .index-address-text {
+        margin-top: 15px;
+    }
+
+    .working-hours {
+        margin-top: 15px;
+    }
+}

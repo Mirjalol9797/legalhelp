@@ -68,39 +68,35 @@
                   </div>
                 </template>
                 <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn"
-                  >Ro'yxatdan o'tish</b-dropdown-item
+                  >{{$t('user.signup')}}</b-dropdown-item
                 >
 
                 <b-dropdown-item :to="localePath('/signin')" v-if="!loggedIn"
-                  >Kirish</b-dropdown-item
+                  >{{$t('user.entrance')}}</b-dropdown-item
                 >
                 <b-dropdown-item :to="localePath('/profile')" v-if="loggedIn && $auth.user.is_customer">
-                  <font-awesome-icon :icon="['fas', 'address-card']" /> Mening
-                  Sahifam</b-dropdown-item
+                  <font-awesome-icon :icon="['fas', 'address-card']" />{{$t('user.mypage')}}</b-dropdown-item
                 >
                 <b-dropdown-item :to="localePath('/')" v-if="loggedIn && $auth.user.is_customer">
-                  <font-awesome-icon :icon="['fas', 'star']" /> Tanlagan
-                  yuristlar</b-dropdown-item
+                  <font-awesome-icon :icon="['fas', 'star']" />{{$t('user.select')}}</b-dropdown-item
                 >
                 <b-dropdown-item :to="localePath('/')" v-if="loggedIn && $auth.user.is_customer">
-                  <font-awesome-icon :icon="['fas', 'bell']" />
-                  Bildirishnomalar</b-dropdown-item
+                  <font-awesome-icon :icon="['fas', 'bell']" />{{$t('user.notifications')}}
+                  </b-dropdown-item
                 >
                 <b-dropdown-item href="tel:+998946863999" v-if="loggedIn && $auth.user.is_customer">
-                  <font-awesome-icon :icon="['fas', 'phone']" /> Telefon
-                  kansultatsiya</b-dropdown-item
+                  <font-awesome-icon :icon="['fas', 'phone']" />{{$t('user.phone')}}</b-dropdown-item
                 >
                 <b-dropdown-item :to="localePath('/signin')" v-if="loggedIn && $auth.user.is_customer">
-                  <font-awesome-icon :icon="['fas', 'file']" /> Hujjat
-                  buyurtmalarim</b-dropdown-item
+                  <font-awesome-icon :icon="['fas', 'file']" />{{$t('user.document')}}</b-dropdown-item
                 >
                 <b-dropdown-item
                   :to="localePath('')"
                   @click="logout()"
                   v-if="loggedIn"
                 >
-                  <font-awesome-icon :icon="['fas', 'sign-out-alt']" />
-                  Chiqish</b-dropdown-item
+                  <font-awesome-icon :icon="['fas', 'sign-out-alt']" />{{$t('user.exit')}}
+                  </b-dropdown-item
                 >
               </b-nav-item-dropdown>
             </b-navbar-nav>

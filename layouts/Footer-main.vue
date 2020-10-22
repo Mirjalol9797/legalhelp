@@ -44,22 +44,22 @@
           </b-col>
           <b-col lg="4">
             <div class="index-footer-item">
-              <h4 class="index-footer-item-heading">Office Opening Hours</h4>
+              <h4 class="index-footer-item-heading">{{$t('footer_time.title')}}</h4>
               <ul class="working-hours">
-                <li class="working-hours-item">Monday...............08.00AM-05.00PM</li>
-                <li class="working-hours-item">Tuesday..............08.00AM-05.00PM</li>
-                <li class="working-hours-item">Wednesday......08.00AM-05.00PM </li>
-                <li class="working-hours-item">Thursday.............08.00AM-05.00PM</li>
-                <li class="working-hours-item">Friday....................08.00AM-05.00PM</li>
-                <li class="working-hours-item"> Saturday.............08.00AM-05.00PM</li>
-                <li class="working-hours-item">Sunday................Closed</li>
+                <li class="working-hours-item">{{$t('footer_time.monday')}}</li>
+                <li class="working-hours-item">{{$t('footer_time.tues')}}</li>
+                <li class="working-hours-item">{{$t('footer_time.wend')}}</li>
+                <li class="working-hours-item">{{$t('footer_time.thur')}}</li>
+                <li class="working-hours-item">{{$t('footer_time.frid')}}</li>
+                <li class="working-hours-item">{{$t('footer_time.satur')}}</li>
+                <li class="working-hours-item">{{$t('footer_time.sund')}}</li>
                    
               </ul>
             </div>
           </b-col>
           <b-col lg="4">
             <div class="index-address">
-              <h4 class="index-address-heading">Address</h4>
+              <h4 class="index-address-heading">{{$t('footer_time.address')}}</h4>
               <span class="index-address-text">Lorem ipsum dolor 
                 sit amet, consectetur elit, </span>
               <nuxt-link to="tel:+99893123-34-345" class="index-address-phone">+998 00 000 00 00</nuxt-link>
