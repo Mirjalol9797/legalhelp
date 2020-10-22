@@ -64,7 +64,7 @@ export default {
 
       if(this.data.code!=""){
       this.$store.dispatch("sendCode", this.data);
-      this.$router.push(this.localePath({ name: "registration" }))
+      this.$router.push(this.localePath({ name: "selectuser" }))
       }
       else{
            this.$store.dispatch("getCode", this.data.phone_number);

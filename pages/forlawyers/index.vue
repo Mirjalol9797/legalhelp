@@ -6,76 +6,73 @@
           <span class="for__lawyers-line"></span>
           <h1 class="for__lawyers-heading">{{ $t("forlawyers.title") }}</h1>
         </div>
-        <form action="" method="POST" class="form__for-lawyers">
+        <form @submit.prevent="onSubmit" class="form__for-lawyers">
           <b-row>
             <b-col lg="5">
-              <input type="text" :placeholder="$t('forlawyers.name')" />
-              <input type="text" :placeholder="$t('forlawyers.surname')" />
-              <input type="tel" :placeholder="$t('forlawyers.phonenumber')" />
-              <input type="email" :placeholder="$t('forlawyers.email')" />
-              <input type="password" :placeholder="$t('forlawyers.password')" />
-              <select name="" id="type-field">
-                <option value="0" disabled selected>{{
-                  $t("forlawyers.type")
-                }}</option>
-                <option value="1">{{ $t("category.civillaw") }}</option>
-                <option value="2">{{ $t("category.work") }}</option>
-                <option value="3">{{ $t("category.citizenship") }}</option>
-                <option value="4">{{ $t("category.education") }}</option>
-                <option value="5">{{ $t("category.entrepreneur") }}</option>
-                <option value="6">{{
-                  $t("category.governmentservice")
-                }}</option>
-                <option value="7">{{ $t("category.familyrelations") }}</option>
-                <option value="8">{{ $t("category.healthcare") }}</option>
-                <option value="9">{{ $t("category.criminallaw") }}</option>
-                <option value="10">{{ $t("category.court") }}</option>
-                <option value="11">{{ $t("category.tax") }}</option>
-                <option value="12">{{ $t("category.transportation") }}</option>
-                <option value="13">{{ $t("category.agriculture") }}</option>
-                <option value="14">{{ $t("category.communal") }}</option>
-                <option value="15">{{
-                  $t("category.socialprotection")
-                }}</option>
-                <option value="16">{{ $t("category.place") }}</option>
-                <option value="17">{{ $t("category.bank") }}</option>
-                <option value="18">{{ $t("category.consumer") }}</option>
-                <option value="19">{{ $t("category.heritage") }}</option>
-              </select>
-              <select name="" id="territory">
-                <option value="0" selected disabled>
-                  {{ $t("region.noregion") }}</option
+              <input
+                type="text"
+                :placeholder="$t('forlawyers.name')"
+                v-model="form.first_name"
+              />
+              <input
+                type="text"
+                :placeholder="$t('forlawyers.surname')"
+                v-model="form.last_name"
+              />
+              <input
+                type="tel"
+                :placeholder="$t('forlawyers.phonenumber')"
+                :value="this.$store.state.phone_number"
+              />
+              <input
+                type="email"
+                :placeholder="$t('forlawyers.email')"
+                v-model="form.email"
+              />
+              <input
+                type="password"
+                :placeholder="$t('forlawyers.password')"
+                v-model="form.password"
+              />
+              <select id="type-field" v-model="selected">
+                <option
+                  v-for="(service, selected) of serviceuz"
+                  :key="service.id"
+                  :value="selected.id"
+                  >{{ service.title_uz}} </option
                 >
-                <option value="1">{{ $t("region.toshkent") }}</option>
-                <option value="2">{{ $t("region.toshkentv") }}</option>
-                <option value="3"> {{ $t("region.andijon") }}</option>
-                <option value="4">{{ $t("region.buxoro") }}</option>
-                <option value="5"> {{ $t("region.jizzax") }}</option>
-                <option value="6"> {{ $t("region.qoraqalpogistion") }}</option>
-                <option value="7"> {{ $t("region.qashqadaryo") }}</option>
-                <option value="8">{{ $t("region.navoi") }}</option>
-                <option value="9">{{ $t("region.namangan") }}</option>
-                <option value="10">{{ $t("region.samarqand") }}</option>
-                <option value="11">{{ $t("region.surxondaryo") }}</option>
-                <option value="12">{{ $t("region.sirdaryo") }}</option>
-                <option value="13"> {{ $t("region.fargona") }}</option>
-                <option value="14"> {{ $t("region.xorazm") }}</option>
               </select>
+              <div class="select">
+                <select id="category" v-model="selectedCategory">
+                  <option
+                    v-for="(selectid, selectedCategory) of selectuz"
+                    :key="selectid.id"
+                    :value="selectedCategory"
+                    class="category__region-option"
+                    >{{ selectid.title_uz }}</option
+                  >
+                </select>
+              </div>
             </b-col>
             <b-col lg="3" class="overflow-hidden">
-              <input type="file" class="file__for-lawyers" />
+              <input
+                type="file"
+                class="file__for-lawyers"
+                @change="fileUpload"
+                accept="image/*"
+              />
             </b-col>
             <b-col lg="4" class="text-center">
               <textarea
                 name="textearea__for-lawyers"
                 class="textearea__for-lawyers"
-                id=""
+                v-model="form.description"
                 :placeholder="$t('forlawyers.bio')"
               ></textarea>
             </b-col>
           </b-row>
           <div class="for__lawyers-btn-wrap">
-            <b-button class="for__lawyers-btn">{{
+            <b-button type="submit" class="for__lawyers-btn">{{
               $t("forlawyers.next")
             }}</b-button>
           </div>
@@ -86,13 +83,108 @@
 </template>
 <script>
 export default {
-    data(){
-        return {
-
-        }
+  data() {
+    return {
+      selected: "",
+      selectedCategory: "",
+      selectuz: [],
+      selectru: [],
+      serviceuz: [],
+      serviceru: [],
+      file: "",
+      form: {
+        first_name: "",
+        last_name: "",
+        password: "",
+        description: "",
+        email: "",
+        services: "",
+        password: ""
+      }
+    };
+  },
+  methods: {
+    fileUpload(event) {
+      let e = event.target.files[0];
+      if (e.type == "image/jpeg") {
+        this.form.file = e;
+      } else {
+        console.log("wrong type");
+      }
     },
-    methods:{
-
+    async getRegionuz() {
+      await this.$axios.get("region/?language=uz").then(res => {
+        this.selectuz = res.data;
+        this.selected = res.data;
+      });
     },
-}
+    async getRegionru() {
+      await this.$axios.get("region/?language=ru").then(res => {
+        this.selectru = res.data;
+        this.selected = res.data;
+        console.log(res);
+      });
+    },
+    async getServiceuz() {
+      await this.$axios.get("lawyer/services/?language=uz").then(res => {
+        this.serviceuz = res.data;
+        this.selectedCategory = res.data;
+        console.log(res);
+      });
+    },
+    async getServiceru() {
+      await this.$axios.get("lawyer/services/?language=ru").then(res => {
+        this.serviceru = res.data;
+        this.selectedCategory = res.data;
+        console.log(res);
+      });
+    },
+    async onSubmit() {
+      await this.$axios
+        .post("lawyer/create/", {
+          first_name: this.form.first_name,
+          last_name: this.form.last_name,
+          phone_number: this.$store.state.phone_number,
+          password: this.form.password,
+          // image: this.file,
+          description: this.description,
+          email: this.email,
+          region: 17,
+          services: [1,1],
+          token: this.$store.state.token
+        })
+        .then(async () => {
+          try {
+            await this.$auth.loginWith("local", {
+              data: {
+                phone_number: this.$store.state.phone_number,
+                password: this.form.password
+              }
+            });
+            console.log(this.$auth.user);
+
+            this.$toast.success({
+              title: `${this.$t("toast.success")}`,
+              message: `${this.$t("toast.loginSuccessMessage")}`
+            });
+          } catch (err) {
+            console.log(err);
+            this.$toast.error({
+              title: `${this.$t("toast.loginError")}`,
+              message: `${this.$t("toast.loginErrorMessage")}`
+            });
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+  },
+  mounted() {
+    this.getRegionuz();
+    this.getRegionru();
+    this.getServiceuz();
+    this.getServiceru();
+  }
+};
 </script>

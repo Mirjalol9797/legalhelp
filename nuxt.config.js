@@ -65,7 +65,9 @@ export default {
     'bootstrap-vue/nuxt',
       [
       "nuxt-i18n",
-      {
+            {
+        // useCookie: true,
+        // cookieKey: 'i18n_redirected',
         lazy: true,
         locales: [
           { code: "uz", iso: "uz-Latn-UZ", name: "O'zbekcha", file: "uz.js" },

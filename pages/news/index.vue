@@ -64,7 +64,7 @@
                   />
                   <div class="news__item-content">
                     <h6 class="news__item-content-title">{{ item.title }}</h6>
-                    <p class="news__item-content-text" v-html="item.intro"></p>
+                    <p class="news__item-content-text" v-html="item.description"></p>
                     <div class="news__item-content-meta">
                       <span class="news__item-content-meta-calendar">{{
                         singlePost.created_at | moment("L")

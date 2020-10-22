@@ -28,7 +28,7 @@ export default {
   methods: {
     async redirection() {
       if (this.isUser) {
-        this.$router.push(this.localePath({ name: "reg" }));
+        this.$router.push(this.localePath({ name: "registration" }));
       }
     },
     async redirecttolawyer() {

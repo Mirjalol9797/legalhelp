@@ -25,9 +25,6 @@
               <b-nav-item :to="localePath('/our-service')" class="nav__link">{{
                 $t("navbar.services")
               }}</b-nav-item>
-              <b-nav-item :to="localePath('/forlawyers')" class="nav__link">{{
-                $t("navbar.forlawyers")
-              }}</b-nav-item>
               <b-nav-item href="#">
                 <b-button
                   class="header__btn"
@@ -70,7 +67,7 @@
                     
                   </div>
                 </template>
-                <b-dropdown-item :to="localePath('/selectuser')" v-if="!loggedIn"
+                <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn"
                   >Ro'yxatdan o'tish</b-dropdown-item
                 >
 

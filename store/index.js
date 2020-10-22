@@ -59,6 +59,8 @@ const store = () => new Vuex.Store({
                     console.log('Second request', res)
                     commit('setToken', res.data.token)
                     commit('setPhone_number', res.data.phone_number)
+                    console.log("bu token" + res.data.token)
+                    console.log("bu  tel raqam" + res.data.phone_number)
 
                 })
                 .catch(err => console.log(err))

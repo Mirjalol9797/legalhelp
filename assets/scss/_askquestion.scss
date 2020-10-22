@@ -126,6 +126,7 @@
     -webkit-appearance: none; /* Safari and Chrome */
     appearance: none;
     height: 40px;
+    padding-left: 10px;
     background-image: url("../images/registration/down-arrow.svg");
     background-repeat: no-repeat;
     background-size: 14px;
@@ -135,6 +136,7 @@
       border: 1px solid #0028aa;
       outline: none;
     }
+  
   }
   input[type="tel"] {
     padding-left: 75px;
