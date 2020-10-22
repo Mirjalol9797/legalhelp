@@ -1,13 +1,13 @@
 .questions__page-wrapper {
   font-family: $Nunito;
   &-inner {
-    background-image: url("../../assets/images/index/bg2.jpg");
-    background-color: #2c2c2c;
-    background-position: center bottom;
-    background-repeat: no-repeat;
+    background-color: rgba(180, 180, 179, 0.527);
+    background-size: cover;
   }
-  .page-item .disabled{
-    
+  .page-item.disabled{
+    .page-link{
+      color:black !important;
+    }
   }
 }
 

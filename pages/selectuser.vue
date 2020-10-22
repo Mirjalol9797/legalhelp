@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       isUser: true,
-      isLawyer: false
+      isLawyer: true
     };
   },
   methods: {
