@@ -316,7 +316,7 @@
     color: #c1c1c1;
     display: block;
     margin-bottom: 17px;
-    width: 185px;
+    width: 220px;
   }
 
   &-tel {
@@ -1021,5 +1021,23 @@
       line-height: 22px;
       color: #3d3d3d;
     }
+  }
+}
+
+@media (max-width: 575px) {
+  .info__content {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .our__service-item {
+    max-width: fit-content;
+  }
+}
+
+@media (max-width: 420px) {
+  .info__content .phone {
+    display: block;
+    line-height: 8px;
   }
 }

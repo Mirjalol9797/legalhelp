@@ -61,7 +61,7 @@ export default {
                     hujjatlarni buyurtma qilishingiz mumkin`,
     },
     other_service: {
-        title: 'Другие услуги',
+        title: 'Boshqa xizmatlar',
         subtitle: `Saytda savol berishingiz mumkin, bundan tashqari telefon orqali 
                     konsultatsiya olishingiz hamda kerakli 
                     hujjatlarni buyurtma qilishingiz mumkin`,
