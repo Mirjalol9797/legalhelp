@@ -34,20 +34,21 @@
                 :placeholder="$t('forlawyers.password')"
                 v-model="form.password"
               />
-              <select id="type-field" v-model="selected">
+              <select id="type-field" v-model="serviceSelect">
                 <option
-                  v-for="(service, selected) of serviceuz"
-                  :key="service.id"
-                  :value="selected.id"
-                  >{{ service.title_uz}} </option
-                >
+                  v-for="(service, index) of serviceuz"
+                  :key="index"
+                  :value="service.id"
+                  >{{ service.title_uz }}
+                </option>
               </select>
+
               <div class="select">
-                <select id="category" v-model="selectedCategory">
+                <select id="category" v-model="selectedCategory" >
                   <option
-                    v-for="(selectid, selectedCategory) of selectuz"
-                    :key="selectid.id"
-                    :value="selectedCategory"
+                    v-for="(selectid, index) of selectuz"
+                    :key="index"
+                    :value="selectid.id"
                     class="category__region-option"
                     >{{ selectid.title_uz }}</option
                   >
@@ -85,7 +86,7 @@
 export default {
   data() {
     return {
-      selected: "",
+      serviceSelect: "",
       selectedCategory: "",
       selectuz: [],
       selectru: [],
@@ -115,27 +116,24 @@ export default {
     async getRegionuz() {
       await this.$axios.get("region/?language=uz").then(res => {
         this.selectuz = res.data;
-        this.selected = res.data;
+        console.log(res);
       });
     },
     async getRegionru() {
       await this.$axios.get("region/?language=ru").then(res => {
         this.selectru = res.data;
-        this.selected = res.data;
         console.log(res);
       });
     },
     async getServiceuz() {
       await this.$axios.get("lawyer/services/?language=uz").then(res => {
         this.serviceuz = res.data;
-        this.selectedCategory = res.data;
         console.log(res);
       });
     },
     async getServiceru() {
       await this.$axios.get("lawyer/services/?language=ru").then(res => {
         this.serviceru = res.data;
-        this.selectedCategory = res.data;
         console.log(res);
       });
     },
@@ -149,8 +147,8 @@ export default {
           // image: this.file,
           description: this.description,
           email: this.email,
-          region: 17,
-          services: [1,1],
+          region: this.serviceSelect,
+          services: [1, 1],
           token: this.$store.state.token
         })
         .then(async () => {

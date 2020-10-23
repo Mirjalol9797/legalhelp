@@ -4,19 +4,11 @@
       <div class="container">
         <h1 class="lawyer__heading">Yangiliklar</h1>
         <div class="lawyer__inner">
-          <img  :src="$store.state.mediaURL + post.thubmnail" alt class="lawyer__section-img" />
           <div
-            class="lawyer__text" v-html="post.intro"
+            class="lawyer__text-heading" v-html="post.intro"
           ></div>
-          <div class="highlighted__text">
-            <p
-              class="highlighted__text-inner"
-            >{{post.text}}</p>
-          </div>
-          <div class="lawyer__middle-news-image">
-            <img src="../../assets/images/lawyer/middlenews.jpg" alt />
-            <img src="../../assets/images/lawyer/middlenews1.jpg" alt />
-          </div>
+          <div class="lawyer__text-description">{{post.description}}</div>
+          <img  :src="$store.state.mediaURL + post.thubmnail" alt class="lawyer__section-img" />
           <div
             class="lawyer__text"
             v-html="post.content"

@@ -231,6 +231,8 @@ export default {
         loginErrorMessage: 'Telefon raqam yoki parol xato kiritildi.',
         loginSuccessMessage: 'Siz profilizga muvaffaqiyatli kirdingiz',
         signupErrorMessage: 'Profil yaratilishida xatolik yuz berdi.',
+        updateProfile:'Profilingiz muvaffaqiyatli o\'zgartirildi.',
+        updateProfileError:'Ma\'lumot kirgizishda xatolik yur berdi'
     },
     user: {
         signup: 'Ro\'yxatdan o\'tish',

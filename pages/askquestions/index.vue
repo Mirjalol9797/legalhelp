@@ -16,42 +16,18 @@
                 <select name="" id="language" v-model="form.lang">
                   <option value="o'zbek">{{ $t("askquestion.uzb") }}</option>
                   <option value="Rus">{{ $t("askquestion.rus") }}</option>
-                  <option value="Ingliz">{{ $t("askquestion.eng") }}</option>
                 </select>
               </div>
               <div class="category">
                 <label for="category">{{ $t("category.category") }}</label>
                 <select name="" id="category" v-model="form.category">
-                  <option value="0" disabled selected>{{
-                    $t("category.typequestion")
-                  }}</option>
-                  <option value="1">{{ $t("category.civillaw") }}</option>
-                  <option value="2">{{ $t("category.work") }}</option>
-                  <option value="3">{{ $t("category.citizenship") }}</option>
-                  <option value="4">{{ $t("category.education") }}</option>
-                  <option value="5">{{ $t("category.entrepreneur") }}</option>
-                  <option value="6">{{
-                    $t("category.governmentservice")
-                  }}</option>
-                  <option value="7">{{
-                    $t("category.familyrelations")
-                  }}</option>
-                  <option value="8">{{ $t("category.healthcare") }}</option>
-                  <option value="9">{{ $t("category.criminallaw") }}</option>
-                  <option value="10">{{ $t("category.court") }}</option>
-                  <option value="11">{{ $t("category.tax") }}</option>
-                  <option value="12">{{
-                    $t("category.transportation")
-                  }}</option>
-                  <option value="13">{{ $t("category.agriculture") }}</option>
-                  <option value="14">{{ $t("category.communal") }}</option>
-                  <option value="15">{{
-                    $t("category.socialprotection")
-                  }}</option>
-                  <option value="16">{{ $t("category.place") }}</option>
-                  <option value="17">{{ $t("category.bank") }}</option>
-                  <option value="18">{{ $t("category.consumer") }}</option>
-                  <option value="19">{{ $t("category.heritage") }}</option>
+                  <option value="" selected disabled>Savol kategoriyasini tanlang</option>
+                  <option
+                    :value="categoryid.id"
+                    v-for="(index, categoryid) of category"
+                    :key="categoryid"
+                    >{{ index.name }}</option
+                  >
                 </select>
               </div>
               <div class="question__title">
@@ -81,11 +57,9 @@
                 />
               </div>
               <div class="registration__button-wrap">
-                <b-button
-                  class="registration__btn"
-                  type="submit"
-                  >{{ $t("givequestion.btn") }}</b-button
-                >
+                <b-button class="registration__btn" type="submit">{{
+                  $t("givequestion.btn")
+                }}</b-button>
               </div>
             </form>
           </div>
@@ -98,12 +72,13 @@
 export default {
   data() {
     return {
+      category: [],
       form: {
         lang: "",
         category: "",
         title: "",
         text: "",
-        file: "",
+        file: ""
       }
     };
   },
@@ -116,10 +91,19 @@ export default {
         console.log("wrong type");
       }
     },
-    onSubmit() {
-        this.$store.dispatch("sendQuestions", this.form);
+    async getCategory() {
+      await this.$axios.get("v1/document/category/").then(res => {
+        this.category = res.data;
+        console.log(res);
+      });
     },
+    onSubmit() {
+      // this.$store.dispatch("sendQuestions", this.form);
+      this.$store.push()
+    }
   },
-     
+  mounted() {
+    this.getCategory();
+  }
 };
 </script>

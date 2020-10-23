@@ -233,6 +233,8 @@ export default {
         loginErrorMessage: 'Телефонный номер или пароль введены неверно.',
         loginSuccessMessage: 'Вы успешно вошли в свой профиль.',
         signupErrorMessage: 'Произошла ошибка при создании профиля.',
+        updateProfile: 'Ваш профиль был успешно изменен.',
+        updateProfileError: 'При вводе информации произошла ошибка'
     },
     user: {
         signup: 'Зарегистрироваться',

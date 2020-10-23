@@ -41,9 +41,14 @@
               <div class="select">
                 <label for="category">Region tanlash</label>
                 <select name="" id="category" v-model="selected">
-                  <option selected="selected" disabled class="category__region-option">Hududingizni tanlang</option>
-                  <option  v-for="(item,index) of selectuz"  :key="index" :value="index" class="category__region-option">{{item.title_uz}}</option>
-                
+                   <option value="" selected disabled>Region tanlang</option>
+                  <option
+                    v-for="(item, index) of selectuz"
+                    :key="index"
+                    :value="item.id"
+                    class="category__region-option"
+                    >{{ item.title_uz }}</option
+                  >
                 </select>
               </div>
               <div class="password">
@@ -75,27 +80,27 @@
 export default {
   data() {
     return {
-    selected:'',
-    selectuz:[],
-    selectru:[],
+      selected: "",
+      selectuz: [],
+      selectru: [],
       form: {
         firstname: "",
         lastname: "",
         email: "",
-        password: "",
+        password: ""
       }
     };
   },
   methods: {
     async getRegionuz() {
-      await this.$axios.get("region/uz/").then(res => {
+      await this.$axios.get("region/?language=uz").then(res => {
         this.selectuz = res.data;
         this.selected = res.data;
-        console.log(res)
+        console.log(res);
       });
     },
-        async getRegionru() {
-      await this.$axios.get("region/ru/").then(res => {
+    async getRegionru() {
+      await this.$axios.get("region/?language=ru").then(res => {
         this.selectru = res.data;
       });
     },
@@ -107,7 +112,7 @@ export default {
           phone_number: this.$store.state.phone_number,
           password: this.form.password,
           email: this.form.email,
-          region:this.selected,
+          region: this.selected,
           token: this.$store.state.token
         })
         .then(async () => {
@@ -138,7 +143,7 @@ export default {
         });
     }
   },
-   mounted() {
+  mounted() {
     this.getRegionuz();
     this.getRegionru();
   }

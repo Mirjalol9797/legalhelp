@@ -25,7 +25,7 @@
               >
                 <div class="news__content">
                   <h6 class="news__title">{{ singlePost.title }}</h6>
-                  <div class="news__text" v-html="singlePost.intro"></div>
+                  <div class="news__text" v-html="singlePost.description"></div>
                   <div class="news__meta">
                     <span class="news__meta-calendar">{{
                       singlePost.created_at | moment("L")
@@ -64,7 +64,10 @@
                   />
                   <div class="news__item-content">
                     <h6 class="news__item-content-title">{{ item.title }}</h6>
-                    <p class="news__item-content-text" v-html="item.description"></p>
+                    <p
+                      class="news__item-content-text"
+                      v-html="item.description"
+                    ></p>
                     <div class="news__item-content-meta">
                       <span class="news__item-content-meta-calendar">{{
                         singlePost.created_at | moment("L")
@@ -88,11 +91,11 @@
 
       <div class="pagination__menu">
         <b-pagination
-               pills
-            hide-goto-end-buttons
-            :per-page="10"
-            v-model="page"
-            :total-rows="allProduct"
+          pills
+          hide-goto-end-buttons
+          :per-page="10"
+          v-model="page"
+          :total-rows="allProduct"
         ></b-pagination>
       </div>
     </div>
