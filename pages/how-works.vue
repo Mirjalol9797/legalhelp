@@ -3,7 +3,7 @@
         <div class="how-works-header">
             <b-container>
                 <b-row>
-                    <b-col md="6">
+                    <b-col lg="6">
                         <h3 class="how-works-header__title">Huquqshunosga savol yo‘llang</h3>
                         <p class="how-works-header__text">
                             Huquqshunosga onlayn savol berish – 10 000 dan ortiq mijozlarimiz 
@@ -25,7 +25,7 @@
         <div class="how-works-service">
             <b-container>
                 <b-row>
-                    <b-col cols="12 mb-5">
+                    <b-col cols="12 service__header">
                         <div class="service__title">Unikal xizmat</div>
                         <div class="service__subtitle">Sifatli, ishonchli va qulay huquqiy yordam</div>
                     </b-col>
@@ -83,7 +83,7 @@
                     </b-col>
                 </b-row>
                 <b-row class="how-works-question__blocks">
-                    <b-col md="4" class="how-works-question__item">
+                    <b-col lg="4" class="how-works-question__item">
                         <div class="how-works-question__img">
                             <b-img src="../assets/images/how-work/icon4.svg"></b-img>
                         </div>
@@ -96,7 +96,7 @@
                             savolingizni saytga joylashtiring.
                         </div>
                     </b-col>
-                    <b-col md="4" class="how-works-question__item">
+                    <b-col lg="4" class="how-works-question__item">
                         <div class="how-works-question__img">
                             <b-img src="../assets/images/how-work/icon5.svg"></b-img>
                         </div>
@@ -110,7 +110,7 @@
                             konsultatsiya berilishini kafolatlaymiz.
                         </div>
                     </b-col>
-                    <b-col md="4" class="how-works-question__item">
+                    <b-col lg="4" class="how-works-question__item">
                         <div class="how-works-question__img">
                             <b-img src="../assets/images/how-work/icon6.svg"></b-img>
                         </div>
@@ -136,7 +136,7 @@
                     </b-col>
                 </b-row>
                 <b-row>
-                    <b-col md="4" class="warranty__item">
+                    <b-col lg="4" class="warranty__item">
                         <div class="warranty__img">
                             <b-img src="../assets/images/how-work/icon7.svg"></b-img>
                         </div>
@@ -148,7 +148,7 @@
                             Sizni eng aniq, tez hamda batafsil konsultatsiya bilan taminlaydi.
                         </div>
                     </b-col>
-                    <b-col md="4" class="warranty__item">
+                    <b-col lg="4" class="warranty__item">
                         <div class="warranty__img">
                             <b-img src="../assets/images/how-work/icon8.svg"></b-img>
                         </div>
@@ -162,7 +162,7 @@
                             pulingizni qaytarib berishni kafolatlaymiz.
                         </div>
                     </b-col>
-                    <b-col md="4" class="warranty__item">
+                    <b-col lg="4" class="warranty__item">
                         <div class="warranty__img">
                             <b-img src="../assets/images/how-work/icon9.svg"></b-img>
                         </div>
@@ -226,7 +226,7 @@
         <div class="how-works-header how-works-footer">
             <b-container>
                 <b-row>
-                    <b-col md="6">
+                    <b-col lg="6">
                         <h3 class="how-works-header__title">Huquqshunosga savol yo‘llang</h3>
                         <p class="how-works-header__text">
                             Huquqshunosga onlayn savol berish – 10 000 dan ortiq mijozlarimiz 
