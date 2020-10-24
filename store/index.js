@@ -12,6 +12,7 @@ const store = () => new Vuex.Store({
         mediaURL: 'http://188.225.79.96/',
         phone_number: "",
         token: "",
+       
     },
     getters: { 
         news(state) {
@@ -30,9 +31,6 @@ const store = () => new Vuex.Store({
         },
         setPhone_number(state, phone_number) {
             state.phone_number = phone_number;
-        },
-        setCode(state, payload) {
-            state.code = payload
         },
         sendCode(state, payload) {
             state.code = payload
@@ -56,11 +54,8 @@ const store = () => new Vuex.Store({
         async sendCode({ commit }, data) {
             await this.$axios.post('user/code/check/', data)
                 .then(res => {
-                    console.log('Second request', res)
                     commit('setToken', res.data.token)
                     commit('setPhone_number', res.data.phone_number)
-                    console.log("bu token" + res.data.token)
-                    console.log("bu  tel raqam" + res.data.phone_number)
 
                 })
                 .catch(err => console.log(err))

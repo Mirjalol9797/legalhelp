@@ -26,8 +26,8 @@ export default {
         subtitle: `Kundalik hayotingizda va ish faoliyatingizda 
                     turli muammolarga duch kelyapsizmi? Unda tezda 
                     bizga bog‘laning, biz sizga maslahat beramiz.`,
-        
-    }, 
+
+    },
     new: {
         title: 'Yangiliklar',
         subtitle: `Lorem ipsum dolor sit amet, consectetur 
@@ -67,8 +67,8 @@ export default {
                     hujjatlarni buyurtma qilishingiz mumkin`,
         consult_title: 'Telefon konsultatsiya',
         consult_text: `Telefon raqamizgizni qoldiring va mutaxasis siz bilan tez orada bog'lanadi.`,
-        consult_btn1: 'Tekin' ,
-        consult_btn2: 'Foydalanish'     
+        consult_btn1: 'Tekin',
+        consult_btn2: 'Foydalanish'
     },
     form_wrap: {
         title: 'Savolingizniga qonun doirasida javob oling!',
@@ -184,7 +184,7 @@ export default {
         region: 'Hududni tanlang',
         next: 'Davom etish',
         bio: 'Biografiyangizni bu erga yozing',
-        password:'Parolingiz'
+        password: 'Parolingiz'
     },
     footer__menu: {
         about: 'Loyiha haqida',
@@ -205,7 +205,7 @@ export default {
         satur: 'Shanba .................... 08.00-17.00',
         sund: 'Yakshanba ............... Yopiq',
         address: 'Manzil',
-    },    
+    },
     profile: {
         myquestion: "Savollarim",
         phoneconsultate: 'Telefon konsultatsiya',
@@ -220,7 +220,7 @@ export default {
         phone: "Telefon raqam",
         save: 'Saqlash',
         cancel: 'Bekor qilish',
-        password:'Parol',
+        password: 'Parol',
     },
     toast: {
         success: 'Muvaffaqiyatli',
@@ -231,10 +231,12 @@ export default {
         loginErrorMessage: 'Telefon raqam yoki parol xato kiritildi.',
         loginSuccessMessage: 'Siz profilizga muvaffaqiyatli kirdingiz',
         signupErrorMessage: 'Profil yaratilishida xatolik yuz berdi.',
-        updateProfile:'Profilingiz muvaffaqiyatli o\'zgartirildi.',
-        updateProfileError:'Ma\'lumot kirgizishda xatolik yur berdi',
-        lawyerpost:'So\'rovingiz qa\'bul qilindi iltimos ma\'muriyat tasqilashini kuting.',
-        lawyererror:'Xatolik yuz berdi Iltimos qaytadan urinib ko\'ring',
+        updateProfile: 'Profilingiz muvaffaqiyatli o\'zgartirildi.',
+        updateProfileError: 'Ma\'lumot kirgizishda xatolik yur berdi',
+        lawyerpost: 'So\'rovingiz qa\'bul qilindi iltimos ma\'muriyat tasqilashini kuting.',
+        lawyererror: 'Xatolik yuz berdi Iltimos qaytadan urinib ko\'ring',
+        input: 'Iltimos ma\'lumotlaringiz to\'liq kiritilganini tekshiring',
+        code:'Siz no\'to\'g\'ri kod kirgizdingiz!Iltimos qaytadan urinib ko\'ring',
     },
     user: {
         signup: 'Ro\'yxatdan o\'tish',

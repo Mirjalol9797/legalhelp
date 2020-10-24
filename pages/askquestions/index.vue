@@ -104,7 +104,7 @@ export default {
       // this.$store.dispatch("sendQuestions", this.form);
       this.$store.push();
     }
-  },
+},
   mounted() {
     this.getCategory();
   }

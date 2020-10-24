@@ -21,21 +21,21 @@ export default {
         subtitle: '«Два величайших тирана в мире: возможность и время»',
         author_name: 'Иоганна Гердера.',
         user_name: 'Азиза Абдурахмонова'
-    }, 
+    },
     solve: {
         title: 'Решайте свои проблемы с нами',
         subtitle: `Сталкиваетесь ли вы с различными проблемами в 
                     повседневной жизни и на работе? Тогда немедленно свяжитесь с нами,
                     и мы проконсультируем вас.`,
 
-    },  
+    },
     new: {
         title: 'Новости',
         subtitle: `Lorem ipsum dolor sit amet, consectetur 
                     adipiscing elit, sed do eiusmod tempor 
                     incididunt ut labore et dolore magna aliqua.`,
         btn_name: 'Все новости'
-    }, 
+    },
     questions__part: {
         title: 'Вопросы',
         btn_name1: 'Бесплатно',
@@ -54,13 +54,13 @@ export default {
         subtitle: `Lorem ipsum dolor sit amet, 
                     consectetur adipiscing elit, sed do eiusmod tempor 
                     incididunt ut labore et dolore magna aliqua.`,
-    },  
+    },
     our_service: {
         title: 'Наши услуги',
         subtitle: `Задавать вопросы можно на сайте, в том числе по телефону
                     Вы также можете получить консультацию
                     вы можете заказать документы`,
-    },    
+    },
     other_service: {
         title: 'Другие услуги',
         subtitle: `Задавать вопросы можно на сайте, в том числе по телефону
@@ -68,9 +68,9 @@ export default {
                     вы можете заказать документы`,
         consult_title: 'Телефонная консультация',
         consult_text: `Оставьте свой номер телефона, и в ближайшее время с вами свяжется специалист.`,
-        consult_btn1: 'Бесплатно' ,
-        consult_btn2: 'Использовать'                                           
-    },  
+        consult_btn1: 'Бесплатно',
+        consult_btn2: 'Использовать'
+    },
     form_wrap: {
         title: 'Получите ответ на свой вопрос в рамках закона!',
         subtitle: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -84,7 +84,7 @@ export default {
         input_theme: 'Тема',
         input_ques: 'Ваш вопрос',
         btn: 'Спросите у юриста'
-    },    
+    },
     askquestion: {
         name: 'Имя',
         surname: 'Фамилия',
@@ -214,7 +214,7 @@ export default {
         mydocuments: 'Мои заказы на документы',
         notification: 'Мои уведомления',
         setting: 'Настройки',
-        img: 'Картина', 
+        img: 'Картина',
         name: 'имя',
         surname: 'Фамилия',
         lang: 'Язык использования',
@@ -236,7 +236,9 @@ export default {
         updateProfile: 'Ваш профиль был успешно изменен.',
         updateProfileError: 'При вводе информации произошла ошибка',
         lawyerpost: 'Ваш запрос принят. Подождите, пока администрация одобрит.',
-         lawyererror:'Произошла ошибка.Пожалуйста, попробуйте еще раз',
+        lawyererror: 'Произошла ошибка.Пожалуйста, попробуйте еще раз',
+        input: 'Пожалуйста, убедитесь, что ваша информация полная.',
+        code:"Вы ввели неправильный код! Повторите попытку.",
     },
     user: {
         signup: 'Зарегистрироваться',
@@ -247,5 +249,5 @@ export default {
         phone: 'Телефонная консультация',
         document: 'Мои заказы документов',
         exit: 'Выход'
-    },    
+    },
 }

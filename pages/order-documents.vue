@@ -92,18 +92,17 @@
               <div class="type-of-documents">
                 <label class="type-of-documents-item" id="type-of-doc5">
                   <div for="type-of-doc5">
-                  <div class="type-of-documents-header">
-                    <label >
-                      <input type="radio"  name="name" />
-                      <span class="checkmark"></span>
-                      <h6>Mansabdor shaxs ustidan shikoyat</h6>
-                    </label>
-                  </div>
-                  <p class="card__text">
-                    Sud xodimi, IIV/DAN va boshqa davlat xizmatchisining harakat
-                    yuzasidan shikoyat
-                  </p>
-
+                    <div class="type-of-documents-header">
+                      <label>
+                        <input type="radio" name="name" />
+                        <span class="checkmark"></span>
+                        <h6>Mansabdor shaxs ustidan shikoyat</h6>
+                      </label>
+                    </div>
+                    <p class="card__text">
+                      Sud xodimi, IIV/DAN va boshqa davlat xizmatchisining
+                      harakat yuzasidan shikoyat
+                    </p>
                   </div>
                 </label>
               </div>
@@ -112,44 +111,46 @@
               <div class="type-of-documents">
                 <label class="type-of-documents-item" id="type-of-doc6">
                   <div for="type-of-doc6">
-                  <div class="type-of-documents-header">
-                    <label >
-                      <input type="radio"  name="name" />
-                      <span class="checkmark"></span>
+                    <div class="type-of-documents-header">
+                      <label>
+                        <input type="radio" name="name" />
+                        <span class="checkmark"></span>
 
-                      <h6>Boshqa turdagi hujjatlar</h6>
-                    </label>
-                  </div>
-                  <p class="card__text">
-                    Yuqorida ko'rsatilmagan har qanday hujjat. Hujjat
-                    tafsilotini, turini va qanday boshqa talablarni
-                    belgilashingiz mumkin
-                  </p>
-
+                        <h6>Boshqa turdagi hujjatlar</h6>
+                      </label>
+                    </div>
+                    <p class="card__text">
+                      Yuqorida ko'rsatilmagan har qanday hujjat. Hujjat
+                      tafsilotini, turini va qanday boshqa talablarni
+                      belgilashingiz mumkin
+                    </p>
                   </div>
                 </label>
               </div>
             </b-col>
           </b-row>
           <div class="order-documents-form">
-            <form action="" method="POST" class="registration__form">
+            <form @submit.prevent="onSubmit" class="registration__form">
               <div class="language">
                 <label for="language">Til</label>
                 <select name="" id="language">
                   <option value="o'zbek">O’zbek</option>
                   <option value="Rus">Rus</option>
-                  <option value="Ingliz">Ingliz</option>
                 </select>
               </div>
               <div class="category">
                 <label for="language">Kategoriya</label>
-                <select name="" id="language">
-                  <option value="1">Mehnat shartnomasi</option>
-                  <option value="2">Oldi-sotdi shartnomasi</option>
-                  <option value="3">Xizmat ko'rsatish shartnomasi</option>
-                  <option value="4">Hadya shartnomasi</option>
-                  <option value="5">Ijara shartnomasi</option>
-                  <option value="6">Boshqa</option>
+                <select name="" id="category" v-model="form.category">
+                  <option value="" selected disabled
+                    >Savol kategoriyasini tanlang</option
+                  >
+                  <option
+                    v-for="(selectid, index) of category"
+                    :key="index"
+                    :value="selectid.id"
+                    class="category__region-option"
+                    >{{ selectid.name }}</option
+                  >
                 </select>
               </div>
               <div class="question__title">
@@ -182,3 +183,26 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      category: [],
+      form: {
+        category: ""
+      }
+    };
+  },
+  methods: {
+    async getCategory() {
+      await this.$axios.get("v1/document/category/").then(res => {
+        this.category = res.data;
+        console.log(res);
+      });
+    }
+  },
+  mounted() {
+    this.getCategory();
+  }
+};
+</script>

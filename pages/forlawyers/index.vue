@@ -91,7 +91,7 @@
 export default {
   data() {
     return {
-      serviceSelect:'',
+      serviceSelect:"",
       selectedRegion: "",
       selectuz: [],
       selectru: [],
@@ -104,12 +104,11 @@ export default {
         password: "",
         description: "",
         email: "",
-        password: ""
       }
     };
   },
   methods: {
-    fileUpload(event) {
+      fileUpload(event) {
       let e = event.target.files[0];
       if (e.type == "image/jpeg") {
         this.form.file = e;
@@ -138,6 +137,12 @@ export default {
       });
     },
     async onSubmit() {
+  if(this.form.first_name=="" || this.form.last_name=="" ||this.form.password=="" ||this.form.description=="" || this.form.email=="" ){
+       this.$toast.error({
+              title: `${this.$t("toast.loginError")}`,
+              message: `${this.$t("toast.input")}`
+            });
+    }
       await this.$axios
         .post("lawyer/create/", {
           first_name: this.form.first_name,
@@ -153,17 +158,9 @@ export default {
         })
         .then(async () => {
           try {
-            await this.$auth.loginWith("local", {
-              data: {
-                phone_number: this.$store.state.phone_number,
-                password: this.form.password
-              }
-            });
-            console.log(this.$auth.user);
-
             this.$toast.success({
               title: `${this.$t("toast.success")}`,
-              message: `${this.$t("toast.lawperpost")}`
+              message: `${this.$t("toast.lawyererror")}`
             });
           } catch (err) {
             console.log(err);
