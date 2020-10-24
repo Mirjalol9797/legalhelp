@@ -40,14 +40,14 @@
               </div>
               <div class="select">
                 <label for="category">Region tanlash</label>
-                <select name="" id="category" v-model="selected">
-                   <option value="" selected disabled>Region tanlang</option>
-                  <option
-                    v-for="(item, index) of selectuz"
+                <select  id="category" v-model="selected">
+                    <option value="" selected disabled>Region tanlang</option>
+                   <option
+                    v-for="(selectid, index) of selectuz"
                     :key="index"
-                    :value="item.id"
+                    :value="selectid.id"
                     class="category__region-option"
-                    >{{ item.title_uz }}</option
+                    >{{ selectid.title_uz }}</option
                   >
                 </select>
               </div>

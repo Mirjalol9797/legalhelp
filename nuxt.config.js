@@ -29,14 +29,14 @@ export default {
   ** Global CSS
   */
   css: [
-    {src: './assets/scss/main.scss', lang: 'scss'},
+    { src: './assets/scss/main.scss', lang: 'scss' },
   ],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '~/plugins/rate.js', ssr: false},
+    { src: '~/plugins/rate.js', ssr: false },
     { src: '~/plugins/swiper.js', mode: 'client' },
     { src: '~/plugins/backtotop.js', ssr: false },
     { src: '~/plugins/vue-moment.js', ssr: false },
@@ -63,9 +63,9 @@ export default {
     ],
     '@nuxtjs/auth',
     'bootstrap-vue/nuxt',
-      [
+    [
       "nuxt-i18n",
-            {
+      {
         // useCookie: true,
         // cookieKey: 'i18n_redirected',
         lazy: true,
@@ -92,7 +92,7 @@ export default {
             icons: ['fas']
           },
           {
-            set:'@fortawesome/free-brands-svg-icons',
+            set: '@fortawesome/free-brands-svg-icons',
             icons: ['fab']
           }
         ]
@@ -110,21 +110,22 @@ export default {
     //   home: '/'
     // },
     strategies: {
-  
-        // _scheme: 'local',
-        local: {
-          endpoints: {
-            login: { url: 'customer/login/', method: 'post', propertyName: 'access' },
-            user: { url: 'customer/profile/?language=uz', method: 'get', propertyName: false },
-            logout: false
-          }
+      local: {
+        _scheme: 'local',
+        endpoints: {
+          login: { url: 'user/login/', method: 'post', propertyName: 'access' },
+          user: { url: 'customer/profile/?language=uz', method: 'get', propertyName: false },
+          logout: false
         }
-      // lawyer: {
-      // _scheme: 'local',
-      //   login: { url: '/lawyer/login/', method: 'post', propertyName: 'token' },
-      //   user: { url: '/lawyer/profile/', method: 'get', propertyName: 'user' }
-      // },
-     
+      },
+      lawyer: {
+        _scheme: 'local',
+        endpoints: {
+          login: { url: 'lawyer/login/', method: 'post', propertyName: 'access' },
+          user: { url: 'lawyer/profile/?language=uz', method: 'get', propertyName: false },
+          logout: false
+        }
+      },
     },
   },
 

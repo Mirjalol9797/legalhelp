@@ -35,7 +35,7 @@
                   </button>
 
                   <button class="btn btn-sm btn-dark btn-circle">
-                    75 000 so`m
+                    75 000 so`mdan
                   </button>
                 </div>
               </div>
@@ -61,36 +61,32 @@
               </div>
             </b-col>
           </b-row>
-          <b-row class="mt-2">
-            <b-col lg="12">
-              <div class="lawyers__tabs">
-                <b-card no-body>
-                  <b-tabs pills card vertical>
-                    <b-tab>
-                      <template v-slot:title>
-                        <span class="lawyer__profile-card-icon">
-                          <font-awesome-icon :icon="['fas', 'list-ul']" />
-                        </span>
-                        <span class="lawyer__profile-card-text">Maqolalari</span>
-                        <font-awesome-icon :icon="['fas', 'angle-right']" />
-                      </template>
-                      <b-card-text>Tab contents 1</b-card-text>
-                    </b-tab>
+          <b-card no-body class="lawyer__tabs">
+            <b-tabs pills card vertical>
+              <b-tab active>
+                <template v-slot:title>
+                  <span class="user__profile-card-icon">
+                    <font-awesome-icon :icon="['fas', 'list-ul']" />
+                  </span>
+                  <span class="user__profile-card-text">Maqolalar <font-awesome-icon :icon="['fas', 'angle-right']" class="lawyer__tabs-right" /></span>
+                  
+                </template>
+                <b-card-text> </b-card-text>
+              </b-tab>
 
-                    <b-tab>
-                      <template v-slot:title>
-                        <span class="lawyer__profile-card-icon">
-                          <font-awesome-icon :icon="['fas', 'comment']" />
-                        </span>
-                        <span class="lawyer__profile-card-text">Javoblari</span>
-                        <font-awesome-icon :icon="['fas', 'angle-right']" />
-                      </template>
-                      <b-card-text>Tab contents 1</b-card-text>
-                    </b-tab>
-                  </b-tabs>
-                </b-card>
-              </div>
-            </b-col>
+              <b-tab >
+                <template v-slot:title>
+                  <span class="user__profile-card-icon">
+                    <font-awesome-icon :icon="['fas', 'comment']" />
+                  </span>
+                  <span class="user__profile-card-text">Javoblari<font-awesome-icon class="lawyer__tabs-right" :icon="['fas', 'angle-right']" /></span>
+                  
+                </template>
+                <b-card-text>Tab contents 1</b-card-text>
+              </b-tab>
+            </b-tabs>
+          </b-card>
+          <b-row class="mt-5">
             <b-col lg="6">
               <div class="degree-wrapper">
                 <div class="degree">Ilmiy darajasi</div>
@@ -111,10 +107,10 @@
             </b-col>
             <b-col lg="6">
               <div class="filed-work">
-                <div class="filed-work-header">Huquq sohasi</div>
-                <span class="btn mb-2 p-2 pl-3 pr-3 mr-3 s-span-style">
-                  <font-awesome-icon :icon="['fas', 'home']" />Fuqarolik huquqi
-                  (umumiy masalalar)
+                <div class="field-work-header">Huquq sohasi</div>
+                <span class="btn mb-2 p-2 pl-3 pr-3 mr-3 s-span-style ">
+                  <font-awesome-icon :icon="['fas', 'home']" />
+                  Fuqarolik huquqi (umumiy masalalar)
                 </span>
               </div>
             </b-col>

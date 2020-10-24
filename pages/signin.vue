@@ -41,7 +41,6 @@
 export default {
   data() {
     return {
-      disable: false,
       form: {
         phone_number: "",
         password: ""
@@ -53,14 +52,13 @@ export default {
   methods: {
     async login() {
         try {
+        console.log(this.form);
         let res = await this.$auth.loginWith("local", {data: this.form});
-        console.log(res)
-
+        console.log(res) 
         this.$toast.success({
           title: `${this.$t("toast.success")}`,
           message: `${this.$t("toast.loginSuccessMessage")}`
         });
-        // this.disable = false;
       }
        catch (err) {
           console.log(err)

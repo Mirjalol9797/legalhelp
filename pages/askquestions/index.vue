@@ -21,12 +21,15 @@
               <div class="category">
                 <label for="category">{{ $t("category.category") }}</label>
                 <select name="" id="category" v-model="form.category">
-                  <option value="" selected disabled>Savol kategoriyasini tanlang</option>
+                  <option value="" selected disabled
+                    >Savol kategoriyasini tanlang</option
+                  >
                   <option
-                    :value="categoryid.id"
-                    v-for="(index, categoryid) of category"
-                    :key="categoryid"
-                    >{{ index.name }}</option
+                      v-for="(selectid, index) of category"
+                    :key="index"
+                    :value="selectid.id"
+                    class="category__region-option"
+                    >{{ selectid.name }}</option
                   >
                 </select>
               </div>
@@ -99,7 +102,7 @@ export default {
     },
     onSubmit() {
       // this.$store.dispatch("sendQuestions", this.form);
-      this.$store.push()
+      this.$store.push();
     }
   },
   mounted() {

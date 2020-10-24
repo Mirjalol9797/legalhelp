@@ -21,8 +21,9 @@
               />
               <input
                 type="tel"
+                disabled
                 :placeholder="$t('forlawyers.phonenumber')"
-                :value="this.$store.state.phone_number"
+                :value="'+998' + ' ' + this.$store.state.phone_number"
               />
               <input
                 type="email"
@@ -35,6 +36,9 @@
                 v-model="form.password"
               />
               <select id="type-field" v-model="serviceSelect">
+                <option value="" selected disabled
+                  >Huquqiy yo'nalishingiz</option
+                >
                 <option
                   v-for="(service, index) of serviceuz"
                   :key="index"
@@ -44,7 +48,8 @@
               </select>
 
               <div class="select">
-                <select id="category" v-model="selectedCategory" >
+                <select id="category" v-model="selectedRegion">
+                  <option value="" selected disabled>Region tanlang</option>
                   <option
                     v-for="(selectid, index) of selectuz"
                     :key="index"
@@ -86,8 +91,8 @@
 export default {
   data() {
     return {
-      serviceSelect: "",
-      selectedCategory: "",
+      serviceSelect:'',
+      selectedRegion: "",
       selectuz: [],
       selectru: [],
       serviceuz: [],
@@ -99,7 +104,6 @@ export default {
         password: "",
         description: "",
         email: "",
-        services: "",
         password: ""
       }
     };
@@ -116,25 +120,21 @@ export default {
     async getRegionuz() {
       await this.$axios.get("region/?language=uz").then(res => {
         this.selectuz = res.data;
-        console.log(res);
       });
     },
     async getRegionru() {
       await this.$axios.get("region/?language=ru").then(res => {
         this.selectru = res.data;
-        console.log(res);
       });
     },
     async getServiceuz() {
       await this.$axios.get("lawyer/services/?language=uz").then(res => {
         this.serviceuz = res.data;
-        console.log(res);
       });
     },
     async getServiceru() {
       await this.$axios.get("lawyer/services/?language=ru").then(res => {
         this.serviceru = res.data;
-        console.log(res);
       });
     },
     async onSubmit() {
@@ -145,10 +145,10 @@ export default {
           phone_number: this.$store.state.phone_number,
           password: this.form.password,
           // image: this.file,
-          description: this.description,
-          email: this.email,
-          region: this.serviceSelect,
-          services: [1, 1],
+          description: this.form.description,
+          email: this.form.email,
+          region: this.selectedRegion,
+          services: [2,5],
           token: this.$store.state.token
         })
         .then(async () => {
@@ -163,13 +163,13 @@ export default {
 
             this.$toast.success({
               title: `${this.$t("toast.success")}`,
-              message: `${this.$t("toast.loginSuccessMessage")}`
+              message: `${this.$t("toast.lawperpost")}`
             });
           } catch (err) {
             console.log(err);
             this.$toast.error({
               title: `${this.$t("toast.loginError")}`,
-              message: `${this.$t("toast.loginErrorMessage")}`
+              message: `${this.$t("toast.lawyererror")}`
             });
           }
         })

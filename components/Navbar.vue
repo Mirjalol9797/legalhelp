@@ -56,48 +56,102 @@
                   >RU</b-dropdown-item
                 >
               </b-nav-item-dropdown>
-              <b-nav-item-dropdown 
-                class="user__login"
-              >
+              <b-nav-item-dropdown class="user__login">
                 <template v-slot:button-content>
                   <div class="round">
-                    <div  class="user__link">
+                    <div class="user__link">
                       <img src="../assets/images/avatar.png" alt="" />
                     </div>
-                    
                   </div>
                 </template>
-                <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn"
-                  >{{$t('user.signup')}}</b-dropdown-item
-                >
+                <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn">{{
+                  $t("user.signup")
+                }}</b-dropdown-item>
 
-                <b-dropdown-item :to="localePath('/signin')" v-if="!loggedIn"
-                  >{{$t('user.entrance')}}</b-dropdown-item
+                <b-dropdown-item :to="localePath('/mainlogin')" v-if="!loggedIn">{{
+                  $t("user.entrance")
+                }}</b-dropdown-item>
+                <b-dropdown-item
+                  :to="localePath('/profile')"
+                  v-if="loggedIn && $auth.user.is_customer"
                 >
-                <b-dropdown-item :to="localePath('/profile')" v-if="loggedIn && $auth.user.is_customer">
-                  <font-awesome-icon :icon="['fas', 'address-card']" />{{$t('user.mypage')}}</b-dropdown-item
+                  <font-awesome-icon :icon="['fas', 'address-card']" />{{
+                    $t("user.mypage")
+                  }}</b-dropdown-item
                 >
-                <b-dropdown-item :to="localePath('/')" v-if="loggedIn && $auth.user.is_customer">
-                  <font-awesome-icon :icon="['fas', 'star']" />{{$t('user.select')}}</b-dropdown-item
+                <b-dropdown-item
+                  :to="localePath('/')"
+                  v-if="loggedIn && $auth.user.is_customer"
                 >
-                <b-dropdown-item :to="localePath('/')" v-if="loggedIn && $auth.user.is_customer">
-                  <font-awesome-icon :icon="['fas', 'bell']" />{{$t('user.notifications')}}
-                  </b-dropdown-item
+                  <font-awesome-icon :icon="['fas', 'star']" />{{
+                    $t("user.select")
+                  }}</b-dropdown-item
                 >
-                <b-dropdown-item href="tel:+998946863999" v-if="loggedIn && $auth.user.is_customer">
-                  <font-awesome-icon :icon="['fas', 'phone']" />{{$t('user.phone')}}</b-dropdown-item
+                <b-dropdown-item
+                  :to="localePath('/')"
+                  v-if="loggedIn && $auth.user.is_customer"
                 >
-                <b-dropdown-item :to="localePath('/signin')" v-if="loggedIn && $auth.user.is_customer">
-                  <font-awesome-icon :icon="['fas', 'file']" />{{$t('user.document')}}</b-dropdown-item
+                  <font-awesome-icon :icon="['fas', 'bell']" />{{
+                    $t("user.notifications")
+                  }}
+                </b-dropdown-item>
+                <b-dropdown-item
+                  href="tel:+998946863999"
+                  v-if="loggedIn && $auth.user.is_customer"
+                >
+                  <font-awesome-icon :icon="['fas', 'phone']" />{{
+                    $t("user.phone")
+                  }}</b-dropdown-item
+                >
+                <b-dropdown-item
+                  :to="localePath('/signin')"
+                  v-if="loggedIn && $auth.user.is_customer"
+                >
+                  <font-awesome-icon :icon="['fas', 'file']" />{{
+                    $t("user.document")
+                  }}</b-dropdown-item
+                >
+                 <b-dropdown-item
+                  :to="localePath('/lawyer-profile')"
+                  v-if="loggedIn && $auth.user.is_lawyer"
+                >
+                  <font-awesome-icon :icon="['fas', 'address-card']" />{{
+                    $t("user.document")
+                  }}</b-dropdown-item
+                >
+                <b-dropdown-item
+                  :to="localePath('/signin')"
+                  v-if="loggedIn && $auth.user.is_lawyer"
+                >
+                  <font-awesome-icon :icon="['fas', 'file']" />{{
+                    $t("user.document")
+                  }}</b-dropdown-item
+                >
+                <b-dropdown-item
+                  :to="localePath('/signin')"
+                  v-if="loggedIn && $auth.user.is_lawyer"
+                >
+                  <font-awesome-icon :icon="['fas', 'file']" />{{
+                    $t("user.document")
+                  }}</b-dropdown-item
+                >
+                <b-dropdown-item
+                  :to="localePath('/signin')"
+                  v-if="loggedIn && $auth.user.is_lawyer"
+                >
+                  <font-awesome-icon :icon="['fas', 'file']" />{{
+                    $t("user.document")
+                  }}</b-dropdown-item
                 >
                 <b-dropdown-item
                   :to="localePath('')"
                   @click="logout()"
                   v-if="loggedIn"
                 >
-                  <font-awesome-icon :icon="['fas', 'sign-out-alt']" />{{$t('user.exit')}}
-                  </b-dropdown-item
-                >
+                  <font-awesome-icon :icon="['fas', 'sign-out-alt']" />{{
+                    $t("user.exit")
+                  }}
+                </b-dropdown-item>
               </b-nav-item-dropdown>
             </b-navbar-nav>
           </b-collapse>
@@ -120,12 +174,11 @@
 // }
 import { mapState } from "vuex";
 export default {
-  data(){
-    return{
-    }
+  data() {
+    return {};
   },
   computed: {
-    ...mapState("auth", ["loggedIn", "user"]),
+    ...mapState("auth", ["loggedIn", "user"])
   },
   methods: {
     changeLanguage(lang) {
@@ -137,9 +190,9 @@ export default {
       this.$toast.success({
         title: "Log out",
         message: "You have successfully logged out.",
-        color: "#17b978",
+        color: "#17b978"
       });
-    },
+    }
   },
   mounted() {
     // window.document.onscroll = () => {
@@ -150,6 +203,6 @@ export default {
     //       this.stikyNavbar = false;
     //     }
     //   }
-  },
+  }
 };
 </script>

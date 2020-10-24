@@ -9,10 +9,7 @@
                 <img src="../assets/images/registration/left-arrow.svg" />
               </nuxt-link>
             </div>
-            <form
-              class="registration__form"
-              @submit.prevent="login()"
-            >
+            <form class="registration__form" @submit.prevent="login()">
               <div class="phone__number">
                 <label for="phone">{{ $t("profile.phone") }}</label>
                 <div class="input__tel-wrapper">
@@ -41,7 +38,6 @@
 export default {
   data() {
     return {
-      disable: false,
       form: {
         phone_number: "",
         password: ""
@@ -52,23 +48,20 @@ export default {
 
   methods: {
     async login() {
-        try {
-        let res = await this.$auth.loginWith("local", {data: this.form});
-        console.log(res)
-
+      try {
+        console.log(this.form);
+        let res = await this.$auth.loginWith("lawyer", { data: this.form });
+        console.log(res);
         this.$toast.success({
           title: `${this.$t("toast.success")}`,
           message: `${this.$t("toast.loginSuccessMessage")}`
         });
-        console.log(this.$auth.user);
-        // this.disable = false;
-      }
-       catch (err) {
-          console.log(err)
-          this.$toast.error({
-            title: `${this.$t("toast.loginError")}`,
-            message: `${this.$t("toast.loginErrorMessage")}`
-          });
+      } catch (err) {
+        console.log(err);
+        this.$toast.error({
+          title: `${this.$t("toast.loginError")}`,
+          message: `${this.$t("toast.loginErrorMessage")}`
+        });
       }
     }
   }

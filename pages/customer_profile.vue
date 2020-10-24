@@ -259,6 +259,7 @@
                                 id="user__profile-number"
                                 v-model="user.user"
                               />
+                              <input type="text" id="user__profile-code" >
                             </b-col>
                             <b-col lg="12">
                               <b-button type="submit"

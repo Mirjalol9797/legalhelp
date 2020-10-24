@@ -232,7 +232,9 @@ export default {
         loginSuccessMessage: 'Siz profilizga muvaffaqiyatli kirdingiz',
         signupErrorMessage: 'Profil yaratilishida xatolik yuz berdi.',
         updateProfile:'Profilingiz muvaffaqiyatli o\'zgartirildi.',
-        updateProfileError:'Ma\'lumot kirgizishda xatolik yur berdi'
+        updateProfileError:'Ma\'lumot kirgizishda xatolik yur berdi',
+        lawyerpost:'So\'rovingiz qa\'bul qilindi iltimos ma\'muriyat tasqilashini kuting.',
+        lawyererror:'Xatolik yuz berdi Iltimos qaytadan urinib ko\'ring',
     },
     user: {
         signup: 'Ro\'yxatdan o\'tish',
