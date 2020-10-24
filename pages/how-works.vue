@@ -1,6 +1,6 @@
 <template>
     <div class="how-works-page">
-        <div class="how-works-header">
+       <div class="how-works-header">
             <b-container>
                 <b-row>
                     <b-col md="6">
@@ -21,7 +21,7 @@
                     </b-col> 
                 </b-row>
             </b-container>
-        </div>
+        </div> 
         <div class="how-works-service">
             <b-container>
                 <b-row>
@@ -78,46 +78,46 @@
             <b-container>
                 <b-row>
                     <b-col cols="12">
-                        <div class="question__title">Bu qanday ishlaydi?</div>
-                        <div class="question__subtitle">Muammo atigi 3 bosqichda hal qilinadi</div>
+                        <div class="how-works-question__title">Bu qanday ishlaydi?</div>
+                        <div class="how-works-question__subtitle">Muammo atigi 3 bosqichda hal qilinadi</div>
                     </b-col>
                 </b-row>
-                <b-row>
-                    <b-col md="4" class="question__item">
-                        <div class="question__img">
+                <b-row class="how-works-question__blocks">
+                    <b-col md="4" class="how-works-question__item">
+                        <div class="how-works-question__img">
                             <b-img src="../assets/images/how-work/icon4.png"></b-img>
                         </div>
-                        <div class="question__title">
+                        <div class="how-works-question__item-title">
                             1-bosqich. Savol yo‘llang
                         </div>
-                        <div class="question__text">
+                        <div class="how-works-question__item-text">
                             O‘zbekistonning eng yaxshi huquqshunoslari tanishib chiqishi 
                             va kerakli huquqiy yordam ko‘rsatishi uchun
                             savolingizni saytga joylashtiring.
                         </div>
                     </b-col>
-                    <b-col md="4" class="question__item">
-                        <div class="question__img">
+                    <b-col md="4" class="how-works-question__item">
+                        <div class="how-works-question__img">
                             <b-img src="../assets/images/how-work/icon5.png"></b-img>
                         </div>
-                        <div class="question__title">
+                        <div class="how-works-question__item-title">
                             2-bosqich. Javob oling
                         </div>
-                        <div class="question__text">
+                        <div class="how-works-question__item-text">
                             Huquqshunoslarning dastlabki javoblari uzog‘I bilan 30 minut 
                             ichida kela boshlaydi. Agar to‘lovli savol yo‘llagan bo‘lsangiz, 
                             biz savolingiz yuzasidan batafsil huquqiy
                             konsultatsiya berilishini kafolatlaymiz.
                         </div>
                     </b-col>
-                    <b-col md="4" class="question__item">
-                        <div class="question__img">
+                    <b-col md="4" class="how-works-question__item">
+                        <div class="how-works-question__img">
                             <b-img src="../assets/images/how-work/icon6.png"></b-img>
                         </div>
-                        <div class="question__title">
+                        <div class="how-works-question__item-title">
                             3-bosqich. Muammo hal!
                         </div>
-                        <div class="question__text">
+                        <div class="how-works-question__item-text">
                             Biz vaqtning o‘zida bir qancha huquqshunoslardan javob va huquqiy 
                             maslahat olish natijasida muammongiz maksimal darajada aniq va 
                             tez hal bo‘ladi – huquqiy jihatdan xatolar umuman mavjud emas.
@@ -126,5 +126,80 @@
                 </b-row>
             </b-container>
         </div>
+        <div class="how-works-warranty">
+            <b-container>
+                <b-row>
+                    <b-col cols="12">
+                        <div class="warranty__title">
+                            Mijozlar uchun eng yaxshi shart-sharoitlarni kafolatlaymiz
+                        </div>
+                    </b-col>
+                </b-row>
+                <b-row>
+                    <b-col md="4" class="warranty__item">
+                        <div class="warranty__img">
+                            <b-img src="../assets/images/how-work/icon7.png"></b-img>
+                        </div>
+                        <div class="warranty__item-title">
+                            Yuqori sifat
+                        </div>
+                        <div class="warranty__item-text">
+                            Ushbu sayt huquqshunoslari ko‘pyillik tajribaga ega va ular 
+                            Sizni eng aniq, tez hamda batafsil konsultatsiya bilan taminlaydi.
+                        </div>
+                    </b-col>
+                    <b-col md="4" class="warranty__item">
+                        <div class="warranty__img">
+                            <b-img src="../assets/images/how-work/icon8.png"></b-img>
+                        </div>
+                        <div class="warranty__item-title">
+                            Pulni qaytib olish
+                        </div>
+                        <div class="warranty__item-text">
+                            Biz o‘z xizmatimiz sifatini juda yaxshi anglaymiz va shu sababli, 
+                            agarda bergan savolingiz yuzasidan kerakli javobni
+                            olmasangiz yoki kerakli xizmat bilan ta’minlanmasangiz, 
+                            pulingizni qaytarib berishni kafolatlaymiz.
+                        </div>
+                    </b-col>
+                    <b-col md="4" class="warranty__item">
+                        <div class="warranty__img">
+                            <b-img src="../assets/images/how-work/icon9.png"></b-img>
+                        </div>
+                        <div class="warranty__item-title">
+                            Maxfiylik
+                        </div>
+                        <div class="warranty__item-text">
+                            Biz Sizning ishonchingizni qadrlaymiz va Siz haqingizdagi 
+                            shaxsiy ma’lumotlar xavsizligini haqida qayg’uramiz. 
+                            Barcha to‘lovlar xavfsiz aloqa va
+                            vositalar orqali amalga oshiriladi.
+                        </div>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </div>
+        <div class="how-works-header how-works-footer">
+            <b-container>
+                <b-row>
+                    <b-col md="6">
+                        <h3 class="how-works-header__title">Huquqshunosga savol yo‘llang</h3>
+                        <p class="how-works-header__text">
+                            Huquqshunosga onlayn savol berish – 10 000 dan ortiq mijozlarimiz 
+                            tomonidan yuqori baholangan xizmat turi hisoblanadi. 
+                            Bu Sizga uyingizni tark etmasdan turib, ma’lum holat 
+                            yuzasidan bir qancha huquqshunoslarning fikri va
+                            maslahatini olish imkoniyatini taqdim etadi.
+                        </p>
+                        <b-button
+                            class="how-works-header__btn"
+                        >
+                            Savol berish 
+                            <font-awesome-icon :icon="['fas', 'angle-right']" class="icon__right"/>
+                        </b-button>
+                    </b-col> 
+                </b-row>
+            </b-container>
+        </div>        
     </div>
 </template>>

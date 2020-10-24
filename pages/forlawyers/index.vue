@@ -147,7 +147,7 @@ export default {
           // image: this.file,
           description: this.form.description,
           email: this.form.email,
-          region: this.selectedRegion,
+          region: 3,
           services: [2,5],
           token: this.$store.state.token
         })

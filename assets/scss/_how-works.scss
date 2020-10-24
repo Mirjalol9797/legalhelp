@@ -4,21 +4,22 @@
         background: #0039b78c;
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 120px 0;
-        background-image: url("../images/how-work/page_title_fon.jpg");
+        padding: 130px 0;
+        background-image: url("../images/how-work/yurist_fon.png");
 
         &__title {
             font-size: 30px;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             color: #fff;
             text-align: center;
         }
 
         &__text {
             font-size: 20px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             color: #fff;
             text-align: center;
+            line-height: 1.7;
         }
 
         &__btn {
@@ -34,25 +35,26 @@
             align-items: center;
             justify-content: center;
             font-size: 14px;
+            border: 1px solid #f2b50f;
 
             &:hover, &:active, &:focus  {
-                transform: translateY(-5px) !important;
                 background: #00aced !important;
+                border-color: #00aced !important;
 
             }
         }
 
         .icon__right {
-            margin: 0 0px 0 7px;
+             margin: 0 0px 0 7px;
         }
     }
 
     &-service {
-        padding: 40px 0;
+        padding: 80px 0;
 
         .service {
             &__title {
-                font-size: 30px;
+                font-size: 35px;
                 color: #f2b50f;
                 text-align: center;
                 font-weight: 700;
@@ -64,7 +66,7 @@
                 text-align: center;
             }
     
-            &__block {
+            &__blocks {
                 justify-content: space-around;
             }
     
@@ -115,18 +117,95 @@
     }
 
     &-question {
-        .question {
+        padding: 80px 0;
+        &__title {
+            font-size: 35px;
+            color: #f2b50f;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        &__subtitle {
+            color: #f2b50f;
+            text-align: center;
+        }
+
+        &__blocks {
+            justify-content: space-around;
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 20px;
+            background-color: #fff;
+            background-clip: border-box;            
+
+            &-title {
+                margin-bottom: 10px;
+                font-weight: 600;
+                font-size: 22px;
+            }
+
+            &-text {
+                text-align: center;
+                font-size: 14px;
+                line-height: 2;
+            }             
+        }
+        &__img {
+            padding-bottom: 24px;
+
+            img {
+                width: 125px;
+            }
+        }
+               
+    }
+
+    &-warranty {
+        padding: 80px 0;
+        .warranty {
             &__title {
-                font-size: 30px;
+                font-size: 35px;
                 color: #f2b50f;
                 text-align: center;
                 font-weight: 700;
-            }
+            }   
             
-            &__subtitle {
-                color: #f2b50f;
-                text-align: center;
+            &__item {
+                padding-top: 24px;
+                padding-bottom: 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &-title {
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                    font-size: 22px;
+                }
+
+                &-text {
+                    text-align: center;
+                    font-size: 14px;
+                    line-height: 2;
+                }
+            }
+
+            &__img {
+                padding-bottom: 24px;
+                img {
+                    width: 125px;
+                }
             }
         }
     }
+
+    &-footer {
+        background-image: url("../images/how-work/yurist_fon2.jpg");
+    }
+
+    
 }
