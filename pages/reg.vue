@@ -24,7 +24,7 @@
               </div>
               <div class="password" v-if="showPasswordInput">
                 <label for="password__id">
-                  Parol
+                  Kod
                 </label>
                 <input
                   type="password"
@@ -62,12 +62,11 @@ export default {
     async onSubmit() {
       this.showPasswordInput = true;
 
-      if(this.data.code!=""){
-      this.$store.dispatch("sendCode", this.data);
-      this.$router.push(this.localePath({ name: "selectuser" }))
-      }
-      else{
-           this.$store.dispatch("getCode", this.data.phone_number);
+      if (this.data.code != "") {
+        this.$store.dispatch("sendCode", this.data);
+        this.$router.push(this.localePath({ name: "selectuser" }));
+      } else {
+        this.$store.dispatch("getCode", this.data.phone_number);
       }
     }
   }
