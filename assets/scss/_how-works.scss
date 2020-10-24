@@ -50,17 +50,20 @@
     }
 
     &-service {
-        padding: 80px 0;
+        padding: 60px 0;
 
         .service {
             &__title {
-                font-size: 35px;
+                font-size: 25px;
                 color: #f2b50f;
                 text-align: center;
                 font-weight: 700;
             }
             
-    
+            &__header {
+                margin-bottom: 35px;
+            }
+
             &__subtitle {
                 color: #f2b50f;
                 text-align: center;
@@ -81,9 +84,8 @@
                 background-clip: border-box;
                 border: .0625rem solid rgba(0,0,0,.08);
                 border-radius: .375rem;
+                margin-bottom: 25px;
 
-                position: relative;
-                top: 0;
                 transition: all .2s ease-in-out;
                 transform: translateY(0);
 
@@ -117,9 +119,9 @@
     }
 
     &-question {
-        padding: 80px 0;
+        padding: 60px 0;
         &__title {
-            font-size: 35px;
+            font-size: 25px;
             color: #f2b50f;
             text-align: center;
             font-weight: 700;
@@ -158,20 +160,24 @@
             padding-bottom: 24px;
 
             img {
-                width: 125px;
+                width: 100px;
+                border: 3px solid #f2b50f;
+                padding: 15px;
             }
         }
                
     }
 
     &-warranty {
-        padding: 80px 0;
+        padding: 60px 0;
         .warranty {
             &__title {
-                font-size: 35px;
+                font-size: 25px;
                 color: #f2b50f;
                 text-align: center;
                 font-weight: 700;
+                max-width: 650px;
+                margin: auto;
             }   
             
             &__item {
@@ -197,14 +203,140 @@
             &__img {
                 padding-bottom: 24px;
                 img {
-                    width: 125px;
+                    width: 100px;
+                    border: 3px solid #f2b50f;
+                    padding: 15px;
                 }
             }
         }
     }
 
+    &-our {
+        padding: 60px 0;
+
+        .our__other-services-header {
+            max-width: initial;
+        }
+
+        .our__other-services-title {
+            font-size: 25px !important;
+            color: #f2b50f;
+            text-align: center;
+            font-weight: 700;
+            margin: 0;
+            line-height: inherit;
+        }
+
+        .our__other-services-text {
+            color: #f2b50f;
+            text-align: center;
+            font-size: 16px !important;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .container {
+            background-image: none;
+        }
+
+        .our__other-services-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .our__other-services-item, .our__other-services-item-second {
+            border: 0.0625rem solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
+            margin: 0;
+        }
+    }
+
     &-footer {
         background-image: url("../images/how-work/yurist_fon2.jpg");
+    }
+}
+
+@media (max-width: 1200px) {
+    .how-works-service .service__item {
+        max-width: 310px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .how-works-header {
+        padding: 100px 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .how-works-our .our__other-services-list {
+        flex-direction: column;
+    }
+
+    .how-works-our .our__other-services-item {
+        margin-bottom: 25px;
+    }
+    .how-works-our .our__other-services-item-second {
+        margin: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .how-works-service .service__item {
+        max-width: inherit;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+
+    .how-works-service .service__item-text {
+        max-width: inherit;
+    }
+}
+
+@media (max-width: 575px) {
+    .how-works-service .service__blocks {
+        padding: 15px;
+    }
+
+    .how-works-service .service__header {
+        margin-bottom: 15px;
+    }
+
+    .how-works-service, .how-works-question, .how-works-question, .how-works-our {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .how-works-service, .how-works-question, .how-works-question, .how-works-our {
+        padding: 20px 0;
+    }  
+
+    .how-works-header {
+        padding: 60px 0;
+    }
+
+    .how-works-header__title {
+        font-size: 20px;
+    }
+
+    .how-works-header__text {
+        font-size: 15px;
+    }
+
+    .how-works-question__item-title, .how-works-warranty .warranty__item-title {
+        font-size: 16px;
+    }
+
+    .how-works-service .service__title, .how-works-question__title,
+    .how-works-warranty .warranty__title, .how-works-our .our__other-services-title {
+        font-size: 20px;
+    }
+
+    .how-works-our .our__other-services-item-title {
+        font-size: 16px;
     }
 
     
