@@ -1,6 +1,6 @@
 <template>
     <div class="how-works-page">
-       <div class="how-works-header">
+        <div class="how-works-header">
             <b-container>
                 <b-row>
                     <b-col md="6">
@@ -33,7 +33,7 @@
                 <b-row class="service__blocks">
                     <b-col lg="4" class="service__item">
                         <div class="service__img">
-                            <b-img src="../assets/images/how-work/icon1.png"></b-img>
+                            <b-img src="../assets/images/how-work/icon1.svg"></b-img>
                         </div>
                         <div class="service__item-title">
                             0% xato!
@@ -46,7 +46,7 @@
                     </b-col>
                     <b-col lg="4" class="service__item">
                         <div class="service__img">
-                            <b-img src="../assets/images/how-work/icon2.png"></b-img>
+                            <b-img src="../assets/images/how-work/icon2.svg"></b-img>
                         </div>
                         <div class="service__item-title">
                             Huquqshunoslar 24/7!   
@@ -59,7 +59,7 @@
                     </b-col>
                     <b-col lg="4" class="service__item">
                         <div class="service__img">
-                            <b-img src="../assets/images/how-work/icon3.png"></b-img>
+                            <b-img src="../assets/images/how-work/icon3.svg"></b-img>
                         </div>
                         <div class="service__item-title">
                             Yuqori iqtisod 60%
@@ -77,7 +77,7 @@
         <div class="how-works-question">
             <b-container>
                 <b-row>
-                    <b-col cols="12">
+                    <b-col cols="12" class="mb-2">
                         <div class="how-works-question__title">Bu qanday ishlaydi?</div>
                         <div class="how-works-question__subtitle">Muammo atigi 3 bosqichda hal qilinadi</div>
                     </b-col>
@@ -85,7 +85,7 @@
                 <b-row class="how-works-question__blocks">
                     <b-col md="4" class="how-works-question__item">
                         <div class="how-works-question__img">
-                            <b-img src="../assets/images/how-work/icon4.png"></b-img>
+                            <b-img src="../assets/images/how-work/icon4.svg"></b-img>
                         </div>
                         <div class="how-works-question__item-title">
                             1-bosqich. Savol yo‘llang
@@ -98,7 +98,7 @@
                     </b-col>
                     <b-col md="4" class="how-works-question__item">
                         <div class="how-works-question__img">
-                            <b-img src="../assets/images/how-work/icon5.png"></b-img>
+                            <b-img src="../assets/images/how-work/icon5.svg"></b-img>
                         </div>
                         <div class="how-works-question__item-title">
                             2-bosqich. Javob oling
@@ -112,7 +112,7 @@
                     </b-col>
                     <b-col md="4" class="how-works-question__item">
                         <div class="how-works-question__img">
-                            <b-img src="../assets/images/how-work/icon6.png"></b-img>
+                            <b-img src="../assets/images/how-work/icon6.svg"></b-img>
                         </div>
                         <div class="how-works-question__item-title">
                             3-bosqich. Muammo hal!
@@ -129,7 +129,7 @@
         <div class="how-works-warranty">
             <b-container>
                 <b-row>
-                    <b-col cols="12">
+                    <b-col cols="12" class="mb-2">
                         <div class="warranty__title">
                             Mijozlar uchun eng yaxshi shart-sharoitlarni kafolatlaymiz
                         </div>
@@ -138,7 +138,7 @@
                 <b-row>
                     <b-col md="4" class="warranty__item">
                         <div class="warranty__img">
-                            <b-img src="../assets/images/how-work/icon7.png"></b-img>
+                            <b-img src="../assets/images/how-work/icon7.svg"></b-img>
                         </div>
                         <div class="warranty__item-title">
                             Yuqori sifat
@@ -150,7 +150,7 @@
                     </b-col>
                     <b-col md="4" class="warranty__item">
                         <div class="warranty__img">
-                            <b-img src="../assets/images/how-work/icon8.png"></b-img>
+                            <b-img src="../assets/images/how-work/icon8.svg"></b-img>
                         </div>
                         <div class="warranty__item-title">
                             Pulni qaytib olish
@@ -164,7 +164,7 @@
                     </b-col>
                     <b-col md="4" class="warranty__item">
                         <div class="warranty__img">
-                            <b-img src="../assets/images/how-work/icon9.png"></b-img>
+                            <b-img src="../assets/images/how-work/icon9.svg"></b-img>
                         </div>
                         <div class="warranty__item-title">
                             Maxfiylik
@@ -179,6 +179,50 @@
                 </b-row>
             </b-container>
         </div>
+        <div class="our__other-services how-works-our">
+            <b-container>
+            <div class="our__other-services-header mb-4">
+                <div class="our__other-services-title">{{$t('other_service.title')}}</div>
+                <p class="our__other-services-text">
+                {{$t('other_service.subtitle')}}
+                </p>
+            </div>
+            <div class="our__other-services-list">
+                <div class="our__other-services-item">
+                <h4 class="our__other-services-item-title">
+                    {{$t('other_service.consult_title')}} 
+                </h4>
+                <p class="our__other-services-item-text">
+                    {{$t('other_service.consult_text')}} 
+                </p>
+                <div class="our__other-services-item-btn-wrap">
+                    <b-button class="our__other-services-price"
+                    >{{$t('other_service.consult_btn1')}} 
+                    </b-button>
+                    <b-button class="our__other-services-use" href="tel:998946863999">{{$t('other_service.consult_btn2')}} </b-button>
+                </div>
+                <!-- <span class="our__other-services-phone d-none d-lg-block"></span> -->
+                </div>
+
+                <div class="our__other-services-item-second ml-auto">
+                <h4 class="our__other-services-item-title">
+                    Hujjat buyurtma qilish
+                </h4>
+                <p class="our__other-services-item-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <div class="our__other-services-item-btn-wrap">
+                    <b-button class="our__other-services-price"
+                    >50 ming sum
+                    </b-button>
+                    <b-button class="our__other-services-use" :to="localePath('order-documents')">Foydalanish</b-button>
+                </div>
+                <!-- <span class="our__other-services-search d-none d-lg-block"></span> -->
+                </div>
+            </div>
+            </b-container>
+        </div>          
         <div class="how-works-header how-works-footer">
             <b-container>
                 <b-row>
@@ -200,6 +244,6 @@
                     </b-col> 
                 </b-row>
             </b-container>
-        </div>        
+        </div>              
     </div>
-</template>>
+</template>
