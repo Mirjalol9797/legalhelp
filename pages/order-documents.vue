@@ -11,118 +11,19 @@
             takliflaridan ma’qulini tanlang.
           </div>
           <b-row>
-            <b-col lg="4" md="6">
+            <b-col lg="4" md="6" v-for="( categoryid,index) of category" :key="index">
               <div class="type-of-documents">
-                <label class="type-of-documents-item" id="type-of-doc1">
-                  <div for="type-of-doc1">
+                <label class="type-of-documents-item" :id="categoryid">
+                  <div :for="categoryid">
                     <div class="type-of-documents-header">
                       <label>
-                        <input type="radio" name="name" />
+                        <input type="radio" name="name" v-model="checked"  :value="categoryid.id" @change="changeCategory" />
                         <span class="checkmark"></span>
-                        <h6>Biznesni ro'yxatga olish</h6>
+                        <h6>{{categoryid.category.name}}</h6>
                       </label>
                     </div>
                     <p class="card__text">
-                      Tadbirkorlikni ro'yxatga olish MCHJ, YATT, XK va
-                      boshqalarga mos hujjatlar to'plamini tayyorlash
-                    </p>
-                  </div>
-                </label>
-              </div>
-            </b-col>
-            <b-col lg="4" md="6">
-              <div class="type-of-documents">
-                <label class="type-of-documents-item" id="type-of-doc2">
-                  <div for="type-of-doc2">
-                    <div class="type-of-documents-header">
-                      <label>
-                        <input type="radio" name="name" />
-                        <span class="checkmark"></span>
-                        <h6>Shartnoma va bitimlar</h6>
-                      </label>
-                    </div>
-                    <p class="card__text">
-                      Ijara shartnomasi, lizing, oldi-sotdi, qarz, vositachilik
-                      va boshqa turdagi shartnomalar
-                    </p>
-                  </div>
-                </label>
-              </div>
-            </b-col>
-
-            <b-col lg="4" md="6">
-              <div class="type-of-documents">
-                <label class="type-of-documents-item" id="type-of-doc3">
-                  <div for="type-of-doc3">
-                    <div class="type-of-documents-header">
-                      <label>
-                        <input type="radio" name="name" />
-                        <span class="checkmark"></span>
-                        <h6>Sud hujjatlari</h6>
-                      </label>
-                    </div>
-                    <p class="card__text">
-                      Da'vo arizasi, da'vo arizasiga qo'shimcha kiritish,
-                      iltimosnoma, sud qaroridan ustidan shikoyat va h.k.
-                    </p>
-                  </div>
-                </label>
-              </div>
-            </b-col>
-            <b-col lg="4" md="6">
-              <div class="type-of-documents">
-                <label class="type-of-documents-item" id="type-of-doc4">
-                  <div for="type-of-doc4">
-                    <div class="type-of-documents-header">
-                      <label>
-                        <input type="radio" name="name" />
-                        <span class="checkmark"></span>
-                        <h6>Iste'molchi shikoyatlari</h6>
-                      </label>
-                    </div>
-                    <p class="card__text">
-                      Tovarlarni uchun to'langan pulni qaytarish, sug'urta,
-                      bank, uy-joy kommunal xizmatlari va boshqalar.
-                    </p>
-                  </div>
-                </label>
-              </div>
-            </b-col>
-            <b-col lg="4" md="6">
-              <div class="type-of-documents">
-                <label class="type-of-documents-item" id="type-of-doc5">
-                  <div for="type-of-doc5">
-                    <div class="type-of-documents-header">
-                      <label>
-                        <input type="radio" name="name" />
-                        <span class="checkmark"></span>
-                        <h6>Mansabdor shaxs ustidan shikoyat</h6>
-                      </label>
-                    </div>
-                    <p class="card__text">
-                      Sud xodimi, IIV/DAN va boshqa davlat xizmatchisining
-                      harakat yuzasidan shikoyat
-                    </p>
-                  </div>
-                </label>
-              </div>
-            </b-col>
-            <b-col lg="4" md="6">
-              <div class="type-of-documents">
-                <label class="type-of-documents-item" id="type-of-doc6">
-                  <div for="type-of-doc6">
-                    <div class="type-of-documents-header">
-                      <label>
-                        <input type="radio" name="name" />
-                        <span class="checkmark"></span>
-
-                        <h6>Boshqa turdagi hujjatlar</h6>
-                      </label>
-                    </div>
-                    <p class="card__text">
-                      Yuqorida ko'rsatilmagan har qanday hujjat. Hujjat
-                      tafsilotini, turini va qanday boshqa talablarni
-                      belgilashingiz mumkin
+                      {{categoryid.category.description}}
                     </p>
                   </div>
                 </label>
@@ -133,24 +34,20 @@
             <form @submit.prevent="onSubmit" class="registration__form">
               <div class="language">
                 <label for="language">Til</label>
-                <select name="" id="language">
+                <select name="" id="language" v-model="form.lang">
                   <option value="o'zbek">O’zbek</option>
                   <option value="Rus">Rus</option>
                 </select>
               </div>
               <div class="category">
                 <label for="language">Kategoriya</label>
-                <select name="" id="category" v-model="form.category">
+                <select name="" id="category" v-model="form.category" :disabled="subcategory.length == 0">
                   <option value="" selected disabled
                     >Savol kategoriyasini tanlang</option
                   >
-                  <option
-                    v-for="(selectid, index) of category"
-                    :key="index"
-                    :value="selectid.id"
-                    class="category__region-option"
-                    >{{ selectid.name }}</option
-                  >
+                  <option v-for="(sub,index) of subcategory" :key="index">
+                    {{ sub }}
+                  </option>
                 </select>
               </div>
               <div class="question__title">
@@ -159,6 +56,7 @@
                   type="text"
                   id="question__title"
                   placeholder="Qanday hujjat kerak?"
+                  v-model="form.title"
                 />
               </div>
               <div class="question__text">
@@ -166,7 +64,8 @@
                 <textarea
                   name=""
                   id="question__text"
-                  placeholder="Batafsil ma'lumot"
+                  placeholder="Batafsil ma'lumot" 
+                  v-model="form.text"
                 ></textarea>
               </div>
               <div class="file">
@@ -174,7 +73,7 @@
                 <input type="file" value="Upload file" class="file__input" />
               </div>
               <div class="registration__button-wrap">
-                <b-button class="registration__btn">Davom etish</b-button>
+                <b-button class="registration__btn" type="submit">Davom etish</b-button>
               </div>
             </form>
           </div>
@@ -187,18 +86,41 @@
 export default {
   data() {
     return {
+      checked:'',
       category: [],
+      subcategory: [],
       form: {
-        category: ""
+        lang:'',
+        category: "",
+        text:'',
+        title:'',
       }
     };
   },
   methods: {
+    changeCategory() {
+      // console.log(this.checked);
+      this.subcategory = this.category[this.checked-1].sub_category;
+      // console.log(this.subcategory)
+    },
     async getCategory() {
-      await this.$axios.get("v1/document/category/").then(res => {
+      await this.$axios.get("/v1/document/document_type/").then(res => {
         this.category = res.data;
-        console.log(res);
+        // this.subcategory= res.data[(this.checked-1)].sub_category
+        // this.category.forEach((sub) => {
+        //   this.subcategory.push({ id: sub.id, subArr: sub.sub_category  });
+        // })
+        console.log(res)
+        console.log(subcategory);
       });
+    },
+    async getData(){
+
+    },
+    async onSubmit(){
+      await this.$axios.post("", {
+
+      })
     }
   },
   mounted() {

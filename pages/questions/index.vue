@@ -70,17 +70,12 @@
                 <nuxt-link
                   :to="localePath(`/questions/${question.id}`)"
                   class="question__item-title"
-                  >Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit.</nuxt-link
+                  >{{ question.title }}</nuxt-link
                 >
-                <p class="question__item-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem
-                  massa lectus tortor feugiat sagittis auctor porta
-                  penatibus.Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Sem massa lectus tortor feugiat sagittis auctor porta
-                  penatibus.Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit.
-                </p>
+                <div
+                  class="question__item-text"
+                  v-html="question.question"
+                ></div>
               </div>
               <!--QUESTION Item info-->
               <div class="question__further d-none d-md-block">

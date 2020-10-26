@@ -97,8 +97,8 @@
         <div class="answer__wrapper">
           <div class="lawyer__section">
             <img src="../../assets/images/lawyer.jpg" class="rounded" alt="" />
-            <!-- <span class="user__name">{{questions_inner.answered_by.first_name}}</span> -->
-            <!-- <span class="user__name">{{questions_inner.answered_by.last_name}}</span> -->
+            <!-- <span class="user__name">{{questions_inner.answered_by.first_name}}</span>
+            <span class="user__name">{{questions_inner.answered_by.last_name}}</span> -->
             <div class="rating">
               <vue-stars
                 class="vue__star"
