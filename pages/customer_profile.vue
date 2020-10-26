@@ -48,20 +48,27 @@
                       blanditiis a quidem nostrum voluptas quo minus suscipit!
                     </p>
                     <div class="user__profile-question-info">
-                      <div class="answer">
-                        <font-awesome-icon :icon="['fas', 'comment']" />
-                        Javoblar <span class="counter">11</span>
+                      <div class="left__block">
+                        <span class="user">
+                          <font-awesome-icon :icon="['fas', 'user']" /> 
+                          Halimov Navruz
+                        </span>
+                        <span class="calendar">26.09.2020, 09:54</span>
                       </div>
-                      <span class="user"
-                        ><font-awesome-icon :icon="['fas', 'user']" /> Halimov
-                        Navruz</span
-                      >
-                      <span class="calendar">26.09.2020, 09:54</span>
-                      <span class="location"
-                        ><font-awesome-icon
-                          :icon="['fas', 'map-marker']"
-                        />Buxoro</span
-                      >
+
+                      <div class="right__block">
+                        <div class="answer">
+                          <font-awesome-icon :icon="['fas', 'comment']" />
+                          Javoblar <span class="counter">11</span>
+                        </div>
+                        <span class="location"
+                          ><font-awesome-icon
+                            :icon="['fas', 'map-marker']"
+                          />Buxoro</span
+                        >
+                      </div>
+
+
                     </div>
                   </div>
                 </b-card-text>
