@@ -193,7 +193,8 @@ export default {
         others: 'Boshqalar',
         team: 'Jamoa',
         projectmanager: 'Loyiha yuristi bo\'lish',
-        popularquestions: 'Ko\'p so\'raladigan savollar'
+        popularquestions: 'Ko\'p so\'raladigan savollar',
+        contact: 'Biz bilan bog\'lanish'
     },
     footer_time: {
         title: 'Ofisning ishlash soatlari',

@@ -42,6 +42,9 @@
                 <li class="footer__menu-item">
                   <nuxt-link :to="localePath('/about')" class="footer__menu-link">{{ $t('footer__menu.about') }}</nuxt-link>
                 </li>
+                <li class="footer__menu-item">
+                  <nuxt-link :to="localePath('/contact')" class="footer__menu-link">{{ $t('footer__menu.contact') }}</nuxt-link>
+                </li>
                 
               </ul>
             </div>

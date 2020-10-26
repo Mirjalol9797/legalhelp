@@ -194,7 +194,8 @@ export default {
         others: 'Другие',
         team: 'Команда',
         projectmanager: 'Стать юристом проекта',
-        popularquestions: 'Часто задаваемые вопросы'
+        popularquestions: 'Часто задаваемые вопросы',
+        contact: 'Связаться с нами'
     },
     footer_time: {
         title: 'Рабочие часы',
