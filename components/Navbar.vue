@@ -56,7 +56,7 @@
                   >RU</b-dropdown-item
                 >
               </b-nav-item-dropdown>
-              <b-nav-item-dropdown class="user__login">
+              <b-nav-item-dropdown class="user__login"> 
                 <template v-slot:button-content>
                   <div class="round">
                     <div class="user__link">
@@ -111,7 +111,7 @@
                     $t("user.document")
                   }}</b-dropdown-item
                 >
-                 <b-dropdown-item
+                <b-dropdown-item
                   :to="localePath('/lawyer-profile')"
                   v-if="loggedIn && $auth.user.is_lawyer"
                 >

@@ -105,8 +105,10 @@ border:2px solid #f2b50f;
         padding: 0;
         margin: 0;
         display: flex;
-    align-items: center;
-          &::after{
+        align-items: center;
+        justify-content: center;
+        
+        &::after{
         content:"";
         padding: 0;
         margin: 0; 
