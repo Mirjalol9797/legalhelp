@@ -61,6 +61,9 @@
                   <nuxt-link to class="footer__menu-link">{{$t('footer__menu.popularquestions')}}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
+                  <nuxt-link :to="localePath('/policy')" class="footer__menu-link">{{$t('footer__menu.policy')}}</nuxt-link>
+                </li>
+                <li class="footer__menu-item">
                   <ul class="social__footer-list">
                     <li class="social__footer-item">
                       <nuxt-link to class="social__footer-link social__footer-link-facebook">

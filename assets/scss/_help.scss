@@ -94,6 +94,7 @@
                         border-top-left-radius: 20px;
                         border-top-right-radius: 0;
                         border-bottom-right-radius: 0;
+                        margin: 0;
 
                         &:hover {
                             color: #f2b50f;
@@ -136,6 +137,28 @@
                             color: #808080;
                             text-align: left;
 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 992px) {
+    .help-page{
+        .help__title{
+            h2{ font-size: 25px }
+        }
+        .help__content{
+            .tabs{
+                flex-direction: column;
+                .nav{
+                    .nav-item{
+                        .nav-link{
+                            border-top-left-radius: 0;
+                            border-bottom-left-radius: 0;
                         }
                     }
                 }

@@ -194,7 +194,8 @@ export default {
         team: 'Jamoa',
         projectmanager: 'Loyiha yuristi bo\'lish',
         popularquestions: 'Ko\'p so\'raladigan savollar',
-        contact: 'Biz bilan bog\'lanish'
+        contact: 'Biz bilan bog\'lanish',
+        policy: 'Foydalanish shartlari'
     },
     footer_time: {
         title: 'Ofisning ishlash soatlari',
