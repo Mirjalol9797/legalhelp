@@ -56,7 +56,7 @@
                   >RU</b-dropdown-item
                 >
               </b-nav-item-dropdown>
-              <b-nav-item-dropdown class="user__login">
+              <b-nav-item-dropdown class="user__login"> 
                 <template v-slot:button-content>
                   <div class="round">
                     <div class="user__link">
@@ -75,15 +75,18 @@
                   :to="localePath('/customer_profile')"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
-                  <font-awesome-icon :icon="['fas', 'address-card']" />{{
-                    $t("user.mypage")
-                  }}</b-dropdown-item
+                    <!-- <font-awesome-icon :icon="['fas', 'address-card']" /> -->
+                    <img src="../assets/images/profil/address.svg" alt="">
+                    {{$t("user.mypage")}}
+                </b-dropdown-item
                 >
                 <b-dropdown-item
                   :to="localePath('/')"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
-                  <font-awesome-icon :icon="['fas', 'star']" />{{
+                  <!-- <font-awesome-icon :icon="['fas', 'star']" /> -->
+                  <img src="../assets/images/profil/star.svg" alt="">
+                  {{
                     $t("user.select")
                   }}</b-dropdown-item
                 >
@@ -91,7 +94,9 @@
                   :to="localePath('/')"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
-                  <font-awesome-icon :icon="['fas', 'bell']" />{{
+                  <!-- <font-awesome-icon :icon="['fas', 'bell']" /> -->
+                  <img src="../assets/images/profil/bell.svg" alt="">
+                  {{
                     $t("user.notifications")
                   }}
                 </b-dropdown-item>
@@ -99,7 +104,9 @@
                   href="tel:+998946863999"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
-                  <font-awesome-icon :icon="['fas', 'phone']" />{{
+                  <!-- <font-awesome-icon :icon="['fas', 'phone']" /> -->
+                  <img src="../assets/images/profil/phone.svg" alt="">
+                  {{
                     $t("user.phone")
                   }}</b-dropdown-item
                 >
@@ -107,11 +114,13 @@
                   :to="localePath('/signin')"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
-                  <font-awesome-icon :icon="['fas', 'file']" />{{
+                  <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
+                  <img src="../assets/images/profil/file.svg" alt="">
+                  {{
                     $t("user.document")
                   }}</b-dropdown-item
                 >
-                 <b-dropdown-item
+                <b-dropdown-item
                   :to="localePath('/lawyer-profile')"
                   v-if="loggedIn && $auth.user.is_lawyer"
                 >
@@ -148,7 +157,9 @@
                   @click="logout()"
                   v-if="loggedIn"
                 >
-                  <font-awesome-icon :icon="['fas', 'sign-out-alt']" />{{
+                  <!-- <font-awesome-icon :icon="['fas', 'sign-out-alt']" /> -->
+                  <img src="../assets/images/profil/sign-out-alt.svg" alt="">
+                  {{
                     $t("user.exit")
                   }}
                 </b-dropdown-item>

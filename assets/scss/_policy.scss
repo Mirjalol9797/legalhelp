@@ -1,0 +1,104 @@
+.policy-page {
+    .policy__title {
+        text-align: center;
+
+        h2 {
+            font-size: 30px;
+            color: #f2b50f;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 15px;
+            color: #6c7686;
+            margin-bottom: 5px;
+        }
+    }
+
+    .policy__content {
+        .tabs {
+            border-radius: 20px;
+            box-shadow: 0 0 10px #ddd;
+            overflow: hidden;
+
+            .nav {
+                background-color: transparent;
+                padding: 0;
+
+                .nav-item {
+                    width: 100%;
+
+                    .nav-link {
+                        text-align: left;
+                        padding: 10px 30px;
+                        color: #808080 !important;
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                        margin: 0;
+                        white-space: break-spaces;
+                        &:hover {
+                            color: #f2b50f;
+                        }
+                    }
+
+                    .active {
+                        background-color: #f2b50f;
+                        color: white !important;
+
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .tab-content {
+                h3 {
+                    font-size: 16.5px;
+                    color: #6c7686;
+                    text-align: center;
+                }
+
+                h6 {
+                    font-size: 15px;
+                    color: #6c7686;
+                    text-align: right;
+                    margin: 2rem 0;
+                }
+
+                p {
+                    font-size: 15px;
+                    color: #6c7686;
+                    line-height: 25px;
+
+                    a {
+                        color: #007bff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 992px) {
+    .policy-page{
+        .policy__title{
+            h2{ font-size: 25px }
+        }
+        .policy__content{
+            .tabs{
+                flex-direction: column;
+                .nav{
+                    .nav-item{
+                        .nav-link{
+                            border-top-left-radius: 0;
+                            border-bottom-left-radius: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

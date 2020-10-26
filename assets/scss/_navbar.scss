@@ -101,17 +101,30 @@ border:2px solid #f2b50f;
         width: 30px;
         height: 30px;
     }
+
+    .dropdown-menu {
+        .dropdown-item {
+            padding: 4px 10px;
+            img {
+                width: 15px;
+                margin: 0 7px 0 0px;
+            }
+        }
+    }
     .nav-link{
         padding: 0;
         margin: 0;
         display: flex;
-    align-items: center;
-          &::after{
-        content:"";
-        padding: 0;
-        margin: 0; 
-        border:none;
-    }
+        align-items: center;
+        justify-content: center;
+
+        &::after{
+            content:"";
+            padding: 0;
+            margin: 0; 
+            border:none;
+        }
+
     }
   
 .user__link{
