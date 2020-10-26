@@ -31,13 +31,16 @@
                   <nuxt-link :to="localePath('/questions')"  class="footer__menu-link">{{ $t('navbar.questions') }}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
-                  <nuxt-link :to="localePath('/')" class="footer__menu-link">{{ $t('footer__menu.howwework') }}</nuxt-link>
+                  <nuxt-link :to="localePath('/how-works')" class="footer__menu-link">{{ $t('footer__menu.howwework') }}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
                   <nuxt-link :to="localePath('/lawyers')" class="footer__menu-link">{{ $t('navbar.lawyers') }}</nuxt-link>
                 </li>
                 <li class="footer__menu-item">
                   <nuxt-link :to="localePath('/our-service')" class="footer__menu-link">{{ $t('footer__menu.service') }}</nuxt-link>
+                </li>
+                <li class="footer__menu-item">
+                  <nuxt-link :to="localePath('/about')" class="footer__menu-link">{{ $t('footer__menu.about') }}</nuxt-link>
                 </li>
               </ul>
             </div>

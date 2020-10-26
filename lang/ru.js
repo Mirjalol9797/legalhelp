@@ -2,7 +2,7 @@ export default {
     navbar: {
         news: 'Новости',
         questions: 'Вопросы',
-        lawyers: 'юристы',
+        lawyers: 'Юристы',
         services: 'Сервисы',
         forlawyers: 'Для юристов',
         askquestions: 'Задать вопрос',
@@ -188,8 +188,8 @@ export default {
         password: 'пароль'
     },
     footer__menu: {
-        about: 'о проекте',
-        service: 'наши сервисы',
+        about: 'O проекте',
+        service: 'Hаши сервисы',
         howwework: 'Как мы работаем?',
         others: 'Другие',
         team: 'Команда',
