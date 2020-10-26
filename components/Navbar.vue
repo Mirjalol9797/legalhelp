@@ -72,7 +72,7 @@
                   $t("user.entrance")
                 }}</b-dropdown-item>
                 <b-dropdown-item
-                  :to="localePath('/profile')"
+                  :to="localePath('/customer_profile')"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
                   <font-awesome-icon :icon="['fas', 'address-card']" />{{
