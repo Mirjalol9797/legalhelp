@@ -25,15 +25,16 @@
         <div class="user__profile-card">
           <b-card no-body>
             <b-tabs pills card vertical>
-              <b-tab active>
+              <b-tab active> 
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <font-awesome-icon :icon="['fas', 'comment']" />
+                    <!-- <font-awesome-icon :icon="['fas', 'comment']" /> -->
+                    <!-- <img src="../assets/images/profil/comment.svg" alt="" width="15px"> -->
                   </span>
                   <span class="user__profile-card-text">{{
                     $t("profile.myquestion")
                   }}</span>
-                  <font-awesome-icon :icon="['fas', 'angle-right']" />
+                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
                   <div class="user__profile-question">
@@ -69,12 +70,12 @@
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <font-awesome-icon :icon="['fas', 'phone']" />
+                    <!-- <font-awesome-icon :icon="['fas', 'phone']" /> -->
                   </span>
                   <span class="user__profile-card-text">{{
                     $t("profile.phoneconsultate")
                   }}</span>
-                  <font-awesome-icon :icon="['fas', 'angle-right']" />
+                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
                   <a href="tel:+998946863999" class="user__profile-card-phone">
@@ -87,12 +88,12 @@
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <font-awesome-icon :icon="['fas', 'file']" />
+                    <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
                   </span>
                   <span class="user__profile-card-text">{{
                     $t("profile.mydocuments")
                   }}</span>
-                  <font-awesome-icon :icon="['fas', 'angle-right']" />
+                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
                   <div class="user__profile-documents">
@@ -157,24 +158,24 @@
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <font-awesome-icon :icon="['fas', 'bell']" />
+                    <!-- <font-awesome-icon :icon="['fas', 'bell']" /> -->
                   </span>
                   <span class="user__profile-card-text">{{
                     $t("profile.notification")
                   }}</span>
-                  <font-awesome-icon :icon="['fas', 'angle-right']" />
+                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>Tab contents 1</b-card-text>
               </b-tab>
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <font-awesome-icon :icon="['fas', 'cogs']" />
+                    <!-- <font-awesome-icon :icon="['fas', 'cogs']" /> -->
                   </span>
                   <span class="user__profile-card-text">{{
                     $t("profile.setting")
                   }}</span>
-                  <font-awesome-icon :icon="['fas', 'angle-right']" />
+                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
                   <div class="user__profile-card-info">
