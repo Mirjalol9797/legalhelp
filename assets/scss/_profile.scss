@@ -298,8 +298,61 @@
         background-image: url("../images/profil/angle-right.svg");
       }
     }
-  }   
+  } 
+  .nav-item:nth-child(6) {
+    a {
+      position: relative;
+      padding-right: 30px;
+      padding-left: 37px;
+      &:after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        width: 18px;
+        height: 18px;
+        background-image: url("../images/profil/credit-card-solid.svg");
+        background-repeat: no-repeat;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 15px;
+        height: 15px;
+                background-image: url("../images/profil/angle-right-solid.svg");
+        background-repeat: no-repeat;
+      }      
+    }
+  } 
+  .nav-item:nth-child(6) {
+    a.active {
+      background-color: #f2b50f;
 
+      &:after {
+        background-image: url("../images/profil/credit-card.svg");
+      }
+      &:before {
+        background-image: url("../images/profil/angle-right.svg");
+      }
+    }
+  }     
+
+  .tab-content {
+    .tab-pane:nth-child(2) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      .card-text {
+        text-align: center;
+      }
+    }
+  }
 
   &-icon {
     margin-right: 10px;
@@ -369,7 +422,43 @@
       }
     }
   }
+
+  &-payTitle {
+    font-size: 18px;
+    color: #000;
+  }
+
+  &-payItem {
+    label {
+      font-size: 14px;
+    }
+
+    .form-control {
+      font-size: 14px;
+      &:focus {
+        border-color: #f2b50f;
+      }
+    }
+  }
+
+  .card-button {
+    background-color: #f2b50f;
+    font-size: 14px;
+    border: 1px solid #f2b50f;
+
+    &:active, &:focus {
+      background-color: #f2b50f !important;
+      border: 1px solid #f2b50f !important;
+    }
+  }
+
+  .table {
+    th, td {
+      font-size: 14px;
+    }
+  }
 }
+
 .user__profile-form {
   label {
     display: block;

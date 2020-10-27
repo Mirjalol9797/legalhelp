@@ -290,6 +290,85 @@
                   </div>
                 </b-card-text>
               </b-tab>
+              <b-tab>
+                <template v-slot:title>
+                  <span class="user__profile-card-icon">
+                    <!-- <font-awesome-icon :icon="['fas', 'phone']" /> -->
+                  </span>
+                  <span class="user__profile-card-text">
+                  <!-- {{
+                    $t("profile.phoneconsultate")
+                  }} -->To'lovlar
+                  </span>
+                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                </template>
+                <b-card-text>
+                  <h5 class="user__profile-card-payTitle">Mening kartalarim:</h5>
+                  <hr>
+                  <div class="user__profile-card-payItem mb-4">
+                    <b-col cols="12">
+                      <b-form>  
+                        <b-row>
+                          <b-col cols="8">
+                            <b-form-group 
+                              label="Karta raqami"
+                              label-for="input-1"
+                            >
+                              <b-form-input
+                                id="input-1"
+                                type="text"
+                                required
+                                placeholder="8600 **** **** ***"
+                              >
+                                
+                              </b-form-input>
+                            </b-form-group>
+                          </b-col>  
+                          <b-col cols="4">
+                            <b-form-group 
+                              label="Amal qilish muddati"
+                              label-for="input-2"
+                            >
+                              <b-form-input
+                                id="input-2"
+                                type="text"
+                                required
+                                placeholder="12 / 10"
+                              >
+                                
+                              </b-form-input>
+                            </b-form-group>                           
+                          </b-col>
+                          <b-col cols="12">
+                            <b-button class="button-add card-button">Karta qo'shish</b-button>
+                            <b-button class="button-back card-button">Orqaga</b-button>                            
+                          </b-col>
+                        </b-row>
+                      </b-form>
+                    </b-col>
+                  </div>
+                  <h5 class="user__profile-card-payTitle">To'lovlar tarixi</h5>
+                  <hr>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">№	</th>
+                        <th scope="col">Nomi</th>
+                        <th scope="col">Sana</th>
+                        <th scope="col">To'lov holati</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>8600 2222 3333 4444</td>
+                        <td>27.10.2020</td>
+                        <td>To'landi / To'lanmadi</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </b-card-text>
+              </b-tab>              
             </b-tabs>
           </b-card>
         </div>

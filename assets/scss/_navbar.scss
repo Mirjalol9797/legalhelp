@@ -105,8 +105,14 @@ border:2px solid #f2b50f;
     .dropdown-menu {
         .dropdown-item {
             padding: 4px 10px;
+            font-size: 14px;
+            svg {
+                color: #f2b50f;
+                width: 18px;
+                margin: 0 7px 0 0;
+            }
             img {
-                width: 15px;
+                width: 20px;
                 margin: 0 7px 0 0px;
             }
         }
