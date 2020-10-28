@@ -8,7 +8,6 @@
               <nuxt-link :to="localePath('/')" class="registration__arrow-link">
                 <img src="../../assets/images/registration/left-arrow.svg" />
               </nuxt-link>
-              <!-- <span class="step__page-number">1/4</span> -->
             </div>
             <form class="registration__form" @submit.prevent="onSubmit">
               <div class="language">
@@ -101,8 +100,7 @@ export default {
       });
     },
     onSubmit() {
-      // this.$store.dispatch("sendQuestions", this.form);
-      this.$store.push();
+   
     }
 },
   mounted() {

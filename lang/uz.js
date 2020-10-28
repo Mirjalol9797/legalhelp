@@ -223,6 +223,7 @@ export default {
         save: 'Saqlash',
         cancel: 'Bekor qilish',
         password: 'Parol',
+        cancell:'Profilingizdagi o\'zgartirishlar saqlanmadi'
     },
     toast: {
         success: 'Muvaffaqiyatli',

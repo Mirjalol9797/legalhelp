@@ -1,12 +1,52 @@
 .lawyer__wrapper {
   & > .container {
     padding-bottom: 40px;
+    a{
+      color:#007bff;
+    }
   }
   .lawyer__inner {
+    background: white;
+    box-shadow: 10px 10px 50px rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 17px;
+    padding-bottom: 10px;
+    .lawyer__section-img {
+      border-radius: 6px;
+      max-width: 850px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .lawyer__text {
+      font-size: 14px;
+      line-height: 25px;
+      color: #1c1b1e;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      &-heading {
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 32px;
+        color: #000000;
+        font-family: 'PTSerif';
+        .single-header{
+          margin-bottom: 15px !important;
+        }
+      }
+    }
+    .highlighted__text {
+      padding: 10px;
+      background: #b08e44;
+    }
+  
     line-height: 31px;
     font-size: 18px;
     color: #000000;
     padding: 0 20px;
+    font-family: 'PTSerif',sans-serif;
     border-left: 1px solid rgba(151, 151, 151, 0.23);
     margin-bottom: 20px;
     position: relative;
@@ -182,63 +222,7 @@
     padding-top: 0px;
     padding-bottom: 0px;
   }
-  .lawyer__inner {
-    background: white;
-    box-shadow: 10px 10px 50px rgba(255, 255, 255, 0.25);
-    border-radius: 8px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 17px;
-    padding-bottom: 10px;
-    .lawyer__section-img {
-      border-radius: 6px;
-      max-width: 850px;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-    .lawyer__text {
-      font-size: 14px;
-      line-height: 25px;
-      color: #1c1b1e;
-      margin-top: 40px;
-      margin-bottom: 30px;
-      &-heading {
-        font-size: 26px;
-        font-weight: bold;
-        line-height: 32px;
-        color: #000000;
-      }
-    }
-    .highlighted__text {
-      padding: 10px;
-      background: #b08e44;
-    }
-    // .highlighted__text-inner {
-    //   font-weight: bold;
-    //   font-size: 14px;
-    //   line-height: 25px;
-    //   color: #ffffff;
-    //   padding-left: 20px;
-    //   font-style: normal;
-    //   margin: 0;
-    //   padding-top: 20px;
-    //   padding-bottom: 20px;
-    //   position: relative;
-    //   &::before {
-    //     content: "";
-    //     top: 0;
-    //     left: 0px;
-    //     position: absolute;
-    //     height: 100%;
-    //     width: 4px;
-    //     border-radius: 16px;
-    //     display: block;
-    //     z-index: 1111;
-    //     background-color: #fff;
-    //   }
-    // }
-  }
+ 
 
   .lawyer__middle-news-image {
     margin-top: 40px;

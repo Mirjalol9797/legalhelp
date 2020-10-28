@@ -56,7 +56,7 @@
                   >RU</b-dropdown-item
                 >
               </b-nav-item-dropdown>
-              <b-nav-item-dropdown class="user__login"> 
+              <b-nav-item-dropdown class="user__login">
                 <template v-slot:button-content>
                   <div class="round">
                     <div class="user__link">
@@ -68,27 +68,26 @@
                   $t("user.signup")
                 }}</b-dropdown-item>
 
-                <b-dropdown-item :to="localePath('/mainlogin')" v-if="!loggedIn">{{
-                  $t("user.entrance")
-                }}</b-dropdown-item>
                 <b-dropdown-item
-                  :to="localePath('/customer_profile')"
+                  :to="localePath('/mainlogin')"
+                  v-if="!loggedIn"
+                  >{{ $t("user.entrance") }}</b-dropdown-item
+                >
+                <b-dropdown-item
+                  :to="localePath('/customer-profile')"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
-                    <font-awesome-icon :icon="['fas', 'address-card']" />
-                    <!-- <img src="../assets/images/profil/address.svg" alt=""> -->
-                    {{$t("user.mypage")}}
-                </b-dropdown-item
-                >
+                  <font-awesome-icon :icon="['fas', 'address-card']" />
+                  <!-- <img src="../assets/images/profil/address.svg" alt=""> -->
+                  {{ $t("user.mypage") }}
+                </b-dropdown-item>
                 <b-dropdown-item
                   :to="localePath('/')"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
                   <font-awesome-icon :icon="['fas', 'star']" />
                   <!-- <img src="../assets/images/profil/star.svg" alt=""> -->
-                  {{
-                    $t("user.select")
-                  }}</b-dropdown-item
+                  {{ $t("user.select") }}</b-dropdown-item
                 >
                 <b-dropdown-item
                   :to="localePath('/')"
@@ -96,9 +95,7 @@
                 >
                   <font-awesome-icon :icon="['fas', 'bell']" />
                   <!-- <img src="../assets/images/profil/bell.svg" alt=""> -->
-                  {{
-                    $t("user.notifications")
-                  }}
+                  {{ $t("user.notifications") }}
                 </b-dropdown-item>
                 <b-dropdown-item
                   href="tel:+998946863999"
@@ -106,9 +103,7 @@
                 >
                   <font-awesome-icon :icon="['fas', 'phone']" />
                   <!-- <img src="../assets/images/profil/phone.svg" alt=""> -->
-                  {{
-                    $t("user.phone")
-                  }}</b-dropdown-item
+                  {{ $t("user.phone") }}</b-dropdown-item
                 >
                 <b-dropdown-item
                   :to="localePath('/signin')"
@@ -116,46 +111,44 @@
                 >
                   <font-awesome-icon :icon="['fas', 'file']" />
                   <!-- <img src="../assets/images/profil/file.svg" alt=""> -->
-                  {{
-                    $t("user.document")
-                  }}
+                  {{ $t("user.document") }}
                 </b-dropdown-item>
                 <b-dropdown-item
                   :to="localePath('/lawyer-profile')"
                   v-if="loggedIn && $auth.user.is_lawyer"
                 >
                   <!-- <font-awesome-icon :icon="['fas', 'address-card']" /> -->
-                  <img src="../assets/images/profil/address.svg" alt="">
-                  {{
-                    $t("user.mypage")
-                  }}
+                  <img src="../assets/images/profil/address.svg" alt="" />
+                  {{ $t("user.mypage") }}
                 </b-dropdown-item>
                 <b-dropdown-item
                   :to="localePath('/signin')"
                   v-if="loggedIn && $auth.user.is_lawyer"
                 >
                   <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/article.svg" alt="">
+                  <img src="../assets/images/user/article.svg" alt="" />
                   <!-- {{
                     $t("user.document")
-                  }} --> Maqolalarim
+                  }} -->
+                  Maqolalarim
                 </b-dropdown-item>
                 <b-dropdown-item
                   :to="localePath('/signin')"
                   v-if="loggedIn && $auth.user.is_lawyer"
                 >
                   <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/google-docs.svg" alt="">
+                  <img src="../assets/images/user/google-docs.svg" alt="" />
                   <!-- {{
                     $t("user.document")
-                  }} --> Hujjat buyurtma takliflar
+                  }} -->
+                  Hujjat buyurtma takliflar
                 </b-dropdown-item>
                 <b-dropdown-item
                   :to="localePath('/signin')"
                   v-if="loggedIn && $auth.user.is_lawyer"
                 >
                   <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/financial.svg" alt="">
+                  <img src="../assets/images/user/financial.svg" alt="" />
                   <!-- {{
                     $t("user.document")
                   }} -->
@@ -166,55 +159,53 @@
                   v-if="loggedIn && $auth.user.is_lawyer"
                 >
                   <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/folder.svg" alt="">
+                  <img src="../assets/images/user/folder.svg" alt="" />
                   <!-- {{
                     $t("user.document")
                   }} -->
                   Hujjatlar arxivi
-                </b-dropdown-item>                 
-                <b-dropdown-item
-                  :to="localePath('/signin')"
-                  v-if="loggedIn && $auth.user.is_lawyer"
-                >
-                  <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/help.svg" alt="">
-                  <!-- {{
-                    $t("user.document")
-                  }} -->
-                  Savollar 
                 </b-dropdown-item>
                 <b-dropdown-item
                   :to="localePath('/signin')"
                   v-if="loggedIn && $auth.user.is_lawyer"
                 >
                   <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/bitcoin.svg" alt="">
+                  <img src="../assets/images/user/help.svg" alt="" />
                   <!-- {{
                     $t("user.document")
                   }} -->
-                  Puli tulangan savollar 
-                </b-dropdown-item>                                
+                  Savollar
+                </b-dropdown-item>
                 <b-dropdown-item
                   :to="localePath('/signin')"
                   v-if="loggedIn && $auth.user.is_lawyer"
                 >
                   <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/question.svg" alt="">
+                  <img src="../assets/images/user/bitcoin.svg" alt="" />
+                  <!-- {{
+                    $t("user.document")
+                  }} -->
+                  Puli tulangan savollar
+                </b-dropdown-item>
+                <b-dropdown-item
+                  :to="localePath('/signin')"
+                  v-if="loggedIn && $auth.user.is_lawyer"
+                >
+                  <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
+                  <img src="../assets/images/user/question.svg" alt="" />
                   <!-- {{
                     $t("user.document")
                   }} -->
                   Savollar arxivi
-                </b-dropdown-item>                   
+                </b-dropdown-item>
                 <b-dropdown-item
                   :to="localePath('')"
                   @click="logout()"
                   v-if="loggedIn"
                 >
                   <!-- <font-awesome-icon :icon="['fas', 'sign-out-alt']" /> -->
-                  <img src="../assets/images/profil/sign-out-alt.svg" alt="">
-                  {{
-                    $t("user.exit")
-                  }}
+                  <img src="../assets/images/profil/sign-out-alt.svg" alt="" />
+                  {{ $t("user.exit") }}
                 </b-dropdown-item>
               </b-nav-item-dropdown>
             </b-navbar-nav>

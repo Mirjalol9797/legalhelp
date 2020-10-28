@@ -225,6 +225,7 @@ export default {
         save: 'Сохранить',
         cancel: 'Отмена',
         password: 'пароль',
+        cancell: 'Изменения в вашем профиле не сохранены'
     },
     toast: {
         success: 'Успешно',

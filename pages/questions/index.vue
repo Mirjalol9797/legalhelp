@@ -141,7 +141,6 @@ export default {
   computed: {},
   methods: {
     async getQuestions() {
-      console.log(this.page);
       await this.$axios
         .get(`services/?limit=10&offset=${(this.page - 1) * 10}`)
         .then(res => {

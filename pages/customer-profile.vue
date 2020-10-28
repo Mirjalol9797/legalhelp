@@ -25,7 +25,7 @@
         <div class="user__profile-card">
           <b-card no-body>
             <b-tabs pills card vertical>
-              <b-tab active> 
+              <b-tab active>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
                     <!-- <font-awesome-icon :icon="['fas', 'comment']" /> -->
@@ -50,7 +50,7 @@
                     <div class="user__profile-question-info">
                       <div class="left__block">
                         <span class="user">
-                          <font-awesome-icon :icon="['fas', 'user']" /> 
+                          <font-awesome-icon :icon="['fas', 'user']" />
                           Halimov Navruz
                         </span>
                         <span class="calendar">26.09.2020, 09:54</span>
@@ -67,8 +67,6 @@
                           />Buxoro</span
                         >
                       </div>
-
-
                     </div>
                   </div>
                 </b-card-text>
@@ -255,19 +253,28 @@
                                 id="user__profile-city"
                                 v-model="regionSelect"
                               >
-                                <option :value="region.id" v-for="(index,region) of selectuz" :key="region">{{index.title_uz}}</option>
+                                <option value="" disabled selected>{{
+                                  user.region.title_uz
+                                }}</option>
+                                <option
+                                  v-for="(index, region) of selectuz"
+                                  :key="region.id"
+                                  :value="index.id"
+                                  >{{ index.title_uz
+                                  }}</option
+                                >
                               </select>
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-number">{{
                                 $t("profile.phone")
                               }}</label>
-                              <input 
+                              <input
                                 type="text"
                                 id="user__profile-number"
-                                v-model="user.user"
+                                :value="'+998 ' + user.user"
+                                disabled
                               />
-                              <input type="text" id="user__profile-code" >
                             </b-col>
                             <b-col lg="12">
                               <b-button type="submit"
@@ -276,7 +283,7 @@
                                   class="user__profile-submit-icon"
                                 />{{ $t("profile.save") }}</b-button
                               >
-                              <b-button type="button" :to="localePath('/')"
+                              <b-button type="button" @click="onCancel()"
                                 ><font-awesome-icon
                                   :icon="['fas', 'times']"
                                   class="user__profile-submit-icon"
@@ -296,21 +303,23 @@
                     <!-- <font-awesome-icon :icon="['fas', 'phone']" /> -->
                   </span>
                   <span class="user__profile-card-text">
-                  <!-- {{
+                    <!-- {{
                     $t("profile.phoneconsultate")
                   }} -->To'lovlar
                   </span>
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
-                  <h5 class="user__profile-card-payTitle">Mening kartalarim:</h5>
-                  <hr>
+                  <h5 class="user__profile-card-payTitle">
+                    Mening kartalarim:
+                  </h5>
+                  <hr />
                   <div class="user__profile-card-payItem mb-4">
                     <b-col cols="12">
-                      <b-form>  
+                      <b-form>
                         <b-row>
                           <b-col cols="8">
-                            <b-form-group 
+                            <b-form-group
                               label="Karta raqami"
                               label-for="input-1"
                             >
@@ -320,12 +329,11 @@
                                 required
                                 placeholder="8600 **** **** ***"
                               >
-                                
                               </b-form-input>
                             </b-form-group>
-                          </b-col>  
+                          </b-col>
                           <b-col cols="4">
-                            <b-form-group 
+                            <b-form-group
                               label="Amal qilish muddati"
                               label-for="input-2"
                             >
@@ -335,24 +343,27 @@
                                 required
                                 placeholder="12 / 10"
                               >
-                                
                               </b-form-input>
-                            </b-form-group>                           
+                            </b-form-group>
                           </b-col>
                           <b-col cols="12">
-                            <b-button class="button-add card-button">Karta qo'shish</b-button>
-                            <b-button class="button-back card-button">Orqaga</b-button>                            
+                            <b-button class="button-add card-button"
+                              >Karta qo'shish</b-button
+                            >
+                            <b-button class="button-back card-button"
+                              >Orqaga</b-button
+                            >
                           </b-col>
                         </b-row>
                       </b-form>
                     </b-col>
                   </div>
                   <h5 class="user__profile-card-payTitle">To'lovlar tarixi</h5>
-                  <hr>
+                  <hr />
                   <table class="table">
                     <thead>
                       <tr>
-                        <th scope="col">№	</th>
+                        <th scope="col">№</th>
                         <th scope="col">Nomi</th>
                         <th scope="col">Sana</th>
                         <th scope="col">To'lov holati</th>
@@ -368,7 +379,7 @@
                     </tbody>
                   </table>
                 </b-card-text>
-              </b-tab>              
+              </b-tab>
             </b-tabs>
           </b-card>
         </div>
@@ -393,6 +404,14 @@ export default {
     };
   },
   methods: {
+  
+    async onCancel() {
+        this.$router.push(this.localePath({name: "/"} ));
+      this.$toast.error({
+        title: `${this.$t("profile.save")}`,
+        message: `${this.$t("profile.cancell")}`
+      });
+    },
     async getRegionuz() {
       await this.$axios.get("region/?language=uz").then(res => {
         this.selectuz = res.data;
@@ -415,17 +434,17 @@ export default {
           // image:this.user.image
         })
         .then(res => {
-         this.$toast.success({
-              title: `${this.$t("toast.success")}`,
-              message: `${this.$t("toast.updateProfile")}`
-            });
+          this.$toast.success({
+            title: `${this.$t("toast.success")}`,
+            message: `${this.$t("toast.updateProfile")}`
+          });
         })
         .catch(err => {
           console.log(err);
           this.$toast.error({
-              title: `${this.$t("toast.loginError")}`,
-              message: `${this.$t("toast.updateProfileError")}`
-            });
+            title: `${this.$t("toast.loginError")}`,
+            message: `${this.$t("toast.updateProfileError")}`
+          });
         });
     }
   },
