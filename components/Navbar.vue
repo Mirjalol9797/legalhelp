@@ -32,6 +32,12 @@
                   v-if="loggedIn && $auth.user.is_customer"
                   >{{ $t("navbar.askquestions") }}</b-button
                 >
+                <b-button
+                  class="header__btn d-none"
+                  :to="localePath('/askquestions')"
+                  v-else-if="loggedIn && $auth.user.is_lawyer"
+                  >{{ $t("navbar.askquestions") }}</b-button
+                >
                 <b-button v-else class="header__btn" :to="localePath('/reg')">{{
                   $t("navbar.askquestions")
                 }}</b-button>

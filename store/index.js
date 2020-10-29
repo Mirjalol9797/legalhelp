@@ -12,7 +12,6 @@ const store = () => new Vuex.Store({
         mediaURL: 'http://188.225.79.96/',
         phone_number: "",
         token: "",
-       
     },
     getters: { 
         news(state) {

@@ -15,9 +15,11 @@
             <span class="profile-info-name"
               >{{ $auth.user.first_name }} {{ $auth.user.last_name }}</span
             >
-            <span class="profile-info-location">{{
+            <span class="profile-info-location">
+            <!-- {{
               $auth.user.region.title_uz
-            }}</span>
+            }} -->
+            </span>
             <span class="profile-info-number">+998 {{ $auth.user.user }}</span>
             <span class="profile-info-email">{{ $auth.user.email }}</span>
           </div>
@@ -71,7 +73,6 @@
                   </div>
                 </b-card-text>
               </b-tab>
-
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
@@ -253,16 +254,18 @@
                                 id="user__profile-city"
                                 v-model="regionSelect"
                               >
-                                <option value="" disabled selected>{{
+                                <option value="" disabled selected>
+                                <!-- {{
                                   user.region.title_uz
-                                }}</option>
+                                }} -->
+                                </option>
                                 <option
                                   v-for="(index, region) of selectuz"
                                   :key="region.id"
                                   :value="index.id"
-                                  >{{ index.title_uz
-                                  }}</option
-                                >
+                                  >
+                                  <!-- {{ index.title_uz }} -->
+                                  </option>
                               </select>
                             </b-col>
                             <b-col lg="6">
@@ -406,7 +409,7 @@ export default {
   methods: {
   
     async onCancel() {
-        this.$router.push(this.localePath({name: "/"} ));
+      this.$router.push(this.localePath({name: "/"} ));
       this.$toast.error({
         title: `${this.$t("profile.save")}`,
         message: `${this.$t("profile.cancell")}`

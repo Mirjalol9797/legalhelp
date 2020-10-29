@@ -39,7 +39,7 @@
     font-family: $Nunito;
     font-size: 14px;
     line-height: 25px;
-    color: #000000;
+    color: #000000; 
     margin-top: 15px;
   }
 }
@@ -145,4 +145,295 @@
     }
    
   }
+}
+.lawyer-profile__card {
+  .nav-item:nth-child(1) {
+    a {
+      position: relative;
+      padding-right: 30px;
+      padding-left: 37px;
+      &:after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        width: 15px;
+        height: 15px;
+        background-image: url("../images/profil/comment-solid.svg");
+        background-repeat: no-repeat;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 15px;
+        height: 15px;
+        background-image: url("../images/profil/angle-right-solid.svg");
+        background-repeat: no-repeat;
+      }      
+    }
+  }
+  .nav-item:nth-child(1) {
+    a.active {
+      background-color: #f2b50f;
+
+      &:after {
+        background-image: url("../images/profil/comment.svg");
+      }
+      &:before {
+        background-image: url("../images/profil/angle-right.svg");
+      }
+    }
+  }  
+  .nav-item:nth-child(2) {
+    a {
+      position: relative;
+      padding-right: 30px;
+      padding-left: 37px;
+      &:after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        width: 15px;
+        height: 15px;
+        background-image: url("../images/profil/file-solid2.svg");
+        background-repeat: no-repeat;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 15px;
+        height: 15px;
+                background-image: url("../images/profil/angle-right-solid.svg");
+        background-repeat: no-repeat;
+      }      
+    }
+  } 
+  .nav-item:nth-child(2) {
+    a.active {
+      background-color: #f2b50f;
+
+      &:after {
+        background-image: url("../images/profil/file-solid.svg");
+      }
+      &:before {
+        background-image: url("../images/profil/angle-right.svg");
+      }
+    }
+  } 
+  .nav-item:nth-child(3) {
+    a {
+      position: relative;
+      padding-right: 30px;
+      padding-left: 37px;
+      &:after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        width: 15px;
+        height: 15px;
+        background-image: url("../images/profil/bell-solid2.svg");
+        background-repeat: no-repeat;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 15px;
+        height: 15px;
+                background-image: url("../images/profil/angle-right-solid.svg");
+        background-repeat: no-repeat;
+      }      
+    }
+  } 
+  .nav-item:nth-child(3) {
+    a.active {
+      background-color: #f2b50f;
+
+      &:after {
+        background-image: url("../images/profil/bell-solid.svg");
+      }
+      &:before {
+        background-image: url("../images/profil/angle-right.svg");
+      }
+    }
+  } 
+  .nav-item:nth-child(4) {
+    a {
+      position: relative;
+      padding-right: 30px;
+      padding-left: 37px;
+      &:after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        width: 18px;
+        height: 18px;
+        background-image: url("../images/profil/cogs-solid.svg");
+        background-repeat: no-repeat;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 15px;
+        height: 15px;
+                background-image: url("../images/profil/angle-right-solid.svg");
+        background-repeat: no-repeat;
+      }      
+    }
+  } 
+  .nav-item:nth-child(4) {
+    a.active {
+      background-color: #f2b50f;
+
+      &:after {
+        background-image: url("../images/profil/cogs.svg");
+      }
+      &:before {
+        background-image: url("../images/profil/angle-right.svg");
+      }
+    }
+  } 
+  .nav-item:nth-child(5) {
+    a {
+      position: relative;
+      padding-right: 30px;
+      padding-left: 37px;
+      &:after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        width: 18px;
+        height: 18px;
+        background-image: url("../images/profil/question.svg");
+        background-size: 15px 15px;
+        background-repeat: no-repeat;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 15px;
+        height: 15px;
+        background-image: url("../images/profil/angle-right-solid.svg");
+        background-repeat: no-repeat;
+      }      
+    }
+  } 
+  .nav-item:nth-child(5) {
+    a.active {
+      background-color: #f2b50f;
+
+      &:after {
+        background-image: url("../images/profil/question-solid.svg");
+      }
+      &:before {
+        background-image: url("../images/profil/angle-right.svg");
+      }
+    }
+  } 
+  .nav-item:nth-child(6) {
+    a {
+      position: relative;
+      padding-right: 30px;
+      padding-left: 37px;
+      &:after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        width: 18px;
+        height: 18px;
+        background-image: url("../images/profil/article.svg");
+        background-repeat: no-repeat;
+        background-size: 15px 15px;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 15px;
+        height: 15px;
+        background-image: url("../images/profil/angle-right-solid.svg");
+        background-repeat: no-repeat;
+      }      
+    }
+  } 
+  .nav-item:nth-child(6) {
+    a.active {
+      background-color: #f2b50f;
+
+      &:after {
+        background-image: url("../images/profil/article-solid.svg");
+      }
+      &:before {
+        background-image: url("../images/profil/angle-right.svg");
+      }
+    }
+  }   
+  .nav-item:nth-child(7) {
+    a {
+      position: relative;
+      padding-right: 30px;
+      padding-left: 37px;
+      &:after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        width: 18px;
+        height: 18px;
+        background-image: url("../images/profil/cogs-solid.svg");
+        background-repeat: no-repeat;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 15px;
+        height: 15px;
+        background-image: url("../images/profil/angle-right-solid.svg");
+        background-repeat: no-repeat;
+      }      
+    }
+  } 
+  .nav-item:nth-child(7) {
+    a.active {
+      background-color: #f2b50f;
+
+      &:after {
+        background-image: url("../images/profil/cogs.svg");
+      }
+      &:before {
+        background-image: url("../images/profil/angle-right.svg");
+      }
+    }
+  }     
 }

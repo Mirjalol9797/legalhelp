@@ -63,3 +63,18 @@
 .service__list--spacing{
   margin-top: 30px;
 }
+
+@media (max-width: 992px) {
+  .our__service-item img {
+    height: 150px;
+  }
+
+  .our-services {
+    .service__list {
+      margin: auto;
+    }
+    .service__list--spacing {
+      margin: 30px auto 25px;
+    }
+  }
+}

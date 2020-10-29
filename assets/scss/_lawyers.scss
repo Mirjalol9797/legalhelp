@@ -85,50 +85,77 @@ margin-left: 15px;
 }
 
 .lawyer__list-search{
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 30px;
-color: #FFFFFF;
-margin-top: 30px;
-margin-bottom: 30px;
-max-width: 1080px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 30px;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 1080px;
 
-select{
-    width:100%;
-    margin-bottom: 15px;
-    border:1px solid transparent;
-    border-radius: 4px;
-    outline: none;
-    -moz-appearance:none; /* Firefox */
-    -webkit-appearance:none; /* Safari and Chrome */
-    appearance:none;
-    height: 40px;
-    font-size: 16px;
-    background-image: url("../images/registration/down-arrow.svg");
-    background-repeat: no-repeat;
-    background-size: 14px;
-    background-position: right 13px center;
-    padding: 5px 35px;
-    &:focus,&:active{
-        border:1px solid #0028AA;
+    &-btn {
+        text-align: right;
+    }
+
+    &-category, &-region, &-rating {
+        padding-right: 0;
+    }
+
+    select{
+        width:100%;
+        margin-bottom: 15px;
+        border:1px solid transparent;
+        border-radius: 4px;
         outline: none;
-        cursor: pointer;
-      }
+        -moz-appearance:none; /* Firefox */
+        -webkit-appearance:none; /* Safari and Chrome */
+        appearance:none;
+        height: 40px;
+        font-size: 16px;
+        background-image: url("../images/registration/down-arrow.svg");
+        background-repeat: no-repeat;
+        background-size: 14px;
+        background-position: right 13px center;
+        padding: 5px 30px 5px 15px;
+        &:focus,&:active{
+            border:1px solid #0028AA;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+    #rating,#region-select,#type{
+        max-width: 453px;
+        width: 100%;
+    }
+    input[type=submit]{
+        height: 40px;
+        background: #00aced;
+        border-radius: 4px;
+        border:none;
+        max-width:110px;
+        width:100%;
+        color:white;
+        outline: none;
+        font-size: 15px;
+    }
 }
-#rating,#region-select,#type{
-    max-width: 453px;
-    width: 100%;
-}
-input[type=submit]{
-height: 40px;
-background: #00aced;
-border-radius: 4px;
-border:none;
-max-width:110px;
-width:100%;
-color:white;
-outline: none;
-font-size: 15px;
-}
+
+@media (max-width: 1199px) {
+    .lawyer__list-search {
+        padding: 0 10px;
+        
+        #rating,#region-select,#type{
+            max-width: 100%;
+            width: 100%;
+        }    
+        
+        &-btn {
+            text-align: left;
+        }
+
+        &-category, &-region, &-rating {
+            padding-right: 15px;
+        }
+    }
 }

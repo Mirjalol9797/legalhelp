@@ -12,17 +12,19 @@
             />
           </div>
           <div class="profile-info">
-            <span class="profile-info-name"
-              >{{ $auth.user.first_name }} {{ $auth.user.last_name }}</span
-            >
-            <span class="profile-info-location">{{
+            <span class="profile-info-name">
+              {{ $auth.user.first_name }} {{ $auth.user.last_name }}
+            </span>
+            <span class="profile-info-location">
+            <!-- {{
               $auth.user.region.title_uz
-            }}</span>
+            }} -->
+            </span>
             <span class="profile-info-number">+998 {{ $auth.user.user }}</span>
             <span class="profile-info-email">{{ $auth.user.email }}</span>
           </div>
         </div>
-        <div class="user__profile-card">
+        <div class="user__profile-card lawyer-profile__card">
           <b-card no-body>
             <b-tabs pills card vertical>
               <b-tab active>
@@ -30,9 +32,9 @@
                   <span class="user__profile-card-icon">
                     <!-- <font-awesome-icon :icon="['fas', 'comment']" /> -->
                   </span>
-                  <span class="user__profile-card-text">{{
-                    $t("profile.myquestion")
-                  }}</span>
+                  <span class="user__profile-card-text">
+                    {{$t("profile.myquestion")}}
+                  </span>
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
@@ -65,25 +67,6 @@
                   </div>
                 </b-card-text>
               </b-tab>
-
-              <b-tab>
-                <template v-slot:title>
-                  <span class="user__profile-card-icon">
-                    <!-- <font-awesome-icon :icon="['fas', 'phone']" /> -->
-                  </span>
-                  <span class="user__profile-card-text">{{
-                    $t("profile.phoneconsultate")
-                  }}</span>
-                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
-                </template>
-                <b-card-text>
-                  <a href="tel:+998946863999" class="user__profile-card-phone">
-                    Biz bilan hoziroq bog'lanishingiz mumkin.
-                    <br />Tel:
-                    <span>+998946863999</span>
-                  </a>
-                </b-card-text>
-              </b-tab>
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
@@ -97,40 +80,12 @@
                 <b-card-text>
                   <div class="user__profile-documents">
                     <div class="user__profile-documents-header">
-                      <span class="user__profile-documents-title">
-                        0 Takliflar</span
-                      >
-                      <b-col lg="3">
-                        <div class="user__profile-documents-price">
-                          <b>190 000 so`m</b><span>savol <br />narxi</span>
+                      <b-col lg="4" class="mx-auto">
+                        <div class="user__profile-documents-user">
+                          <font-awesome-icon :icon="['fas', 'user']" /> 
+                          Jismoniy shaxs
                         </div>
                       </b-col>
-                      <b-col lg="4"
-                        ><div class="user__profile-documents-user">
-                          <font-awesome-icon :icon="['fas', 'user']" /> Jismoniy
-                          shaxs
-                        </div>
-                      </b-col>
-                      <b-col lg="2"
-                        ><b-button
-                          type="button"
-                          class="user__profile-documents-payment"
-                          ><font-awesome-icon
-                            :icon="['fas', 'credit-card']"
-                            style="margin-right:5px;"
-                          />To'lash</b-button
-                        >
-                      </b-col>
-                      <b-col lg="2">
-                        <b-button
-                          type="button"
-                          class="user__profile-documents-delete"
-                          ><font-awesome-icon
-                            :icon="['fas', 'trash']"
-                            style="margin-right:5px;"
-                          />O'chirish</b-button
-                        ></b-col
-                      >
                     </div>
                   </div>
                   <div class="user__profile-documents-info">
@@ -164,8 +119,65 @@
                   }}</span>
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
-                <b-card-text>Tab contents 1</b-card-text>
+                <b-card-text>
+                  <b-row>
+                    <b-col lg="4">
+                      <nuxt-link :to="localePath('/lawyer-profile')" class="">Puli tulangan hujjatlar</nuxt-link>
+                    </b-col>
+                    <b-col lg="4">
+                      <nuxt-link :to="localePath('/lawyer-profile')" class="">Puli tulangan savollar</nuxt-link>
+                    </b-col>
+                  </b-row>
+                </b-card-text>
               </b-tab>
+              <b-tab>
+                <template v-slot:title>
+                  <span class="user__profile-card-icon">
+                    <!-- <font-awesome-icon :icon="['fas', 'bell']" /> -->
+                  </span>
+                  <span class="user__profile-card-text">
+                  <!-- {{
+                    $t("profile.notification")
+                  }} --> Hujjatlar arxivi 
+                  </span>
+                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                </template>
+                <b-card-text>
+                  Hujjatlar arxivi
+                </b-card-text>
+              </b-tab>  
+              <b-tab>
+                <template v-slot:title>
+                  <span class="user__profile-card-icon">
+                    <!-- <font-awesome-icon :icon="['fas', 'bell']" /> -->
+                  </span>
+                  <span class="user__profile-card-text">
+                  <!-- {{
+                    $t("profile.notification")
+                  }} --> Savollar arxivi
+                  </span>
+                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                </template>
+                <b-card-text>
+                  Savollar arxivi
+                </b-card-text>
+              </b-tab>   
+              <b-tab>
+                <template v-slot:title>
+                  <span class="user__profile-card-icon">
+                    <!-- <font-awesome-icon :icon="['fas', 'bell']" /> -->
+                  </span>
+                  <span class="user__profile-card-text">
+                  <!-- {{
+                    $t("profile.notification")
+                  }} --> Maqolalarim
+                  </span>
+                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                </template>
+                <b-card-text>
+                  Maqolalarim
+                </b-card-text>
+              </b-tab>                                        
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
@@ -181,7 +193,7 @@
                     <b-row>
                       <b-col md="12">
                         <form
-                          @submit.prevent="onSubmit"
+                          @submit.prevent="onSubmitLawyer"
                           class="user__profile-form"
                         >
                           <b-row>
@@ -202,13 +214,14 @@
                               </label>
                             </b-col>
                             <b-col lg="6">
-                              <label for="user__profile-name">{{
+                              <label for="user__profile-name">
+                              {{
                                 $t("profile.name")
                               }}</label>
                               <input
                                 type="text"
                                 id="user__profile-name"
-                                v-model="user.first_name"
+                                v-model="lawyer.first_name"
                               />
                             </b-col>
                             <b-col lg="6">
@@ -218,7 +231,7 @@
                               <input
                                 type="text"
                                 id="user__profile-surname"
-                                v-model="user.last_name"
+                                v-model="lawyer.last_name"
                               />
                             </b-col>
                             <b-col lg="6">
@@ -235,7 +248,7 @@
                               <input
                                 type="email"
                                 id="user__profile-email"
-                                v-model="user.email"
+                                v-model="lawyer.email"
                               />
                             </b-col>
                             <b-col lg="6">
@@ -247,20 +260,26 @@
                                 id="user__profile-city"
                                 v-model="regionSelect"
                               >
-                                <option :value="region.id" v-for="(index,region) of selectuz" :key="region">{{index.title_uz}}</option>
+                                <option 
+                                  :value="region.id" 
+                                  v-for="(index,region) of selectuz" 
+                                  :key="region"
+                                >
+                                  <!-- {{index.title_uz}} -->
+                                </option>
                               </select>
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-number">{{
                                 $t("profile.phone")
                               }}</label>
-                              <input 
+                              <input
                                 type="text"
                                 id="user__profile-number"
-                                v-model="user.user"
+                                :value="'+998 ' + lawyer.user"
+                                disabled
                               />
-                              <input type="text" id="user__profile-code" >
-                            </b-col>
+                            </b-col>                            
                             <b-col lg="12">
                               <b-button type="submit"
                                 ><font-awesome-icon
@@ -296,13 +315,13 @@ export default {
       regionSelect: "",
       selectuz: [],
       selectru: [],
-      user: {
+      lawyer: {
         first_name: "",
         last_name: "",
         email: "",
         region: ""
       },
-      user: this.$auth.user
+      lawyer: this.$auth.user,
     };
   },
   methods: {
@@ -318,17 +337,17 @@ export default {
         this.selectru = res.data;
       });
     },
-    async onSubmit() {
+    async onSubmitLawyer() {
       await this.$axios
-        .patch("customer/profile/", {
-          first_name: this.user.first_name,
-          last_name: this.user.last_name,
-          email: this.user.email,
+        .patch("lawyer/profile/", {
+          first_name: this.lawyer.first_name,
+          last_name: this.lawyer.last_name,
+          email: this.lawyer.email,
           region: this.regionSelect
           // image:this.user.image
         })
         .then(res => {
-         this.$toast.success({
+        this.$toast.success({
               title: `${this.$t("toast.success")}`,
               message: `${this.$t("toast.updateProfile")}`
             });
