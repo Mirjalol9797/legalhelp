@@ -21,24 +21,24 @@
             </div>
              <ul class="social__footer-list">
                     <li class="social__footer-item">
-                      <nuxt-link to class="social__footer-link social__footer-link-facebook">
+                      <a target="_blank" href="https://www.facebook.com/LEGAL-LIONS-group-Uzbekistan-111074313895766" class="social__footer-link social__footer-link-facebook">
                         <font-awesome-icon :icon="['fab', 'facebook']" />
-                      </nuxt-link>
+                      </a>
                     </li>
                     <li class="social__footer-item">
-                      <nuxt-link to class="social__footer-link social__footer-link-instagram">
+                      <a target="_blank" href="https://www.instagram.com/legal_helps" class="social__footer-link social__footer-link-instagram">
                         <font-awesome-icon :icon="['fab', 'instagram']" />
-                      </nuxt-link>
+                      </a>
                     </li>
                     <li class="social__footer-item">
-                      <nuxt-link to class="social__footer-link social__footer-link-telegram">
+                      <a target="_blank" href="https://t.me/Legallhelp" class="social__footer-link social__footer-link-telegram">
                         <font-awesome-icon :icon="['fab', 'telegram']" />
-                      </nuxt-link>
+                      </a>
                     </li>
                      <li class="social__footer-item">
-                      <nuxt-link to class="social__footer-link social__footer-link-youtube">
+                      <a target="_blank" to class="social__footer-link social__footer-link-youtube">
                         <font-awesome-icon :icon="['fab', 'youtube']" />
-                      </nuxt-link>
+                      </a>
                     </li>
                   </ul>
           </b-col>

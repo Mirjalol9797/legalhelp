@@ -59,7 +59,7 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     [
       "@nuxtjs/axios",
-      { baseURL: "http://188.225.79.96/api/" },
+      { baseURL: "https://legalhelp.uz/api/" },
     ],
     '@nuxtjs/auth',
     'bootstrap-vue/nuxt',

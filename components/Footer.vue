@@ -66,17 +66,17 @@
                 <li class="footer__menu-item">
                   <ul class="social__footer-list">
                     <li class="social__footer-item">
-                      <nuxt-link to class="social__footer-link social__footer-link-facebook">
+                      <nuxt-link to="https://www.facebook.com/LEGAL-LIONS-group-Uzbekistan-111074313895766" class="social__footer-link social__footer-link-facebook">
                         <font-awesome-icon :icon="['fab', 'facebook']" />
                       </nuxt-link>
                     </li>
                     <li class="social__footer-item">
-                      <nuxt-link to class="social__footer-link social__footer-link-instagram">
+                      <nuxt-link to="https://www.instagram.com/legal_helps" class="social__footer-link social__footer-link-instagram">
                         <font-awesome-icon :icon="['fab', 'instagram']" />
                       </nuxt-link>
                     </li>
                     <li class="social__footer-item">
-                      <nuxt-link to class="social__footer-link social__footer-link-telegram">
+                      <nuxt-link to="https://t.me/Legallhelp" class="social__footer-link social__footer-link-telegram">
                         <font-awesome-icon :icon="['fab', 'telegram']" />
                       </nuxt-link>
                     </li>
