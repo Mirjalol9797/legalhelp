@@ -11,7 +11,7 @@
                        <span class="service__list-top">{{$t('service.phone_toptext')}}</span>
                     <div class="service__list-title">{{$t('service.phone_title')}}</div>
                     <div class="service__list-text">{{$t('service.phone_subtitle')}}</div>
-                    <b-button class="service__list-btn" href="tel:+998946863999">{{$t('service.phone_btn')}}</b-button>
+                    <b-button class="service__list-btn" href="tel:+998999276993">{{$t('service.phone_btn')}}</b-button>
                      </div>
                   </div>
                  

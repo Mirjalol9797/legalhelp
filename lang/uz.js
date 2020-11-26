@@ -3,6 +3,7 @@ export default {
         news: 'Yangiliklar',
         questions: 'Savollar',
         lawyers: 'Yuristlar',
+        for_lawyers: "Yuristlar uchun",
         services: 'Xizmatlar',
         forlawyers: 'Yurislar uchun',
         askquestions: 'Savol so\'rash ',

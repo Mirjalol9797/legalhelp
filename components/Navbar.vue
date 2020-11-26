@@ -25,6 +25,9 @@
               <b-nav-item :to="localePath('/our-service')" class="nav__link">{{
                 $t("navbar.services")
               }}</b-nav-item>
+              <b-nav-item :to="localePath('forlawyers')" class="nav__link">{{
+                $t("navbar.for_lawyers")
+              }}</b-nav-item>
               <b-nav-item href="#">
                 <b-button
                   class="header__btn"

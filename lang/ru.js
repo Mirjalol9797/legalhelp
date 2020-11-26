@@ -3,6 +3,7 @@ export default {
         news: 'Новости',
         questions: 'Вопросы',
         lawyers: 'Юристы',
+        for_lawyers: 'Юристам',
         services: 'Сервисы',
         forlawyers: 'Для юристов',
         askquestions: 'Задать вопрос',

@@ -162,9 +162,7 @@
         <b-container>
           <span class="questions__part-line"></span>
           <h2 class="questions__part-heading">{{$t('questions__part.title')}}</h2>
-          <b-tabs content-class="mt-3" class="tabs__wrapper">
-            <b-tab title="Tekin" active class="questions__switch-link ">
-              <div class="questions__block-item" v-for="i of 4" :key="i">
+          <div class="questions__block-item" v-for="i of 4" :key="i">
                 <div class="questions__block-item-mobile d-block d-md-none">
                   <div class="questions__block-item-mobile-inner">
                     <div class="questions__block-time ">
@@ -251,96 +249,6 @@
                 >{{$t('questions__part.btn_all')}}
                 </b-button>
               </div>
-            </b-tab>
-            <b-tab title="Pullik"><div class="questions__block-item" v-for="i of 4" :key="i">
-                <div class="questions__block-item-mobile d-block d-md-none">
-                  <div class="questions__block-item-mobile-inner">
-                    <div class="questions__block-time ">
-                      <span>9:16</span>
-                      <span>23.07.2020</span>
-                    </div>
-                    <div class="questions__block-btn">
-                      <b-button class="question__btn">2ta javob</b-button>
-                    </div>
-                    <div class="questions__block-ranking">
-                      <div class="questions__block-ranking-star">
-                        <vue-stars
-                          class="vue__star"
-                          name="rate"
-                          active-color="#FFC805"
-                          inactive-color="#282932"
-                          shadow-color="#FFC805"
-                          hover-color="#00aced"
-                          :max="5"
-                          :value="1"
-                          :readonly="false"
-                          char="★"
-                        />
-                      </div>
-                      <b-button class="question__btn">20000 so’m</b-button>
-                    </div>
-                  </div>
-                  <div class="questions__block-content">
-                    <nuxt-link
-                      class="questions__block-content-heading"
-                      :to="localePath(`/questions/${i}`)"
-                      >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </nuxt-link>
-                    <p class="questions__block-content-text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sem massa lectus tortor feugiat sagittis auctor porta
-                      penatibus.Lorem ipsum dolor sit amet, consectetur
-                    </p>
-                  </div>
-                </div>
-                <div class="questions__block-time d-none d-md-block">
-                  <span>9:16</span>
-                  <span>23.07.2020</span>
-                </div>
-                <div class="questions__block-btn d-none d-md-block">
-                  <b-button class="question__btn">2ta javob</b-button>
-                </div>
-                <div class="questions__block-content d-none d-md-block">
-                  <nuxt-link
-                    class="questions__block-content-heading"
-                    :to="localePath(`/questions/${i}`)"
-                    >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </nuxt-link>
-                  <p class="questions__block-content-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem
-                    massa lectus tortor feugiat sagittis auctor porta
-                    penatibus.Lorem ipsum dolor sit amet, consectetur
-                  </p>
-                </div>
-                <div class="questions__block-ranking d-none d-md-block">
-                  <div class="questions__block-ranking-star">
-                    <vue-stars
-                      class="vue__star"
-                      name="rate"
-                      active-color="#FFC805"
-                      inactive-color="#282932"
-                      shadow-color="#FFC805"
-                      hover-color="#00aced"
-                      :max="5"
-                      :value="1"
-                      :readonly="false"
-                      char="★"
-                    />
-                  </div>
-                  <b-button class="question__btn d-none d-md-block"
-                    >20000 so’m</b-button
-                  >
-                </div>
-              </div>
-              <div class="questions__block-more">
-                <b-button
-                  class="questions__block-more-btn"
-                  :to="localePath(`/questions`)"
-                >
-                {{$t('questions__part.btn_all')}}
-                </b-button>
-              </div></b-tab>
-          </b-tabs>
         </b-container>
       </div>
       <!-- end of question part -->
@@ -563,7 +471,7 @@
                 <b-button class="our__other-services-price"
                   >{{$t('other_service.consult_btn1')}} 
                 </b-button>
-                <b-button class="our__other-services-use" href="tel:998946863999">{{$t('other_service.consult_btn2')}} </b-button>
+                <b-button class="our__other-services-use" href="tel:+998999276993">{{$t('other_service.consult_btn2')}} </b-button>
               </div>
               <span class="our__other-services-phone d-none d-lg-block"></span>
             </div>
@@ -632,8 +540,8 @@
                       >
                       <p class="info__content-tel">
                         {{$t('form_wrap.mobil_info')}} 
-                        <nuxt-link to="tel:+99899999999" class="phone"
-                          >+998 00 000 00 00</nuxt-link
+                        <nuxt-link to="tel:+998999276993" class="phone"
+                          >+998 99 927 69 93</nuxt-link
                         >
                       </p>
                     </div>
@@ -654,12 +562,6 @@
       </div>
       <!-- /.form__wrapper -->
     </div>
-    <!-- <div>
-      <p v-for="(i, index) of temp" :key="index">
-        {{ i.title }}
-      </p>
-    </div> -->
-    <!-- /.main__page -->
   </div>
 </template>
 <script>
