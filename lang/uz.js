@@ -12,28 +12,25 @@ export default {
     header: {
         title: 'Ishonchli va sifatli online yuridik xizmatlar',
         subtitle: `Malakali yuristlar xizmatidan foydalanib, muammoli savollarga asosli 
-                    va sifatli javob oling. Ko’rsatilgan xizmat sizni qanoatlantirmasa, 
-                    pulingiz 100% qaytarib beriladi.`,
+                    va sifatli javob oling. Ko’rsatilgan xizmat 
+                    sizni qanoatlantirmasa, pulingiz 100% qaytarib beriladi.`,
         online: 'ONLINE XIZMAT',
     },
     about_service: {
         title: 'Tajribali yuristlar sizga yordam berishga tayyor.',
-        subtitle: '"Dunyodagi eng buyuk ikki zolim: imkoniyat va vaqt"',
+        subtitle: 'Vaqt va imkoniyatdan foydalanib muammolaringizni biz orqali hal eting.',
         author_name: 'Ioxann Xerder',
         user_name: 'Aziza Abdurakhmonova'
     },
     solve: {
-        title: 'Muammolaringiz Yechimi Biz Bilan',
-        subtitle: `Kundalik hayotingizda va ish faoliyatingizda 
-                    turli muammolarga duch kelyapsizmi? Unda tezda 
-                    bizga bog‘laning, biz sizga maslahat beramiz.`,
+        title: 'Muammolaringiz yechimi biz bilan',
+        subtitle: `Xatolaringizdan devor emas, zina qurishda foydalaning! Biz esa sizga doim ko’maklashishga tayyormiz.`,
 
     },
     new: {
         title: 'Yangiliklar',
-        subtitle: `Lorem ipsum dolor sit amet, consectetur 
-                    adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua.`,
+        subtitle: `Jamiyatdagi voqeliklarning huquqiy tahlili, tanqidiy va asoslantirilgan maqolalar hamda 
+        qonunchilikdagi eng so’ngi yangiliklar. `,
         btn_name: 'Barcha yangiliklar'
     },
     questions__part: {
@@ -44,30 +41,28 @@ export default {
     },
     we_work: {
         title: 'Biz qanday ishlaymiz',
-        subtitle: `Muammo atigi 3 bosqichda hal qilinadi`,
+        subtitle: `Berilgan savol mutaxassisligi bo’yicha yuristga yuboriladi va siz belgilagan muddatda huquqiy asoslantirilgan javob olasiz.`,
         mini_title1: 'Savol bering',
         mini_title2: 'Javob oling',
         mini_title3: 'Muammo hal!'
     },
     swiper_wrapper: {
         title: 'Yuristlar',
-        subtitle: `Lorem ipsum dolor sit amet, 
-                    consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua.`,
+        subtitle: `Bizning jamoamiz adliya, sud, prokuratura, advokatura va boshqa sohalarda uzoq 
+                    yillar davomida faoliyat yuritib kelayotgan, tajriba hamda yetarlicha 
+                    muvaffaqiyat qozongan yuristlar jamoasidan iborat. `,
     },
     our_service: {
-        title: 'Bizning Xizmatlarimiz',
+        title: 'Bizning xizmatlar',
         subtitle: `Saytda savol berishingiz mumkin, bundan tashqari telefon orqali
                     konsultatsiya olishingiz hamda kerakli 
                     hujjatlarni buyurtma qilishingiz mumkin`,
     },
     other_service: {
         title: 'Boshqa xizmatlar',
-        subtitle: `Saytda savol berishingiz mumkin, bundan tashqari telefon orqali 
-                    konsultatsiya olishingiz hamda kerakli 
-                    hujjatlarni buyurtma qilishingiz mumkin`,
+        subtitle: `Bizga savol berishingiz va  telefon orqali konsultatsiya olishingiz hamda kerakli hujjatlarni buyurtma qilishingiz mumkin`,
         consult_title: 'Telefon konsultatsiya',
-        consult_text: `Telefon raqamizgizni qoldiring va mutaxasis siz bilan tez orada bog'lanadi.`,
+        consult_text: `Mutaxassisga qo’g’iroq qilishingiz yoki telefon raqamingizni qoldirishingiz mumkin va ma’sullar siz bilan tez orada bog'lanishadi.`,
         consult_btn1: 'Tekin',
         consult_btn2: 'Foydalanish'
     },

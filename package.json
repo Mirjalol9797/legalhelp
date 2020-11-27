@@ -16,6 +16,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.10",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.12.2",
+    "aos": "^2.3.4",
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.15.0",
     "cxlt-vue2-toastr": "^1.1.1",

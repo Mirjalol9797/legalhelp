@@ -30,6 +30,7 @@ export default {
   */
   css: [
     { src: './assets/scss/main.scss', lang: 'scss' },
+    { src: "aos/dist/aos.css"}
   ],
   /*
   ** Plugins to load before mounting the App
@@ -41,6 +42,7 @@ export default {
     { src: '~/plugins/backtotop.js', ssr: false },
     { src: '~/plugins/vue-moment.js', ssr: false },
     { src: "~/plugins/toast.js", ssr: false },
+    { src: "~/plugins/aos.js", ssr: false },
   ],
   /*
   ** Auto import components
@@ -132,6 +134,6 @@ export default {
 
 
   build: {
-
+    vendor: ["aos"]
   }
 }

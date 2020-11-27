@@ -3,7 +3,7 @@
     <div class="main__page">
       <header class="header">
         <b-container>
-          <div class="header__content">
+          <div class="header__content" data-aos="fade-up" data-aos-duration="500">
             <h1 class="header__heading">
               {{$t('header.title')}}
             </h1>
@@ -20,14 +20,14 @@
       <section class="about__service">
         <b-container>
           <span class="about__service-line"></span>
-          <b-row>
+          <b-row data-aos="fade-up" data-aos-duration="500">
             <b-col lg="6">
               <h2 class="about__service-heading">
                 {{$t('about_service.title')}}
               </h2>
               <p class="about__service-text">
                 {{$t('about_service.subtitle')}} 
-                <i>{{$t('about_service.author_name')}}</i>
+                <!-- <i>{{$t('about_service.author_name')}}</i> -->
               </p>
               <div class="lawyer__user">
                 <img src="../assets/images/lawyer.jpg" alt="" />
@@ -48,7 +48,7 @@
       </section>
       <div class="solve__with-us">
         <b-container>
-          <div class="solve__with-us-header">
+          <div class="solve__with-us-header" data-aos="fade-up" data-aos-duration="500">
             <span class="line"></span>
             <div class="solve__with-us-heading">
               {{$t('solve.title')}} 
@@ -59,7 +59,7 @@
             </span>
           </div>
 
-          <b-row>
+          <b-row data-aos="fade-up" data-aos-duration="500">
             <b-col lg="3" md="6" sm="6">
               <div class="problem__item">
                 <div class="problem__item-number">
@@ -98,14 +98,14 @@
 
       <div class="news__main-page">
         <b-container>
-          <span class="news__main-page-line"></span>
-          <div class="news__main-page-header">
+          <span class="news__main-page-line" data-aos="fade-up" data-aos-duration="500"></span>
+          <div class="news__main-page-header" data-aos="fade-up" data-aos-duration="500">
             <span class="news__main-page-header-heading">{{$t('new.title')}}</span>
             <span class="news__main-page-header-motto">
               {{$t('new.subtitle')}}
             </span>
           </div>
-          <b-row v-if="singlePost">
+          <b-row v-if="singlePost" data-aos="fade-up" data-aos-duration="500">
             <b-col
               lg="4"
               md="6"
@@ -162,7 +162,7 @@
         <b-container>
           <span class="questions__part-line"></span>
           <h2 class="questions__part-heading">{{$t('questions__part.title')}}</h2>
-          <div class="questions__block-item" v-for="i of 4" :key="i">
+          <div class="questions__block-item" v-for="i of 4" :key="i" data-aos="fade-up" data-aos-duration="500">
                 <div class="questions__block-item-mobile d-block d-md-none">
                   <div class="questions__block-item-mobile-inner">
                     <div class="questions__block-time ">
@@ -255,11 +255,11 @@
       <div class="how__we-work">
         <b-container>
           <span class="line-dashed d-none d-lg-block"></span>
-          <h3 class="how__we-work-heading">{{$t('we_work.title')}}</h3>
+          <h3 class="how__we-work-heading"  data-aos="fade-up" data-aos-duration="500">{{$t('we_work.title')}}</h3>
           <p class="how__we-work-text">
             {{$t('we_work.subtitle')}} 
           </p>
-          <b-row>
+          <b-row  data-aos="fade-up" data-aos-duration="500">
             <b-col lg="4">
               <div class="how__we-work-item message">
                 <div class="img-box">
@@ -295,14 +295,14 @@
       </div>
       <div class="swiper__wrapper">
         <b-container>
-          <div class="swiper__header">
+          <div class="swiper__header" data-aos="fade-up" data-aos-duration="500">
             <span class="swiper__motto">
               {{$t('swiper_wrapper.subtitle')}}
             </span>
             <h4 class="swiper__heading">{{$t('swiper_wrapper.title')}}</h4>
             <span class="line__swiper d-none d-md-block"></span>
           </div>
-          <b-row>
+          <b-row data-aos="fade-up" data-aos-duration="500">
             <b-col xl="12">
               <swiper ref="mySwiper" :options="swiperOptions">
                 <swiper-slide v-for="i of 6" :key="i">
@@ -356,15 +356,15 @@
 
       <div class="our__service">
         <b-container>
-          <div class="our__service-header">
+          <div class="our__service-header" data-aos="fade-up" data-aos-duration="500">
             <h1 class="our__service-heading">{{$t('our_service.title')}}</h1>
             <span class="our__service-motto"
               >
-              {{$t('our_service.subtitle')}}
+              <!-- {{$t('our_service.subtitle')}} -->
             </span>
           </div>
 
-          <b-row>
+          <b-row  data-aos="fade-up" data-aos-duration="500">
             <b-col lg="3" md="4" sm="6">
               <div class="our__service-item">
                 <nuxt-link
@@ -453,13 +453,13 @@
       </div>
       <div class="our__other-services">
         <b-container>
-          <div class="our__other-services-header">
+          <div class="our__other-services-header" data-aos="fade-up" data-aos-duration="500">
             <h2 class="our__other-services-title">{{$t('other_service.title')}}</h2>
             <p class="our__other-services-text">
               {{$t('other_service.subtitle')}}
             </p>
           </div>
-          <div class="our__other-services-list">
+          <div class="our__other-services-list" data-aos="fade-up" data-aos-duration="500">
             <div class="our__other-services-item">
               <h4 class="our__other-services-item-title">
                 {{$t('other_service.consult_title')}} 
