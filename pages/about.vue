@@ -5,6 +5,9 @@
                 <b-col cols="12">
                     <div class="about-page__title">LegalHelp – onlayn yuridik xizmatlar</div>
                 </b-col>
+
+
+                
             </b-row>
             <b-row class="about-page__header mb-5">
                 <b-col lg="6">
