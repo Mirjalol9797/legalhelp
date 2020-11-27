@@ -161,7 +161,7 @@ export default {
     },
     question: {
         title: 'Savollar',
-        placeholder: 'Savol izlash',
+        placeholder: 'Savol izlash ',
         btn: 'Izlash',
     },
     service: {
