@@ -10,6 +10,9 @@
                 </b-col>
                 <b-col lg="12">
                     <div class="help__content">
+
+
+                        
                         <div class="btn-group">
                             <button @click="open('one')" class="btn" type="button">Men mijozman
                             </button>
