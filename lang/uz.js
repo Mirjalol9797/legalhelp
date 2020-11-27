@@ -64,15 +64,16 @@ export default {
         consult_title: 'Telefon konsultatsiya',
         consult_text: `Mutaxassisga qo’g’iroq qilishingiz yoki telefon raqamingizni qoldirishingiz mumkin va ma’sullar siz bilan tez orada bog'lanishadi.`,
         consult_btn1: 'Tekin',
-        consult_btn2: 'Foydalanish'
+        consult_btn2: 'Foydalanish',
+        docum_title: `Hujjat buyurtma qilish`,
+        docum_text: `Turli shikoyat arizalar va kerakli hujjatlarga buyurtma berishingiz mumkin`
     },
     form_wrap: {
-        title: 'Savolingizniga qonun doirasida javob oling!',
-        subtitle: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+        title: 'Savolingizga qonun doirasida javob oling!',
+        subtitle: `Har bir muammoli savollarga qonuniy asoslantirilgan holda javob beriladi.`,
         info: 'Bizning mutaxassislar guruhi bilan maslahatlashish uchun quyidagi katakchaga savol yozing.',
         time_info: 'O\'rtacha javob qaytarish vaqti 60 min.',
-        mobil_info: 'Yoki bizni chaqiring:',
+        mobil_info: 'Yoki biz bilan bog’laning:',
         input_email: 'Email adresingiz',
         input_name: 'Ismimgiz',
         input_tel: 'Telefon raqamingiz',
@@ -110,7 +111,7 @@ export default {
         socialprotection: 'Ijtimoiy himoya',
         place: 'Yer masalalari',
         bank: 'Bank sohasi',
-        consumer: 'Iste’molchi huquqi ',
+        consumer: 'Iste’molchi huquqi',
         heritage: 'Meros'
     },
     lawyers: {
@@ -181,6 +182,11 @@ export default {
         next: 'Davom etish',
         bio: 'Biografiyangizni bu erga yozing',
         password: 'Parolingiz'
+    },
+    footer_info: {
+        info: `Ushbu platforma mijoz va yuristlar o’trasidagi asosiy ko’prik hisoblanib, 
+                jamiyatning huquqiy salohiyatini yanada oshirishga xizmat qiladi`,
+        address: `Toshkent shahar Bektemir tumani`
     },
     footer__menu: {
         about: 'Loyiha haqida',

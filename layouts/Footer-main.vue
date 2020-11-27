@@ -14,10 +14,9 @@
                   <span class="legaltech">LegalHelp</span>
                 </nuxt-link>
               </div>
-              <div
-                class="footer__motto"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-              <!-- /.footer__motto -->
+              <div class="footer__motto">
+                {{$t('footer_info.info')}}
+              </div>
             </div>
              <ul class="social__footer-list">
                     <li class="social__footer-item">
@@ -60,8 +59,7 @@
           <b-col lg="4">
             <div class="index-address">
               <h4 class="index-address-heading">{{$t('footer_time.address')}}</h4>
-              <span class="index-address-text">Lorem ipsum dolor 
-                sit amet, consectetur elit, </span>
+              <span class="index-address-text">{{$t('footer_info.address')}}</span>
               <nuxt-link to="tel:+998999276993" class="index-address-phone">+99899 927 69 93</nuxt-link>
             </div>
           </b-col>

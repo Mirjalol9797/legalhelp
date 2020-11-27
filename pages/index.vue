@@ -478,16 +478,13 @@
 
             <div class="our__other-services-item-second ml-auto">
               <h4 class="our__other-services-item-title">
-                Hujjat buyurtma qilish
+                {{$t('other_service.docum_title')}} 
               </h4>
               <p class="our__other-services-item-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {{$t('other_service.docum_text')}}
               </p>
               <div class="our__other-services-item-btn-wrap">
-                <b-button class="our__other-services-price"
-                  >50 ming sum
-                </b-button>
+                <b-button class="our__other-services-price">50 ming sum</b-button>
                 <b-button class="our__other-services-use" :to="localePath('order-documents')">Foydalanish</b-button>
               </div>
               <span class="our__other-services-search d-none d-lg-block"></span>
