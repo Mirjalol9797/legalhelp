@@ -110,7 +110,7 @@ export default {
         socialprotection: 'Ijtimoiy himoya',
         place: 'Yer masalalari',
         bank: 'Bank sohasi',
-        consumer: 'Iste’molchi huquqi',
+        consumer: 'Iste’molchi huquqi ',
         heritage: 'Meros'
     },
     lawyers: {
