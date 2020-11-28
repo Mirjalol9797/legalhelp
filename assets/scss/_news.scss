@@ -109,6 +109,12 @@ margin-top: 50px;
 .news__item {
   display: flex;
   align-items: stretch;
+
+  &-img {
+    overflow: hidden;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
 }
 .news__item-link:hover .news__item-content-title {
   color: #2945ab;
@@ -132,6 +138,10 @@ margin-top: 50px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     object-fit: cover;
+    transition: all 0.4s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .news__item-content {

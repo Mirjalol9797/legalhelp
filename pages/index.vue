@@ -119,12 +119,9 @@
                   :to="localePath(`/news/${item.id}`)"
                   class="news__item-link"
                 >
-                  <img
-                    :src="$store.state.mediaURL + item.thubmnail"
-                    height="185"
-                    width="362"
-                    alt=""
-                  />
+                  <div class="news__item-img">
+                    <img :src="$store.state.mediaURL + item.thubmnail" height="185" width="362" alt="" />
+                  </div>
                   <div class="news__item-content">
                     <h6 class="news__item-content-title">{{ item.title }}</h6>
                     <p class="news__item-content-text" v-html="item.description"></p>
@@ -162,93 +159,88 @@
         <b-container>
           <span class="questions__part-line"></span>
           <h2 class="questions__part-heading">{{$t('questions__part.title')}}</h2>
-          <div class="questions__block-item" v-for="i of 4" :key="i" data-aos="fade-up" data-aos-duration="500">
-                <div class="questions__block-item-mobile d-block d-md-none">
-                  <div class="questions__block-item-mobile-inner">
-                    <div class="questions__block-time ">
-                      <span>9:16</span>
-                      <span>23.07.2020</span>
-                    </div>
-                    <div class="questions__block-btn">
-                      <b-button class="question__btn">2ta javob</b-button>
-                    </div>
-                    <div class="questions__block-ranking">
-                      <div class="questions__block-ranking-star">
-                        <vue-stars
-                          class="vue__star"
-                          name="rate"
-                          active-color="#FFC805"
-                          inactive-color="#282932"
-                          shadow-color="#FFC805"
-                          hover-color="#00aced"
-                          :max="5"
-                          :value="1"
-                          :readonly="false"
-                          char="★"
-                        />
-                      </div>
-                      <b-button class="question__btn">20000 so’m</b-button>
-                    </div>
+            <div class="questions__block-item test" v-for="(question, index) of mainQuestions" :key="index.id" data-aos="fade-up" data-aos-duration="500">
+              <div class="questions__block-item-mobile d-block d-md-none">
+                <div class="questions__block-item-mobile-inner">
+                  <div class="questions__block-time ">
+                    <span>{{question.answered_date.replace('T', ' / ').replace('Z', ' ')}}</span>
                   </div>
-                  <div class="questions__block-content">
-                    <nuxt-link
-                      class="questions__block-content-heading"
-                      :to="localePath(`/questions/${i}`)"
-                      >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </nuxt-link>
-                    <p class="questions__block-content-text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sem massa lectus tortor feugiat sagittis auctor porta
-                      penatibus.Lorem ipsum dolor sit amet, consectetur
-                    </p>
+                  <div class="questions__block-btn">
+                    <b-button class="question__btn">2ta javob</b-button>
+                  </div>
+                  <div class="questions__block-ranking">
+                    <div class="questions__block-ranking-star">
+                      <vue-stars
+                        class="vue__star"
+                        name="rate"
+                        active-color="#FFC805"
+                        inactive-color="#282932"
+                        shadow-color="#FFC805"
+                        hover-color="#00aced"
+                        :max="5"
+                        :value="1"
+                        :readonly="false"
+                        char="★"
+                      />
+                    </div>
+                    <b-button class="question__btn">20000 so’m</b-button>
                   </div>
                 </div>
-                <div class="questions__block-time d-none d-md-block">
-                  <span>9:16</span>
-                  <span>23.07.2020</span>
-                </div>
-                <div class="questions__block-btn d-none d-md-block">
-                  <b-button class="question__btn">2ta javob</b-button>
-                </div>
-                <div class="questions__block-content d-none d-md-block">
+                <div class="questions__block-content">
                   <nuxt-link
                     class="questions__block-content-heading"
-                    :to="localePath(`/questions/${i}`)"
-                    >Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    :to="localePath(`/questions/${id}`)"
+                    >{{question.title}} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </nuxt-link>
                   <p class="questions__block-content-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem
-                    massa lectus tortor feugiat sagittis auctor porta
+                    {{question.question}} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sem massa lectus tortor feugiat sagittis auctor porta
                     penatibus.Lorem ipsum dolor sit amet, consectetur
                   </p>
                 </div>
-                <div class="questions__block-ranking d-none d-md-block">
-                  <div class="questions__block-ranking-star">
-                    <vue-stars
-                      class="vue__star"
-                      name="rate"
-                      active-color="#FFC805"
-                      inactive-color="#282932"
-                      shadow-color="#FFC805"
-                      hover-color="#00aced"
-                      :max="5"
-                      :value="1"
-                      :readonly="false"
-                      char="★"
-                    />
-                  </div>
-                  <b-button class="question__btn d-none d-md-block"
-                    >20000 so’m</b-button
-                  >
+              </div>
+              <div class="questions__block-time d-none d-md-block">
+                <span>{{question.answered_date.replace('T', ' ').replace('Z', ' ')}}</span>
+              </div>
+              <div class="questions__block-btn d-none d-md-block">
+                <b-button class="question__btn">2ta javob</b-button>
+              </div>
+              <div class="questions__block-content d-none d-md-block">
+                <nuxt-link
+                  class="questions__block-content-heading"
+                  :to="localePath(`/questions/${question.id}`)"
+                  >{{question.title}} 
+                </nuxt-link>
+                <p class="questions__block-content-text" v-html="question.question">
+                </p>
+              </div>
+              <div class="questions__block-ranking d-none d-md-block">
+                <div class="questions__block-ranking-star">
+                  <vue-stars
+                    class="vue__star"
+                    name="rate"
+                    active-color="#FFC805"
+                    inactive-color="#282932"
+                    shadow-color="#FFC805"
+                    hover-color="#00aced"
+                    :max="5"
+                    :value="1"
+                    :readonly="false"
+                    char="★"
+                  />
                 </div>
+                <b-button class="question__btn d-none d-md-block"
+                  >20000 so’m</b-button
+                >
               </div>
-              <div class="questions__block-more">
-                <b-button
-                  class="questions__block-more-btn"
-                  :to="localePath(`/questions`)"
-                >{{$t('questions__part.btn_all')}}
-                </b-button>
-              </div>
+            </div>
+            <div class="questions__block-more">
+              <b-button
+                class="questions__block-more-btn"
+                :to="localePath(`/questions`)"
+              >{{$t('questions__part.btn_all')}}
+              </b-button>
+            </div>
         </b-container>
       </div>
       <!-- end of question part -->
@@ -365,12 +357,17 @@
           </div>
 
           <b-row  data-aos="fade-up" data-aos-duration="500">
-            <b-col lg="3" md="4" sm="6">
+            <b-col 
+              lg="3" 
+              md="4" 
+              sm="6"
+
+            >
               <div class="our__service-item">
                 <nuxt-link
                   :to="localePath('/our-service')"
                   class="our__service-item-link"
-                >
+                > 
                   <img src="../assets/images/our-service/service1.png" alt="" />
                   <div class="our__service-item-type">
                     Oilaviy munosabatlar
@@ -605,7 +602,8 @@ export default {
             spaceBetween: 30
           }
         }
-      }
+      },
+      mainQuestions: []
     };
   },
   computed: {
@@ -615,10 +613,16 @@ export default {
     }
   },
   methods: {
-  
+    async getMainQuestion() {
+      await this.$axios.get('services/')
+        .then((res) => {
+          this.mainQuestions = res.data.results;
+          console.log('getMainQuestion', res)
+        })
+    }
   },
   mounted() {
-
+    this.getMainQuestion()
   },
   created() {
     this.$store.dispatch("getNews").then(() => {

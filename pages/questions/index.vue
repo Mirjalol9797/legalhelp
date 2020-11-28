@@ -51,7 +51,7 @@
                       <b-button class="question__btn price__btn"
                         >20000 so’m</b-button
                       >
-                      <span class="question__user">John Smith</span>
+                      <span class="question__user">{{question.answered_by.first_name}} {{question.answered_by.last_name}}</span>
                       <span class="question__place">Toshkent Shahri</span>
                     </div>
                   </div>
@@ -97,7 +97,7 @@
                   <b-button class="question__btn price__btn"
                     >20000 so’m</b-button
                   >
-                  <span class="question__user">John Smith</span>
+                  <span class="question__user">{{question.answered_by.first_name}} {{question.answered_by.last_name}}</span>
                   <span class="question__place">Toshkent Shahri</span>
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default {
       await this.$axios
         .get(`services/?limit=10&offset=${(this.page - 1) * 10}`)
         .then(res => {
-          console.log(res);
+          console.log('getQuestions', res);
           if (res.data.results.length > 0) {
             this.allProduct = res.data.count;
             this.questions = res.data.results;

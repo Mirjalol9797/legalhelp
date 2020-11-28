@@ -474,6 +474,8 @@
   }
   &-link {
     display: block;
+    overflow: hidden;
+    border-radius: 6px 6px 0px 0px;
   }
   img {
     border-radius: 6px 6px 0px 0px;
@@ -483,6 +485,7 @@
     height: 230px;
     object-fit: cover;
     object-position: bottom;
+    transition: all .4s ease;
   }
   &-type {
     font-family: $Cantata;
@@ -712,8 +715,9 @@
   font-size: 14px;
   line-height: 24px;
   color: #ffffff;
-  max-width: 83px;
+  max-width: 95px;
   padding-top: 15px;
+  width: 100%;
 }
 .questions__block-content {
   max-width: 640px;

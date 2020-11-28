@@ -10,12 +10,14 @@
                 :to="localePath(`/news/${singlePost.id}`)"
                 class="main__news-link"
               >
-                <img
-                  :src="$store.state.mediaURL + singlePost.thubmnail"
-                  height="380"
-                  width="702"
-                  alt=""
-                />
+                <div class="main__news-img">
+                  <img
+                    :src="$store.state.mediaURL + singlePost.thubmnail"
+                    height="380"
+                    width="702"
+                    alt=""
+                  />
+                </div>
               </nuxt-link>
             </b-col>
             <b-col lg="6">
@@ -56,12 +58,14 @@
                   :to="localePath(`/news/${item.id}`)"
                   class="news__item-link"
                 >
-                  <img
-                    :src="$store.state.mediaURL + item.thubmnail"
-                    height="185"
-                    width="362"
-                    alt=""
-                  />
+                  <div class="news__item-img">
+                    <img
+                      :src="$store.state.mediaURL + item.thubmnail"
+                      height="185"
+                      width="362"
+                      alt=""
+                    />
+                  </div>
                   <div class="news__item-content">
                     <h6 class="news__item-content-title">{{ item.title }}</h6>
                     <p

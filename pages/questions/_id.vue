@@ -48,10 +48,10 @@
                   </div>
                   <div class="question__further-info">
                     <b-button class="question__btn price__btn"
-                      >20000 so’m</b-button
+                      >{{questions_inner.price}} so’m</b-button
                     >
-                    <span class="question__user">John Smith</span>
-                    <span class="question__place">Toshkent Shahri</span>
+                    <!-- <span class="question__user">{{questions_inner.answered_by.first_name}} {{questions_inner.answered_by.last_name}}</span> -->
+                    <!-- <span class="question__place">Toshkent Shahri</span> -->
                   </div>
                 </div>
               </div>
@@ -77,9 +77,9 @@
                 />
               </div>
               <div class="question__further-info">
-                <b-button class="question__btn price__btn">20000 so’m</b-button>
-                <span class="question__user">John Smith</span>
-                <span class="question__place">Toshkent Shahri</span>
+                <b-button class="question__btn price__btn">{{questions_inner.price}} so’m</b-button>
+                <span class="question__user">Jons Smith</span>
+                <!-- <span class="question__place">Toshkent Shahri</span> -->
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@
               }}</span>
             </div>
           </div>
-          <div class="answer__text" v-html="questions_inner.question"></div>
+          <div class="answer__text" v-html="questions_inner.answer"></div>
         </div>
         <!-- /.answer__wrapper -->
       </b-container>
@@ -150,7 +150,7 @@ export default {
         .get(`services/${this.$route.params.id}/`)
         .then(res => {
           this.questions_inner = res.data;
-          console.log(res);
+          console.log('getSingleQuestions', res);
         })
         .catch(err => {
           console.log(err);
