@@ -11,7 +11,7 @@
             takliflaridan ma’qulini tanlang.
           </div>
           <b-row>
-            <b-col lg="4" md="6" v-for="( categoryid,index) of category" :key="index">
+            <b-col lg="4" md="6" v-for="(categoryid, index) of category" :key="index">
               <div class="type-of-documents">
                 <label class="type-of-documents-item" :id="categoryid">
                   <div :for="categoryid">
@@ -32,9 +32,13 @@
           </b-row>
           <div class="order-documents-form">
             <form @submit.prevent="onSubmit" class="registration__form">
+              <div class="name">
+                <label for="name">Исм</label>
+                <input type="text" id="name" v-model="form.customer">
+              </div>
               <div class="language">
                 <label for="language">Til</label>
-                <select name="" id="language" v-model="form.lang">
+                <select name="" id="language" v-model="form.language">
                   <option value="o'zbek">O’zbek</option>
                   <option value="Rus">Rus</option>
                 </select>
@@ -70,7 +74,7 @@
               </div>
               <div class="file">
                 <label for="file__input">Fayl</label>
-                <input type="file" value="Upload file" class="file__input" />
+                <input name="myFile" type="file" id="file__input" value="Upload file" class="file__input" />
               </div>
               <div class="registration__button-wrap">
                 <b-button class="registration__btn" type="submit">Davom etish</b-button>
@@ -90,10 +94,11 @@ export default {
       category: [],
       subcategory: [],
       form: {
-        lang:'',
+        language:'',
         category: "",
         text:'',
         title:'',
+        customer: ''
       }
     };
   },
@@ -104,23 +109,24 @@ export default {
       // console.log(this.subcategory)
     },
     async getCategory() {
-      await this.$axios.get("/v1/document/document_type/").then(res => {
+      await this.$axios.get("document/document_type/").then(res => {
         this.category = res.data;
         // this.subcategory= res.data[(this.checked-1)].sub_category
         // this.category.forEach((sub) => {
         //   this.subcategory.push({ id: sub.id, subArr: sub.sub_category  });
         // })
         console.log(res)
-        console.log(subcategory);
+        // console.log(subcategory);
       });
     },
     async getData(){
 
     },
     async onSubmit(){
-      await this.$axios.post("", {
-
-      })
+      await this.$axios.post("document/lawyer/", this.form)
+        .then((res) => {
+          console.log('onSubmit', this.form)
+        })
     }
   },
   mounted() {

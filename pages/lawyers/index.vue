@@ -62,36 +62,36 @@
                     <b-col lg="12" xl="2" class="lawyer__list-search-btn pr-0">
                       <input type="submit" :value="$t('search.search')">
                     </b-col>
-                        </b-row>
+                  </b-row>
                 </form>
                   <div class="lawyer__outer-list">
                     <b-row data-aos="fade-up" data-aos-duration="500">
-                      <b-col md="6" lg="4" xl="3" v-for="i of 12" :key="i" >
-                          <nuxt-link :to="localePath(`/lawyers/${i}`)" class="lawyer__card">
-                      <div class="lawyer__card-img">
-                          <img src="../../assets/images/lawyer-card/member1.jpg" alt="">
-                      </div>
-                      <div class="lawyer__card-info text-center">
-                          <div class="lawyer__card-name">John Smith</div>
-                          <span class="lawyer__card-place">{{$t('region.toshkent')}}</span>
-                          <p class="lawyer__card-category">{{$t('lawyers.category')}} : <span>Korporativ yurist</span></p>
-                          <span class="lawyer__card-rating">{{$t('lawyers.rating')}}: <span>4.0</span>
-                          <vue-stars
-                            class="vue__star"
-                            name="rate"
-                            active-color="#0028AA"
-                            inactive-color="#282932"
-                            shadow-color="##0028AA"
-                            hover-color="#00aced"
-                            :max="1"
-                            :value="1"
-                            :readonly="false"
-                            char="★"
-                          />
-                          </span>
-                          <div class="lawyer__card-success">{{$t('lawyers.success')}} <span class="lawyer__card-success-count">16</span></div>
-                      </div>
-                  </nuxt-link>
+                      <b-col md="6" lg="4" xl="3" v-for="lawyer of lawyers" :key="lawyer.id" >
+                      <nuxt-link :to="localePath(`/lawyers/${lawyer.id}`)" class="lawyer__card">
+                        <div class="lawyer__card-img">
+                            <img :src="lawyer.image" alt="">
+                        </div>
+                        <div class="lawyer__card-info text-center">
+                            <div class="lawyer__card-name">{{lawyer.first_name}} {{lawyer.last_name}}</div>
+                            <span class="lawyer__card-place">{{$t('region.toshkent')}}</span>
+                            <p class="lawyer__card-category">{{$t('lawyers.category')}} : <span>{{lawyer.services}}</span></p>
+                            <span class="lawyer__card-rating">{{$t('lawyers.rating')}}: <span>{{lawyer.rate}}</span>
+                            <vue-stars
+                              class="vue__star"
+                              name="rate"
+                              active-color="#0028AA"
+                              inactive-color="#282932"
+                              shadow-color="##0028AA"
+                              hover-color="#00aced"
+                              :max="lawyer.rate"
+                              :value="1"
+                              :readonly="false"
+                              char="★"
+                            />
+                            </span>
+                            <div class="lawyer__card-success">{{$t('lawyers.success')}} <span class="lawyer__card-success-count">16</span></div>
+                        </div>
+                      </nuxt-link>
                       </b-col>
                     </b-row>                         
                   </div>
@@ -103,8 +103,8 @@
     </div>
 </template>
 
-
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
@@ -113,5 +113,13 @@ export default {
       currentPage: 1,
     };
   },
+  computed: {
+    ...mapGetters({
+      lawyers: 'lawyers'
+    })
+  },
+  mounted() {
+    this.$store.dispatch('getLawyers')
+  }
 };
 </script>

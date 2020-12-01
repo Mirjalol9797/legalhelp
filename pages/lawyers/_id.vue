@@ -7,7 +7,7 @@
             <b-col lg="4" md="12">
               <div class="lawyer-image-wrapper">
                 <img
-                  src="../../assets/images/lawyer-profile/lawyer.jpg"
+                  :src="lawyerItem.image"
                   height="258"
                   width="258"
                   alt
@@ -40,10 +40,11 @@
                 </div>
               </div>
             </b-col>
+            {{lawyerItem}}
             <b-col lg="4" md="12">
               <div class="profile-info">
-                <span class="profile-info-name">John Smith</span>
-                <span class="profile-info-location">Toshkent Shahri</span>
+                <span class="profile-info-name">Name: {{lawyerItem.first_name}}  {{lawyerItem.last_name}}</span>
+                <span class="profile-info-location">Region: {{lawyerItem.region}}</span>
                 <span class="profile-info-number">998 00 000 00 00</span>
                 <span class="profile-info-email">example.@mail.ru</span>
               </div>
@@ -120,3 +121,29 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      lawyerItem: []
+    }
+  },
+  methods: {
+    async getLawyers() {
+      await this.$axios.get(`lawyer/list-search/${this.$route.params.id}/`)
+        .then((res) => {
+          this.lawyerItem = res.data;
+          console.log('123123131', res.data)
+        })
+        .catch(() => {
+          
+        })
+    }
+  },
+  mounted() {
+    this.getLawyers()
+    console.log("ID ",this.$route.params.id)
+  }
+}
+</script>

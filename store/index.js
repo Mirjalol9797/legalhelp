@@ -12,6 +12,7 @@ const store = () => new Vuex.Store({
         mediaURL: 'http://188.225.79.96/',
         phone_number: "",
         token: "",
+        lawyers: ''
     },
     getters: { 
         news(state) {
@@ -23,6 +24,9 @@ const store = () => new Vuex.Store({
         questions(state) {
             return state.questions;
         },
+        lawyers(state) {
+            return state.lawyers;
+        }
     },
     mutations: {
         setToken(state, token) {
@@ -40,6 +44,9 @@ const store = () => new Vuex.Store({
         setQuestions(state,payload){
             state.questions=payload;
         },
+        setLawyers(state, lawyer) {
+            state.lawyers = lawyer
+        }
         
     },
     actions: {
@@ -58,9 +65,7 @@ const store = () => new Vuex.Store({
 
                 })
                 .catch(err => console.log(err))
-        },
-
-        
+        },      
         async getNews({ commit }) {
             await this.$axios.get('posts/')
                 .then(res => {
@@ -79,6 +84,13 @@ const store = () => new Vuex.Store({
                 console.log(err);
             })
         },
+        async getLawyers({commit}) {
+            await this.$axios.get('lawyer/list-search/')
+                .then((res) => {
+                    commit('setLawyers', res.data);
+                    console.log('getLawyers', res.data)
+                })
+        }
     },
 })
 

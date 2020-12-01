@@ -189,7 +189,7 @@
                 <div class="questions__block-content">
                   <nuxt-link
                     class="questions__block-content-heading"
-                    :to="localePath(`/questions/${id}`)"
+                    :to="localePath(`/questions/${question.id}`)"
                     >{{question.title}} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </nuxt-link>
                   <p class="questions__block-content-text">
@@ -294,29 +294,33 @@
             <h4 class="swiper__heading">{{$t('swiper_wrapper.title')}}</h4>
             <span class="line__swiper d-none d-md-block"></span>
           </div>
+          
           <b-row data-aos="fade-up" data-aos-duration="500">
             <b-col xl="12">
               <swiper ref="mySwiper" :options="swiperOptions">
-                <swiper-slide v-for="i of 6" :key="i">
+                <swiper-slide 
+                  v-for="lawyer in lawyers" 
+                  :key="lawyer.id"
+                >
                   <nuxt-link
-                    :to="localePath(`/lawyers/${i}`)"
+                    :to="localePath(`/lawyers/${lawyer.id}`)"
                     class="swiper__link"
                   >
                     <div class="lawyer__card">
                       <div class="lawyer__card-img">
                         <img
-                          src="../assets/images/lawyer-card/member1.jpg"
+                          :src="lawyer.image"
                           alt=""
                         />
                       </div>
                       <div class="lawyer__card-info text-center">
-                        <div class="lawyer__card-name">John Smith</div>
-                        <span class="lawyer__card-place">Toshkent shahri</span>
+                        <div class="lawyer__card-name">{{lawyer.first_name}} {{lawyer.last_name}}</div>
+                        <span class="lawyer__card-place">{{lawyer.region}}</span>
                         <p class="lawyer__card-category">
-                          Kategoriya : <span>Korporativ yurist</span>
+                          Kategoriya : <span>{{lawyer.services}}</span>
                         </p>
                         <span class="lawyer__card-rating"
-                          >Reyting: <span>4.0</span>
+                          >Reyting: <span>{{lawyer.rate}}</span>
                           <vue-stars
                             class="vue__star"
                             name="rate"
@@ -324,7 +328,7 @@
                             inactive-color="#282932"
                             shadow-color="#FFC805"
                             hover-color="#00aced"
-                            :max="1"
+                            :max="lawyer.rate"
                             :value="1"
                             :readonly="false"
                             char="★"
@@ -345,7 +349,6 @@
           </b-row>
         </b-container>
       </div>
-
       <div class="our__service">
         <b-container>
           <div class="our__service-header" data-aos="fade-up" data-aos-duration="500">
@@ -506,19 +509,11 @@
             <b-container>
               <b-row>
                 <b-col lg="5" class=" order-2 order-lg-1">
-                  <input
-                    type="email"
-                    class="email"
-                    :placeholder="$t('form_wrap.input_email')" 
-                  />
-                  <input type="text" class="name" :placeholder="$t('form_wrap.input_name')" />
-                  <input
-                    type="tel"
-                    class="phone__number"
-                    :placeholder="$t('form_wrap.input_tel')"
-                  />
-
+                  <!-- <input type="email" class="email" :placeholder="$t('form_wrap.input_email')" /> -->
+                  <!-- <input type="text" class="name" :placeholder="$t('form_wrap.input_name')" /> -->
+                  <!-- <input type="tel" class="phone__number" :placeholder="$t('form_wrap.input_tel')"/> -->
                   <input type="text" class="topic" :placeholder="$t('form_wrap.input_theme')" />
+                  <textarea name="textarea" id="" class="textarea" :placeholder="$t('form_wrap.input_ques')"></textarea>
                 </b-col>
                 <b-col lg="7" class=" order-1 order-lg-2">
                   <div class="info__wrapper">
@@ -543,12 +538,7 @@
                   <!-- /.info__wrapper -->
                 </b-col>
               </b-row>
-              <textarea
-                name="textarea"
-                id=""
-                class="textarea"
-                :placeholder="$t('form_wrap.input_ques')"
-              ></textarea>
+              
             </b-container>
             <b-button class="question__btn submit__btn">{{$t('form_wrap.btn')}}</b-button>
           </form>
@@ -607,8 +597,11 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["news"]),
-     singlePost() {
+    ...mapGetters({
+      news: "news",
+      lawyers: 'lawyers'
+    }),
+    singlePost() {
       return this.news;
     }
   },
@@ -617,12 +610,13 @@ export default {
       await this.$axios.get('services/')
         .then((res) => {
           this.mainQuestions = res.data.results;
-          console.log('getMainQuestion', res)
+          // console.log('getMainQuestion', res)
         })
     }
   },
   mounted() {
-    this.getMainQuestion()
+    this.getMainQuestion(),
+    this.$store.dispatch('getLawyers')
   },
   created() {
     this.$store.dispatch("getNews").then(() => {

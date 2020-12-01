@@ -94,14 +94,17 @@ export default {
       }
     },
     async getCategory() {
-      await this.$axios.get("v1/document/category/").then(res => {
+      await this.$axios.get("document/category/").then(res => {
         this.category = res.data;
-        console.log(res);
+        console.log('getCategory', res);
       });
     },
-    onSubmit() {
-   
-    }
+    async onSubmit() {
+      await this.$axios.post('document/customer/', this.form)
+        .then((res) => {
+          console.log('onSubmit')
+        })
+    } 
 },
   mounted() {
     this.getCategory();
