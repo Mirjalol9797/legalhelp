@@ -483,9 +483,10 @@
 
   .lawyer-image-wrapper {
     img {
-      max-width: 258px !important;
-      max-height: 258px !important;
+      width: 258px !important;
+      height: 258px !important;
       border: 6px solid #b08e44 !important;
+      object-fit: cover;
     }
   }
 

@@ -341,10 +341,10 @@
                             char="★"
                           />
                         </span>
-                        <div class="lawyer__card-success">
+                        <!-- <div class="lawyer__card-success">
                           Muvaffaqiyatli ishlar soni
                           <span class="lawyer__card-success-count">16</span>
-                        </div>
+                        </div> -->
                       </div>
                     </div>
                   </nuxt-link>

@@ -35,7 +35,7 @@
                   </button>
 
                   <button class="btn btn-sm btn-dark btn-circle">
-                    75 000 so`mdan
+                    {{lawyerItem.service_price}} so`mdan
                   </button>
                 </div>
               </div>
@@ -44,20 +44,13 @@
               <div class="profile-info">
                 <span class="profile-info-name">{{lawyerItem.first_name}}  {{lawyerItem.last_name}}</span>
                 <span class="profile-info-location">{{lawyerItem.region}}</span>
-                <span class="profile-info-number">{{$auth.user.user}}</span>
+                <span class="profile-info-number">90 999 00 00</span>
                 <span class="profile-info-email">{{$auth.user.email}}</span>
               </div>
             </b-col>
             <b-col lg="4" md="12">
               <div class="lawyer-profile-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem
-                massa lectus tortor feugiat sagittis auctor porta
-                penatibus.Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Sem massa lectus tortor feugiat sagittis auctor porta
-                penatibus.Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Sem massa lectus tortor feugiat sagittis auctor porta
-                penatibus.Lorem ipsum
+                {{lawyerItem.description}}
               </div>
             </b-col>
           </b-row>
@@ -91,8 +84,7 @@
               <div class="degree-wrapper">
                 <div class="degree">Ilmiy darajasi</div>
                 <div class="graduated">
-                  2016-yil. Bakalavr. Toshkent davlat yuridik universiteti -
-                  "Jinoiy-huquqiy faoliyat" yo'nalishi.
+                  {{lawyerItem.university}}
                 </div>
               </div>
             </b-col>
@@ -100,8 +92,7 @@
               <div class="activity-wrapper">
                 <div class="activity-header">Ish faoliyati</div>
                 <div class="activity">
-                  2016 –2018-yillar - «BUSINESS LEGAL ADVISERS» advokatlik
-                  firmasida advokat yordamchisi
+                  {{lawyerItem.current_work}}
                 </div>
               </div>
             </b-col>

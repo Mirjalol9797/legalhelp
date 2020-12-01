@@ -93,7 +93,7 @@
                               char="★"
                             />
                             </span>
-                            <div class="lawyer__card-success">{{$t('lawyers.success')}} <span class="lawyer__card-success-count">16</span></div>
+                            <!-- <div class="lawyer__card-success">{{$t('lawyers.success')}} <span class="lawyer__card-success-count">16</span></div> -->
                         </div>
                       </nuxt-link>
                       </b-col>
