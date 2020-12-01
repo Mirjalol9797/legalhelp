@@ -45,14 +45,13 @@
             <div class="index-footer-item">
               <h4 class="index-footer-item-heading">{{$t('footer_time.title')}}</h4>
               <ul class="working-hours">
-                <li class="working-hours-item">{{$t('footer_time.monday')}}</li>
-                <li class="working-hours-item">{{$t('footer_time.tues')}}</li>
-                <li class="working-hours-item">{{$t('footer_time.wend')}}</li>
-                <li class="working-hours-item">{{$t('footer_time.thur')}}</li>
-                <li class="working-hours-item">{{$t('footer_time.frid')}}</li>
-                <li class="working-hours-item">{{$t('footer_time.satur')}}</li>
-                <li class="working-hours-item">{{$t('footer_time.sund')}}</li>
-                   
+                <li :class="{ active:  currentDay === 'Понедельник'}" class="working-hours-item">{{$t('footer_time.monday')}}</li>
+                <li :class="{ active:  currentDay === 'Вторник'}" class="working-hours-item">{{$t('footer_time.tues')}}</li>
+                <li :class="{ active:  currentDay === 'Среда'}" class="working-hours-item">{{$t('footer_time.wend')}}</li>
+                <li :class="{ active:  currentDay === 'Четверг'}" class="working-hours-item">{{$t('footer_time.thur')}}</li>
+                <li :class="{ active:  currentDay === 'Пятница'}" class="working-hours-item">{{$t('footer_time.frid')}}</li>
+                <li :class="{ active:  currentDay === 'Суббота'}" class="working-hours-item">{{$t('footer_time.satur')}}</li>
+                <li :class="{ active:  currentDay === 'Воскресение'}" class="working-hours-item">{{$t('footer_time.sund')}}</li>
               </ul>
             </div>
           </b-col>
@@ -68,3 +67,19 @@
       </footer>
     </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      days: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресение']
+    }
+  },
+  computed: {
+    currentDay () {
+      const cuttentDayIndex = new Date().getDay();
+      return this.days[cuttentDayIndex  - 1]
+    }
+  }
+}
+</script>

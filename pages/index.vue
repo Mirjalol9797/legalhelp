@@ -307,9 +307,10 @@
                   :key="lawyer.id"
                 >
                   <nuxt-link
-                    :to="localePath(`/lawyers/${lawyer.id}`)"
+                    :to="localePath('/lawyers/'+lawyer.id)"                    
                     class="swiper__link"
                   >
+                  <!-- :to="localePath(`/lawyers/${lawyer.id}`)" -->
                     <div class="lawyer__card">
                       <div class="lawyer__card-img">
                         <img

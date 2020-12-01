@@ -22,13 +22,16 @@ color: #C1C1C1;
 .working-hours{
     margin-top: 32px;
     &-item{
-font-family: $Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 15px;
-line-height: 22px;
-color: #C1C1C1;
-margin-bottom: 15px;
+        font-family: $Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 22px;
+        color: #C1C1C1;
+        margin-bottom: 15px;
+    }
+    .active {
+        color: #14bced;
     }
 }
 .index-address{

@@ -92,7 +92,7 @@
 }
 .main__news-link {
   display: block;
-  height: 380px;
+  // height: 380px;
   transition: all 0.3s ease;
   img {
     width: 100%;
@@ -199,5 +199,18 @@ margin-top: 50px;
     .question__btn {
       margin-top: 20px;
     }
+  }
+}
+
+@media (max-width: 576px) {
+  .news__header {
+    .container {
+      max-width: 360px;
+      border-radius: 10px;
+    }
+  }
+  .main__news-link img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 }

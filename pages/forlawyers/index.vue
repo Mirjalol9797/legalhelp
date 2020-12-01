@@ -59,16 +59,16 @@
                   >
                 </select>
               </div>
+              
             </b-col>
-            <b-col lg="3" class="overflow-hidden">
-              <input
+            <b-col lg="7" class="overflow-hidden form__for-lawyers-textarea">
+              <input type="file" @change="fileUpload" accept="image/*" class="for__lawyers-file">
+              <!-- <input
                 type="file"
                 class="file__for-lawyers"
                 @change="fileUpload"
                 accept="image/*"
-              />
-            </b-col>
-            <b-col lg="4" class="text-center">
+              /> -->
               <textarea
                 name="textearea__for-lawyers"
                 class="textearea__for-lawyers"
@@ -76,6 +76,14 @@
                 :placeholder="$t('forlawyers.bio')"
               ></textarea>
             </b-col>
+            <!-- <b-col lg="4" class="text-center">
+              <textarea
+                name="textearea__for-lawyers"
+                class="textearea__for-lawyers"
+                v-model="form.description"
+                :placeholder="$t('forlawyers.bio')"
+              ></textarea>
+            </b-col> -->
           </b-row>
           <div class="for__lawyers-btn-wrap">
             <b-button type="submit" class="for__lawyers-btn">{{

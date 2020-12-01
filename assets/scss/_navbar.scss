@@ -167,6 +167,14 @@ border:2px solid #f2b50f;
     font-family: 'Montserrat' !important;
 }
 
+@media (max-width: 1600px) {
+    .navbar-nav .dropdown-menu {
+        right: 0;
+        left: auto;
+        top: 110%;
+    }
+}
+
 @media (max-width: 1200px) {
     .language__list {
         .dropdown-menu-right {

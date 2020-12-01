@@ -66,8 +66,8 @@
                 </form>
                   <div class="lawyer__outer-list">
                     <b-row data-aos="fade-up" data-aos-duration="500">
-                      <b-col md="6" lg="4" xl="3" v-for="lawyer of lawyers" :key="lawyer.id" >
-                      <nuxt-link :to="localePath(`/lawyers/${lawyer.id}`)" class="lawyer__card">
+                      <b-col md="6" lg="4" xl="3" v-for="(lawyer, index) of lawyers" :key="index.id" >
+                      <nuxt-link :to="localePath('/lawyers/'+lawyer.id)" class="lawyer__card">
                         <div class="lawyer__card-img">
                             <img :src="lawyer.image" alt="">
                         </div>

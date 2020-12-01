@@ -130,7 +130,7 @@ export default {
     }
   },
   methods: {
-    async getLawyers() {
+    async getLawyersItem() {
       await this.$axios.get(`lawyer/list-search/${this.$route.params.id}/`)
         .then((res) => {
           this.lawyerItem = res.data;
@@ -142,7 +142,7 @@ export default {
     }
   },
   mounted() {
-    this.getLawyers()
+    this.getLawyersItem()
     console.log("ID ",this.$route.params.id)
   }
 }

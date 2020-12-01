@@ -4,6 +4,7 @@
   background-size: cover;
   padding-top: 30px;
   padding-bottom: 100px;
+  padding-bottom: 20px;
 
   .profile-inner {
     max-width: 1080px;
@@ -19,9 +20,6 @@
     flex-direction: column;
     align-items: center;
   }
-
-  padding-right: 30px;
-  padding-bottom: 20px;
 
   .owner-pic {
     display: inline-block;
@@ -637,5 +635,49 @@
   .field-work-header{
     margin-top: 20px;
     margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-info {
+    margin-left: 0;
+  }
+  .user__profile-card {
+    .col-auto {
+      width: 100%;
+    }
+  }
+  .user__profile {
+    &-documents {
+      &-title {
+        right: auto;
+        left: 0;
+      }
+      &-price {
+        width: 100%;
+        max-width: 185px;
+        span {
+          font-size: 14px;
+        }
+      }
+      &-user {
+        max-width: 185px;
+        width: 100%;
+      }
+      &-payment {
+        max-width: 185px;
+        width: 100%;
+      }
+      &-delete {
+        max-width: 185px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .user__profile-question-info {
+    flex-direction: column;
   }
 }
