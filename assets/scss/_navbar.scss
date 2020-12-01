@@ -166,3 +166,12 @@ border:2px solid #f2b50f;
 .search__part{
     font-family: 'Montserrat' !important;
 }
+
+@media (max-width: 1200px) {
+    .language__list {
+        .dropdown-menu-right {
+            margin: auto;
+            margin-bottom: 10px;
+        }
+    }
+}

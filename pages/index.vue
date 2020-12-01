@@ -29,10 +29,10 @@
                 {{$t('about_service.subtitle')}} 
                 <!-- <i>{{$t('about_service.author_name')}}</i> -->
               </p>
-              <div class="lawyer__user">
+              <!-- <div class="lawyer__user">
                 <img src="../assets/images/lawyer.jpg" alt="" />
                 <span class="lawyer__user-name">{{$t('about_service.user_name')}}</span>
-              </div>
+              </div> -->
             </b-col>
             <b-col lg="6">
               <div class="about__service-img-wrap">
@@ -162,11 +162,13 @@
             <div class="questions__block-item test" v-for="(question, index) of mainQuestions" :key="index.id" data-aos="fade-up" data-aos-duration="500">
               <div class="questions__block-item-mobile d-block d-md-none">
                 <div class="questions__block-item-mobile-inner">
-                  <div class="questions__block-time ">
-                    <span>{{question.answered_date.replace('T', ' / ').replace('Z', ' ')}}</span>
-                  </div>
-                  <div class="questions__block-btn">
-                    <b-button class="question__btn">2ta javob</b-button>
+                  <div>
+                    <div class="questions__block-time ">
+                      <span>{{question.answered_date.replace('T', ' / ').replace('Z', ' ')}}</span>
+                    </div>
+                    <div class="questions__block-btn">
+                      <b-button class="question__btn">2ta javob</b-button>
+                    </div>
                   </div>
                   <div class="questions__block-ranking">
                     <div class="questions__block-ranking-star">
@@ -199,11 +201,13 @@
                   </p>
                 </div>
               </div>
-              <div class="questions__block-time d-none d-md-block">
-                <span>{{question.answered_date.replace('T', ' ').replace('Z', ' ')}}</span>
-              </div>
-              <div class="questions__block-btn d-none d-md-block">
-                <b-button class="question__btn">2ta javob</b-button>
+              <div>
+                <div class="questions__block-time d-none d-md-block">
+                  <span>{{question.answered_date.replace('T', ' ')}}</span>
+                </div>
+                <div class="questions__block-btn d-none d-md-block">
+                  <b-button class="question__btn">2ta javob</b-button>
+                </div>
               </div>
               <div class="questions__block-content d-none d-md-block">
                 <nuxt-link
