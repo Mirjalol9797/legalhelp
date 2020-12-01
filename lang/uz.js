@@ -14,7 +14,7 @@ export default {
         subtitle: `Malakali yuristlar xizmatidan foydalanib, muammoli savollarga asosli 
                     va sifatli javob oling. Ko’rsatilgan xizmat 
                     sizni qanoatlantirmasa, pulingiz 100% qaytarib beriladi.`,
-        online: 'ONLINE XIZMAT',
+        online: 'SAVOL SO\'RASH',
     },
     about_service: {
         title: 'Tajribali yuristlar sizga yordam berishga tayyor.',

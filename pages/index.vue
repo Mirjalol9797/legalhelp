@@ -10,7 +10,7 @@
             <p class="header__motto">
               {{$t('header.subtitle')}}
             </p>
-            <nuxt-link to="" class="online__service-link"
+            <nuxt-link :to="localePath('/reg')" class="online__service-link"
               >{{ $t("header.online") }}
               <img src="../assets/images/index/Arrow.svg" alt="arrow"
             /></nuxt-link>
