@@ -322,7 +322,9 @@
                         <div class="lawyer__card-name">{{lawyer.first_name}} {{lawyer.last_name}}</div>
                         <span class="lawyer__card-place">{{lawyer.region}}</span>
                         <p class="lawyer__card-category">
-                          Kategoriya : <span>{{lawyer.services}}</span>
+                          Kategoriya : <span v-for="service of lawyer.services" :key="service.id">
+                            {{service}} <br>
+                          </span>
                         </p>
                         <span class="lawyer__card-rating"
                           >Reyting: <span>{{lawyer.rate}}</span>

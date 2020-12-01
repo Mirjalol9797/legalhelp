@@ -20,7 +20,7 @@
                     inactive-color="#282932"
                     shadow-color="#FFC805"
                     hover-color="#00aced"
-                    :max="5"
+                    :max="lawyerItem.rate"
                     :value="3"
                     :readonly="false"
                     char="★"
@@ -40,13 +40,12 @@
                 </div>
               </div>
             </b-col>
-            {{lawyerItem}}
             <b-col lg="4" md="12">
               <div class="profile-info">
-                <span class="profile-info-name">Name: {{lawyerItem.first_name}}  {{lawyerItem.last_name}}</span>
-                <span class="profile-info-location">Region: {{lawyerItem.region}}</span>
-                <span class="profile-info-number">998 00 000 00 00</span>
-                <span class="profile-info-email">example.@mail.ru</span>
+                <span class="profile-info-name">{{lawyerItem.first_name}}  {{lawyerItem.last_name}}</span>
+                <span class="profile-info-location">{{lawyerItem.region}}</span>
+                <span class="profile-info-number">{{$auth.user.user}}</span>
+                <span class="profile-info-email">{{$auth.user.email}}</span>
               </div>
             </b-col>
             <b-col lg="4" md="12">
@@ -109,9 +108,10 @@
             <b-col lg="6">
               <div class="filed-work">
                 <div class="field-work-header">Huquq sohasi</div>
-                <span class="btn mb-2 p-2 pl-3 pr-3 mr-3 s-span-style ">
+                <span class="btn mb-2 p-2 pl-3 pr-3 mr-3 s-span-style" v-for="(service,index) of lawyerItem.services" :key="index.id">
                   <font-awesome-icon :icon="['fas', 'home']" />
-                  Fuqarolik huquqi (umumiy masalalar)
+                  <!-- Fuqarolik huquqi (umumiy masalalar) -->
+                  {{service}}
                 </span>
               </div>
             </b-col>
@@ -134,7 +134,7 @@ export default {
       await this.$axios.get(`lawyer/list-search/${this.$route.params.id}/`)
         .then((res) => {
           this.lawyerItem = res.data;
-          console.log('123123131', res.data)
+          // console.log('123123131', res.data)
         })
         .catch(() => {
           
@@ -143,7 +143,6 @@ export default {
   },
   mounted() {
     this.getLawyersItem()
-    console.log("ID ",this.$route.params.id)
   }
 }
 </script>

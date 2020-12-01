@@ -74,7 +74,11 @@
                         <div class="lawyer__card-info text-center">
                             <div class="lawyer__card-name">{{lawyer.first_name}} {{lawyer.last_name}}</div>
                             <span class="lawyer__card-place">{{$t('region.toshkent')}}</span>
-                            <p class="lawyer__card-category">{{$t('lawyers.category')}} : <span>{{lawyer.services}}</span></p>
+                            <p class="lawyer__card-category">{{$t('lawyers.category')}} : 
+                              <span v-for="service of lawyer.services" :key="service.id">
+                                {{service}} <br>
+                              </span>
+                            </p>
                             <span class="lawyer__card-rating">{{$t('lawyers.rating')}}: <span>{{lawyer.rate}}</span>
                             <vue-stars
                               class="vue__star"
