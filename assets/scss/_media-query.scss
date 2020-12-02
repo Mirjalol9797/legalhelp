@@ -254,10 +254,10 @@
 
   .question__item {
     display: flex !important;
-    padding-left: 33px !important;
+    padding-left: 25px !important;
     padding-bottom: 40px !important;
     padding-top: 40px !important;
-    padding-right: 35px !important;
+    padding-right: 25px !important;
 
     &-info {
       margin-left: 33px !important;
@@ -435,7 +435,7 @@
     margin-right: 12% !important;
 
     label {
-      max-width: 186px !important;
+      max-width: 240px !important;
     }
   }
 
@@ -483,9 +483,10 @@
 
   .lawyer-image-wrapper {
     img {
-      max-width: 258px !important;
-      max-height: 258px !important;
+      width: 258px !important;
+      height: 258px !important;
       border: 6px solid #b08e44 !important;
+      object-fit: cover;
     }
   }
 
@@ -777,7 +778,6 @@
   //registration
   .registration__form {
     label {
-      text-align: right !important;
       white-space: nowrap !important;
     }
   }
@@ -864,5 +864,24 @@
   .lawyer__outer-heading {
     font-size: 48px !important;
     padding: 70px 0 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .registration__form {
+    input {
+      margin-bottom: 10px !important;
+      max-width: 100% !important;
+    }
+    label {
+      max-width: 100% !important;
+    }
+    #category {
+      margin-bottom: 10px !important;
+      max-width: 100% !important;
+    }
+  }
+  .step__two-registration .registration-submit-wrap {
+    margin-top: 15px;
   }
 }

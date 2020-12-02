@@ -6,7 +6,6 @@
   font-family: "Montserrat" !important;
   &__item {
     margin-right: 0;
-    text-align: center;
   }
 
   &__logo {
@@ -46,11 +45,11 @@
   color: white;
 }
 .other__item {
-  text-align: center;
+  text-align: left;
 }
 .footer__menu {
   margin: 20px 0;
-  text-align: center;
+  // text-align: center;
   &-list {
     margin-top: 5px;
   }
@@ -75,7 +74,6 @@
   margin-top: 30px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .social__footer-item:nth-child(2) {

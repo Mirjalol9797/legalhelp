@@ -47,6 +47,11 @@
     color: #c8c8c8;
     margin-left: 50px;
   }
+
+  &-file {
+    margin: 0 !important;
+    margin-bottom: 14px !important;
+  }
 }
 
 .form__for-lawyers {
@@ -73,6 +78,10 @@
     padding-bottom: 10px;
     padding-left: 30px;
     padding-right: 30px;
+
+    option {
+      color: #000;
+    }
 
     &:focus,
     &:active {
@@ -111,10 +120,10 @@
 }
 
 .file__for-lawyers {
-  max-width: 267px !important;
+  // max-width: 267px !important;
   width: 100%;
   display: block;
-  height: 366px !important;
+  // height: 366px !important;
   padding-top: 32px !important;
   padding-left: 30px !important;
   padding-right: 36px !important;
@@ -122,15 +131,17 @@
   display: block;
   // margin-top: 20px !important;
   // margin-bottom: 180px !important;
+  appearance: none;
 
   &::-webkit-file-upload-button {
     visibility: hidden;
     -webkit-appearance: none;
     -webkit-user-select: none;
     overflow: hidden;
+    appearance: none;
   }
   &::before {
-    content: "rasmingizni \A yuklang";
+    // content: "rasmingizni \A yuklang";
     display: inline-block;
     outline: none;
     font-family: $Poppins;
@@ -147,21 +158,21 @@
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 60px;
-    background: #c4c4c4;
+    // background: #c4c4c4;
     -webkit-user-select: none;
     -webkit-appearance: none;
     overflow: hidden;
     cursor: pointer;
-    background-image: url("../images/for-lawyers/camera.svg");
+    // background-image: url("../images/for-lawyers/camera.svg");
     background-repeat: no-repeat;
     background-position: center center;
   }
 }
 .textearea__for-lawyers {
   resize: none;
-  max-width: 383px;
+  max-width: 398px;
   width: 100%;
-  height: 366px;
+  height: 355px;
   background: rgba(241, 240, 240, 0.3);
   border-radius: 8px;
   font-family: $Poppins;
@@ -188,5 +199,19 @@
     border-radius: 8px;
     padding: 11px 34px;
     border: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .for__lawyers-file {
+    margin: auto !important;
+  }
+  .form__for-lawyers-textarea {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .textearea__for-lawyers {
+    margin-top: 14px;
   }
 }

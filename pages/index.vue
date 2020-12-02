@@ -10,7 +10,7 @@
             <p class="header__motto">
               {{$t('header.subtitle')}}
             </p>
-            <nuxt-link to="" class="online__service-link"
+            <nuxt-link :to="localePath('/reg')" class="online__service-link"
               >{{ $t("header.online") }}
               <img src="../assets/images/index/Arrow.svg" alt="arrow"
             /></nuxt-link>
@@ -29,10 +29,10 @@
                 {{$t('about_service.subtitle')}} 
                 <!-- <i>{{$t('about_service.author_name')}}</i> -->
               </p>
-              <div class="lawyer__user">
+              <!-- <div class="lawyer__user">
                 <img src="../assets/images/lawyer.jpg" alt="" />
                 <span class="lawyer__user-name">{{$t('about_service.user_name')}}</span>
-              </div>
+              </div> -->
             </b-col>
             <b-col lg="6">
               <div class="about__service-img-wrap">
@@ -162,11 +162,13 @@
             <div class="questions__block-item test" v-for="(question, index) of mainQuestions" :key="index.id" data-aos="fade-up" data-aos-duration="500">
               <div class="questions__block-item-mobile d-block d-md-none">
                 <div class="questions__block-item-mobile-inner">
-                  <div class="questions__block-time ">
-                    <span>{{question.answered_date.replace('T', ' / ').replace('Z', ' ')}}</span>
-                  </div>
-                  <div class="questions__block-btn">
-                    <b-button class="question__btn">2ta javob</b-button>
+                  <div>
+                    <div class="questions__block-time ">
+                      <span>{{question.answered_date.replace('T', ' / ').replace('Z', ' ')}}</span>
+                    </div>
+                    <div class="questions__block-btn">
+                      <b-button class="question__btn">2ta javob</b-button>
+                    </div>
                   </div>
                   <div class="questions__block-ranking">
                     <div class="questions__block-ranking-star">
@@ -199,11 +201,13 @@
                   </p>
                 </div>
               </div>
-              <div class="questions__block-time d-none d-md-block">
-                <span>{{question.answered_date.replace('T', ' ').replace('Z', ' ')}}</span>
-              </div>
-              <div class="questions__block-btn d-none d-md-block">
-                <b-button class="question__btn">2ta javob</b-button>
+              <div>
+                <div class="questions__block-time d-none d-md-block">
+                  <span>{{question.answered_date.replace('T', ' ')}}</span>
+                </div>
+                <div class="questions__block-btn d-none d-md-block">
+                  <b-button class="question__btn">2ta javob</b-button>
+                </div>
               </div>
               <div class="questions__block-content d-none d-md-block">
                 <nuxt-link
@@ -303,9 +307,10 @@
                   :key="lawyer.id"
                 >
                   <nuxt-link
-                    :to="localePath(`/lawyers/${lawyer.id}`)"
+                    :to="localePath('/lawyers/'+lawyer.id)"                    
                     class="swiper__link"
                   >
+                  <!-- :to="localePath(`/lawyers/${lawyer.id}`)" -->
                     <div class="lawyer__card">
                       <div class="lawyer__card-img">
                         <img
@@ -317,7 +322,9 @@
                         <div class="lawyer__card-name">{{lawyer.first_name}} {{lawyer.last_name}}</div>
                         <span class="lawyer__card-place">{{lawyer.region}}</span>
                         <p class="lawyer__card-category">
-                          Kategoriya : <span>{{lawyer.services}}</span>
+                          Kategoriya : <span v-for="service of lawyer.services" :key="service.id">
+                            {{service}} <br>
+                          </span>
                         </p>
                         <span class="lawyer__card-rating"
                           >Reyting: <span>{{lawyer.rate}}</span>
@@ -334,10 +341,10 @@
                             char="★"
                           />
                         </span>
-                        <div class="lawyer__card-success">
+                        <!-- <div class="lawyer__card-success">
                           Muvaffaqiyatli ishlar soni
                           <span class="lawyer__card-success-count">16</span>
-                        </div>
+                        </div> -->
                       </div>
                     </div>
                   </nuxt-link>

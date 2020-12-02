@@ -12,7 +12,7 @@ const store = () => new Vuex.Store({
         mediaURL: 'http://188.225.79.96/',
         phone_number: "",
         token: "",
-        lawyers: ''
+        lawyers: []
     },
     getters: { 
         news(state) {
@@ -73,7 +73,7 @@ const store = () => new Vuex.Store({
                     commit('setNews', res.data.results);
                 })
                 .catch(err => {
-                    console.log(err);
+                    console.log(err); 
                 })
         },
         async getQuestions({commit},payload){
