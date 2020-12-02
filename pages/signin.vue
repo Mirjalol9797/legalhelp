@@ -5,7 +5,7 @@
         <b-container>
           <div class="step__two-registration">
             <div class="registration__header">
-              <nuxt-link to="" class="registration__arrow-link">
+              <nuxt-link to="/" class="registration__arrow-link">
                 <img src="../assets/images/registration/left-arrow.svg" />
               </nuxt-link>
             </div>
