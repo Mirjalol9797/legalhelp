@@ -16,9 +16,6 @@
               {{ $auth.user.first_name }} {{ $auth.user.last_name }}
             </span>
             <span class="profile-info-location">
-            <!-- {{
-              $auth.user.region.title_uz
-            }} -->
             </span>
             <span class="profile-info-number">+998 {{ $auth.user.user }}</span>
             <span class="profile-info-email">{{ $auth.user.email }}</span>
