@@ -55,6 +55,10 @@
                   :placeholder="$t('navbar.search')"
                 ></b-form-input>
               </b-nav-form>
+              <!-- <b-nav-form>
+                <b-button @click="open_search">SE</b-button>
+                <b-form-input class="navbar__search" :class="isActive == isActive"></b-form-input>
+              </b-nav-form> -->
 
               <b-nav-item-dropdown :text="text" right class="language__list">
                 <template v-slot:button-content>
@@ -244,7 +248,8 @@ export default {
   data() {
     return {
       src: 'uzbekistan.svg',
-      text: ''
+      text: '',
+      isActive: 'false'
     }
   },
   computed: {
@@ -258,6 +263,9 @@ export default {
       } else {
         this.src = 'russia.svg'
       }
+    },
+    open_search() {
+
     },
     async logout() {
       await this.$auth.logout();
