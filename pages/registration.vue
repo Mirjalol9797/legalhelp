@@ -91,18 +91,7 @@ export default {
     };
   },
   methods: {
-    async getRegionuz() {
-      await this.$axios.get("region/?language=uz").then(res => {
-        this.selectuz = res.data;
-        this.selected = res.data;
-        console.log(res);
-      });
-    },
-    async getRegionru() {
-      await this.$axios.get("region/?language=ru").then(res => {
-        this.selectru = res.data;
-      });
-    },
+
     async onSubmit() {
       await this.$axios
         .post("customer/create/", {
@@ -141,10 +130,6 @@ export default {
           console.log(err);
         });
     }
-  },
-  mounted() {
-    this.getRegionuz();
-    this.getRegionru();
   }
 };
 </script>

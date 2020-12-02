@@ -308,7 +308,6 @@
                     :to="localePath('/lawyers/'+lawyer.id)"                    
                     class="swiper__link"
                   >
-                  <!-- :to="localePath(`/lawyers/${lawyer.id}`)" -->
                     <div class="lawyer__card">
                       <div class="lawyer__card-img">
                         <img
@@ -339,10 +338,6 @@
                             char="★"
                           />
                         </span>
-                        <!-- <div class="lawyer__card-success">
-                          Muvaffaqiyatli ishlar soni
-                          <span class="lawyer__card-success-count">16</span>
-                        </div> -->
                       </div>
                     </div>
                   </nuxt-link>
@@ -360,7 +355,6 @@
             <h1 class="our__service-heading">{{$t('our_service.title')}}</h1>
             <span class="our__service-motto"
               >
-              <!-- {{$t('our_service.subtitle')}} -->
             </span>
           </div>
 
