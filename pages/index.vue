@@ -185,7 +185,7 @@
                         char="★"
                       />
                     </div> -->
-                    <b-button class="question__btn">20000 so’m</b-button>
+                    <b-button class="question__btn">{{question.price}} so'm</b-button>
                   </div>
                 </div>
                 <div class="questions__block-content">
@@ -232,7 +232,7 @@
                   />
                 </div> -->
                 <b-button class="question__btn d-none d-md-block"
-                  >20000 so’m</b-button
+                  >{{question.price}} so'm</b-button
                 >
               </div>
             </div>

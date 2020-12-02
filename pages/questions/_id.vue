@@ -12,9 +12,9 @@
         <div class="questions__overview-wrapper">
           <div class="questions__overview">
             <div class="questions__overview-meta d-none d-md-block">
-              <span class="questions__overview-meta-time">{{
+              <!-- <span class="questions__overview-meta-time">{{
                 questions_inner.answered_date | moment("h:mm")
-              }}</span>
+              }}</span> -->
               <span class="questions__overview-meta-calendar">{{
                 questions_inner.answered_date | moment("L")
               }}</span>
@@ -24,15 +24,15 @@
                 class="mobile__question-overview-inner d-flex justify-content-center align-items-center"
               >
                 <div class="questions__overview-meta">
-                  <span class="questions__overview-meta-time">{{
+                  <!-- <span class="questions__overview-meta-time">{{
                     questions_inner.answered_date | moment("h:mm")
-                  }}</span>
+                  }}</span> -->
                   <span class="questions__overview-meta-calendar">{{
                     questions_inner.answered_date | moment("L")
                   }}</span>
                 </div>
                 <div class="questions__overview-rate">
-                  <div class="rating">
+                  <!-- <div class="rating">
                     <vue-stars
                       class="vue__star"
                       name="rate"
@@ -45,7 +45,7 @@
                       :readonly="false"
                       char="★"
                     />
-                  </div>
+                  </div> -->
                   <div class="question__further-info">
                     <b-button class="question__btn price__btn"
                       >{{questions_inner.price}} so’m</b-button
@@ -62,7 +62,7 @@
               </h6>
             </div>
             <div class="questions__overview-rate d-none d-md-block">
-              <div class="rating">
+              <!-- <div class="rating">
                 <vue-stars
                   class="vue__star"
                   name="rate"
@@ -75,10 +75,10 @@
                   :readonly="false"
                   char="★"
                 />
-              </div>
+              </div> -->
               <div class="question__further-info">
                 <b-button class="question__btn price__btn">{{questions_inner.price}} so’m</b-button>
-                <span class="question__user">Jons Smith</span>
+                <!-- <span class="question__user">Jons Smith</span> -->
                 <!-- <span class="question__place">Toshkent Shahri</span> -->
               </div>
             </div>
@@ -86,7 +86,7 @@
           <div class="questions__category">
             <p class="category__type">
               Savol kategoriyasi :
-              <span>Fuqarolik huquqi (umumiy masalalar)</span>
+              <span>{{questions_inner.category}}</span>
             </p>
           </div>
         </div>
@@ -96,10 +96,9 @@
       <b-container class="answer__margin">
         <div class="answer__wrapper">
           <div class="lawyer__section">
-            <img src="../../assets/images/lawyer.jpg" class="rounded" alt="" />
-            <!-- <span class="user__name">{{questions_inner.answered_by.first_name}}</span>
-            <span class="user__name">{{questions_inner.answered_by.last_name}}</span> -->
-            <div class="rating">
+            <img :src="questions_inner.lawyer_image" class="rounded" :alt="questions_inner.lawyer_name" />
+            <span class="user__name">{{questions_inner.lawyer_name}} {{questions_inner.lawyer_surname}}</span> 
+            <!-- <div class="rating">
               <vue-stars
                 class="vue__star"
                 name="rate"
@@ -112,14 +111,15 @@
                 :readonly="false"
                 char="★"
               />
-            </div>
-            <span class="user__location">
+            </div> -->
+
+            <!-- <span class="user__location">
               Toshkent Shahri
-            </span>
+            </span> -->
             <div class="lawyer__section-meta">
-              <span class="lawyer__section-meta-time">{{
+              <!-- <span class="lawyer__section-meta-time">{{
                 questions_inner.answered_date | moment("h:mm")
-              }}</span>
+              }}</span> -->
               <span class="lawyer__section-meta-calendar">{{
                 questions_inner.answered_date | moment("L")
               }}</span>
@@ -134,15 +134,11 @@
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex";
 export default {
   data() {
     return {
       questions_inner: []
     };
-  },
-  computed: {
-    ...mapGetters(["questions"])
   },
   methods: {
     async getSingleQuestions() {
@@ -150,7 +146,7 @@ export default {
         .get(`services/${this.$route.params.id}/`)
         .then(res => {
           this.questions_inner = res.data;
-          console.log('getSingleQuestions', res);
+          console.log('getSingleQuestions', res.data);
         })
         .catch(err => {
           console.log(err);
