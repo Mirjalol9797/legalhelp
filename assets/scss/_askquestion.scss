@@ -34,6 +34,24 @@
     margin: 0 auto;
     padding-bottom: 40px;
   }
+  &__sign-up {
+    text-align: center;
+    display: block;
+    text-decoration: underline;
+    margin-top: 30px;
+    margin-left: 22px;
+    &:hover {
+      color: #fff;
+    }
+  }
+  &__forgot-password {
+    display: block;
+    text-decoration: underline;
+    margin-left: 84px;
+    &:hover {
+      color: #fff;
+    }
+  }
 }
 .registration__button-wrap {
   text-align: right;

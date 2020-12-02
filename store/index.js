@@ -89,7 +89,7 @@ const store = () => new Vuex.Store({
             await this.$axios.get('lawyer/list-search/')
                 .then((res) => {
                     commit('setLawyers', res.data);
-                    console.log('getLawyers', res.data)
+                    // console.log('getLawyers', res.data)
                 })
         }
     },

@@ -166,12 +166,12 @@
                     <div class="questions__block-time ">
                       <span>{{question.answered_date.replace('T', ' / ').replace('Z', ' ')}}</span>
                     </div>
-                    <div class="questions__block-btn">
+                    <!-- <div class="questions__block-btn">
                       <b-button class="question__btn">2ta javob</b-button>
-                    </div>
+                    </div> -->
                   </div>
                   <div class="questions__block-ranking">
-                    <div class="questions__block-ranking-star">
+                    <!-- <div class="questions__block-ranking-star">
                       <vue-stars
                         class="vue__star"
                         name="rate"
@@ -184,7 +184,7 @@
                         :readonly="false"
                         char="★"
                       />
-                    </div>
+                    </div> -->
                     <b-button class="question__btn">20000 so’m</b-button>
                   </div>
                 </div>
@@ -192,12 +192,10 @@
                   <nuxt-link
                     class="questions__block-content-heading"
                     :to="localePath(`/questions/${question.id}`)"
-                    >{{question.title}} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    >{{question.title}} 
                   </nuxt-link>
                   <p class="questions__block-content-text">
-                    {{question.question}} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Sem massa lectus tortor feugiat sagittis auctor porta
-                    penatibus.Lorem ipsum dolor sit amet, consectetur
+                    {{question.question}} 
                   </p>
                 </div>
               </div>
@@ -205,9 +203,9 @@
                 <div class="questions__block-time d-none d-md-block">
                   <span>{{question.answered_date.replace('T', ' ')}}</span>
                 </div>
-                <div class="questions__block-btn d-none d-md-block">
+                <!-- <div class="questions__block-btn d-none d-md-block">
                   <b-button class="question__btn">2ta javob</b-button>
-                </div>
+                </div> -->
               </div>
               <div class="questions__block-content d-none d-md-block">
                 <nuxt-link
@@ -219,7 +217,7 @@
                 </p>
               </div>
               <div class="questions__block-ranking d-none d-md-block">
-                <div class="questions__block-ranking-star">
+                <!-- <div class="questions__block-ranking-star">
                   <vue-stars
                     class="vue__star"
                     name="rate"
@@ -232,7 +230,7 @@
                     :readonly="false"
                     char="★"
                   />
-                </div>
+                </div> -->
                 <b-button class="question__btn d-none d-md-block"
                   >20000 so’m</b-button
                 >
@@ -611,7 +609,7 @@ export default {
       await this.$axios.get('services/')
         .then((res) => {
           this.mainQuestions = res.data.results;
-          // console.log('getMainQuestion', res)
+          console.log('getMainQuestion', res)
         })
     }
   },

@@ -46,7 +46,6 @@
                 }}</b-button>
               </b-nav-item>
             </b-navbar-nav>
-
             <!-- Right aligned nav items -->
             <b-navbar-nav class="search__part">
               <b-nav-form class="header__form">
@@ -65,18 +64,18 @@
                   >RU</b-dropdown-item
                 >
               </b-nav-item-dropdown>
+              <nuxt-link :to="localePath('/signin')" class="user__enter-site">Kirish</nuxt-link>
               <b-nav-item-dropdown class="user__login">
-                <template v-slot:button-content>
+                <!-- <template v-slot:button-content>
                   <div class="round">
                     <div class="user__link">
                       <img src="../assets/images/avatar.png" alt="" />
                     </div>
                   </div>
-                </template>
-                <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn">{{
-                  $t("user.signup")
-                }}</b-dropdown-item>
-
+                </template>  -->
+                <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn">
+                  {{$t("user.signup")}}
+                </b-dropdown-item>
                 <b-dropdown-item
                   :to="localePath('/mainlogin')"
                   v-if="!loggedIn"

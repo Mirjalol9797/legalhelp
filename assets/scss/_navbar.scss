@@ -154,6 +154,21 @@ border:2px solid #f2b50f;
 }
 }
 
+.user__enter {
+    &-site {
+        display: block;
+        background: #f2b50f;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: all .4s ease;
+        &:hover {
+            text-decoration: none;
+            color: #fff;
+            background-color: #00aced;
+        }
+    }
+}
+
 .search__part{
     margin-left: 10px;
     background-color:transparent;
