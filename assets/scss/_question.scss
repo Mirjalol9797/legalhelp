@@ -182,6 +182,8 @@
 @media (max-width: 768px) {
   .information__wrapper-outer {
     justify-content: space-between !important;
+    flex-direction: column-reverse;
+    align-items: flex-start !important;
       
     .question__further {
       max-width: 200px;
@@ -192,10 +194,11 @@
 
       &-info {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
       } 
       .price__btn {
         text-align: center;
+        margin-top: 5px;
       }
     }
     .question__user {
@@ -206,9 +209,15 @@
       padding: 0 0 0 22px;
       text-align: left;
     }
+    .question__meta {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
   }
-  .question__meta {
-    margin-top: 0;
+
+  .question__item {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 

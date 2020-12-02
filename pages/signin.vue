@@ -5,7 +5,7 @@
         <b-container>
           <div class="step__two-registration">
             <div class="registration__header">
-              <nuxt-link to="" class="registration__arrow-link">
+              <nuxt-link to="/" class="registration__arrow-link">
                 <img src="../assets/images/registration/left-arrow.svg" />
               </nuxt-link>
             </div>
@@ -31,7 +31,7 @@
                 }}</b-button> 
                 <nuxt-link to="" class="registration__forgot-password">Parolni unutdingizmi?</nuxt-link>
               </div>
-              <nuxt-link to="" class="registration__sign-up">Ro'yxatdan o'tish</nuxt-link>
+              <nuxt-link :to="localePath('/reg')" class="registration__sign-up">Ro'yxatdan o'tish</nuxt-link>
             </form>
           </div>
         </b-container>

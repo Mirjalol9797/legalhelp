@@ -45,7 +45,8 @@
                 <span class="profile-info-name">{{lawyerItem.first_name}}  {{lawyerItem.last_name}}</span>
                 <span class="profile-info-location">{{lawyerItem.region}}</span>
                 <span class="profile-info-number">90 999 00 00</span>
-                <span class="profile-info-email">{{$auth.user.email}}</span>
+                <!-- <span class="profile-info-email">{{$auth.user.email}}</span> -->
+                <span class="profile-info-email">email@mail.ur</span>
               </div>
             </b-col>
             <b-col lg="4" md="12">
@@ -54,7 +55,7 @@
               </div>
             </b-col>
           </b-row>
-          <b-card no-body class="lawyer__tabs">
+          <!-- <b-card no-body class="lawyer__tabs">
             <b-tabs pills card vertical>
               <b-tab active>
                 <template v-slot:title>
@@ -78,7 +79,7 @@
                 <b-card-text>Tab contents 1</b-card-text>
               </b-tab>
             </b-tabs>
-          </b-card>
+          </b-card> -->
           <b-row class="mt-5">
             <b-col lg="6">
               <div class="degree-wrapper">
@@ -125,7 +126,7 @@ export default {
       await this.$axios.get(`lawyer/list-search/${this.$route.params.id}/`)
         .then((res) => {
           this.lawyerItem = res.data;
-          // console.log('123123131', res.data)
+          console.log('123123131', res.data)
         })
         .catch(() => {
           

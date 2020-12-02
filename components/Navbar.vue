@@ -56,13 +56,17 @@
                 ></b-form-input>
               </b-nav-form>
 
-              <b-nav-item-dropdown text="Lang" right class="language__list">
-                <b-dropdown-item @click="changeLanguage('uz')"
-                  >UZ</b-dropdown-item
-                >
-                <b-dropdown-item @click="changeLanguage('ru')"
-                  >RU</b-dropdown-item
-                >
+              <b-nav-item-dropdown :text="text" right class="language__list">
+                <template v-slot:button-content>
+                    <img class="lang__img" :src="require(`@/assets/images/${src}`)" alt="eng">
+<!--                      <span style="vertical-align: middle;">{{ isActive }}</span>-->
+                </template>
+                <b-dropdown-item @click="changeLanguage('uz', 'uzbekistan.svg')">
+                  <img src="../assets/images/uzbekistan.svg" alt="">
+                </b-dropdown-item>
+                <b-dropdown-item @click="changeLanguage('ru', 'russia.svg')">
+                  <img src="../assets/images/russia.svg" alt="">
+                </b-dropdown-item>
               </b-nav-item-dropdown>
               <nuxt-link :to="localePath('/signin')" class="user__enter-site">Kirish</nuxt-link>
               <b-nav-item-dropdown class="user__login">
@@ -238,14 +242,22 @@
 import { mapState } from "vuex";
 export default {
   data() {
-    return {};
+    return {
+      src: 'uzbekistan.svg',
+      text: ''
+    }
   },
   computed: {
     ...mapState("auth", ["loggedIn", "user"])
   },
   methods: {
-    changeLanguage(lang) {
+    changeLanguage(lang, src) {
       this.$router.push(this.switchLocalePath(lang));
+      if(lang == 'uz') {
+        this.src = src;
+      } else {
+        this.src = 'russia.svg'
+      }
     },
     async logout() {
       await this.$auth.logout();

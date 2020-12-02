@@ -16,15 +16,15 @@
             >
               <div class="question__meta d-none d-md-block">
                 <div class="question__meta-inner">
-                  <span class="question__meta-time">{{
+                  <!-- <span class="question__meta-time">{{
                     question.answered_date | moment("h:mm")
-                  }}</span>
+                  }}</span> -->
                   <span class="question__meta-calendar">{{
                     question.answered_date | moment("L")
                   }}</span>
-                  <b-button class="question__meta-btn question__btn">
+                  <!-- <b-button class="question__meta-btn question__btn">
                     1 ta javob</b-button
-                  >
+                  > -->
                 </div>
               </div>
               <!--question__meta-->
@@ -33,7 +33,7 @@
                   class="information__wrapper-outer d-flex justify-content-center align-items-center"
                 >
                   <div class="question__further">
-                    <div class="question__ranking">
+                    <!-- <div class="question__ranking">
                       <vue-stars
                         class="vue__star"
                         name="rate"
@@ -46,22 +46,18 @@
                         :readonly="false"
                         char="★"
                       />
-                    </div>
+                    </div> -->
                     <div class="question__further-info">
-                      <b-button class="question__btn price__btn"
-                        >20000 so’m</b-button
-                      >
-                      <span class="question__user">{{question.answered_by.first_name}} {{question.answered_by.last_name}}</span>
-                      <span class="question__place">Toshkent Shahri</span>
+                      <b-button class="question__btn price__btn">20000 so’m</b-button>
+                      <span class="question__user">{{question.lawyer_name}} {{question.lawyer_surname}}</span>
+                      <!-- <span class="question__place">Toshkent Shahri</span> -->
                     </div>
                   </div>
                   <div class="question__meta">
                     <div class="question__meta-inner">
-                      <b-button class="question__meta-btn question__btn"
-                        >2ta javob</b-button
-                      >
-                      <span class="question__meta-time">9:16</span>
-                      <span class="question__meta-calendar">23.07.2020</span>
+                      <!-- <b-button class="question__meta-btn question__btn">2ta javob</b-button> -->
+                      <!-- <span class="question__meta-time">9:16</span> -->
+                      <span class="question__meta-calendar">{{question.answered_date | moment("L")}}</span>
                     </div>
                   </div>
                 </div>
@@ -79,7 +75,7 @@
               </div>
               <!--QUESTION Item info-->
               <div class="question__further d-none d-md-block">
-                <div class="question__ranking">
+                <!-- <div class="question__ranking">
                   <vue-stars
                     class="vue__star"
                     name="rate"
@@ -92,13 +88,11 @@
                     :readonly="false"
                     char="★"
                   />
-                </div>
+                </div> -->
                 <div class="question__further-info">
-                  <b-button class="question__btn price__btn"
-                    >20000 so’m</b-button
-                  >
-                  <span class="question__user">{{question.answered_by.first_name}} {{question.answered_by.last_name}}</span>
-                  <span class="question__place">Toshkent Shahri</span>
+                  <b-button class="question__btn price__btn">20000 so’m</b-button>
+                  <span class="question__user">{{question.lawyer_name}} {{question.lawyer_surname}}</span>
+                  <!-- <span class="question__place">Toshkent Shahri</span> -->
                 </div>
               </div>
             </div>
