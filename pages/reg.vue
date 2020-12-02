@@ -7,6 +7,7 @@
             <div class="registration__header">
               <nuxt-link :to="localePath('/signin')" class="registration__arrow-link">
                 <img src="../assets/images/registration/left-arrow.svg" />
+
               </nuxt-link>
             </div>
             <div class="text-center">
@@ -17,7 +18,7 @@
                 <label for="firstname">Ism</label>
                 <div class="input__tel-wrapper">
                   <input
-                    v-model="data.phone_number"
+                    v-model="form.first_name"
                     type="text"
                     id="firstname"
                     required
@@ -28,7 +29,7 @@
                 <label for="lastname">Familiya</label>
                 <div class="input__tel-wrapper">
                   <input
-                    v-model="data.phone_number"
+                    v-model="form.last_name"
                     type="text"
                     id="lastname"
                     required
@@ -39,7 +40,7 @@
                 <label for="email">E-mail</label>
                 <div class="input__tel-wrapper">
                   <input
-                    v-model="data.phone_number"
+                    v-model="form.email"
                     type="email"
                     id="email"
                     required
@@ -48,7 +49,7 @@
               </div>
               <div class="select">
                 <label for="category">Viloyat</label>
-                <select  id="category" v-model="selected">
+                <select  id="category" v-model="form.region">
                    <option
                     v-for="(selectid, index) of selectuz"
                     :key="index"
@@ -61,7 +62,7 @@
                 <label for="password">Parol</label>
                 <div class="input__tel-wrapper">
                   <input
-                    v-model="data.phone_number"
+                    v-model="form.password"
                     type="password"
                     id="password"
                     required
@@ -72,7 +73,7 @@
                 <label for="password">Parolni qayta kiriting</label>
                 <div class="input__tel-wrapper">
                   <input
-                    v-model="data.phone_number"
+                    v-model="confirm_password"
                     type="password"
                     id="password"
                     required
@@ -84,7 +85,7 @@
                 <div class="input__tel-wrapper">
                   <span class="tel__code">+998</span>
                   <input
-                    v-model="data.phone_number"
+                    v-model="form.phone_number"
                     type="tel"
                     id="phone"
                     required
@@ -93,11 +94,11 @@
               </div>
               <div class="password" v-if="showPasswordInput">
                 <label for="password__id">
-                  Kod
+                 Tel raqamingizga yuborilgan kodni kiriting
                 </label>
                 <input
                   type="password"
-                  v-model="data.code"
+                  v-model="code"
                   class="password__input"
                   id="password_id"
                   required
@@ -123,21 +124,70 @@ export default {
       showPasswordInput: false,
       selectuz: [],
       selectru: [],
-      data: {
+      confirm_password: "",
+      form: {
+        first_name: "",
+        last_name: "",
         phone_number: "",
-        code: ""
-      }
+        password: "",
+        email: "",
+        region: "",
+        token: ""
+      },
+      code: ""
     };
   },
   methods: {
     async onSubmit() {
       this.showPasswordInput = true;
 
-      if (this.data.code != "") {
-        this.$store.dispatch("sendCode", this.data);
-        this.$router.push(this.localePath({ name: "registration" }));
+      if (this.code == "") {
+        await this.$axios.post('user/code/send/', { phone_number:  this.form.phone_number})
+                .then(res => {
+                    console.log("Code: ", res.data.code)
+                })
+                .catch(err => console.log(err))
+
       } else {
-        this.$store.dispatch("getCode", this.data.phone_number);
+        await this.$axios.post('user/code/check/', {phone_number: this.form.phone_number, code: this.code})
+                .then(res => {
+                    console.log('SendCode', res)
+                    this.form.token = res.data.token
+
+
+                    // User create
+
+                    this.$axios
+                    .post("customer/create/", this.form)
+                    .then(async () => {
+                      try {
+                        await this.$auth.loginWith("local", {
+                          data: {
+                            phone_number: this.form.phone_number,
+                            password: this.form.password
+                          }
+                        });
+                        console.log(this.$auth.user);
+
+                        this.$toast.success({
+                          title: `${this.$t("toast.success")}`,
+                          message: `${this.$t("toast.loginSuccessMessage")}`
+                        });
+                        // this.disable = false;
+                      } catch (err) {
+                        console.log(err);
+                        this.$toast.error({
+                          title: `${this.$t("toast.loginError")}`,
+                          message: `${this.$t("toast.loginErrorMessage")}`
+                        });
+                      }
+                    })
+                    .catch(err => {
+                      console.log(err);
+                    });
+
+                })
+                .catch(err => console.log(err))
       }
     },
     async getRegionuz() {
