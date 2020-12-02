@@ -62,6 +62,7 @@ const store = () => new Vuex.Store({
                 .then(res => {
                     commit('setToken', res.data.token)
                     commit('setPhone_number', res.data.phone_number)
+                    console.log('SendCode', res)
 
                 })
                 .catch(err => console.log(err))

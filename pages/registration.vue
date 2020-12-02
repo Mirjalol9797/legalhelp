@@ -39,16 +39,15 @@
                 />
               </div>
               <div class="select">
-                <label for="category">Region tanlash</label>
+                <label for="category">Viloyat</label>
                 <select  id="category" v-model="selected">
-                    <option value="" selected disabled>Region tanlang</option>
+                    <option value="" selected disabled>Viloyat tanlang</option>
                    <option
                     v-for="(selectid, index) of selectuz"
                     :key="index"
                     :value="selectid.id"
                     class="category__region-option"
-                    >{{ selectid.title_uz }}</option
-                  >
+                    >{{ selectid.title_uz }}</option>
                 </select>
               </div>
               <div class="password">

@@ -74,9 +74,9 @@ export default {
         info: 'Bizning mutaxassislar guruhi bilan maslahatlashish uchun quyidagi katakchaga savol yozing.',
         time_info: 'O\'rtacha javob qaytarish vaqti 60 min.',
         mobil_info: 'Yoki biz bilan bog’laning:',
-        input_email: 'Email adresingiz',
-        input_name: 'Ismimgiz',
-        input_tel: 'Telefon raqamingiz',
+        input_email: 'E-mail',
+        input_name: 'Ism',
+        input_tel: 'Familiya',
         input_theme: 'Mavzu',
         input_ques: 'Sizning savolingiz',
         btn: 'Advokatdan so\'rang'
