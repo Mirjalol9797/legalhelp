@@ -56,8 +56,13 @@
                 ></b-form-input>
               </b-nav-form>
               <!-- <b-nav-form>
-                <b-button @click="open_search">SE</b-button>
-                <b-form-input class="navbar__search" :class="isActive == isActive"></b-form-input>
+                <b-button @click="isActive = !isActive" class="search__btn"></b-button>
+                <b-form-input 
+                  class="open__search-do"
+                  :class="{ open__search: isActive }"
+                  :placeholder="$t('navbar.search')"
+                >
+                </b-form-input>
               </b-nav-form> -->
 
               <b-nav-item-dropdown :text="text" right class="language__list">
@@ -72,15 +77,15 @@
                   <img src="../assets/images/russia.svg" alt="">
                 </b-dropdown-item>
               </b-nav-item-dropdown>
-              <nuxt-link :to="localePath('/signin')" class="user__enter-site">Kirish</nuxt-link>
-              <b-nav-item-dropdown class="user__login">
-                <!-- <template v-slot:button-content>
+              <nuxt-link v-if="!loggedIn" :to="localePath('/signin')" class="user__enter-site">Kirish</nuxt-link>
+              <b-nav-item-dropdown class="user__login" v-if="loggedIn && $auth.user.is_customer">
+                <template v-slot:button-content>
                   <div class="round">
                     <div class="user__link">
                       <img src="../assets/images/avatar.png" alt="" />
                     </div>
                   </div>
-                </template>  -->
+                </template> 
                 <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn">
                   {{$t("user.signup")}}
                 </b-dropdown-item>
@@ -263,9 +268,6 @@ export default {
       } else {
         this.src = 'russia.svg'
       }
-    },
-    open_search() {
-
     },
     async logout() {
       await this.$auth.logout();

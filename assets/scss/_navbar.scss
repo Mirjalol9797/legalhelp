@@ -181,6 +181,25 @@ border:2px solid #f2b50f;
 .search__part{
     margin-left: 10px;
     background-color:transparent;
+
+    .search__btn {
+        width: 20px;
+        height: 20px;
+        background-image: url('../../assets/images/search.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: inherit !important;
+        border: none !important;
+    }
+    .open__search-do {
+        background-color: red;
+        transform: translateY(-100px);
+    }
+    .open__search {
+        display: none;   
+        transform: translateY(0);   
+    }
+    
 }
 
 .navbar1{
