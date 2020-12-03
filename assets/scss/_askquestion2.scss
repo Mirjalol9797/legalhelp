@@ -33,4 +33,17 @@
     border-radius: 4px;
     border: none;
   }
+
+  h2 {
+    color: #fff;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .step__two-registration {
+    h2 {
+      font-size: 24px;
+    }
+  }
 }

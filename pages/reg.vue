@@ -11,11 +11,11 @@
               </nuxt-link>
             </div>
             <div class="text-center">
-            <h2>Ro'yxatdan o'tish</h2>
+            <h2>{{$t('reg.title')}}</h2>
             </div>
             <form @submit.prevent="onSubmit" class="registration__form">
               <div class="phone__number">
-                <label for="firstname">Ism</label>
+                <label for="firstname">{{$t('reg.name')}}</label>
                 <div class="input__tel-wrapper">
                   <input
                     v-model="form.first_name"
@@ -26,7 +26,7 @@
                 </div>
               </div>
               <div class="phone__number">
-                <label for="lastname">Familiya</label>
+                <label for="lastname">{{$t('reg.lastname')}}</label>
                 <div class="input__tel-wrapper">
                   <input
                     v-model="form.last_name"
@@ -37,7 +37,7 @@
                 </div>
               </div>
               <div class="phone__number">
-                <label for="email">E-mail</label>
+                <label for="email">{{$t('reg.email')}}</label>
                 <div class="input__tel-wrapper">
                   <input
                     v-model="form.email"
@@ -48,7 +48,7 @@
                 </div>
               </div>
               <div class="select">
-                <label for="category">Viloyat</label>
+                <label for="category">{{$t('reg.province')}}</label>
                 <select  id="category" v-model="form.region">
                    <option
                     v-for="(selectid, index) of selectuz"
@@ -59,7 +59,7 @@
                 </select>
               </div>
               <div class="phone__number">
-                <label for="password">Parol</label>
+                <label for="password">{{$t('reg.password')}}</label>
                 <div class="input__tel-wrapper">
                   <input
                     v-model="form.password"
@@ -70,7 +70,7 @@
                 </div>
               </div>
               <div class="phone__number">
-                <label for="password">Parolni qayta kiriting</label>
+                <label for="password">{{$t('reg.topassword')}}</label>
                 <div class="input__tel-wrapper">
                   <input
                     v-model="confirm_password"
@@ -81,7 +81,7 @@
                 </div>
               </div>
               <div class="phone__number">
-                <label for="phone">Tel raqam</label>
+                <label for="phone">{{$t('reg.number')}}</label>
                 <div class="input__tel-wrapper">
                   <span class="tel__code">+998</span>
                   <input
@@ -94,7 +94,7 @@
               </div>
               <div class="password" v-if="showPasswordInput">
                 <label for="password__id">
-                 Tel raqamingizga yuborilgan kodni kiriting
+                 {{$t('reg.code')}}
                 </label>
                 <input
                   type="password"
@@ -105,8 +105,7 @@
                 />
               </div>
               <div class="registration-submit-wrap">
-                <b-button type="submit" class="registration-submit"
-                  >Davom etish</b-button
+                <b-button type="submit" class="registration-submit">{{$t('reg.btn')}}</b-button
                 >
               </div>
             </form>
@@ -168,6 +167,7 @@ export default {
                           }
                         });
                         console.log(this.$auth.user);
+                        this.$router.push(this.localePath('/askquestions'))
 
                         this.$toast.success({
                           title: `${this.$t("toast.success")}`,
