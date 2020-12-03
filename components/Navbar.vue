@@ -55,7 +55,7 @@
                   :placeholder="$t('navbar.search')" 
                 ></b-form-input>
               </b-nav-form>    
-              <!-- <b-nav-form>
+              <b-nav-form>
                 <b-button @click="isActive = !isActive" class="search__btn"></b-button>
                 <b-form-input 
                   class="open__search-do"
@@ -63,7 +63,7 @@
                   :placeholder="$t('navbar.search')"
                 >
                 </b-form-input>
-              </b-nav-form> -->
+              </b-nav-form>
 
               <b-nav-item-dropdown :text="text" right class="language__list">
                 <template v-slot:button-content>
