@@ -253,4 +253,16 @@ export default {
         document: 'Hujjat buyurtmalarim',
         exit: 'Chiqish'
     },
+    reg: {
+        title: `Ro'yxatdan o'tish`,
+        name: 'Ism',
+        lastname: 'Familiya',
+        email: 'E-mail',
+        province: 'Viloyat',
+        password: 'Parol',
+        topassword: 'Parolni qayta kiriting',
+        number: 'Tel raqam',
+        code: 'Raqamingizga yuborilgan kod ni tering',
+        btn: 'Davom etish'
+    }    
 } 
