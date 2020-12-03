@@ -48,23 +48,13 @@
             </b-navbar-nav>
             <!-- Right aligned nav items -->
             <b-navbar-nav class="search__part">
-              <b-nav-form class="header__form">
+              <!-- <b-nav-form class="header__form">
                 <b-form-input
                   size="sm"
                   class="mr-sm-2 navbar__search"
                   :placeholder="$t('navbar.search')" 
                 ></b-form-input>
-              </b-nav-form>    
-              <b-nav-form>
-                <b-button @click="isActive = !isActive" class="search__btn"></b-button>
-                <b-form-input 
-                  class="open__search-do"
-                  :class="{ open__search: isActive }"
-                  :placeholder="$t('navbar.search')"
-                >
-                </b-form-input>
-              </b-nav-form>
-
+              </b-nav-form>     -->
               <b-nav-item-dropdown :text="text" right class="language__list">
                 <template v-slot:button-content>
                     <img class="lang__img" :src="require(`@/assets/images/${src}`)" alt="eng">
@@ -229,6 +219,16 @@
                   {{ $t("user.exit") }}
                 </b-dropdown-item>
               </b-nav-item-dropdown>
+              <!-- <b-nav-form>
+                <b-button @click="isActive = !isActive" class="search__btn"></b-button>
+                <b-form-input 
+                  class="open__search-do"
+                  :class="{ open__search: isActive }"
+                  :placeholder="$t('navbar.search')"
+                >
+                </b-form-input>
+                <div class="close__search">close</div>
+              </b-nav-form> -->
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
