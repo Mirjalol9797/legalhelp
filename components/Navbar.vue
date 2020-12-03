@@ -52,9 +52,9 @@
                 <b-form-input
                   size="sm"
                   class="mr-sm-2 navbar__search"
-                  :placeholder="$t('navbar.search')"
+                  :placeholder="$t('navbar.search')" 
                 ></b-form-input>
-              </b-nav-form>
+              </b-nav-form>    
               <!-- <b-nav-form>
                 <b-button @click="isActive = !isActive" class="search__btn"></b-button>
                 <b-form-input 
