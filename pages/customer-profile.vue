@@ -90,7 +90,16 @@
                     Tanlagan yuristlar
                   </span>
                 </template>
-                <b-card-text></b-card-text>
+                <b-card-text>
+                  <b-row class="user__favorite">
+                    <b-col md="6" class="user__favorite-item" v-for="item of lawyerFavorite.fav_lawyers" :key="item.id">
+                      <div class="user__favorite-img">
+                        <img :src="$store.state.mediaURL+item.image" :alt="item.first_name">
+                      </div>
+                      <div class="user__favorite-name">{{item.first_name}} {{item.last_name}} </div>
+                    </b-col>
+                  </b-row>
+                </b-card-text>
               </b-tab>              
               <b-tab>
                 <template v-slot:title>
@@ -400,6 +409,7 @@ export default {
       selectru: [],
       questionCustomer: [],
       documentCustomer: '',
+      lawyerFavorite: [],
       user: {
         first_name: "",
         last_name: "",
@@ -463,7 +473,14 @@ export default {
       await this.$axios.get('document/customer/')
         .then((res) => {
           this.documentCustomer = res.data;
-          console.log('getDocumentCustomer', res)
+          // console.log('getDocumentCustomer', res)
+        })
+    },
+    async getLawyerFavorite() {
+      await this.$axios.get(`customer/fav-list?language=${this.$i18n.locale}`)
+        .then((res) => {
+          this.lawyerFavorite = res.data;
+          console.log("getLawyerFavorite", res)
         })
     }
   },
@@ -472,7 +489,8 @@ export default {
     this.getRegionru(),
     // console.log(this.$auth.user);
     this.getQuestionCustomer(),
-    this.getDocumentCustomer()
+    this.getDocumentCustomer(),
+    this.getLawyerFavorite()
   }
 };
 </script>

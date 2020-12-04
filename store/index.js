@@ -8,8 +8,8 @@ const store = () => new Vuex.Store({
         service: [],
         questions:[],
         user:{},
-        baseURL: 'http://188.225.79.96/api',
-        mediaURL: 'http://188.225.79.96/',
+        baseURL: 'https://legalhelp.uz/api',
+        mediaURL: 'https://legalhelp.uz/',
         lawyers: []
     },
     getters: { 

@@ -609,7 +609,7 @@ export default {
       await this.$axios.get('services/')
         .then((res) => {
           this.mainQuestions = res.data.results;
-          console.log('getMainQuestion', res)
+          // console.log('getMainQuestion', res)
         })
     }
   },

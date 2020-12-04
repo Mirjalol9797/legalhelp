@@ -91,13 +91,13 @@
                   <font-awesome-icon :icon="['fas', 'address-card']" />
                   {{ $t("user.mypage") }}
                 </b-dropdown-item>
-                <b-dropdown-item
+                <!-- <b-dropdown-item
                   :to="localePath('/')"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
                   <font-awesome-icon :icon="['fas', 'star']" />
                   {{ $t("user.select") }}
-                </b-dropdown-item>
+                </b-dropdown-item> -->
                 <!-- <b-dropdown-item
                   :to="localePath('/')"
                   v-if="loggedIn && $auth.user.is_customer"

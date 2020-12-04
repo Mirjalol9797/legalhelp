@@ -66,36 +66,43 @@
                 </form>
                   <div class="lawyer__outer-list">
                     <b-row data-aos="fade-up" data-aos-duration="500">
-                      <b-col md="6" lg="4" xl="3" v-for="(lawyer, index) of lawyers" :key="index.id" >
-                      <nuxt-link :to="localePath('/lawyers/'+lawyer.id)" class="lawyer__card">
+                      <b-col md="6" lg="4" xl="3" class="mb-5" v-for="(lawyer, index) of lawyers" :key="index.id" >
+                      <nuxt-link :to="localePath('/lawyers/'+lawyer.id)" class="">
                         <div class="lawyer__card-img">
                             <img :src="lawyer.image" alt="">
                         </div>
+                      </nuxt-link>
                         <div class="lawyer__card-info text-center">
+                          <nuxt-link :to="localePath('/lawyers/'+lawyer.id)" class="">
                             <div class="lawyer__card-name">{{lawyer.first_name}} {{lawyer.last_name}}</div>
-                            <span class="lawyer__card-place">{{$t('region.toshkent')}}</span>
-                            <p class="lawyer__card-category">{{$t('lawyers.category')}} : 
-                              <span v-for="service of lawyer.services" :key="service.id">
-                                {{service}} <br>
-                              </span>
-                            </p>
-                            <span class="lawyer__card-rating">{{$t('lawyers.rating')}}: <span>{{lawyer.rate}}</span>
-                            <vue-stars
-                              class="vue__star"
-                              name="rate"
-                              active-color="#0028AA"
-                              inactive-color="#282932"
-                              shadow-color="##0028AA"
-                              hover-color="#00aced"
-                              :max="lawyer.rate"
-                              :value="1"
-                              :readonly="false"
-                              char="★"
-                            />
+                          </nuxt-link>
+                          <span class="lawyer__card-place">{{$t('region.toshkent')}}</span>
+                          <p class="lawyer__card-category">{{$t('lawyers.category')}} : 
+                            <span v-for="service of lawyer.services" :key="service.id">
+                              {{service}} <br>
                             </span>
+                          </p>
+                          <span class="lawyer__card-rating">{{$t('lawyers.rating')}}: <span>{{lawyer.rate}}</span>
+                          <vue-stars
+                            class="vue__star"
+                            name="rate"
+                            active-color="#0028AA"
+                            inactive-color="#282932"
+                            shadow-color="##0028AA"
+                            hover-color="#00aced"
+                            :max="lawyer.rate"
+                            :value="1"
+                            :readonly="false"
+                            char="★"
+                          />
+                          </span>
+                          <div class="lawyer__card-fav">
+                            <div class="lawyer__card-fav-img" :class="{active: isActive}" @click="like(lawyer.id)"></div>
+                            <!-- <img src="../../assets/images/like.svg" alt=""> 
+                            <img src="../../assets/images/like2.svg" alt="">  -->
+                          </div>
                             <!-- <div class="lawyer__card-success">{{$t('lawyers.success')}} <span class="lawyer__card-success-count">16</span></div> -->
                         </div>
-                      </nuxt-link>
                       </b-col>
                     </b-row>                         
                   </div>
@@ -115,8 +122,23 @@ export default {
       rows: 100,
       perPage: 1,
       currentPage: 1,
+      isActive: false
     };
   },
+  methods: {
+     async like(id){
+      await this.$axios.post(`customer/fav/?lawyer_id=${id}`)    
+        .then(res => {
+          // console.log('customerFav111', this.res)
+          this.isActive = !this.isActive
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    
+  }
+  },
+  
   computed: {
     ...mapGetters({
       lawyers: 'lawyers'
