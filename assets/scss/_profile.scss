@@ -102,6 +102,110 @@
   }
 }
 
+.user__documentCustomer {
+  background-color: #fff;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  &-title {
+    span {
+      color: #007bff;
+    }
+    p {
+      color: #000;
+    }
+  }
+  &-doc {
+    span {
+      color: #007bff;
+    }
+    p {
+      color: #000;
+    }
+  }
+  &-dowland {
+    color: #007bff;
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+.user__priceDocument {
+  background-color: #fff;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  &-title {
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  &-info {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+  }
+  &-price {
+    text-align: right;
+  }
+  &-pay {
+    background-color: #f2b50f;
+    border-radius: 5px;
+    color: #fff;
+    max-width: 80px;
+    text-align: center;
+    margin: 5px 0 0 auto;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.user__priceQuestion {
+  background-color: #fff;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  &-title {
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  &-info {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+  }
+  &-price {
+    text-align: right;
+  }  
+  &-pay {
+    background-color: #f2b50f;
+    border-radius: 5px;
+    color: #fff;
+    max-width: 80px;
+    text-align: center;
+    margin: 5px 0 0 auto;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+    &:hover {
+      color: #fff;
+    }
+  }  
+}
+
 .user__profile-card {
   max-width: 1080px;
   width: 100%;
@@ -557,6 +661,7 @@
     margin-right: 5px;
   }
 }
+
 .user__profile-documents {
   background-color: #fff;
   &-header {

@@ -109,7 +109,7 @@
                   <span class="user__profile-card-text">{{$t("profile.mydocuments")}}</span>
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
-                <b-card-text v-for="item of documentCustomer" :key="item.id">
+                <b-card-text v-for="item of documentCustomer" :key="item.id" class="user__documentCustomer">
                   <!-- <div class="user__profile-documents">
                     <div class="user__profile-documents-header">
                       <span class="user__profile-documents-title">
@@ -166,9 +166,15 @@
                       </span>
                     </div>
                   </div> -->
-                  <p>Hujjat nomi: <br>{{item.title}}</p>
-                  <p>Hujjat haqida qisqacha malumot: <br>{{item.text}}</p>
-                  <a :href="item.doc_file" target="_blank">hujjatni yuklab olish</a>
+                  <div class="user__documentCustomer-title">
+                    <span>Hujjat nomi:</span>
+                    <p>{{item.title}}</p>
+                  </div>
+                  <div class="user__documentCustomer-doc">
+                    <span>Hujjat haqida qisqacha malumot:</span>
+                    <p>{{item.text}}</p>
+                  </div>
+                  <a :href="item.doc_file" target="_blank" class="user__documentCustomer-dowland">hujjatni yuklab olish</a>
                 </b-card-text>
               </b-tab>
               <b-tab>
@@ -181,7 +187,28 @@
                   }}</span>
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
-                <b-card-text>Tab contents 1</b-card-text>
+                <b-card-text>
+                  <div class="user__priceDocument">
+                    <div class="user__priceDocument-title">Pulli hujjatlarim</div>
+                    <b-row class="user__priceDocument-info" v-for="item of priceAddedDocument" :key="item.id">
+                      <b-col sm="8" class="user__priceDocument-name">{{item.title}}</b-col>
+                      <b-col sm="4" class="user__priceDocument-price">
+                        {{item.price}} so'm
+                        <nuxt-link to="" class="user__priceDocument-pay">To'lash</nuxt-link>
+                      </b-col>
+                    </b-row>
+                  </div>
+                  <div class="user__priceQuestion">
+                    <div class="user__priceQuestion-title">Pulli sovollarim</div>
+                    <b-row class="user__priceQuestion-info" v-for="item of priceAddedQuestion" :key="item.id">
+                      <b-col sm="8" class="user__priceQuestion-name">{{item.title}}</b-col>
+                      <b-col sm="4" class="user__priceQuestion-price">
+                        {{item.price}} so'm
+                        <nuxt-link to="" class="user__priceQuestion-pay">To'lash</nuxt-link>
+                      </b-col>
+                    </b-row>
+                  </div>
+                </b-card-text>
               </b-tab>
               <b-tab>
                 <template v-slot:title>
@@ -310,17 +337,13 @@
                   </div>
                 </b-card-text>
               </b-tab>
-              <b-tab>
+              <!-- <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <!-- <font-awesome-icon :icon="['fas', 'phone']" /> -->
                   </span>
                   <span class="user__profile-card-text">
-                    <!-- {{
-                    $t("profile.phoneconsultate")
-                  }} -->To'lovlar
+                    To'lovlar
                   </span>
-                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
                   <h5 class="user__profile-card-payTitle">
@@ -392,7 +415,7 @@
                     </tbody>
                   </table>
                 </b-card-text>
-              </b-tab>
+              </b-tab> -->
             </b-tabs>
           </b-card>
         </div>
@@ -410,6 +433,8 @@ export default {
       questionCustomer: [],
       documentCustomer: '',
       lawyerFavorite: [],
+      priceAddedDocument: [],
+      priceAddedQuestion: [],
       user: {
         first_name: "",
         last_name: "",
@@ -482,6 +507,20 @@ export default {
           this.lawyerFavorite = res.data;
           console.log("getLawyerFavorite", res)
         })
+    },
+    async getDocumentCustomerPriceAdded() {
+      await this.$axios.get('document/customer/?priceadded=1')
+        .then((res) => {
+          this.priceAddedDocument = res.data;
+          console.log('getDocumentCustomerPriceAdded', res)
+        })
+    },
+    async getQuestionCustomerPriceAdded() {
+      await this.$axios.get('question/customer/?priceadded=1') 
+        .then((res) => {
+          this.priceAddedQuestion = res.data;
+          console.log('getQuestionCustomerPriceAdded', res)
+        })
     }
   },
   mounted() {
@@ -490,7 +529,9 @@ export default {
     // console.log(this.$auth.user);
     this.getQuestionCustomer(),
     this.getDocumentCustomer(),
-    this.getLawyerFavorite()
+    this.getLawyerFavorite(),
+    this.getDocumentCustomerPriceAdded(),
+    this.getQuestionCustomerPriceAdded()
   }
 };
 </script>
