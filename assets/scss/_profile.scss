@@ -188,7 +188,7 @@
         left: 15px;
         width: 15px;
         height: 15px;
-        background-image: url("../images/profil/file-solid2.svg");
+        background-image: url("../images/profil/star.svg");
         background-repeat: no-repeat;
       }
       &:before {
@@ -209,7 +209,7 @@
       background-color: #f2b50f;
 
       &:after {
-        background-image: url("../images/profil/file-solid.svg");
+        background-image: url("../images/profil/star-solid.svg");
       }
       &:before {
         background-image: url("../images/profil/angle-right.svg");
@@ -229,6 +229,49 @@
         left: 15px;
         width: 15px;
         height: 15px;
+        background-image: url("../images/profil/file-solid2.svg");
+        background-repeat: no-repeat;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 15px;
+        height: 15px;
+                background-image: url("../images/profil/angle-right-solid.svg");
+        background-repeat: no-repeat;
+      }      
+    }
+  } 
+  .nav-item:nth-child(4) {
+    a.active {
+      background-color: #f2b50f;
+
+      &:after {
+        // 
+        background-image: url("../images/profil/file-solid.svg");
+      }
+      &:before {
+        background-image: url("../images/profil/angle-right.svg");
+      }
+    }
+  } 
+  .nav-item:nth-child(5) {
+    a {
+      position: relative;
+      padding-right: 30px;
+      padding-left: 37px;
+      &:after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        width: 18px;
+        height: 18px;
+        
         background-image: url("../images/profil/bell-solid2.svg");
         background-repeat: no-repeat;
       }
@@ -245,11 +288,12 @@
       }      
     }
   } 
-  .nav-item:nth-child(4) {
+  .nav-item:nth-child(5) {
     a.active {
       background-color: #f2b50f;
 
       &:after {
+        
         background-image: url("../images/profil/bell-solid.svg");
       }
       &:before {
@@ -257,7 +301,7 @@
       }
     }
   } 
-  .nav-item:nth-child(5) {
+  .nav-item:nth-child(6) {
     a {
       position: relative;
       padding-right: 30px;
@@ -270,6 +314,7 @@
         left: 15px;
         width: 18px;
         height: 18px;
+        // 
         background-image: url("../images/profil/cogs-solid.svg");
         background-repeat: no-repeat;
       }
@@ -286,19 +331,20 @@
       }      
     }
   } 
-  .nav-item:nth-child(5) {
+  .nav-item:nth-child(6) {
     a.active {
       background-color: #f2b50f;
 
       &:after {
+        // 
         background-image: url("../images/profil/cogs.svg");
       }
       &:before {
         background-image: url("../images/profil/angle-right.svg");
       }
     }
-  } 
-  .nav-item:nth-child(6) {
+  }     
+  .nav-item:nth-child(7) {
     a {
       position: relative;
       padding-right: 30px;
@@ -309,8 +355,8 @@
         top: 50%;
         transform: translateY(-50%);
         left: 15px;
-        width: 18px;
-        height: 18px;
+        width: 15px;
+        height: 15px;
         background-image: url("../images/profil/credit-card-solid.svg");
         background-repeat: no-repeat;
       }
@@ -322,12 +368,12 @@
         right: 0;
         width: 15px;
         height: 15px;
-                background-image: url("../images/profil/angle-right-solid.svg");
+        background-image: url("../images/profil/angle-right-solid.svg");
         background-repeat: no-repeat;
       }      
     }
   } 
-  .nav-item:nth-child(6) {
+  .nav-item:nth-child(7) {
     a.active {
       background-color: #f2b50f;
 
@@ -338,7 +384,7 @@
         background-image: url("../images/profil/angle-right.svg");
       }
     }
-  }     
+  }   
 
   .tab-content {
     .tab-pane:nth-child(2) {
@@ -484,6 +530,7 @@
     background-color: #ff8800;
     border: none;
     outline: none;
+    min-height: 39px;
   }
   .user__profile-submit-icon {
     margin-right: 5px;

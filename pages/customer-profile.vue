@@ -33,29 +33,24 @@
                     <!-- <font-awesome-icon :icon="['fas', 'comment']" /> -->
                     <!-- <img src="../assets/images/profil/comment.svg" alt="" width="15px"> -->
                   </span>
-                  <span class="user__profile-card-text">{{
-                    $t("profile.myquestion")
-                  }}</span>
+                  <span class="user__profile-card-text">{{$t("profile.myquestion")}}</span>
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
-                <b-card-text>
+                <b-card-text v-for="item of questionCustomer" :key="item.id">
                   <div class="user__profile-question">
                     <nuxt-link class="user__profile-question-title" to="">
-                      Vitae enim quae Nam
+                      {{item.title}} 
                     </nuxt-link>
                     <p class="user__profile-question-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Doloribus, facilis esse! Non, magni harum quam vero ut
-                      corporis recusandae perferendis assumenda tempora
-                      blanditiis a quidem nostrum voluptas quo minus suscipit!
+                      {{item.text}} 
                     </p>
                     <div class="user__profile-question-info">
                       <div class="left__block">
-                        <span class="user">
+                        <!-- <span class="user">
                           <font-awesome-icon :icon="['fas', 'user']" />
                           Halimov Navruz
-                        </span>
-                        <span class="calendar">26.09.2020, 09:54</span>
+                        </span> -->
+                        <span class="calendar">{{item.date}}</span>
                       </div>
 
                       <div class="right__block">
@@ -63,11 +58,7 @@
                           <font-awesome-icon :icon="['fas', 'comment']" />
                           Javoblar <span class="counter">11</span>
                         </div>
-                        <span class="location"
-                          ><font-awesome-icon
-                            :icon="['fas', 'map-marker']"
-                          />Buxoro</span
-                        >
+                        <!-- <span class="location"><font-awesome-icon :icon="['fas', 'map-marker']"/>Buxoro</span> -->
                       </div>
                     </div>
                   </div>
@@ -94,19 +85,26 @@
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
+                  </span>
+                  <span class="user__profile-card-text">
+                    Tanlagan yuristlar
+                  </span>
+                </template>
+                <b-card-text></b-card-text>
+              </b-tab>              
+              <b-tab>
+                <template v-slot:title>
+                  <span class="user__profile-card-icon">
                     <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
                   </span>
-                  <span class="user__profile-card-text">{{
-                    $t("profile.mydocuments")
-                  }}</span>
+                  <span class="user__profile-card-text">{{$t("profile.mydocuments")}}</span>
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
-                <b-card-text>
-                  <div class="user__profile-documents">
+                <b-card-text v-for="item of documentCustomer" :key="item.id">
+                  <!-- <div class="user__profile-documents">
                     <div class="user__profile-documents-header">
                       <span class="user__profile-documents-title">
-                        0 Takliflar</span
-                      >
+                        0 Takliflar</span>
                       <b-col lg="3">
                         <div class="user__profile-documents-price">
                           <b>190 000 so`m</b><span>savol <br />narxi</span>
@@ -132,12 +130,12 @@
                         <b-button
                           type="button"
                           class="user__profile-documents-delete"
-                          ><font-awesome-icon
+                        >
+                          <font-awesome-icon
                             :icon="['fas', 'trash']"
                             style="margin-right:5px;"
-                          />O'chirish</b-button
-                        ></b-col
-                      >
+                          />O'chirish</b-button>
+                        </b-col>
                     </div>
                   </div>
                   <div class="user__profile-documents-info">
@@ -158,7 +156,10 @@
                         Fuqarolik huquqi (umumiy masalalar)
                       </span>
                     </div>
-                  </div>
+                  </div> -->
+                  <p>Hujjat nomi: <br>{{item.title}}</p>
+                  <p>Hujjat haqida qisqacha malumot: <br>{{item.text}}</p>
+                  <a :href="item.doc_file" target="_blank">hujjatni yuklab olish</a>
                 </b-card-text>
               </b-tab>
               <b-tab>
@@ -397,6 +398,8 @@ export default {
       regionSelect: "",
       selectuz: [],
       selectru: [],
+      questionCustomer: [],
+      documentCustomer: '',
       user: {
         first_name: "",
         last_name: "",
@@ -407,7 +410,6 @@ export default {
     };
   },
   methods: {
-  
     async onCancel() {
       this.$router.push(this.localePath({name: "/"} ));
       this.$toast.error({
@@ -449,12 +451,28 @@ export default {
             message: `${this.$t("toast.updateProfileError")}`
           });
         });
+    },
+    async getQuestionCustomer() {
+      await this.$axios.get('question/customer/')
+        .then((res) => {
+          this.questionCustomer = res.data;
+          // console.log('getQuestionCustomer', res)
+        })
+    },
+    async getDocumentCustomer() {
+      await this.$axios.get('document/customer/')
+        .then((res) => {
+          this.documentCustomer = res.data;
+          console.log('getDocumentCustomer', res)
+        })
     }
   },
   mounted() {
-    this.getRegionuz();
-    this.getRegionru();
-    console.log(this.$auth.user);
+    this.getRegionuz(),
+    this.getRegionru(),
+    // console.log(this.$auth.user);
+    this.getQuestionCustomer(),
+    this.getDocumentCustomer()
   }
 };
 </script>

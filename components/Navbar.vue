@@ -79,17 +79,16 @@
                 <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn">
                   {{$t("user.signup")}}
                 </b-dropdown-item>
-                <b-dropdown-item
+                <!-- <b-dropdown-item
                   :to="localePath('/mainlogin')"
                   v-if="!loggedIn"
-                  >{{ $t("user.entrance") }}</b-dropdown-item
-                >
+                  >{{ $t("user.entrance") }}
+                </b-dropdown-item> -->
                 <b-dropdown-item
                   :to="localePath('/customer-profile')"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
                   <font-awesome-icon :icon="['fas', 'address-card']" />
-                  <!-- <img src="../assets/images/profil/address.svg" alt=""> -->
                   {{ $t("user.mypage") }}
                 </b-dropdown-item>
                 <b-dropdown-item
@@ -97,33 +96,29 @@
                   v-if="loggedIn && $auth.user.is_customer"
                 >
                   <font-awesome-icon :icon="['fas', 'star']" />
-                  <!-- <img src="../assets/images/profil/star.svg" alt=""> -->
-                  {{ $t("user.select") }}</b-dropdown-item
-                >
-                <b-dropdown-item
+                  {{ $t("user.select") }}
+                </b-dropdown-item>
+                <!-- <b-dropdown-item
                   :to="localePath('/')"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
                   <font-awesome-icon :icon="['fas', 'bell']" />
-                  <!-- <img src="../assets/images/profil/bell.svg" alt=""> -->
                   {{ $t("user.notifications") }}
-                </b-dropdown-item>
-                <b-dropdown-item
+                </b-dropdown-item> -->
+                <!-- <b-dropdown-item
                   href="tel:+998946863999"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
                   <font-awesome-icon :icon="['fas', 'phone']" />
-                  <!-- <img src="../assets/images/profil/phone.svg" alt=""> -->
                   {{ $t("user.phone") }}</b-dropdown-item
-                >
-                <b-dropdown-item
+                > -->
+                <!-- <b-dropdown-item
                   :to="localePath('/signin')"
                   v-if="loggedIn && $auth.user.is_customer"
                 >
                   <font-awesome-icon :icon="['fas', 'file']" />
-                  <!-- <img src="../assets/images/profil/file.svg" alt=""> -->
                   {{ $t("user.document") }}
-                </b-dropdown-item>
+                </b-dropdown-item> -->
                 <b-dropdown-item
                   :to="localePath('/lawyer-profile')"
                   v-if="loggedIn && $auth.user.is_lawyer"
