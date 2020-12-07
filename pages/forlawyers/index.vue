@@ -19,36 +19,8 @@
                 :placeholder="$t('forlawyers.surname')"
                 v-model="form.last_name"
               />
-              <input
-                type="tel"
-                disabled
-                :placeholder="$t('forlawyers.phonenumber')"
-                :value="'+998' + ' ' + this.$store.state.phone_number"
-              />
-              <input
-                type="email"
-                :placeholder="$t('forlawyers.email')"
-                v-model="form.email"
-              />
-              <input
-                type="password"
-                :placeholder="$t('forlawyers.password')"
-                v-model="form.password"
-              />
-              <select id="type-field" v-model="serviceSelect">
-                <option value="" selected disabled
-                  >Huquqiy yo'nalishingiz</option
-                >
-                <option
-                  v-for="(service, index) of serviceuz"
-                  :key="index"
-                  :value="service.id"
-                  >{{ service.title_uz }}
-                </option>
-              </select>
-
               <div class="select">
-                <select id="category" v-model="selectedRegion">
+                <select id="category" v-model="form.region">
                   <option value="" selected disabled>Region tanlang</option>
                   <option
                     v-for="(selectid, index) of selectuz"
@@ -59,16 +31,48 @@
                   >
                 </select>
               </div>
-              
+              <select id="type-field" v-model="form.service">
+                <option value="" selected disabled>
+                  Huquqiy yo'nalishingiz
+                </option>
+                <option
+                  v-for="(service, index) of serviceuz"
+                  :key="index"
+                  :value="service.id"
+                  >{{ service.title_uz }}
+                </option>
+              </select>                
+              <input
+                type="email"
+                :placeholder="$t('forlawyers.email')"
+                v-model="form.email"
+              />     
+              <input
+                type="password"
+                :placeholder="$t('forlawyers.password')"
+                v-model="form.password"
+              />                     
+              <input
+                type="tel"
+                :placeholder="$t('forlawyers.phonenumber')"
+                value="+998"
+                v-model="form.phone_number"
+              />
             </b-col>
+            <div class="password" v-if="showPasswordInput">
+              <label for="password__id">
+                {{$t('reg.code')}}
+              </label>
+              <input
+                type="password"
+                v-model="code"
+                class="password__input"
+                id="password_id"
+                required
+              />
+            </div>            
             <b-col lg="7" class="overflow-hidden form__for-lawyers-textarea">
               <input type="file" @change="fileUpload" accept="image/*" class="for__lawyers-file">
-              <!-- <input
-                type="file"
-                class="file__for-lawyers"
-                @change="fileUpload"
-                accept="image/*"
-              /> -->
               <textarea
                 name="textearea__for-lawyers"
                 class="textearea__for-lawyers"
@@ -76,14 +80,6 @@
                 :placeholder="$t('forlawyers.bio')"
               ></textarea>
             </b-col>
-            <!-- <b-col lg="4" class="text-center">
-              <textarea
-                name="textearea__for-lawyers"
-                class="textearea__for-lawyers"
-                v-model="form.description"
-                :placeholder="$t('forlawyers.bio')"
-              ></textarea>
-            </b-col> -->
           </b-row>
           <div class="for__lawyers-btn-wrap">
             <b-button type="submit" class="for__lawyers-btn">{{
@@ -99,24 +95,25 @@
 export default {
   data() {
     return {
-      serviceSelect:"",
-      selectedRegion: "",
+      showPasswordInput: false,
       selectuz: [],
-      selectru: [],
       serviceuz: [],
-      serviceru: [],
-      file: "",
       form: {
         first_name: "",
         last_name: "",
+        phone_number: "",
         password: "",
-        description: "",
         email: "",
-      }
+        region: "",
+        service: "",
+        token: "",
+        description: ""
+      },
+      code: ""
     };
   },
   methods: {
-      fileUpload(event) {
+    fileUpload(event) {
       let e = event.target.files[0];
       if (e.type == "image/jpeg") {
         this.form.file = e;
@@ -124,70 +121,66 @@ export default {
         console.log("wrong type");
       }
     },
+    async onSubmit() {
+      this.showPasswordInput = true;
+
+      if (this.code == "") {
+        await this.$axios.post('user/code/send/', { phone_number:  this.form.phone_number})
+                .then(res => {
+                    console.log("Code: ", res.data.code)
+                })
+                .catch(err => console.log(err))
+
+      } else {
+        await this.$axios.post('user/code/check/', {phone_number: this.form.phone_number, code: this.code})
+                .then(res => {
+                    console.log('SendCode', res)
+                    this.form.token = res.data.token
+
+
+                    // User create
+
+                    this.$axios.post("lawyer/create/", this.form)
+                    .then(res => {
+                      console.log(res)
+
+                      this.form = {
+                          first_name: "",
+                          last_name: "",
+                          phone_number: "",
+                          password: "",
+                          email: "",
+                          region: "",
+                          service: "",
+                        }
+
+                        this.$router.push(this.localePath('/lawyer_wait'));
+                        
+                    })
+                    .catch(err => {
+                      console.log(err)
+                    })
+                })      
+                .catch(err => console.log(err))
+      }
+    },
     async getRegionuz() {
       await this.$axios.get("region/?language=uz").then(res => {
         this.selectuz = res.data;
-      });
-    },
-    async getRegionru() {
-      await this.$axios.get("region/?language=ru").then(res => {
-        this.selectru = res.data;
+        this.selected = res.data;
+        console.log(res);
       });
     },
     async getServiceuz() {
       await this.$axios.get("lawyer/services/?language=uz").then(res => {
         this.serviceuz = res.data;
       });
-    },
-    async getServiceru() {
-      await this.$axios.get("lawyer/services/?language=ru").then(res => {
-        this.serviceru = res.data;
-      });
-    },
-    async onSubmit() {
-  if(this.form.first_name=="" || this.form.last_name=="" ||this.form.password=="" ||this.form.description=="" || this.form.email=="" ){
-       this.$toast.error({
-              title: `${this.$t("toast.loginError")}`,
-              message: `${this.$t("toast.input")}`
-            });
-    }
-      await this.$axios
-        .post("lawyer/create/", {
-          first_name: this.form.first_name,
-          last_name: this.form.last_name,
-          phone_number: this.$store.state.phone_number,
-          password: this.form.password,
-          // image: this.file,
-          description: this.form.description,
-          email: this.form.email,
-          region: 3,
-          services: [2,5],
-          token: this.$store.state.token
-        })
-        .then(async () => {
-          try {
-            this.$toast.success({
-              title: `${this.$t("toast.success")}`,
-              message: `${this.$t("toast.lawyererror")}`
-            });
-          } catch (err) {
-            console.log(err);
-            this.$toast.error({
-              title: `${this.$t("toast.loginError")}`,
-              message: `${this.$t("toast.lawyererror")}`
-            });
-          }
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    }
+    },    
+
   },
   mounted() {
     this.getRegionuz();
-    this.getRegionru();
-    this.getServiceuz();
-    this.getServiceru();
+    this.getServiceuz()
   }
 };
 </script>

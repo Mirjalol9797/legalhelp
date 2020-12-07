@@ -23,9 +23,7 @@
                 <input type="password" id="password" v-model="form.password" />
               </div>
               <div class="registration-submit-wrap">
-                <b-button class="registration-submit" type="submit">{{
-                  $t("givequestion.btn")
-                }}</b-button>
+                <b-button class="registration-submit" type="submit">{{$t("givequestion.btn")}}</b-button>
               </div>
             </form>
           </div>

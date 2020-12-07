@@ -8,8 +8,7 @@
               <div class="click__payment  click__align">
                 <div class="click__payment-wrapper">
                   <div class="click__payment-header">
-                    <span class="payment__header-title"
-                      >Plastik karta ma'lumotlarini kiritish</span
+                    <span class="payment__header-title">Plastik karta ma'lumotlarini kiritish</span
                     >
                     <div class="tooltipp">
                       <span class="tooltiptext"

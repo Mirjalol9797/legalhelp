@@ -44,7 +44,7 @@
               <div class="profile-info">
                 <span class="profile-info-name">{{lawyerItem.first_name}}  {{lawyerItem.last_name}}</span>
                 <span class="profile-info-location">{{lawyerItem.region}}</span>
-                <span class="profile-info-number">90 999 00 00</span>
+                <span class="profile-info-number">+998 {{$auth.user.user}}</span>
                 <!-- <span class="profile-info-email">{{$auth.user.email}}</span> -->
                 <span class="profile-info-email">email@mail.ur</span>
               </div>

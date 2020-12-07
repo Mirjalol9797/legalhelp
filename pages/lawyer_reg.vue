@@ -58,6 +58,19 @@
                     >{{ selectid.title_uz }}</option>
                 </select>
               </div>
+              <div class="select">
+                <label for="category">Huquqiy yo'nalishingiz</label>
+                <select  id="category" v-model="form.service">
+                   <option
+                    v-for="(service, index) of serviceuz"
+                    :key="index"
+                    :value="service.id"
+                    class="category__region-option"
+                    >
+                      {{ service.title_uz }}
+                    </option>
+                </select>
+              </div>              
               <div class="phone__number">
                 <label for="password">{{$t('reg.password')}}</label>
                 <div class="input__tel-wrapper">
@@ -92,6 +105,27 @@
                   />
                 </div>
               </div>
+              <div class="phone__number addFile">
+                <label for="file">Добавить картинку</label>
+                <div class="input__tel-wrapper">
+                  <input
+                    type="file"
+                    id="file"
+                    required
+                    accept="image/*"
+                    @change="fileUpload"
+                  />
+                </div>
+              </div>
+              <div class="phone__number">
+                <label for="file">Добавить картинку</label>
+                <textarea
+                  name="textearea__for-lawyers"
+                  class="textearea__for-lawyers"
+                  v-model="form.description"
+                  :placeholder="$t('forlawyers.bio')"
+                ></textarea>
+              </div>
               <div class="password" v-if="showPasswordInput">
                 <label for="password__id">
                  {{$t('reg.code')}}
@@ -122,7 +156,7 @@ export default {
     return {
       showPasswordInput: false,
       selectuz: [],
-      selectru: [],
+      serviceuz: [],
       confirm_password: "",
       form: {
         first_name: "",
@@ -131,6 +165,9 @@ export default {
         password: "",
         email: "",
         region: "",
+        service: "",
+        file: "",
+        description: "",
         token: ""
       },
       code: ""
@@ -156,41 +193,27 @@ export default {
 
                     // User create
 
-                    this.$axios
-                    .post("customer/create/", this.form)
-                    .then(async () => {
-                      try {
-                        await this.$auth.loginWith("local", {
-                          data: {
-                            phone_number: this.form.phone_number,
-                            password: this.form.password
-                          }
-                        });
-                        console.log(this.$auth.user);
-                        
-                        console.log(this.$store.$auth.$state.redirect = this.localePath('/askquestions'))
-                        this.$store.$auth.$state.redirect = this.localePath('/askquestions')
-                        // this.$router.push(this.localePath('/askquestions'))
-                      
+                    this.$axios.post("lawyer/create/", this.form)
+                    .then(res => {
+                      console.log(res)
 
-                        this.$toast.success({
-                          title: `${this.$t("toast.success")}`,
-                          message: `${this.$t("toast.loginSuccessMessage")}`
-                        });
-                        // this.disable = false;
-                      } catch (err) {
-                        console.log(err);
-                        this.$toast.error({
-                          title: `${this.$t("toast.loginError")}`,
-                          message: `${this.$t("toast.loginErrorMessage")}`
-                        });
-                      }
+                      this.form = {
+                          first_name: "",
+                          last_name: "",
+                          phone_number: "",
+                          password: "",
+                          email: "",
+                          region: "",
+                          service: "",
+                        }
+
+                        this.$router.push(this.localePath('/lawyer_wait'));
+                        
                     })
                     .catch(err => {
-                      console.log(err);
-                    });
-
-                })
+                      console.log(err)
+                    })
+                })      
                 .catch(err => console.log(err))
       }
     },
@@ -201,15 +224,23 @@ export default {
         console.log(res);
       });
     },
-    async getRegionru() {
-      await this.$axios.get("region/?language=ru").then(res => {
-        this.selectru = res.data;
+    async getServiceuz() {
+      await this.$axios.get("lawyer/services/?language=uz").then(res => {
+        this.serviceuz = res.data;
       });
+    },
+    fileUpload(event) {
+      let e = event.target.files[0];
+      if (e.type == "image/jpeg") {
+        this.form.file = e;
+      } else {
+        console.log("wrong type");
+      }
     },
   },
   mounted() {
     this.getRegionuz();
-    this.getRegionru();
+    this.getServiceuz()
   }
 };
 </script>

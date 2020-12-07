@@ -16,7 +16,7 @@
               <b-nav-item :to="localePath('/news')" class="nav__link">{{
                 $t("navbar.news")
               }}</b-nav-item>
-              <b-nav-item :to="localePath('/questions')" class="nav__link">{{
+              <b-nav-item :to="localePath('/questions')" class="nav__link" v-if="loggedIn && $auth.user.is_lawyer">{{
                 $t("navbar.questions")
               }}</b-nav-item>
               <b-nav-item :to="localePath('/lawyers')" class="nav__link">{{
@@ -25,9 +25,10 @@
               <b-nav-item :to="localePath('/our-service')" class="nav__link">{{
                 $t("navbar.services")
               }}</b-nav-item>
-              <b-nav-item :to="localePath('forlawyers')" class="nav__link">{{
-                $t("navbar.for_lawyers")
-              }}</b-nav-item>
+              <b-nav-item :to="localePath('/lawyer_reg')" class="nav__link">
+                {{$t("navbar.for_lawyers")}}
+              </b-nav-item>
+              
               <b-nav-item href="#">
                 <b-button
                   class="header__btn"
@@ -68,8 +69,8 @@
                 </b-dropdown-item>
               </b-nav-item-dropdown>
               <nuxt-link v-if="!loggedIn" :to="localePath('/signin')" class="user__enter-site">Kirish</nuxt-link>
-              <b-nav-item-dropdown class="user__login" v-if="loggedIn && $auth.user.is_customer">
-                <template v-slot:button-content>
+              <b-nav-item-dropdown class="user__login">
+                <template  v-if="loggedIn && $auth.user.is_customer" v-slot:button-content>
                   <div class="round">
                     <div class="user__link">
                       <img src="../assets/images/avatar.png" alt="" />
@@ -119,6 +120,27 @@
                   <font-awesome-icon :icon="['fas', 'file']" />
                   {{ $t("user.document") }}
                 </b-dropdown-item> -->
+                <b-dropdown-item
+                  :to="localePath('')"
+                  @click="logout()"
+                  v-if="loggedIn"
+                >
+                  <!-- <font-awesome-icon :icon="['fas', 'sign-out-alt']" /> -->
+                  <img src="../assets/images/profil/sign-out-alt.svg" alt="" />
+                  {{ $t("user.exit") }}
+                </b-dropdown-item>
+              </b-nav-item-dropdown>
+              <b-nav-item-dropdown class="user__login">
+                <template  v-if="loggedIn && $auth.user.is_lawyer" v-slot:button-content>
+                  <div class="round">
+                    <div class="user__link">
+                      <img src="../assets/images/avatar.png" alt="" />
+                    </div>
+                  </div>
+                </template> 
+                <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn">
+                  {{$t("user.signup")}}
+                </b-dropdown-item>
                 <b-dropdown-item
                   :to="localePath('/lawyer-profile')"
                   v-if="loggedIn && $auth.user.is_lawyer"
@@ -213,7 +235,7 @@
                   <img src="../assets/images/profil/sign-out-alt.svg" alt="" />
                   {{ $t("user.exit") }}
                 </b-dropdown-item>
-              </b-nav-item-dropdown>
+              </b-nav-item-dropdown>              
               <!-- <b-nav-form>
                 <b-button @click="isActive = !isActive" class="search__btn"></b-button>
                 <b-form-input 

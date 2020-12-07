@@ -5,7 +5,7 @@
         <div class="profile-inner">
           <div class="owner-pic">
             <img
-              :src="$store.state.mediaURL + $auth.user.image"
+              src="$store.state.baseURL + $auth.user.image"
               height="170"
               width="264"
               alt
@@ -35,17 +35,26 @@
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
-                  <div class="user__profile-question">
+                  <div class="user__profile-question" v-for="item of questionLawyer" :key="item.id">
                     <nuxt-link class="user__profile-question-title" to="">
-                      Vitae enim quae Nam
+                      {{item.title}}
                     </nuxt-link>
                     <p class="user__profile-question-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Doloribus, facilis esse! Non, magni harum quam vero ut
-                      corporis recusandae perferendis assumenda tempora
-                      blanditiis a quidem nostrum voluptas quo minus suscipit!
+                      {{item.text}}
                     </p>
-                    <div class="user__profile-question-info">
+                    <b-form class="lawyer__form">
+                      <b-form-group
+                        label="Savolga narx kirgizing"
+                        label-for="input"
+                      >
+                        <b-form-input
+                          id="input"
+                          type="email"
+                        ></b-form-input>
+                      </b-form-group> 
+                      <b-button type="submit" variant="primary">Saqlamoq</b-button>                     
+                    </b-form>
+                    <!-- <div class="user__profile-question-info">
                       <div class="answer">
                         <font-awesome-icon :icon="['fas', 'comment']" />
                         Javoblar <span class="counter">11</span>
@@ -60,7 +69,7 @@
                           :icon="['fas', 'map-marker']"
                         />Buxoro</span
                       >
-                    </div>
+                    </div> -->
                   </div>
                 </b-card-text>
               </b-tab>
@@ -127,49 +136,31 @@
                   </b-row>
                 </b-card-text>
               </b-tab>
-              <b-tab>
+              <!-- <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <!-- <font-awesome-icon :icon="['fas', 'bell']" /> -->
                   </span>
-                  <span class="user__profile-card-text">
-                  <!-- {{
-                    $t("profile.notification")
-                  }} --> Hujjatlar arxivi 
-                  </span>
-                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                  <span class="user__profile-card-text">Hujjatlar arxivi </span>
                 </template>
                 <b-card-text>
                   Hujjatlar arxivi
                 </b-card-text>
-              </b-tab>  
-              <b-tab>
+              </b-tab>   -->
+              <!-- <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <!-- <font-awesome-icon :icon="['fas', 'bell']" /> -->
                   </span>
-                  <span class="user__profile-card-text">
-                  <!-- {{
-                    $t("profile.notification")
-                  }} --> Savollar arxivi
-                  </span>
-                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                  <span class="user__profile-card-text">Savollar arxivi</span>
                 </template>
                 <b-card-text>
                   Savollar arxivi
                 </b-card-text>
-              </b-tab>   
+              </b-tab>    -->
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <!-- <font-awesome-icon :icon="['fas', 'bell']" /> -->
                   </span>
-                  <span class="user__profile-card-text">
-                  <!-- {{
-                    $t("profile.notification")
-                  }} --> Maqolalarim
-                  </span>
-                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                  <span class="user__profile-card-text"> Maqolalarim</span>
                 </template>
                 <b-card-text>
                   Maqolalarim
@@ -178,12 +169,8 @@
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <!-- <font-awesome-icon :icon="['fas', 'cogs']" /> -->
                   </span>
-                  <span class="user__profile-card-text">{{
-                    $t("profile.setting")
-                  }}</span>
-                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                  <span class="user__profile-card-text">{{$t("profile.setting")}}</span>
                 </template>
                 <b-card-text>
                   <div class="user__profile-card-info">
@@ -312,6 +299,7 @@ export default {
       regionSelect: "",
       selectuz: [],
       selectru: [],
+      questionLawyer: [],
       lawyer: {
         first_name: "",
         last_name: "",
@@ -356,12 +344,21 @@ export default {
               message: `${this.$t("toast.updateProfileError")}`
             });
         });
+    },
+    // mywork
+    async getQuestionLawyer() {
+      await this.$axios.get('question/lawyer/')
+        .then((res) => {
+          this.questionLawyer = res.data;
+          console.log('getQuestionLawyer', res)
+        })
     }
   },
   mounted() {
     this.getRegionuz();
     this.getRegionru();
     console.log(this.$auth.user);
+    this.getQuestionLawyer()
   }
 };
 </script>
