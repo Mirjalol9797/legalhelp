@@ -56,7 +56,11 @@
                       <div class="right__block">
                         <div class="answer">
                           <font-awesome-icon :icon="['fas', 'comment']" />
-                          Javoblar <span class="counter">{{}}</span>
+                          Javoblar <span class="counter">1</span>
+                        </div>
+                        <div class="price" v-if="item.price > 0">
+                          <font-awesome-icon :icon="['fas', 'money-bill-alt']" />
+                          Savol narxi: {{item.price}}
                         </div>
                         <!-- <span class="location"><font-awesome-icon :icon="['fas', 'map-marker']"/>Buxoro</span> -->
                       </div>
@@ -199,13 +203,52 @@
                     </b-row>
                   </div>
                   <div class="user__priceQuestion">
-                    <div class="user__priceQuestion-title">Pulli sovollarim</div>
+                    <div class="user__priceQuestion-title">Pulli savollarim</div>
                     <b-row class="user__priceQuestion-info" v-for="item of priceAddedQuestion" :key="item.id">
-                      <b-col sm="8" class="user__priceQuestion-name">{{item.title}}</b-col>
-                      <b-col sm="4" class="user__priceQuestion-price">
-                        {{item.price}} so'm
-                        <nuxt-link to="" class="user__priceQuestion-pay">To'lash</nuxt-link>
-                      </b-col>
+                      <p class="user__priceQuestion-name">{{item.title}}</p>
+                      <p>{{item.price}} so'm</p>
+                      <p>Savolga pull to'lash</p>
+                      <b-form @submit.prevent="customerQuestionPrice()">
+                        <b-form-group
+                          label="Karta raqamini kirgizing"
+                          label-for="input"
+                        >
+                          <b-form-input
+                            id="input"
+                            type="text"
+                            required
+                            placeholder="8600123456789101"
+                            v-model='form.card_number'
+                          >
+                          </b-form-input>
+                        </b-form-group>
+                        <b-form-group
+                          label="Karta kunini kirgizing"
+                          label-for="input1"
+                        >
+                          <b-form-input
+                            id="input1"
+                            type="text"
+                            required
+                            placeholder="12/20"
+                            v-model="form.expire_date"
+                          >
+                          </b-form-input>
+                        </b-form-group>   
+                        <b-form-group>
+                          <b-form-input
+                            v-model="form.object_id"
+                          >
+                          </b-form-input>
+                        </b-form-group>
+                        <b-form-group>
+                          <b-form-input
+                            v-model="form.object_type"
+                          >
+                          </b-form-input>
+                        </b-form-group>
+                        <button type="submit">To'lash</button>                     
+                      </b-form>
                     </b-row>
                   </div>
                 </b-card-text>
@@ -441,6 +484,12 @@ export default {
         email: "",
         region: ""
       },
+      form: {
+        card_number: '',
+        expire_date: '',
+        object_type: 'question',
+        object_id: 8
+      },
       user: this.$auth.user
     };
   },
@@ -505,14 +554,14 @@ export default {
       await this.$axios.get(`customer/fav-list?language=${this.$i18n.locale}`)
         .then((res) => {
           this.lawyerFavorite = res.data;
-          console.log("getLawyerFavorite", res)
+          // console.log("getLawyerFavorite", res)
         })
     },
     async getDocumentCustomerPriceAdded() {
       await this.$axios.get('document/customer/?priceadded=1')
         .then((res) => {
           this.priceAddedDocument = res.data;
-          console.log('getDocumentCustomerPriceAdded', res)
+          // console.log('getDocumentCustomerPriceAdded', res)
         })
     },
     async getQuestionCustomerPriceAdded() {
@@ -520,6 +569,12 @@ export default {
         .then((res) => {
           this.priceAddedQuestion = res.data;
           console.log('getQuestionCustomerPriceAdded', res)
+        })
+    },
+    async customerQuestionPrice() {
+      await this.$axios.post(`payment/clickcardtoken/`) 
+        .then((res) => {
+          console.log('customerQuestionPrice', res) 
         })
     }
   },

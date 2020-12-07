@@ -760,7 +760,21 @@
   &-info {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    
+    .left__block {
+      margin-bottom: 10px;  
+    }
+    .right__block {
+      .price {
+        svg {
+          color: #b08e44;
+          margin-right: 8px;
+        }  
+      }
+    }
     .answer {
+      margin-bottom: 10px;
       svg {
         color: #b08e44;
         margin-right: 10px;
@@ -806,7 +820,7 @@
 
   }
   &-date {
-    
+
   }
 }
 
