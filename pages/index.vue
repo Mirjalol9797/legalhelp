@@ -492,57 +492,6 @@
         </b-container>
       </div>
       <!-- /.our__other-services -->
-
-      <div class="form__wrapper">
-        <b-container>
-          <div class="form__header">
-            <h4 class="form__heading">
-              {{$t('form_wrap.title')}} 
-            </h4>
-            <!-- /.form__heading -->
-            <p class="form__motto">
-              {{$t('form_wrap.subtitle')}} 
-            </p>
-          </div>
-          <form action="" method="POST" class="main__form">
-            <b-container>
-              <b-row>
-                <b-col lg="5" class=" order-2 order-lg-1">
-                  <!-- <input type="email" class="email" :placeholder="$t('form_wrap.input_email')" /> -->
-                  <!-- <input type="text" class="name" :placeholder="$t('form_wrap.input_name')" /> -->
-                  <!-- <input type="tel" class="phone__number" :placeholder="$t('form_wrap.input_tel')"/> -->
-                  <input type="text" class="topic" :placeholder="$t('form_wrap.input_theme')" />
-                  <textarea name="textarea" id="" class="textarea" :placeholder="$t('form_wrap.input_ques')"></textarea>
-                </b-col>
-                <b-col lg="7" class=" order-1 order-lg-2">
-                  <div class="info__wrapper">
-                    <div class="img__part">
-                      <img src="../assets/images/index/lawyer.png" alt="" />
-                    </div>
-                    <div class="info__content">
-                      <p class="info__content-heading">
-                        {{$t('form_wrap.info')}}
-                      </p>
-                      <span class="info__content-small"
-                        >{{$t('form_wrap.time_info')}}</span
-                      >
-                      <p class="info__content-tel">
-                        {{$t('form_wrap.mobil_info')}} 
-                        <nuxt-link to="tel:+998999276993" class="phone"
-                          >+998 99 927 69 93</nuxt-link
-                        >
-                      </p>
-                    </div>
-                  </div>
-                  <!-- /.info__wrapper -->
-                </b-col>
-              </b-row>
-              
-            </b-container>
-            <b-button class="question__btn submit__btn">{{$t('form_wrap.btn')}}</b-button>
-          </form>
-        </b-container>
-      </div>
       <!-- /.form__wrapper -->
     </div>
   </div>

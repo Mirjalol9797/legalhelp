@@ -208,7 +208,7 @@
                       <p class="user__priceQuestion-name">{{item.title}}</p>
                       <p>{{item.price}} so'm</p>
                       <p>Savolga pull to'lash</p>
-                      <b-form @submit.prevent="customerQuestionPrice()">
+                      <b-form @submit.prevent="customerQuestionPrice">
                         <b-form-group
                           label="Karta raqamini kirgizing"
                           label-for="input"
@@ -237,13 +237,26 @@
                         </b-form-group>   
                         <b-form-group>
                           <b-form-input
-                            v-model="form.object_id"
+                            type="hidden"
+                            v-model="form.object_id=item.id"
+                            style="display:none"
                           >
                           </b-form-input>
                         </b-form-group>
                         <b-form-group>
                           <b-form-input
+                            type="hidden"
                             v-model="form.object_type"
+                            style="display:none"  
+                          >
+                          </b-form-input>
+                        </b-form-group>
+                        <b-form-group>
+                          <b-form-input
+                            type="text"
+                            v-model="code" 
+                            v-if="showCode"
+                            placeholder="sms code"
                           >
                           </b-form-input>
                         </b-form-group>
@@ -478,6 +491,7 @@ export default {
       lawyerFavorite: [],
       priceAddedDocument: [],
       priceAddedQuestion: [],
+      showCode: false,
       user: {
         first_name: "",
         last_name: "",
@@ -488,8 +502,10 @@ export default {
         card_number: '',
         expire_date: '',
         object_type: 'question',
-        object_id: 8
+        object_id: '',
+        token: ''
       },
+      code: '',
       user: this.$auth.user
     };
   },
@@ -568,11 +584,11 @@ export default {
       await this.$axios.get('question/customer/?priceadded=1') 
         .then((res) => {
           this.priceAddedQuestion = res.data;
-          console.log('getQuestionCustomerPriceAdded', res)
+          // console.log('getQuestionCustomerPriceAdded', res)
         })
     },
     async customerQuestionPrice() {
-      await this.$axios.post(`payment/clickcardtoken/`) 
+      await this.$axios.post(`payment/clickcardtoken/`, this.form) 
         .then((res) => {
           console.log('customerQuestionPrice', res) 
         })
