@@ -288,7 +288,7 @@
         left: 15px;
         width: 18px;
         height: 18px;
-        background-image: url("../images/profil/cogs-solid.svg");
+        background-image: url("../images/profil/file-solid2.svg");
         background-repeat: no-repeat;
       }
       &:before {
@@ -309,7 +309,7 @@
       background-color: #f2b50f;
 
       &:after {
-        background-image: url("../images/profil/cogs.svg");
+        background-image: url("../images/profil/file-solid.svg");
       }
       &:before {
         background-image: url("../images/profil/angle-right.svg");
@@ -329,7 +329,7 @@
         left: 15px;
         width: 18px;
         height: 18px;
-        background-image: url("../images/profil/question.svg");
+        background-image: url("../images/profil/cogs-solid.svg");
         background-size: 15px 15px;
         background-repeat: no-repeat;
       }
@@ -351,7 +351,7 @@
       background-color: #f2b50f;
 
       &:after {
-        background-image: url("../images/profil/question-solid.svg");
+        background-image: url("../images/profil/cogs.svg");
       }
       &:before {
         background-image: url("../images/profil/angle-right.svg");
@@ -441,4 +441,53 @@
       }
     }
   }     
+}
+
+.lawyer__documents {
+  &_item {
+    background-color: #fff;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: left;
+  }
+
+  &-link {
+    a {
+      color: #0056b3;
+    }
+  }
+  &-form {
+    input {
+      max-width: 120px;
+    }
+    &-text {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .active2 {
+      display: none;
+    }
+  }
+}
+
+.lawyer__questions {
+  background-color: #fff;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  text-align: left;
+  h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  &_item {
+    margin-bottom: 20px;
+    border-bottom: 3px solid #eee;
+    padding-bottom: 20px;
+  }
 }

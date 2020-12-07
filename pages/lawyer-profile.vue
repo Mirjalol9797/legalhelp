@@ -37,22 +37,41 @@
                 <b-card-text>
                   <div class="user__profile-question" v-for="item of questionLawyer" :key="item.id">
                     <nuxt-link class="user__profile-question-title" to="">
-                      {{item.title}}
+                      Savol nomi: {{item.title}}
                     </nuxt-link>
                     <p class="user__profile-question-text">
-                      {{item.text}}
+                      Savol haqida qisqacha: {{item.text}}
                     </p>
-                    <b-form class="lawyer__form">
+                    <p class="user__profile-question-customer">
+                      Savol bergan mijoz: {{item.customer}}
+                    </p>
+                    <p class="user__profile-question-date">
+                      Savol berilgan sana: {{item.date}}
+                    </p>
+                    <p class="user__profile-question-price" v-if="item.is_paid == true">
+                      Savolda quyilgan narx: {{item.price}}
+                    </p>
+                    <b-form 
+                      class="lawyer__form" 
+                      @submit.prevent="pathPriceQuestionLawyer(item.id)"
+                      v-if="item.is_paid == false"
+                    >
                       <b-form-group
                         label="Savolga narx kirgizing"
                         label-for="input"
                       >
                         <b-form-input
                           id="input"
-                          type="email"
+                          type="text"
+                          v-model="priceQuestion"
+                          required
                         ></b-form-input>
                       </b-form-group> 
                       <b-button type="submit" variant="primary">Saqlamoq</b-button>                     
+                      <div :class="{active: isActiveQuestion}" class="lawyer__documents-form-text">
+                        Narx quyildi. Iltimos mijoz adabrit qilishini kuting. <br>
+                        Mijoz adobrit kigandan so'ng? mijoz tomondan berilgan savol "Bildirishnomalrda" chiqadi
+                      </div>                        
                     </b-form>
                     <!-- <div class="user__profile-question-info">
                       <div class="answer">
@@ -76,41 +95,44 @@
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
                   </span>
-                  <span class="user__profile-card-text">{{
-                    $t("profile.mydocuments")
-                  }}</span>
-                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                  <span class="user__profile-card-text">{{$t("profile.mydocuments")}}</span>
                 </template>
                 <b-card-text>
-                  <div class="user__profile-documents">
-                    <div class="user__profile-documents-header">
-                      <b-col lg="4" class="mx-auto">
-                        <div class="user__profile-documents-user">
-                          <font-awesome-icon :icon="['fas', 'user']" /> 
-                          Jismoniy shaxs
-                        </div>
-                      </b-col>
-                    </div>
-                  </div>
-                  <div class="user__profile-documents-info">
-                    <div class="title">
-                      DAN xodimi harakati yuzasidan shikoyat
-                    </div>
-                    <span class="calendar">12:54, 26.09.2020</span>
-                    <div class="text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Amet, natus!
-                    </div>
-                  </div>
-                  <div class="user__profile-documents-category">
-                    <div class="filed-work">
-                      <div class="field-work-header">Huquq sohasi</div>
-                      <span class="btn mb-2 p-2 pl-3 pr-3 mr-3 s-span-style ">
-                        <font-awesome-icon :icon="['fas', 'home']" />
-                        Fuqarolik huquqi (umumiy masalalar)
-                      </span>
+                  <div class="lawyer__documents">
+                    <div class="lawyer__documents_item" v-for="item in documentLawyer" :key="item.id">
+                      <div class="lawyer__documents-title">Hujjat nomi: {{item.title}}</div>
+                      <div class="lawyer__documents-desc">Hujjat haqida: {{item.text}}</div>
+                      <div class="lawyer__documents-categ">Hujjat toifasi: {{item.category}}</div>
+                      <div class="lawyer__documents-subcateg">Hujjat pastki toifasi: {{item.sub_category}}</div>
+                      <div class="lawyer__documents-link">
+                        <a :href="item.doc_file" target="_blank">Hujjat yuklab olish</a>
+                      </div>
+                      <div class="lawyer__documents-customer">Hujjat buyirgan mijoz: {{item.customer}}</div>
+                      <div class="lawyer__documents-date">Hujjat buyirilgan sana: {{item.date}}</div>
+                      <div class="lawyer__documents-price"  v-if="item.is_paid == true">Hujjat quyilgan narx: {{item.price}}</div>
+                      <b-form 
+                        class="lawyer__documents-form"
+                        @submit.prevent="patchPriceDocumentLawyer(item.id)"
+                        v-if="item.is_paid == false"
+                      >
+                        <b-form-group
+                          label="Hujjatga narx kirgizing"
+                          label-for="input"
+                        >
+                          <b-form-input
+                            id="input"
+                            type="text"
+                            v-model="priceDocument"
+                            required
+                          ></b-form-input>
+                        </b-form-group> 
+                        <b-button type="submit" variant="primary">Saqlash</b-button>                     
+                        <div :class="{active: isActiveDocument}" class="lawyer__documents-form-text">
+                          Narx quyildi. Iltimos mijoz adabrit qilishini kuting. <br>
+                          Mijoz adobrit kigandan so'ng? mijoz tomondan berilgan savol "Bildirishnomalrda" chiqadi
+                        </div>     
+                      </b-form>
                     </div>
                   </div>
                 </b-card-text>
@@ -118,22 +140,35 @@
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <!-- <font-awesome-icon :icon="['fas', 'bell']" /> -->
                   </span>
-                  <span class="user__profile-card-text">{{
-                    $t("profile.notification")
-                  }}</span>
-                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                  <span class="user__profile-card-text">{{$t("profile.notification")}}</span>
                 </template>
                 <b-card-text>
-                  <b-row>
-                    <b-col lg="4">
-                      <nuxt-link :to="localePath('/lawyer-profile')" class="">Puli tulangan hujjatlar</nuxt-link>
-                    </b-col>
-                    <b-col lg="4">
-                      <nuxt-link :to="localePath('/lawyer-profile')" class="">Puli tulangan savollar</nuxt-link>
-                    </b-col>
-                  </b-row>
+                  <div class="lawyer__questions">
+                    <h2>Puli to'langan savollar</h2>
+                    <div class="lawyer__questions_item" v-for="item in priceAddedQuestion" :key="item.id">
+                      <div class="lawyer__questions-title">Savol nomi: {{item.title}}</div>
+                      <div class="lawyer__questions-text">Savol haqida: {{item.text}}</div>
+                      <div class="lawyer__questions-customer">Savol bergan mijoz: {{item.customer}}</div>
+                      <div class="lawyer__questions-date">Savol berilgan sana: {{item.date}}</div>
+                      <div class="lawyer__questions-price">Savolga quyilgan narx: {{item.price}}</div>
+                    </div>
+                  </div>
+                  <div class="lawyer__documents">
+                    <h2>Puli to'langan hujjatlar</h2>
+                    <div class="lawyer__documents_item" v-for="item in priceAddedDocumnet" :key="item.id">
+                      <div class="lawyer__documents-title">Hujjat nomi: {{item.title}}</div>
+                      <div class="lawyer__documents-desc">Hujjat haqida: {{item.text}}</div>
+                      <div class="lawyer__documents-categ">Hujjat toifasi: {{item.category}}</div>
+                      <div class="lawyer__documents-subcateg">Hujjat pastki toifasi: {{item.sub_category}}</div>
+                      <div class="lawyer__documents-link">
+                        <a :href="item.doc_file" target="_blank">Hujjat yuklab olish</a>
+                      </div>
+                      <div class="lawyer__documents-customer">Hujjat buyirgan mijoz: {{item.customer}}</div>
+                      <div class="lawyer__documents-date">Hujjat buyirilgan sana: {{item.date}}</div>    
+                      <div class="lawyer__documents-price">Quyilgan narx: {{item.price}}</div>
+                    </div>
+                  </div>
                 </b-card-text>
               </b-tab>
               <!-- <b-tab>
@@ -300,6 +335,13 @@ export default {
       selectuz: [],
       selectru: [],
       questionLawyer: [],
+      documentLawyer: [],
+      priceAddedQuestion: [],
+      priceAddedDocumnet: [],
+      priceDocument: '',
+      priceQuestion: '',
+      isActiveDocument: false,
+      isActiveQuestion: false,
       lawyer: {
         first_name: "",
         last_name: "",
@@ -350,15 +392,57 @@ export default {
       await this.$axios.get('question/lawyer/')
         .then((res) => {
           this.questionLawyer = res.data;
-          console.log('getQuestionLawyer', res)
+          // console.log('getQuestionLawyer', res)
+        })
+    },
+    async getDocumentLawyer() {
+      await this.$axios.get('document/lawyer/')
+        .then((res) => {
+          this.documentLawyer = res.data;
+          console.log('getDocumentLawyer', res)
+        })
+    },
+    async getQuestionLawyerPriceAdded() {
+      await this.$axios.get('question/lawyer/?is_paid=1')
+        .then((res) => {
+          this.priceAddedQuestion = res.data;
+          // console.log('getQuestionLawyerPriceAdded', res)
+        })
+    },
+    async getDocumentLawyerPriceAdded() {
+      await this.$axios.get('document/lawyer/?paymentdone=1') 
+        .then((res) => {
+          this.priceAddedDocumnet = res.data;
+          // console.log('getDocumentLawyerPriceAdded', res)
+        })
+    },
+    async patchPriceDocumentLawyer(id) {
+      await this.$axios.patch(`document/lawyer/${id}/`, {
+        price: this.priceDocument
+      })
+        .then((res) => {
+          console.log('patchPriceDocumentLawyer', res)
+          this.isActiveDocument = true
+        })
+    },
+    async pathPriceQuestionLawyer(id) {
+      await this.$axios.patch(`question/lawyer/${id}/`, {
+        price: this.priceQuestion
+      })
+        .then((res) => {
+          console.log('pathPriceQuestionLawyer', res)
+          this.isActiveQuestion = true
         })
     }
   },
   mounted() {
     this.getRegionuz();
     this.getRegionru();
-    console.log(this.$auth.user);
-    this.getQuestionLawyer()
+    // console.log(this.$auth.user);
+    this.getQuestionLawyer();
+    this.getDocumentLawyer();
+    this.getQuestionLawyerPriceAdded();
+    this.getDocumentLawyerPriceAdded();
   }
 };
 </script>

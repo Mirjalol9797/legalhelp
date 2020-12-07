@@ -55,7 +55,7 @@ export default {
     async login() {
         try {
         console.log(this.form);
-        let res = await this.$auth.loginWith("lawyer", {data: this.form});
+        let res = await this.$auth.loginWith("local", {data: this.form});
         console.log(res) 
         this.$toast.success({
           title: `${this.$t("toast.success")}`,
@@ -70,6 +70,7 @@ export default {
           });
       }
     }
+
   }
 };
 </script>

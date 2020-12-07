@@ -16,7 +16,7 @@
               <b-nav-item :to="localePath('/news')" class="nav__link">{{
                 $t("navbar.news")
               }}</b-nav-item>
-              <b-nav-item :to="localePath('/questions')" class="nav__link" v-if="loggedIn && $auth.user.is_lawyer">{{
+              <b-nav-item :to="localePath('/questions')" class="nav__link">{{
                 $t("navbar.questions")
               }}</b-nav-item>
               <b-nav-item :to="localePath('/lawyers')" class="nav__link">{{
@@ -42,9 +42,7 @@
                   v-else-if="loggedIn && $auth.user.is_lawyer"
                   >{{ $t("navbar.askquestions") }}</b-button
                 >
-                <b-button v-else class="header__btn" :to="localePath('/reg')">{{
-                  $t("navbar.askquestions")
-                }}</b-button>
+                <b-button v-else class="header__btn" :to="localePath('/reg')">{{$t("navbar.askquestions")}}</b-button>
               </b-nav-item>
             </b-navbar-nav>
             <!-- Right aligned nav items -->

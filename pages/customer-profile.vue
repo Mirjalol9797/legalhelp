@@ -56,7 +56,7 @@
                       <div class="right__block">
                         <div class="answer">
                           <font-awesome-icon :icon="['fas', 'comment']" />
-                          Javoblar <span class="counter">11</span>
+                          Javoblar <span class="counter">{{}}</span>
                         </div>
                         <!-- <span class="location"><font-awesome-icon :icon="['fas', 'map-marker']"/>Buxoro</span> -->
                       </div>
