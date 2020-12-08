@@ -1,0 +1,48 @@
+.customer-ques-page {
+  padding: 50px 0;
+}
+
+.customer-ques {
+  margin-bottom: 50px;
+  &__item {
+    padding: 25px;
+    box-shadow: 0 0 1.25rem rgba(108,118,134,.1);
+    border: .0625rem solid rgba(0,0,0,.08);
+  }
+  &__title {
+    font-size: 25px;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  &__body {
+    color: #6C7686;
+    margin-bottom: 20px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+  &__date {
+    font-size: 14px;
+    background-image: url('../images/customer/calendar.svg');
+    background-repeat: no-repeat;
+    padding: 0 0 0 26px;
+    background-size: 20px;
+    margin-bottom: 10px;
+  }
+  &__answer {
+    font-size: 14px;
+    background-image: url('../images/customer/answer.svg');
+    background-repeat: no-repeat;
+    padding: 0 0 0 26px;
+    background-size: 20px;
+  }
+}
+
+.customer-answer {
+  &__title {
+    font-size: 25px;
+    padding-left: 25px;
+    margin-bottom: 25px;
+  }
+}

@@ -12,31 +12,30 @@
             <form @submit.prevent="postQuestionCustomer" class="reg-form">
               <div class="reg-form__item">
                 <label for="lang">Til</label>
-                <select name="" id="lang" v-model="form.lang">
-                  <option value="uzb">uzb</option>
-                  <option value="rus">rus</option>
+                <select id="lang" v-model="language">
+                  <option>o'zbek</option>
+                  <option>rus</option>
                 </select>
               </div>
               <div class="reg-form__item">
                 <label for="select">Categoriya</label>
-                <select name="" id="select" v-model="form.category"> 
-                  <option 
-                    value=""
-                    v-for="item in category"
+                <select id="select" v-model="category">
+                  <option
+                    v-for="item in categories"
                     :key="item.id"
-                  >
+                    :value="item.id" >
                   {{item.name}}
                   </option>
                 </select>
               </div>
               <div class="reg-form__item">
                 <label for="text">Savol sarlavxasi</label>
-                <input type="text" v-model="form.title" id="text">
-              </div>             
+                <input type="text" v-model="title" id="text">
+              </div>
               <div class="reg-form__item">
                 <label for="textarea">Savol matni</label>
-                <textarea name="" id="textarea" cols="30" rows="10" v-model="form.text"></textarea>
-              </div> 
+                <textarea name="" id="textarea" cols="30" rows="10" v-model="text"></textarea>
+              </div>
               <div class="reg-form__item">
                 <label for="file">File</label>
                 <input type="file" @change="addFile" id="file" ref="file"/>
@@ -53,27 +52,18 @@
 export default {
   data() {
     return {
+      categories: [],
+      form: '',
+      language: "",
       category: [],
-      form: {
-        lang: "",
-        category: "",
-        title: "",
-        text: "",
-      }
+      title: "",
+      text: "",
     };
   },
   methods: {
-    fileUpload(event) {
-      let e = event.target.files[0];
-      if (e.type == "image/jpeg") {
-        this.form.file = e;
-      } else {
-        console.log("wrong type");
-      }
-    },
     async getCategory() {
       await this.$axios.get("document/category/").then(res => {
-        this.category = res.data;
+        this.categories = res.data;
         console.log('getCategory', res);
       });
     },
@@ -85,22 +75,19 @@ export default {
     },
     addFile(e) {
       this.form = new FormData();
+      this.form.append('title', this.title);
+      this.form.append('language', this.language);
+      this.form.append('category', this.category);
+      this.form.append('text', this.text);
       this.form.append('question_file', e.target.files[0]);
       this.$refs.file.innerHTML = e.target.files[0].name;
     },
     async postQuestionCustomer() {
       await this.$axios.post('question/customer/', this.form)
         .then((res) => {
-          console.log('postQuestionCustomer', res)
-          this.form = {
-            lang: "",
-            category: "",
-            title: "",
-            text: "",
-            question_file: ''
-          }
+          console.log('postQuestionCustomer', res);
         })
-    } 
+    }
 },
   mounted() {
     this.getCategory();

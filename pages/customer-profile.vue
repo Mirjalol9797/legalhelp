@@ -36,36 +36,8 @@
                   <span class="user__profile-card-text">{{$t("profile.myquestion")}}</span>
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
-                <b-card-text v-for="item of questionCustomer" :key="item.id">
-                  <div class="user__profile-question">
-                    <nuxt-link class="user__profile-question-title" to="">
-                      {{item.title}} 
-                    </nuxt-link>
-                    <p class="user__profile-question-text">
-                      {{item.text}} 
-                    </p>
-                    <div class="user__profile-question-info">
-                      <div class="left__block">
-                        <!-- <span class="user">
-                          <font-awesome-icon :icon="['fas', 'user']" />
-                          Halimov Navruz
-                        </span> -->
-                        <span class="calendar">{{item.date}}</span>
-                      </div>
-
-                      <div class="right__block">
-                        <div class="answer">
-                          <font-awesome-icon :icon="['fas', 'comment']" />
-                          Javoblar <span class="counter">1</span>
-                        </div>
-                        <div class="price" v-if="item.price > 0">
-                          <font-awesome-icon :icon="['fas', 'money-bill-alt']" />
-                          Savol narxi: {{item.price}}
-                        </div>
-                        <!-- <span class="location"><font-awesome-icon :icon="['fas', 'map-marker']"/>Buxoro</span> -->
-                      </div>
-                    </div>
-                  </div>
+                <b-card-text>
+                  <CustomerQuestion />
                 </b-card-text>
               </b-tab>
               <b-tab>
@@ -339,25 +311,23 @@
                               />
                             </b-col>
                             <b-col lg="6">
-                              <label for="user__profile-city">{{
-                                $t("profile.city")
-                              }}</label>
+                              <label for="user__profile-city">{{$t("profile.city")}}</label>
                               <select
                                 name
                                 id="user__profile-city"
                                 v-model="regionSelect"
                               >
                                 <option value="" disabled selected>
-                                <!-- {{
+                                {{
                                   user.region.title_uz
-                                }} -->
+                                }}
                                 </option>
                                 <option
                                   v-for="(index, region) of selectuz"
                                   :key="region.id"
                                   :value="index.id"
                                   >
-                                  <!-- {{ index.title_uz }} -->
+                                  {{ index.title_uz }}
                                   </option>
                               </select>
                             </b-col>
@@ -480,6 +450,7 @@
   </div>
 </template>
 <script>
+import CustomerQuestion from '../components/Customer-question'
 export default {
   data() {
     return {
@@ -508,6 +479,9 @@ export default {
       code: '',
       user: this.$auth.user
     };
+  },
+  components: {
+    CustomerQuestion
   },
   methods: {
     async onCancel() {
@@ -606,3 +580,6 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+</style>

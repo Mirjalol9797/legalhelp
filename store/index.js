@@ -10,7 +10,8 @@ const store = () => new Vuex.Store({
         user:{},
         baseURL: 'https://legalhelp.uz/api',
         mediaURL: 'https://legalhelp.uz/',
-        lawyers: []
+        lawyers: [],
+        questionCustomers: []
     },
     getters: { 
         news(state) {
@@ -24,6 +25,9 @@ const store = () => new Vuex.Store({
         },
         lawyers(state) {
             return state.lawyers;
+        },
+        questionCustomer(state) {
+            return state.questionCustomers
         }
     },
     mutations: {
@@ -38,6 +42,9 @@ const store = () => new Vuex.Store({
         },
         setLawyers(state, lawyer) {
             state.lawyers = lawyer
+        },
+        setQuestionCustomer(state, questionCustomer) {
+            state.questionCustomers = questionCustomer
         }
         
     },
@@ -66,7 +73,14 @@ const store = () => new Vuex.Store({
                     commit('setLawyers', res.data);
                     // console.log('getLawyers', res.data)
                 })
-        }
+        },
+        async getQuestionCustomer({commit}) {
+            await this.$axios.get('question/customer/')
+                .then((res) => {
+                    commit('setQuestionCustomer', res.data);
+                    console.log('setQuestionCustomer', res)
+                })
+        },        
     },
 })
 
