@@ -9,60 +9,39 @@
                 <img src="../../assets/images/registration/left-arrow.svg" />
               </nuxt-link>
             </div>
-            <form class="registration__form" @submit.prevent="onSubmit">
-              <div class="language">
-                <label for="language">{{ $t("askquestion.language") }}</label>
-                <select name="" id="language" v-model="form.lang">
-                  <option value="o'zbek">{{ $t("askquestion.uzb") }}</option>
-                  <option value="Rus">{{ $t("askquestion.rus") }}</option>
+            <form @submit.prevent="postQuestionCustomer" class="reg-form">
+              <div class="reg-form__item">
+                <label for="lang">Til</label>
+                <select name="" id="lang" v-model="form.lang">
+                  <option value="uzb">uzb</option>
+                  <option value="rus">rus</option>
                 </select>
               </div>
-              <div class="category">
-                <label for="category">{{ $t("category.category") }}</label>
-                <select name="" id="category" v-model="form.category">
-                  <option value="" selected disabled
-                    >Savol kategoriyasini tanlang</option
+              <div class="reg-form__item">
+                <label for="select">Categoriya</label>
+                <select name="" id="select" v-model="form.category"> 
+                  <option 
+                    value=""
+                    v-for="item in category"
+                    :key="item.id"
                   >
-                  <option
-                      v-for="(selectid, index) of category"
-                    :key="index"
-                    :value="selectid.id"
-                    class="category__region-option"
-                    >{{ selectid.name }}</option
-                  >
+                  {{item.name}}
+                  </option>
                 </select>
               </div>
-              <div class="question__title">
-                <label for="question__title">{{
-                  $t("givequestion.title")
-                }}</label>
-                <input type="text" id="question__title" v-model="form.title" />
+              <div class="reg-form__item">
+                <label for="text">Savol sarlavxasi</label>
+                <input type="text" v-model="form.title" id="text">
+              </div>             
+              <div class="reg-form__item">
+                <label for="textarea">Savol matni</label>
+                <textarea name="" id="textarea" cols="30" rows="10" v-model="form.text"></textarea>
+              </div> 
+              <div class="reg-form__item">
+                <label for="file">File</label>
+                <input type="file" @change="addFile" id="file" ref="file"/>
               </div>
-              <div class="question__text">
-                <label for="question__text">{{
-                  $t("givequestion.text")
-                }}</label>
-                <textarea
-                  name=""
-                  id="question__text"
-                  v-model="form.text"
-                ></textarea>
-              </div>
-              <div class="file">
-                <label for="file__input">{{ $t("givequestion.file") }}</label>
-                <input
-                  @change="fileUpload"
-                  type="file"
-                  accept="image/*,application/pdf,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                  value="Upload file"
-                  class="file__input"
-                />
-              </div>
-              <div class="registration__button-wrap">
-                <b-button class="registration__btn" type="submit">{{
-                  $t("givequestion.btn")
-                }}</b-button>
-              </div>
+              <button type="submit" class="reg-form__btn">Davom etish</button>
             </form>
           </div>
         </div>
@@ -80,7 +59,6 @@ export default {
         category: "",
         title: "",
         text: "",
-        file: ""
       }
     };
   },
@@ -103,6 +81,24 @@ export default {
       await this.$axios.post('document/customer/', this.form)
         .then((res) => {
           console.log('onSubmit')
+        })
+    },
+    addFile(e) {
+      this.form = new FormData();
+      this.form.append('question_file', e.target.files[0]);
+      this.$refs.file.innerHTML = e.target.files[0].name;
+    },
+    async postQuestionCustomer() {
+      await this.$axios.post('question/customer/', this.form)
+        .then((res) => {
+          console.log('postQuestionCustomer', res)
+          this.form = {
+            lang: "",
+            category: "",
+            title: "",
+            text: "",
+            question_file: ''
+          }
         })
     } 
 },

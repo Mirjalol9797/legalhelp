@@ -5,7 +5,7 @@
         <div class="profile-inner">
           <div class="owner-pic">
             <img
-              src="$store.state.baseURL + $auth.user.image"
+              :src="$store.state.baseURL + $auth.user.image"
               height="170"
               width="264"
               alt
