@@ -50,7 +50,7 @@ export default {
           this.questionCustomer = res.data;
           console.log('getQuestionCustomer', res)
         })
-    },
+    }  
   },
   mounted() {
     this.getQuestionCustomer()

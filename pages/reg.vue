@@ -177,7 +177,7 @@ export default {
                           });
                         }
                         // if(this.loggedIn){
-                          this.$router.push(this.localePath('/askquestions'))
+                        this.$router.push(this.localePath('/askquestions'))
                         // }
 
                       })

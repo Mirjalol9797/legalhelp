@@ -10,7 +10,7 @@
             </div>
             <div class="customer-ques__info">
               <div class="customer-ques__date">{{questionCustomer.date}}</div>
-              <div class="customer-ques__answer">Javoblar <span>2</span></div>
+              <div class="customer-ques__answer">Javoblar <span>{{answer.length}}</span></div>
             </div>  
           </div>  
         </b-col>
@@ -19,11 +19,16 @@
         <b-col cols="12">
           <div class="customer-answer">
             <b-row>
-              <div class="customer-answer__title">Javoblar</div>
+              <div>
+                <div class="customer-answer__title">Javoblar</div>
+                <div v-if="answer == ''">Savolga javob berilmagan</div>
+              </div>
             </b-row>
             <b-row>
               <div class="customer-answer__item" v-for="item in answer" :key="item.id">
-                <b-col>{{item.text}}</b-col>
+                <div class="customer-answer__text">{{item.text}}</div>
+                <div class="customer-answer__user">Yurist: <span>{{item.lawyer}}</span></div>
+                <div class="customer-answer__date">{{item.date}}</div>
               </div>
             </b-row>            
           </div>
@@ -49,7 +54,7 @@ export default {
         })
     },
     async getQuestionAnswer() {
-      await this.$axios.get(`question/answer/?question_id=${this.$route.params.id}/`)
+      await this.$axios.get(`question/answer/?question_id=${this.$route.params.id}`)
         .then((res) => {
           this.answer = res.data;
           console.log('getQuestionAnswer', res)

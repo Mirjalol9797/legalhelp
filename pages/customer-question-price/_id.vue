@@ -1,45 +1,72 @@
 <template>
   <div>
     <b-container class="customer-payment">
-      <form @submit.prevent="payment">
-        <div>
-          <label for="">Karta raqam</label>
+      <form @submit.prevent="payment" class="customer-form">
+        <div class="customer-form__item">
+          <label for="card">Karta raqam</label>
           <input 
             type="text" 
+            id="card"
             placeholder="8600012345678901"
             v-model="form.card_number"
           >
         </div>
-        <div>
-          <label for="">data</label>
+        <div class="customer-form__item">
+          <label for="data">Amal qilish muddati</label>
           <input 
             type="text" 
+            id="data"
             placeholder="1220"
             v-model="form.expire_date"
           >
         </div>        
-        <div>
+        <div class="customer-form__item" style="display: none">
           <label for="">savol tipi</label>
           <input 
             type="hiiden" 
             v-model="form.object_type"
           >
         </div>
-        <div>
+        <div class="customer-form__item" style="display: none">
           <label for="">savol id</label>
           <input 
             type="hiiden" 
             v-model="form.object_id"
           >
         </div>  
-        <div v-if="showCode">
+        <!-- <div v-if="showCode">
           <label for="">sms code</label>
           <input 
             type="text" 
             placeholder="sms code"
             v-model="code"
           >
-        </div>                         
+        </div>                          -->
+        <button type="submit">SMS kod olish</button>
+      </form>
+      <form @submit.prevent="payment2">
+        <div>
+          <label for="">sms code</label>
+          <input type="text" v-model="form2.code">
+        </div>
+        <div>
+          <label for="">sms code</label>
+          <input type="text" v-model="form2.card_token">
+        </div>        
+        <div>
+          <label for="">savol tipi</label>
+          <input 
+            type="hiiden" 
+            v-model="form2.object_type"
+          >
+        </div>
+        <div>
+          <label for="">savol id</label>
+          <input 
+            type="hiiden" 
+            v-model="form2.object_id"
+          >
+        </div>         
         <button type="submit">To'lash</button>
       </form>
     </b-container>
@@ -53,10 +80,14 @@ export default {
         card_number: '',
         expire_date: '',
         object_type: 'question',
-        object_id: '',
-        token: ''
+        object_id: ''
       },
-      code: '',
+      form2: {
+        code: '',
+        card_token: '',
+        object_type: 'question',
+        object_id: ''
+      },
       showCode: false
     }
   },
@@ -73,20 +104,25 @@ export default {
     //       .catch()
     //     })
     // }
+
     async payment() {
-      this.showCode = true;
-      if(this.code == "") {
-        this.form.object_id = this.$route.params.id
-        await this.$axios.post('payment/clickcardtoken/', this.form)
-        .then((res) => {
-          console.log('payment', res)
-          this.$axios.post('payment/clickcardtokenverify/', {token: res.data.card_token, code: this.code}) 
-          .then(
-            console.log('clickcardtokenverify')
-          )
-        })
-      }
+      this.form.object_id = this.$route.params.id
+      await this.$axios.post('payment/clickcardtoken/', this.form)
+      .then((res) => {
+        console.log('payment', res)
+        this.form2.card_token = res.data.response.card_token;
+        
+        console.log('dasdsad', this.form2)
+      })
+    },
+    async payment2() {
+      this.form2.object_id = this.$route.params.id
+      await this.$axios.post('payment/clickcardtokenverify/', this.form2)
+      .then((res) => {
+        console.log('RES', res)
+      })
     }
+
   },
   mounted() {
 

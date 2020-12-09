@@ -85,72 +85,8 @@
                   <span class="user__profile-card-text">{{$t("profile.mydocuments")}}</span>
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
-                <b-card-text v-for="item of documentCustomer" :key="item.id" class="user__documentCustomer">
-                  <!-- <div class="user__profile-documents">
-                    <div class="user__profile-documents-header">
-                      <span class="user__profile-documents-title">
-                        0 Takliflar</span>
-                      <b-col lg="3">
-                        <div class="user__profile-documents-price">
-                          <b>190 000 so`m</b><span>savol <br />narxi</span>
-                        </div>
-                      </b-col>
-                      <b-col lg="4"
-                        ><div class="user__profile-documents-user">
-                          <font-awesome-icon :icon="['fas', 'user']" /> Jismoniy
-                          shaxs
-                        </div>
-                      </b-col>
-                      <b-col lg="2"
-                        ><b-button
-                          type="button"
-                          class="user__profile-documents-payment"
-                          ><font-awesome-icon
-                            :icon="['fas', 'credit-card']"
-                            style="margin-right:5px;"
-                          />To'lash</b-button
-                        >
-                      </b-col>
-                      <b-col lg="2">
-                        <b-button
-                          type="button"
-                          class="user__profile-documents-delete"
-                        >
-                          <font-awesome-icon
-                            :icon="['fas', 'trash']"
-                            style="margin-right:5px;"
-                          />O'chirish</b-button>
-                        </b-col>
-                    </div>
-                  </div>
-                  <div class="user__profile-documents-info">
-                    <div class="title">
-                      DAN xodimi harakati yuzasidan shikoyat
-                    </div>
-                    <span class="calendar">12:54, 26.09.2020</span>
-                    <div class="text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Amet, natus!
-                    </div>
-                  </div>
-                  <div class="user__profile-documents-category">
-                    <div class="filed-work">
-                      <div class="field-work-header">Huquq sohasi</div>
-                      <span class="btn mb-2 p-2 pl-3 pr-3 mr-3 s-span-style ">
-                        <font-awesome-icon :icon="['fas', 'home']" />
-                        Fuqarolik huquqi (umumiy masalalar)
-                      </span>
-                    </div>
-                  </div> -->
-                  <div class="user__documentCustomer-title">
-                    <span>Hujjat nomi:</span>
-                    <p>{{item.title}}</p>
-                  </div>
-                  <div class="user__documentCustomer-doc">
-                    <span>Hujjat haqida qisqacha malumot:</span>
-                    <p>{{item.text}}</p>
-                  </div>
-                  <a :href="item.doc_file" target="_blank" class="user__documentCustomer-dowland">hujjatni yuklab olish</a>
+                <b-card-text>
+                  <CustomerDocument />
                 </b-card-text>
               </b-tab>
               <b-tab>
@@ -390,6 +326,7 @@
 </template>
 <script>
 import CustomerQuestion from '../components/Customer-question'
+import CustomerDocument from '../components/Customer-document'
 import CustomerPrice from '../components/Customer-price'
 export default {
   data() {
@@ -415,7 +352,8 @@ export default {
   },
   components: {
     CustomerQuestion,
-    CustomerPrice
+    CustomerPrice,
+    CustomerDocument 
   },
   methods: {
     async onCancel() {
