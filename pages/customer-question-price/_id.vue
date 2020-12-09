@@ -19,14 +19,6 @@
           >
         </div>        
         <div>
-          <label for="">sms code</label>
-          <input 
-            type="text" 
-            placeholder="sms code"
-            v-model="form.code"
-          >
-        </div>  
-        <div>
           <label for="">savol tipi</label>
           <input 
             type="hiiden" 
@@ -39,7 +31,15 @@
             type="hiiden" 
             v-model="form.object_id"
           >
-        </div>                 
+        </div>  
+        <div v-if="showCode">
+          <label for="">sms code</label>
+          <input 
+            type="text" 
+            placeholder="sms code"
+            v-model="code"
+          >
+        </div>                         
         <button type="submit">To'lash</button>
       </form>
     </b-container>
@@ -53,16 +53,39 @@ export default {
         card_number: '',
         expire_date: '',
         object_type: 'question',
-        object_id: ''
-      }
+        object_id: '',
+        token: ''
+      },
+      code: '',
+      showCode: false
     }
   },
   methods: {
+    // async payment() {
+    //   this.form.object_id = this.$route.params.id
+    //   await this.$axios.post('payment/clickcardtoken/', this.form) 
+    //     .then((res) => {
+    //       console.log('payment', res)
+    //       this.$axios.post('payment/clickcardtokenverify/', {token: res.data.card_token, code: this.code})
+    //       .then(
+    //         console.log('clickcardtokenverify', res)
+    //       )
+    //       .catch()
+    //     })
+    // }
     async payment() {
-      await this.$axios.post('payment/clickcardtoken/', this.form) 
+      this.showCode = true;
+      if(this.code == "") {
+        this.form.object_id = this.$route.params.id
+        await this.$axios.post('payment/clickcardtoken/', this.form)
         .then((res) => {
           console.log('payment', res)
+          this.$axios.post('payment/clickcardtokenverify/', {token: res.data.card_token, code: this.code}) 
+          .then(
+            console.log('clickcardtokenverify')
+          )
         })
+      }
     }
   },
   mounted() {

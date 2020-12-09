@@ -23,22 +23,7 @@
             </b-row>
             <b-row>
               <div class="customer-answer__item" v-for="item in answer" :key="item.id">
-                <b-col lg="4">
-                  <div class="customer-answer__lawyer">
-                    <div class="customer-answer__img">
-                      <img src="" alt="">
-                    </div>
-                    <div class="customer-answer__name">
-                      Yurist kotoriy dal otvet na etot otvet
-                    </div>
-                  </div>
-                </b-col>
-                <b-col lg="8">
-                  <div class="customer-answer__info">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, omnis.
-                    <div class="date"></div>
-                  </div>
-                </b-col>
+                <b-col>{{item.text}}</b-col>
               </div>
             </b-row>            
           </div>
@@ -64,7 +49,7 @@ export default {
         })
     },
     async getQuestionAnswer() {
-      await this.$axios.get(`question/answer/${this.$route.params.id}/`)
+      await this.$axios.get(`question/answer/?question_id=${this.$route.params.id}/`)
         .then((res) => {
           this.answer = res.data;
           console.log('getQuestionAnswer', res)
