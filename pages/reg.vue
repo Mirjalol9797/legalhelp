@@ -138,61 +138,56 @@ export default {
   },
   methods: {
     async onSubmit() {
-      this.showPasswordInput = true;
+        this.showPasswordInput = true;
 
-      if (this.code == "") {
-        await this.$axios.post('user/code/send/', { phone_number:  this.form.phone_number})
-                .then(res => {
-                    console.log("Code: ", res.data.code)
-                })
-                .catch(err => console.log(err))
+        if (this.code == "") {
+          await this.$axios.post('user/code/send/', { phone_number:  this.form.phone_number})
+                  .then(res => {
+                      console.log("Code: ", res.data.code)
+                  })
+                  .catch(err => console.log(err))
 
-      } else {
-        await this.$axios.post('user/code/check/', {phone_number: this.form.phone_number, code: this.code})
-                .then(res => {
-                    console.log('SendCode', res)
-                    this.form.token = res.data.token
+        } else {
+          await this.$axios.post('user/code/check/', {phone_number: this.form.phone_number, code: this.code})
+                  .then(res => {
+                      console.log('SendCode', res)
+                      this.form.token = res.data.token
+                      // User create
+                      this.$axios
+                      .post("customer/create/", this.form)
+                      .then(async () => {
+                        try {
+                          await this.$auth.loginWith("local", {
+                            data: {
+                              phone_number: this.form.phone_number,
+                              password: this.form.password
+                            }
+                          });
 
+                          this.$toast.success({
+                            title: `${this.$t("toast.success")}`,
+                            message: `${this.$t("toast.loginSuccessMessage")}`
+                          });
+                          // this.disable = false;
+                        } catch (err) {
+                          console.log(err);
+                          this.$toast.error({
+                            title: `${this.$t("toast.loginError")}`,
+                            message: `${this.$t("toast.loginErrorMessage")}`
+                          });
+                        }
+                        if(this.loggedIn){
+                          this.$router.push(this.localePath('/askquestions'))
+                        }
 
-                    // User create
-
-                    this.$axios
-                    .post("customer/create/", this.form)
-                    .then(async () => {
-                      try {
-                        await this.$auth.loginWith("local", {
-                          data: {
-                            phone_number: this.form.phone_number,
-                            password: this.form.password
-                          }
-                        });
-                        console.log(this.$auth.user);
-                        
-                        console.log(this.$store.$auth.$state.redirect = this.localePath('/askquestions'))
-                        this.$store.$auth.$state.redirect = this.localePath('/askquestions')
-                        // this.$router.push(this.localePath('/askquestions'))
-                      
-
-                        this.$toast.success({
-                          title: `${this.$t("toast.success")}`,
-                          message: `${this.$t("toast.loginSuccessMessage")}`
-                        });
-                        // this.disable = false;
-                      } catch (err) {
+                      })
+                      .catch(err => {
                         console.log(err);
-                        this.$toast.error({
-                          title: `${this.$t("toast.loginError")}`,
-                          message: `${this.$t("toast.loginErrorMessage")}`
-                        });
-                      }
-                    })
-                    .catch(err => {
-                      console.log(err);
-                    });
+                      });
 
-                })
-                .catch(err => console.log(err))
-      }
+                  })
+                  .catch(err => console.log(err))
+        }
     },
     async getRegionuz() {
       await this.$axios.get("region/?language=uz").then(res => {
