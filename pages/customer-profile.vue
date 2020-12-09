@@ -100,16 +100,7 @@
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
-                  <div class="user__priceDocument">
-                    <div class="user__priceDocument-title">Pulli hujjatlarim</div>
-                    <b-row class="user__priceDocument-info" v-for="item of priceAddedDocument" :key="item.id">
-                      <b-col sm="8" class="user__priceDocument-name">{{item.title}}</b-col>
-                      <b-col sm="4" class="user__priceDocument-price">
-                        {{item.price}} so'm
-                        <nuxt-link to="" class="user__priceDocument-pay">To'lash</nuxt-link>
-                      </b-col>
-                    </b-row>
-                  </div>
+                  <CustomerDocumentPrice />
                   <CustomerPrice />
                 </b-card-text>
               </b-tab>
@@ -327,7 +318,9 @@
 <script>
 import CustomerQuestion from '../components/Customer-question'
 import CustomerDocument from '../components/Customer-document'
+import CustomerDocumentPrice from '../components/Customer-document-price'
 import CustomerPrice from '../components/Customer-price'
+
 export default {
   data() {
     return {
@@ -353,7 +346,8 @@ export default {
   components: {
     CustomerQuestion,
     CustomerPrice,
-    CustomerDocument 
+    CustomerDocument,
+    CustomerDocumentPrice
   },
   methods: {
     async onCancel() {

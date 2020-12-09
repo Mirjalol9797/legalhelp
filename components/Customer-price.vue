@@ -5,7 +5,7 @@
       <div class="user__priceQuestion-info" v-for="item of priceAddedQuestion" :key="item.id">
         <p class="user__priceQuestion-name">{{item.title}}</p>
         <p>Savol narxi: {{item.price}} so'm</p>
-        <nuxt-link :to="'customer-question-price/' + item.id" style="color:#007bff">Savolga pull to'lash</nuxt-link>
+        <nuxt-link :to="'customer-question-price/' + item.id" class="user__priceQuestion-link">Savolga pull to'lash</nuxt-link>
       </div>
     </div>
   </div>

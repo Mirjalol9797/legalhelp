@@ -183,7 +183,7 @@
   }
   &-info {
     margin-bottom: 25px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 3px solid #eee;
     padding-bottom: 5px;
   }
   &-price {
@@ -204,6 +204,23 @@
       color: #fff;
     }
   }  
+  &-link {
+    display: block;
+    background-color: #f2b50f;
+    border-radius: 5px;
+    color: #fff;
+    max-width: 180px;
+    width: 100%;
+    text-align: center;
+    margin: 5px auto 20px 0;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    padding: 5px;    
+    &:hover {
+      color: #fff;
+    }
+  }
 }
 
 .user__profile-card {
@@ -819,12 +836,12 @@
       }
     }
   }
-  &-customer {
+  // &-customer {
 
-  }
-  &-date {
+  // }
+  // &-date {
 
-  }
+  // }
 }
 
 .card-text, .filed-work {

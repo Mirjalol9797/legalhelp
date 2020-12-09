@@ -156,9 +156,58 @@
       border: 1px solid #f2b50f;
       padding: 10px 0;
       color: #fff;
-      &:focus, &:active {
-
-      }
-    }    
+    }   
+    .noActive {
+      display: none;
+    } 
   }
+}
+.customer-pay-form {
+  display: none;
+  max-width: 600px;
+  margin: 0 auto;
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    align-items: center;
+    
+    label {
+      margin-bottom: 0;
+    }
+
+    input {
+      border-radius: 5px;
+      height: 40px;
+      outline: none;
+      padding: 0px 10px;
+      max-width: 320px;
+      width: 100%;
+
+      &:focus, &:active {
+        outline: none;
+      }
+    }
+  }
+  button {
+    max-width: 150px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #f2b50f;
+    margin: auto;
+    text-align: center;
+    outline: none;
+    border: 1px solid #f2b50f;
+    padding: 10px 0;
+    color: #fff;
+    &:focus, &:active {
+
+    }
+  } 
+}
+.customerNoactive {
+  display: none;
+}
+.customerActive {
+  display: block;
 }
