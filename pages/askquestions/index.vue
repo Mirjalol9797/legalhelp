@@ -29,6 +29,18 @@
                 </select>
               </div>
               <div class="reg-form__item">
+                <label for="lawyer">Yuristlar</label>
+                <select id="lawyer" v-model="lawyerList">
+                  <option
+                    v-for="item in lawyer"
+                    :key="item.id"
+                    :value="item.id" 
+                  >
+                  {{item.first_name}} {{item.last_name}}
+                  </option>
+                </select>
+              </div>
+              <div class="reg-form__item">
                 <label for="text">Savol sarlavxasi</label>
                 <input type="text" v-model="title" id="text">
               </div>
@@ -45,6 +57,7 @@
           </div>
         </div>
       </b-container>
+
     </div>
   </div>
 </template>
@@ -58,6 +71,8 @@ export default {
       category: [],
       title: "",
       text: "",
+      lawyerList: [],
+      lawyer: []
     };
   },
   methods: {
@@ -67,18 +82,26 @@ export default {
         console.log('getCategory', res);
       });
     },
-    async onSubmit() {
-      await this.$axios.post('document/customer/', this.form)
+    async getLawyers() {
+      await this.$axios.get('lawyer/list-search/')
         .then((res) => {
-          console.log('onSubmit')
+          this.lawyer = res.data;
+          console.log('getLawyers', res)
         })
     },
+    // async onSubmit() {
+    //   await this.$axios.post('document/customer/', this.form)
+    //     .then((res) => {
+    //       console.log('onSubmit')
+    //     })
+    // },
     addFile(e) {
       this.form = new FormData();
       this.form.append('title', this.title);
       this.form.append('language', this.language);
       this.form.append('category', this.category);
       this.form.append('text', this.text);
+      this.form.append('lawyer', this.lawyer);
       this.form.append('question_file', e.target.files[0]);
       this.$refs.file.innerHTML = e.target.files[0].name;
     },
@@ -88,9 +111,10 @@ export default {
           console.log('postQuestionCustomer', res);
         })
     }
-},
-  mounted() {
+  },
+  created() {
     this.getCategory();
+    this.getLawyers()
   }
 };
 </script>

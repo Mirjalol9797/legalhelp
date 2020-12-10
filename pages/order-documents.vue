@@ -10,7 +10,7 @@
             Ariza qoldiring va butun mamlakat bo’ylab yuristlar sizga o’z
             takliflaridan ma’qulini tanlang.
           </div>
-          <b-row>
+          <!-- <b-row>
             <b-col lg="4" md="6" v-for="(categoryid, index) of category" :key="index">
               <div class="type-of-documents">
                 <label class="type-of-documents-item" :id="categoryid">
@@ -29,58 +29,52 @@
                 </label>
               </div>
             </b-col>
-          </b-row>
-          <div class="order-documents-form">
-            <form @submit.prevent="onSubmit" class="registration__form">
-              <div class="name">
-                <label for="name">Исм</label>
-                <input type="text" id="name" v-model="form.customer">
-              </div>
-              <div class="language">
-                <label for="language">Til</label>
-                <select name="" id="language" v-model="form.language">
-                  <option value="o'zbek">O’zbek</option>
-                  <option value="Rus">Rus</option>
-                </select>
-              </div>
-              <div class="category">
-                <label for="language">Kategoriya</label>
-                <select name="" id="category" v-model="form.category" :disabled="subcategory.length == 0">
-                  <option value="" selected disabled
-                    >Savol kategoriyasini tanlang</option
-                  >
-                  <option v-for="(sub,index) of subcategory" :key="index">
-                    {{ sub }}
-                  </option>
-                </select>
-              </div>
-              <div class="question__title">
-                <label for="question__title">Savol sarlavhasi</label>
-                <input
-                  type="text"
-                  id="question__title"
-                  placeholder="Qanday hujjat kerak?"
-                  v-model="form.title"
-                />
-              </div>
-              <div class="question__text">
-                <label for="question__text">Batafsil ma'lumot</label>
-                <textarea
-                  name=""
-                  id="question__text"
-                  placeholder="Batafsil ma'lumot" 
-                  v-model="form.text"
-                ></textarea>
-              </div>
-              <div class="file">
-                <label for="file__input">Fayl</label>
-                <input name="myFile" type="file" id="file__input" value="Upload file" class="file__input" />
-              </div>
-              <div class="registration__button-wrap">
-                <b-button class="registration__btn" type="submit">Davom etish</b-button>
-              </div>
-            </form>
-          </div>
+          </b-row> -->
+          <form @submit.prevent="postQuestionCustomer" class="reg-form">
+            <div class="reg-form__item">
+              <label for="lang">Til</label>
+              <select id="lang" v-model="language">
+                <option>o'zbek</option>
+                <option>rus</option>
+              </select>
+            </div>
+            <div class="reg-form__item">
+              <label for="select">Categoriya</label>
+              <select id="select" v-model="category">
+                <option
+                  v-for="item in categories"
+                  :key="item.id"
+                  :value="item.id" >
+                {{item.name}}
+                </option>
+              </select>
+            </div>
+            <div class="reg-form__item">
+              <label for="lawyer">Yuristlar</label>
+              <select id="lawyer" v-model="lawyer">
+                <option
+                  v-for="item in lawyerListSelect"
+                  :key="item.id"
+                  :value="item.id" 
+                >
+                {{item.first_name}} {{item.last_name}}
+                </option>
+              </select>
+            </div>            
+            <div class="reg-form__item">
+              <label for="text">Savol sarlavxasi</label>
+              <input type="text" v-model="title" id="text">
+            </div>
+            <div class="reg-form__item">
+              <label for="textarea">Savol matni</label>
+              <textarea name="" id="textarea" cols="30" rows="10" v-model="text"></textarea>
+            </div>
+            <div class="reg-form__item">
+              <label for="file">File</label>
+              <input type="file" @change="addFile" id="file" ref="file"/>
+            </div>
+            <button type="submit" class="reg-form__btn">Davom etish</button>
+          </form>
         </div>
       </b-container>
     </div>
@@ -90,47 +84,50 @@
 export default {
   data() {
     return {
-      checked:'',
+      categories: [],
+      form: '',
+      language: "",
       category: [],
-      subcategory: [],
-      form: {
-        language:'',
-        category: "",
-        text:'',
-        title:'',
-        customer: ''
-      }
+      title: "",
+      text: "",
+      lawyer: [],
+      lawyerListSelect: []
     };
   },
   methods: {
-    changeCategory() {
-      // console.log(this.checked);
-      this.subcategory = this.category[this.checked-1].sub_category;
-      // console.log(this.subcategory)
-    },
     async getCategory() {
-      await this.$axios.get("document/document_type/").then(res => {
-        this.category = res.data;
-        // this.subcategory= res.data[(this.checked-1)].sub_category
-        // this.category.forEach((sub) => {
-        //   this.subcategory.push({ id: sub.id, subArr: sub.sub_category  });
-        // })
-        console.log(res)
-        // console.log(subcategory);
+      await this.$axios.get("document/category/").then(res => {
+        this.categories = res.data;
+        console.log('getCategory', res);
       });
     },
-    async getData(){
-
-    },
-    async onSubmit(){
-      await this.$axios.post("document/lawyer/", this.form)
+    async getLawyers() {
+      await this.$axios.get('lawyer/list-search/')
         .then((res) => {
-          console.log('onSubmit', this.form)
+          this.lawyerListSelect = res.data;
+          console.log('getLawyers', res)
+        })
+    },
+    addFile(e) {
+      this.form = new FormData();
+      this.form.append('title', this.title);
+      this.form.append('language', this.language);
+      this.form.append('category', this.category);
+      this.form.append('text', this.text);
+      this.form.append('lawyer', this.lawyer);
+      this.form.append('doc_file', e.target.files[0]);
+      this.$refs.file.innerHTML = e.target.files[0].name;
+    },
+    async postQuestionCustomer() {
+      await this.$axios.post('document/customer/', this.form)
+        .then((res) => {
+          console.log('postDocumentCustomer', res);
         })
     }
-  },
+},
   mounted() {
     this.getCategory();
+    this.getLawyers()
   }
 };
 </script>

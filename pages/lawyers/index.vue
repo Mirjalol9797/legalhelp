@@ -4,54 +4,25 @@
           <div class="lawyer__outer-inner">
             <b-container>
                 <h1 class="lawyer__outer-heading">{{$t('lawyers.lawyers')}}</h1>
-                <form action="" class="lawyer__list-search" method="POST">
+                <div class="lawyer__list-search">
                   <b-row>
                     <b-col lg="12" xl="4" class="lawyer__list-search-category">
-                    <select name="" id="category">
-                      <option value="0" disabled se lected>{{$t('category.typequestion')}}</option>
-                      <option value="1">{{$t('category.civillaw')}}</option>
-                      <option value="2">{{$t('category.work')}}</option>
-                      <option value="3">{{$t('category.citizenship')}}</option>
-                      <option value="4">{{$t('category.education')}}</option>
-                      <option value="5">{{$t('category.entrepreneur')}}</option>
-                      <option value="6">{{$t('category.governmentservice')}}</option>
-                      <option value="7">{{$t('category.familyrelations')}}</option>
-                      <option value="8">{{$t('category.healthcare')}}</option>
-                      <option value="9">{{$t('category.criminallaw')}}</option>
-                      <option value="10">{{$t('category.court')}}</option>
-                      <option value="11">{{$t('category.tax')}}</option>
-                      <option value="12">{{$t('category.transportation')}}</option>
-                      <option value="13">{{$t('category.agriculture')}}</option>
-                      <option value="14">{{$t('category.communal')}}</option>
-                      <option value="15">{{$t('category.socialprotection')}}</option>
-                      <option value="16">{{$t('category.place')}}</option>
-                      <option value="17">{{$t('category.bank')}}</option>
-                      <option value="18">{{$t('category.consumer')}}</option>
-                      <option value="19">{{$t('category.heritage')}}</option>
+                    <select v-model="service_id" id="category" @focus="getFilterCategory()">
+                      <option v-for="item in filterCategory" :key="item.id" :value="item.id">
+                        {{ item.name }}
+                      </option>
                     </select>
                     </b-col>
                     <b-col lg="12" xl="3" class="lawyer__list-search-region">
-                    <select name="" id="region-select">
-                      <option value="0" selected disabled> {{$t('region.noregion')}}</option>
-                      <option value="1">{{$t('region.toshkent')}}</option>
-                      <option value="2">{{$t('region.toshkentv')}}</option>
-                      <option value="3"> {{$t('region.andijon')}}</option>
-                      <option value="4">{{$t('region.buxoro')}}</option>
-                      <option value="5"> {{$t('region.jizzax')}}</option>
-                      <option value="6"> {{$t('region.qoraqalpogistion')}}</option>
-                      <option value="7"> {{$t('region.qashqadaryo')}}</option>
-                      <option value="8">{{$t('region.navoi')}}</option>
-                      <option value="9">{{$t('region.namangan')}}</option>
-                      <option value="10">{{$t('region.samarqand')}}</option>
-                      <option value="11">{{$t('region.surxondaryo')}}</option>
-                      <option value="12">{{$t('region.sirdaryo')}}</option>
-                      <option value="13"> {{$t('region.fargona')}}</option>
-                      <option value="14"> {{$t('region.xorazm')}}</option>
+                    <select v-model="region_id" id="region-select">
+                      <option v-for="item in filterRegion" :key="item.id" :value="item.id">
+                        {{ item.title_uz }}
+                      </option>
                     </select>
                     </b-col>
                     <b-col lg="12" xl="3" class="lawyer__list-search-rating">
-                    <select name="rating" id="rating">
-                      <option value="0" selected disabled>{{ $t('rating.rate') }}</option>
+                    <select v-model="rate_id" name="rating" id="rating">
+                      <option value="0" selected>0</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -60,13 +31,14 @@
                     </select>
                     </b-col>
                     <b-col lg="12" xl="2" class="lawyer__list-search-btn pr-0">
-                      <input type="submit" :value="$t('search.search')">
+                      <button @click="getFilter(service_id,region_id,rate_id)" class="btn btn-info">{{ $t('search.search') }}</button>
                     </b-col>
                   </b-row>
-                </form>
+                </div>
+                  <b-alert v-if="isShow" show variant="danger">Bunday ma'lumotli yurist yo'q</b-alert>
                   <div class="lawyer__outer-list">
                     <b-row data-aos="fade-up" data-aos-duration="500">
-                      <b-col md="6" lg="4" xl="3" class="mb-5" v-for="(lawyer, index) of lawyers" :key="index.id" >
+                      <b-col md="6" lg="4" xl="3" class="mb-5" v-for="lawyer in filterCategoryName" :key="lawyer.id" >
                       <nuxt-link :to="localePath('/lawyers/'+lawyer.id)" class="">
                         <div class="lawyer__card-img">
                             <img :src="lawyer.image" alt="">
@@ -76,8 +48,8 @@
                           <nuxt-link :to="localePath('/lawyers/'+lawyer.id)" class="">
                             <div class="lawyer__card-name">{{lawyer.first_name}} {{lawyer.last_name}}</div>
                           </nuxt-link>
-                          <span class="lawyer__card-place">{{$t('region.toshkent')}}</span>
-                          <p class="lawyer__card-category">{{$t('lawyers.category')}} : 
+                          <span class="lawyer__card-place">{{ lawyer.region }}</span>
+                          <p class="lawyer__card-category">{{$t('lawyers.category')}} :
                             <span v-for="service of lawyer.services" :key="service.id">
                               {{service}} <br>
                             </span>
@@ -98,36 +70,39 @@
                           </span>
                           <div class="lawyer__card-fav">
                             <div class="lawyer__card-fav-img" :class="{active: isActive}" @click="like(lawyer.id)"></div>
-                            <!-- <img src="../../assets/images/like.svg" alt=""> 
-                            <img src="../../assets/images/like2.svg" alt="">  -->
                           </div>
-                            <!-- <div class="lawyer__card-success">{{$t('lawyers.success')}} <span class="lawyer__card-success-count">16</span></div> -->
                         </div>
                       </b-col>
-                    </b-row>                         
+                    </b-row>
                   </div>
             </b-container>
-              
-          </div>           
+          </div>
         </div>
-        <!-- /.lawyer__outer -->
     </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+
 export default {
   data() {
     return {
-      rows: 100,
-      perPage: 1,
-      currentPage: 1,
-      isActive: false
+        rows: 100,
+        perPage: 1,
+        currentPage: 1,
+        isActive: false,
+        isShow: false,
+        filterCategory: [],
+        filterRegion: [],
+        filter: [],
+        service_id: '',
+        region_id: '',
+        rate_id: '',
     };
   },
   methods: {
      async like(id){
-      await this.$axios.post(`customer/fav/?lawyer_id=${id}`)    
+      await this.$axios.post(`customer/fav/?lawyer_id=${id}`)
         .then(res => {
           // console.log('customerFav111', this.res)
           this.isActive = !this.isActive
@@ -135,17 +110,82 @@ export default {
         .catch(err => {
           console.log(err)
         })
-    
-  }
+
   },
-  
+     async getFilterCategory() {
+         await this.$axios.get('document/category/')
+             .then(res => this.filterCategory = res.data)
+     },
+     async getFilterRegion() {
+          await this.$axios.get('region/?language=uz')
+              .then(res => this.filterRegion = res.data)
+      },
+     async getFilter(service_id,region_id,rate_id) {
+         this.service_id = service_id;
+         this.region_id = region_id;
+         this.rate_id = rate_id;
+         await this.$axios.get(`lawyer/list-search/?service_id=${service_id}&rate=${rate_id}&region_id=${region_id}`)
+             .then((res) => {
+                 console.log('RES',res);
+                 this.filter = res.data;
+             });
+          if (this.filter.length === 0) {
+              this.isShow = true;
+          } else {
+              return this.lawyers;
+          }
+     }
+  },
+
   computed: {
-    ...mapGetters({
-      lawyers: 'lawyers'
-    })
+      ...mapGetters({
+          lawyers: 'lawyers'
+      }),
+      filterCategoryName: function () {
+          if (this.filter.length > 0) {
+              return this.filter;
+          } else if (this.filter.length === 0) {
+              return this.lawyers;
+          } else {
+              this.isShow = true;
+          }
+      }
   },
-  mounted() {
-    this.$store.dispatch('getLawyers')
+  created() {
+      this.getFilterCategory();
+      this.getFilterRegion();
+      this.$store.dispatch('getLawyers');
+      console.log(this.lawyers)
   }
 };
 </script>
+<style lang="scss">
+  #app {
+    margin: 30px;
+  .form-group {
+    display: flex;
+    align-items: center;
+  label {
+    font-weight: bold;
+    color: #337ab7;
+    margin-right: 20px;
+  }
+  }
+
+  .filters {
+    margin-bottom: 20px;
+    display: flex;
+    width: 700px;
+    justify-content: space-around;
+  }
+
+  .table {
+    width: 700px;
+  thead tr td {
+    font-weight: bold;
+    color: #337ab7;
+  }
+  }
+  }
+
+</style>
