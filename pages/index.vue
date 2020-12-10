@@ -467,9 +467,9 @@
                 {{$t('other_service.consult_text')}} 
               </p>
               <div class="our__other-services-item-btn-wrap">
-                <b-button class="our__other-services-price"
+                <!-- <b-button class="our__other-services-price"
                   >{{$t('other_service.consult_btn1')}} 
-                </b-button>
+                </b-button> -->
                 <b-button class="our__other-services-use" href="tel:+998999276993">{{$t('other_service.consult_btn2')}} </b-button>
               </div>
               <span class="our__other-services-phone d-none d-lg-block"></span>
@@ -483,8 +483,9 @@
                 {{$t('other_service.docum_text')}}
               </p>
               <div class="our__other-services-item-btn-wrap">
-                <b-button class="our__other-services-price">50 ming sum</b-button>
-                <b-button class="our__other-services-use" :to="localePath('order-documents')">Foydalanish</b-button>
+                <!-- <b-button class="our__other-services-price">50 ming sum</b-button> -->
+                <b-button v-if="loggedIn && $auth.user.is_customer" class="our__other-services-use" :to="localePath('/order-documents')">Foydalanish</b-button>
+                <b-button v-else class="our__other-services-use" :to="localePath('/reg')">Foydalanish</b-button>
               </div>
               <span class="our__other-services-search d-none d-lg-block"></span>
             </div>
@@ -497,7 +498,8 @@
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from "vuex"
+import { mapState } from "vuex"
 export default {
   layout:"Footer-main",
   data() {
@@ -549,6 +551,7 @@ export default {
       news: "news",
       lawyers: 'lawyers'
     }),
+    ...mapState("auth", ["loggedIn", "user"]),
     singlePost() {
       return this.news;
     }

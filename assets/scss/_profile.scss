@@ -138,6 +138,12 @@
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 10px;
+  &-name {
+    margin-bottom: 10px;
+  }
+  &-price {
+    margin-bottom: 10px;
+  }
   &-title {
     font-size: 18px;
     border-bottom: 1px solid #eee;
@@ -149,16 +155,14 @@
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
   }
-  &-price {
-    text-align: right;
-  }
   &-pay {
     background-color: #f2b50f;
     border-radius: 5px;
     color: #fff;
-    max-width: 80px;
+    max-width: 180px;
+    width: 100%;
     text-align: center;
-    margin: 5px 0 0 auto;
+    margin: 10px 0 0 0;
     font-size: 14px;
     cursor: pointer;
     display: block;

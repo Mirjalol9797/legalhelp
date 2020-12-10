@@ -18,6 +18,7 @@
 
 .service__list{
   max-width:540px;
+  min-height: 205px;
   width:100%;
   background-color: #fff;
   padding: 40px 24px;
@@ -38,6 +39,7 @@
   }
   &-text{
     color:#6c7686;
+    min-height: 48px;
   }
   &-content{
     margin-left: 15px;
@@ -45,7 +47,7 @@
   &-btn{
     background-color: #ee8208;
     border:none;
-    margin-top: 5px;
+    margin-top: 10px;
     &:focus,&:hover{
       background-color:lightcoral;
     }

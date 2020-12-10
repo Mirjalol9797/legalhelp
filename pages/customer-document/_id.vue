@@ -7,14 +7,19 @@
         <div class="customer-docPage__link">
           <a :href="documentCustomer.doc_file" target="_blank">hujjatni yuklab olish</a>
         </div>
+        <div class="customer-docPage__date">{{documentCustomer.date}}</div>
+        <div class="customer-docPage__ans">Javoblar <span>{{answer.length}}</span></div>
       </div>
       <div class="customer-docAns">
-        <div class="customer-docAns__title"></div>
-        <div class="customer-docAns__item">
-          <div class="customer-docAns__subtitle"></div>
+        <div class="customer-docAns__title">Javoblar</div>
+        <div v-if="answer == ''">Savolga javob berilmagan</div>
+        <div class="customer-docAns__item" v-for="item in answer" :key="item.id">
+          <div class="customer-docAns__subtitle">{{item.title}}</div>
           <div class="customer-docAns__doc">
-            <a href=""></a>
+            <a :href="item.doc_file">Hujjat yaklab olish</a>
           </div>
+          <div class="customer-docAns__lawyer">Yurist: {{item.document.lawyer}}</div>
+          <div class="customer-docAns__date">{{item.date}}</div>
         </div>
       </div>
     </b-container>
@@ -37,7 +42,7 @@ export default {
         })
     },
     async getDocumentAnswer() {
-      await this.$axios.get(`question/answer/?question_id=${this.$route.params.id}`)
+      await this.$axios.get(`document/recieve/?document_id=${this.$route.params.id}`)
         .then((res) => {
           this.answer = res.data;
           console.log('getDocumentAnswer', res)

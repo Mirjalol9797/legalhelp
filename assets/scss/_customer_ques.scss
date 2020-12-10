@@ -109,12 +109,28 @@
   }
   &__text {
     color: #6C7686;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   &__link {
+    margin-bottom: 10px;
     a {
       color: #007bff;
     }
+  }
+  &__date {
+    font-size: 14px;
+    background-image: url('../images/customer/calendar.svg');
+    background-repeat: no-repeat;
+    padding: 0 0 0 26px;
+    background-size: 20px;
+    margin-bottom: 10px;
+  }
+  &__ans {
+    font-size: 14px;
+    background-image: url('../images/customer/answer.svg');
+    background-repeat: no-repeat;
+    padding: 0 0 0 26px;
+    background-size: 20px;    
   }
 }
 
@@ -200,9 +216,6 @@
     border: 1px solid #f2b50f;
     padding: 10px 0;
     color: #fff;
-    &:focus, &:active {
-
-    }
   } 
 }
 .customerNoactive {
@@ -210,4 +223,38 @@
 }
 .customerActive {
   display: block;
+}
+.customer-docAns {
+  margin-top: 50px;
+  &__title {
+    font-size: 25px;
+    margin-bottom: 10px;    
+  }
+  &__item {
+    padding: 25px;
+    box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
+    border: 0.0625rem solid rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+  }
+  &__subtitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  &__doc {
+    margin-bottom: 10px;
+    a {
+      color: #007bff;
+    } 
+  }
+  &__date {
+    font-size: 14px;
+    background-image: url('../images/customer/calendar.svg');
+    background-repeat: no-repeat;
+    padding: 0 0 0 26px;
+    background-size: 20px;
+    margin-bottom: 10px;    
+  }
+  &__lawyer {
+    margin-bottom: 10px;
+  }
 }
