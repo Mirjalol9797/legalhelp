@@ -149,6 +149,13 @@ export default {
                     .then(res => {
                       console.log(res);
 
+                      // this.$auth.loginWith("local2", {
+                      //   data: {
+                      //     phone_number: this.form.phone_number,
+                      //     password: this.form.password
+                      //   }
+                      // });
+
                       this.form = {
                           first_name: "",
                           last_name: "",

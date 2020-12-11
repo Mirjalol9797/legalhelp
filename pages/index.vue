@@ -138,11 +138,9 @@
                         item.view_count
                       }}</span>
                     </div>
-                    <div class="more__btn">
-                      <b-button type="button" class="question__btn">{{
-                        $t("news.more")
-                      }}</b-button>
-                    </div>
+                    <!-- <div class="more__btn">
+                      <b-button type="button" class="question__btn">{{$t("news.more")}}</b-button>
+                    </div> -->
                   </div>
                 </nuxt-link>
               </div>
@@ -151,8 +149,11 @@
               <b-button
                 class="question__btn all__news-btn"
                 :to="localePath(`/news`)"
-                >{{$t('new.btn_name')}}</b-button
               >
+                <span>
+                  {{$t('new.btn_name')}}
+                </span>
+              </b-button>
             </div>
           </b-row>
         </b-container>

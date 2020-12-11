@@ -2,7 +2,7 @@
   <div>
     <b-container class="lawyer-wait">
       <b-alert show variant="success">
-        Xurmatli Yurist siz roy'xattan utdingiz, iltimos admin telefon kilishini kuting
+        Siz yurist (freelancer) sifatida ro'yxatga olindingiz. Admin tomonidan ma'lumotlaringiz tasdiqlangandan so'ng xizmat ko'rsatishingiz mumkin.
       </b-alert>
     </b-container>
   </div>

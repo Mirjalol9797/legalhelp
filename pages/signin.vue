@@ -29,7 +29,7 @@
                 <b-button class="registration-submit" type="submit">{{
                   $t("givequestion.btn")
                 }}</b-button> 
-                <nuxt-link to="" class="registration__forgot-password">Parolni unutdingizmi?</nuxt-link>
+                <!-- <nuxt-link to="" class="registration__forgot-password">Parolni unutdingizmi?</nuxt-link> -->
               </div>
               <nuxt-link :to="localePath('/reg')" class="registration__sign-up">Ro'yxatdan o'tish</nuxt-link>
             </form>
@@ -45,7 +45,7 @@ export default {
     return {
       form: {
         phone_number: "",
-        password: ""
+        password: "",
       }
     };
   },
@@ -53,24 +53,23 @@ export default {
 
   methods: {
     async login() {
-        try {
-        console.log(this.form);
+      try {
+        console.log("Данные клиента или юриста с формы", this.form);
         let res = await this.$auth.loginWith("local", {data: this.form});
-        console.log(res) 
+        console.log("Дынные респонса", res) 
         this.$toast.success({
           title: `${this.$t("toast.success")}`,
           message: `${this.$t("toast.loginSuccessMessage")}`
         });
       }
-       catch (err) {
-          console.log(err)
-          this.$toast.error({
-            title: `${this.$t("toast.loginError")}`,
-            message: `${this.$t("toast.loginErrorMessage")}`
-          });
+      catch (err) {
+        console.log("Ошибка", err)
+        this.$toast.error({
+          title: `${this.$t("toast.loginError")}`,
+          message: `${this.$t("toast.loginErrorMessage")}`
+        });
       }
     }
-
   }
 };
 </script>

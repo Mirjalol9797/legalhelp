@@ -113,21 +113,22 @@ export default {
     // },
     strategies: {
       local: {
-        _scheme: 'local',
+        // _scheme: 'local',
         endpoints: {
           login: { url: 'customer/login/', method: 'post', propertyName: 'access' },
           user: { url: 'customer/profile/?language=uz', method: 'get', propertyName: false },
           logout: false
         }
-      },
-      lawyer: {
-        _scheme: 'local',
-        endpoints: {
-          login: { url: 'lawyer/login/', method: 'post', propertyName: 'access' },
-          user: { url: 'lawyer/profile/?language=uz', method: 'get', propertyName: false },
-          logout: false
-        }
-      },
+        // user/login/
+      }
+      // local2: {
+      //   // _scheme: 'local',
+      //   endpoints: {
+      //     login: { url: 'customer/login/', method: 'post', propertyName: 'access' },
+      //     user: { url: 'lawyer/profile/?language=uz', method: 'get', propertyName: false },
+      //     logout: false
+      //   }
+      // },
     },
   },
 

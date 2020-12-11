@@ -32,9 +32,7 @@
                     <span class="news__meta-calendar">{{
                       singlePost.created_at | moment("L")
                     }}</span>
-                    <span class="news__meta-view">{{
-                      singlePost.view_count
-                    }}</span>
+                    <span class="news__meta-view">{{singlePost.view_count}}</span>
                   </div>
                 </div>
               </nuxt-link>
@@ -80,11 +78,9 @@
                         item.view_count
                       }}</span>
                     </div>
-                    <div class="more__btn">
-                      <b-button type="button" class="question__btn">{{
-                        $t("news.more")
-                      }}</b-button>
-                    </div>
+                    <!-- <div class="more__btn">
+                      <b-button type="button" class="question__btn">{{$t("news.more")}}</b-button>
+                    </div> -->
                   </div>
                 </nuxt-link>
               </div>
