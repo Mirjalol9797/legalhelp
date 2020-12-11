@@ -112,7 +112,6 @@ export default {
       .then((res) => {
         console.log('payment', res)
         this.form2.card_token = res.data.response.card_token;
-        
         console.log('dasdsad', this.form2)
       })
     },

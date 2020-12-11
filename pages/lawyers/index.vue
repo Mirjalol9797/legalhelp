@@ -9,7 +9,7 @@
                     <b-col lg="12" xl="4" class="lawyer__list-search-category">
                     <select v-model="service_id" id="category" @focus="getFilterCategory()">
                       <option v-for="item in filterCategory" :key="item.id" :value="item.id">
-                        {{ item.name }}
+                        {{ item.title_uz }}
                       </option>
                     </select>
                     </b-col>
@@ -113,7 +113,7 @@ export default {
 
   },
      async getFilterCategory() {
-         await this.$axios.get('document/category/')
+         await this.$axios.get('lawyer/services/?language=uz')
              .then(res => this.filterCategory = res.data)
      },
      async getFilterRegion() {

@@ -2,7 +2,7 @@
   <div>
     <b-container class="lawyer-wait">
       <b-alert show variant="success">
-        Xurmatli Jurnalist siz roy'xattan utdingiz, iltimos admin telefon kilishini kuting
+        Xurmatli Yurist siz roy'xattan utdingiz, iltimos admin telefon kilishini kuting
       </b-alert>
     </b-container>
   </div>

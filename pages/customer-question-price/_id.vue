@@ -9,6 +9,7 @@
             id="card"
             placeholder="8600012345678901"
             v-model="form.card_number"
+            required
           >
         </div>
         <div class="customer-form__item">
@@ -18,6 +19,7 @@
             id="data"
             placeholder="1220"
             v-model="form.expire_date"
+            required
           >
         </div>        
         <div class="customer-form__item" style="display: none">
@@ -44,10 +46,11 @@
         </div>                          -->
         <button type="submit">SMS kod olish</button>
       </form>
+      
       <form @submit.prevent="payment2" class="customer-pay-form" :class="{customerActive: isActive}">
         <div class="customer-pay-form__item">
           <label for="">sms code</label>
-          <input type="text" v-model="form2.code">
+          <input type="text" v-model="form2.code" required>
         </div>
         <div class="customer-pay-form__item" style="display: none">
           <label for="">sms code</label>
@@ -89,6 +92,7 @@ export default {
         object_id: ''
       },
       isActive: false
+        
     }
   },
   methods: {
@@ -126,7 +130,8 @@ export default {
             message: `${this.$t("")}`
           });
         }
-        catch {
+        catch(error) {
+          console.log('ERROR', error)
           this.$toast.error({
             title: `${this.$t("To'lov amalga oshirilmadi")}`,
             message: `${this.$t("")}`
