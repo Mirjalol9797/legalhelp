@@ -184,16 +184,14 @@
                                 v-model="regionSelect"
                               >
                                 <option value="" disabled selected>
-                                {{
-                                  user.region.title_uz
-                                }}
+                                <!-- {{user.region.title_uz}} -->
                                 </option>
                                 <option
                                   v-for="(index, region) of selectuz"
                                   :key="region.id"
                                   :value="index.id"
                                   >
-                                  {{ index.title_uz }}
+                                  <!-- {{ index.title_uz }} -->
                                   </option>
                               </select>
                             </b-col>
