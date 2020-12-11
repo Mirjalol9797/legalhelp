@@ -30,9 +30,9 @@
               </div>
               <div class="reg-form__item">
                 <label for="lawyer">Yuristlar</label>
-                <select id="lawyer" v-model="lawyerList">
+                <select id="lawyer" v-model="lawyer">
                   <option
-                    v-for="item in lawyer"
+                    v-for="item in lawyerListSelect"
                     :key="item.id"
                     :value="item.id" 
                   >
@@ -71,8 +71,8 @@ export default {
       category: [],
       title: "",
       text: "",
-      lawyerList: [],
-      lawyer: []
+      lawyer: [],
+      lawyerListSelect: []
     };
   },
   methods: {
@@ -85,7 +85,7 @@ export default {
     async getLawyers() {
       await this.$axios.get('lawyer/list-search/')
         .then((res) => {
-          this.lawyer = res.data;
+          this.lawyerListSelect = res.data;
           console.log('getLawyers', res)
         })
     },
@@ -107,8 +107,26 @@ export default {
     },
     async postQuestionCustomer() {
       await this.$axios.post('question/customer/', this.form)
-        .then((res) => {
+        .then(async (res) => {
           console.log('postQuestionCustomer', res);
+          this.language = '';
+          this.category = '';
+          this.text = '';
+          this.lawyer = '';
+          this.question_file = '';
+          this.title = '';
+          try {
+            this.$toast.success({
+              title: `Savol muvofaqiyatli junatildi`,
+              message: `Javobini uzingizning saxifangizda kurasiz`,
+              
+            })
+          } catch {
+            this.$toast.error({
+              title: `Savol xato junatildi`,
+              message: `iltimos qaytadan urinib kuring`,
+            })
+          }
         })
     }
   },

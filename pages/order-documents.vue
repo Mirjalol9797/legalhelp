@@ -33,14 +33,14 @@
           <form @submit.prevent="postQuestionCustomer" class="reg-form">
             <div class="reg-form__item">
               <label for="lang">Til</label>
-              <select id="lang" v-model="language">
+              <select id="lang" v-model="language" required>
                 <option>o'zbek</option>
                 <option>rus</option>
               </select>
             </div>
             <div class="reg-form__item">
               <label for="select">Categoriya</label>
-              <select id="select" v-model="category">
+              <select id="select" v-model="category" required>
                 <option
                   v-for="item in categories"
                   :key="item.id"
@@ -51,7 +51,7 @@
             </div>
             <div class="reg-form__item">
               <label for="lawyer">Yuristlar</label>
-              <select id="lawyer" v-model="lawyer">
+              <select id="lawyer" v-model="lawyer" required>
                 <option
                   v-for="item in lawyerListSelect"
                   :key="item.id"
@@ -63,7 +63,7 @@
             </div>            
             <div class="reg-form__item">
               <label for="text">Savol sarlavxasi</label>
-              <input type="text" v-model="title" id="text">
+              <input type="text" v-model="title" id="text" required>
             </div>
             <div class="reg-form__item">
               <label for="textarea">Savol matni</label>
@@ -71,7 +71,7 @@
             </div>
             <div class="reg-form__item">
               <label for="file">File</label>
-              <input type="file" @change="addFile" id="file" ref="file"/>
+              <input type="file" @change="addFile" id="file" ref="file" required />
             </div>
             <button type="submit" class="reg-form__btn">Davom etish</button>
           </form>
@@ -120,8 +120,26 @@ export default {
     },
     async postQuestionCustomer() {
       await this.$axios.post('document/customer/', this.form)
-        .then((res) => {
-          console.log('postDocumentCustomer', res);
+        .then(async (res) => {
+          console.log('postQuestionCustomer', res);
+          this.language = '';
+          this.category = '';
+          this.text = '';
+          this.lawyer = '';
+          this.doc_file = '';
+          this.title = '';
+          try {
+            this.$toast.success({
+              title: `Hujjat buyurtma qilindi`,
+              message: `Javobini uzingizning saxifangizda kurasiz`,
+              
+            })
+          } catch {
+            this.$toast.error({
+              title: `Hujjat hato buyurtma qilindi`,
+              message: `iltimos qaytadan urinib kuring`,
+            })
+          }
         })
     }
 },

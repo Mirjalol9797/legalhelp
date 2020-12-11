@@ -115,7 +115,7 @@ export default {
       local: {
         _scheme: 'local',
         endpoints: {
-          login: { url: 'user/login/', method: 'post', propertyName: 'access' },
+          login: { url: 'customer/login/', method: 'post', propertyName: 'access' },
           user: { url: 'customer/profile/?language=uz', method: 'get', propertyName: false },
           logout: false
         }
