@@ -41,11 +41,13 @@
             </b-col>
             <b-col lg="6">
               <div class="about__service-img-wrap">
-                <img
-                  src="../assets//images/index/2642882 1.png"
-                  alt=""
-                  class="about__service-img"
-                />
+                <div>
+                  <img
+                    src="../assets//images/index/2642882 1.png"
+                    alt=""
+                    class="about__service-img"
+                  />
+                </div>
               </div>
             </b-col>
           </b-row>

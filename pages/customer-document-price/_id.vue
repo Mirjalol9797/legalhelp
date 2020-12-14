@@ -4,21 +4,27 @@
       <form @submit.prevent="payment" class="customer-form" :class="{customerNoactive: isActive}">
         <div class="customer-form__item">
           <label for="card">Karta raqam</label>
-          <input 
-            type="text" 
-            id="card"
-            placeholder="8600012345678901"
-            v-model="form.card_number"
-          >
+          <div>
+            <input 
+              type="number" 
+              id="card"
+              placeholder="8600012345678901"
+              v-model="form.card_number"
+            >
+            <div v-if="form.card_number > 9999999999999999">karta raqam notug'ri terilgan</div>
+          </div>
         </div>
         <div class="customer-form__item">
           <label for="data">Amal qilish muddati</label>
-          <input 
-            type="text" 
-            id="data"
-            placeholder="1220"
-            v-model="form.expire_date"
-          >
+          <div>
+            <input 
+              type="number" 
+              id="data"
+              placeholder="1220"
+              v-model="form.expire_date"
+            >
+            <div v-if="form.expire_date > 1230">kun notug'ri kiritilgan</div>
+          </div>
         </div>        
         <div class="customer-form__item" style="display: none">
           <label for="">savol tipi</label>

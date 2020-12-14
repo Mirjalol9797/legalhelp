@@ -78,6 +78,7 @@
                     id="password"
                     required
                   />
+                  <!-- <div v-if="form.password !== confirm_password">123123123</div> -->
                 </div>
               </div>
               <div class="phone__number">
@@ -86,10 +87,13 @@
                   <span class="tel__code">+998</span>
                   <input
                     v-model="form.phone_number"
-                    type="tel"
+                    type="number"
                     id="phone"
                     required
                   />
+                  <div v-if="form.phone_number > 999999999" class="error__number">
+                    Siz noto'gri raqam tervosiz, iltimos to'g'irlab tering
+                  </div>
                 </div>
               </div>
               <div class="password" v-if="showPasswordInput">

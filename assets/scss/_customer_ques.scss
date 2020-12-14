@@ -160,6 +160,10 @@
           outline: none;
         }
       }
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        appearance: none;
+      }
     }
     button {
       max-width: 150px;

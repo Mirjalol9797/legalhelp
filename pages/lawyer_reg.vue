@@ -66,7 +66,10 @@
                 <label for="phone">{{$t('reg.number')}}</label>
                 <div class="input__tel-wrapper">
                   <span class="tel__code">+998</span>
-                  <input v-model="form.phone_number" type="tel" id="phone" required/>
+                  <input v-model="form.phone_number" type="number" id="phone" required/>
+                  <div v-if="form.phone_number > 999999999" class="error__number">
+                    Siz noto'gri raqam tervosiz, iltimos to'g'irlab tering
+                  </div>
                 </div>
               </div>
               <div class="phone__number addFile">

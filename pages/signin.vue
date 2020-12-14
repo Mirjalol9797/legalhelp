@@ -17,7 +17,10 @@
                 <label for="phone">{{ $t("profile.phone") }}</label>
                 <div class="input__tel-wrapper">
                   <span class="tel__code">+998</span>
-                  <input type="tel" id="phone" v-model="form.phone_number" />
+                  <input type="number" id="phone" v-model="form.phone_number" />
+                  <div v-if="form.phone_number > 999999999" class="error__number">
+                    Siz noto'gri raqam tervosiz, iltimos to'g'irlab tering
+                  </div>
                 </div>
               </div>
 
@@ -46,7 +49,7 @@ export default {
       form: {
         phone_number: "",
         password: "",
-      }
+      },
     };
   },
   computed: {},
