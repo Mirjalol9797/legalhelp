@@ -104,16 +104,8 @@ export default {
 
 
   auth: {
-    // plugins: ['~/plugins/auth.js'],
-    // redirect: {
-    //   login: '/',
-    //   logout: '/',
-    //   callback: '/login',
-    //   home: '/'
-    // },
     strategies: {
       local: {
-        // _scheme: 'local',
         endpoints: {
           login: { url: 'customer/login/', method: 'post', propertyName: 'access' },
           user: { url: 'customer/profile/?language=uz', method: 'get', propertyName: false },
@@ -121,14 +113,6 @@ export default {
         }
         // user/login/
       }
-      // local2: {
-      //   // _scheme: 'local',
-      //   endpoints: {
-      //     login: { url: 'customer/login/', method: 'post', propertyName: 'access' },
-      //     user: { url: 'lawyer/profile/?language=uz', method: 'get', propertyName: false },
-      //     logout: false
-      //   }
-      // },
     },
   },
 
