@@ -168,7 +168,7 @@ export default {
       await this.$axios.get("region/?language=uz").then(res => {
         this.selectuz = res.data;
         this.selected = res.data;
-        console.log(res);
+        // console.log(res);
       });
     },
     async getServiceuz() {

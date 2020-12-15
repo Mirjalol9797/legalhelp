@@ -34,14 +34,16 @@
                   class="header__btn"
                   :to="localePath('/askquestions')"
                   v-if="loggedIn && $auth.user.is_customer"
-                  >{{ $t("navbar.askquestions") }}</b-button
                 >
+                  {{ $t("navbar.askquestions") }}
+                </b-button>
                 <b-button
                   class="header__btn d-none"
                   :to="localePath('/askquestions')"
                   v-else-if="loggedIn && $auth.user.is_lawyer"
-                  >{{ $t("navbar.askquestions") }}</b-button
-                >
+                  >
+                    {{ $t("navbar.askquestions") }}
+                </b-button>
                 <b-button v-else class="header__btn" :to="localePath('/reg')">{{$t("navbar.askquestions")}}</b-button>
               </b-nav-item>
             </b-navbar-nav>
@@ -67,57 +69,24 @@
                 </b-dropdown-item>
               </b-nav-item-dropdown>
               <nuxt-link v-if="!loggedIn" :to="localePath('/signin')" class="user__enter-site">Kirish</nuxt-link>
-              <b-nav-item-dropdown class="user__login">
-                <template  v-if="loggedIn" v-slot:button-content>
+              <b-nav-item-dropdown class="user__login" v-if="loggedIn && $auth.user.is_customer ">
+                <template v-slot:button-content>
                   <div class="round">
                     <div class="user__link">
                       <img src="../assets/images/avatar.png" alt="" />
                     </div>
                   </div>
                 </template> 
-                <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn">
+                <!-- <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn">
                   {{$t("user.signup")}}
-                </b-dropdown-item>
-                <!-- <b-dropdown-item
-                  :to="localePath('/mainlogin')"
-                  v-if="!loggedIn"
-                  >{{ $t("user.entrance") }}
                 </b-dropdown-item> -->
                 <b-dropdown-item
                   :to="localePath('/customer-profile')"
-                  v-if="loggedIn && $auth.user.is_customer"
+                  v-if="loggedIn"
                 >
                   <font-awesome-icon :icon="['fas', 'address-card']" />
                   {{ $t("user.mypage") }}
                 </b-dropdown-item>
-                <!-- <b-dropdown-item
-                  :to="localePath('/')"
-                  v-if="loggedIn && $auth.user.is_customer"
-                >
-                  <font-awesome-icon :icon="['fas', 'star']" />
-                  {{ $t("user.select") }}
-                </b-dropdown-item> -->
-                <!-- <b-dropdown-item
-                  :to="localePath('/')"
-                  v-if="loggedIn && $auth.user.is_customer"
-                >
-                  <font-awesome-icon :icon="['fas', 'bell']" />
-                  {{ $t("user.notifications") }}
-                </b-dropdown-item> -->
-                <!-- <b-dropdown-item
-                  href="tel:+998946863999"
-                  v-if="loggedIn && $auth.user.is_customer"
-                >
-                  <font-awesome-icon :icon="['fas', 'phone']" />
-                  {{ $t("user.phone") }}</b-dropdown-item
-                > -->
-                <!-- <b-dropdown-item
-                  :to="localePath('/signin')"
-                  v-if="loggedIn && $auth.user.is_customer"
-                >
-                  <font-awesome-icon :icon="['fas', 'file']" />
-                  {{ $t("user.document") }}
-                </b-dropdown-item> -->
                 <b-dropdown-item
                   :to="localePath('')"
                   @click="logout()"
@@ -128,101 +97,23 @@
                   {{ $t("user.exit") }}
                 </b-dropdown-item>
               </b-nav-item-dropdown>
-              <b-nav-item-dropdown class="user__login">
-                <template  v-if="loggedIn && $auth.user.is_lawyer" v-slot:button-content>
+              <b-nav-item-dropdown class="user__login" v-if="loggedIn && $auth.user.is_lawyer">
+                <template v-slot:button-content>
                   <div class="round">
                     <div class="user__link">
                       <img src="../assets/images/avatar.png" alt="" />
                     </div>
                   </div>
                 </template> 
-                <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn">
+                <!-- <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn">
                   {{$t("user.signup")}}
-                </b-dropdown-item>
+                </b-dropdown-item> -->
                 <b-dropdown-item
                   :to="localePath('/lawyer-profile')"
-                  v-if="loggedIn && $auth.user.is_lawyer"
+                  v-if="loggedIn"
                 >
-                  <!-- <font-awesome-icon :icon="['fas', 'address-card']" /> -->
-                  <img src="../assets/images/profil/address.svg" alt="" />
+                  <font-awesome-icon :icon="['fas', 'address-card']" />
                   {{ $t("user.mypage") }}
-                </b-dropdown-item>
-                <b-dropdown-item
-                  :to="localePath('/signin')"
-                  v-if="loggedIn && $auth.user.is_lawyer"
-                >
-                  <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/article.svg" alt="" />
-                  <!-- {{
-                    $t("user.document")
-                  }} -->
-                  Maqolalarim
-                </b-dropdown-item>
-                <b-dropdown-item
-                  :to="localePath('/signin')"
-                  v-if="loggedIn && $auth.user.is_lawyer"
-                >
-                  <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/google-docs.svg" alt="" />
-                  <!-- {{
-                    $t("user.document")
-                  }} -->
-                  Hujjat buyurtma takliflar
-                </b-dropdown-item>
-                <b-dropdown-item
-                  :to="localePath('/signin')"
-                  v-if="loggedIn && $auth.user.is_lawyer"
-                >
-                  <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/financial.svg" alt="" />
-                  <!-- {{
-                    $t("user.document")
-                  }} -->
-                  Puli tulangan hujjat takliflar
-                </b-dropdown-item>
-                <b-dropdown-item
-                  :to="localePath('/signin')"
-                  v-if="loggedIn && $auth.user.is_lawyer"
-                >
-                  <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/folder.svg" alt="" />
-                  <!-- {{
-                    $t("user.document")
-                  }} -->
-                  Hujjatlar arxivi
-                </b-dropdown-item>
-                <b-dropdown-item
-                  :to="localePath('/signin')"
-                  v-if="loggedIn && $auth.user.is_lawyer"
-                >
-                  <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/help.svg" alt="" />
-                  <!-- {{
-                    $t("user.document")
-                  }} -->
-                  Savollar
-                </b-dropdown-item>
-                <b-dropdown-item
-                  :to="localePath('/signin')"
-                  v-if="loggedIn && $auth.user.is_lawyer"
-                >
-                  <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/bitcoin.svg" alt="" />
-                  <!-- {{
-                    $t("user.document")
-                  }} -->
-                  Puli tulangan savollar
-                </b-dropdown-item>
-                <b-dropdown-item
-                  :to="localePath('/signin')"
-                  v-if="loggedIn && $auth.user.is_lawyer"
-                >
-                  <!-- <font-awesome-icon :icon="['fas', 'file']" /> -->
-                  <img src="../assets/images/user/question.svg" alt="" />
-                  <!-- {{
-                    $t("user.document")
-                  }} -->
-                  Savollar arxivi
                 </b-dropdown-item>
                 <b-dropdown-item
                   :to="localePath('')"
@@ -234,16 +125,7 @@
                   {{ $t("user.exit") }}
                 </b-dropdown-item>
               </b-nav-item-dropdown>              
-              <!-- <b-nav-form>
-                <b-button @click="isActive = !isActive" class="search__btn"></b-button>
-                <b-form-input 
-                  class="open__search-do"
-                  :class="{ open__search: isActive }"
-                  :placeholder="$t('navbar.search')"
-                >
-                </b-form-input>
-                <div class="close__search">close</div>
-              </b-nav-form> -->
+              <!-- && $auth.user.is_customer -->
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
@@ -253,16 +135,6 @@
   </div>
 </template>
 <script>
-// export default {
-//       window.onscroll = function() {
-//     var navstic = document.getElementsByClassName('navbar__wrapper');
-//     if ( window.pageYOffset > 100 ) {
-//         navstic.classList.add("navbar1");
-//     } else {
-//         navstic.classList.remove("navbar1");
-//     }
-// }
-// }
 import { mapState } from "vuex";
 export default {
   data() {
@@ -295,14 +167,7 @@ export default {
     }
   },
   mounted() {
-    // window.document.onscroll = () => {
-    //     let navBar = document.getElementById('nav');
-    //     if(window.scrollY > navBar.offsetTop){
-    //       this.stikyNavbar = true;
-    //       } else {
-    //       this.stikyNavbar = false;
-    //     }
-    //   }
+    // console.log("Auth",this.$auth.user) для проверки статуса что приходит с бекенда на зарегистрированного человека
   }
 };
 </script>
