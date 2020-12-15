@@ -4,14 +4,14 @@
       <b-container>
         <div class="profile-inner">
           <div class="owner-pic">
-            <img
+            <!-- <img
               :src="$store.state.baseURL + $auth.user.image"
               height="170"
               width="264"
               alt
-            />
+            /> -->
           </div>
-          <div class="profile-info">
+            <!-- <div class="profile-info">
             <span class="profile-info-name">
               {{ $auth.user.first_name }} {{ $auth.user.last_name }}
             </span>
@@ -19,7 +19,7 @@
             </span>
             <span class="profile-info-number">+998 {{ $auth.user.user }}</span>
             <span class="profile-info-email">{{ $auth.user.email }}</span>
-          </div>
+          </div> -->
         </div>
         <div class="user__profile-card lawyer-profile__card">
           <b-card no-body>
@@ -35,61 +35,7 @@
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
-                  <div class="user__profile-question" v-for="item of questionLawyer" :key="item.id">
-                    <nuxt-link class="user__profile-question-title" to="">
-                      Savol nomi: {{item.title}}
-                    </nuxt-link>
-                    <p class="user__profile-question-text">
-                      Savol haqida qisqacha: {{item.text}}
-                    </p>
-                    <p class="user__profile-question-customer">
-                      Savol bergan mijoz: {{item.customer}}
-                    </p>
-                    <p class="user__profile-question-date">
-                      Savol berilgan sana: {{item.date}}
-                    </p>
-                    <p class="user__profile-question-price" v-if="item.is_paid == true">
-                      Savolda quyilgan narx: {{item.price}}
-                    </p>
-                    <b-form 
-                      class="lawyer__form" 
-                      @submit.prevent="pathPriceQuestionLawyer(item.id)"
-                      v-if="item.is_paid == false"
-                    >
-                      <b-form-group
-                        label="Savolga narx kirgizing"
-                        label-for="input"
-                      >
-                        <b-form-input
-                          id="input"
-                          type="text"
-                          v-model="priceQuestion"
-                          required
-                        ></b-form-input>
-                      </b-form-group> 
-                      <b-button type="submit" variant="primary">Saqlamoq</b-button>                     
-                      <div :class="{active: isActiveQuestion}" class="lawyer__documents-form-text">
-                        Narx quyildi. Iltimos mijoz adabrit qilishini kuting. <br>
-                        Mijoz adobrit kigandan so'ng? mijoz tomondan berilgan savol "Bildirishnomalrda" chiqadi
-                      </div>                        
-                    </b-form>
-                    <!-- <div class="user__profile-question-info">
-                      <div class="answer">
-                        <font-awesome-icon :icon="['fas', 'comment']" />
-                        Javoblar <span class="counter">11</span>
-                      </div>
-                      <span class="user"
-                        ><font-awesome-icon :icon="['fas', 'user']" /> Halimov
-                        Navruz</span
-                      >
-                      <span class="calendar">26.09.2020, 09:54</span>
-                      <span class="location"
-                        ><font-awesome-icon
-                          :icon="['fas', 'map-marker']"
-                        />Buxoro</span
-                      >
-                    </div> -->
-                  </div>
+                  <LawyerAnswer />
                 </b-card-text>
               </b-tab>
               <b-tab>
@@ -99,42 +45,7 @@
                   <span class="user__profile-card-text">{{$t("profile.mydocuments")}}</span>
                 </template>
                 <b-card-text>
-                  <div class="lawyer__documents">
-                    <div class="lawyer__documents_item" v-for="item in documentLawyer" :key="item.id">
-                      <div class="lawyer__documents-title">Hujjat nomi: {{item.title}}</div>
-                      <div class="lawyer__documents-desc">Hujjat haqida: {{item.text}}</div>
-                      <div class="lawyer__documents-categ">Hujjat toifasi: {{item.category}}</div>
-                      <div class="lawyer__documents-subcateg">Hujjat pastki toifasi: {{item.sub_category}}</div>
-                      <div class="lawyer__documents-link">
-                        <a :href="item.doc_file" target="_blank">Hujjat yuklab olish</a>
-                      </div>
-                      <div class="lawyer__documents-customer">Hujjat buyirgan mijoz: {{item.customer}}</div>
-                      <div class="lawyer__documents-date">Hujjat buyirilgan sana: {{item.date}}</div>
-                      <div class="lawyer__documents-price"  v-if="item.is_paid == true">Hujjat quyilgan narx: {{item.price}}</div>
-                      <b-form 
-                        class="lawyer__documents-form"
-                        @submit.prevent="patchPriceDocumentLawyer(item.id)"
-                        v-if="item.is_paid == false"
-                      >
-                        <b-form-group
-                          label="Hujjatga narx kirgizing"
-                          label-for="input"
-                        >
-                          <b-form-input
-                            id="input"
-                            type="text"
-                            v-model="priceDocument"
-                            required
-                          ></b-form-input>
-                        </b-form-group> 
-                        <b-button type="submit" variant="primary">Saqlash</b-button>                     
-                        <div :class="{active: isActiveDocument}" class="lawyer__documents-form-text">
-                          Narx quyildi. Iltimos mijoz adabrit qilishini kuting. <br>
-                          Mijoz adobrit kigandan so'ng? mijoz tomondan berilgan savol "Bildirishnomalrda" chiqadi
-                        </div>     
-                      </b-form>
-                    </div>
-                  </div>
+                  <lawyerDocument /></lawyerDocument>
                 </b-card-text>
               </b-tab>
               <b-tab>
@@ -237,21 +148,21 @@
                               {{
                                 $t("profile.name")
                               }}</label>
-                              <input
+                              <!-- <input
                                 type="text"
                                 id="user__profile-name"
                                 v-model="lawyer.first_name"
-                              />
+                              /> -->
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-surname">{{
                                 $t("profile.surname")
                               }}</label>
-                              <input
+                              <!-- <input
                                 type="text"
                                 id="user__profile-surname"
                                 v-model="lawyer.last_name"
-                              />
+                              /> -->
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-lang">{{
@@ -264,11 +175,11 @@
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-email">Email</label>
-                              <input
+                              <!-- <input
                                 type="email"
                                 id="user__profile-email"
                                 v-model="lawyer.email"
-                              />
+                              /> -->
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-city">{{
@@ -292,12 +203,12 @@
                               <label for="user__profile-number">{{
                                 $t("profile.phone")
                               }}</label>
-                              <input
+                              <!-- <input
                                 type="text"
                                 id="user__profile-number"
                                 :value="'+998 ' + lawyer.user"
                                 disabled
-                              />
+                              /> -->
                             </b-col>                            
                             <b-col lg="12">
                               <b-button type="submit"
@@ -328,13 +239,15 @@
   </div>
 </template>
 <script>
+import LawyerAnswer from "../components/Lawyer-answer"
+import lawyerDocument from "../components/Lawyer-document"
 export default {
   data() {
     return {
       regionSelect: "",
       selectuz: [],
       selectru: [],
-      questionLawyer: [],
+      // questionLawyer: [],
       documentLawyer: [],
       priceAddedQuestion: [],
       priceAddedDocumnet: [],
@@ -350,6 +263,10 @@ export default {
       },
       lawyer: this.$auth.user,
     };
+  },
+  components: {
+    LawyerAnswer,
+    lawyerDocument
   },
   methods: {
     async getRegionuz() {
