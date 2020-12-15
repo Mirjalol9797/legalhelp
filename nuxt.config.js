@@ -109,7 +109,7 @@ export default {
         endpoints: {
           login: { url: 'customer/login/', method: 'post', propertyName: 'access' },
           user: { url: 'lawyer/profile/?language=uz', method: 'get', propertyName: false },
-          logout: false
+          logout: false      
         }
         // user/login/
       }
