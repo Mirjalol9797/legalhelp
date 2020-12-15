@@ -1,0 +1,108 @@
+.lawyer-question {
+  padding: 50px 0;
+}
+
+.lawyer-ques {
+  padding: 25px;
+  box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
+  border: 0.0625rem solid rgba(0, 0, 0, 0.08);
+
+  &__title {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  &__desc {
+    color: #6C7686;
+    margin-bottom: 10px;
+  }
+  &__date {
+    font-size: 14px;
+    background-image: url('../images/customer/calendar.svg');
+    background-repeat: no-repeat;
+    padding: 0 0 0 26px;
+    background-size: 20px;
+    margin-bottom: 10px;
+  }
+  &__doc {
+    a {
+      color: #007bff;
+      display: block;  
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.lawyer-cost {
+  margin-top: 50px;
+
+  &__title {
+    font-size: 25px;
+  }
+
+  &__form {
+    input {
+      max-width: 220px;
+    }
+  }
+  &__text {
+    display: none;
+    margin-top: 20px;
+  }
+  .active {
+    display: block;
+  }
+  &__payment {
+    margin-top: 20px;
+  }
+}
+
+.lawyer-ans {
+  margin-top: 50px;
+  &__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    outline: none;
+    min-height: 150px;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  &__info {
+    display: none;
+    margin-top: 20px;
+  }
+  .active {
+    display: block;
+  }
+}
+
+.lawyer-ansList {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  &__item {
+    padding: 25px;
+    box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
+    border: 0.0625rem solid rgba(0, 0, 0, 0.08);
+  }
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  &__date {
+    font-size: 14px;
+    background-image: url('../images/customer/calendar.svg');
+    background-repeat: no-repeat;
+    padding: 0 0 0 26px;
+    background-size: 20px;
+    margin-bottom: 10px;
+  }
+}

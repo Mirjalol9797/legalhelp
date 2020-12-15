@@ -472,6 +472,20 @@
       display: none;
     }
   }
+  &-btn {
+    background: #f2b50f;
+    border-radius: 8px;
+    border: 2px solid #f2b50f;
+    display: block;
+    max-width: 200px;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    &:hover {
+      color: #fff;
+    }
+  }
 }
 
 .lawyer__questions {
