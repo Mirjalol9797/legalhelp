@@ -111,7 +111,7 @@ export default {
           user: { url: 'customer/profile/?language=uz', method: 'get', propertyName: false },
           logout: false
         }
-        // user/login/
+        
       }
     },
   },
