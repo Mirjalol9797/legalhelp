@@ -4,14 +4,14 @@
       <b-container>
         <div class="profile-inner">
           <div class="owner-pic">
-            <!-- <img
-              :src="$store.state.baseURL + $auth.user.image"
+            <img
+              :src="$store.state.mediaURL + $auth.user.image"
               height="170"
               width="264"
               alt
-            /> -->
+            />
           </div>
-            <!-- <div class="profile-info">
+            <div class="profile-info">
             <span class="profile-info-name">
               {{ $auth.user.first_name }} {{ $auth.user.last_name }}
             </span>
@@ -19,7 +19,7 @@
             </span>
             <span class="profile-info-number">+998 {{ $auth.user.user }}</span>
             <span class="profile-info-email">{{ $auth.user.email }}</span>
-          </div> -->
+          </div>
         </div>
         <div class="user__profile-card lawyer-profile__card">
           <b-card no-body>
@@ -45,7 +45,7 @@
                   <span class="user__profile-card-text">{{$t("profile.mydocuments")}}</span>
                 </template>
                 <b-card-text>
-                  <lawyerDocument /></lawyerDocument>
+                  <lawyerDocument />
                 </b-card-text>
               </b-tab>
               <b-tab>

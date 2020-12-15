@@ -13,28 +13,6 @@
         <div class="lawyer__documents-date">Hujjat buyirilgan sana: {{item.date}}</div>
         <!-- <div class="lawyer__documents-price"  v-if="item.is_paid == true">Hujjat quyilgan narx: {{item.price}}</div> -->
         <nuxt-link :to="'lawyer-document/' + item.id" class="lawyer__documents-btn">Hujjatga naxr belgilash</nuxt-link>
-        <b-form 
-          class="lawyer__documents-form"
-          @submit.prevent="patchPriceDocumentLawyer(item.id)"
-          v-if="item.is_paid == false"
-        >
-          <b-form-group
-            label="Hujjatga narx kirgizing"
-            label-for="input"
-          >
-            <b-form-input
-              id="input"
-              type="text"
-              v-model="priceDocument"
-              required
-            ></b-form-input>
-          </b-form-group> 
-          <b-button type="submit" variant="primary">Saqlash</b-button>                     
-          <div :class="{active: isActiveDocument}" class="lawyer__documents-form-text">
-            Narx quyildi. Iltimos mijoz adabrit qilishini kuting. <br>
-            Mijoz adobrit kigandan so'ng? mijoz tomondan berilgan savol "Bildirishnomalrda" chiqadi
-          </div>     
-        </b-form>
       </div>
     </div>
   </div>

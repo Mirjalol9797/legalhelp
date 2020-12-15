@@ -19,14 +19,17 @@
             </div>
 
             <div class="right__block">
-              <div class="answer">
+              <!-- <div class="answer">
                 <font-awesome-icon :icon="['fas', 'comment']" />
                 Javoblar <span class="counter">1</span>
-              </div>
-              <div class="price" v-if="item.price > 0">
+              </div> -->
+              <div class="price" v-if="item.price > 0 || item.status == 'PaymentAdded'">
                 <font-awesome-icon :icon="['fas', 'money-bill-alt']" />
-                Savol narxi: {{item.price}}
+                Savol qo'yilgan narx: {{item.price}} <br>
+                pull to'lash uchun iltimos "Bildirishnomalar" ga o'ting
               </div>
+              <div v-if="item.price == null">Savolga naxr qo'yilmagan. Iltimos yarist savolga narx qo'yishini kuting</div>
+              <div v-if="item.status == 'PaymentDone'">Savolga pul to'langan. Savol narxi {{item.price}}</div>
               <!-- <span class="location"><font-awesome-icon :icon="['fas', 'map-marker']"/>Buxoro</span> -->
             </div>
           </div>

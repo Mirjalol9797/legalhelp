@@ -44,17 +44,23 @@
             </b-alert>                  
         </b-form>       
       </div>
-      <div class="lawyer-ans">
+      <div class="lawyer-ans" v-if="documentLawyerList.status == 'PaymentDone'">
         <div class="lawyer-ans__title">Savolga javob berish</div>
-        <b-form>
-          <b-form-group>
-            <b-form-textarea
-              
-            >
-            </b-form-textarea>
-          </b-form-group>
-          
-        </b-form>
+        <form
+          class="lawyer-ans__form"
+          @submit.prevent="patchFileDocumentLawyer(documentLawyerList.id)"
+        >
+          <div>
+            <label for="textarea"></label>
+            <textarea id="textarea" v-model="text" class="form-control"></textarea>
+          </div>
+          <div>
+            <label for="file"></label>
+            <input type="file" id="file" ref="file">
+          </div>
+          <b-button type="submit" variant="primary">Javob bermoq</b-button>
+          <b-alert :class="{active: answerDocumentActive}"  class="lawyer-ans__info" show variant="success">Javob mijozga yuborildi</b-alert>
+        </form>
       </div>
     </b-container>
   </div>
@@ -66,6 +72,11 @@ export default {
       documentLawyerList: [],
       priceDocument: '',
       isActiveDocument: false,
+      answerDocumentActive: false,
+      form: '',
+      doc_file: '',
+      text: '',
+      answer: []
     }
   },
   methods: {
@@ -84,10 +95,28 @@ export default {
           console.log('patchPriceDocumentLawyer', res)
           this.isActiveDocument = true
         })
+    },
+    async getQuestionAnswer() {
+      await this.$axios.get(`question/answer/?question_id=${this.$route.params.id}`)
+      .then((res) => {
+        this.answer = res.data;
+        console.log('getQuestionAnswer', res)
+      })
+    },
+    async patchFileDocumentLawyer() {
+      await this.$axios.patch(`document/lawyer/${this.$route.params.id}/`, {
+        text: this.text
+      })
+        .then((res) => {
+          console.log('patchFileDocumentLawyer', res);
+          this.text = "";
+          this.answerDocumentActive = true
+        })
     }    
   },
   mounted() {
-    this.getDocumentLawyer()
+    this.getDocumentLawyer();
+    this.getQuestionAnswer()
   }
 }
 </script>

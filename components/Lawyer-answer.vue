@@ -17,7 +17,7 @@
         Savolda quyilgan narx: {{item.price}}
       </p>
       <nuxt-link :to="'lawyer-answer/' + item.id" class="user__profile-question-add">Narx belgilash</nuxt-link>
-
+      
     </div>    
   </div>
 </template>
@@ -35,10 +35,10 @@ export default {
           this.questionLawyer = res.data;
           console.log('getQuestionLawyer', res)
         })
-    }    
+    }  
   },
   mounted() {
-    this.getQuestionLawyer();
+    this.getQuestionLawyer()
   }
 }
 </script>

@@ -26,8 +26,8 @@
           </b-form-group> 
           <b-button type="submit" variant="primary">narx belgilamoq</b-button>                       
           <b-alert :class="{active: isActiveQuestion}" class="lawyer-cost__text" show variant="success">
-            Narx quyildi. Iltimos mijoz adabrit qilishini kuting. <br>
-            Mijoz adobrit kigandan so'ng? mijoz tomondan berilgan savol "Bildirishnomalrda" chiqadi          
+            Narx quyildi. Iltimos mijoz pull to'lashini kuting. <br>
+            Mijoz pull to'laganidan so'ng, mijoz tomondan berilgan savol "Bildirishnomalarda" chiqadi          
           </b-alert>   
           <b-alert 
             class="lawyer-cost__payment"
@@ -41,35 +41,52 @@
         </b-form>
       </div>
       <!-- v-if="questionLawyerItem.is_paid == false" -->
-      <div class="lawyer-ansList" v-if="questionLawyerItem.status == 'PaymentDone' && questionLawyerItem.text !== ''">
+      <div class="lawyer-ansList" v-if="questionLawyerItem.status == 'PaymentDone' && answer.length !== 0 ">
         <div class="lawyer-ansList__title">Savolga berilgan javob</div>
-        <div class="lawyer-ansList__item">
+        <div class="lawyer-ansList__item" v-for="item in answer.slice(0,1)" :key="item.id">
           <div class="lawyer-ansList__text">
-            {{questionLawyerItem.text}}
+            {{item.text}}
           </div>
           <div class="lawyer-ansList__date">
-            {{questionLawyerItem.date}}
+            {{item.date}}
           </div>
         </div>
       </div>
       <div class="lawyer-ans" v-if="questionLawyerItem.status == 'PaymentDone'">
         <div class="lawyer-ans__title">Savolga javob berish</div>
-        <b-form 
-           @submit.prevent="lawyerQuestionAnswer(questionLawyerItem.id)"
+        <form
+           @submit.prevent="postAnswer(questionLawyerItem.id)"
         >
-          <b-form-group>
-            <b-form-textarea
-              v-model="answerQuestion"
-            >
-            </b-form-textarea>
-          </b-form-group>
+          <div>
+            <label for="textarea"></label>
+            <textarea name="" id="textarea" v-model="text"></textarea>
+          </div>
+          <div>
+            <label for="file"></label>
+            <input type="file" @change="addFile" id="file" ref="file">
+          </div>
           <b-button type="submit" variant="primary">Javob bermoq</b-button>
           <b-alert :class="{active: answerQuestionActive}"  class="lawyer-ans__info" show variant="success">Javob mijozga yuborildi</b-alert>
-        </b-form>
+        </form>
       </div>
-      <!-- <div v-if="questionLawyerItem.status == 'Pending'">Pending</div>
-      <div v-if="questionLawyerItem.status == 'PaymentDone'">PaymentDone</div>
-      <div v-if="questionLawyerItem.status == 'PaymentAdded'">PaymentAdded</div> -->
+      <!-- <div class="lawyer-ans" v-if="questionLawyerItem.status == 'PaymentDone' && answer.length !== 0 ">
+        <div class="lawyer-ans__title">Savolni uzgartirish</div>
+        <form
+           @submit.prevent="patchAnswer(questionLawyerItem.id)"
+        >
+          <div>
+            <label for="textarea"></label>
+            <textarea name="" id="textarea" v-model="text"></textarea>
+          </div>
+          <div>
+            <label for="file"></label>
+            <input type="file" @change="addFile" id="file" ref="file">
+          </div>
+          <b-button type="submit" variant="primary">Javob bermoq</b-button>
+          <b-alert :class="{active: answerQuestionActive}"  class="lawyer-ans__info" show variant="success">Javob mijozga yuborildi</b-alert>
+        </form>
+      </div>       -->
+
     </b-container>
   </div>
 </template>
@@ -81,7 +98,11 @@ export default {
       priceQuestion: '',
       isActiveQuestion: false,
       answerQuestion: '',
-      answerQuestionActive: false
+      answerQuestionActive: false,
+      answer: [],
+      text: '',
+      file: '',
+      form: ''
     }
   },
   methods: {
@@ -103,7 +124,7 @@ export default {
         })
     },   
     async lawyerQuestionAnswer() {
-      await this.$axios.patch(`question/lawyer/${this.$route.params.id}/`, {
+      await this.$axios.patch(`question/answer/?question_id=${this.$route.params.id}`, {
         text: this.answerQuestion
       })
         .then((res) => {
@@ -111,10 +132,45 @@ export default {
           this.answerQuestion = "";
           this.answerQuestionActive = true
         })
-    }
+    },
+    async getAnswer() {
+      await this.$axios.get(`question/answer/?question_id=${this.$route.params.id}`)
+        .then((res) => {
+          this.answer = res.data;
+          console.log('getAnswer', res)
+        })
+    },
+    addFile(e) {
+      this.form = new FormData();
+      this.form.append('text', this.text);
+      this.form.append('file', e.target.files[0]);
+      this.$refs.file.innerHTML = e.target.files[0].name;
+    },
+    async postAnswer() {
+      await this.$axios.post(`question/answer/?question_id=${this.$route.params.id}`, this.form)
+        .then((res) => {
+          console.log('postAnswer', res);
+          this.text = "";
+          this.file = "";
+          this.answerQuestionActive = true;
+        })
+    },
+    async patchAnswer(id) {
+      await this.$axios.patch(`question/answer/${this.$route.params.id}/`, {
+        text: this.text,
+        file: this.file
+      })
+        .then((res) => {
+          console.log('postAnswer', res);
+          this.text = "";
+          this.file = "";
+          this.answerQuestionActive = true;
+        })
+    }             
   },
   mounted() {
     this.getQuestionLawyer();
+    this.getAnswer()
   }
 }
 </script>
