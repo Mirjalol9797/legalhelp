@@ -68,7 +68,7 @@
               </b-nav-item-dropdown>
               <nuxt-link v-if="!loggedIn" :to="localePath('/signin')" class="user__enter-site">Kirish</nuxt-link>
               <b-nav-item-dropdown class="user__login">
-                <template  v-if="loggedIn && $auth.user.is_customer" v-slot:button-content>
+                <template  v-if="loggedIn" v-slot:button-content>
                   <div class="round">
                     <div class="user__link">
                       <img src="../assets/images/avatar.png" alt="" />
