@@ -43,16 +43,45 @@
       <!-- v-if="questionLawyerItem.is_paid == false" -->
       <div class="lawyer-ansList" v-if="questionLawyerItem.status == 'PaymentDone' && answer.length !== 0 ">
         <div class="lawyer-ansList__title">Savolga berilgan javob</div>
-        <div class="lawyer-ansList__item" v-for="item in answer.slice(0,1)" :key="item.id">
+        <div class="lawyer-ansList__item" v-for="item in answer" :key="item.id">
           <div class="lawyer-ansList__text">
             {{item.text}}
           </div>
           <div class="lawyer-ansList__date">
             {{item.date}}
           </div>
+          <div class="lawyer-ansList__file">
+            <a :href="$store.state.mediaURL + item.file" target="_blank">File yuklab olish</a>
+          </div>
+          <b-button type="submit" variant="primary" @click="OpenEditForm()">Javobni uzgartirish</b-button>
+          <div 
+            class="lawyer-ans answer-edit" 
+            v-if="questionLawyerItem.status == 'PaymentDone' && answer.length > 0"
+            :class="{openEdit: openEditActive}"
+          >
+            <div class="lawyer-ans__title">Javobni uzgartirish</div>
+            <form
+              @submit.prevent="patchAnswer(item.id)"
+            >
+              <div>
+                <label for="textarea"></label>
+                <textarea name="" id="textarea" v-model="text"></textarea>
+              </div>
+              <div>
+                <label for="file"></label>
+                <input type="file" @change="changeFile" id="file" ref="chengefile">
+              </div>
+              <b-button type="submit" variant="primary">Javob bermoq</b-button>
+              <b-alert :class="{active: answerQuestionActive}"  class="lawyer-ans__info" show variant="success">Javob o'zgartirildi va mijozga yuborildi</b-alert>
+            </form>
+          </div>            
         </div>
       </div>
-      <div class="lawyer-ans" v-if="questionLawyerItem.status == 'PaymentDone'">
+      <div 
+        class="lawyer-ans" 
+        v-if="questionLawyerItem.status == 'PaymentDone' && answer.length == 0" 
+
+      >
         <div class="lawyer-ans__title">Savolga javob berish</div>
         <form
            @submit.prevent="postAnswer(questionLawyerItem.id)"
@@ -66,28 +95,9 @@
             <input type="file" @change="addFile" id="file" ref="file">
           </div>
           <b-button type="submit" variant="primary">Javob bermoq</b-button>
-          <b-alert :class="{active: answerQuestionActive}"  class="lawyer-ans__info" show variant="success">Javob mijozga yuborildi</b-alert>
         </form>
+        <b-alert :class="{active: answerQuestionActive}"  class="lawyer-ans__info" show variant="success">Javob mijozga yuborildi</b-alert>
       </div>
-      {{answer.length}}
-      <div class="lawyer-ans" v-if="questionLawyerItem.status == 'PaymentDone' && answer.length !== 0 ">
-        <div class="lawyer-ans__title">Savolni uzgartirish</div>
-        <form
-           @submit.prevent="patchAnswer(item.id)"
-        >
-          <div>
-            <label for="textarea"></label>
-            <textarea name="" id="textarea" v-model="text"></textarea>
-          </div>
-          <div>
-            <label for="file"></label>
-            <input type="file" @change="addFile" id="file" ref="file">
-          </div>
-          <b-button type="submit" variant="primary">Javob bermoq</b-button>
-          <b-alert :class="{active: answerQuestionActive}"  class="lawyer-ans__info" show variant="success">Javob mijozga yuborildi</b-alert>
-        </form>
-      </div>       
-
     </b-container>
   </div>
 </template>
@@ -103,7 +113,9 @@ export default {
       answer: [],
       text: '',
       file: '',
-      form: ''
+      form: '',
+      openEditActive: false
+
     }
   },
   methods: {
@@ -147,31 +159,37 @@ export default {
       this.form.append('file', e.target.files[0]);
       this.$refs.file.innerHTML = e.target.files[0].name;
     },
+    changeFile(e) {
+      this.form = new FormData();
+      this.form.append('text', this.text);
+      this.form.append('file', e.target.files[0]);
+      this.$refs.chengefile.innerHTML = e.target.files[0].name;
+    },
     async postAnswer() {
       await this.$axios.post(`question/answer/?question_id=${this.$route.params.id}`, this.form)
         .then((res) => {
           console.log('postAnswer', res);
+          console.log('postAnswer', this.form);
           this.text = "";
           this.file = "";
           this.answerQuestionActive = true;
         })
     },
     async patchAnswer(id) {
-      await this.$axios.patch(`question/answer/${this.$route.params.id}/`, {
-        text: this.text,
-        file: this.file
-      })
+      await this.$axios.patch(`question/answer/${id}/`, this.form)
         .then((res) => {
-          console.log('patchAnswer', res);
-          this.text = "";
-          this.file = "";
+          // console.log('patchAnswer', res);
           this.answerQuestionActive = true;
         })
-    }             
+    },
+    OpenEditForm() {
+      this.openEditActive = true
+    }
+
   },
   mounted() {
     this.getQuestionLawyer();
-    this.getAnswer()
+    this.getAnswer();
   }
 }
 </script>
