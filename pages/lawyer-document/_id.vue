@@ -48,15 +48,19 @@
         <div class="lawyer-ans__title">Savolga javob berish</div>
         <form
           class="lawyer-ans__form"
-          @submit.prevent="patchFileDocumentLawyer(documentLawyerList.id)"
+          @submit.prevent="postDocument(documentLawyerList.id)"
         >
+          <div>
+            <label for="title"></label>
+            <input id="title" type="text" v-model="title" class="form-control">
+          </div>        
           <div>
             <label for="textarea"></label>
             <textarea id="textarea" v-model="text" class="form-control"></textarea>
           </div>
           <div>
             <label for="file"></label>
-            <input type="file" id="file" ref="file">
+            <input type="file" @change="addFile" id="file" ref="file">
           </div>
           <b-button type="submit" variant="primary">Javob bermoq</b-button>
           <b-alert :class="{active: answerDocumentActive}"  class="lawyer-ans__info" show variant="success">Javob mijozga yuborildi</b-alert>
@@ -76,7 +80,9 @@ export default {
       form: '',
       doc_file: '',
       text: '',
-      answer: []
+      title: '',
+      answer: [],
+      document: []
     }
   },
   methods: {
@@ -84,7 +90,7 @@ export default {
       await this.$axios.get(`document/lawyer/${this.$route.params.id}/`)
         .then((res) => {
           this.documentLawyerList = res.data;
-          console.log('getDocumentLawyer', res)
+          // console.log('getDocumentLawyer', res)
         })
     },
     async patchPriceDocumentLawyer(id) {
@@ -92,7 +98,7 @@ export default {
         price: this.priceDocument
       })
         .then((res) => {
-          console.log('patchPriceDocumentLawyer', res)
+          // console.log('patchPriceDocumentLawyer', res)
           this.isActiveDocument = true
         })
     },
@@ -100,7 +106,7 @@ export default {
       await this.$axios.get(`question/answer/?question_id=${this.$route.params.id}`)
       .then((res) => {
         this.answer = res.data;
-        console.log('getQuestionAnswer', res)
+        // console.log('getQuestionAnswer', res)
       })
     },
     async patchFileDocumentLawyer() {
@@ -108,15 +114,40 @@ export default {
         text: this.text
       })
         .then((res) => {
-          console.log('patchFileDocumentLawyer', res);
+          // console.log('patchFileDocumentLawyer', res);
           this.text = "";
+          this.answerDocumentActive = true
+        })
+    },
+    async getDocument() {
+      await this.$axios.get(`document/send/?document=${this.$route.params.id}`) 
+        .then((res) => {
+          this.document = res.data;
+          console.log('getDocument', res)
+        })
+    },  
+    addFile(e) {
+      this.form = new FormData();
+      this.form.append('title', this.title);
+      this.form.append('text', this.text);
+      this.form.append('doc_file', e.target.files[0]);
+      this.$refs.file.innerHTML = e.target.files[0].name;
+    },    
+    async postDocument() {
+      await this.$axios.post(`document/send/?document=${this.$route.params.id}`, this.form)
+        .then((res) => {
+          console.log('postAnswer', res);
+          this.title = "",
+          this.text = "",
+          this.file = "",
           this.answerDocumentActive = true
         })
     }    
   },
   mounted() {
     this.getDocumentLawyer();
-    this.getQuestionAnswer()
+    this.getQuestionAnswer();
+    this.getDocument()
   }
 }
 </script>

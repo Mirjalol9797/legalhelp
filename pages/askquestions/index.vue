@@ -12,7 +12,7 @@
             <form @submit.prevent="postQuestionCustomer" class="reg-form">
               <div class="reg-form__item">
                 <label for="lang">Til</label>
-                <select id="lang" v-model="language">
+                <select id="lang" v-model="language" required>
                   <option>o'zbek</option>
                   <option>rus</option>
                 </select>
@@ -30,7 +30,7 @@
               </div>
               <div class="reg-form__item">
                 <label for="lawyer">Yuristlar</label>
-                <select id="lawyer" v-model="lawyer">
+                <select id="lawyer" v-model="lawyer" required>
                   <option
                     v-for="item in lawyerListSelect"
                     :key="item.id"
@@ -42,7 +42,7 @@
               </div>
               <div class="reg-form__item">
                 <label for="text">Savol sarlavxasi</label>
-                <input type="text" v-model="title" id="text">
+                <input type="text" v-model="title" id="text" required>
               </div>
               <div class="reg-form__item">
                 <label for="textarea">Savol matni</label>
