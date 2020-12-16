@@ -122,6 +122,12 @@
 .vue-back-to-top{
   right: 20px;
 }
+back-to-top {
+  position: fixed;
+  z-index: 9999;
+  right: 5% !important;
+  bottom: 50px;
+}
 
 // @media (max-width: 575px) {
 //   .footer {

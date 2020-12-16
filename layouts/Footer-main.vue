@@ -3,7 +3,7 @@
      <Navbar />
       <Nuxt />
       <BacktoTop />
-        <footer class="index__footer">
+      <footer class="index__footer">
       <b-container>
         <b-row>
           <b-col lg="4">

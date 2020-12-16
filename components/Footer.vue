@@ -1,5 +1,6 @@
 <template>
   <div>
+    <BacktoTop />
     <footer class="footer">
       <b-container>
         <b-row>

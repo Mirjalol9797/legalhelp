@@ -69,10 +69,11 @@
           <b-alert :class="{active: answerQuestionActive}"  class="lawyer-ans__info" show variant="success">Javob mijozga yuborildi</b-alert>
         </form>
       </div>
-      <!-- <div class="lawyer-ans" v-if="questionLawyerItem.status == 'PaymentDone' && answer.length !== 0 ">
+      {{answer.length}}
+      <div class="lawyer-ans" v-if="questionLawyerItem.status == 'PaymentDone' && answer.length !== 0 ">
         <div class="lawyer-ans__title">Savolni uzgartirish</div>
         <form
-           @submit.prevent="patchAnswer(questionLawyerItem.id)"
+           @submit.prevent="patchAnswer(item.id)"
         >
           <div>
             <label for="textarea"></label>
@@ -85,7 +86,7 @@
           <b-button type="submit" variant="primary">Javob bermoq</b-button>
           <b-alert :class="{active: answerQuestionActive}"  class="lawyer-ans__info" show variant="success">Javob mijozga yuborildi</b-alert>
         </form>
-      </div>       -->
+      </div>       
 
     </b-container>
   </div>
@@ -110,7 +111,7 @@ export default {
       await this.$axios.get(`question/lawyer/${this.$route.params.id}/`)
         .then((res) => {
           this.questionLawyerItem = res.data;
-          console.log('getQuestionLawyer', res)
+          // console.log('getQuestionLawyer', res)
         })
     },
     async pathPriceQuestionLawyer(id) {
@@ -118,7 +119,7 @@ export default {
         price: this.priceQuestion
       })
         .then((res) => {
-          console.log('pathPriceQuestionLawyer', res);
+          // console.log('pathPriceQuestionLawyer', res);
           this.isActiveQuestion = true;
           this.priceQuestion = "";
         })
@@ -128,7 +129,7 @@ export default {
         text: this.answerQuestion
       })
         .then((res) => {
-          console.log('lawyerQuestionAnswer', res);
+          // console.log('lawyerQuestionAnswer', res);
           this.answerQuestion = "";
           this.answerQuestionActive = true
         })
@@ -161,7 +162,7 @@ export default {
         file: this.file
       })
         .then((res) => {
-          console.log('postAnswer', res);
+          console.log('patchAnswer', res);
           this.text = "";
           this.file = "";
           this.answerQuestionActive = true;

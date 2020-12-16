@@ -7,6 +7,11 @@
 .navbar-nav{
     align-items: center;
 }
+
+.navbar-expand-xl .navbar-collapse {
+    justify-content: space-evenly;
+}
+
 .navbar__logo{
     display: flex;
     align-items: center;
