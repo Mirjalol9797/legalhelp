@@ -27,6 +27,9 @@
             <b-row>
               <div class="customer-answer__item" v-for="item in answer" :key="item.id">
                 <div class="customer-answer__text">{{item.text}}</div>
+                <div class="customer-answer__file" v-if="item.file !== null">
+                  <a :href="$store.state.mediaURL + item.file" target="_blank">Hujjatni yuklab olish</a>
+                </div>
                 <div class="customer-answer__user">Yurist: <span>{{item.lawyer}}</span></div>
                 <div class="customer-answer__date">{{item.date}}</div>
               </div>

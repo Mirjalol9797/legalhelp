@@ -5,9 +5,13 @@
       <div class="user__priceQuestion-info" v-for="item of priceAddedQuestion" :key="item.id">
         <p class="user__priceQuestion-name">Savol sarlavxasi: {{item.title}}</p>
         <p class="user__priceQuestion-name">Savol matni: {{item.text}}</p>
-        <p>Savol narxi: {{item.price}} so'm</p>
         <nuxt-link :to="'customer-question-price/' + item.id" class="user__priceQuestion-link">Savolga pull to'lash</nuxt-link>
+        <p class="user__priceQuestion-name">
+          Pull to'langanidan so'ng yurist javob berishini kuting<br>
+          puli to'langan savollar va ularga keladigon javoblar "Javobi kelgan savollar" ro'yxatidan qidiring
+        </p>
       </div>
+      <div v-if="priceAddedQuestion.length == 0">Sizda puli to'lanmagan savollar yo'q</div>
     </div>
   </div>
 </template>

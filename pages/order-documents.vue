@@ -32,15 +32,15 @@
           </b-row> -->
           <form @submit.prevent="postQuestionCustomer" class="reg-form">
             <div class="reg-form__item">
-              <label for="lang">Til</label>
-              <select id="lang" v-model="language" required>
+              <label for="lang">Til <span>*</span></label>
+              <select id="lang" v-model="form.language" required>
                 <option>o'zbek</option>
                 <option>rus</option>
               </select>
             </div>
             <div class="reg-form__item">
-              <label for="select">Categoriya</label>
-              <select id="select" v-model="category" required>
+              <label for="select">Categoriya <span>*</span></label>
+              <select id="select" v-model="form.category" required>
                 <option
                   v-for="item in categories"
                   :key="item.id"
@@ -51,7 +51,7 @@
             </div>
             <div class="reg-form__item">
               <label for="lawyer">Yuristlar</label>
-              <select id="lawyer" v-model="lawyer">
+              <select id="lawyer" v-model="form.lawyer">
                 <option
                   v-for="item in lawyerListSelect"
                   :key="item.id"
@@ -62,16 +62,16 @@
               </select>
             </div>            
             <div class="reg-form__item">
-              <label for="text">Savol sarlavxasi</label>
-              <input type="text" v-model="title" id="text" required>
+              <label for="text">Savol sarlavxasi <span>*</span></label>
+              <input type="text" v-model="form.title" id="text" required>
             </div>
             <div class="reg-form__item">
-              <label for="textarea">Savol matni</label>
-              <textarea name="" id="textarea" cols="30" rows="10" v-model="text"></textarea>
+              <label for="textarea">Savol matni <span>*</span></label>
+              <textarea name="" id="textarea" cols="30" rows="10" v-model="form.text" required></textarea>
             </div>
             <div class="reg-form__item">
               <label for="file">File</label>
-              <input type="file" @change="addFile" id="file" ref="file" required />
+              <input type="file" @change="addFile" id="file" ref="file" />
             </div>
             <button type="submit" class="reg-form__btn">Davom etish</button>
           </form>
@@ -85,12 +85,14 @@ export default {
   data() {
     return {
       categories: [],
-      form: '',
-      language: "",
-      category: [],
-      title: "",
-      text: "",
-      lawyer: [],
+      file: '',
+      form: {
+        language: "",
+        category: [],
+        title: "",
+        text: "",
+        lawyer: [],
+      },
       lawyerListSelect: []
     };
   },
@@ -109,25 +111,26 @@ export default {
         })
     },
     addFile(e) {
-      this.form = new FormData();
-      this.form.append('title', this.title);
-      this.form.append('language', this.language);
-      this.form.append('category', this.category);
-      this.form.append('text', this.text);
-      this.form.append('lawyer', this.lawyer);
-      this.form.append('doc_file', e.target.files[0]);
+      this.file = e.target.files[0]
       this.$refs.file.innerHTML = e.target.files[0].name;
     },
     async postQuestionCustomer() {
-      await this.$axios.post('document/customer/', this.form)
+      const form = new FormData()
+      form.append('title', this.form.title);
+      form.append('language', this.form.language);
+      form.append('category', this.form.category);
+      form.append('text', this.form.text);
+      form.append('lawyer', this.form.lawyer);
+      form.append('doc_file', this.file)      
+      await this.$axios.post('document/customer/', form)
         .then(async (res) => {
           console.log('postQuestionCustomer', res);
-          this.language = '';
-          this.category = '';
-          this.text = '';
-          this.lawyer = '';
-          this.doc_file = '';
-          this.title = '';
+          this.form.language = '';
+          this.form.category = '';
+          this.form.text = '';
+          this.form.lawyer = '';
+          this.form.doc_file = '';
+          this.form.title = '';
           try {
             this.$toast.success({
               title: `Hujjat buyurtma qilindi`,
@@ -140,6 +143,7 @@ export default {
               message: `iltimos qaytadan urinib kuring`,
             })
           }
+          // this.$router.push(this.localePath('/customer-profile'))
         })
     }
 },

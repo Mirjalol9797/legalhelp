@@ -12,14 +12,14 @@
             <form @submit.prevent="postQuestionCustomer" class="reg-form">
               <div class="reg-form__item">
                 <label for="lang">Til <span>*</span></label>
-                <select id="lang" v-model="language" required>
+                <select id="lang" v-model="form.language" required>
                   <option>o'zbek</option>
                   <option>rus</option>
                 </select>
               </div>
               <div class="reg-form__item">
                 <label for="select">Categoriya <span>*</span></label>
-                <select id="select" v-model="category" required>
+                <select id="select" v-model="form.category" required>
                   <option
                     v-for="item in categories"
                     :key="item.id"
@@ -31,7 +31,7 @@
               </div>
               <div class="reg-form__item">
                 <label for="lawyer">Yuristlar</label>
-                <select id="lawyer" v-model="lawyer">
+                <select id="lawyer" v-model="form.lawyer">
                   <option
                     v-for="item in lawyerListSelect"
                     :key="item.id"
@@ -43,11 +43,11 @@
               </div>
               <div class="reg-form__item">
                 <label for="text">Savol sarlavxasi <span>*</span></label>
-                <input type="text" v-model="title" id="text" required>
+                <input type="text" v-model="form.title" id="text" required>
               </div>
               <div class="reg-form__item">
                 <label for="textarea">Savol matni <span>*</span></label>
-                <textarea name="" id="textarea" cols="30" rows="10" v-model="text" required></textarea>
+                <textarea name="" id="textarea" cols="30" rows="10" v-model="form.text" required></textarea>
               </div>
               <div class="reg-form__item">
                 <label for="file">File</label>
@@ -58,7 +58,6 @@
           </div>
         </div>
       </b-container>
-
     </div>
   </div>
 </template>
@@ -67,12 +66,14 @@ export default {
   data() {
     return {
       categories: [],
-      form: '',
-      language: "",
-      category: [],
-      title: "",
-      text: "",
-      lawyer: [],
+      form: {
+        language: "",
+        category: [],
+        title: "",
+        text: "",
+        lawyer: [],
+      },
+      file: '',
       lawyerListSelect: []
     };
   },
@@ -90,32 +91,27 @@ export default {
           console.log('getLawyers', res)
         })
     },
-    // async onSubmit() {
-    //   await this.$axios.post('document/customer/', this.form)
-    //     .then((res) => {
-    //       console.log('onSubmit')
-    //     })
-    // },
     addFile(e) {
-      this.form = new FormData();
-      this.form.append('title', this.title);
-      this.form.append('language', this.language);
-      this.form.append('category', this.category);
-      this.form.append('text', this.text);
-      this.form.append('lawyer', this.lawyer);
-      this.form.append('question_file', e.target.files[0]);
+      this.file = e.target.files[0]
       this.$refs.file.innerHTML = e.target.files[0].name;
     },
     async postQuestionCustomer() {
-      await this.$axios.post('question/customer/', this.form)
+      const form = new FormData()
+      form.append('title', this.form.title);
+      form.append('language', this.form.language);
+      form.append('category', this.form.category);
+      form.append('text', this.form.text);
+      form.append('lawyer', this.form.lawyer);
+      form.append('question_file', this.file)
+      await this.$axios.post('question/customer/', form)
         .then(async (res) => {
           console.log('postQuestionCustomer', res);
-          this.language = '';
-          this.category = '';
-          this.text = '';
-          this.lawyer = '';
-          this.question_file = '';
-          this.title = '';
+          this.form.language = '';
+          this.form.category = '';
+          this.form.text = '';
+          this.form.lawyer = '';
+          this.form.question_file = '';
+          this.form.title = '';
           try {
             this.$toast.success({
               title: `Savol muvofaqiyatli junatildi`,
@@ -128,6 +124,7 @@ export default {
               message: `iltimos qaytadan urinib kuring`,
             })
           }
+          // this.$router.push(this.localePath('/customer-profile'))
         })
     }
   },

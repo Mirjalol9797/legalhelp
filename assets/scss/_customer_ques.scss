@@ -57,17 +57,22 @@
     margin-bottom: 15px;
   }
   &__user {
-    text-align: right;
+    // text-align: right;
     margin-bottom: 15px;
   }
   &__date {
-    text-align: right;
+    // text-align: right;
     font-size: 14px;
     background-image: url('../images/customer/calendar.svg');
     background-repeat: no-repeat;
-    background-position: 92% 0;
+    background-position: 0 0;
     padding: 0 0 0 26px;
     background-size: 20px;    
+  }
+  &__file {
+    a {
+      color: #007bff;
+    }
   }
 }
 
@@ -260,5 +265,19 @@
   }
   &__lawyer {
     margin-bottom: 10px;
+  }
+}
+
+.customer-priceDone {
+  &__item {
+    background-color: #fff;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  &__link {
+    color: #0056b3;
   }
 }

@@ -40,6 +40,19 @@
                   <CustomerQuestion />
                 </b-card-text>
               </b-tab>
+              <b-tab active>
+                <template v-slot:title>
+                  <span class="user__profile-card-icon">
+                    <!-- <font-awesome-icon :icon="['fas', 'comment']" /> -->
+                    <!-- <img src="../assets/images/profil/comment.svg" alt="" width="15px"> -->
+                  </span>
+                  <span class="user__profile-card-text">Javobi kelgan savollar</span>
+                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                </template>
+                <b-card-text>
+                  <CustomerQuesPriceDone />
+                </b-card-text>
+              </b-tab>              
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
@@ -318,6 +331,7 @@ import CustomerQuestion from '../components/Customer-question'
 import CustomerDocument from '../components/Customer-document'
 import CustomerDocumentPrice from '../components/Customer-document-price'
 import CustomerPrice from '../components/Customer-price'
+import CustomerQuesPriceDone from '../components/Customer-ques-price-done'
 
 export default {
   data() {
@@ -345,7 +359,8 @@ export default {
     CustomerQuestion,
     CustomerPrice,
     CustomerDocument,
-    CustomerDocumentPrice
+    CustomerDocumentPrice,
+    CustomerQuesPriceDone
   },
   methods: {
     async onCancel() {
