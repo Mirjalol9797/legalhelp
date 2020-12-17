@@ -47,22 +47,22 @@
         </b-form>
       </div>
       <!-- v-if="questionLawyerItem.is_paid == false" -->
-      <div class="lawyer-ansList" v-if="questionLawyerItem.status == 'PaymentDone' && answer.length !== 0 ">
-        <div class="lawyer-ansList__title">Savolga berilgan javob</div>
+      <div class="lawyer-ansList" v-if="questionLawyerItem.status == 'PaymentDone' || questionLawyerItem.status == 'QuestionCompleted'">
         <div class="lawyer-ansList__item" v-for="item in answer" :key="item.id">
+          <div class="lawyer-ansList__title">Savolga berilgan javob</div>
           <div class="lawyer-ansList__text">
             {{item.text}}
           </div>
           <div class="lawyer-ansList__date">
             {{item.date}}
           </div>
-          <div class="lawyer-ansList__file">
+          <div class="lawyer-ansList__file" v-if="item.file !== null">
             <a :href="$store.state.mediaURL + item.file" target="_blank">File yuklab olish</a>
           </div>
           <b-button type="submit" variant="primary" @click="OpenEditForm()">Javobni uzgartirish</b-button>
           <div 
             class="lawyer-ans answer-edit" 
-            v-if="questionLawyerItem.status == 'PaymentDone' && answer.length > 0"
+            v-if="questionLawyerItem.status == 'PaymentDone' || questionLawyerItem.status == 'QuestionCompleted'"
             :class="{openEdit: openEditActive}"
           >
             <div class="lawyer-ans__title">Javobni uzgartirish</div>
@@ -71,16 +71,16 @@
             >
               <div>
                 <label for="textarea"></label>
-                <textarea name="" id="textarea" v-model="text"></textarea>
+                <textarea name="" id="textarea" v-model="form.text" required></textarea>
               </div>
               <div>
                 <label for="file"></label>
-                <input type="file" @change="changeFile" id="file" ref="chengefile">
+                <input type="file" @change="changeFile1" id="file" ref="changefile">
               </div>
-              <b-button type="submit" variant="primary">Javob bermoq</b-button>
-              <b-alert :class="{active: answerQuestionActive}"  class="lawyer-ans__info" show variant="success">Javob o'zgartirildi va mijozga yuborildi</b-alert>
+              <b-button type="submit" variant="primary">Javob berish</b-button>
             </form>
           </div>            
+          <b-alert :class="{active: answerQuestionActive1}"  class="lawyer-ans__info" show variant="success">Javob o'zgartirildi va mijozga yuborildi</b-alert>
         </div>
       </div>
       <div 
@@ -94,15 +94,17 @@
         >
           <div>
             <label for="textarea"></label>
-            <textarea name="" id="textarea" v-model="text"></textarea>
+            <textarea name="" id="textarea" v-model="form.text"></textarea>
           </div>
           <div>
             <label for="file"></label>
             <input type="file" @change="addFile" id="file" ref="file">
           </div>
-          <b-button type="submit" variant="primary">Javob bermoq</b-button>
+          <b-button type="submit" variant="primary">Javob berish</b-button>
         </form>
-        <b-alert :class="{active: answerQuestionActive}"  class="lawyer-ans__info" show variant="success">Javob mijozga yuborildi</b-alert>
+        <b-alert :class="{active: answerQuestionActive}"  class="lawyer-ans__info" show variant="success">
+          Javob mijozga yuborildi. Iltimos saxifani yangilang
+        </b-alert>
       </div>
     </b-container>
   </div>
@@ -116,11 +118,14 @@ export default {
       isActiveQuestion: false,
       answerQuestion: '',
       answerQuestionActive: false,
+      answerQuestionActive1: false,
       answer: [],
-      text: '',
       file: '',
-      form: '',
-      openEditActive: false
+      form: {
+        text: '',
+      },
+      openEditActive: false,
+      lawyerAnswerList: false
 
     }
   },
@@ -160,9 +165,7 @@ export default {
         })
     },
     addFile(e) {
-      this.form = new FormData();
-      this.form.append('text', this.text);
-      this.form.append('file', e.target.files[0]);
+      this.file = e.target.files[0]
       this.$refs.file.innerHTML = e.target.files[0].name;
     },
     changeFile(e) {
@@ -171,21 +174,47 @@ export default {
       this.form.append('file', e.target.files[0]);
       this.$refs.chengefile.innerHTML = e.target.files[0].name;
     },
+    changeFile1(e) {
+      this.file = e.target.files[0]
+      this.$refs.changefile.innerHTML = e.target.files[0].name;
+    },
     async postAnswer() {
-      await this.$axios.post(`question/answer/?question_id=${this.$route.params.id}`, this.form)
+      const form = new FormData()
+      form.append('text', this.form.text)
+      form.append('file', this.file)
+      await this.$axios.post(`question/answer/?question_id=${this.$route.params.id}`, form)
         .then((res) => {
           console.log('postAnswer', res);
-          console.log('postAnswer', this.form);
-          this.text = "";
+          this.form.text = "";
           this.file = "";
           this.answerQuestionActive = true;
+          this.lawyerAnswerList = true;
+          this.getAnswer()
         })
     },
     async patchAnswer(id) {
-      await this.$axios.patch(`question/answer/${id}/`, this.form)
+      const form = new FormData()
+      form.append('text', this.form.text)
+      form.append('file', this.file)
+      await this.$axios.patch(`question/answer/${id}/`, form)
         .then((res) => {
-          // console.log('patchAnswer', res);
-          this.answerQuestionActive = true;
+          console.log('patchAnswer', res);
+          this.answerQuestionActive1 = true;
+          this.form.text = "";
+          this.getAnswer();
+          this.openEditActive = false;
+          try {
+            this.$toast.success({
+              title: `Javob muvafaqiyatli uzgartirildi`,
+              message: ` `
+            });
+          }
+          catch {
+            this.$toast.error({
+              title: `Javob uzgartirilmadi`,
+              message: ``
+            });
+          }
         })
     },
     OpenEditForm() {

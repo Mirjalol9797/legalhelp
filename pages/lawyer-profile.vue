@@ -55,16 +55,7 @@
                   <span class="user__profile-card-text">{{$t("profile.notification")}}</span>
                 </template>
                 <b-card-text>
-                  <div class="lawyer__questions">
-                    <h2>Puli to'langan savollar</h2>
-                    <div class="lawyer__questions_item" v-for="item in priceAddedQuestion" :key="item.id">
-                      <div class="lawyer__questions-title">Savol nomi: {{item.title}}</div>
-                      <div class="lawyer__questions-text">Savol haqida: {{item.text}}</div>
-                      <div class="lawyer__questions-customer">Savol bergan mijoz: {{item.customer}}</div>
-                      <div class="lawyer__questions-date">Savol berilgan sana: {{item.date}}</div>
-                      <div class="lawyer__questions-price">Savolga quyilgan narx: {{item.price}}</div>
-                    </div>
-                  </div>
+                  <LAwyerPriceAnswer />
                   <div class="lawyer__documents">
                     <h2>Puli to'langan hujjatlar</h2>
                     <div class="lawyer__documents_item" v-for="item in priceAddedDocumnet" :key="item.id">
@@ -148,21 +139,21 @@
                               {{
                                 $t("profile.name")
                               }}</label>
-                              <!-- <input
+                              <input
                                 type="text"
                                 id="user__profile-name"
                                 v-model="lawyer.first_name"
-                              /> -->
+                              />
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-surname">{{
                                 $t("profile.surname")
                               }}</label>
-                              <!-- <input
+                              <input
                                 type="text"
                                 id="user__profile-surname"
                                 v-model="lawyer.last_name"
-                              /> -->
+                              />
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-lang">{{
@@ -175,11 +166,11 @@
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-email">Email</label>
-                              <!-- <input
+                              <input
                                 type="email"
                                 id="user__profile-email"
                                 v-model="lawyer.email"
-                              /> -->
+                              />
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-city">{{
@@ -195,7 +186,7 @@
                                   v-for="(index,region) of selectuz" 
                                   :key="region"
                                 >
-                                  <!-- {{index.title_uz}} -->
+                                  {{index.title_uz}}
                                 </option>
                               </select>
                             </b-col>
@@ -203,12 +194,12 @@
                               <label for="user__profile-number">{{
                                 $t("profile.phone")
                               }}</label>
-                              <!-- <input
+                              <input
                                 type="text"
                                 id="user__profile-number"
                                 :value="'+998 ' + lawyer.user"
                                 disabled
-                              /> -->
+                              />
                             </b-col>                            
                             <b-col lg="12">
                               <b-button type="submit"
@@ -241,6 +232,7 @@
 <script>
 import LawyerAnswer from "../components/Lawyer-answer"
 import lawyerDocument from "../components/Lawyer-document"
+import LAwyerPriceAnswer from "../components/Lawyer-price-answer"
 export default {
   data() {
     return {
@@ -266,14 +258,15 @@ export default {
   },
   components: {
     LawyerAnswer,
-    lawyerDocument
+    lawyerDocument,
+    LAwyerPriceAnswer
   },
   methods: {
     async getRegionuz() {
       await this.$axios.get("region/?language=uz").then(res => {
         this.selectuz = res.data;
         this.selected = res.data;
-        // console.log(res);
+        console.log('getRegionuz', res);
       });
     },
     async getRegionru() {

@@ -504,4 +504,27 @@
     border-bottom: 3px solid #eee;
     padding-bottom: 20px;
   }
+  &-answer {
+    color: #fff;
+    background-color: #f2b50f;
+    display: block;
+    padding: 5px;
+    max-width: 190px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    &:hover {
+      color: #fff;
+    }
+  }
+  &-priceAdded {
+    background-color: green;
+    color: #fff;
+    padding: 5px;
+    max-width: 190px;
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
 }
