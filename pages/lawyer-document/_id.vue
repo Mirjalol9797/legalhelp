@@ -92,16 +92,16 @@
           @submit.prevent="postDocument(documentLawyerList.id)"
         >
           <div>
-            <label for="title"></label>
-            <input id="title" type="text" v-model="title" class="form-control">
+            <label for="title">Sarlovha <span>*</span></label>
+            <input id="title" type="text" v-model="title" class="form-control" required>
           </div>        
           <div>
-            <label for="textarea"></label>
-            <textarea id="textarea" v-model="text" class="form-control"></textarea>
+            <label for="textarea">Matn <span>*</span></label>
+            <textarea id="textarea" v-model="text" class="form-control" required></textarea>
           </div>
           <div>
-            <label for="file"></label>
-            <input type="file" @change="addFile" id="file" ref="file">
+            <label for="file">Hujjat junatish <span>*</span></label>
+            <input type="file" @change="addFile" id="file" ref="file" required>
           </div>
           <b-button type="submit" variant="primary">Javob bermoq</b-button>
           <b-alert :class="{active: answerDocumentActive}"  class="lawyer-ans__info" show variant="success">Javob mijozga yuborildi</b-alert>

@@ -56,21 +56,7 @@
                 </template>
                 <b-card-text>
                   <LAwyerPriceAnswer />
-                  <div class="lawyer__documents">
-                    <h2>Puli to'langan hujjatlar</h2>
-                    <div class="lawyer__documents_item" v-for="item in priceAddedDocumnet" :key="item.id">
-                      <div class="lawyer__documents-title">Hujjat nomi: {{item.title}}</div>
-                      <div class="lawyer__documents-desc">Hujjat haqida: {{item.text}}</div>
-                      <div class="lawyer__documents-categ">Hujjat toifasi: {{item.category}}</div>
-                      <div class="lawyer__documents-subcateg">Hujjat pastki toifasi: {{item.sub_category}}</div>
-                      <div class="lawyer__documents-link">
-                        <a :href="item.doc_file" target="_blank">Hujjat yuklab olish</a>
-                      </div>
-                      <div class="lawyer__documents-customer">Hujjat buyirgan mijoz: {{item.customer}}</div>
-                      <div class="lawyer__documents-date">Hujjat buyirilgan sana: {{item.date}}</div>    
-                      <div class="lawyer__documents-price">Quyilgan narx: {{item.price}}</div>
-                    </div>
-                  </div>
+                  <LawyerPriceDocument />
                 </b-card-text>
               </b-tab>
               <!-- <b-tab>
@@ -233,6 +219,7 @@
 import LawyerAnswer from "../components/Lawyer-answer"
 import lawyerDocument from "../components/Lawyer-document"
 import LAwyerPriceAnswer from "../components/Lawyer-price-answer"
+import LawyerPriceDocument from "../components/Lawyer-price-document"
 export default {
   data() {
     return {
@@ -259,7 +246,8 @@ export default {
   components: {
     LawyerAnswer,
     lawyerDocument,
-    LAwyerPriceAnswer
+    LAwyerPriceAnswer,
+    LawyerPriceDocument
   },
   methods: {
     async getRegionuz() {
