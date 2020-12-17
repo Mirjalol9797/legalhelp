@@ -21,7 +21,7 @@
           <nuxt-link :to="'lawyer-document/' + item.id" class="lawyer__questions-answer">
             Javobni uzgartirish 
           </nuxt-link>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
