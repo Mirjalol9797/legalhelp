@@ -30,8 +30,8 @@
           </b-form-group> 
           <b-button type="submit" variant="primary">narx belgilamoq</b-button>                       
             <b-alert :class="{active: isActiveDocument}" class="lawyer-cost__text" show variant="success">
-              Narx quyildi. Iltimos mijoz adabrit qilishini kuting. <br>
-              Mijoz adobrit kigandan so'ng? mijoz tomondan berilgan savol "Bildirishnomalrda" chiqadi          
+              Narx quyildi. Iltimos mijoz pull to'lashini kuting. <br>
+              Mijoz pull to'laganidan so'ng, mijoz tomondan berilgan savol "Bildirishnomalarda" chiqadi       
             </b-alert>   
             <b-alert 
               class="lawyer-cost__payment"

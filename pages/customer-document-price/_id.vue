@@ -85,13 +85,13 @@ export default {
       form: {
         card_number: '',
         expire_date: '',
-        object_type: 'question',
+        object_type: 'document',
         object_id: ''
       },
       form2: {
         code: '',
         card_token: '',
-        object_type: 'question',
+        object_type: 'document',
         object_id: ''
       },
       isActive: false

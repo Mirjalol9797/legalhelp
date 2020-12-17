@@ -1,0 +1,54 @@
+.recovery{
+  padding: 150px 0;
+  background-color: #F5F5F5;
+  .recovery__card{
+    max-width: 320px;
+    padding: 2.4rem;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    .error{
+      color: red;
+      font-size: 13px;
+      display: block;
+      margin-top: 5px;
+    }
+    h4{
+      color: #222222;
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      text-align: center;
+      border-bottom: 1px solid #e2e2e2;
+    }
+    legend{
+      font-size: 15px;
+    }
+    input{
+      width: 100%;
+      padding: 8px 9px;
+      outline: none;
+      font-size: 15px;
+    }
+    p{
+      color: #9FAAB7;
+      font-size: 12px;
+      margin: 20px 0;
+    }
+    button{
+      width: 100%;
+      font-size: 15px;
+      padding: 8px 10px;
+      margin-top: 20px;
+      border: 0;
+      background-color: #ffb612;
+      &:focus, &:active{
+        box-shadow: none;
+        background-color: #ffb612;
+      }
+    }
+  }
+}

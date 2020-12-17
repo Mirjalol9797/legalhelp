@@ -143,7 +143,7 @@ export default {
               message: `iltimos qaytadan urinib kuring`,
             })
           }
-          // this.$router.push(this.localePath('/customer-profile'))
+          this.$router.push(this.localePath('/customer-profile'))
         })
     }
 },

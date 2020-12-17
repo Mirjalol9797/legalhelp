@@ -30,7 +30,7 @@
               </div>
               <div class="registration-submit-wrap">
                 <b-button class="registration-submit" type="submit">{{$t("givequestion.btn")}}</b-button> 
-                <!-- <nuxt-link to="" class="registration__forgot-password">Parolni unutdingizmi?</nuxt-link> -->
+                <nuxt-link :to="localePath('/password/recovery')" class="registration__forgot-password">Parolni unutdingizmi?</nuxt-link>
               </div>
               <nuxt-link :to="localePath('/reg')" class="registration__sign-up">Ro'yxatdan o'tish</nuxt-link>
             </form>

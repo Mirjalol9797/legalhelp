@@ -3,7 +3,7 @@
     <b-container class="customer-question">
       <div class="user__profile-wrap" v-for="(item, index) of questionCustomer" :key="index.id">
         <div class="user__profile-question">
-          <div class="user__profile-question-item" v-if="item.status == 'Pending' || item.status == 'PaymentAdded'">
+          <div class="user__profile-question-item" v-if="item.status == 'Pending' || item.status == 'PriceAdded'">
             <div class="user__profile-question-title">
               {{item.title}} 
             </div>
@@ -24,7 +24,7 @@
                   <font-awesome-icon :icon="['fas', 'comment']" />
                   Javoblar <span class="counter">1</span>
                 </div> -->
-                <div class="price" v-if="item.price > 0 || item.status == 'PaymentAdded'">
+                <div class="price" v-if="item.price > 0 || item.status == 'PriceAdded'">
                   <font-awesome-icon :icon="['fas', 'money-bill-alt']" />
                   Savol qo'yilgan narx: {{item.price}} <br>
                   pull to'lash uchun iltimos "Bildirishnomalar" ga o'ting

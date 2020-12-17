@@ -40,7 +40,7 @@
                   <CustomerQuestion />
                 </b-card-text>
               </b-tab>
-              <b-tab active>
+              <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
                     <!-- <font-awesome-icon :icon="['fas', 'comment']" /> -->
@@ -102,6 +102,14 @@
                   <CustomerDocument />
                 </b-card-text>
               </b-tab>
+              <b-tab>
+                <template v-slot:title>
+                  <span class="user__profile-card-text">Javobi kelgan hujjatlarim</span>
+                </template>
+                <b-card-text>
+                  <CustomerDocument />
+                </b-card-text>
+              </b-tab>              
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
