@@ -44,6 +44,47 @@
             </b-alert>                  
         </b-form>       
       </div>
+
+      <div class="lawyer-ansList">
+        <div class="lawyer-ansList__title">Savolga berilgan javob</div>
+        <div class="lawyer-ansList__item" v-for="item in document" :key="item.id"> 
+          <div class="lawyer-ansList__title">
+            {{item.title}}
+          </div>
+          <div class="lawyer-ansList__text">
+            {{item.text}}
+          </div>
+          <div class="lawyer-ansList__file">
+            <a :href="$store.state.mediaURL + item.file" target="_blank">File yuklab olish</a>
+          </div>
+          <div class="lawyer-ansList__date">
+            {{item.date}}
+          </div>
+          <b-button type="submit" variant="primary" @click="OpenEditForm()">Javobni uzgartirish</b-button>
+          <div 
+            class="lawyer-ans answer-edit" 
+            :class="{openEdit: openEditActive}"
+            
+          >
+            <div class="lawyer-ans__title">Javobni uzgartirish</div>
+            <form
+              @submit.prevent="patchAnswer(item.id)"
+            >
+              <div>
+                <label for="textarea"></label>
+                <textarea name="" id="textarea" v-model="text"></textarea>
+              </div>
+              <div>
+                <label for="file"></label>
+                <input type="file" @change="changeFile" id="file" ref="chengefile">
+              </div>
+              <b-button type="submit" variant="primary">Javob bermoq</b-button>
+              <b-alert class="lawyer-ans__info" show variant="success">Javob o'zgartirildi va mijozga yuborildi</b-alert>
+            </form>
+          </div>            
+        </div>
+      </div>
+
       <div class="lawyer-ans" v-if="documentLawyerList.status == 'PaymentDone'">
         <div class="lawyer-ans__title">Savolga javob berish</div>
         <form
@@ -82,7 +123,8 @@ export default {
       text: '',
       title: '',
       answer: [],
-      document: []
+      document: [],
+      openEditActive: false
     }
   },
   methods: {
@@ -132,7 +174,13 @@ export default {
       this.form.append('text', this.text);
       this.form.append('doc_file', e.target.files[0]);
       this.$refs.file.innerHTML = e.target.files[0].name;
-    },    
+    },  
+    changeFile(e) {
+      this.form = new FormData();
+      this.form.append('text', this.text);
+      this.form.append('file', e.target.files[0]);
+      this.$refs.chengefile.innerHTML = e.target.files[0].name;
+    },      
     async postDocument() {
       await this.$axios.post(`document/send/?document=${this.$route.params.id}`, this.form)
         .then((res) => {
@@ -142,6 +190,9 @@ export default {
           this.file = "",
           this.answerDocumentActive = true
         })
+    },
+    OpenEditForm() {
+      this.openEditActive = true
     }    
   },
   mounted() {

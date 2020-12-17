@@ -6,7 +6,7 @@ const toastrConfigs = {
     position: 'bottom right',
     showDuration: 1000,
     hideDuration: 1000,
-    timeOut: 3500,
+    timeOut: 4500,
     progressBar: true,
     showMethod: 'slideInUp',
     hideMethod: 'slideOutDown'

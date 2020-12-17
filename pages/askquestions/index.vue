@@ -11,26 +11,27 @@
             </div>
             <form @submit.prevent="postQuestionCustomer" class="reg-form">
               <div class="reg-form__item">
-                <label for="lang">Til</label>
+                <label for="lang">Til <span>*</span></label>
                 <select id="lang" v-model="language" required>
                   <option>o'zbek</option>
                   <option>rus</option>
                 </select>
               </div>
               <div class="reg-form__item">
-                <label for="select">Categoriya</label>
-                <select id="select" v-model="category">
+                <label for="select">Categoriya <span>*</span></label>
+                <select id="select" v-model="category" required>
                   <option
                     v-for="item in categories"
                     :key="item.id"
-                    :value="item.id" >
+                    :value="item.id" 
+                  >
                   {{item.name}}
                   </option>
                 </select>
               </div>
               <div class="reg-form__item">
                 <label for="lawyer">Yuristlar</label>
-                <select id="lawyer" v-model="lawyer" required>
+                <select id="lawyer" v-model="lawyer">
                   <option
                     v-for="item in lawyerListSelect"
                     :key="item.id"
@@ -41,12 +42,12 @@
                 </select>
               </div>
               <div class="reg-form__item">
-                <label for="text">Savol sarlavxasi</label>
+                <label for="text">Savol sarlavxasi <span>*</span></label>
                 <input type="text" v-model="title" id="text" required>
               </div>
               <div class="reg-form__item">
-                <label for="textarea">Savol matni</label>
-                <textarea name="" id="textarea" cols="30" rows="10" v-model="text"></textarea>
+                <label for="textarea">Savol matni <span>*</span></label>
+                <textarea name="" id="textarea" cols="30" rows="10" v-model="text" required></textarea>
               </div>
               <div class="reg-form__item">
                 <label for="file">File</label>

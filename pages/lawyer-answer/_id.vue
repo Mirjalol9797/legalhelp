@@ -4,6 +4,12 @@
       <div class="lawyer-ques">
         <div class="lawyer-ques__title">{{questionLawyerItem.title}}</div>
         <div class="lawyer-ques__desc">{{questionLawyerItem.text}}</div>
+        <div class="lawyer-ques__doc" v-if="questionLawyerItem.question_file !== null">
+          <a :href="questionLawyerItem.question_file" target="_blank">Hujjatni yuklab olish</a>
+        </div>
+        <div class="lawyer-ques__categ">
+          {{questionLawyerItem.categoriya}}
+        </div>
         <div class="lawyer-ques__date">{{questionLawyerItem.date}}</div>
         <div class="lawyer-ques__cust">Mijoz: {{questionLawyerItem.customer}}</div>
       </div>
@@ -123,7 +129,7 @@ export default {
       await this.$axios.get(`question/lawyer/${this.$route.params.id}/`)
         .then((res) => {
           this.questionLawyerItem = res.data;
-          // console.log('getQuestionLawyer', res)
+          console.log('getQuestionLawyer', res)
         })
     },
     async pathPriceQuestionLawyer(id) {

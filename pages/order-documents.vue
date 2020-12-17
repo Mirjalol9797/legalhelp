@@ -51,7 +51,7 @@
             </div>
             <div class="reg-form__item">
               <label for="lawyer">Yuristlar</label>
-              <select id="lawyer" v-model="lawyer" required>
+              <select id="lawyer" v-model="lawyer">
                 <option
                   v-for="item in lawyerListSelect"
                   :key="item.id"
