@@ -4,7 +4,7 @@
       <div class="customer-doc__wrap" v-for="(item, index) of documentCustomer" :key="index.id">
         <div class="customer-doc__item" v-if="item.status == 'Pending' || item.status == 'PriceAdded'">
           <div class="customer-doc__title">
-            <nuxt-link :to="'customer-document/' + item.id">Hujjat nomi:</nuxt-link>
+            <span>Hujjat nomi:</span>
             <p>{{item.title}}</p>
           </div>
           <div class="customer-doc__text">
@@ -29,7 +29,7 @@
           <nuxt-link :to="localePath('/order-documents')" class="customer-doc__link">Hujjat buyurtma qilish</nuxt-link>
         </div>
       </div>
-      <div v-if="documentCustomer.length > 0">Sizda puli to'lanmagan hujjat yo'q</div>
+      <div v-if="documentCustomer.length < 0">Sizda puli to'lanmagan hujjat yo'q</div>
     </div>
   </div>
 </template>
