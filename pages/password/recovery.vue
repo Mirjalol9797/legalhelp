@@ -1,47 +1,49 @@
 <template>
-          <div class="recovery">
-      <b-container>
-      <b-row>
-      <b-col class="mx-auto mx-lg-auto d-lg-block" cols="10" lg="4">
-      <div class="recovery__card">
-      <h4>Parolni tiklash</h4>
-  <b-form v-if="isShowTel">
-      <b-form-group label="Telefon">
-      <b-form-input class="" v-model="form.phone_number" type="text" placeholder="+998__ ___ __ __"></b-form-input>
-      <span v-if="error" class="error">Telefon raqam noto'g'ri</span>
-      </b-form-group>
-      <p>Aktivatsiya kodini olish uchun telefon raqamingizni kiriting.</p>
-  <b-button v-if="ishShowBtn" @click="showCode()" type="button" variant="primary">
-      Aktivatsiya kodini olish
-  </b-button>
-  </b-form>
-  <b-form v-if="isShowCode" class="mt-1">
-      <b-form-group label="Ko'd">
-      <b-form-input v-model="code" type="text" placeholder="Kodni kiriting"></b-form-input>
-      </b-form-group>
-      <b-button @click="showPassword()" type="submit" variant="primary">Kodni yuborish</b-button>
-  </b-form>
-  <b-form v-if="isShowPassword" class="mt-1">
-      <b-form-group label="Parolni o’zgartirish">
-      <b-form-input v-model="form.password" type="password" placeholder="********"></b-form-input>
-      </b-form-group>
-      <p>Parol raqamlardan, bosh harflardan va maxsus belgidan iborat bo'lishi kerak</p>
-  <b-form-group label="Parolni qaytadan tering">
-      <b-form-input type="password" placeholder="********"></b-form-input>
-      </b-form-group>
-      <nuxt-link :to="localePath('/signin')">
-      <b-button @click="onSubmit()" type="button" variant="primary">
-      Parolni o’zgartirish
-  </b-button>
-  </nuxt-link>
-  </b-form>
+    <div class="recovery">
+        <b-container>
+            <b-row>
+                <b-col class="mx-auto mx-lg-auto d-lg-block" cols="10" lg="4">
+                    <div class="recovery__card">
+                        <h4>Parolni tiklash</h4>
+                        <b-form v-if="isShowTel">
+                            <b-form-group label="Telefon">
+                            <b-form-input class="" v-model="form.phone_number" type="text" placeholder="+998__ ___ __ __"></b-form-input>
+                            <span v-if="error" class="error">Telefon raqam noto'g'ri</span>
+                            </b-form-group>
+                            <p>Aktivatsiya kodini olish uchun telefon raqamingizni kiriting.</p>
+                            <b-button v-if="ishShowBtn" @click="showCode()" type="button" variant="primary">
+                                Aktivatsiya kodini olish
+                            </b-button>
+                        </b-form>
+                        <b-form v-if="isShowCode" class="mt-1">
+                            <b-form-group label="Ko'd">
+                            <b-form-input v-model="code" type="text" placeholder="Kodni kiriting"></b-form-input>
+                            </b-form-group>
+                            <b-button @click="showPassword()" type="submit" variant="primary">Kodni yuborish</b-button>
+                        </b-form>
+                        <b-form v-if="isShowPassword" class="mt-1">
+                            <b-form-group label="Parolni o’zgartirish">
+                                <b-form-input v-model="form.password" type="password" placeholder="********">
+                                </b-form-input>
+                            </b-form-group>
+                            <p>Parol raqamlardan, bosh harflardan va maxsus belgidan iborat bo'lishi kerak</p>
+                            <b-form-group label="Parolni qaytadan tering">
+                                <b-form-input type="password" placeholder="********">
+                                </b-form-input>
+                            </b-form-group>
+                            <nuxt-link :to="localePath('/signin')">
+                            <b-button @click="onSubmit()" type="button" variant="primary">
+                                Parolni o’zgartirish
+                            </b-button>
+                        </nuxt-link>
+                        </b-form>
+                    </div>
+                </b-col>
+            </b-row>
+        </b-container>
   </div>
-  </b-col>
-  </b-row>
-  </b-container>
-  </div>
-  </template>
-  <script>
+</template>
+<script>
   export default {
       data() {
           return {

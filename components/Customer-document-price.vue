@@ -9,6 +9,7 @@
           <nuxt-link :to="'customer-document-price/' + item.id" class="user__priceDocument-pay">Savolga pull to'lash</nuxt-link>
         </div>
       </div>
+      <div v-if="priceAddedDocument.length == 0">Sizda puli to'lanishi kerak bo'lgan hujjatlar yo'q</div>
     </div>          
   </div>
 </template>
@@ -24,7 +25,7 @@ export default {
       await this.$axios.get('document/customer/?priceadded=1')
         .then((res) => {
           this.priceAddedDocument = res.data;
-          // console.log('getDocumentCustomerPriceAdded', res)
+          console.log('getDocumentCustomerPriceAdded', res)
         })
     },
   },

@@ -2,7 +2,7 @@
   <div>
     <div class="lawyer__documents">
       <div class="lawyer__documents-wrap" v-for="item in documentLawyer" :key="item.id">
-        <div v-if="item.status !== 'PaymentDone'">
+        <div v-if="item.status !== 'PaymentDone' && item.status !== 'DocumentCompleted'">
           <div class="lawyer__documents_item">
             <div class="lawyer__documents-title">Hujjat nomi: {{item.title}}</div>
             <div class="lawyer__documents-desc">Hujjat haqida: {{item.text}}</div>
@@ -17,7 +17,7 @@
             <nuxt-link :to="'lawyer-document/' + item.id" class="lawyer__documents-btn">Hujjatga naxr belgilash</nuxt-link>
           </div>
         </div>
-        <div v-else>Sizda narx belgilamagan savollariz yo'q</div>
+        <div v-else>Sizda narx belgilamagan hujjatlariz yo'q</div>
       </div>
     </div>
   </div>

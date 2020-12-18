@@ -1,7 +1,7 @@
 <template>
   <div>
+    <h2>Puli to'langan savollar</h2>
     <div class="lawyer__questions">
-      <h2>Puli to'langan savollar</h2>
       <div class="lawyer__questions_item" v-for="item in priceAddedQuestion" :key="item.id">
         <div class="lawyer__questions-title">Savol nomi: {{item.title}}</div>
         <div class="lawyer__questions-text">Savol haqida: {{item.text}}</div>

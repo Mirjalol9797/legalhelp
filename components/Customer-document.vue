@@ -29,6 +29,7 @@
           <nuxt-link :to="localePath('/order-documents')" class="customer-doc__link">Hujjat buyurtma qilish</nuxt-link>
         </div>
       </div>
+      <div v-if="documentCustomer.length > 0">Sizda puli to'lanmagan hujjat yo'q</div>
     </div>
   </div>
 </template>

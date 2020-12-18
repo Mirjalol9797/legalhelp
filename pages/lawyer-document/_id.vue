@@ -45,9 +45,9 @@
         </b-form>       
       </div>
 
-      <div class="lawyer-ansList">
-        <div class="lawyer-ansList__title">Savolga berilgan javob</div>
+      <div class="lawyer-ansList" v-if="documentLawyerList.status == 'PaymentDone' || documentLawyerList.status == 'DocumentCompleted'">
         <div class="lawyer-ansList__item" v-for="item in document" :key="item.id"> 
+          <div class="lawyer-ansList__title">Savolga berilgan javob</div>
           <div class="lawyer-ansList__title">
             {{item.title}}
           </div>
@@ -55,7 +55,7 @@
             {{item.text}}
           </div>
           <div class="lawyer-ansList__file">
-            <a :href="$store.state.mediaURL + item.file" target="_blank">File yuklab olish</a>
+            <a :href="$store.state.mediaURL + item.doc_file" target="_blank">File yuklab olish</a>
           </div>
           <div class="lawyer-ansList__date">
             {{item.date}}
@@ -71,21 +71,25 @@
               @submit.prevent="patchAnswer(item.id)"
             >
               <div>
-                <label for="textarea"></label>
-                <textarea name="" id="textarea" v-model="text"></textarea>
+                <label for="title">Sarlovha <span>*</span></label>
+                <input id="title" type="text" v-model="form.title" class="form-control" required>
               </div>
               <div>
-                <label for="file"></label>
-                <input type="file" @change="changeFile" id="file" ref="chengefile">
+                <label for="textarea">Matn <span>*</span></label>
+                <textarea name="" id="textarea" v-model="form.text" required></textarea>
               </div>
-              <b-button type="submit" variant="primary">Javob bermoq</b-button>
+              <div>
+                <label for="file">Hujjat junatish <span>*</span></label>
+                <input type="file" @change="changeFile" id="file" ref="file" required>
+              </div>
+              <b-button type="submit" variant="primary">Javob berish</b-button>
               <b-alert class="lawyer-ans__info" show variant="success">Javob o'zgartirildi va mijozga yuborildi</b-alert>
             </form>
           </div>            
         </div>
       </div>
-
-      <div class="lawyer-ans" v-if="documentLawyerList.status == 'PaymentDone'">
+      <!-- v-if="documentLawyerList.status == 'PaymentDone'" -->
+      <div class="lawyer-ans" v-if="documentLawyerList.status == 'PaymentDone' && document.length == 0">
         <div class="lawyer-ans__title">Savolga javob berish</div>
         <form
           class="lawyer-ans__form"
@@ -93,11 +97,11 @@
         >
           <div>
             <label for="title">Sarlovha <span>*</span></label>
-            <input id="title" type="text" v-model="title" class="form-control" required>
+            <input id="title" type="text" v-model="form.title" class="form-control" required>
           </div>        
           <div>
             <label for="textarea">Matn <span>*</span></label>
-            <textarea id="textarea" v-model="text" class="form-control" required></textarea>
+            <textarea id="textarea" v-model="form.text" class="form-control" required></textarea>
           </div>
           <div>
             <label for="file">Hujjat junatish <span>*</span></label>
@@ -118,10 +122,11 @@ export default {
       priceDocument: '',
       isActiveDocument: false,
       answerDocumentActive: false,
-      form: '',
+      form: {
+        text: '',
+        title: '',
+      },
       doc_file: '',
-      text: '',
-      title: '',
       answer: [],
       document: [],
       openEditActive: false
@@ -169,26 +174,50 @@ export default {
         })
     },  
     addFile(e) {
-      this.form = new FormData();
-      this.form.append('title', this.title);
-      this.form.append('text', this.text);
-      this.form.append('doc_file', e.target.files[0]);
+      this.file = e.target.files[0]
       this.$refs.file.innerHTML = e.target.files[0].name;
     },  
     changeFile(e) {
-      this.form = new FormData();
-      this.form.append('text', this.text);
-      this.form.append('file', e.target.files[0]);
-      this.$refs.chengefile.innerHTML = e.target.files[0].name;
+      this.file = e.target.files[0]
+      this.$refs.file.innerHTML = e.target.files[0].name;
     },      
     async postDocument() {
-      await this.$axios.post(`document/send/?document=${this.$route.params.id}`, this.form)
+      const form = new FormData()
+      form.append('title', this.form.title)
+      form.append('text', this.form.text)
+      form.append('doc_file', this.file)
+      await this.$axios.post(`document/send/?document=${this.$route.params.id}`, form)
         .then((res) => {
           console.log('postAnswer', res);
-          this.title = "",
-          this.text = "",
-          this.file = "",
-          this.answerDocumentActive = true
+          this.form.title = "";
+          this.form.text = "";
+          this.file = "";
+          this.answerDocumentActive = true;
+          this.getDocument()
+        })
+    },
+    async patchAnswer(id) {
+      const form = new FormData()
+      form.append('title', this.form.title)
+      form.append('text', this.form.text)
+      form.append('doc_file', this.file)
+      await this.$axios.patch(`document/send/${id}/`, form)
+        .then((res) => {
+          console.log('patchAnswer', res)
+          this.getDocument()
+           this.openEditActive = false
+          try {
+            this.$toast.success({
+              title: `Javob muvafaqiyatli uzgartirildi`,
+              message: ` `
+            });
+          }
+          catch {
+            this.$toast.error({
+              title: `Javob uzgartirilmadi`,
+              message: ``
+            });
+          }
         })
     },
     OpenEditForm() {

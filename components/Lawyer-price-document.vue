@@ -12,14 +12,19 @@
           <div class="lawyer__documents-customer">Hujjat buyirgan mijoz: {{item.customer}}</div>
           <div class="lawyer__documents-date">Hujjat buyirilgan sana: {{item.date}}</div>    
           <div class="lawyer__documents-price">Quyilgan narx: {{item.price}}</div>
-          <div>Savolga pull to'landi</div>
-          <div>Savolga pull to'langan</div>
-          <nuxt-link :to="'lawyer-document/' + item.id" class="lawyer__documents-btn">Savolga javob berish</nuxt-link>
-          <div class="lawyer__questions-info">
-            Savolga javob berilgan. Agar uzgartirish kiritmoqchi bulsangiz, uzgartirish tugmasini bosing 
+          <div>Hujjatga pull to'langan</div>
+          <nuxt-link 
+            :to="'lawyer-document/' + item.id" 
+            class="lawyer__documents-btn"
+            v-if="item.status == 'PaymentDone'"
+          >
+            Hujjatga javob berish
+          </nuxt-link>
+          <div class="lawyer__questions-info" v-if="item.status == 'DocumentCompleted'">
+            Hujjatga javob berilgan. Agar uzgartirish kiritmoqchi bulsangiz, uzgartirish tugmasini bosing 
           </div>
-          <nuxt-link :to="'lawyer-document/' + item.id" class="lawyer__questions-answer">
-            Javobni uzgartirish 
+          <nuxt-link :to="'lawyer-document/' + item.id" class="lawyer__questions-answer" v-if="item.status == 'DocumentCompleted'">
+            Hujjatni uzgartirish 
           </nuxt-link>
         <!-- </div> -->
       </div>

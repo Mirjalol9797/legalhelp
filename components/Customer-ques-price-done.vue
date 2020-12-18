@@ -12,7 +12,7 @@
           </nuxt-link>
         </div>
       </div>
-      <div v-if="customerQuesPriceDone.length == 0">Sizda yurist javob bergan savollar yo'q</div>
+      <div v-if="customerQuesPriceDone.length == 0">Sizda puli to'lanishi kerak bo'lgan savollar yo'q</div>
     </div>
   </div>
 </template>

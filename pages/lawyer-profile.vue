@@ -250,11 +250,11 @@ export default {
     LawyerPriceDocument
   },
   methods: {
-    async getRegionuz() {
+    async getRegionuz() { 
       await this.$axios.get("region/?language=uz").then(res => {
         this.selectuz = res.data;
         this.selected = res.data;
-        console.log('getRegionuz', res);
+        // console.log('getRegionuz', res);
       });
     },
     async getRegionru() {

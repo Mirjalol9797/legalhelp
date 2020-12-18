@@ -107,18 +107,14 @@
                   <span class="user__profile-card-text">Javobi kelgan hujjatlarim</span>
                 </template>
                 <b-card-text>
-                  <CustomerDocument />
+                  <CustomerDocPriceDone />
                 </b-card-text>
               </b-tab>              
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <!-- <font-awesome-icon :icon="['fas', 'bell']" /> -->
                   </span>
-                  <span class="user__profile-card-text">{{
-                    $t("profile.notification")
-                  }}</span>
-                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
+                  <span class="user__profile-card-text">{{$t("profile.notification")}}</span>
                 </template>
                 <b-card-text>
                   <CustomerDocumentPrice />
@@ -340,6 +336,7 @@ import CustomerDocument from '../components/Customer-document'
 import CustomerDocumentPrice from '../components/Customer-document-price'
 import CustomerPrice from '../components/Customer-price'
 import CustomerQuesPriceDone from '../components/Customer-ques-price-done'
+import CustomerDocPriceDone from '../components/Customer-doc-price-done'
 
 export default {
   data() {
@@ -368,7 +365,8 @@ export default {
     CustomerPrice,
     CustomerDocument,
     CustomerDocumentPrice,
-    CustomerQuesPriceDone
+    CustomerQuesPriceDone,
+    CustomerDocPriceDone
   },
   methods: {
     async onCancel() {
