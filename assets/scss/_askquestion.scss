@@ -192,8 +192,14 @@
       border: 1px solid #0028aa;
       outline: none;
     }
-  
   }
+
+  .password {
+    label {
+      white-space: inherit !important;
+    }
+  }
+
   input[type="tel"] {
     padding-left: 75px;
   }

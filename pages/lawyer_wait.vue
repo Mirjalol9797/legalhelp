@@ -2,7 +2,8 @@
   <div>
     <b-container class="lawyer-wait">
       <b-alert show variant="success">
-        Siz yurist (freelancer) sifatida ro'yxatga olindingiz. Admin tomonidan ma'lumotlaringiz tasdiqlangandan so'ng xizmat ko'rsatishingiz mumkin.
+        Siz yurist (freelancer) sifatida ro'yxatga olindingiz. Аdmin siz bilan bog'lanishini va 
+        ma'lumotlaringizni tasdiqlashini kuting. So'ng xizmat ko'rsatishingiz mumkin.
       </b-alert>
     </b-container>
   </div>

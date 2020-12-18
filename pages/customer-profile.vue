@@ -126,9 +126,7 @@
                   <span class="user__profile-card-icon">
                     <!-- <font-awesome-icon :icon="['fas', 'cogs']" /> -->
                   </span>
-                  <span class="user__profile-card-text">{{
-                    $t("profile.setting")
-                  }}</span>
+                  <span class="user__profile-card-text">{{$t("profile.setting")}}</span>
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>

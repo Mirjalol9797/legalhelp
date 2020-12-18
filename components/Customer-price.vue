@@ -11,7 +11,7 @@
           puli to'langan savollar va ularga keladigon javoblar "Javobi kelgan savollar" ro'yxatidan qidiring
         </p>
       </div>
-      <div v-if="priceAddedQuestion.length == 0">Sizda puli to'lanmagan savollar yo'q</div>
+      <div v-if="priceAddedQuestion.length == 0">Sizda puli to'lanishi kerak bo'lgan savollar yo'q</div>
     </div>
   </div>
 </template>

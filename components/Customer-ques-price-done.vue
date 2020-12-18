@@ -12,7 +12,10 @@
           </nuxt-link>
         </div>
       </div>
-      <div v-if="customerQuesPriceDone.length == 0">Sizda puli to'lanishi kerak bo'lgan savollar yo'q</div>
+      <div v-if="customerQuesPriceDone.length == 0">
+        Sizda puli to'lanishi kerak bo'lgan savollar yo'q <br>
+        <nuxt-link :to="localePath('/askquestions')">Savol so'rash</nuxt-link>
+      </div>
     </div>
   </div>
 </template>

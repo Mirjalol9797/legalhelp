@@ -37,6 +37,10 @@
           </div>
         </div>
       </div>
+      <div v-if="questionCustomer.length == 0">
+        Siz savol bermagansiz <br>
+        <nuxt-link :to="localePath('/askquestions')">Savol so'rash</nuxt-link>
+      </div>
     </b-container>
   </div>
 </template>
