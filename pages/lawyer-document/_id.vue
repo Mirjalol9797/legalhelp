@@ -16,6 +16,7 @@
         <b-form 
           class="lawyer-cost__form"
           @submit.prevent="patchPriceDocumentLawyer(documentLawyerList.id)"
+          :class="{cost__form: costFormActive}"
         >
           <b-form-group
             label="Hujjatga narx kirgizing"
@@ -28,21 +29,21 @@
               required
             ></b-form-input>
           </b-form-group> 
-          <b-button type="submit" variant="primary">narx belgilamoq</b-button>                       
-            <b-alert :class="{active: isActiveDocument}" class="lawyer-cost__text" show variant="success">
-              Narx quyildi. Iltimos mijoz pull to'lashini kuting. <br>
-              Mijoz pull to'laganidan so'ng, mijoz tomondan berilgan savol "Bildirishnomalarda" chiqadi       
-            </b-alert>   
-            <b-alert 
-              class="lawyer-cost__payment"
-              show 
-              variant="primary"
-              v-if="documentLawyerList.price > 0"
-            >
-              Siz narx belgiladingiz. Savolga siz belgilagan narx {{documentLawyerList.price}} <br>
-              Agar narxni uzgartirmoqchi bulsangiz iltimos savoga qaytadan narx kirgizing
-            </b-alert>                  
+          <b-button type="submit" variant="primary">narx belgilamoq</b-button>                        
+          <b-alert 
+            class="lawyer-cost__payment"
+            show 
+            variant="primary"
+            v-if="documentLawyerList.price > 0"
+          >
+            Siz narx belgiladingiz. Savolga siz belgilagan narx {{documentLawyerList.price}} <br>
+            Agar narxni uzgartirmoqchi bulsangiz iltimos savoga qaytadan narx kirgizing
+          </b-alert>                  
         </b-form>       
+        <b-alert :class="{active: isActiveDocument}" class="lawyer-cost__text" show variant="success">
+          Narx quyildi. Iltimos mijoz pull to'lashini kuting. <br>
+          Mijoz pull to'laganidan so'ng, mijoz tomondan berilgan savol "Bildirishnomalarda" chiqadi       
+        </b-alert>          
       </div>
 
       <div class="lawyer-ansList" v-if="documentLawyerList.status == 'PaymentDone' || documentLawyerList.status == 'DocumentCompleted'">
@@ -129,7 +130,8 @@ export default {
       doc_file: '',
       answer: [],
       document: [],
-      openEditActive: false
+      openEditActive: false,
+      costFormActive: false
     }
   },
   methods: {
@@ -146,7 +148,8 @@ export default {
       })
         .then((res) => {
           // console.log('patchPriceDocumentLawyer', res)
-          this.isActiveDocument = true
+          this.isActiveDocument = true;
+          this.costFormActive = true
         })
     },
     async getQuestionAnswer() {
@@ -193,7 +196,8 @@ export default {
           this.form.text = "";
           this.file = "";
           this.answerDocumentActive = true;
-          this.getDocument()
+          this.getDocument();
+          
         })
     },
     async patchAnswer(id) {

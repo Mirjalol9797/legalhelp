@@ -117,6 +117,7 @@
                                   placeholder="Faylni tanlash"
                                   id="image"
                                   class="avatar__input"
+                                  @change="uploadImage"
                                 />
                               </label>
                             </b-col>
@@ -129,6 +130,7 @@
                                 type="text"
                                 id="user__profile-name"
                                 v-model="lawyer.first_name"
+                              
                               />
                             </b-col>
                             <b-col lg="6">
@@ -262,15 +264,14 @@ export default {
         this.selectru = res.data;
       });
     },
+    uploadImage(e) {
+      this.lawyer = new FormData();
+      this.lawyer.append('image', e.target.files[0]);
+      this.lawyer.append('region', this.regionSelect);
+    },
     async onSubmitLawyer() {
       await this.$axios
-        .patch("lawyer/profile/", {
-          first_name: this.lawyer.first_name,
-          last_name: this.lawyer.last_name,
-          email: this.lawyer.email,
-          region: this.regionSelect
-          // image:this.user.image
-        })
+        .patch("lawyer/profile/", this.lawyer)
         .then(res => {
         this.$toast.success({
               title: `${this.$t("toast.success")}`,

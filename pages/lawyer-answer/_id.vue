@@ -17,6 +17,7 @@
         <b-form 
           class="lawyer-cost__form" 
           @submit.prevent="pathPriceQuestionLawyer(questionLawyerItem.id)"
+          :class="{cost__form: costFormActive}"
         >
         <!-- v-if="item.is_paid == false" -->
           <b-form-group
@@ -30,11 +31,7 @@
               required
             ></b-form-input>
           </b-form-group> 
-          <b-button type="submit" variant="primary">narx belgilamoq</b-button>                       
-          <b-alert :class="{active: isActiveQuestion}" class="lawyer-cost__text" show variant="success">
-            Narx quyildi. Iltimos mijoz pull to'lashini kuting. <br>
-            Mijoz pull to'laganidan so'ng, mijoz tomondan berilgan savol "Bildirishnomalarda" chiqadi          
-          </b-alert>   
+          <b-button type="submit" variant="primary">narx belgilamoq</b-button>                         
           <b-alert 
             class="lawyer-cost__payment"
             show 
@@ -45,6 +42,14 @@
             Agar narxni uzgartirmoqchi bulsangiz iltimos savoga qaytadan narx kirgizing
           </b-alert>                
         </b-form>
+        <b-alert :class="{active: isActiveQuestion}" class="lawyer-cost__text" show variant="success">
+          Narx quyildi. Iltimos mijoz pull to'lashini kuting. <br>
+          Mijoz pull to'laganidan so'ng, mijoz tomondan berilgan savol "Bildirishnomalaringizda" chiqadi          
+        </b-alert> 
+        <!-- <b-alert :class="{active: isActiveQuestion}" v-if="questionLawyerItem.price > 0" class="lawyer-cost__text" show variant="success">
+          Narx uzgartirildi. Iltimos mijoz pull to'lashini kuting. <br>
+          Mijoz pull to'laganidan so'ng, mijoz tomondan berilgan savol "Bildirishnomalarda" chiqadi          
+        </b-alert>  -->
       </div>
       <!-- v-if="questionLawyerItem.is_paid == false" -->
       <div class="lawyer-ansList" v-if="questionLawyerItem.status == 'PaymentDone' || questionLawyerItem.status == 'QuestionCompleted'">
@@ -125,7 +130,8 @@ export default {
         text: '',
       },
       openEditActive: false,
-      lawyerAnswerList: false
+      lawyerAnswerList: false,
+      costFormActive: false
 
     }
   },
@@ -145,6 +151,7 @@ export default {
           // console.log('pathPriceQuestionLawyer', res);
           this.isActiveQuestion = true;
           this.priceQuestion = "";
+          this.costFormActive = true;
         })
     },   
     async lawyerQuestionAnswer() {

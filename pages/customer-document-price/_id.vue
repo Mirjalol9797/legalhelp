@@ -49,6 +49,9 @@
           >
         </div>                          -->
         <button type="submit">SMS kod olish</button>
+        <b-alert show variant="danger" v-if="error" class="customer-form__error">
+          {{error}} <br>
+        </b-alert>
       </form>
       <form @submit.prevent="payment2" class="customer-pay-form" :class="{customerActive: isActive}">
         <div class="customer-pay-form__item">
@@ -74,6 +77,9 @@
           >
         </div>         
         <button type="submit">To'lash</button>
+        <b-alert show variant="danger" v-if="error" class="customer-form__error">
+          {{error}} <br>
+        </b-alert>        
       </form>
     </b-container>
   </div>
@@ -94,7 +100,8 @@ export default {
         object_type: 'document',
         object_id: ''
       },
-      isActive: false
+      isActive: false,
+      error: ''
     }
   },
   methods: {
@@ -113,13 +120,22 @@ export default {
 
     async payment() {
       this.form.object_id = this.$route.params.id;
-      this.isActive = true;
+      // this.isActive = true;
       await this.$axios.post('payment/clickcardtoken/', this.form)
       .then((res) => {
         console.log('payment', res)
         this.form2.card_token = res.data.response.card_token;
         console.log('dasdsad', this.form2)
+        if(this.error === false) {
+          this.isActive = false;
+        } else {
+          this.isActive = true
+        }
       })
+      .catch((err) => {
+          this.error = err.response.data.response.error_note
+          // console.log('qqweqwe', err.response.data.response.error_note)
+      });      
     },
     async payment2() {
       this.form2.object_id = this.$route.params.id;
@@ -139,6 +155,9 @@ export default {
           });
         }
       })
+      .catch((err) => {
+        this.error = err.response.data.response.error_note
+      })      
     }
 
   },

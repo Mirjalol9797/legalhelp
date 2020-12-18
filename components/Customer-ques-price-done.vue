@@ -2,7 +2,7 @@
   <div>
     <div class="customer-priceDone">
       <div class="customer-priceDone__wrap" v-for="(item, index) in customerQuesPriceDone" :key="index.id">
-        <div class="customer-priceDone__item" v-if="item.status == 'PaymentDone'">
+        <div class="customer-priceDone__item" v-if="item.status == 'PaymentDone' || item.status == 'QuestionCompleted'">
           <div class="customer-priceDone__title">{{item.title}}</div>
           <div class="customer-priceDone__text">{{item.text}}</div>
           <div class="customer-priceDone__date">Javob kelgan sana: {{item.date}}</div>

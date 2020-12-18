@@ -75,7 +75,7 @@
               <div class="phone__number addFile">
                 <label for="file">Rasm yuklang...</label>
                 <div class="input__tel-wrapper">
-                  <input type="file" id="file" required accept="image/*" @change="fileUpload"/>
+                  <input type="file" id="file" accept="image/*" required @change="fileUpload"/>
                 </div>
               </div>
               <div class="phone__number">

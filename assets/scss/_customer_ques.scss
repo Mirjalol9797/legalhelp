@@ -186,6 +186,9 @@
     .noActive {
       display: none;
     } 
+    &__error {
+      margin-top: 20px;
+    }
   }
 }
 .customer-pay-form {

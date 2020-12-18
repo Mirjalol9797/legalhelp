@@ -12,9 +12,9 @@
             />
           </div>
           <div class="profile-info">
-            <span class="profile-info-name"
-              >{{ $auth.user.first_name }} {{ $auth.user.last_name }}</span
-            >
+            <span class="profile-info-name">
+              {{ $auth.user.first_name }} {{ $auth.user.last_name }}
+            </span>
             <span class="profile-info-location">
             <!-- {{
               $auth.user.region.title_uz
@@ -151,6 +151,7 @@
                                   placeholder="Faylni tanlash"
                                   id="image"
                                   class="avatar__input"
+                                  @change="uploadImage"
                                 />
                               </label>
                             </b-col>
@@ -386,15 +387,14 @@ export default {
         this.selectru = res.data;
       });
     },
+    uploadImage(e) {
+          this.user = new FormData();
+          this.user.append('image', e.target.files[0]);
+          this.user.append('region', this.regionSelect);
+      },
     async onSubmit() {
       await this.$axios
-        .patch("customer/profile/", {
-          first_name: this.user.first_name,
-          last_name: this.user.last_name,
-          email: this.user.email,
-          region: this.regionSelect
-          // image:this.user.image
-        })
+        .patch("customer/profile/", this.user)
         .then(res => {
           this.$toast.success({
             title: `${this.$t("toast.success")}`,
@@ -452,6 +452,7 @@ export default {
     this.getDocumentCustomer(),
     this.getLawyerFavorite(),
     this.getDocumentCustomerPriceAdded()
+    console.log('$auth.user', this.$auth.user)
   }
 };
 </script>
