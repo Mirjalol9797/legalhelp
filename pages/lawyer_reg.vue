@@ -150,7 +150,7 @@ export default {
 
                     this.$axios.post("lawyer/create/", this.form)
                     .then(res => {
-                      console.log(res);
+                      console.log('lawyer/create', res);
 
                       // this.$auth.loginWith("local2", {
                       //   data: {
@@ -169,7 +169,7 @@ export default {
                           service: "",
                         };
 
-                        this.$router.push(this.localePath('/lawyer_wait'));
+                        // this.$router.push(this.localePath('/lawyer_wait'));
 
                     })
                     .catch(err => {
@@ -198,7 +198,7 @@ export default {
       } else {
         console.log("wrong type");
       }
-    },
+    }
   },
   mounted() {
     this.getRegionuz();

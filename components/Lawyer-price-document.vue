@@ -31,6 +31,7 @@
           </div>
         </div>
       </div>
+      <div v-if="priceAddedDocumnet.length == 0">Sizda puli to'langan savollar mavjud emas</div>
     </div>
   </div>
 </template>

@@ -11,7 +11,7 @@
           {{questionLawyerItem.categoriya}}
         </div>
         <div class="lawyer-ques__date">{{questionLawyerItem.date}}</div>
-        <div class="lawyer-ques__cust">Mijoz: {{questionLawyerItem.customer}}</div>
+        <div class="lawyer-ques__cust">Mijoz: <span>{{questionLawyerItem.customer}}</span></div>
       </div>
       <div class="lawyer-cost" v-if="questionLawyerItem.status == 'Pending' || questionLawyerItem.status == 'PriceAdded'">
         <b-form 
@@ -31,7 +31,7 @@
               required
             ></b-form-input>
           </b-form-group> 
-          <b-button type="submit" variant="primary">narx belgilamoq</b-button>                         
+          <b-button type="submit" variant="primary">Narx belgilamoq</b-button>                         
           <b-alert 
             class="lawyer-cost__payment"
             show 
@@ -189,7 +189,7 @@ export default {
       const form = new FormData()
       form.append('text', this.form.text)
       form.append('file', this.file)
-      await this.$axios.post(`question/answer/?question_id=${this.$route.params.id}`, form)
+      await this.$axios.post(`question/answer/?question_id=${this.$route.params.id}`, this.form)
         .then((res) => {
           console.log('postAnswer', res);
           this.form.text = "";

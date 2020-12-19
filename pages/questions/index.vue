@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="questions__page-wrapper">
-      <div class="questions__page-wrapper-inner">
+      <div v-if="loader" class="questions__page-wrapper-inner">
         <div class="container">
           <h1 class="questions__page-header">{{ $t("question.title") }}</h1>
           <form class="questions__search">
             <input type="search" :placeholder="$t('question.placeholder')" />
             <input type="submit" :value="$t('question.btn')" />
           </form>
-          <div class="questions__wrapper">
+          <div  class="questions__wrapper">
             <div
               class="question__item"
               v-for="(question, index) of questions"
@@ -109,19 +109,27 @@
           ></b-pagination>
         </div>
       </div>
+      <div v-else>
+        <loading />
+      </div>
     </div>
     <!-- /.questions__wrapper -->
   </div>
 </template>
 
 <script>
+import Loading from '../../components/Loading.vue';
 export default {
+  components: {
+    Loading
+  },
   data() {
     return {
       questions: [],
       allProduct: 0,
       page: 1,
-      currentPage: 1
+      currentPage: 1,
+      loader: false,
     };
   },
   watch: {
@@ -139,6 +147,7 @@ export default {
         .get(`services/?limit=10&offset=${(this.page - 1) * 10}`)
         .then(res => {
           console.log('getQuestions', res);
+          this.loader = true
           if (res.data.results.length > 0) {
             this.allProduct = res.data.count;
             this.questions = res.data.results;

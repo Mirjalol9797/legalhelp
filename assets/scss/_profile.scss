@@ -771,14 +771,18 @@
   margin-bottom: 20px;
   border-radius: 10px;
   &-title {
-    color: #007bff;
+    color: #000;
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     display: block;
   }
   &-text {
     font-size: 15px;
     color: #000;
+    margin-bottom: 10px;
+  }
+  &-customer {
+    margin-bottom: 10px;
   }
   &-info {
     display: flex;
@@ -840,30 +844,28 @@
     }
   }
   &-date {
-    margin-bottom: 20px;
+    margin-bottom: 28px;
   }
   &-add {
     background: #f2b50f;
     border-radius: 8px;
     transition: all 0.3s ease;
     border: 2px solid #f2b50f;
-    padding: 10px 15px;
+    padding: 8px 15px;
     display: block;
-    max-width: 150px;
+    max-width: 140px;
+    font-size: 14px;
+    text-align: center;
     &:hover {
       color: #fff;
     }
   }
-  &-item {
-    padding: 15px;
-    padding-bottom: 25px;
+  &-price {
+    margin-bottom: 28px;
   }
-  // &-customer {
-
-  // }
-  // &-date {
-
-  // }
+  &-item {
+    padding: 23px;
+  }
 }
 
 .card-text, .filed-work {

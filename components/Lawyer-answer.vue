@@ -3,21 +3,24 @@
     <div class="user__profile-question" v-for="(item, index) of questionLawyer" :key="index.id">
       <div v-if="item.status !== 'PaymentDone'">
         <div class="user__profile-question-item">
-          <nuxt-link class="user__profile-question-title" :to="'lawyer-answer/' + item.id">
-            Savol nomi: {{item.title}}
-          </nuxt-link>
+          <div class="user__profile-question-title" >
+            <b>Savol nomi:</b> {{item.title}}
+          </div>
           <p class="user__profile-question-text">
-            Savol haqida qisqacha: {{item.text}}
+            <b> Savol haqida qisqacha:</b> {{item.text}}
           </p>
           <p class="user__profile-question-customer">
-            Savol bergan mijoz: {{item.customer}}
+            <b> Savol bergan mijoz:</b> {{item.customer}}
           </p>
           <p class="user__profile-question-date">
-            Savol berilgan sana: {{item.date}}
+            <b>Savol berilgan sana:</b> {{item.date}}
           </p>
-          <p class="user__profile-question-price" v-if="item.is_paid == true">
-            Savolda quyilgan narx: {{item.price}}
+          <!-- <p class="user__profile-question-price" v-if="item.is_paid == true">
+            <b>Savolda quyilgan narx:</b> {{item.price}}
           </p>
+          <p class="user__profile-question-price" v-if="item.is_paid == false">
+            <b>Savolga narx qo'yilmagan</b>
+          </p> -->
           <nuxt-link :to="'lawyer-answer/' + item.id" class="user__profile-question-add">Narx belgilash</nuxt-link>
         </div>
       </div>

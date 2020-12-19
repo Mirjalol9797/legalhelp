@@ -495,14 +495,21 @@
   margin-bottom: 20px;
   border-radius: 10px;
   text-align: left;
-  h2 {
-    font-size: 25px;
-    margin-bottom: 15px;
+  div {
+    margin-bottom: 10px;
   }
+  &-h2 {
+    font-size: 25px;
+    background: #fff;
+    padding: 10px 0;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  }
+
   &_item {
     margin-bottom: 20px;
-    border-bottom: 3px solid #eee;
-    padding-bottom: 20px;
   }
   &-answer {
     color: #fff;
@@ -513,9 +520,13 @@
     border-radius: 5px;
     text-align: center;
     margin-top: 10px;
+    font-size: 14px;
     &:hover {
       color: #fff;
     }
+  }
+  &-price {
+    margin-bottom: 20px !important;
   }
   &-priceAdded {
     background-color: green;
@@ -526,5 +537,7 @@
     margin-top: 10px;
     border-radius: 5px;
     text-align: center;
+    max-width: 190px;
+    font-size: 14px;
   }
 }

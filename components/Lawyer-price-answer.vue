@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h2>Puli to'langan savollar</h2>
+    <h2 class="lawyer__questions-h2">Puli to'langan savollar</h2>
     <div class="lawyer__questions">
       <div class="lawyer__questions_item" v-for="item in priceAddedQuestion" :key="item.id">
-        <div class="lawyer__questions-title">Savol nomi: {{item.title}}</div>
-        <div class="lawyer__questions-text">Savol haqida: {{item.text}}</div>
-        <div class="lawyer__questions-customer">Savol bergan mijoz: {{item.customer}}</div>
-        <div class="lawyer__questions-date">Savol berilgan sana: {{item.date}}</div>
-        <div class="lawyer__questions-price">Savolga quyilgan narx: {{item.price}}</div>
+        <div class="lawyer__questions-title"><b> Savol nomi:</b> {{item.title}}</div>
+        <div class="lawyer__questions-text"><b> Savol haqida:</b> {{item.text}}</div>
+        <div class="lawyer__questions-customer"><b> Savol bergan mijoz:</b> {{item.customer}}</div>
+        <div class="lawyer__questions-date"><b> Savol berilgan sana: </b>{{item.date}}</div>
+        <div class="lawyer__questions-price"><b> Savolga quyilgan narx:</b> {{item.price}}</div>
         <div class="lawyer__questions-priceAdded" v-if="item.status == 'PaymentDone'">Savolga pull to'landi</div>
         <div class="lawyer__questions-priceAdded" v-if="item.status == 'QuestionCompleted'">Savolga pull to'langan</div>
         <nuxt-link :to="'lawyer-answer/' + item.id" class="lawyer__questions-answer" v-if="item.status == 'PaymentDone'">
@@ -21,6 +21,7 @@
         </nuxt-link>
       </div>
     </div>
+    <div v-if="priceAddedQuestion.length == 0">Sizda puli to'langan savollar mavjud emas</div>
   </div>
 </template>
 <script>

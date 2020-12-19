@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="news__wrapper">
+    <div v-if="loader" class="news__wrapper">
       <h1 class="news__heading">{{ $t("news.title") }}</h1>
       <div class="news__header">
         <b-container>
@@ -99,19 +99,26 @@
         ></b-pagination>
       </div>
     </div>
-    <!-- /.news__wrapper -->
+    <div v-else>
+      <loading />
+    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import Loading from '../../components/Loading.vue';
 export default {
+  components: {
+    Loading
+  },
   data() {
     return {
       news: [],
       allProduct: 0,
       page: 1,
-      currentPage: 1
+      currentPage: 1,
+      loader: false
     };
   },
   watch: {
@@ -134,6 +141,7 @@ export default {
         .get(`posts/?limit=10&offset=${(this.page - 1) * 10}`)
         .then(res => {
           console.log(res);
+          this.loader = true
           if (res.data.results.length > 0) {
             this.allProduct = res.data.count;
             this.news = res.data.results;
@@ -146,10 +154,6 @@ export default {
         });
     }
   },
-  // created() {
-  //   this.$store.dispatch("getNews").then(() => {
-  //   });
-  // },
   mounted() {
     this.getNews();
   }

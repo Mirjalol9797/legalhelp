@@ -8,12 +8,14 @@
   border: 0.0625rem solid rgba(0, 0, 0, 0.08);
 
   &__title {
-    font-size: 25px;
-    margin-bottom: 10px;
+    font-size: 26px;
+    margin-bottom: 6px;
+    font-weight: 600;
   }
   &__desc {
     color: #6C7686;
     margin-bottom: 10px;
+    font-weight: 600;
   }
   &__date {
     font-size: 14px;
@@ -21,7 +23,12 @@
     background-repeat: no-repeat;
     padding: 0 0 0 26px;
     background-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  &__cust {
+    span {
+      font-weight: 600;
+    }
   }
   &__doc {
     a {
@@ -40,6 +47,9 @@
   }
 
   &__form {
+    label {
+      font-weight: 600;
+    }
     input {
       max-width: 220px;
     }
@@ -47,12 +57,22 @@
   &__text {
     display: none;
     margin-top: 20px;
+    font-weight: 600;
   }
   .active {
     display: block;
   }
   &__payment {
     margin-top: 20px;
+    font-weight: 600;
+  }
+  button {
+    background-color: #f2b50f;
+    border-color: #f2b50f;
+    &:hover, &:active, &:focus {
+      background-color: #f2b50f !important;
+      border-color: #f2b50f !important;
+    }
   }
 }
 .cost__form {

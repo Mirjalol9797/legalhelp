@@ -3,7 +3,7 @@
     <div class="main__page">
       <header class="header">
         <b-container>
-          <div class="header__content" data-aos="fade-up" data-aos-duration="500">
+          <div class="header__content">
             <h1 class="header__heading">
               {{$t('header.title')}}
             </h1>

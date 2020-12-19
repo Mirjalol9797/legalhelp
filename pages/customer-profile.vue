@@ -388,10 +388,10 @@ export default {
       });
     },
     uploadImage(e) {
-          this.user = new FormData();
-          this.user.append('image', e.target.files[0]);
-          this.user.append('region', this.regionSelect);
-      },
+      this.user = new FormData();
+      this.user.append('image', e.target.files[0]);
+      this.user.append('region', this.regionSelect);
+    },
     async onSubmit() {
       await this.$axios
         .patch("customer/profile/", this.user)

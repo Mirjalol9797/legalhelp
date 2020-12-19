@@ -86,7 +86,7 @@
                   <span class="user__profile-card-text"> Maqolalarim</span>
                 </template>
                 <b-card-text>
-                  Maqolalarim
+                  Maqola yozish uchun iltimos adminga murojat qiling
                 </b-card-text>
               </b-tab>                                        
               <b-tab>
