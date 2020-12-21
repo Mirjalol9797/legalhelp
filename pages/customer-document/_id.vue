@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container class="customer-docPage">
+    <b-container v-if="loader" class="customer-docPage">
       <div class="customer-docPage__wrap">
         <div class="customer-docPage__title">{{documentCustomer.title}}</div>
         <div class="customer-docPage__text">{{documentCustomer.text}}</div>
@@ -24,20 +24,29 @@
         </div>
       </div>
     </b-container>
+    <div v-else>
+      <loading />
+    </div>
   </div>
 </template>
 <script>
+import Loading from '../../components/Loading.vue';
 export default {
   data() {
     return {
       documentCustomer: [],
-      answer: []
+      answer: [],
+      loader: false,
     }
   },
+  components: {
+    Loading
+  },  
   methods: {
     async getDocumentCustomer() {
       await this.$axios.get(`document/customer/${this.$route.params.id}/`)
         .then((res) => {
+          this.loader = true;
           this.documentCustomer = res.data;
           console.log('getDocumentCustomer', res)
         })
@@ -45,6 +54,7 @@ export default {
     async getDocumentAnswer() {
       await this.$axios.get(`document/recieve/?document_id=${this.$route.params.id}`)
         .then((res) => {
+          this.loader = true;
           this.answer = res.data;
           console.log('getDocumentAnswer', res)
         })

@@ -145,28 +145,34 @@
     margin-bottom: 10px;
   }
   &-title {
-    font-size: 18px;
-    border-bottom: 1px solid #eee;
+    font-size: 22px;
+    border-bottom: 2px solid #eee;
     padding-bottom: 5px;
     margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
   }
   &-info {
     margin-bottom: 25px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 4px solid #eee;
     padding-bottom: 5px;
+  }
+  &-about {
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
   &-pay {
     background-color: #f2b50f;
     border-radius: 5px;
     color: #fff;
-    max-width: 180px;
+    max-width: 170px;
     width: 100%;
     text-align: center;
-    margin: 10px 0 0 0;
+    margin: 20px 0 0 0;
     font-size: 14px;
     cursor: pointer;
     display: block;
-    padding: 5px;
+    padding: 10px 0;
     &:hover {
       color: #fff;
     }
@@ -180,14 +186,16 @@
   margin-bottom: 20px;
   border-radius: 10px;
   &-title {
-    font-size: 18px;
-    border-bottom: 1px solid #eee;
+    font-size: 22px;
+    border-bottom: 2px solid #eee;
     padding-bottom: 5px;
     margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
   }
   &-info {
     margin-bottom: 25px;
-    border-bottom: 3px solid #eee;
+    border-bottom: 4px solid #eee;
     padding-bottom: 5px;
   }
   &-price {
@@ -213,14 +221,14 @@
     background-color: #f2b50f;
     border-radius: 5px;
     color: #fff;
-    max-width: 180px;
+    max-width: 170px;
     width: 100%;
     text-align: center;
     margin: 5px auto 20px 0;
     font-size: 14px;
     cursor: pointer;
     display: block;
-    padding: 5px;    
+    padding: 10px 0;    
     &:hover {
       color: #fff;
     }

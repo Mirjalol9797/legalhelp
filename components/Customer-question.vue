@@ -1,14 +1,14 @@
 <template>
   <div>
-    <b-container class="customer-question">
+    <b-container v-if="loader" class="customer-question">
       <div class="user__profile-wrap" v-for="(item, index) of questionCustomer" :key="index.id">
         <div class="user__profile-question">
           <div class="user__profile-question-item" v-if="item.status == 'Pending' || item.status == 'PriceAdded'">
             <div class="user__profile-question-title">
-              {{item.title}} 
+              <b>Savol nomi:</b> {{item.title}} 
             </div>
             <p class="user__profile-question-text">
-              {{item.text}} 
+              <b>Savol matni:</b> {{item.text}} 
             </p>
             <div class="user__profile-question-info">
               <div class="left__block">
@@ -26,10 +26,10 @@
                 </div> -->
                 <div class="price" v-if="item.price > 0 || item.status == 'PriceAdded'">
                   <font-awesome-icon :icon="['fas', 'money-bill-alt']" />
-                  Savol qo'yilgan narx: {{item.price}} <br>
-                  pull to'lash uchun iltimos "Bildirishnomalar" ga o'ting
+                  <b>Savol qo'yilgan narx:</b> {{item.price}} <br>
+                  pull to'lash uchun iltimos <b>"Bildirishnomalarim"</b> ga o'ting
                 </div>
-                <div v-if="item.price == null">Savolga naxr qo'yilmagan. Iltimos yarist savolga narx qo'yishini kuting</div>
+                <div v-if="item.price == null"><b>Savolga naxr qo'yilmagan. Iltimos yarist savolga narx qo'yishini kuting</b></div>
                 <div v-if="item.status == 'PaymentDone'">Savolga pul to'langan. Savol narxi {{item.price}}</div>
                 <!-- <span class="location"><font-awesome-icon :icon="['fas', 'map-marker']"/>Buxoro</span> -->
               </div>
@@ -42,20 +42,28 @@
         <nuxt-link :to="localePath('/askquestions')">Savol so'rash</nuxt-link>
       </div>
     </b-container>
+    <div v-else>
+      <loading />
+    </div>    
   </div>
 </template>
-
 <script>
+import Loading from '../components/Loading.vue';
 export default {
   data() {
     return {
-      questionCustomer: []
+      questionCustomer: [],
+      loader: false,
     }
   },
+  components: {
+    Loading
+  },  
   methods: {
     async getQuestionCustomer() {
       await this.$axios.get('question/customer/')
         .then((res) => {
+          this.loader = true;
           this.questionCustomer = res.data;
           console.log('getQuestionCustomer', res)
         })
