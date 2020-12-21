@@ -4,20 +4,18 @@
       <div class="customer-doc__wrap" v-for="(item, index) of documentCustomer" :key="index.id">
         <div class="customer-doc__item" v-if="item.status == 'Pending' || item.status == 'PriceAdded'">
           <div class="customer-doc__title">
-            <span>Hujjat nomi:</span>
-            <p>{{item.title}}</p>
+            <b>Hujjat nomi:</b> {{item.title}}
           </div>
           <div class="customer-doc__text">
-            <span>Hujjat haqida qisqacha malumot:</span>
-            <p>{{item.text}}</p>
+            <b>Hujjat haqida qisqacha malumot:</b> {{item.text}}
           </div>
           <div class="customer-doc__link">
             <a :href="item.doc_file" target="_blank">hujjatni yuklab olish</a> 
           </div>
-          <div class="price" v-if="item.price > 0 || item.status == 'PriceAdded'">
-            <font-awesome-icon :icon="['fas', 'money-bill-alt']" />
-            Savol qo'yilgan narx: {{item.price}} <br>
-            pull to'lash uchun iltimos "Bildirishnomalar" ga o'ting
+          <div class="customer-doc__price" v-if="item.price > 0 || item.status == 'PriceAdded'">
+            <font-awesome-icon :icon="['fas', 'money-bill-alt']" class="customer-doc__icon" />
+            <b>Savol qo'yilgan narx:</b>  {{item.price}} <br>
+            <b><span>pull to'lash uchun iltimos "Bildirishnomalar" ga o'ting</span></b>
           </div>          
           <div v-if="item.price == null">Savolga naxr qo'yilmagan. Iltimos yarist savolga narx qo'yishini kuting</div>
         </div>
