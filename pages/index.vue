@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="main__page">
+    <div class="main__page"  v-if="loader">
       <header class="header">
         <b-container>
           <div class="header__content">
@@ -503,6 +503,9 @@
       <!-- /.our__other-services -->
       <!-- /.form__wrapper -->
     </div>
+    <div v-else>
+      <loading />
+    </div>  
   </div>
 </template>
 <script>
