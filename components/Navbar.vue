@@ -167,7 +167,7 @@ export default {
     }
   },
   mounted() {
-    // console.log("Auth",this.$auth.user) для проверки статуса что приходит с бекенда на зарегистрированного человека
+    // console.log("Auth",this.$auth.user)  
   }
 };
 </script>
