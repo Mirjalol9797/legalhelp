@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="lawyer-profile-wrapper">
+    <div v-if="loader" class="lawyer-profile-wrapper">
       <b-container>
         <div class="lawyer-profile">
           <b-row>
@@ -44,7 +44,7 @@
               <div class="profile-info">
                 <span class="profile-info-name">{{lawyerItem.first_name}}  {{lawyerItem.last_name}}</span>
                 <span class="profile-info-location">{{lawyerItem.region}}</span>
-                <span class="profile-info-number">+998 {{$auth.user.user}}</span>
+                <span class="profile-info-number">+998 {{lawyerItem.user}}</span>
                 <!-- <span class="profile-info-email">{{$auth.user.email}}</span> -->
                 <span class="profile-info-email">email@mail.ur</span>
               </div>
@@ -111,20 +111,26 @@
         </div>
       </b-container>
     </div>
+    <div v-else>
+      <loading /> 
+    </div>      
   </div>
 </template>
 
 <script>
+import Loading from '../../components/Loading.vue';
 export default {
   data() {
     return {
-      lawyerItem: []
+      lawyerItem: [],
+      loader: false,
     }
   },
   methods: {
     async getLawyersItem() {
       await this.$axios.get(`lawyer/list-search/${this.$route.params.id}/`)
         .then((res) => {
+          this.loader = true;
           this.lawyerItem = res.data;
           console.log('123123131', res.data)
         })
@@ -134,7 +140,8 @@ export default {
     }
   },
   mounted() {
-    this.getLawyersItem()
+    this.getLawyersItem() 
+    console.log("Auth",this.$auth.user)
   }
 }
 </script>

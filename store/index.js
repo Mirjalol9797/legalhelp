@@ -11,7 +11,8 @@ const store = () => new Vuex.Store({
         baseURL: 'https://legalhelp.uz/api',
         mediaURL: 'https://legalhelp.uz/',
         lawyers: [],
-        questionCustomers: []
+        questionCustomers: [],
+        showLoader: false,
     },
     getters: { 
         news(state) {
@@ -45,6 +46,9 @@ const store = () => new Vuex.Store({
         },
         setQuestionCustomer(state, questionCustomer) {
             state.questionCustomers = questionCustomer
+        },
+        setShowLoader(state, payload) {
+            state.showLoader = payload
         }
         
     },

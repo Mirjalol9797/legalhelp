@@ -37,10 +37,11 @@
           </div>
         </b-container>
       </div>
-    </div>
+    </div>    
   </div>
 </template>
 <script>
+import Loading from '../components/Loading.vue';
 export default {
   data() {
     return {
@@ -70,6 +71,9 @@ export default {
           message: `${this.$t("toast.loginErrorMessage")}`
         });
       }
+    },
+    created() {
+
     }
   }
 };

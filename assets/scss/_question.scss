@@ -3,6 +3,10 @@
   &-inner {
     background-color: rgba(180, 180, 179, 0.527);
     background-size: cover;
+    background-image: url('../../assets/images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
   }
   .page-item.disabled{
     .page-link{

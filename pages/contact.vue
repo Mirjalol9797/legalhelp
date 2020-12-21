@@ -36,11 +36,15 @@
                     <b-row class="contact__date">
                         <b-col cols="6" md="6" lg="3">
                             <img src="../assets/images/contact/mobile-phone.svg" alt="">
-                            <p>+998 90 000 00 00</p>
+                            <p>
+                                <a href="tel:+998999276993">+99899 927 69 93</a>
+                            </p>
                         </b-col>
                         <b-col cols="6" md="6" lg="3">
                             <img src="../assets/images/contact/mail.svg" alt="">
-                            <p>legaltech@gmail.com</p>
+                            <p>
+                                <a href="mailto:info@legalhelp.uz">info@legalhelp.uz</a>
+                            </p>
                         </b-col>
                         <b-col cols="6" md="6" lg="3">
                             <img src="../assets/images/contact/clock.svg" alt="">
@@ -52,7 +56,7 @@
                         <b-col cols="6" md="6" lg="3">
                             <img src="../assets/images/contact/location.svg" alt="">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur ime.
+                                Toshkent shahar Bektemir tumani
                             </p>
                         </b-col>
                     </b-row>

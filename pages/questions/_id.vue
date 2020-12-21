@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="questions__inner-wrapper">
+    <div v-if="loader" class="questions__inner-wrapper">
       <b-container>
         <nuxt-link :to="localePath('/questions')" class="left-arrow-link">
           <img
@@ -130,14 +130,19 @@
         <!-- /.answer__wrapper -->
       </b-container>
     </div>
+    <div v-else>
+      <loading />
+    </div>       
     <!-- /.questions__inner-wrapper -->
   </div>
 </template>
 <script>
+import Loading from '../../components/Loading.vue';
 export default {
   data() {
     return {
-      questions_inner: []
+      questions_inner: [],
+      loader: false,
     };
   },
   methods: {
@@ -145,6 +150,7 @@ export default {
       await this.$axios
         .get(`services/${this.$route.params.id}/`)
         .then(res => {
+          this.loader = true;
           this.questions_inner = res.data;
           console.log('getSingleQuestions', res.data);
         })

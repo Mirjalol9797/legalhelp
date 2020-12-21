@@ -365,7 +365,7 @@ export default {
   },
   methods: {
     async onCancel() {
-      this.$router.push(this.localePath({name: "/"} ));
+      this.$router.push(this.localePath({name: "/customer-profile"} ));
       this.$toast.error({
         title: `${this.$t("profile.save")}`,
         message: `${this.$t("profile.cancell")}`

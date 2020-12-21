@@ -59,7 +59,7 @@
             <div class="index-address">
               <h4 class="index-address-heading">{{$t('footer_time.address')}}</h4>
               <span class="index-address-text">{{$t('footer_info.address')}}</span>
-              <nuxt-link to="tel:+998999276993" class="index-address-phone">+99899 927 69 93</nuxt-link>
+              <a href="tel:+998999276993" class="index-address-phone">+99899 927 69 93</a>
             </div>
           </b-col>
         </b-row>

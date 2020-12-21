@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="lawyer__wrapper">
+    <div v-if="loader" class="lawyer__wrapper">
       <div class="container">
         <h1 class="lawyer__heading">Yangiliklar</h1>
         <div class="lawyer__inner">
@@ -17,16 +17,21 @@
         <!-- /.lawyer__inner -->
       </div>
     </div>
+    <div v-else>
+      <loading />
+    </div>        
     <!-- /.lavyer__wrapper -->
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import Loading from '../../components/Loading.vue';
 export default {
   data() {
     return {
       post: [],
+      loader: false,
     };
   },
   computed: {
@@ -36,7 +41,9 @@ export default {
     async getSinglePost() {
       await this.$axios.get(`posts/${this.$route.params.id}/`)
       .then(res => {
+        this.loader = true;
         this.post = res.data;
+        
       })
       .catch(err => {
         console.log(err);

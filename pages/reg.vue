@@ -77,7 +77,9 @@
                     type="password"
                     id="password"
                     required
+                    @blur="validate"
                   />
+                  <small v-if="showError" style="color: red">Passwords don't match!</small>
                   <!-- <div v-if="form.password !== confirm_password">123123123</div> -->
                 </div>
               </div>
@@ -137,6 +139,7 @@ export default {
         region: "",
         token: ""
       },
+      showError: false,
       code: ""
     };
   },
@@ -192,6 +195,14 @@ export default {
                   })
                   .catch(err => console.log(err))
         }
+    },
+    validate() {
+      if(this.form.password.value === this.confirm_password.value) {
+        this.showError = true
+      }
+      else {
+        this.showError = false
+      }
     },
     async getRegionuz() {
       await this.$axios.get("region/?language=uz").then(res => {
