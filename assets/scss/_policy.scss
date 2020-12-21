@@ -81,8 +81,13 @@
     }
     .policy__indent {
         text-indent: 20px;
-
+        text-align: justify;
     }    
+    p {
+        a {
+            color: #007bff;
+        }
+    }
 }
 
 // Responsive

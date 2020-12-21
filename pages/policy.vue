@@ -18,15 +18,15 @@
     <span>2020-yil 10-dekabr</span> <span style="text-align: right">Toshkent shahri</span>
 </div>
 								 
-<p class="policy__indent">     Ushbu shartnoma bir tomondan “Legal Help” MCHJ (keyingi o‘rinlarda – “Sayt” yoki “Sayt 
-    ma’muriyati” deb yuritiladi) va ikkinchi tomondan internet tarmog’ining foydalanuvchilari
-     ya’ni yuridik va jismoniy shaxslar (keyingi o‘rinlarda – “Foydalanuvchi” deb yuritiladi)
+<p class="policy__indent">     Ushbu shartnoma bir tomondan <b> “Legal Help” MCHJ </b>(keyingi o‘rinlarda – <b>“Sayt”</b> yoki <b>“Sayt 
+    ma’muriyati”</b> deb yuritiladi) va ikkinchi tomondan internet tarmog’ining foydalanuvchilari
+     ya’ni yuridik va jismoniy shaxslar (keyingi o‘rinlarda – <b>“Foydalanuvchi”</b> deb yuritiladi)
       “https://legalhelp.uz” saytidan foydalanish bo‘yicha xizmatlar ko‘rsatish uchun
        shartnoma (keyingi o‘rinlarda Shartnoma deb yuritiladi) tuzish haqidagi rasmiy taklifi (ommaviy ofertasi) hisoblanadi.
 </p>
 <p class="policy__indent">
     Mazkur sayt internet tarmog’ida https://legalhelp.uz manzili bo’yicha joylashgan bo’lib,
- u foydalanuvchilarga yuridik xizmatlarga buyurtma berish imkonini beradigan onlayn platforma shaklidagi
+ u foydalanuvchilarga yuridik xizmatlarga buyurtma berish imkonini beradigan <b>onlayn platforma</b> shaklidagi
   dasturdir. Yuristlar (advokatlar) sayt yordamida mijozlarni qidirishi va onlayn xizmatlarini taqdim etishlari mumkin.
 </p>
 <p class="text-center">
@@ -94,65 +94,131 @@ jamiyati, Toshkent shahri, Bektemir tumani, Davlat Xizmatlari Markazi tomonidan
 <p class="policy__indent">
 5.1. Tomonlar shartnomaga muvofiq quyidagi majburiyatlarni bajaradilar:
 </p>
-5.1.1. Sayt ma’muriyati:- foydalanuvchi shaxsiy ma’lumotlarining maxfiyligini ta’minlash (ommaviy ochiq ma’lumotlar bundan mustasno); - www.legalhelp.uz saytining uzluksiz ishlashini ta’minlash;
-5.1.2. Foydalanuvchi:- ushbu foydalanish shartnomasi (ommaviy oferta) talablarini bajarish;
-- Ro’yxatdan o’tish jarayonida va shaxsiy hisob qaydnomasida aniq va to’g’ri ma’lumotlarni tadim etish;
-- Sayt xizmatlaridan foydalanish jarayonida (savol berishda, izoh qoldirishda va hokazo) qonunchilik va uchinchi shaxslarning qonuniy manfaatlariga putur yetkazishi mumkin bo‘lgan va reklama, erotik, pornografik hamda haqoratlash xarakteridagi so’zlardan foydalanmaslik;
-- Joylashtiriladigan (har qanday) axborot (material), izohlarda uchinchi shaxslarning mualliflik huquqlari, tovar belgilariga bo‘lgan huquqlari, intellektual mulkning boshqa huquqlarini buzmaslik;
-- Ko’rsatilgan xizmatlar uchun xizmat ko’rsatish haqini o’z vaqtida to’lash;
-- Saytdan g‘ayriqonuniy maqsadlarda foydalanmaslik;
-5.2. Foydalanuvchi sayt ma’muriyati so‘roviga asosan ro‘yxatdan o‘tish paytida berilgan ma’lumotlarni tasdiqlovchi hujjatlarni taqdim etishi shart. Foydalanuvchi tomonidan sayt ma’muriyatiga taqdim etilmagan yoki to‘liq taqdim etilmagan hollarda sayt ma’muriyati foydalanuvchining ro‘yxatdan o‘tganligini bekor qilishi yoki foydalanuvchi istagan shakldagidan ko‘ra boshqa shaklda ro‘yxatdan o‘tkazishi mumkin.
-5.3. Saytda boshqa foydalanuvchilarni adashtirishga yo‘naltirilgan harakatlar shuningdek, quyidagilarni amalga oshirish qat’iy taqiqlanadi:
-– o‘zini boshqa odam sifatida ko‘rsatish, xususan, boshqalarning ismlari yoki taxalluslar bilan bir necha marta a’zo bo‘lish orqali bir necha hisob qaydnomalarini yaratish;
-– yolg‘on ma’lumotlar asosida hisob qaydnomasi yaratish, axborotni buzib ko‘rsatish, o‘zi haqida yolg‘on axborotni joylashtirish va boshqalar;
-– anketa formalariga so‘ralmagan, lozim bo‘lmagan axborotlarni joylashtirish;
-– xabar kimga qaratilganini aniqlash imkonini bermaydigan darajada axborotni buzib izoh qoldirish;
-- Sayt xizmatlaridan foydalanish jarayonida (savol berishda, izoh qoldirishda va hokazo) qo’pol imlo xatolariga yo’l qo’yish;
-– Saytda o’zi shaxsan qabulida bo’lmagan yoki xizmatidan foydalanmagan mutaxassislar haqida izohlar qoldirish va baholash;
-5.4. Saytda joylashtirilgan barcha obyektlar, shu jumladan dizayn elementlari, matn, grafik tasvirlar, illyustratsiya, video, skriptlar, dasturlar va boshqa obyektlar va ular majmuasi (keyingi o‘rinlarda — Kontent) sayt ma’muriyati, foydalanuvchilari va boshqa huquq egalari mualliflik huquqi bo‘lib, bu obyektlarga bo‘lgan huquqlar himoya qilinadi.
-5.5. Ushbu qoidalarda belgilanganlardan tashqari hamda amaldagi O‘zbekiston Respublikasi qonun hujjatlariga muvofiq hech qaysi Kontent muallif roziligini oldindan olmasdan turib ko‘chirilishi (qayta e’lon qilinishi), qayta ishlanishi, tarqatilishi, ko‘rsatilishi, chop qilinishi, yuklab olinishi, boshqaga o‘tkazilishi, sotilishi yoki boshqacha usul bilan butunlay yoki qisman egallanishi mumkin emas, muallif oshkora ruxsat bergan hollar bundan mustasno.
-5.6. Foydalanuvchi o‘z shaxsiy Kontentidan tashqari boshqa saytlar Kontenti, ma’lumotlar bazasi va boshqa mualliflarga tegishli intellektual faoliyat natijalarini muallif roziligini olmasdan turib yuklashi yoki ularni Saytda e’lon qilishga haqli emas.
-5.7. Ro’yxatdan o’tish jarayonida taqdim etilgan, shuningdek foydalanuvchi o‘z hisob qaydnomasida joylashtirgan shaxsiy ma’lumotlarni qayta ishlashiga rozilik bildirgan hisoblanadi. Shaxsiy ma’lumotlarni qayta ishlash O‘zbekiston Respublikasi qonunchiligiga muvofiq amalga oshiriladi. Sayt ma’muriyati foydalanuvchining shaxsiy ma’lumotlarini u Sayt xizmatlaridan foydalana olishi hamda Saytning xizmat ko‘rsatish sifatini oshirishga qaratilgan tegishli ma’lumotlarni tahlil qila olishi uchun qayta ishlashi mumkin. Sayt ma’muriyati Foydalanuvchi shaxsiga tegishli barcha ma’lumotlarni g‘ayriqonuniy ravishda olish, o‘zgartirish, oshkor qilish yoki yo‘q qilishni oldini olish bilan bog‘liq choralarni ko‘radi. Sayt ma’muriyati foydalanuvchilarning ma’lumotlari bilan ishlash uchun faqatgina Sayt funksiyalarini sozlash va foydalanuvchilarga xizmat ko‘rsatish uchun lozim bo‘lgan hollardagina ruxsat berishi mumkin. Sayt ma’muriyati foydalanuvchi tomonidan taqdim etilgan ma’lumotlar, shuningdek shaxsiy ma’lumotlardan O‘zbekiston Respublikasi qonun hujjatlari talablarini amalga oshirish maqsadida (shu jumladan, Foydalanuvchining g‘ayriqonuniy xatti-harakatlari yuzasidan ogohlantirish yoki uni to‘xtatish maqsadida) foydalanishi mumkin. Foydalanuvchining ma’lumotlari O‘zbekiston Respublikasi qonun hujjatlariga muvofiq sud va boshqa huquqni muhofaza qiluvchi organlar hamda qonun hujjatlari bilan vakolatli bo’lgan davlat tashkilotlari talabiga muvofiq taqdim etilishi mumkin.
-5.8. Foydalanuvchining Saytdan foydalanishida ushbu qoidalarga rioya etishi shubhali hisoblansa Sayt ma’muriyati o‘z qarashidan kelib chiqib istalgan vaqtda oldindan ogohlantirmagan holda Foydalanuvchini o‘chirishi, ta’qiqlashi yoki Foydalanuvchini ro‘yxatga olish to‘g‘risidagi ma’lumotlarni majburiy tarzda o‘zgartirishga haqli.
-6. Xizmatlar narxi va to‘lov tartibi
-6.1. Sayt tomonidan jismoniy va yuridik shaxslarga ko‘rsatiladigan pullik xizmatlar ushbu shartnoma bilan tartibga solinadi.
-6.2. Ko’rsatiladigan xizmatlar uchun narx foydalanuvchi tomonidan belgilanadi va ko’rsatilgan narxni to’lash uchun keyingi qadamga o’tishi uning xizmat narxiga roziligini anglatadi.
-6.3. Sayt yuridik xizmatlaridan foydalanish maqsadida buyurtma yuborgan mijozlarning ham, savollarga yoki murojaatlarga javob berayotgan mutaxassislarning ham vakili hisoblanmaydi, shuning uchun bu boradagi moliyaviy majburiyatlar yuzasidan javobgar hisoblanmaydi.
-6.4. Saytdan foydalanuvchi Mijoz va Mutaxassis o‘rtasidagi har qanday kelishuv ikki tomonlama sanaladi hamda Sayt unga aloqador hisoblanmaydi.
-6.5. Bahsli vaziyatlarda sayt ma’muriyati hakamlik vazifasini o‘z zimmasiga oladi hamda masala to‘laqonli ko‘rib chiqilgandan so‘ng muammoli vaziyatni mijoz yoki mutaxassis foydasiga hal etadi.
-6.6. Sayt ma’muriyati mijozlarga  sifat, maxfiylik va xavfsizlik kafolatini taqdim etadi. Shuning bilan birgalikda pullik xizmatlar uchun to‘langan pul mablag‘ining faqatgina bir marta qaytarilishi kafolatlanadi. Ko‘rsatilgan xizmat sifatidan qoniqmaganligi sababli mijozning pul mablag‘larini qaytarish to‘g‘risidagi talabi Sayt ma’muriyati tomonidan yakka tartibda ko‘rib chiqiladi. Bunday talab sayt ma’muriyati tomonidan mijozga ko‘rsatilgan xizmat sifati lozim darajada bo‘lmagan, huquqiy xatolik mavjud yoxud xizmat ko‘rsatishda boshqa kamchiliklarga yo‘l qo‘yilgan taqdirda qanoatlantiriladi.
-7. Tomonlarning javobgarligi
-7.1. Tomonlar ushbu Shartnoma shartlarini bajarmaganlik yoki lozim darajada bajarmaganlik uchun O‘zbekiston Respublikasining qonun hujjatlariga muvofiq javobgar bo‘ladilar.
-7.2. Foydalanuvchi ushbu Shartnoma bo‘yicha majburiyatlarni bajarmaganlik yoki lozim darajada bajarmaganlik natijasida unda yuzaga keladigan har qanday zararlar yoki boshqa salbiy oqibatlar uchun javobgar bo‘ladi.
-7.3. Foydalanuvchi o‘z shaxsiy ma’lumotlarini muhofaza qilinmagan bog‘lanishlardan foydalanadigan qurilmaga kiritishda yoki ular zarar keltiradigan dasturlar va ilovalar tahdidi ostida bo‘lgan holda ularning sozligi uchun to‘liq javobgar bo‘ladi.
-7.4. Sayt shartnoma shartlarini lozim darajada bajarmaganlik uchun, agar bunday bajarmaslik foydalanuvchi tomonidan shartnoma shartlarining bajarilmasligi oqibati bo‘lsa, javob bermaydi.
-7.5. Sayt foydalanuvchi ushbu shartnoma shartlari bilan, shuningdek Ilovada pullik servislarni faollashtirish vaqtida ularning ofertalari bilan tanishmagani va (yoki) o‘z vaqtida tanishmagani tufayli foydalanuvchida yuzaga kelgan har qanday zararlar uchun javob bermaydi.
-7.6. Sayt shartnoma shartlarini lozim darajada bajarmaganlik uchun, agar bunday bajarmaslik sayt nazorati doirasidan tashqaridagi sabablar bilan belgilangan bo‘lsa, javob bermaydi. Sayt nazorat doirasi faqat saytning o‘z ishlash qobiliyati bilan cheklanadi va uchinchi shaxslarning aybi bilan yuz bergan nosozliklar yoki davlat idoralari yoki sud hokimiyati organlari tomonidan belgilangan taqiqlar va cheklashlar tufayli ishda yuz bergan uzilishlar uchun javobgarlikni o‘z ichiga olmaydi.
-7.7. Tomonlar ushbu shartnoma bo‘yicha majburiyatlarni bajarmaganlik yoki lozim darajada bajarmaganlik uchun javobgarlikdan, agar bunday bajarmaslik shartnoma tuzilgandan keyin Tomon oldindan ko‘ra bilishi ham, oqilona choralar bilan oldini olishi ham mumkin bo‘lmagan favqulodda hodisalar natijasida yuzaga kelgan yengilmas kuch holatlari (fors-major) oqibati bo‘lsa, ozod qilinadilar.
-8. Shartnomani bеkor qilish
-8.1. Foydalanuvchi istalgan vaqtda shartnomani bajarishdan legalhelp.uz saytidagi hisob qaydnomasini o‘chirib tashlash yo‘li bilan bosh tortishga haqli.
-8.2. Shartnoma hisob qaydnomani o‘chirib tashlanganidan keyin bekor qilingan hisoblanadi. Mazkur Shartnomaning bekor qilinishi, agar sayt doirasida pullik xizmatlar uchun buyurtma berilgan bo‘lsa, bunday xizmatlar bo‘yicha shartnomalar bekor bo‘lganini anglatmaydi.
-9. Nizolarni ko‘rib chiqish tartibi
-9.1. Ushbu shartnomadan kelib chiqqan har qanday nizo tinch yo‘l bilan yoki foydalanuvchining yozma murojaatiga binoan e’tiroz bildirish tartibida ko‘rib chiqiladi. Murojaatni ko‘rib chiqish muddati va uning mazmuniga qo‘yiladigan talablar mazkur shartnoma va O‘zbekiston Respublikasining amaldagi qonun hujjatlari bilan belgilanadi.
-9.2. Yuzaga kelgan nizo e’tiroz bildirish tartibida hal etilmagan taqdirda, u javobgar joylashgan yerdagi tegishli sud tomonidan O‘zbekiston Respublikasining amaldagi qonun hujjatlarida nazarda tutilgan tartibda ko‘rib chiqilishi lozim.
-10. Boshqa shartlar
-10.1. Saytda joylashtirilgan har qanday sayt, mahsulot, xizmat, tijoriy yoki notijoriy xususiyatdagi har qanday ma’lumot Sayt ma’muriyati tomonidan ularni tavsiya qilish mazmunini anglatmaydi. 
-10.2. Foydalanuvchi va uchinchi shaxslar tomonidan Sayt Kontentidan notijorat maqsadida foydalanishga barcha mualliflik belgilarini yoki mualliflik to‘g‘risidagi boshqa eslatmalarni saqlash, muallif ismini va Kontent mazmunini o‘zgartirmasdan saqlash sharti bilan ruxsat etiladi.
-10.3. Uchinchi shaxslarning Saytlari va Kontentlari:
+<p class="policy__indent">5.1.1. Sayt ma’muriyati:- foydalanuvchi shaxsiy ma’lumotlarining maxfiyligini ta’minlash (ommaviy ochiq ma’lumotlar bundan mustasno); - www.legalhelp.uz saytining uzluksiz ishlashini ta’minlash;
+</p>
+<p class="policy__indent">5.1.2. Foydalanuvchi:- ushbu foydalanish shartnomasi (ommaviy oferta) talablarini bajarish;</p>
+<p> - Ro’yxatdan o’tish jarayonida va shaxsiy hisob qaydnomasida aniq va to’g’ri ma’lumotlarni tadim etish;</p>
+<p>- Sayt xizmatlaridan foydalanish jarayonida (savol berishda, izoh qoldirishda va hokazo) 
+    qonunchilik va uchinchi shaxslarning qonuniy manfaatlariga putur yetkazishi 
+    mumkin bo‘lgan va reklama, erotik, pornografik hamda haqoratlash xarakteridagi so’zlardan foydalanmaslik;
+</p>
+<p>- Joylashtiriladigan (har qanday) axborot (material), izohlarda uchinchi shaxslarning mualliflik huquqlari, 
+tovar belgilariga bo‘lgan huquqlari, intellektual mulkning boshqa huquqlarini buzmaslik;
+</p>
+<p>- Ko’rsatilgan xizmatlar uchun xizmat ko’rsatish haqini o’z vaqtida to’lash;</p>
+<p>- Saytdan g‘ayriqonuniy maqsadlarda foydalanmaslik;</p>
+<p class="policy__indent">5.2. Foydalanuvchi sayt ma’muriyati so‘roviga asosan ro‘yxatdan o‘tish paytida berilgan ma’lumotlarni tasdiqlovchi hujjatlarni taqdim etishi shart. Foydalanuvchi tomonidan sayt ma’muriyatiga taqdim etilmagan yoki to‘liq taqdim etilmagan hollarda sayt ma’muriyati foydalanuvchining ro‘yxatdan o‘tganligini bekor qilishi yoki foydalanuvchi istagan shakldagidan ko‘ra boshqa shaklda ro‘yxatdan o‘tkazishi mumkin.
+</p>
+<p class="policy__indent">5.3. Saytda boshqa foydalanuvchilarni adashtirishga yo‘naltirilgan harakatlar shuningdek, quyidagilarni amalga oshirish qat’iy taqiqlanadi:
+</p>
+<p>– o‘zini boshqa odam sifatida ko‘rsatish, xususan, boshqalarning ismlari yoki taxalluslar bilan bir necha marta a’zo bo‘lish orqali bir necha hisob qaydnomalarini yaratish;
+</p>
+<p>– yolg‘on ma’lumotlar asosida hisob qaydnomasi yaratish, axborotni buzib ko‘rsatish, o‘zi haqida yolg‘on axborotni joylashtirish va boshqalar;
+</p>
+<p>– anketa formalariga so‘ralmagan, lozim bo‘lmagan axborotlarni joylashtirish;
+</p>
+<p>– xabar kimga qaratilganini aniqlash imkonini bermaydigan darajada axborotni buzib izoh qoldirish;
+</p>
+<p>- Sayt xizmatlaridan foydalanish jarayonida (savol berishda, izoh qoldirishda va hokazo) qo’pol imlo xatolariga yo’l qo’yish;
+</p>
+<p>– Saytda o’zi shaxsan qabulida bo’lmagan yoki xizmatidan foydalanmagan mutaxassislar haqida izohlar qoldirish va baholash;</p>
+<p class="policy__indent">5.4. Saytda joylashtirilgan barcha obyektlar, shu jumladan dizayn elementlari, matn, grafik tasvirlar, illyustratsiya, video, skriptlar, dasturlar va boshqa obyektlar va ular majmuasi (keyingi o‘rinlarda — Kontent) sayt ma’muriyati, foydalanuvchilari va boshqa huquq egalari mualliflik huquqi bo‘lib, bu obyektlarga bo‘lgan huquqlar himoya qilinadi.
+</p>
+<p class="policy__indent">5.5. Ushbu qoidalarda belgilanganlardan tashqari hamda amaldagi O‘zbekiston Respublikasi qonun hujjatlariga muvofiq hech qaysi Kontent muallif roziligini oldindan olmasdan turib ko‘chirilishi (qayta e’lon qilinishi), qayta ishlanishi, tarqatilishi, ko‘rsatilishi, chop qilinishi, yuklab olinishi, boshqaga o‘tkazilishi, sotilishi yoki boshqacha usul bilan butunlay yoki qisman egallanishi mumkin emas, muallif oshkora ruxsat bergan hollar bundan mustasno.
+</p>
+<p class="policy__indent">5.6. Foydalanuvchi o‘z shaxsiy Kontentidan tashqari boshqa saytlar Kontenti, ma’lumotlar bazasi va boshqa mualliflarga tegishli intellektual faoliyat natijalarini muallif roziligini olmasdan turib yuklashi yoki ularni Saytda e’lon qilishga haqli emas.
+</p>
+<p class="policy__indent">5.7. Ro’yxatdan o’tish jarayonida taqdim etilgan, shuningdek foydalanuvchi o‘z hisob qaydnomasida joylashtirgan shaxsiy ma’lumotlarni qayta ishlashiga rozilik bildirgan hisoblanadi. Shaxsiy ma’lumotlarni qayta ishlash O‘zbekiston Respublikasi qonunchiligiga muvofiq amalga oshiriladi. Sayt ma’muriyati foydalanuvchining shaxsiy ma’lumotlarini u Sayt xizmatlaridan foydalana olishi hamda Saytning xizmat ko‘rsatish sifatini oshirishga qaratilgan tegishli ma’lumotlarni tahlil qila olishi uchun qayta ishlashi mumkin. Sayt ma’muriyati Foydalanuvchi shaxsiga tegishli barcha ma’lumotlarni g‘ayriqonuniy ravishda olish, o‘zgartirish, oshkor qilish yoki yo‘q qilishni oldini olish bilan bog‘liq choralarni ko‘radi. Sayt ma’muriyati foydalanuvchilarning ma’lumotlari bilan ishlash uchun faqatgina Sayt funksiyalarini sozlash va foydalanuvchilarga xizmat ko‘rsatish uchun lozim bo‘lgan hollardagina ruxsat berishi mumkin. Sayt ma’muriyati foydalanuvchi tomonidan taqdim etilgan ma’lumotlar, shuningdek shaxsiy ma’lumotlardan O‘zbekiston Respublikasi qonun hujjatlari talablarini amalga oshirish maqsadida (shu jumladan, Foydalanuvchining g‘ayriqonuniy xatti-harakatlari yuzasidan ogohlantirish yoki uni to‘xtatish maqsadida) foydalanishi mumkin. Foydalanuvchining ma’lumotlari O‘zbekiston Respublikasi qonun hujjatlariga muvofiq sud va boshqa huquqni muhofaza qiluvchi organlar hamda qonun hujjatlari bilan vakolatli bo’lgan davlat tashkilotlari talabiga muvofiq taqdim etilishi mumkin.
+</p>
+<p class="policy__indent">5.8. Foydalanuvchining Saytdan foydalanishida ushbu qoidalarga rioya etishi shubhali hisoblansa Sayt ma’muriyati o‘z qarashidan kelib chiqib istalgan vaqtda oldindan ogohlantirmagan holda Foydalanuvchini o‘chirishi, ta’qiqlashi yoki Foydalanuvchini ro‘yxatga olish to‘g‘risidagi ma’lumotlarni majburiy tarzda o‘zgartirishga haqli.
+</p>
+<p class="text-center">
+    <strong>6. Xizmatlar narxi va to‘lov tartibi</strong>
+</p>
+<p class="policy__indent">6.1. Sayt tomonidan jismoniy va yuridik shaxslarga ko‘rsatiladigan pullik xizmatlar ushbu shartnoma bilan tartibga solinadi.
+</p>
+<p class="policy__indent">6.2. Ko’rsatiladigan xizmatlar uchun narx foydalanuvchi tomonidan belgilanadi va ko’rsatilgan narxni to’lash uchun keyingi qadamga o’tishi uning xizmat narxiga roziligini anglatadi.
+</p>
+<p class="policy__indent">6.3. Sayt yuridik xizmatlaridan foydalanish maqsadida buyurtma yuborgan mijozlarning ham, savollarga yoki murojaatlarga javob berayotgan mutaxassislarning ham vakili hisoblanmaydi, shuning uchun bu boradagi moliyaviy majburiyatlar yuzasidan javobgar hisoblanmaydi.
+</p>
+<p class="policy__indent">6.4. Saytdan foydalanuvchi Mijoz va Mutaxassis o‘rtasidagi har qanday kelishuv ikki tomonlama sanaladi hamda Sayt unga aloqador hisoblanmaydi.
+</p>
+<p class="policy__indent">6.5. Bahsli vaziyatlarda sayt ma’muriyati hakamlik vazifasini o‘z zimmasiga oladi hamda masala to‘laqonli ko‘rib chiqilgandan so‘ng muammoli vaziyatni mijoz yoki mutaxassis foydasiga hal etadi.
+</p>
+<p class="policy__indent">6.6. Sayt ma’muriyati mijozlarga  sifat, maxfiylik va xavfsizlik kafolatini taqdim etadi. Shuning bilan birgalikda pullik xizmatlar uchun to‘langan pul mablag‘ining faqatgina bir marta qaytarilishi kafolatlanadi. Ko‘rsatilgan xizmat sifatidan qoniqmaganligi sababli mijozning pul mablag‘larini qaytarish to‘g‘risidagi talabi Sayt ma’muriyati tomonidan yakka tartibda ko‘rib chiqiladi. Bunday talab sayt ma’muriyati tomonidan mijozga ko‘rsatilgan xizmat sifati lozim darajada bo‘lmagan, huquqiy xatolik mavjud yoxud xizmat ko‘rsatishda boshqa kamchiliklarga yo‘l qo‘yilgan taqdirda qanoatlantiriladi.
+</p>
+<p class="text-center">
+    <strong>7. Tomonlarning javobgarligi</strong>
+</p>
+<p class="policy__indent">7.1. Tomonlar ushbu Shartnoma shartlarini bajarmaganlik yoki lozim darajada bajarmaganlik uchun O‘zbekiston Respublikasining qonun hujjatlariga muvofiq javobgar bo‘ladilar.
+</p>
+<p class="policy__indent">7.2. Foydalanuvchi ushbu Shartnoma bo‘yicha majburiyatlarni bajarmaganlik yoki lozim darajada bajarmaganlik natijasida unda yuzaga keladigan har qanday zararlar yoki boshqa salbiy oqibatlar uchun javobgar bo‘ladi.
+</p>
+<p class="policy__indent">7.3. Foydalanuvchi o‘z shaxsiy ma’lumotlarini muhofaza qilinmagan bog‘lanishlardan foydalanadigan qurilmaga kiritishda yoki ular zarar keltiradigan dasturlar va ilovalar tahdidi ostida bo‘lgan holda ularning sozligi uchun to‘liq javobgar bo‘ladi.
+</p>
+<p class="policy__indent">7.4. Sayt shartnoma shartlarini lozim darajada bajarmaganlik uchun, agar bunday bajarmaslik foydalanuvchi tomonidan shartnoma shartlarining bajarilmasligi oqibati bo‘lsa, javob bermaydi.
+</p>
+<p class="policy__indent">7.5. Sayt foydalanuvchi ushbu shartnoma shartlari bilan, shuningdek Ilovada pullik servislarni faollashtirish vaqtida ularning ofertalari bilan tanishmagani va (yoki) o‘z vaqtida tanishmagani tufayli foydalanuvchida yuzaga kelgan har qanday zararlar uchun javob bermaydi.
+</p>
+<p class="policy__indent">7.6. Sayt shartnoma shartlarini lozim darajada bajarmaganlik uchun, agar bunday bajarmaslik sayt nazorati doirasidan tashqaridagi sabablar bilan belgilangan bo‘lsa, javob bermaydi. Sayt nazorat doirasi faqat saytning o‘z ishlash qobiliyati bilan cheklanadi va uchinchi shaxslarning aybi bilan yuz bergan nosozliklar yoki davlat idoralari yoki sud hokimiyati organlari tomonidan belgilangan taqiqlar va cheklashlar tufayli ishda yuz bergan uzilishlar uchun javobgarlikni o‘z ichiga olmaydi.
+</p>
+<p class="policy__indent">7.7. Tomonlar ushbu shartnoma bo‘yicha majburiyatlarni bajarmaganlik yoki lozim darajada bajarmaganlik uchun javobgarlikdan, agar bunday bajarmaslik shartnoma tuzilgandan keyin Tomon oldindan ko‘ra bilishi ham, oqilona choralar bilan oldini olishi ham mumkin bo‘lmagan favqulodda hodisalar natijasida yuzaga kelgan yengilmas kuch holatlari (fors-major) oqibati bo‘lsa, ozod qilinadilar.
+</p>
+<p class="text-center">
+    <strong>8. Shartnomani bеkor qilish</strong>
+</p>
+<p class="policy__indent">8.1. Foydalanuvchi istalgan vaqtda shartnomani bajarishdan legalhelp.uz saytidagi hisob qaydnomasini o‘chirib tashlash yo‘li bilan bosh tortishga haqli.
+</p>
+<p class="policy__indent">8.2. Shartnoma hisob qaydnomani o‘chirib tashlanganidan keyin bekor qilingan hisoblanadi. Mazkur Shartnomaning bekor qilinishi, agar sayt doirasida pullik xizmatlar uchun buyurtma berilgan bo‘lsa, bunday xizmatlar bo‘yicha shartnomalar bekor bo‘lganini anglatmaydi.
+</p>
+<p class="text-center">
+    <strong>9. Nizolarni ko‘rib chiqish tartibi</strong>
+</p>
+<p class="policy__indent">9.1. Ushbu shartnomadan kelib chiqqan har qanday nizo tinch yo‘l bilan yoki foydalanuvchining yozma murojaatiga binoan e’tiroz bildirish tartibida ko‘rib chiqiladi. Murojaatni ko‘rib chiqish muddati va uning mazmuniga qo‘yiladigan talablar mazkur shartnoma va O‘zbekiston Respublikasining amaldagi qonun hujjatlari bilan belgilanadi.
+</p>
+<p class="policy__indent">9.2. Yuzaga kelgan nizo e’tiroz bildirish tartibida hal etilmagan taqdirda, u javobgar joylashgan yerdagi tegishli sud tomonidan O‘zbekiston Respublikasining amaldagi qonun hujjatlarida nazarda tutilgan tartibda ko‘rib chiqilishi lozim.
+</p>
+<p class="policy__indent">
+    <strong>10. Boshqa shartlar</strong>
+</p>
+<p class="policy__indent">10.1. Saytda joylashtirilgan har qanday sayt, mahsulot, xizmat, tijoriy yoki notijoriy xususiyatdagi har qanday ma’lumot Sayt ma’muriyati tomonidan ularni tavsiya qilish mazmunini anglatmaydi. 
+</p>
+<p class="policy__indent">10.2. Foydalanuvchi va uchinchi shaxslar tomonidan Sayt Kontentidan notijorat maqsadida foydalanishga barcha mualliflik belgilarini yoki mualliflik to‘g‘risidagi boshqa eslatmalarni saqlash, muallif ismini va Kontent mazmunini o‘zgartirmasdan saqlash sharti bilan ruxsat etiladi.
+</p>
+<p class="policy__indent">10.3. Uchinchi shaxslarning Saytlari va Kontentlari:
+</p>
+<p>
 10.3.1. Saytda Internet tarmog‘i (uchinchi shaxslarga tegishli saytlar)dagi boshqa saytlardagi O‘zbekiston Respublikasining qonun hujjatlari bilan qo‘riqlanadigan intellektual faoliyat natijalari hisoblanadigan maqolalar, fotosuratlar, illyustratsiyalar, grafik tasvirlar, ma’lumotlar, ilovalar, dasturlar va boshqa Kontentlarga havolalar mavjud (bo‘lishi mumkin).
+</p>
+<p>
 10.3.2. Uchinchi shaxslarga tegishli ekanligi ko‘rsatilgan Kontentlar Sayt ma’muriyati tomonidan u yoki bu talablar (ishonchlilik, tugallik, xolislik)ga muvofiqligi tekshirilmaydi. Foydalanuvchiga ruxsat etilgan yoki u uchinchi shaxslardan Kontentidan olingan Saytda joylashtirilgan uchinchi shaxslarga tegishli har qanday ma’lumot, shuningdek uchinchi shaxslar tomonidan bildirilgan yoki ularning Kontentida bildirilgan ifodalar, fikrlar yoki tasdiqlar uchun Sayt ma’muriyati javobgarlikni o‘z zimmasiga olmaydi.
+</p>
+<p>
 10.3.3. Saytda joylashtirilgan uchinchi shaxslarga tegishli ilovalar yoki faylni yuklab olish yoxud o‘rnatish bo‘yicha yo‘riqnomalar Sayt ma’muriyatining ushbu ilova, fayl yoki dasturlarni qo‘llab-quvvatlashini anglatmaydi.
+</p>
+<p>
 10.3.4. Saytda joylashtirilgan har qanday sayt, mahsulot, xizmat, tijoriy yoki notijoriy xususiyatdagi har qanday ma’lumot Sayt ma’muriyati tomonidan ularni tavsiya qilish mazmunini anglatmaydi.
+</p>
+<p>
 10.4. Shartnomaning biror qismi bilan O’zbekiston Respublikasining amaldagi qonun hujjatlari o’rtasida ikki xil yondashuv bo’lganda, amaldagi O’zbekiston Respublikasining normativ-hujjatlari ustuvor hisoblanadi. Shartnomada to‘g‘ridan-to‘g‘ri nazarda tutilmagan barcha holatlar bo‘yicha tomonlar O‘zbekiston Respublikasining amaldagi qonun hujjatlari va ish muomalasi odatlariga amal qiladilar.
+</p>
+<p>
 10.5. Foydalanuvchi ushbu Oferta aksepti bilan Shartnomaning barcha shartlariga so‘zsiz rozi ekanligini tasdiqlaydi va uni bajarish majburiyatini oladi.
-11. Sayt ma’muriyatining rekvizitlari “Legal Help” MCHJ
-Manzil: Toshkent shahri, Bektemir tumani,
+</p>
+<p class="text-center">
+    <strong>11. Sayt ma’muriyatining rekvizitlari “Legal Help” MCHJ</strong>
+</p>
+<p> Manzil: Toshkent shahri, Bektemir tumani,</p>
+<p>
 J.Toshkandiy ko’chasi, 40/6-uy
-Telefon: +998 (99) 927-69-93
-Email: @legalhelp.uz
-So‘nggi o‘zgartirilgan vaqti: 12.12.2020-yil
-
-
+</p>
+<p>
+Telefon: <a href="tel:+998999276993"> +998 (99) 927-69-93</a>
+</p>
+<p>
+Email: <a href="mailto:">@legalhelp.uz</a>
+</p>
+<p>So‘nggi o‘zgartirilgan vaqti: 12.12.2020-yil</p>
                     </div>
                 </b-col>
             </b-row>
