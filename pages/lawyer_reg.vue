@@ -17,24 +17,24 @@
               <div class="phone__number">
                 <label for="firstname">{{$t('reg.name')}}</label>
                 <div class="input__tel-wrapper">
-                  <input v-model="form.first_name" type="text" id="firstname" required/>
+                  <input v-model="first_name" type="text" id="firstname" required/>
                 </div>
               </div>
               <div class="phone__number">
                 <label for="lastname">{{$t('reg.lastname')}}</label>
                 <div class="input__tel-wrapper">
-                  <input v-model="form.last_name" type="text" id="lastname" required/>
+                  <input v-model="last_name" type="text" id="lastname" required/>
                 </div>
               </div>
               <div class="phone__number">
                 <label for="email">{{$t('reg.email')}}</label>
                 <div class="input__tel-wrapper">
-                  <input v-model="form.email" type="email" id="email" required/>
+                  <input v-model="email" type="email" id="email" required/>
                 </div>
               </div>
               <div class="select">
                 <label for="region">{{$t('reg.province')}}</label>
-                <select  id="region" v-model="form.region">
+                <select  id="region" v-model="region">
                    <option v-for="(selectid, index) of selectuz" :key="index"
                     :value="selectid.id"
                     class="category__region-option"
@@ -43,7 +43,7 @@
               </div>
               <div class="select">
                 <label for="category">Huquqiy yo'nalishingiz</label>
-                <select  id="category" v-model="form.service">
+                <select  id="category" v-model="service">
                    <option v-for="(service, index) of serviceuz" :key="index"
                     :value="service.id"
                     class="category__region-option"
@@ -53,7 +53,7 @@
               <div class="phone__number">
                 <label for="password">{{$t('reg.password')}}</label>
                 <div class="input__tel-wrapper">
-                  <input v-model="form.password" type="password" id="password" required/>
+                  <input v-model="password" type="password" id="password" required/>
                 </div>
               </div>
               <div class="phone__number">
@@ -66,16 +66,16 @@
                 <label for="phone">{{$t('reg.number')}}</label>
                 <div class="input__tel-wrapper">
                   <span class="tel__code">+998</span>
-                  <input v-model="form.phone_number" type="number" id="phone" required/>
+                  <input v-model="phone_number" type="number" id="phone" required/>
                   <div v-if="form.phone_number > 999999999" class="error__number">
-                    Siz noto'gri raqam tervosiz, iltimos to'g'irlab tering
+                    Noto'g'ri raqam kiritilgan, iltimos to'g'irlab tering
                   </div>
                 </div>
               </div>
               <div class="phone__number addFile">
                 <label for="file">Rasm yuklang...</label>
                 <div class="input__tel-wrapper">
-                  <input type="file" id="file" accept="image/*" required @change="fileUpload"/>
+                  <input type="file" id="file" ref="file" accept="image/*" required @change="fileUpload"/>
                 </div>
               </div>
               <div class="phone__number">
@@ -84,7 +84,7 @@
                   id="comment"
                   name="textearea__for-lawyers"
                   class="textearea__for-lawyers"
-                  v-model="form.description"
+                  v-model="description"
                   :placeholder="$t('forlawyers.bio')"></textarea>
               </div>
               <div class="password" v-if="showPasswordInput">
@@ -113,18 +113,17 @@ export default {
       selectuz: [],
       serviceuz: [],
       confirm_password: "",
-      form: {
-        first_name: "",
-        last_name: "",
-        phone_number: "",
-        password: "",
-        email: "",
-        region: "",
-        service: "",
-        file: "",
-        description: "",
-        token: ""
-      },
+      image: "",
+      first_name: "",
+      last_name: "",
+      phone_number: "",
+      password: "",
+      email: "",
+      region: "",
+      service: "",
+      description: "",
+      token: "",
+      form: "",
       code: ""
     };
   },
@@ -133,20 +132,31 @@ export default {
       this.showPasswordInput = true;
 
       if (this.code === "") {
-        await this.$axios.post('user/code/send/', { phone_number:  this.form.phone_number})
+        await this.$axios.post('user/code/send/', { phone_number:  this.phone_number})
                 .then(res => {
                     console.log("Code: ", res.data.code)
                 })
                 .catch(err => console.log(err))
 
       } else {
-        await this.$axios.post('user/code/check/', {phone_number: this.form.phone_number, code: this.code})
+        await this.$axios.post('user/code/check/', {phone_number: this.phone_number, code: this.code})
                 .then(res => {
                     console.log('SendCode', res);
-                    this.form.token = res.data.token;
+                    // this.form.token = res.data.token;
 
 
                     // User create
+                    this.form = new FormData();
+                    this.form.append("first_name", this.first_name)
+                    this.form.append("last_name", this.last_name)
+                    this.form.append("phone_number", this.phone_number)
+                    this.form.append("password", this.password)
+                    this.form.append("image", this.image)
+                    this.form.append("description", this.description)
+                    this.form.append("email", this.email)
+                    this.form.append("region", this.region)
+                    this.form.append("services", this.service)
+                    this.form.append("token", res.data.token)
 
                     this.$axios.post("lawyer/create/", this.form)
                     .then(res => {
@@ -159,15 +169,15 @@ export default {
                       //   }
                       // });
 
-                      this.form = {
-                          first_name: "",
-                          last_name: "",
-                          phone_number: "",
-                          password: "",
-                          email: "",
-                          region: "",
-                          service: "",
-                        };
+                      // this.form = {
+                      //     first_name: "",
+                      //     last_name: "",
+                      //     phone_number: "",
+                      //     password: "",
+                      //     email: "",
+                      //     region: "",
+                      //     service: "",
+                      //   };
 
                         // this.$router.push(this.localePath('/lawyer_wait'));
 
@@ -194,7 +204,7 @@ export default {
     fileUpload(event) {
       let e = event.target.files[0];
       if (e.type === "image/jpeg") {
-        this.form.file = e;
+        this.image = this.$refs.file.files[0];
       } else {
         console.log("wrong type");
       }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container class="lawyer-question">
+    <b-container v-if="loader" class="lawyer-question">
       <div class="lawyer-ques">
         <div class="lawyer-ques__title">{{questionLawyerItem.title}}</div>
         <div class="lawyer-ques__desc">{{questionLawyerItem.text}}</div>
@@ -112,9 +112,13 @@
         </b-alert>
       </div>
     </b-container>
+    <div v-else>
+      <loading />
+    </div>    
   </div>
 </template>
 <script>
+import Loading from '../../components/Loading.vue';
 export default {
   data() {
     return {
@@ -131,14 +135,15 @@ export default {
       },
       openEditActive: false,
       lawyerAnswerList: false,
-      costFormActive: false
-
+      costFormActive: false,
+      loader: false,
     }
   },
   methods: {
     async getQuestionLawyer() {
       await this.$axios.get(`question/lawyer/${this.$route.params.id}/`)
         .then((res) => {
+          this.loader = true;
           this.questionLawyerItem = res.data;
           console.log('getQuestionLawyer', res)
         })

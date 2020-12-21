@@ -4,8 +4,8 @@
       <div class="customer-priceDocPrice__wrap" v-for="item in customerDocPriceDone" :key="item.id">
         <div v-if="item.status == 'DocumentCompleted' || item.status == 'PaymentDone'">
           <div class="customer-priceDocPrice__item">
-            <div class="customer-priceDocPrice__title"><b>Hujjat nome:</b> {{item.title}}</div>
-            <div class="customer-priceDocPrice__text"><b>Hujjat matni </b> {{item.text}}</div>
+            <div class="customer-priceDocPrice__title"><b>Hujjat nomi:</b> {{item.title}}</div>
+            <div class="customer-priceDocPrice__text"><b>Hujjat matni:</b> {{item.text}}</div>
             <div class="customer-priceDocPrice__doc">
               <a :href="$store.state.mediaURL + item.doc_file" target="_blank">Hujjatni yuklab olish</a>
             </div>

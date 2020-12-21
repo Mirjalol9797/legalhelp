@@ -508,6 +508,7 @@
 <script>
 import { mapGetters } from "vuex"
 import { mapState } from "vuex"
+import Loading from '../components/Loading.vue'
 export default {
   layout:"Footer-main",
   data() {
@@ -551,9 +552,13 @@ export default {
           }
         }
       },
-      mainQuestions: []
+      mainQuestions: [],
+      loader: false,
     };
   },
+  components: {
+    Loading
+  }, 
   computed: {
     ...mapGetters({
       news: "news",
@@ -568,6 +573,7 @@ export default {
     async getMainQuestion() {
       await this.$axios.get('services/')
         .then((res) => {
+          this.loader = true;
           this.mainQuestions = res.data.results;
           // console.log('getMainQuestion', res)
         })

@@ -142,13 +142,13 @@
                         >
                           <b-row>
                             <b-col md="12">
-                              <p>{{ $t("profile.img") }}</p>
+                              <div>Rasmingizni yuklang</div>
                               <label for="image">
-                                <img
+                                <!-- <img
                                   src="../assets/images/avatar.png"
                                   alt
                                   class="avatar__image"
-                                />
+                                /> -->
                                 <input
                                   type="file"
                                   placeholder="Faylni tanlash"
@@ -159,9 +159,7 @@
                               </label>
                             </b-col>
                             <b-col lg="6">
-                              <label for="user__profile-name">{{
-                                $t("profile.name")
-                              }}</label>
+                              <label for="user__profile-name">{{$t("profile.name")}}</label>
                               <input
                                 type="text"
                                 id="user__profile-name"
@@ -169,9 +167,7 @@
                               />
                             </b-col>
                             <b-col lg="6">
-                              <label for="user__profile-surname">{{
-                                $t("profile.surname")
-                              }}</label>
+                              <label for="user__profile-surname">{{$t("profile.surname")}}</label>
                               <input
                                 type="text"
                                 id="user__profile-surname"
@@ -179,9 +175,7 @@
                               />
                             </b-col>
                             <b-col lg="6">
-                              <label for="user__profile-lang">{{
-                                $t("profile.lang")
-                              }}</label>
+                              <label for="user__profile-lang">{{$t("profile.lang")}}</label>
                               <select name id="select__user-lang">
                                 <option value="1">O'zbek</option>
                                 <option value="2">Rus</option>
@@ -202,22 +196,17 @@
                                 id="user__profile-city"
                                 v-model="regionSelect"
                               >
-                                <option value="" disabled selected>
-                                <!-- {{user.region.title_uz}} -->
-                                </option>
                                 <option
                                   v-for="(index, region) of selectuz"
                                   :key="region.id"
                                   :value="index.id"
                                   >
-                                  <!-- {{ index.title_uz }} -->
+                                  {{ index.title_uz }}
                                   </option>
                               </select>
                             </b-col>
                             <b-col lg="6">
-                              <label for="user__profile-number">{{
-                                $t("profile.phone")
-                              }}</label>
+                              <label for="user__profile-number">{{$t("profile.phone")}}</label>
                               <input
                                 type="text"
                                 id="user__profile-number"
@@ -226,12 +215,13 @@
                               />
                             </b-col>
                             <b-col lg="12">
-                              <b-button type="submit"
-                                ><font-awesome-icon
+                              <b-button type="submit">
+                              <font-awesome-icon
                                   :icon="['fas', 'save']"
                                   class="user__profile-submit-icon"
-                                />{{ $t("profile.save") }}</b-button
-                              >
+                                />
+                              {{ $t("profile.save") }}
+                              </b-button>
                               <b-button type="button" @click="onCancel()"
                                 ><font-awesome-icon
                                   :icon="['fas', 'times']"
@@ -385,7 +375,7 @@ export default {
       await this.$axios.get("region/?language=uz").then(res => {
         this.selectuz = res.data;
         this.selected = res.data;
-        // console.log(res);
+        // console.log('region', res);
       });
     },
     async getRegionru() {

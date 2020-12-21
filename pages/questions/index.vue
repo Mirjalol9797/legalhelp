@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="questions__page-wrapper">
-      <div v-if="loader" class="questions__page-wrapper-inner">
+    <div class="questions__page-wrapper" v-if="loader">
+      <div  class="questions__page-wrapper-inner">
         <div class="container">
           <h1 class="questions__page-header">{{ $t("question.title") }}</h1>
           <form class="questions__search">
@@ -109,10 +109,10 @@
           ></b-pagination>
         </div>
       </div>
-      <div v-else>
-        <loading />
-      </div>
     </div>
+    <div v-else>
+      <loading />
+    </div>    
     <!-- /.questions__wrapper -->
   </div>
 </template>
