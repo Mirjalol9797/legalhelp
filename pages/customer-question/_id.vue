@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container class="customer-ques-page">
+    <b-container v-if="loader" class="customer-ques-page">
       <b-row>
         <b-col cols="12" class="customer-ques">
           <div class="customer-ques__item">
@@ -38,20 +38,26 @@
         </b-col>
       </b-row>
     </b-container> 
+    <div v-else>
+      <loading />
+    </div>     
   </div>
 </template>
 <script>
+import Loading from '../../components/Loading.vue';
 export default {
   data() {
     return {
       questionCustomer: [],
-      answer: []
+      answer: [],
+      loader: false,
     }
   },
   methods: {
     async getQuestionCustomer() {
       await this.$axios.get(`question/customer/${this.$route.params.id}/`)
         .then((res) => {
+          this.loader = true;
           this.questionCustomer = res.data;
           console.log('getQuestionCustomer', res)
         })
@@ -59,6 +65,7 @@ export default {
     async getQuestionAnswer() {
       await this.$axios.get(`question/answer/?question_id=${this.$route.params.id}`)
         .then((res) => {
+          this.loader = true;
           this.answer = res.data;
           console.log('getQuestionAnswer', res)
         })

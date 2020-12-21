@@ -10,7 +10,7 @@
             <b>Hujjat haqida qisqacha malumot:</b> {{item.text}}
           </div>
           <div class="customer-doc__link">
-            <a :href="item.doc_file" target="_blank">hujjatni yuklab olish</a> 
+            <a :href="$store.state.mediaURL + item.doc_file" target="_blank">hujjatni yuklab olish</a> 
           </div>
           <div class="customer-doc__price" v-if="item.price > 0 || item.status == 'PriceAdded'">
             <font-awesome-icon :icon="['fas', 'money-bill-alt']" class="customer-doc__icon" />

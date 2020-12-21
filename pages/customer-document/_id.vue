@@ -19,7 +19,7 @@
           <div class="customer-docAns__doc">
             <a :href="$store.state.mediaURL + item.doc_file" target="_blank">Hujjat yaklab olish</a>
           </div>
-          <div class="customer-docAns__lawyer">Yurist: {{item.document.lawyer}}</div>
+          <div class="customer-docAns__lawyer">Yurist: <span>{{item.document.lawyer}}</span></div>
           <div class="customer-docAns__date">{{item.date}}</div>
         </div>
       </div>

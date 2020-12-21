@@ -7,7 +7,7 @@
             <div class="customer-priceDocPrice__title"><b>Hujjat nome:</b> {{item.title}}</div>
             <div class="customer-priceDocPrice__text"><b>Hujjat matni </b> {{item.text}}</div>
             <div class="customer-priceDocPrice__doc">
-              <a :href="item.doc_file">Hujjatni yuklab olish</a>
+              <a :href="$store.state.mediaURL + item.doc_file" target="_blank">Hujjatni yuklab olish</a>
             </div>
             <div class="customer-priceDocPrice__price"><b>Hujjat narxi:</b> {{item.price}}</div>
             <div class="customer-priceDocPrice__link">

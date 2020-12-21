@@ -3,10 +3,10 @@
     <div class="customer-priceDone">
       <div class="customer-priceDone__wrap" v-for="(item, index) in customerQuesPriceDone" :key="index.id">
         <div class="customer-priceDone__item" v-if="item.status == 'PaymentDone' || item.status == 'QuestionCompleted'">
-          <div class="customer-priceDone__title">{{item.title}}</div>
-          <div class="customer-priceDone__text">{{item.text}}</div>
-          <div class="customer-priceDone__date">Javob kelgan sana: {{item.date}}</div>
-          <div class="customer-priceDone__price">Savolga quyilgan narx: {{item.price}}</div>
+          <div class="customer-priceDone__title"><b>Savol nomi:</b> {{item.title}}</div>
+          <div class="customer-priceDone__text"><b>Savol matni:</b> {{item.text}}</div>
+          <div class="customer-priceDone__date"><b>Javob kelgan sana:</b> {{item.date}}</div>
+          <div class="customer-priceDone__price"><b>Savolga quyilgan narx:</b> {{item.price}}</div>
           <nuxt-link :to="'customer-question/' + item.id" class="customer-priceDone__link">
             Javobni ko'rish
           </nuxt-link>

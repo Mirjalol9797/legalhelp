@@ -80,7 +80,7 @@
                   </span>
                 </template>
                 <b-card-text>
-                  <b-row class="user__favorite">
+                  <b-row class="user__favorite" v-if="loader">
                     <b-col md="6" class="user__favorite-item" v-for="item of lawyerFavorite.fav_lawyers" :key="item.id">
                       <div class="user__favorite-img">
                         <img :src="$store.state.mediaURL+item.image" :alt="item.first_name">
@@ -88,6 +88,9 @@
                       <div class="user__favorite-name">{{item.first_name}} {{item.last_name}} </div>
                     </b-col>
                   </b-row>
+                  <div v-else>
+                    <loading />
+                  </div>  
                 </b-card-text>
               </b-tab>              
               <b-tab>
@@ -336,6 +339,7 @@ import CustomerDocumentPrice from '../components/Customer-document-price'
 import CustomerPrice from '../components/Customer-price'
 import CustomerQuesPriceDone from '../components/Customer-ques-price-done'
 import CustomerDocPriceDone from '../components/Customer-doc-price-done'
+import Loading from '../components/Loading.vue'
 
 export default {
   data() {
@@ -356,7 +360,8 @@ export default {
         region: ""
       },
       code: '',
-      user: this.$auth.user
+      user: this.$auth.user,
+      loader: false,
     };
   },
   components: {
@@ -365,7 +370,8 @@ export default {
     CustomerDocument,
     CustomerDocumentPrice,
     CustomerQuesPriceDone,
-    CustomerDocPriceDone
+    CustomerDocPriceDone,
+    Loading
   },
   methods: {
     async onCancel() {
@@ -427,6 +433,7 @@ export default {
       await this.$axios.get(`customer/fav-list?language=${this.$i18n.locale}`)
         .then((res) => {
           this.lawyerFavorite = res.data;
+          this.loader = true;
           // console.log("getLawyerFavorite", res)
         })
     },
