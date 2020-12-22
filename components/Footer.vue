@@ -8,8 +8,8 @@
             <div class="footer__item">
               <div class="footer__logo">
                 <nuxt-link :to="localePath('/')" class="footer__logo-link">
-                  <img src="../assets/images/Ресурс 15.png" alt="logo web page" />
-                  <span class="legaltech">LegalHelp</span>
+                  <img src="../assets/images/legalhelp2.png" alt style="width: 110px" />
+                  <!-- <span class="legaltech">LegalHelp</span> -->
                 </nuxt-link>
               </div>
               <div class="footer__motto">

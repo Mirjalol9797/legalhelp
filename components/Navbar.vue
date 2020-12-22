@@ -5,8 +5,8 @@
         <b-navbar toggleable="xl" class="sticky-nav">
           <b-navbar-brand :to="localePath('/')">
             <div class="navbar__logo">
-              <img src="../assets/images/Ресурс 15.png" alt />
-              <span class="legaltech">LegalHelp</span>
+              <img src="../assets/images/legalhelp2.png" alt style="width: 110px" />
+              <!-- <span class="legaltech">LegalHelp</span> -->
             </div>
           </b-navbar-brand>
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>

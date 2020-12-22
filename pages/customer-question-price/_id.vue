@@ -106,19 +106,6 @@ export default {
     }
   },
   methods: {
-    // async payment() {
-    //   this.form.object_id = this.$route.params.id
-    //   await this.$axios.post('payment/clickcardtoken/', this.form) 
-    //     .then((res) => {
-    //       console.log('payment', res)
-    //       this.$axios.post('payment/clickcardtokenverify/', {token: res.data.card_token, code: this.code})
-    //       .then(
-    //         console.log('clickcardtokenverify', res)
-    //       )
-    //       .catch()
-    //     })
-    // }
-
     async payment() {
       this.form.object_id = this.$route.params.id;
       // this.isActive = true;

@@ -107,11 +107,11 @@
                             <b-col md="12">
                               <p>{{ $t("profile.img") }}</p>
                               <label for="image">
-                                <img
+                                <!-- <img
                                   src="../assets/images/avatar.png"
                                   alt
                                   class="avatar__image"
-                                />
+                                /> -->
                                 <input
                                   type="file"
                                   placeholder="Faylni tanlash"
