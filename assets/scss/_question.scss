@@ -151,6 +151,9 @@
   width: 100%;
   margin-bottom: 30px;
   display: flex;
+  input[type="search"] {
+    width: 100%;
+  }
   input {
     font-family: $Poppins;
     font-weight: 500;

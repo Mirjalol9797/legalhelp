@@ -5,13 +5,13 @@
         <div class="container">
           <h1 class="questions__page-header">{{ $t("question.title") }}</h1>
           <form class="questions__search">
-            <input type="search" :placeholder="$t('question.placeholder')" />
-            <input type="submit" :value="$t('question.btn')" />
+            <input type="search" v-model='search' :placeholder="$t('question.placeholder')" />
+            <!-- <input type="submit" :value="$t('question.btn')" /> -->
           </form>
           <div  class="questions__wrapper">
             <div
               class="question__item"
-              v-for="(question, index) of questions"
+              v-for="(question, index) of filteredBlogs"
               :key="index"
             >
               <div class="question__meta d-none d-md-block">
@@ -66,8 +66,9 @@
                 <nuxt-link
                   :to="localePath(`/questions/${question.id}`)"
                   class="question__item-title"
-                  >{{ question.title }}</nuxt-link
                 >
+                  {{ question.title}}
+                </nuxt-link>
                 <div
                   class="question__item-text"
                   v-html="question.question"
@@ -130,6 +131,7 @@ export default {
       page: 1,
       currentPage: 1,
       loader: false,
+      search: ''
     };
   },
   watch: {
@@ -140,7 +142,16 @@ export default {
     }
   },
 
-  computed: {},
+  computed: {
+    filteredBlogs() {
+      return this.questions.filter((question) => {
+        return question.title.toUpperCase().toLowerCase().match(this.search) 
+      });
+    },
+    upperCase(v) {
+      return v.toUpperCase()
+    }
+  },
   methods: {
     async getQuestions() {
       await this.$axios
