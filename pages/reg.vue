@@ -77,10 +77,7 @@
                     type="password"
                     id="password"
                     required
-                    @blur="validate"
                   />
-                  <small v-if="showError" style="color: red">Passwords don't match!</small>
-                  <!-- <div v-if="form.password !== confirm_password">123123123</div> -->
                 </div>
               </div>
               <div class="phone__number">
@@ -152,7 +149,12 @@ export default {
                   .then(res => {
                       console.log("Code: ", res.data.code)
                   })
-                  .catch(err => console.log(err))
+                  // .catch(err => console.log(err))
+                  .catch((err) => {
+                    console.log('non_field_errors', err.non_field_errors)
+                    console.log('non_field_errors', err.response)
+                    console.log('non_field_errors', err)
+                  })
 
         } else {
           await this.$axios.post('user/code/check/', {phone_number: this.form.phone_number, code: this.code})
@@ -196,14 +198,7 @@ export default {
                   .catch(err => console.log(err))
         }
     },
-    validate() {
-      if(this.form.password.value === this.confirm_password.value) {
-        this.showError = true
-      }
-      else {
-        this.showError = false
-      }
-    },
+
     async getRegionuz() {
       await this.$axios.get("region/?language=uz").then(res => {
         this.selectuz = res.data;

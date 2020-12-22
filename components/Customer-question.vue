@@ -25,9 +25,11 @@
                   Javoblar <span class="counter">1</span>
                 </div> -->
                 <div class="price" v-if="item.price > 0 || item.status == 'PriceAdded'">
-                  <font-awesome-icon :icon="['fas', 'money-bill-alt']" />
-                  <b>Savol qo'yilgan narx:</b> {{item.price}} <br>
-                  pull to'lash uchun iltimos <b>"Bildirishnomalarim"</b> ga o'ting
+                  <div class="mb-4">
+                    <font-awesome-icon :icon="['fas', 'money-bill-alt']" />
+                    <b>Savol qo'yilgan narx:</b> {{item.price}}
+                  </div>
+                  <nuxt-link :to="'customer-question-price/' + item.id" class="user__priceQuestion-link">Savolga pull to'lash</nuxt-link>
                 </div>
                 <div v-if="item.price == null"><b>Savolga naxr qo'yilmagan. Iltimos yarist savolga narx qo'yishini kuting</b></div>
                 <div v-if="item.status == 'PaymentDone'">Savolga pul to'langan. Savol narxi {{item.price}}</div>

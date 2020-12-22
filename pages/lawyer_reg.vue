@@ -70,6 +70,7 @@
                   <div v-if="form.phone_number > 999999999" class="error__number">
                     Noto'g'ri raqam kiritilgan, iltimos to'g'irlab tering
                   </div>
+                  
                 </div>
               </div>
               <div class="phone__number addFile">
@@ -87,6 +88,7 @@
                   v-model="description"
                   :placeholder="$t('forlawyers.bio')"></textarea>
               </div>
+              <!-- <span v-if="error">{{error}}</span> -->
               <div class="password" v-if="showPasswordInput">
                 <label for="password__id">
                  {{$t('reg.code')}}
@@ -124,7 +126,7 @@ export default {
       description: "",
       token: "",
       form: "",
-      code: ""
+      code: "",
     };
   },
   methods: {
@@ -134,16 +136,19 @@ export default {
       if (this.code === "") {
         await this.$axios.post('user/code/send/', { phone_number:  this.phone_number})
                 .then(res => {
-                    console.log("Code: ", res.data.code)
+                  // this.loader = false
+                  // 
+                  console.log('code send', res)
+                    
                 })
+                
                 .catch(err => console.log(err))
-
       } else {
         await this.$axios.post('user/code/check/', {phone_number: this.phone_number, code: this.code})
                 .then(res => {
                     console.log('SendCode', res);
+                    
                     // this.form.token = res.data.token;
-
 
                     // User create
                     this.form = new FormData();
@@ -161,13 +166,6 @@ export default {
                     this.$axios.post("lawyer/create/", this.form)
                     .then(res => {
                       console.log('lawyer/create', res);
-
-                      // this.$auth.loginWith("local2", {
-                      //   data: {
-                      //     phone_number: this.form.phone_number,
-                      //     password: this.form.password
-                      //   }
-                      // });
 
                       // this.form = {
                       //     first_name: "",

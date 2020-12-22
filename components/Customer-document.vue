@@ -13,9 +13,12 @@
             <a :href="$store.state.mediaURL + item.doc_file" target="_blank">hujjatni yuklab olish</a> 
           </div>
           <div class="customer-doc__price" v-if="item.price > 0 || item.status == 'PriceAdded'">
-            <font-awesome-icon :icon="['fas', 'money-bill-alt']" class="customer-doc__icon" />
-            <b>Savol qo'yilgan narx:</b>  {{item.price}} <br>
-            <b><span>pull to'lash uchun iltimos "Bildirishnomalar" ga o'ting</span></b>
+            <div>
+              <font-awesome-icon :icon="['fas', 'money-bill-alt']" class="customer-doc__icon" />
+              <b>Hujjatga qo'yilgan narx:</b>  {{item.price}} <br>
+            </div>
+            <!-- <b><span>pull to'lash uchun iltimos "Bildirishnomalar" ga o'ting</span></b> -->
+            <nuxt-link :to="'customer-document-price/' + item.id" class="user__priceDocument-pay">Hujjatga pull to'lash</nuxt-link>
           </div>          
           <div v-if="item.price == null">Savolga naxr qo'yilmagan. Iltimos yarist savolga narx qo'yishini kuting</div>
         </div>
