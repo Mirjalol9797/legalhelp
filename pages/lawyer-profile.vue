@@ -337,7 +337,7 @@ export default {
   mounted() {
     this.getRegionuz();
     this.getRegionru();
-    // console.log(this.$auth.user);
+    console.log(this.$auth.user);
     this.getQuestionLawyer();
     this.getDocumentLawyer();
     this.getQuestionLawyerPriceAdded();

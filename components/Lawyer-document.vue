@@ -17,8 +17,8 @@
             <nuxt-link :to="'lawyer-document/' + item.id" class="lawyer__documents-btn">Hujjatga naxr belgilash</nuxt-link>
           </div>
         </div>
-        <div v-if="documentLawyer.length == 0">Sizda narx belgilamagan hujjatlariz yo'q</div>
       </div>
+      <div v-if="documentLawyer.length == 0">Sizda narx belgilamagan hujjatlariz yo'q</div>
     </div>
   </div>
 </template>

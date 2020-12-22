@@ -24,8 +24,9 @@
           <nuxt-link :to="'lawyer-answer/' + item.id" class="user__profile-question-add">Narx belgilash</nuxt-link>
         </div>
       </div>
-      <div v-if="questionLawyer.length == 0 ">Sizga savol berilmagan. </div>
-    </div>    
+      
+    </div> 
+    <div v-if="questionLawyer.length == 0 ">Sizga savol berilmagan. </div>   
   </div>
 </template>
 <script>

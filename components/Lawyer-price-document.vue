@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="lawyer__documents">
-      <h2>Puli to'langan hujjatlar</h2>
+      <div class="lawyer__documents-h2">Puli to'langan hujjatlar</div>
       <div class="lawyer__documents__wrap" v-for="item in priceAddedDocumnet" :key="item.id">
         <div v-if="item.status == 'PaymentDone' || item.status == 'DocumentCompleted'">
           <div class="lawyer__documents_item">
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div v-if="priceAddedDocumnet.length == 0">Sizda puli to'langan savollar mavjud emas</div>
+      <div v-if="priceAddedDocumnet.length == 0" class="mt-4">Sizda puli to'langan savollar mavjud emas</div>
     </div>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="mb-5">
     <h2 class="lawyer__questions-h2">Puli to'langan savollar</h2>
-    <div class="lawyer__questions">
-      <div class="lawyer__questions_item" v-for="item in priceAddedQuestion" :key="item.id">
+    <div class="lawyer__questions" v-for="item in priceAddedQuestion" :key="item.id">
+      <div class="lawyer__questions_item" >
         <div class="lawyer__questions-title"><b> Savol nomi:</b> {{item.title}}</div>
         <div class="lawyer__questions-text"><b> Savol haqida:</b> {{item.text}}</div>
         <div class="lawyer__questions-customer"><b> Savol bergan mijoz:</b> {{item.customer}}</div>
@@ -21,7 +21,7 @@
         </nuxt-link>
       </div>
     </div>
-    <div v-if="priceAddedQuestion.length == 0">Sizda puli to'langan savollar mavjud emas</div>
+    <div v-if="priceAddedQuestion.length == 0" class="mt-4">Sizda puli to'langan savollar mavjud emas</div>
   </div>
 </template>
 <script>
