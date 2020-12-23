@@ -199,6 +199,13 @@
     &__error {
       margin-top: 20px;
     }
+    &__link {
+      margin-top: 15px;
+      a {
+        color: #007bff;
+        margin-right: 20px;
+      }
+    }
   }
 }
 .customer-pay-form {
@@ -226,6 +233,10 @@
       &:focus, &:active {
         outline: none;
       }
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      appearance: none;
     }
   }
   button {

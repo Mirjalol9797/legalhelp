@@ -165,6 +165,7 @@ export default {
                       this.$axios
                       .post("customer/create/", this.form)
                       .then(async () => {
+                        console.log('customer/create', res)
                         try {
                           await this.$auth.loginWith("local", {
                             data: {
@@ -186,7 +187,7 @@ export default {
                           });
                         }
                         // if(this.loggedIn){
-                        this.$router.push(this.localePath('/askquestions'))
+                        // this.$router.push(this.localePath('/askquestions'))
                         // }
 
                       })

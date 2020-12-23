@@ -1,26 +1,28 @@
 <template>
   <div>
-    <b-container class="customer-payment">
+    <b-container class="customer-payment" v-if="loader">
       <form @submit.prevent="payment" class="customer-form" :class="{customerNoactive: isActive}">
         <div class="customer-form__item">
           <label for="card">Karta raqam</label>
           <input 
-            type="text" 
+            type="number" 
             id="card"
             placeholder="8600012345678901"
             v-model="form.card_number"
             required
           >
+          <div v-if="form.card_number > 9999999999999999">karta raqam notug'ri terilgan</div>
         </div>
         <div class="customer-form__item">
           <label for="data">Amal qilish muddati</label>
           <input 
-            type="text" 
+            type="number" 
             id="data"
             placeholder="1220"
             v-model="form.expire_date"
             required
           >
+          <div v-if="form.expire_date > 1230">kun notug'ri kiritilgan</div>
         </div>        
         <div class="customer-form__item" style="display: none">
           <label for="">savol tipi</label>
@@ -49,13 +51,14 @@
         <!-- <div v-if="error">plastic raqam noto'g'ri kiritilgan</div> -->
         <b-alert show variant="danger" v-if="error" class="customer-form__error">
           {{error}} <br>
+          Повторите пожалуйста занова
         </b-alert>
       </form>
       
       <form @submit.prevent="payment2" class="customer-pay-form" :class="{customerActive: isActive}">
         <div class="customer-pay-form__item">
           <label for="">sms code</label>
-          <input type="text" v-model="form2.code" required>
+          <input type="number" v-model="form2.code" required>
         </div>
         <div class="customer-pay-form__item" style="display: none">
           <label for="">sms code</label>
@@ -76,18 +79,27 @@
           >
         </div>         
         <button type="submit">To'lash</button>
-        <b-alert show variant="danger" v-if="error" class="customer-form__error">
-          {{error}} <br>
+        <b-alert show variant="danger" v-if="error2" class="customer-form__error">
+          {{error2}} <br>
         </b-alert>
+        <div class="customer-form__link">
+          <nuxt-link :to="localePath('/customer-profile')">Saxifamga qaytish</nuxt-link>
+          <nuxt-link :to="localePath('/')">Asosiy saxifaga o'tish</nuxt-link>
+        </div>
       </form>
     </b-container>
+    <div v-else>
+      <loading /> 
+    </div>        
   </div>
 </template>
 <script>
+import Loading from '../../components/Loading.vue';
 export default {
   data() {
     return {
       // error: false,
+      loader: true,
       form: {
         card_number: '',
         expire_date: '',
@@ -101,7 +113,8 @@ export default {
         object_id: ''
       },
       isActive: false,
-      error: ''
+      error: '',
+      error2: ''
         
     }
   },
@@ -109,8 +122,10 @@ export default {
     async payment() {
       this.form.object_id = this.$route.params.id;
       // this.isActive = true;
+      this.loader = false;
       await this.$axios.post('payment/clickcardtoken/', this.form)
       .then((res) => {
+        this.loader = true;
         console.log('payment', res)
         this.form2.card_token = res.data.response.card_token;
         console.log('dasdsad', this.form2)
@@ -121,15 +136,22 @@ export default {
         }
       })
       .catch((err) => {
-          // this.error = err.response.data.response.error_note
+          this.error = err.response.data.response.error_note;
+          this.loader = true;
           // console.log('qqweqwe', err.response.data.response.error_note)
+          // 8600140429988836
+          // 0125
+          this.form.card_number = '';
+          this.form.expire_date = '';
       });
     },
     async payment2() {
       this.form2.object_id = this.$route.params.id;
       this.isActive = true;
+      this.loader = false;
       await this.$axios.post('payment/clickcardtokenverify/', this.form2)
       .then(async () => {
+        this.loader = true;
         try {
           this.$toast.success({
             title: `${this.$t("To'lov amalga oshirilda")}`,
@@ -145,7 +167,9 @@ export default {
         }
       })
       .catch((err) => {
-        this.error = err.response.data.response.error_note
+        this.error2 = err.response.data.response.error_note
+        this.loader = true;
+        this.form2.code = ''
       })
     }
 

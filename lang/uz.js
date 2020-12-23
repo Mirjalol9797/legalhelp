@@ -6,7 +6,7 @@ export default {
         for_lawyers: "Yuristlar uchun",
         services: 'Xizmatlar',
         forlawyers: 'Yurislar uchun',
-        askquestions: 'Savol so\'rash ',
+        askquestions: 'Savol yuborish ',
         search: 'Izlash'
     },
     header: {

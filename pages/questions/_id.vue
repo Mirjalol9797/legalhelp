@@ -96,8 +96,8 @@
       <b-container class="answer__margin">
         <div class="answer__wrapper">
           <div class="lawyer__section">
-            <img :src="questions_inner.lawyer_image" class="rounded" :alt="questions_inner.lawyer_name" />
-            <span class="user__name">{{questions_inner.lawyer_name}} {{questions_inner.lawyer_surname}}</span> 
+            <!-- <img :src="questions_inner.lawyer_image" class="rounded" :alt="questions_inner.lawyer_name" /> -->
+            <!-- <span class="user__name">{{questions_inner.lawyer_name}} {{questions_inner.lawyer_surname}}</span>  -->
             <!-- <div class="rating">
               <vue-stars
                 class="vue__star"
