@@ -72,12 +72,13 @@ const store = () => new Vuex.Store({
             })
         },
         async getLawyers({commit}) {
-            await this.$axios.get('lawyer/list-search/')
+            await this.$axios.get(`lawyer/list-search/`)
                 .then((res) => {
                     commit('setLawyers', res.data);
-                    // console.log('getLawyers', res.data)
+                    console.log('getLawyers', res.data)
                 })
         },
+        // `'tanlovlar/?lang=' + ${this.$i18n.locale}`
         async getQuestionCustomer({commit}) {
             await this.$axios.get('question/customer/')
                 .then((res) => {

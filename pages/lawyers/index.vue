@@ -42,16 +42,17 @@
             <div class="lawyer__outer-list">
               <b-row data-aos="fade-up" data-aos-duration="500">
                 <b-col md="6" lg="4" xl="3" class="mb-5" v-for="lawyer in filterCategoryName" :key="lawyer.id" >
-                <nuxt-link :to="localePath('/lawyers/'+lawyer.id)" class="">
-                  <div class="lawyer__card-img">
-                      <img :src="$store.state.mediaURL + lawyer.image" alt="">
-                  </div>
-                </nuxt-link>
+                  <nuxt-link :to="localePath('/lawyers/'+lawyer.id)" class="">
+                    <div class="lawyer__card-img">
+                        <img :src="$store.state.mediaURL + lawyer.image" alt="">
+                    </div>
+                  </nuxt-link>
                   <div class="lawyer__card-info text-center">
                     <nuxt-link :to="localePath('/lawyers/'+lawyer.id)" class="">
                       <div class="lawyer__card-name">{{lawyer.first_name}} {{lawyer.last_name}}</div>
                     </nuxt-link>
-                    <span class="lawyer__card-place">{{ lawyer.region }}</span>
+                    <span class="lawyer__card-place" v-if="$i18n.locale == 'uz'">{{ lawyer.region.title_uz }}</span>
+                    <span class="lawyer__card-place" v-else>{{ lawyer.region.title_ru }}</span>
                     <p class="lawyer__card-category">{{$t('lawyers.category')}} :
                       <span v-for="service of lawyer.services" :key="service.id">
                         {{service}} <br>

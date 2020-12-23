@@ -326,7 +326,8 @@
                       </div>
                       <div class="lawyer__card-info text-center">
                         <div class="lawyer__card-name">{{lawyer.first_name}} {{lawyer.last_name}}</div>
-                        <span class="lawyer__card-place">{{lawyer.region}}</span>
+                        <span class="lawyer__card-place" v-if="$i18n.locale == 'uz'" >{{lawyer.region.title_uz}}</span>
+                        <span class="lawyer__card-place" v-else>{{lawyer.region.title_ru}}</span>
                         <p class="lawyer__card-category">
                           Kategoriya : <span v-for="service of lawyer.services" :key="service.id">
                             {{service}} <br>

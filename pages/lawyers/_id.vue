@@ -43,7 +43,8 @@
             <b-col lg="4" md="12">
               <div class="profile-info">
                 <span class="profile-info-name">{{lawyerItem.first_name}}  {{lawyerItem.last_name}}</span>
-                <span class="profile-info-location">{{lawyerItem.region}}</span>
+                <span class="profile-info-location" v-if="$i18n.locale == 'uz'">{{lawyerItem.region.title_uz}}</span>
+                <span class="profile-info-location" v-else>{{lawyerItem.region.title_ru}}</span>
                 <span class="profile-info-number">+998 {{lawyerItem.user}}</span>
                 <!-- <span class="profile-info-email">{{$auth.user.email}}</span> -->
                 <span class="profile-info-email">email@mail.ur</span>
