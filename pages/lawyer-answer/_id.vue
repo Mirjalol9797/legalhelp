@@ -145,7 +145,7 @@ export default {
         .then((res) => {
           this.loader = true;
           this.questionLawyerItem = res.data;
-          console.log('getQuestionLawyer', res)
+          // console.log('getQuestionLawyer', res)
         })
     },
     async pathPriceQuestionLawyer(id) {
@@ -173,7 +173,7 @@ export default {
       await this.$axios.get(`question/answer/?question_id=${this.$route.params.id}`)
         .then((res) => {
           this.answer = res.data;
-          console.log('getAnswer', res)
+          // console.log('getAnswer', res)
         })
     },
     addFile(e) {
@@ -196,7 +196,7 @@ export default {
       form.append('file', this.file)
       await this.$axios.post(`question/answer/?question_id=${this.$route.params.id}`, this.form)
         .then((res) => {
-          console.log('postAnswer', res);
+          // console.log('postAnswer', res);
           this.form.text = "";
           this.file = "";
           this.answerQuestionActive = true;
@@ -210,7 +210,7 @@ export default {
       form.append('file', this.file)
       await this.$axios.patch(`question/answer/${id}/`, form)
         .then((res) => {
-          console.log('patchAnswer', res);
+          // console.log('patchAnswer', res);
           this.answerQuestionActive1 = true;
           this.form.text = "";
           this.getAnswer();

@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div v-if="priceAddedDocumnet.length == 0" class="mt-4">Sizda puli to'langan savollar mavjud emas</div>
+      <div v-if="priceAddedDocumnet.length == 0" class="mt-4">Sizda puli to'langan hujjatlar mavjud emas</div>
     </div>
   </div>
 </template>

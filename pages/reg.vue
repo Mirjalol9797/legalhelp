@@ -95,6 +95,9 @@
                   </div>
                 </div>
               </div>
+              <b-alert v-if="error" show variant="danger">
+                Bu raqam oldin registratsiyadan o'tgan iltimos yangi raqam kirgizing
+              </b-alert>
               <div class="password" v-if="showPasswordInput">
                 <label for="password__id">
                  {{$t('reg.code')}}
@@ -137,23 +140,24 @@ export default {
         token: ""
       },
       showError: false,
-      code: ""
+      code: "",
+      error: ''
     };
   },
   methods: {
     async onSubmit() {
-        this.showPasswordInput = true;
+        
 
         if (this.code == "") {
           await this.$axios.post('user/code/send/', { phone_number:  this.form.phone_number})
                   .then(res => {
-                      console.log("Code: ", res.data.code)
+                      console.log("Code: ", res.data.code);
+                      this.showPasswordInput = true;
+                      this.error = false;
                   })
                   // .catch(err => console.log(err))
                   .catch((err) => {
-                    console.log('non_field_errors', err.non_field_errors)
-                    console.log('non_field_errors', err.response)
-                    console.log('non_field_errors', err)
+                    this.error = err.response.data.non_field_errors;
                   })
 
         } else {
