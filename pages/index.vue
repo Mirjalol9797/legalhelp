@@ -319,7 +319,7 @@
                     <div class="lawyer__card">
                       <div class="lawyer__card-img">
                         <img
-                          :src="lawyer.image"
+                          :src="$store.state.mediaURL + lawyer.image"
                           alt=""
                         />
                       </div>

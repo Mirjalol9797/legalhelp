@@ -7,7 +7,7 @@
             <b-col lg="4" md="12">
               <div class="lawyer-image-wrapper">
                 <img
-                  :src="lawyerItem.image"
+                  :src="$store.state.mediaURL + lawyerItem.image"
                   height="258"
                   width="258"
                   alt

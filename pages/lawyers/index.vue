@@ -8,6 +8,7 @@
               <b-row>
                 <b-col lg="12" xl="4" class="lawyer__list-search-category">
                 <select v-model="service_id" id="category" @focus="getFilterCategory()">
+                  <option :selected="service_id" disabled>Xizmat turi bo'yicha saralash</option>
                   <option v-for="item in filterCategory" :key="item.id" :value="item.id">
                     {{ item.title_uz }}
                   </option>
@@ -15,6 +16,7 @@
                 </b-col>
                 <b-col lg="12" xl="3" class="lawyer__list-search-region">
                 <select v-model="region_id" id="region-select">
+                  <option :selected="region_id" disabled>Viloyat bo'yicha saralash</option>
                   <option v-for="item in filterRegion" :key="item.id" :value="item.id">
                     {{ item.title_uz }}
                   </option>
@@ -22,6 +24,7 @@
                 </b-col>
                 <b-col lg="12" xl="3" class="lawyer__list-search-rating">
                 <select v-model="rate_id" name="rating" id="rating">
+                  <option :selected="rate_id" disabled>Reyting bo'yicha saralash</option>
                   <option value="0" selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -41,7 +44,7 @@
                 <b-col md="6" lg="4" xl="3" class="mb-5" v-for="lawyer in filterCategoryName" :key="lawyer.id" >
                 <nuxt-link :to="localePath('/lawyers/'+lawyer.id)" class="">
                   <div class="lawyer__card-img">
-                      <img :src="lawyer.image" alt="">
+                      <img :src="$store.state.mediaURL + lawyer.image" alt="">
                   </div>
                 </nuxt-link>
                   <div class="lawyer__card-info text-center">
@@ -98,9 +101,9 @@ export default {
         filterCategory: [],
         filterRegion: [],
         filter: [],
-        service_id: '',
-        region_id: '',
-        rate_id: '',
+        service_id: 'Xizmat turi bo\'yicha saralash',
+        region_id: 'Viloyat bo\'yicha saralash',
+        rate_id: 'Reyting bo\'yicha saralash',
     };
   },
   components: {
@@ -134,6 +137,9 @@ export default {
             .then((res) => {
                 console.log('RES',res);
                 this.filter = res.data;
+                this.service_id = 'Xizmat turi bo\'yicha saralash';
+                this.region_id = 'Viloyat bo\'yicha saralash';
+                this.rate_id = 'Reyting bo\'yicha saralash';
             });
         if (this.filter.length === 0) {
             this.isShow = true;
