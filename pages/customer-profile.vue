@@ -394,6 +394,7 @@ export default {
             title: `${this.$t("toast.success")}`,
             message: `${this.$t("toast.updateProfile")}`
           });
+          this.$auth.fetchUser();
         })
         .catch(err => {
           console.log(err);
