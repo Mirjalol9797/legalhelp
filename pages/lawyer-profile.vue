@@ -27,7 +27,6 @@
               <b-tab active>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <!-- <font-awesome-icon :icon="['fas', 'comment']" /> -->
                   </span>
                   <span class="user__profile-card-text">
                     {{$t("profile.myquestion")}}
@@ -59,26 +58,6 @@
                   <LawyerPriceDocument />
                 </b-card-text>
               </b-tab>
-              <!-- <b-tab>
-                <template v-slot:title>
-                  <span class="user__profile-card-icon">
-                  </span>
-                  <span class="user__profile-card-text">Hujjatlar arxivi </span>
-                </template>
-                <b-card-text>
-                  Hujjatlar arxivi
-                </b-card-text>
-              </b-tab>   -->
-              <!-- <b-tab>
-                <template v-slot:title>
-                  <span class="user__profile-card-icon">
-                  </span>
-                  <span class="user__profile-card-text">Savollar arxivi</span>
-                </template>
-                <b-card-text>
-                  Savollar arxivi
-                </b-card-text>
-              </b-tab>    -->
               <b-tab>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
@@ -105,15 +84,17 @@
                         >
                           <b-row>
                             <b-col md="12">
-                              <p>{{ $t("profile.img") }}</p>
+                              <!-- <p>{{ $t("profile.img") }}</p> -->
                               <label for="image">
+                                
                                 <input
                                   type="file"
                                   placeholder="Faylni tanlash"
                                   id="image"
+                                  ref="file"
                                   class="avatar__input"
-                                  @change="uploadImage"
-                                />
+                                  @change="updateImage"
+                                />    
                               </label>
                             </b-col>
                             <b-col lg="6">
@@ -138,15 +119,15 @@
                                 v-model="lawyer.last_name"
                               />
                             </b-col>
-                            <b-col lg="6">
+                            <!-- <b-col lg="6">
                               <label for="user__profile-lang">{{
                                 $t("profile.lang")
                               }}</label>
-                              <select name id="select__user-lang">
+                              <select name id="select__user-lang" v-model="lawyer.language">
                                 <option value="1">O'zbek</option>
                                 <option value="2">Rus</option>
                               </select>
-                            </b-col>
+                            </b-col> -->
                             <b-col lg="6">
                               <label for="user__profile-email">Email</label>
                               <input
@@ -162,7 +143,7 @@
                               <select
                                 name
                                 id="user__profile-city"
-                                v-model="regionSelect"
+                                v-model="lawyer.region.id"
                               >
                                 <option 
                                   :value="region.id" 
@@ -180,8 +161,7 @@
                               <input
                                 type="text"
                                 id="user__profile-number"
-                                :value="'+998 ' + lawyer.user"
-                                disabled
+                                v-model="lawyer.phone_number"
                               />
                             </b-col>                            
                             <b-col lg="12">
@@ -220,7 +200,6 @@ import LawyerPriceDocument from "../components/Lawyer-price-document"
 export default {
   data() {
     return {
-      regionSelect: "",
       selectuz: [],
       selectru: [],
       // questionLawyer: [],
@@ -231,13 +210,16 @@ export default {
       priceQuestion: '',
       isActiveDocument: false,
       isActiveQuestion: false,
+
       lawyer: {
-        first_name: "",
-        last_name: "",
-        email: "",
-        region: ""
+        first_name: this.$auth.user.first_name,
+        last_name: this.$auth.user.last_name,
+        email: this.$auth.user.email,
+        image: this.$auth.user.image,
+        // language: "",
+        region: this.$auth.user.region && this.$auth.user.region.id,
+        phone_number: this.$auth.user.user
       },
-      lawyer: this.$auth.user,
     };
   },
   components: {
@@ -259,10 +241,13 @@ export default {
         this.selectru = res.data;
       });
     },
-    uploadImage(e) {
-      this.lawyer = new FormData();
-      this.lawyer.append('image', e.target.files[0]);
-      this.lawyer.append('region', this.regionSelect);
+    async updateImage(e) {
+      let image = new FormData();
+      image.append('image', e.target.files[0]);
+      await this.$axios.post('lawyer/custom-image/', image)
+      .then(res => {
+        this.lawyer.image = res.data.image
+      })
     },
     async onSubmitLawyer() {
       await this.$axios
@@ -272,6 +257,7 @@ export default {
               title: `${this.$t("toast.success")}`,
               message: `${this.$t("toast.updateProfile")}`
             });
+            this.$auth.fetchUser();
         })
         .catch(err => {
           console.log(err);
@@ -293,7 +279,7 @@ export default {
       await this.$axios.get('document/lawyer/')
         .then((res) => {
           this.documentLawyer = res.data;
-          console.log('getDocumentLawyer', res)
+          // console.log('getDocumentLawyer', res)
         })
     },
     async getQuestionLawyerPriceAdded() {
@@ -315,7 +301,7 @@ export default {
         price: this.priceDocument
       })
         .then((res) => {
-          console.log('patchPriceDocumentLawyer', res)
+          // console.log('patchPriceDocumentLawyer', res)
           this.isActiveDocument = true
         })
     },
@@ -324,7 +310,7 @@ export default {
         price: this.priceQuestion
       })
         .then((res) => {
-          console.log('pathPriceQuestionLawyer', res)
+          // console.log('pathPriceQuestionLawyer', res)
           this.isActiveQuestion = true
         })
     }
@@ -332,11 +318,12 @@ export default {
   mounted() {
     this.getRegionuz();
     this.getRegionru();
-    console.log(this.$auth.user);
     this.getQuestionLawyer();
     this.getDocumentLawyer();
     this.getQuestionLawyerPriceAdded();
     this.getDocumentLawyerPriceAdded();
+    console.log("USER DATA", this.$auth.user)
+
   }
 };
 </script>
