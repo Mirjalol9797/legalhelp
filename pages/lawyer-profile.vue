@@ -331,7 +331,6 @@ export default {
     this.getDocumentLawyer();
     this.getQuestionLawyerPriceAdded();
     this.getDocumentLawyerPriceAdded();
-    console.log("USER DATA", this.$auth.user)
 
   }
 };
