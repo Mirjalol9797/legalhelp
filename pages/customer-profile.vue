@@ -161,7 +161,7 @@
                               <input
                                 type="text"
                                 id="user__profile-name"
-                                v-model="user.first_name"
+                                v-model="first_name"
                               />
                             </b-col>
                             <b-col lg="6">
@@ -169,7 +169,7 @@
                               <input
                                 type="text"
                                 id="user__profile-surname"
-                                v-model="user.last_name"
+                                v-model="last_name"
                               />
                             </b-col>
                             <b-col lg="6">
@@ -184,7 +184,7 @@
                               <input
                                 type="email"
                                 id="user__profile-email"
-                                v-model="user.email"
+                                v-model="email"
                               />
                             </b-col>
                             <b-col lg="6">
@@ -192,7 +192,7 @@
                               <select
                                 name
                                 id="user__profile-city"
-                                v-model="regionSelect"
+                                v-model="region"
                               >
                                 <option
                                   v-for="(index, region) of selectuz"
@@ -208,7 +208,7 @@
                               <input
                                 type="text"
                                 id="user__profile-number"
-                                :value="'+998 ' + user.user"
+                                :v-model="'+998 ' + $auth.user && $auth.user.user"
                                 disabled
                               />
                             </b-col>
@@ -341,14 +341,13 @@ export default {
       priceAddedDocument: [],
       priceAddedQuestion: [],
       showCode: false,
-      user: {
-        first_name: "",
-        last_name: "",
-        email: "",
-        region: ""
-      },
+      imageVar: "", 
+      first_name: this.$auth.user.first_name,
+      last_name: this.$auth.user.last_name,
+      email: this.$auth.user.email,
+      region: this.$auth.user.region && this.$auth.user.region.id,
+      image: this.$auth.user.image,
       code: '',
-      user: this.$auth.user,
       loader: false,
     };
   },
@@ -382,19 +381,30 @@ export default {
       });
     },
     uploadImage(e) {
-      this.user = new FormData();
-      this.user.append('image', e.target.files[0]);
-      this.user.append('region', this.regionSelect);
+      this.imageVar = e.target.files[0]
+
+      console.log("Image", this.imageVar)
+    
     },
     async onSubmit() {
+      let form = new FormData();
+      form.append("first_name", this.first_name)
+      form.append("last_name", this.last_name)
+      form.append("email", this.email)
+      form.append("region", this.region)
+      form.append("image", this.imageVar)
+
+
       await this.$axios
-        .patch("customer/profile/", this.user)
+        .patch("customer/profile/", form )
         .then(res => {
+          console.log("Cus res", res)
+          this.$auth.fetchUser();
           this.$toast.success({
             title: `${this.$t("toast.success")}`,
             message: `${this.$t("toast.updateProfile")}`
           });
-          this.$auth.fetchUser();
+          
         })
         .catch(err => {
           console.log(err);
