@@ -18,7 +18,7 @@
           </div>
         </div>
       </div>
-      <div v-if="documentLawyer.length == 0">Sizda narx belgilamagan hujjatlariz yo'q</div>
+      <div v-if="documentLawyer.length == 0">Hujjat buyurtmalar yo'q</div>
     </div>
   </div>
 </template>

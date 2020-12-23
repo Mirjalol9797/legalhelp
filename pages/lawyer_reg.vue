@@ -209,13 +209,14 @@ export default {
     fileUpload(event) {
       let e = event.target.files[0];
       var image = new FormData();
-      this.value = this.max;
+      this.value = 80;
       this.progressActive = true;
       image.append("image", this.$refs.file.files[0])
 
       this.$axios.post("lawyer/custom-image/", image)
       .then(res => {
-        this.form.image = res.data.image
+        this.form.image = res.data.image;
+        this.value = this.max;
         this.progressActive = false;
         // console.log("Image URl", res)
       })
