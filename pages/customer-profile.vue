@@ -64,10 +64,10 @@
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
-                  <a href="tel:+998946863999" class="user__profile-card-phone">
+                  <a href="tel:+998999276993" class="user__profile-card-phone">
                     Biz bilan hoziroq bog'lanishingiz mumkin.
                     <br />Tel:
-                    <span>+998946863999</span>
+                    <span>+99899 927 69 93</span>
                   </a>
                 </b-card-text>
               </b-tab>
