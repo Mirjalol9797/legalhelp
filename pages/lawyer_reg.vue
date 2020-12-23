@@ -81,7 +81,9 @@
                 <div class="input__tel-wrapper">
                   <input type="file" id="file" ref="file" accept="image/*" required @change="fileUpload"/>
                 </div>
+                
               </div>
+              <b-progress :value="value" :max="max" show-progress animated :class="{progressBlock: progressActive}"></b-progress>
               <div class="phone__number">
                 <label for="comment">Biografiya kiriting</label>
                 <textarea
@@ -119,6 +121,9 @@
 export default {
   data() {
     return {
+      value: 0,
+      max: 100,
+      progressActive: false,
       loader: true,
       showPasswordInput: false,
       selectuz: [],
@@ -203,18 +208,20 @@ export default {
     },
     fileUpload(event) {
       let e = event.target.files[0];
-       var image = new FormData();
-                    
-        image.append("image", this.$refs.file.files[0])
+      var image = new FormData();
+      this.value = this.max;
+      this.progressActive = true;
+      image.append("image", this.$refs.file.files[0])
 
-        this.$axios.post("lawyer/custom-image/", image)
-        .then(res => {
-          this.form.image = res.data.image
-          // console.log("Image URl", res)
-        })
-        .catch(err => {
-          console.log(err)
-        })
+      this.$axios.post("lawyer/custom-image/", image)
+      .then(res => {
+        this.form.image = res.data.image
+        this.progressActive = false;
+        // console.log("Image URl", res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
     }
   },
   mounted() {
