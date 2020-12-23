@@ -10,13 +10,14 @@
             <p class="header__motto">
               {{$t('header.subtitle')}}
             </p>
-            <nuxt-link v-if="loggedIn && $auth.user.is_customer" :to="localePath('/reg')" class="online__service-link"
-              >{{ $t("header.online") }}
-              <img src="../assets/images/index/Arrow.svg" alt="arrow"
-            /></nuxt-link>
+            <nuxt-link v-if="loggedIn && $auth.user.is_customer" :to="localePath('/reg')" class="online__service-link">
+              <!-- {{ $t("header.online") }} -->
+              Savol yuborish
+              <img src="../assets/images/index/Arrow.svg" alt="arrow"/>
+            </nuxt-link>
 
-            <nuxt-link v-else :to="localePath('/reg')" class="online__service-link"
-              >{{ $t("header.online") }}
+            <nuxt-link v-else :to="localePath('/reg')" class="online__service-link">
+            <!-- {{ $t("header.online") }} --> Savol yuborish
               <img src="../assets/images/index/Arrow.svg" alt="arrow"
             /></nuxt-link>
           </div>

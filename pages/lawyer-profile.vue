@@ -85,6 +85,7 @@
                           <b-row>
                             <b-col md="12">
                               <!-- <p>{{ $t("profile.img") }}</p> -->
+                              <div>Rasm yuklash</div>
                               <label for="image">
                                 
                                 <input
@@ -96,6 +97,7 @@
                                   @change="updateImage"
                                 />    
                               </label>
+                              <b-progress :value="value" :max="max" show-progress animated :class="{progressBlock: progressActive}"></b-progress>
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-name">
@@ -200,6 +202,9 @@ import LawyerPriceDocument from "../components/Lawyer-price-document"
 export default {
   data() {
     return {
+      value: 0,
+      max: 100,
+      progressActive: false,
       selectuz: [],
       selectru: [],
       // questionLawyer: [],
@@ -244,9 +249,13 @@ export default {
     async updateImage(e) {
       let image = new FormData();
       image.append('image', e.target.files[0]);
+      this.value = 80;
+      this.progressActive = true;
       await this.$axios.post('lawyer/custom-image/', image)
       .then(res => {
-        this.lawyer.image = res.data.image
+        this.lawyer.image = res.data.image;
+        this.value = this.max;
+        this.progressActive = false;
       })
     },
     async onSubmitLawyer() {

@@ -28,6 +28,7 @@
                 <label for="password">{{ $t("profile.password") }}</label>
                 <input type="password" id="password" v-model="form.password" />
               </div>
+              <div v-if="error">{{error}}</div>
               <div class="registration-submit-wrap">
                 <b-button class="registration-submit" type="submit">{{$t("givequestion.btn")}}</b-button> 
                 <nuxt-link :to="localePath('/password/recovery')" class="registration__forgot-password">Parolni unutdingizmi?</nuxt-link>
@@ -49,6 +50,7 @@ export default {
         phone_number: "",
         password: "",
       },
+      error: ''
     };
   },
   computed: {},
@@ -65,11 +67,16 @@ export default {
         });
       }
       catch (err) {
-        console.log("Ошибка", err)
-        this.$toast.error({
-          title: `${this.$t("toast.loginError")}`,
-          message: `${this.$t("toast.loginErrorMessage")}`
-        });
+        console.log("Ошибка", err);
+        console.log('error', err.response);
+        if(this.error = err.response.data.detail) {
+          this.$router.push(this.localePath('/lawyer_wait'))
+        } else {
+          this.$toast.error({
+            title: `${this.$t("toast.loginError")}`,
+            message: `${this.$t("toast.loginErrorMessage")}`
+          });
+        }
       }
     },
     created() {

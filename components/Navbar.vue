@@ -101,7 +101,7 @@
                 <template v-slot:button-content>
                   <div class="round">
                     <div class="user__link">
-                      <img src="../assets/images/avatar.png" alt="" />
+                      <img :src="$store.state.mediaURL + $auth.user.image" alt="" />
                     </div>
                   </div>
                 </template> 
