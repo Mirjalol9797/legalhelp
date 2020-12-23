@@ -152,6 +152,10 @@
         align-items: center;
         justify-content: center;
 
+        &:hover {
+            background: inherit;
+        }
+
         &::after{
             content:"";
             padding: 0;
