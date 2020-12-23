@@ -16,8 +16,8 @@
           </div>  
         </div>
       </div>
-      <div v-if="customerDocPriceDone.length == 0">
-        Sizda javobi kelgan hujjatlar yo'q
+      <div v-if="customerDocPriceDone.length == 0" class="customer-priceDocPrice__link">
+        Sizda javobi kelgan hujjatlar yo'q <br>
         <nuxt-link :to="localePath('/order-documents')">Hujjat buyurtma qilish</nuxt-link>
       </div>      
     </div>

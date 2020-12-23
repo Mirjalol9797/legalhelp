@@ -64,10 +64,10 @@
                   <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
-                  <a href="tel:+998946863999" class="user__profile-card-phone">
+                  <a href="tel:+998999276993" class="user__profile-card-phone">
                     Biz bilan hoziroq bog'lanishingiz mumkin.
                     <br />Tel:
-                    <span>+998946863999</span>
+                    <span>+99899 927 69 93</span>
                   </a>
                 </b-card-text>
               </b-tab>
@@ -80,17 +80,15 @@
                   </span>
                 </template>
                 <b-card-text>
-                  <b-row class="user__favorite" v-if="loader">
+                  <b-row class="user__favorite">
                     <b-col md="6" class="user__favorite-item" v-for="item of lawyerFavorite.fav_lawyers" :key="item.id">
                       <div class="user__favorite-img">
                         <img :src="$store.state.mediaURL+item.image" :alt="item.first_name">
                       </div>
                       <div class="user__favorite-name">{{item.first_name}} {{item.last_name}} </div>
                     </b-col>
+                    <div v-if="lawyerFavorite.fav_lawyers == 0" class="user__favorite-none">Sizda tanlangan yuristlar yo'q</div>
                   </b-row>
-                  <div v-else>
-                    <loading />
-                  </div>  
                 </b-card-text>
               </b-tab>              
               <b-tab>

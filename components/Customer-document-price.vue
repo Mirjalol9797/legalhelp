@@ -13,7 +13,7 @@
           puli to'langan savollar va ularga keladigon javoblar <b>"Javobi kelgan hujjatlarim"</b> ro'yxatidan qidiring
         </div>
       </div>
-      <div v-if="priceAddedDocument.length == 0">Sizda puli to'lanishi kerak bo'lgan hujjatlar yo'q</div>
+      <div v-if="priceAddedDocument.length == 0"><b>Sizda puli to'lanishi kerak bo'lgan hujjatlar yo'q</b></div>
     </div>          
   </div>
 </template>

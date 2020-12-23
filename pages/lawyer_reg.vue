@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="registration__wrapper">
+    <div class="registration__wrapper" v-if="loader">
       <div class="step__two-registration-inner">
         <b-container>
           <div class="step__two-registration">
@@ -56,6 +56,9 @@
                   <input v-model="form.password" type="password" id="password" required/>
                 </div>
               </div>
+              <b-alert v-if="error2" show variant="danger">
+                parol 5 ta raqamdan ko'p bo'lishi kerak
+              </b-alert>              
               <div class="phone__number">
                 <label for="res_password">{{$t('reg.topassword')}}</label>
                 <div class="input__tel-wrapper">
@@ -78,7 +81,9 @@
                 <div class="input__tel-wrapper">
                   <input type="file" id="file" ref="file" accept="image/*" required @change="fileUpload"/>
                 </div>
+                
               </div>
+              <b-progress :value="value" :max="max" show-progress animated :class="{progressBlock: progressActive}"></b-progress>
               <div class="phone__number">
                 <label for="comment">Biografiya kiriting</label>
                 <textarea
@@ -88,7 +93,9 @@
                   v-model="form.description"
                   :placeholder="$t('forlawyers.bio')"></textarea>
               </div>
-              <!-- <span v-if="error">{{error}}</span> -->
+              <b-alert v-if="error" show variant="danger">
+                Bu raqam oldin registratsiyadan o'tgan iltimos yangi raqam kirgizing
+              </b-alert>
               <div class="password" v-if="showPasswordInput">
                 <label for="password__id">
                  {{$t('reg.code')}}
@@ -104,6 +111,9 @@
         </b-container>
       </div>
     </div>
+    <div v-else>
+      <loading /> 
+    </div>     
   </div>
 </template>
 
@@ -111,6 +121,10 @@
 export default {
   data() {
     return {
+      value: 0,
+      max: 100,
+      progressActive: false,
+      loader: true,
       showPasswordInput: false,
       selectuz: [],
       serviceuz: [],
@@ -129,19 +143,29 @@ export default {
         image: "",
       },
       code: "",
+      error: '',
+      error2: ''
     };
   },
   methods: {
     async onSubmit() {
-      this.showPasswordInput = true;
-
+      this.loader = false;
       if (this.code === "") {
         await this.$axios.post('user/code/send/', { phone_number:  this.form.phone_number})
                 .then(res => {
                   // console.log('code send', res)
+                  this.showPasswordInput = true;
+                  this.error = false;
+                  this.loader = true;
                 })
-                .catch(err => console.log(err))
+                // .catch(err => console.log(err))
+                .catch((err) => {
+                  // console.log('user/code/', err)               
+                  this.error = err.response.data.non_field_errors[0];
+                  this.loader = true;
+                })
       } else {
+        
         await this.$axios.post('user/code/check/', {phone_number: this.form.phone_number, code: this.code})
                 .then(res => {
                     // console.log('SendCode', res);
@@ -153,16 +177,19 @@ export default {
                     // console.log("Image", image)
 
                     this.$axios.post("lawyer/create/", this.form)
-                    .then(res => {
-                      // console.log('lawyer/create', res);
+                      .then(res => {
+                        // console.log('lawyer/create', res);
+                        this.loader = true;
+                        this.error2 = false;
+                        this.$router.push(this.localePath('/lawyer_wait'));
+                      
 
-                      this.$router.push(this.localePath('/lawyer_wait'))
-                    
-
-                    })
-                    .catch(err => {
-                      console.log(err)
-                    })
+                      })
+                      .catch(err => {
+                        console.log(err);
+                        this.loader = true;
+                        this.error2 = err.response.data.password;
+                      })
                 })
                 .catch(err => console.log(err))
       }
@@ -181,18 +208,21 @@ export default {
     },
     fileUpload(event) {
       let e = event.target.files[0];
-       var image = new FormData();
-                    
-        image.append("image", this.$refs.file.files[0])
+      var image = new FormData();
+      this.value = 80;
+      this.progressActive = true;
+      image.append("image", this.$refs.file.files[0])
 
-        this.$axios.post("lawyer/custom-image/", image)
-        .then(res => {
-          this.form.image = res.data.image
-          // console.log("Image URl", res)
-        })
-        .catch(err => {
-          console.log(err)
-        })
+      this.$axios.post("lawyer/custom-image/", image)
+      .then(res => {
+        this.form.image = res.data.image;
+        this.value = this.max;
+        this.progressActive = false;
+        // console.log("Image URl", res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
     }
   },
   mounted() {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container class="lawyer-question">
+    <b-container class="lawyer-question" v-if="loader">
       <div class="lawyer-ques">
         <div class="lawyer-ques__title">{{documentLawyerList.title}}</div>
         <div class="lawyer-ques__desc">{{documentLawyerList.text}}</div>
@@ -113,12 +113,16 @@
         </form>
       </div>
     </b-container>
+    <div v-else>
+      <loading /> 
+    </div>     
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
+      loader: false,
       documentLawyerList: [],
       priceDocument: '',
       isActiveDocument: false,
@@ -138,6 +142,7 @@ export default {
     async getDocumentLawyer() {
       await this.$axios.get(`document/lawyer/${this.$route.params.id}/`)
         .then((res) => {
+          this.loader = true;
           this.documentLawyerList = res.data;
           // console.log('getDocumentLawyer', res)
         })
@@ -173,7 +178,7 @@ export default {
       await this.$axios.get(`document/send/?document=${this.$route.params.id}`) 
         .then((res) => {
           this.document = res.data;
-          console.log('getDocument', res)
+          // console.log('getDocument', res)
         })
     },  
     addFile(e) {
@@ -191,7 +196,7 @@ export default {
       form.append('doc_file', this.file)
       await this.$axios.post(`document/send/?document=${this.$route.params.id}`, form)
         .then((res) => {
-          console.log('postAnswer', res);
+          // console.log('postAnswer', res);
           this.form.title = "";
           this.form.text = "";
           this.file = "";
@@ -207,7 +212,7 @@ export default {
       form.append('doc_file', this.file)
       await this.$axios.patch(`document/send/${id}/`, form)
         .then((res) => {
-          console.log('patchAnswer', res)
+          // console.log('patchAnswer', res)
           this.getDocument()
            this.openEditActive = false
           try {

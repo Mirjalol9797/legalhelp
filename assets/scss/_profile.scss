@@ -64,6 +64,8 @@
     background-repeat: no-repeat;
     padding-left: 35px;
     background-size: contain;
+    background-size: 30px;
+    background-position: -2px center;
   }
 
   &-number {
@@ -99,6 +101,9 @@
   &-name {
     max-width: 220px;
     margin: 0 auto;
+  }
+  &-none {
+    padding: 0 25px;
   }
 }
 
