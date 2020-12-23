@@ -121,7 +121,7 @@ export default {
         }
       })
       .catch((err) => {
-          this.error = err.response.data.response.error_note
+          // this.error = err.response.data.response.error_note
           // console.log('qqweqwe', err.response.data.response.error_note)
       });
     },

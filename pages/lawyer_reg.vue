@@ -138,23 +138,23 @@ export default {
       if (this.code === "") {
         await this.$axios.post('user/code/send/', { phone_number:  this.form.phone_number})
                 .then(res => {
-                  console.log('code send', res)
+                  // console.log('code send', res)
                 })
                 .catch(err => console.log(err))
       } else {
         await this.$axios.post('user/code/check/', {phone_number: this.form.phone_number, code: this.code})
                 .then(res => {
-                    console.log('SendCode', res);
+                    // console.log('SendCode', res);
                     this.form.token = res.data.token;
                     // User create
                     var image = new FormData();
                     
                     image.append("image", this.image)
-                    console.log("Image", image)
+                    // console.log("Image", image)
 
                     this.$axios.post("lawyer/create/", this.form)
                     .then(res => {
-                      console.log('lawyer/create', res);
+                      // console.log('lawyer/create', res);
 
                       this.$router.push(this.localePath('/lawyer_wait'))
                     
@@ -188,7 +188,7 @@ export default {
         this.$axios.post("lawyer/custom-image/", image)
         .then(res => {
           this.form.image = res.data.image
-          console.log("Image URl", res)
+          // console.log("Image URl", res)
         })
         .catch(err => {
           console.log(err)
