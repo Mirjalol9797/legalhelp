@@ -59,7 +59,7 @@ export default {
         .then((res) => {
           this.loader = true;
           this.questionCustomer = res.data;
-          console.log('getQuestionCustomer', res)
+          // console.log('getQuestionCustomer', res)
         })
     },
     async getQuestionAnswer() {
@@ -67,7 +67,7 @@ export default {
         .then((res) => {
           this.loader = true;
           this.answer = res.data;
-          console.log('getQuestionAnswer', res)
+          // console.log('getQuestionAnswer', res)
         })
     }
   },

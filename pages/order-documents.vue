@@ -100,14 +100,12 @@ export default {
     async getCategory() {
       await this.$axios.get("document/category/").then(res => {
         this.categories = res.data;
-        console.log('getCategory', res);
       });
     },
     async getLawyers() {
       await this.$axios.get('lawyer/list-search/')
         .then((res) => {
           this.lawyerListSelect = res.data;
-          console.log('getLawyers', res)
         })
     },
     addFile(e) {
@@ -124,7 +122,6 @@ export default {
       form.append('doc_file', this.file)      
       await this.$axios.post('document/customer/', form)
         .then(async (res) => {
-          console.log('postQuestionCustomer', res);
           this.form.language = '';
           this.form.category = '';
           this.form.text = '';

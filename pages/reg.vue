@@ -69,6 +69,9 @@
                   />
                 </div>
               </div>
+              <b-alert v-if="error2" show variant="danger">
+                parol 5 ta raqamdan ko'p bo'lishi kerak
+              </b-alert>
               <div class="phone__number">
                 <label for="password">{{$t('reg.topassword')}}</label>
                 <div class="input__tel-wrapper">
@@ -141,7 +144,8 @@ export default {
       },
       showError: false,
       code: "",
-      error: ''
+      error: '',
+      error2: ''
     };
   },
   methods: {
@@ -151,11 +155,10 @@ export default {
         if (this.code == "") {
           await this.$axios.post('user/code/send/', { phone_number:  this.form.phone_number})
                   .then(res => {
-                      console.log("Code: ", res.data.code);
+                      // console.log("Code: ", res.data.code);
                       this.showPasswordInput = true;
                       this.error = false;
                   })
-                  // .catch(err => console.log(err))
                   .catch((err) => {
                     this.error = err.response.data.non_field_errors;
                   })
@@ -163,13 +166,14 @@ export default {
         } else {
           await this.$axios.post('user/code/check/', {phone_number: this.form.phone_number, code: this.code})
                   .then(res => {
-                      console.log('SendCode', res)
+                      // console.log('SendCode', res)
                       this.form.token = res.data.token
                       // User create
                       this.$axios
                       .post("customer/create/", this.form)
                       .then(async () => {
-                        console.log('customer/create', res)
+                        // console.log('customer/create', res);
+                        this.error2 = false;
                         try {
                           await this.$auth.loginWith("local", {
                             data: {
@@ -197,6 +201,7 @@ export default {
                       })
                       .catch(err => {
                         console.log(err);
+                        this.error2 = err.response.data.password;
                       });
 
                   })

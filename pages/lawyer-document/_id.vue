@@ -214,7 +214,7 @@ export default {
         .then((res) => {
           // console.log('patchAnswer', res)
           this.getDocument()
-           this.openEditActive = false
+          this.openEditActive = false
           try {
             this.$toast.success({
               title: `Javob muvafaqiyatli uzgartirildi`,

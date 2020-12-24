@@ -118,7 +118,7 @@ export default {
       if (e.type == "image/jpeg") {
         this.form.file = e;
       } else {
-        console.log("wrong type");
+        // console.log("wrong type");
       }
     },
     async onSubmit() {
@@ -127,14 +127,14 @@ export default {
       if (this.code == "") {
         await this.$axios.post('user/code/send/', { phone_number:  this.form.phone_number})
                 .then(res => {
-                    console.log("Code: ", res.data.code)
+                    // console.log("Code: ", res.data.code)
                 })
                 .catch(err => console.log(err))
 
       } else {
         await this.$axios.post('user/code/check/', {phone_number: this.form.phone_number, code: this.code})
                 .then(res => {
-                    console.log('SendCode', res)
+                    // console.log('SendCode', res)
                     this.form.token = res.data.token
 
 

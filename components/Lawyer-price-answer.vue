@@ -37,7 +37,7 @@ export default {
       await this.$axios.get('question/lawyer/?is_paid=1')
         .then((res) => {
           this.priceAddedQuestion = res.data;
-          console.log('getQuestionLawyerPriceAdded', res)
+          // console.log('getQuestionLawyerPriceAdded', res)
         })
     }
   },

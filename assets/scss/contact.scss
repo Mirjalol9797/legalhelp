@@ -20,6 +20,10 @@
                 border-color: #f2b50f;
             }
         }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+          appearance: none;
+        }
 
         .contact__btn {
             color: #f2b50f;
@@ -40,6 +44,10 @@
                 box-shadow: none;
             }
         }
+    }
+    .contact__error {
+        font-size: 12px;
+        color: red;
     }
 
     .contact__date {

@@ -47,7 +47,7 @@ export default {
       await this.$axios.get('document/lawyer/?paymentdone=1') 
         .then((res) => {
           this.priceAddedDocumnet = res.data;
-          console.log('getDocumentLawyerPriceAdded', res)
+          // console.log('getDocumentLawyerPriceAdded', res)
         })
     },
   },

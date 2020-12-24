@@ -171,29 +171,6 @@ export default {
         });
     }
   },
-  // methods: {
-  //   async getQuestions() {
-  //     await this.$axios
-  //       .get(``)
-  //       .then(res => {
-  //         if (res.data.length > 0) {
-  //           this.questions = res.headers["x-pagination-total-count"];
-  //           this.questions = res.data;
-  //         } else {
-  //           this.questions = [];
-  //         }
-  //         // commit('setQuestions',res.data.results);
-  //       })
-  //       .catch(err => {
-  //         console.log(err);
-  //       });
-  //   }
-  // }
-  // created() {
-  //   this.$store.dispatch("getQuestions",this.currentPage).then(() => {
-  //     // console.log(this.questions);
-  //   });
-  // }
   mounted() {
     this.getQuestions();
   }

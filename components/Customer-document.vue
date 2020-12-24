@@ -46,7 +46,7 @@ export default {
       await this.$axios.get('document/customer/')
         .then((res) => {
           this.documentCustomer = res.data;
-          console.log('getDocumentCustomer', res)
+          // console.log('getDocumentCustomer', res)
         })
     },
   },

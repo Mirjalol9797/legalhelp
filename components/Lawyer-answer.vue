@@ -41,7 +41,7 @@ export default {
       await this.$axios.get('question/lawyer/')
         .then((res) => {
           this.questionLawyer = res.data;
-          console.log('getQuestionLawyer', res)
+          // console.log('getQuestionLawyer', res)
         })
     }  
   },

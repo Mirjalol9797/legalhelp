@@ -133,7 +133,7 @@ export default {
         .then((res) => {
           this.loader = true;
           this.lawyerItem = res.data;
-          console.log('123123131', res.data)
+          // console.log('123123131', res.data)
         })
         .catch(() => {
           
@@ -142,7 +142,7 @@ export default {
   },
   mounted() {
     this.getLawyersItem() 
-    console.log("Auth",this.$auth.user)
+    // console.log("Auth",this.$auth.user)
   }
 }
 </script>

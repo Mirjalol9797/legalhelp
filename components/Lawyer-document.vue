@@ -36,7 +36,7 @@ export default {
       await this.$axios.get('document/lawyer/')
         .then((res) => {
           this.documentLawyer = res.data;
-          console.log('getDocumentLawyer', res)
+          // console.log('getDocumentLawyer', res)
         })
     }
   },

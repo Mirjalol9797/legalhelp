@@ -232,7 +232,6 @@ export default {
     OpenEditForm() {
       this.openEditActive = true
     }
-
   },
   mounted() {
     this.getQuestionLawyer();

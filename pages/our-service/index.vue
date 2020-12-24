@@ -8,9 +8,7 @@
                   <div class="service__list">
                      <font-awesome-icon :icon="['fas','phone']"  class="service__list-icon"/> 
                      <div class="service__list-content">
-                       <!-- <span class="service__list-top">{{$t('service.phone_toptext')}}</span> -->
                     <div class="service__list-title">{{$t('service.phone_title')}}</div>
-                    <!-- <div class="service__list-text">{{$t('service.phone_subtitle')}}</div> -->
                     <div class="service__list-text">Adminga kung'iroq qilish</div>
                     <b-button class="service__list-btn" href="tel:+998999276993">{{$t('service.phone_btn')}}</b-button>
                      </div>
@@ -21,7 +19,6 @@
                    <div class="service__list service__list--spacing">
                      <font-awesome-icon :icon="['fas','file']"  class="service__list-icon"/>
                      <div class="service__list-content">
-                       <!-- <span class="service__list-top">500 000 so'm</span> -->
                     <div class="service__list-title">Hujjat buyurtma qilish</div>
                     <div class="service__list-text">Yuridik hujjat uchun buyurtma bering va qisqa vaqtda natijaga erishing.</div>
                     <b-button 

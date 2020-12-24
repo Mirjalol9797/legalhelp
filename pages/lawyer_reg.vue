@@ -186,7 +186,7 @@ export default {
 
                       })
                       .catch(err => {
-                        console.log(err);
+                        // console.log(err);
                         this.loader = true;
                         this.error2 = err.response.data.password;
                       })

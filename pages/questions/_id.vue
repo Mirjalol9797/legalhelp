@@ -152,7 +152,7 @@ export default {
         .then(res => {
           this.loader = true;
           this.questions_inner = res.data;
-          console.log('getSingleQuestions', res.data);
+          // console.log('getSingleQuestions', res.data);
         })
         .catch(err => {
           console.log(err);

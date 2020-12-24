@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="registration__wrapper">
+    <div class="registration__wrapper" v-if="loader">
       <div class="step__two-registration-inner">
         <b-container>
           <div class="step__two-registration">
@@ -38,7 +38,10 @@
           </div>
         </b-container>
       </div>
-    </div>    
+    </div>  
+    <div v-else>
+      <loading />
+    </div>          
   </div>
 </template>
 <script>
@@ -50,25 +53,28 @@ export default {
         phone_number: "",
         password: "",
       },
-      error: ''
+      error: '',
+      loader: true,
     };
   },
   computed: {},
 
   methods: {
     async login() {
+      this.loader = false;
       try {
-        console.log("Данные клиента или юриста с формы", this.form);
+        // console.log("Данные клиента или юриста с формы", this.form);
         let res = await this.$auth.loginWith("local", {data: this.form});
-        console.log("Дынные респонса", res) 
+        // console.log("Дынные респонса", res) 
+        this.loader = true;
         this.$toast.success({
           title: `${this.$t("toast.success")}`,
           message: `${this.$t("toast.loginSuccessMessage")}`
         });
       }
       catch (err) {
-        console.log("Ошибка", err);
-        console.log('error', err.response);
+        // console.log('error', err.response);
+        this.loader = true;
         if(this.error = err.response.data.detail) {
           this.$router.push(this.localePath('/lawyer_wait'))
         } else {

@@ -75,7 +75,9 @@ const store = () => new Vuex.Store({
             await this.$axios.get(`lawyer/list-search/`)
                 .then((res) => {
                     commit('setLawyers', res.data);
-                    console.log('getLawyers', res.data)
+                })
+                .catch(err=> {
+                    console.log(err);
                 })
         },
         // `'tanlovlar/?lang=' + ${this.$i18n.locale}`
@@ -83,7 +85,9 @@ const store = () => new Vuex.Store({
             await this.$axios.get('question/customer/')
                 .then((res) => {
                     commit('setQuestionCustomer', res.data);
-                    console.log('setQuestionCustomer', res)
+                })
+                .catch(err=> {
+                    console.log(err);
                 })
         },        
     },

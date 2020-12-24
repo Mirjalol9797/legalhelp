@@ -48,7 +48,7 @@ export default {
         .then((res) => {
           this.loader = true;
           this.documentCustomer = res.data;
-          console.log('getDocumentCustomer', res)
+          // console.log('getDocumentCustomer', res)
         })
     },
     async getDocumentAnswer() {
@@ -56,7 +56,7 @@ export default {
         .then((res) => {
           this.loader = true;
           this.answer = res.data;
-          console.log('getDocumentAnswer', res)
+          // console.log('getDocumentAnswer', res)
         })
     }    
   },

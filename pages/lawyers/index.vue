@@ -136,7 +136,7 @@ export default {
         this.rate_id = rate_id;
         await this.$axios.get(`lawyer/list-search/?service_id=${service_id}&rate=${rate_id}&region_id=${region_id}`)
             .then((res) => {
-                console.log('RES',res);
+                // console.log('RES',res);
                 this.filter = res.data;
                 this.service_id = 'Xizmat turi bo\'yicha saralash';
                 this.region_id = 'Viloyat bo\'yicha saralash';

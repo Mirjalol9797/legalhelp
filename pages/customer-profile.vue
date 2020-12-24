@@ -30,11 +30,8 @@
               <b-tab active>
                 <template v-slot:title>
                   <span class="user__profile-card-icon">
-                    <!-- <font-awesome-icon :icon="['fas', 'comment']" /> -->
-                    <!-- <img src="../assets/images/profil/comment.svg" alt="" width="15px"> -->
                   </span>
                   <span class="user__profile-card-text">{{$t("profile.myquestion")}}</span>
-                  <!-- <font-awesome-icon :icon="['fas', 'angle-right']" /> -->
                 </template>
                 <b-card-text>
                   <CustomerQuestion />
@@ -82,10 +79,12 @@
                 <b-card-text>
                   <b-row class="user__favorite">
                     <b-col md="6" class="user__favorite-item" v-for="item of lawyerFavorite.fav_lawyers" :key="item.id">
-                      <div class="user__favorite-img">
-                        <img :src="$store.state.mediaURL+item.image" :alt="item.first_name">
-                      </div>
-                      <div class="user__favorite-name">{{item.first_name}} {{item.last_name}} </div>
+                      <nuxt-link :to="localePath('/lawyers/'+item.id)" class="user__favorite-link">
+                        <div class="user__favorite-img">
+                          <img :src="$store.state.mediaURL+item.image" :alt="item.first_name">
+                        </div>
+                        <div class="user__favorite-name">{{item.first_name}} {{item.last_name}} </div>
+                      </nuxt-link>
                     </b-col>
                     <div v-if="lawyerFavorite.fav_lawyers == 0" class="user__favorite-none">Sizda tanlangan yuristlar yo'q</div>
                   </b-row>
@@ -155,6 +154,7 @@
                                   @change="uploadImage"
                                 />
                               </label>
+                              <b-progress :value="value" :max="max" show-progress animated :class="{progressBlock: progressActive}"></b-progress>
                             </b-col>
                             <b-col lg="6">
                               <label for="user__profile-name">{{$t("profile.name")}}</label>
@@ -208,8 +208,9 @@
                               <input
                                 type="text"
                                 id="user__profile-number"
-                                :v-model="'+998 ' + $auth.user && $auth.user.user"
+                                :v-model="'+998 ' + $auth.user.user"
                                 disabled
+                                :value="'+998 ' + $auth.user.user"
                               />
                             </b-col>
                             <b-col lg="12">
@@ -332,6 +333,9 @@ import Loading from '../components/Loading.vue'
 export default {
   data() {
     return {
+      value: 0,
+      max: 100,
+      progressActive: false,
       regionSelect: "",
       selectuz: [],
       selectru: [],
@@ -381,10 +385,11 @@ export default {
       });
     },
     uploadImage(e) {
-      this.imageVar = e.target.files[0]
-
-      console.log("Image", this.imageVar)
-    
+      this.progressActive = true;
+      this.value = 100;
+      this.imageVar = e.target.files[0];
+      console.log("Image", this.imageVar);
+      this.progressActive = false;
     },
     async onSubmit() {
       let form = new FormData();
@@ -394,11 +399,10 @@ export default {
       form.append("region", this.region)
       form.append("image", this.imageVar)
 
-
       await this.$axios
-        .patch("customer/profile/", form )
+        .patch("customer/profile/", form)
         .then(res => {
-          console.log("Cus res", res)
+          // console.log("Cus res", res)
           this.$auth.fetchUser();
           this.$toast.success({
             title: `${this.$t("toast.success")}`,
@@ -446,7 +450,7 @@ export default {
     async customerQuestionPrice() {
       await this.$axios.post(`payment/clickcardtoken/`, this.form) 
         .then((res) => {
-          console.log('customerQuestionPrice', res) 
+          // console.log('customerQuestionPrice', res) 
         })
     }
   },
@@ -458,7 +462,7 @@ export default {
     this.getDocumentCustomer(),
     this.getLawyerFavorite(),
     this.getDocumentCustomerPriceAdded()
-    console.log('$auth.user', this.$auth.user)
+    // console.log('$auth.user', this.$auth.user)
   }
 };
 </script>

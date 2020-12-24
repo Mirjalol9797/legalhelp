@@ -49,13 +49,6 @@
             </b-navbar-nav>
             <!-- Right aligned nav items -->
             <b-navbar-nav class="search__part">
-              <!-- <b-nav-form class="header__form">
-                <b-form-input
-                  size="sm"
-                  class="mr-sm-2 navbar__search"
-                  :placeholder="$t('navbar.search')" 
-                ></b-form-input>
-              </b-nav-form>     -->
               <b-nav-item-dropdown :text="text" right class="language__list">
                 <template v-slot:button-content>
                     <img class="lang__img" :src="require(`@/assets/images/${src}`)" alt="eng">
@@ -105,9 +98,6 @@
                     </div>
                   </div>
                 </template> 
-                <!-- <b-dropdown-item :to="localePath('/reg')" v-if="!loggedIn">
-                  {{$t("user.signup")}}
-                </b-dropdown-item> -->
                 <b-dropdown-item
                   :to="localePath('/lawyer-profile')"
                   v-if="loggedIn"
@@ -120,12 +110,10 @@
                   @click="logout()"
                   v-if="loggedIn"
                 >
-                  <!-- <font-awesome-icon :icon="['fas', 'sign-out-alt']" /> -->
                   <img src="../assets/images/profil/sign-out-alt.svg" alt="" />
                   {{ $t("user.exit") }}
                 </b-dropdown-item>
-              </b-nav-item-dropdown>              
-              <!-- && $auth.user.is_customer -->
+              </b-nav-item-dropdown>             
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>

@@ -12,21 +12,42 @@
                 </b-col>
                 <b-col class="mt-5" cols="12" md="6" lg="6">
                     <div class="contact__form">
-                        <b-form>
+                        <b-form @submit.prevent="postContact">
                             <b-form-group>
-                                <b-form-input class="contact__input" type="text" placeholder="Elektron pochta" required/>
+                                <b-form-input 
+                                    class="contact__input" 
+                                    type="text" 
+                                    placeholder="Ism Familiya *" 
+                                    required
+                                    v-model="form.full_name"
+                                >
+                                </b-form-input>
                             </b-form-group>
                             <b-form-group>
-                                <b-form-input class="contact__input" type="password" placeholder="Telefon *" required/>
+                                <b-form-input 
+                                    class="contact__input" 
+                                    type="text" 
+                                    placeholder="Telefon *" 
+                                    required
+                                    v-model="form.phone_number"
+                                    
+                                >
+                                </b-form-input>
+                                <div v-if="error" class="contact__error">Raqam noto'g'ri kiritilgan. <br>
+                                    Raqamni +998990001122 ko'rinishda kirgizing
+                                </div>
                             </b-form-group>
                             <b-form-group>
                                 <b-form-textarea
-                                        class="contact__input"
-                                        id="textarea-rows"
-                                        placeholder="Sizning savolingiz *"
-                                        rows="8"
-                                        no-resize
-                                ></b-form-textarea>
+                                    class="contact__input"
+                                    id="textarea-rows"
+                                    placeholder="Sizning savolingiz *"
+                                    rows="8"
+                                    no-resize
+                                    required
+                                    v-model="form.message"
+                                >
+                                </b-form-textarea>
                             </b-form-group>
                             <b-button class="contact__btn" type="submit">YUBORISH</b-button>
                         </b-form>
@@ -70,8 +91,46 @@
     export default {
         name: "contact-us",
         data() {
-            return {}
+            return {
+                form: {
+                    full_name: '',
+                    phone_number: '',
+                    message: ''
+                },
+                error: ''
+            }
+        },  
+        methods: {
+            async postContact() {
+                await this.$axios.post('contact/', this.form)
+                    .then(async () => {
+                        // console.log('postContact', this.form);
+                        this.form = {
+                            full_name: '',
+                            phone_number: '',
+                            message: ''
+                        }
+                        try {
+                            this.error = false;
+                            this.$toast.success({
+                            title: `Malumotlaringiz yuborilda`,
+                            message: `Siz bilan tez orada bog'lanishadi`,
+                            
+                            })
+                        } catch (err) {
+                            console.log(err)
+                            this.$toast.error({
+                            title: `Malumot xato yuborilda`,
+                            message: `Iltimos kaytadan urinib ko'ring`,
+                            })
+                        }
+                    })
+                    .catch(err => {
+                        this.error = err.response.data.phone_number;
+                    })
+            },
         }
     }
 </script>
+
 
