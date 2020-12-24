@@ -76,6 +76,9 @@
                   
                 </div>
               </div>
+              <b-alert v-if="error" show variant="danger">
+                Bu raqam oldin registratsiyadan o'tgan iltimos yangi raqam kirgizing
+              </b-alert>
               <div class="phone__number addFile">
                 <label for="file">Rasm yuklang...</label>
                 <div class="input__tel-wrapper">
@@ -93,15 +96,15 @@
                   v-model="form.description"
                   :placeholder="$t('forlawyers.bio')"></textarea>
               </div>
-              <b-alert v-if="error" show variant="danger">
-                Bu raqam oldin registratsiyadan o'tgan iltimos yangi raqam kirgizing
-              </b-alert>
               <div class="password" v-if="showPasswordInput">
                 <label for="password__id">
                  {{$t('reg.code')}}
                 </label>
                 <input v-model="code" id="password__id" type="password" class="password__input" required/>
               </div>
+              <b-alert v-if="error3" show variant="danger">
+                Kod xato kiritilgan. Qaytadan urinib ko'ring
+              </b-alert>
               <div class="registration-submit-wrap">
                 <b-button type="submit" class="registration-submit">{{$t('reg.btn')}}</b-button
                 >
@@ -144,7 +147,8 @@ export default {
       },
       code: "",
       error: '',
-      error2: ''
+      error2: '',
+      error3: ''
     };
   },
   methods: {
@@ -172,8 +176,8 @@ export default {
                     this.form.token = res.data.token;
                     // User create
                     var image = new FormData();
-                    
-                    image.append("image", this.image)
+                    image.append("image", this.image);
+                    this.error3 = false;
                     // console.log("Image", image)
 
                     this.$axios.post("lawyer/create/", this.form)
@@ -186,12 +190,17 @@ export default {
 
                       })
                       .catch(err => {
-                        // console.log(err);
+                        console.log(err);
                         this.loader = true;
                         this.error2 = err.response.data.password;
                       })
                 })
-                .catch(err => console.log(err))
+                // .catch(err => console.log(err))
+                .catch(err => {
+                  console.log(err);
+                  this.loader = true;
+                  this.error3 = err.response.data.non_field_errors;
+                })                
       }
     },
     async getRegionuz() {
